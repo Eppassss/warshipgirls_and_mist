@@ -1,0 +1,235 @@
+colonizeable_planet = {
+	OR = {
+		is_planet_class = pc_city
+		is_planet_class = pc_wsg_port
+		is_planet_class = pc_shenhai
+		is_planet_class = pc_relic
+		is_planet_class = pc_nuked
+		is_planet_class = pc_hive
+		is_planet_class = pc_machine
+		habitable_structure = yes
+		habitable_planet = yes
+	}
+}
+
+habitable_planet = {
+	OR = {
+		is_planet_class = pc_desert
+		is_planet_class = pc_tropical
+		is_planet_class = pc_arid
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tundra
+		is_planet_class = pc_arctic
+		is_planet_class = pc_alpine
+		is_planet_class = pc_savannah
+		is_planet_class = pc_gaia
+		is_planet_class = pc_city
+		is_planet_class = pc_wsg_port
+		is_planet_class = pc_shenhai
+		is_planet_class = pc_relic
+	}
+}
+
+has_UR_admiral = {
+	OR = {
+		has_country_flag = ra_admiral_101
+		has_country_flag = ra_admiral_102
+		has_country_flag = ra_admiral_103
+		has_country_flag = ra_admiral_104
+		has_country_flag = ra_admiral_105
+		has_country_flag = ra_admiral_106
+		has_country_flag = ra_admiral_107
+		has_country_flag = ra_admiral_108
+		has_country_flag = ra_admiral_109
+		has_country_flag = ra_admiral_110
+		has_country_flag = ra_admiral_201
+		has_country_flag = ra_admiral_202
+		has_country_flag = ra_admiral_203
+		has_country_flag = ra_admiral_204
+		has_country_flag = ra_admiral_205
+		has_country_flag = ra_admiral_1001
+		has_country_flag = ra_admiral_1002
+		has_country_flag = ra_admiral_1003
+		has_country_flag = ra_admiral_1004
+	}
+}
+
+is_wg_fallen_empire = {
+	OR = {
+		is_fallen_empire = yes
+		is_country_type = awakened_fallen_empire
+	}
+	has_authority = auth_wg_fe
+}
+
+wsg_lady_available = {
+	OR = {
+		has_country_flag = gain_wsg_lady
+		is_same_value = event_target:wsg_lady_own_country
+	}
+	NOR = {
+		has_modifier = wsg_lady_recover_cd
+		has_country_flag = modifing_wsg_lady
+		has_country_flag = ban_commu_with_wsg_lady
+	}
+}
+
+has_wsg_lady_active_diplo = {
+	has_active_event = {
+		wg_lady.24 # 初始界面
+		wg_lady.25 # 总督
+		wg_lady.26 # 战舰
+		wg_lady.27 # 陆军
+		wg_lady.29 # 大破
+		wg_lady.28 # 武装科研船
+	}
+}
+
+has_enough_consumer_goods = {
+	OR = {
+		AND = {
+			years_passed <= 40
+			resource_stockpile_compare = { resource = consumer_goods value > 500 }
+		}
+		AND = {
+			years_passed > 40
+			years_passed <= 80
+			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+		}
+		AND = {
+			years_passed > 80
+			years_passed <= 120
+			resource_stockpile_compare = { resource = consumer_goods value > 3500 }
+		}
+		AND = {
+			years_passed > 120
+			resource_stockpile_compare = { resource = consumer_goods value > 6000 }
+		}
+	}
+}
+
+is_wg_leader = {
+	# 岛风是是特殊好感度领袖，不需要检查普通好感度特性
+	NOT = { has_leader_flag = wsg_special_affection_leader }
+	owner = {
+		NOR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}
+	}
+	OR = { 
+		species = { 
+			OR = {
+				has_trait = wsg_trait_warshipgirls
+				has_trait = wsg_trait_warshipgirls1
+				has_trait = wsg_trait_mist
+				has_trait = sh_trait_shenhai
+				has_trait = sh_trait_shenhai1
+				has_trait = sh_trait_shenhai3
+			}
+		}
+		has_leader_flag = wsg_event_leader
+		has_leader_flag = overtime_yamato #劳模
+		has_trait = leader_trait_admiral_Rodney #老罗
+		has_trait = leader_trait_governor_Ella #艾拉
+		has_trait = leader_trait_governor_santee #桑提
+		has_trait = leader_trait_general_washington_axe #花生
+		has_trait = leader_trait_ruler_lexington #太太
+	}
+}
+
+is_wg_leader_with_affection_not_full = {
+	OR = {
+		AND = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = affection_max }
+		}
+		AND = {
+			has_leader_flag = wsg_shimakaze_scientist
+			owner = { 
+				has_country_flag = get_wsg_shimakaze 
+				NOT = { has_country_flag = shimakaze_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = wsg_lady_leader
+			owner = { 
+				has_country_flag = gain_wsg_lady 
+				NOT = { has_country_flag = lady_affection_max }
+			}
+		}
+	}
+}
+
+has_affection_trait = {
+	OR = {
+		# 总督
+		has_trait = leader_trait_governor_affection_lv1
+		has_trait = leader_trait_governor_affection_lv2
+		has_trait = leader_trait_governor_affection_lv3
+		has_trait = leader_trait_governor_affection_lv4
+		has_trait = leader_trait_governor_affection_lv4_max
+		has_trait = leader_trait_governor_affection_lv5
+		# 科学家
+		has_trait = leader_trait_scientist_affection_lv1
+		has_trait = leader_trait_scientist_affection_lv2
+		has_trait = leader_trait_scientist_affection_lv3
+		has_trait = leader_trait_scientist_affection_lv4
+		has_trait = leader_trait_scientist_affection_lv4_max
+		has_trait = leader_trait_scientist_affection_lv5
+		# 海军上将
+		has_trait = leader_trait_admiral_affection_lv1
+		has_trait = leader_trait_admiral_affection_lv2
+		has_trait = leader_trait_admiral_affection_lv3
+		has_trait = leader_trait_admiral_affection_lv4
+		has_trait = leader_trait_admiral_affection_lv4_max
+		has_trait = leader_trait_admiral_affection_lv5
+		# 陆军将领
+		has_trait = leader_trait_general_affection_lv1
+		has_trait = leader_trait_general_affection_lv2
+		has_trait = leader_trait_general_affection_lv3
+		has_trait = leader_trait_general_affection_lv4
+		has_trait = leader_trait_general_affection_lv4_max
+		has_trait = leader_trait_general_affection_lv5
+		# 统治者
+		has_ruler_trait = leader_trait_ruler_affection_lv1
+		has_ruler_trait = leader_trait_ruler_affection_lv2
+		has_ruler_trait = leader_trait_ruler_affection_lv3
+		has_ruler_trait = leader_trait_ruler_affection_lv4
+		has_ruler_trait = leader_trait_ruler_affection_lv4_max
+		has_ruler_trait = leader_trait_ruler_affection_lv5
+
+		# #岛风总督
+		# has_trait = leader_trait_governor_shimakaze_affection_lv1
+		# has_trait = leader_trait_governor_shimakaze_affection_lv2
+		# has_trait = leader_trait_governor_shimakaze_affection_lv3
+		# has_trait = leader_trait_governor_shimakaze_affection_lv4
+		# has_trait = leader_trait_governor_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_governor_shimakaze_affection_lv5
+
+		# #岛风科学家
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv1
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv2
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv3
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv4
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_scientist_shimakaze_affection_lv5
+
+		# #岛风海军上将
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv1
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv2
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv3
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv4
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_admiral_shimakaze_affection_lv5
+
+		# #岛风陆军
+		# has_trait = leader_trait_general_shimakaze_affection_lv1
+		# has_trait = leader_trait_general_shimakaze_affection_lv2
+		# has_trait = leader_trait_general_shimakaze_affection_lv3
+		# has_trait = leader_trait_general_shimakaze_affection_lv4
+		# has_trait = leader_trait_general_shimakaze_affection_lv4_max
+		# has_trait = leader_trait_general_shimakaze_affection_lv5
+	}
+}

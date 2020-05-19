@@ -1,0 +1,114 @@
+wsg_think_tank_power = {
+    ships_upkeep_mult = -1.0
+	ship_weapon_damage = 2.00
+	ship_hull_mult = 0.50
+	ship_armor_mult = 0.50
+	ship_shield_mult = 0.50
+	ship_speed_mult = -1.0
+}
+
+wsg_think_tank_power2 = {
+    ships_upkeep_mult = -0.2
+	ship_speed_mult = 0.3
+}
+
+wsg_boss_uav_power = {
+	ship_hull_mult = 0.50
+	ship_armor_mult = 0.10
+	ship_shield_mult = 0.10
+	ship_weapon_damage = 0.50
+	ship_engagement_range_mult = 3.0
+}
+wsg_boss_uav_power2 = {
+	ship_armor_mult = 0.10
+	ship_shield_mult = 0.10
+	ship_weapon_damage = 0.20
+	ship_engagement_range_mult = 3.0
+}
+wsg_think_tank_destoryed = {
+    all_technology_research_speed = 0.05
+}
+
+wsg_think_tank_destoryed2 = {
+    all_technology_research_speed = 0.05
+	country_engineering_tech_research_speed = 0.05
+	country_base_society_research_produces_add = 25
+	country_base_physics_research_produces_add = 25
+	country_base_engineering_research_produces_add = 25	
+}
+
+wsg_Astesia = {
+    country_base_alloys_produces_add = -20
+	country_base_energy_produces_add = -20
+}
+
+wsg_Astesia2 = {
+	all_technology_research_speed = 0.1
+	country_base_society_research_produces_add = 50
+	country_base_physics_research_produces_add = 50
+	country_base_engineering_research_produces_add = 50
+}
+
+wsg_free_fleet = {
+    ships_upkeep_mult = -1.0
+}
+
+wg_eddy_maya = {
+	starbase_shipyard_build_speed_mult = 0.50
+	all_technology_research_speed = 0.50	
+}
+early_rush = {
+	country_base_alloys_produces_add = 10
+	ship_weapon_damage = 0.10
+	ship_weapon_range_mult = 0.10
+}
+
+RBQ_Dragon_power = {
+	ship_weapon_damage = 1.00
+	ship_hull_mult = 0.2
+	ship_armor_mult = 0.20
+}
+
+guardian_wg_bugv_power = {
+    ships_upkeep_mult = -1.0
+	ship_weapon_damage = 2.00
+	ship_shield_mult = -10.00
+	ship_engagement_range_mult = 3.0
+}
+
+wg_bug = {
+    planet_amenities_mult = -0.05
+}
+wg_bug2 = {
+    country_unity_produces_mult = -0.10
+}
+wg_bug3 = {
+    all_technology_research_speed = -0.05
+}
+wg_bug4 = {
+   ship_weapon_damage = -0.10
+}
+wg_bug5 = {
+    planet_jobs_produces_mult = -0.05
+}
+wg_bug6 = {
+    ship_armor_mult = -0.10
+}
+wg_bugv_buff = {
+    all_technology_research_speed = 0.10
+}
+wg_bugv_buff2 = {
+    ships_upkeep_mult = -0.05
+}
+wg_bugv_buff3 = {
+    planet_jobs_produces_mult = 0.05
+}
+wg_bugv_buff4 = {
+    planet_jobs_produces_mult = 0.1
+}
+wg_bugv_murder = {
+    all_technology_research_speed = 0.30
+}
+wsg_livestar = {
+	ship_speed_mult = -10.0
+}	

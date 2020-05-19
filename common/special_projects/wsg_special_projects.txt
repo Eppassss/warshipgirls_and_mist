@@ -1,0 +1,213 @@
+special_project = {
+	key = "ovo_watching_study_normal"
+	event_chain = ovo_chain
+	days_to_research = 480
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wsg.3038 }
+	}
+}
+
+special_project = {
+	key = "join_uf_study_normal"
+	days_to_research = 720
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wg_crisis.1007 }
+	}
+}
+
+
+special_project = {
+	key = "resistance_uf_study_normal"
+	days_to_research = 720
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = wg_crisis.1008 }
+	}
+}
+
+special_project = {
+	key = "THINK_TANK_FTL_PROJECT"
+	cost = 0
+	days_to_research = 1800
+	tech_department = engineering_technology
+	picture = GFX_evt_think_tank
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_constructor = 1
+	}
+	on_start = {
+		from.owner = {
+			country_event = { id = wg_boss.13 }
+		}
+	}
+	on_cancel = {
+		from.owner = {
+			country_event = { id = wg_boss.14 }
+		}
+	}	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.9 }
+		}
+	}
+}
+
+special_project = {
+	key = "THINK_TANK_FTL_PROJECT2"
+	cost = 0
+	days_to_research = 720
+	tech_department = engineering_technology
+	picture = GFX_evt_think_tank
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_constructor = 1
+	}	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.8 }
+		}
+	}
+}
+
+special_project = {
+	key = "WG_FIX_BUG_PROJECT"
+	cost = 0
+	days_to_research = 3600
+	picture = GFX_evt_wg_bugv
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 7
+	}
+	on_progress_25 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}
+				1 = { }
+			}
+		}
+	}
+	on_progress_50 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}				
+				1 = { }
+			}
+		}
+	}
+	on_progress_75 = {
+		owner = {
+			random_list = {
+				1 = { country_event = { id = wg_boss.53 }}
+				1 = { country_event = { id = wg_boss.54 }}
+				1 = { country_event = { id = wg_boss.55 }}
+				1 = { country_event = { id = wg_boss.56 }}
+				1 = { country_event = { id = wg_boss.57 }}
+				1 = { country_event = { id = wg_boss.59 }}
+				1 = { country_event = { id = wg_boss.60 }}				
+				1 = { }
+			}
+		}
+	}	
+	on_success = {
+		owner = {
+			random_list = {
+				30 = { country_event = { id = wg_boss.61 }}
+				70 = { country_event = { id = wg_boss.62 }}
+				5 = { country_event = { id = wg_boss.63 }}
+				10 = {
+					modifier = {
+						NOT = { any_owned_leader = {
+							has_leader_flag = badseal_flag
+						}}
+						factor = 0
+					}
+					country_event = { id = wg_boss.66 }
+				}
+			}
+		}
+	}
+}
+
+special_project = {
+	key = "WG_BOARD_LIVESTAR"
+	cost = 0
+	days_to_research = 60
+	tech_department = engineering_technology
+	picture = GFX_evt_wg_livestar
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 30
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.79 }
+		}	
+	}
+	
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "WG_FIX_LIVESTAR"
+	cost = 150000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_wg_livestar
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_constructor = 1
+	}
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		owner = { country_event = { id = wg_boss.80 } }
+	}
+	
+	on_fail = {
+	}
+}

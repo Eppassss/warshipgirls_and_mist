@@ -1,0 +1,773 @@
+#大小姐
+@lady_affection_to_lv2 = 30
+@lady_affection_to_lv3 = 70
+@lady_affection_to_lv4 = 125
+@lady_affection_to_lv5 = 200
+@lady_affection_reduce = 40
+
+create_wsg_lady_governor = {
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		owner = { check_dragonslayer_wsg_lady = yes }
+		kill_leader = { show_notification = no }
+	}
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_fleet2 }
+		delete_fleet = {
+			target = this
+			kill_leader = no
+			destroy_template = yes
+		}
+	}
+	every_owned_ship = {
+		limit = { is_ship_size = wsg_lady_juggernaut }
+		delete_ship = this
+	}
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_armed_science }
+		delete_fleet = this
+	}
+	every_owned_army = {
+		limit = { is_lady_army = yes }
+		if = {
+			limit = { exists = leader }
+			unassign_leader = leader
+		}
+		remove_army = yes
+	}
+	set_country_flag = wsg_lady_governor_active
+	if = {
+		limit = { has_country_flag = wsg_lady_weaken }
+		create_leader = {
+			class = governor
+			species = event_target:wsg_lady_species
+			name = "NAME_WG_LADY"
+			event_leader = yes
+			gender = indeterminable
+			immortal = yes
+			skill = 10
+			set_age = 17
+			traits = {
+				trait = leader_trait_governor_wsg_lady_weaken
+			}
+			effect = {
+				change_leader_portrait = wsg57
+				set_leader_flag = wsg_lady_leader
+				set_leader_flag = wsg_lady_governor
+				set_leader_flag = has_gained_level_trait
+				set_leader_flag = has_gained_trait
+				save_global_event_target_as = lady_governor
+			}
+		}
+	}
+	else = { create_leader = {
+		class = governor
+		species = event_target:wsg_lady_species
+		name = "NAME_WG_LADY"
+		event_leader = yes
+		gender = indeterminable
+		immortal = yes
+		skill = 10
+		set_age = 17
+		traits = {
+			trait = leader_trait_governor_wsg_lady
+		}
+		effect = {
+			change_leader_portrait = wsg57
+			set_leader_flag = wsg_lady_leader
+			set_leader_flag = wsg_lady_governor
+			set_leader_flag = has_gained_level_trait
+			set_leader_flag = has_gained_trait
+			save_global_event_target_as = lady_governor
+		}
+	}}
+	remove_country_flag = wsg_lady_warship_active
+	remove_country_flag = wsg_lady_army_active
+	remove_country_flag = wsg_lady_armed_science_active
+	random_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_governor }
+		add_lady_governor_affection_trait = yes
+	}
+}
+
+create_wsg_lady_warship = {
+	if = {
+		limit = { has_country_flag = lady_warship_T_slot }
+		remove_country_flag = lady_warship_T_slot
+		set_country_flag = lady_juggernaut
+	}
+	if = {
+		limit = { has_country_flag = wsg_lady_armed_science_active }
+		if = {
+			limit = { exists = event_target:lady_science_ship }
+			event_target:lady_science_ship = {
+				save_event_target_as = wsg_lady_warship_location
+			}
+		} else = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_armed_science }
+				save_event_target_as = wsg_lady_warship_location
+			}
+		}
+	}
+	else_if = {
+		limit = { has_country_flag = wsg_lady_army_active }
+		if = {
+			limit = {
+				any_owned_army = {
+					is_lady_army = yes
+					exists = planet
+				}
+			}
+			random_owned_army = {
+				limit = { is_lady_army = yes }
+				planet = { save_event_target_as = wsg_lady_warship_location }
+			}
+		}
+		else = {
+			random_owned_army = {
+				limit = { is_lady_army = yes }
+				fleet = { save_event_target_as = wsg_lady_warship_location }
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			save_event_target_as = wsg_lady_warship_location
+		}
+	}
+	set_country_flag = wsg_lady_warship_active
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		owner = { check_dragonslayer_wsg_lady = yes }
+		kill_leader = { show_notification = no }
+	}
+	create_fleet = {
+		name = "NAME_lady_Contingency_fleet"
+		effect = {
+			set_owner = prev
+			owner = {
+				if = {
+					limit = { NOT = { has_country_flag = lady_juggernaut }}
+					if = {
+						limit = { has_country_flag = wsg_lady_weaken }
+						create_leader = {
+							class = admiral
+							species = event_target:wsg_lady_species
+							name = "NAME_WG_LADY"
+							event_leader = yes
+							gender = indeterminable
+							immortal = yes
+							skill = 10
+							set_age = 17
+							traits = {
+								trait = leader_trait_admiral_wsg_lady_weaken
+							}
+							effect = {
+								change_leader_portrait = wsg57
+								set_leader_flag = wsg_lady_leader
+								set_leader_flag = wsg_lady_admiral
+								set_leader_flag = has_gained_level_trait
+								set_leader_flag = has_gained_trait
+							}
+						}
+					}
+					else = { create_leader = {
+						class = admiral
+						species = event_target:wsg_lady_species
+						name = "NAME_WG_LADY"
+						event_leader = yes
+						gender = indeterminable
+						immortal = yes
+						skill = 10
+						set_age = 17
+						traits = {
+							trait = leader_trait_admiral_wsg_lady
+						}
+						effect = {
+							change_leader_portrait = wsg57
+							set_leader_flag = wsg_lady_leader
+							set_leader_flag = wsg_lady_admiral
+							set_leader_flag = has_gained_level_trait
+							set_leader_flag = has_gained_trait
+						}
+					}}
+				}
+			}
+			owner = {
+				if = {
+					limit = { has_country_flag = modified_wsg_lady }
+					switch = {
+						trigger = has_country_flag
+						lady_warship_designable = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								random_existing_design = wsg_lady_warship
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_cracker = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_CRACKER"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_shielder = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_SHIELDER"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_neutron = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_NEUTRON"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_godray = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_GODRAY"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_nanobots = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_NANOBOTS"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_ovo = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_OVO"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_psh = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_PSH"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_sun_killer = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_SK"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_warship_waterB = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_WATERB"
+								graphical_culture = "ai_01"
+							}}
+						}
+						lady_juggernaut = {
+							PREV = { create_ship = {
+								name = "NAME_lady_Contingency_fleet"
+								design = "NAME_WG_LADY_JUGGERNAUT"
+								graphical_culture = "ai_01"
+							}}
+						}
+					}
+				}
+				else = {
+					PREV = { create_ship = {
+						name = "NAME_lady_Contingency_fleet"
+						design = "NAME_WG_LADY"
+						graphical_culture = "ai_01"
+					}}
+				}
+			}
+			set_location = event_target:wsg_lady_warship_location
+			set_fleet_flag = lady_fleet2
+			save_global_event_target_as = lady_warship_fleet
+			if = {
+				limit = { owner = { has_country_flag = lady_juggernaut }}
+				add_lady_fleet_affection_modifier = yes
+			} else = {
+				assign_leader = last_created_leader
+			}
+		}
+		settings = { 
+			can_upgrade = no 
+			can_disband = no
+			can_change_composition = no 
+			can_change_leader = no 
+			uses_naval_capacity = no
+			spawn_debris = no 
+		}
+	}
+	every_owned_army = {
+		limit = { is_lady_army = yes }
+		if = {
+			limit = { exists = leader }
+			unassign_leader = leader
+		}
+		remove_army = yes
+	}
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_armed_science }
+		delete_fleet = this
+	}
+	remove_country_flag = wsg_lady_governor_active
+	remove_country_flag = wsg_lady_army_active
+	remove_country_flag = wsg_lady_armed_science_active
+	if = {
+		limit = {
+			has_country_flag = lady_warship_designable
+			NOT = {
+				any_owned_fleet = {
+					has_fleet_flag = lady_fleet2
+					exists = this
+				}
+			}
+		}
+		remove_country_flag = wsg_lady_warship_active
+		every_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			kill_leader = { show_notification = no }
+		}
+	}
+	else = { 
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_admiral }
+			add_lady_admiral_affection_trait = yes
+			if = {
+				limit = { PREV = { has_country_flag = dragonslayer_wsg_lady }}
+				add_trait = leader_trait_dragonslayer
+			}
+		}
+	}
+}
+
+create_wsg_lady_army = {
+	if = {
+		limit = { has_country_flag = wsg_lady_armed_science_active }
+		if = {
+			limit = { exists = event_target:lady_science_ship }
+			event_target:lady_science_ship = {
+				save_event_target_as = wsg_lady_transport_location
+			}
+		} else = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_armed_science }
+				save_event_target_as = wsg_lady_transport_location
+			}
+		}
+	}
+	else_if = {
+		limit = { has_country_flag = wsg_lady_warship_active }
+		if = {
+			limit = { exists = event_target:lady_warship_fleet }
+			event_target:lady_warship_fleet = {
+				save_event_target_as = wsg_lady_transport_location
+			}
+		} else = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_fleet2 }
+				save_event_target_as = wsg_lady_transport_location
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			save_event_target_as = wsg_lady_transport_location
+		}
+	}
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		owner = { check_dragonslayer_wsg_lady = yes }
+		kill_leader = { show_notification = no }
+	}
+	create_fleet = {
+		name = "NAME_WG_LADY"
+		effect = {
+			set_owner = root
+			set_location = {
+				target = event_target:wsg_lady_transport_location
+				distance = 0
+				angle = random 
+			}
+			create_wsg_lady_army_transport = yes
+		}
+	}
+	set_country_flag = wsg_lady_army_active
+	reset_lady_affection_variables = yes
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_fleet2 }
+		delete_fleet = {
+			target = this
+			kill_leader = no
+			destroy_template = yes
+		}
+	}
+	every_owned_ship = {
+		limit = { is_ship_size = wsg_lady_juggernaut }
+		delete_ship = this
+	}
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_armed_science }
+		delete_fleet = this
+	}
+	remove_country_flag = wsg_lady_governor_active
+	remove_country_flag = wsg_lady_warship_active
+	remove_country_flag = wsg_lady_armed_science_active
+}
+
+create_wsg_lady_armed_science = {
+	if = {
+		limit = { has_country_flag = wsg_lady_warship_active }
+		if = {
+			limit = { exists = event_target:lady_warship_fleet }
+			event_target:lady_warship_fleet = {
+				save_event_target_as = wsg_lady_armed_science_location
+			}
+		} else = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_fleet2 }
+				save_event_target_as = wsg_lady_armed_science_location
+			}
+		}
+	}
+	else_if = {
+		limit = { has_country_flag = wsg_lady_army_active }
+		if = {
+			limit = {
+				any_owned_army = {
+					is_lady_army = yes
+					exists = planet
+				}
+			}
+			random_owned_army = {
+				limit = { is_lady_army = yes }
+				planet = { save_event_target_as = wsg_lady_armed_science_location }
+			}
+		}
+		else = {
+			random_owned_army = {
+				limit = { is_lady_army = yes }
+				fleet = { save_event_target_as = wsg_lady_armed_science_location }
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			save_event_target_as = wsg_lady_armed_science_location
+		}
+	}
+	set_country_flag = wsg_lady_armed_science_active
+	every_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_leader }
+		owner = { check_dragonslayer_wsg_lady = yes }
+		kill_leader = { show_notification = no }
+	}
+	create_fleet = {
+		name = "NAME_lady_Contingency_fleet"
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_WG_LADY"
+				design = "NAME_WG_LADY_SCIENCE"
+				graphical_culture = "ai_01"
+			}
+			set_fleet_stance = evasive
+			set_location = event_target:wsg_lady_armed_science_location
+			set_fleet_flag = lady_armed_science
+			save_global_event_target_as = lady_science_ship
+			owner = {
+				if = {
+					limit = { has_country_flag = wsg_lady_weaken }
+					create_leader = {
+						name = "NAME_WG_LADY"
+						class = scientist
+						sub_type = survey
+						species = event_target:wsg_lady_species
+						event_leader = yes
+						gender = indeterminable
+						immortal = yes
+						skill = 10
+						set_age = 17
+						traits = {
+							trait = leader_trait_scientist_wsg_lady_science_ship_weaken
+						}
+						effect = {
+							change_leader_portrait = wsg57
+							set_leader_flag = wsg_lady_leader
+							set_leader_flag = wsg_lady_scientist
+							set_leader_flag = has_gained_level_trait
+							set_leader_flag = has_gained_trait
+							save_global_event_target_as = lady_survey_scientist
+						}
+					}
+				}
+				else = { create_leader = {
+					name = "NAME_WG_LADY"
+					class = scientist
+					sub_type = survey
+					species = event_target:wsg_lady_species
+					event_leader = yes
+					gender = indeterminable
+					immortal = yes
+					skill = 10
+					set_age = 17
+					traits = {
+						trait = leader_trait_scientist_wsg_lady_science_ship
+					}
+					effect = {
+						change_leader_portrait = wsg57
+						set_leader_flag = wsg_lady_leader
+						set_leader_flag = wsg_lady_scientist
+						set_leader_flag = has_gained_level_trait
+						set_leader_flag = has_gained_trait
+						save_global_event_target_as = lady_survey_scientist
+					}
+				}}
+			}
+			set_leader = last_created_leader
+			add_modifier = {
+				modifier = wg_lady
+				days = -1
+			}
+		}
+		settings = { 
+			can_upgrade = no 
+			can_disband = no
+			can_change_composition = no 
+			can_change_leader = no 
+			uses_naval_capacity = no
+			spawn_debris = no 
+		}
+	}
+	every_owned_fleet = {
+		limit = { has_fleet_flag = lady_fleet2 }
+		delete_fleet = {
+			target = this
+			kill_leader = no
+			destroy_template = yes
+		}
+	}
+	every_owned_ship = {
+		limit = { is_ship_size = wsg_lady_juggernaut }
+		delete_ship = this
+	}
+	every_owned_army = {
+		limit = { is_lady_army = yes }
+		if = {
+			limit = { exists = leader }
+			unassign_leader = leader
+		}
+		remove_army = yes
+	}
+	remove_country_flag = wsg_lady_governor_active
+	remove_country_flag = wsg_lady_warship_active
+	remove_country_flag = wsg_lady_army_active
+	random_owned_leader = {
+		limit = { has_leader_flag = wsg_lady_scientist }
+		add_lady_science_ship_affection_trait = yes
+	}
+}
+
+reset_lady_affection_variables = {
+	set_variable = { which = "planets_no_affection_lady" value = 0 }
+	set_variable = { which = "systems_no_affection_lady" value = 0 }
+	set_variable = { which = "systems_no_affection_lady" value = 0 }
+}
+
+# 使用完成后一定要clear_global_event_target = wsg_player_nickname !!!
+# scope: country
+# output: event_target:wsg_player_nickname
+# 使用方法：在任何处于国家类型的作用域下调用此函数以输出玩家昵称（大小姐对玩家的称呼，不是真的玩家昵称）
+# 调用函数后可在本地化文件中引用wsg_player_nickname的event target
+# 即直接加上[wsg_player_nickname.GetName]
+# 为避免bug，event target使用的是全局变量
+# 使用完成后一定要clear_global_event_target = wsg_player_nickname !!!
+get_player_nickname = {
+	if = {
+		limit = { has_country_flag = has_nickname }
+		event_target:wsg_lady_country = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = lady_naming_fleet }
+				save_global_event_target_as = wsg_player_nickname
+			}
+		}
+		if = { #找不到储存命名的船，调用预设名字的船作为昵称
+			limit = { NOT = { exists = event_target:wsg_player_nickname }}
+			event_target:wsg_player_default_nickname = {
+				save_global_event_target_as = wsg_player_nickname
+			}
+		}
+	}
+	else = { #该国家并没有设定大小姐用的昵称，调用预设名字作为昵称
+		event_target:wsg_player_default_nickname = {
+			save_global_event_target_as = wsg_player_nickname
+		}
+	}
+}
+
+# scope: country
+check_dragonslayer_wsg_lady = {
+	if = {
+		limit = { has_country_flag = dragonslayer_wsg_lady }
+		break = yes
+	}
+	if = { 
+		limit = { OR = {
+			has_trait = leader_trait_dragonslayer 
+			has_trait = leader_trait_dragonbane
+		}}
+		set_country_flag = dragonslayer_wsg_lady
+	}
+}
+
+# scope: fleet
+create_wsg_lady_army_transport = {
+	random_country = {
+		limit = { has_country_flag = gain_wsg_lady }
+		save_event_target_as = wsg_lady_own_country
+	}
+	if = {
+		limit = { 
+			event_target:wsg_lady_own_country = { 
+				check_variable = { which = lady_affection value >= @lady_affection_to_lv5 }
+				has_country_flag = married_wsg_lady
+			}
+		}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army_affection_5_dragonslayer"
+			}
+		} else = {
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army_affection_5"
+			}
+		}
+		remove_lady_army = yes
+		break = yes
+	}
+	if = {
+		limit = { event_target:wsg_lady_own_country = { check_variable = { which = lady_affection value >= @lady_affection_to_lv3 }}}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army_affection_3_dragonslayer"
+			}
+		} else = {
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army_affection_3"
+			}
+		}
+		remove_lady_army = yes
+		break = yes
+	} 
+	if = { 
+		limit = { event_target:wsg_lady_own_country = { check_variable = { which = lady_affection value < @lady_affection_to_lv3 }}}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army_dragonslayer"
+			}
+		} else = {
+			create_army_transport = {
+				ship_name = "NAME_WG_LADY"
+				army_name = "NAME_WG_LADY"
+				army_type = "lady_army"
+			}
+		}
+		remove_lady_army = yes
+	}
+}
+
+# scope: planet
+create_wsg_lady_army_troop = {
+	random_country = {
+		limit = { has_country_flag = gain_wsg_lady }
+		save_event_target_as = wsg_lady_own_country
+	}
+	if = {
+		limit = { 
+			event_target:wsg_lady_own_country = { 
+				check_variable = { which = lady_affection value >= @lady_affection_to_lv5 }
+				has_country_flag = married_wsg_lady
+			}
+		}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army_affection_5_dragonslayer
+			}
+		} else = {
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army_affection_5
+			}
+		}
+		remove_lady_army = yes
+		break = yes
+	}
+	if = {
+		limit = { event_target:wsg_lady_own_country = { check_variable = { which = lady_affection value >= @lady_affection_to_lv3 }}}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army_affection_3_dragonslayer
+			}
+		} else = {
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army_affection_3
+			}
+		}
+		remove_lady_army = yes
+		break = yes
+	} 
+	if = { 
+		limit = { event_target:wsg_lady_own_country = { check_variable = { which = lady_affection value < @lady_affection_to_lv3 }}}
+		if = {
+			limit = { event_target:wsg_lady_own_country = { has_country_flag = dragonslayer_wsg_lady }}
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army_dragonslayer
+			}
+		} else = {
+			create_army = {
+				owner = event_target:wsg_lady_own_country
+				type = lady_army
+			}
+		}
+		remove_lady_army = yes
+	}
+}
+
+remove_lady_army = {
+	last_created_army = { save_event_target_as = new_lady_army }
+	event_target:wsg_lady_own_country = {
+		every_owned_army = {
+			limit = { 
+				NOT = { is_same_value = event_target:new_lady_army }
+				is_lady_army = yes
+			}
+			remove_army = yes
+		}
+	}
+}

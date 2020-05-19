@@ -1,0 +1,12 @@
+	shimakaze_active_diplo = {
+		has_active_event = {
+			wsg_shimakaze.3
+			wsg_shimakaze.30001
+			wsg_shimakaze.30002
+			wsg_shimakaze.30003
+			wsg_shimakaze.30010
+			wsg_shimakaze.30011
+			wsg_shimakaze.30012
+			wsg_shimakaze.30013
+		}
+	}

@@ -1,0 +1,69 @@
+tech_boss_weapen_ion = {
+    area = physics
+    icon = tech_boss_weapen_ion
+	cost = @tier5cost1
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+}
+
+tech_wg_gras = {
+    area = physics
+    icon = tech_wg_gras
+	cost = @tier4cost2
+	tier = 4
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+}
+
+tech_wg_waterB = {
+    icon = tech_wg_waterB
+	cost = @tier5cost1
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = 40
+	is_rare = yes
+	is_dangerous = yes
+	
+
+	potential = {
+		has_country_flag = tech_waterB_allowed_flag	
+		has_ascension_perk = ap_colossus
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+		}
+	}
+}
+
+
+tech_UNITEDFLEET2 = {
+    area = physics
+    icon = tech_UF
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+			is_country_type = wg_crisis_country
+		}
+	}	
+}

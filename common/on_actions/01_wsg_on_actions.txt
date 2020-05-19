@@ -1,0 +1,519 @@
+# called during empire initialization when starting a new game
+# scope: country
+on_game_start_country = {
+	events = {
+		wsg.1
+		wsg.3
+		wsg.5
+		wsg.6
+		wg_fe.4
+		sh.1
+		sh.2
+		sh.3
+		wsgancrel.3
+		wsgancrel.30
+		wsg.30310
+		sh.3017
+		wsg.3046
+#		wsg.3047
+		# wsg.3053
+		# wsg.3076
+		wsgancrel.1191
+		sh.3030
+		sh.3034
+		sh.3038
+		wsg.3111
+	}
+}
+
+on_game_start = {
+	events = {
+		wg_traits.1
+		sh_traits.1
+		wg_aft.5
+		wsg.3076
+		wg_boss.1000
+		wg_crisis.10004
+		wg_kuat.1
+	}
+}
+
+# Triggers when a Special Project to apply a species modification template has completed.
+# Note that this will trigger once for each combination of planet & original species.
+#
+# This = Country
+# From = Species ( Post Modification )
+on_modification_complete = {
+	events = {
+		wg_traits.3        
+		wg_traits.4
+		sh_traits.3      
+		sh_traits.4	
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		sh.3024
+		sh.3025
+		wg_crisis.35
+		wsg.3058
+		wsg.3059
+		wg_lady.30
+		wg_lady.44
+		wg_lady.48
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		wg_traits.1        
+		wg_traits.2
+		sh_traits.1        
+		sh_traits.2
+		sh.3016	
+		wsgancrel.100
+		wg_lady.122
+	}
+}
+on_yearly_pulse_country = {
+	events = {
+		wsg.30100
+		wg_fe.5
+		wsg.3106
+		wsg.3110
+		# wg_crisis.301
+		wg_crisis.97
+		wg_crisis.73
+	}
+}
+
+on_monthly_pulse = {
+	events = {
+		wg_crisis.13
+		wg_crisis.302
+		wg_crisis.98
+		wg_aft.1
+	}
+}
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		wsg.1100
+		wsg.1150
+		wsg.1151
+		wsg.1152
+		wsg.1153
+		wsg.3010
+		wsgancrel.20
+		sh.6
+		wsg.3050
+		sh.30280
+		sh.3029
+		wsgancrel.120
+		wg_aft.8
+		wsg.3118
+	}
+}
+
+
+# Called during empire initialization when starting a new game if has_secondary_species game rule is true.
+# Called before empire_init_create_capital_pops.
+# scope: planet
+# from: founder species
+# fromfrom: secondary species (if exists)
+empire_init_capital_planet = {
+	events = {
+		#game_start.12 # starting buildings, districts & pops
+		# at this point the species might have changed (because we added traits), so FROMFROM might not be the secondary species anymore
+		wsg.2
+		sh.1
+	}
+}
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		wsg.1010
+		wsg.2010
+		sh.1010
+		sh.2010
+		sh.3010
+	}
+}
+
+# Executed when the ruler is ousted and goes back to their pre-ruler class
+# From = Previous Ruler, already has the new class
+# This = Country
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		wsg.1011
+		wsg.2011
+		sh.1011
+		sh.2011
+		sh.3011
+	}
+}
+
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_victim = {
+	events = {
+		wg_crisis.11
+		wg_crisis.44
+		wg_boss.3
+		
+	}	
+}
+
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_perp = {
+	events = {
+		wg_crisis.45
+	}
+}
+
+# This = owner of fleet 1 (destroyed)
+# From = owner of fleet 2 (combatant)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_victim = {
+	events = {
+		sh.3021
+		wsg.3043
+		wg_crisis.100
+		wg_crisis.46
+		wg_crisis.70
+		wg_crisis.93
+		wsg.3078
+		wsg.3081
+		wg_lady.33
+		wg_lady.34
+		wg_lady.43
+		wg_boss.23
+		wg_boss.29
+		wg_boss.33
+		wg_boss.37
+		wg_boss.51
+	}
+}
+
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+		wg_lady.90
+		wg_boss.68
+	}
+}
+
+on_building_complete = {
+	events = {
+		wsg.3033
+	}
+}
+
+on_building_replaced = {
+	events = {
+		wsg.3033
+	}
+}
+
+on_colony_1_year_old = {
+	events = {
+		wsg.3037
+	}
+}
+
+# This = owner of fleet 1
+# From = owner of fleet 2
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_entering_battle = {
+	events = {
+		mwsge_drone.1
+		mwsge_drone.11
+		wg_aft.9
+	}
+}
+
+# Triggers when trying to open the diplomacy view for countries with custom diplomacy.
+# Country scope
+# This = target country (player)
+# From = source country
+on_custom_diplomacy = {
+	events = {
+		wg_crisis.20
+		wg_crisis.23
+		wg_lady.24
+		wg_lady.25
+		wg_lady.26
+		wg_lady.27
+		wg_lady.29
+		wg_lady.28
+		wg_lady.1000
+		wg_lady.1001
+		wg_lady.10000
+		wg_lady.10001
+	}
+}
+
+# Planet has taken damage from orbital bombardment
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		wg_crisis.10
+		sh.3031
+	}
+}
+
+# This = owner of fleet
+# From = fleet
+# FromFrom = planet (if any)
+on_fleet_auto_move_arrival = {
+	events = {
+		# wg_crisis.41
+	}
+}
+
+#This = destroyed country
+#From = optional, destroyer (country)
+on_country_destroyed = {
+	events = {
+		wg_crisis.50
+	}
+}
+
+on_five_year_pulse = {
+	events = {
+		wg_crisis.10002
+	}
+}
+
+# this = country
+on_five_year_pulse_country = {
+	events = {
+		# wg_crisis.10005
+	}
+}
+
+# this = country
+on_bi_yearly_pulse_country = {
+	events = {
+	}
+}
+
+# This = owner of fleet
+# From = disbanded fleet
+on_fleet_disbanded = {
+	events = {
+		wg_crisis.71
+		wg_lady.41
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		wg_crisis.72
+	}
+}
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# IDENTITIES: attacker is the side that "IsHostile" to
+# the planet controller; e.g. spawned monster armies
+# are attackers, but if they win and the player attempts
+# to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+	events = {
+		wsg.3039
+		wg_lady.37
+		wg_parit.6
+		wg_aft.13
+	}
+}
+
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_win = {
+	events = {
+		wg_aft.13
+	}
+}
+
+# Triggers country_event for the attacker upon defeat
+# This = country, attack leader
+# From = country, planet owner
+# FromFrom = planet
+on_planet_attackers_lose = {
+	events = {
+		wsg.30390
+		wg_lady.38
+	}
+}
+
+# Triggers event when ship enters a system
+# Scope = Ship
+# From = System	
+# FromFrom = Country
+on_entering_system = {
+	events = {
+		wsg.3100
+		wg_parit.5
+		wg_boss.5
+		wg_boss.20
+		wg_parit.12
+		wg_boss.24
+		wg_boss.36
+		wg_boss.46
+		wg_boss.73
+		wg_boss.76		
+	}
+}
+
+# A fleet has entered a system
+# Scope = Fleet
+# From = System
+on_entering_system_fleet = {
+	events = {
+		wg_parit.16
+		wg_boss.71
+	}
+}
+
+# This = construction ship
+# Fires when construction is complete,
+# immediately before station is created
+on_building_observation_station = {
+	events = {
+		wsg.3101
+	}
+}
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+		wg_lady.32
+		wg_aft.20
+		wg_aft.21
+		wg_aft.31
+	}
+}
+
+# Executed as new ruler has been set
+# This = Country
+on_ruler_set = {
+	events = {
+		wsg.3107
+	}
+}
+
+on_fleet_enter_orbit = {
+	events = {
+		wg_parit.3
+	}
+}
+
+# A leader leveled up.
+# Scope = Country
+# From = Leader
+on_leader_level_up = {
+	events = {
+		wg_aft.3
+	}
+}
+
+# A ship has surveyed a planet.
+# Scope = Ship
+# From = Planet
+on_survey = {
+	events = {
+		wg_aft.6
+	}
+}
+
+# A ship is done surveying the last unsurveyed planet in a system
+# Scope = ship
+# From = system
+on_system_survey_ship = {
+	events = {
+		wg_aft.7
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		wg_aft.11
+	}
+}
+
+# A war has been won
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+on_war_won = {
+	events = {
+		wg_aft.12
+	}
+}
+
+# Executed right after country has established communications with another country
+# This = Country which established the communications
+# From = Country which communications were established with
+on_post_communications_established = {
+	events = {
+		wg_aft.14
+	}
+}
+
+on_mid_game_pulse = {
+	events = {
+		wg_fe.20000
+	}
+}
+
+# This = Fleet ( science vessel )
+# From = Archaeological Site
+on_arch_stage_finished = {
+	events = {
+		# wg_aft.33
+		# wg_aft.1919
+	}
+}
+
+on_arch_site_finished = {
+	events = {
+		wg_aft.34
+	}
+}
+on_ship_disabled = {
+	events = {
+		wg_boss.77
+	}
+}

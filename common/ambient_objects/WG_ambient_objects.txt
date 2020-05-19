@@ -1,0 +1,24 @@
+ambient_object = {
+	name = "executor_ship_object"
+	entity = "WG_knigjt_hammer_executor_ruins_entity"
+	selectable = yes
+	show_name = yes
+	description = "executor_ship_object_desc"
+}
+
+ambient_object = {
+	name = "bug_object"
+	entity = "space_cloud_entity"
+	selectable = yes
+	show_name = yes
+	tooltip = "bug_object_tooltip"
+	description = "bug_object_desc"
+}
+ambient_object = {
+	name = "bug2_object"
+	entity = "stellarite_remnant_particle_entity"
+	selectable = yes
+	show_name = yes
+	tooltip = "bug_object_tooltip"
+	description = "bug_object_desc"
+}

@@ -1,0 +1,100 @@
+
+soundeffect = {
+	name = event_wg_wedding
+	sounds = {
+		sound = event_wg_wedding
+	}
+	volume = 0.5
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_first_meet
+	sounds = {
+		sound = event_shimakaze_first_meet
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_contact
+	sounds = {
+		sound = event_shimakaze_contact
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_talk1
+	sounds = {
+		sound = event_shimakaze_talk1
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_talk2
+	sounds = {
+		sound = event_shimakaze_talk2
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_talk3
+	sounds = {
+		sound = event_shimakaze_talk3
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_governor
+	sounds = {
+		sound = event_shimakaze_governor
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_scientist
+	sounds = {
+		sound = event_shimakaze_scientist
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_admiral
+	sounds = {
+		sound = event_shimakaze_admiral
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = event_shimakaze_general
+	sounds = {
+		sound = event_shimakaze_general
+	}
+	volume = 1.0
+	max_audible = 1
+	max_audible_behaviour = fail
+}
