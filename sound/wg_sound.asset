@@ -48,3 +48,68 @@ sound = {
 	name = "event_shimakaze_general"
 	file = "event/wg_shimakaze_general.wav"
 }
+
+sound = {
+	name = "event_shimakaze_affection_level_2"
+	file = "event/wg_shimakaze_affection_level_2.wav"
+}
+
+sound = {
+	name = "event_shimakaze_affection_level_3"
+	file = "event/wg_shimakaze_affection_level_3.wav"
+}
+
+sound = {
+	name = "event_shimakaze_affection_level_4"
+	file = "event/wg_shimakaze_affection_level_4.wav"
+}
+
+sound = {
+	name = "event_shimakaze_affection_max"
+	file = "event/wg_shimakaze_affection_max.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry"
+	file = "event/wg_shimakaze_marry.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry_talk1"
+	file = "event/wg_shimakaze_marry_talk1.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry_talk2"
+	file = "event/wg_shimakaze_marry_talk2.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry_talk3"
+	file = "event/wg_shimakaze_marry_talk3.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry_talk4"
+	file = "event/wg_shimakaze_marry_talk4.wav"
+}
+
+sound = {
+	name = "event_shimakaze_marry_talk5"
+	file = "event/wg_shimakaze_marry_talk5.wav"
+}
+
+sound = {
+	name = "event_shimakaze_contact_hurt"
+	file = "event/wg_shimakaze_contact_hurt.wav"
+}
+
+sound = {
+	name = "event_shimakaze_hurt"
+	file = "event/wg_shimakaze_hurt.wav"
+}
+
+sound = {
+	name = "event_shimakaze_recovered"
+	file = "event/wg_shimakaze_recovered.wav"
+}

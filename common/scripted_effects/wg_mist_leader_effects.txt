@@ -14,6 +14,8 @@ create_wsg_shimakaze_governor = {
 		set_age = 14
 		traits = {
 			trait = leader_trait_governor_wsg_shimakaze_happiness
+			trait = leader_trait_governor_warshipgirls
+			trait = leader_trait_governor_mist
 		}
 		effect = {
 			change_leader_portrait = wsg267_1
@@ -30,14 +32,6 @@ create_wsg_shimakaze_governor = {
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_governor = {
 		add_shimakaze_governor_affection_trait = yes
-		if = {
-			limit = { PREV = { has_country_flag = wsg_project_r }}
-			add_trait = leader_trait_governor_warshipgirls
-		}
-		if = {
-			limit = { PREV = { has_country_flag = wsg_mist }}
-			add_trait = leader_trait_governor_mist
-		}
 		level_up_shimakaze = yes
 	}
 }
@@ -56,6 +50,8 @@ create_wsg_shimakaze_scientist = {
 		set_age = 14
 		traits = {
 			trait = leader_trait_scientist_wsg_shimakaze_tech
+			trait = leader_trait_scientist_warshipgirls
+			trait = leader_trait_scientist_mist
 		}
 		effect = {
 			change_leader_portrait = wsg267_1
@@ -72,14 +68,6 @@ create_wsg_shimakaze_scientist = {
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_scientist = {
 		add_shimakaze_scientist_affection_trait = yes
-		if = {
-			limit = { PREV = { has_country_flag = wsg_project_r }}
-			add_trait = leader_trait_scientist_warshipgirls
-		}
-		if = {
-			limit = { PREV = { has_country_flag = wsg_mist }}
-			add_trait = leader_trait_scientist_mist
-		}
 		level_up_shimakaze = yes
 	}
 }
@@ -98,6 +86,8 @@ create_wsg_shimakaze_admiral = {
 		set_age = 14
 		traits = {
 			trait = leader_trait_admiral_wsg_shimakaze_speed
+			trait = leader_trait_admiral_warshipgirls
+			trait = leader_trait_admiral_mist
 		}
 		effect = {
 			change_leader_portrait = wsg267_1
@@ -114,14 +104,6 @@ create_wsg_shimakaze_admiral = {
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_admiral = {
 		add_shimakaze_admiral_affection_trait = yes
-		if = {
-			limit = { PREV = { has_country_flag = wsg_project_r }}
-			add_trait = leader_trait_admiral_warshipgirls
-		}
-		if = {
-			limit = { PREV = { has_country_flag = wsg_mist }}
-			add_trait = leader_trait_admiral_mist
-		}
 		level_up_shimakaze = yes
 	}
 }
@@ -140,6 +122,8 @@ create_wsg_shimakaze_general = {
 		set_age = 14
 		traits = {
 			trait = leader_trait_general_wsg_shimakaze_army
+			trait = leader_trait_general_warshipgirls
+			trait = leader_trait_general_mist
 		}
 		effect = {
 			change_leader_portrait = wsg267_1
@@ -156,14 +140,6 @@ create_wsg_shimakaze_general = {
 	remove_country_flag = wsg_shimakaze_admiral_active
 	event_target:shimakaze_general = {
 		add_shimakaze_general_affection_trait = yes
-		if = {
-			limit = { PREV = { has_country_flag = wsg_project_r }}
-			add_trait = leader_trait_general_warshipgirls
-		}
-		if = {
-			limit = { PREV = { has_country_flag = wsg_mist }}
-			add_trait = leader_trait_general_mist
-		}
 		level_up_shimakaze = yes
 	}
 }
@@ -172,6 +148,7 @@ remove_wsg_shimakaze_leader_type = {
 	every_owned_leader = {
 		limit = { has_leader_flag = wsg_shimakaze_leader }
 		kill_leader = { show_notification = no }
+		
 	}
 }
 

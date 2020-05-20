@@ -61,7 +61,6 @@ leader_trait_governor_shimakaze_affection_lv3 = {
 	icon = "gfx/interface/icons/traits/affection3.dds"
 	modifier = {
 		planet_building_build_speed_mult = 0.1
-		planet_jobs_produces_mult = 0.05
 		ship_destroyer_cost_mult = -0.10
 		ship_corvette_cost_mult = -0.10
 		shipsize_corvette_build_speed_mult = 0.50
@@ -106,6 +105,7 @@ leader_trait_governor_shimakaze_affection_lv4_max = {
 	modifier = {
 		planet_building_build_speed_mult = 0.15
 		planet_stability_add = 5
+		planet_jobs_produces_mult = 0.05
 		planet_army_build_time_mult = -0.15
 		planet_decision_enact_speed_mult = 0.25
 		shipsize_corvette_build_speed_mult = 0.75
@@ -128,12 +128,13 @@ leader_trait_governor_shimakaze_affection_lv5 = {
 	modifier = {
 		planet_building_build_speed_mult = 0.25
 		planet_stability_add = 5
+		planet_jobs_produces_mult = 0.10
 		planet_army_build_time_mult = -0.25
 		planet_decision_enact_speed_mult = 0.50
 		shipsize_corvette_build_speed_mult = 1
 		shipsize_destroyer_build_speed_mult = 1
-		ship_destroyer_cost_mult = -0.20
-		ship_corvette_cost_mult = -0.20
+		ship_destroyer_cost_mult = -0.15
+		ship_corvette_cost_mult = -0.15
 	}
 	leader_trait = { 
 		governor 
@@ -258,7 +259,7 @@ leader_trait_scientist_shimakaze_affection_lv4_max = {
 		ship_anomaly_research_speed_mult = 0.30
 		ship_archeaological_site_clues_add = 2
 		ship_speed_mult = 0.35
-		ship_ftl_jumpdrive_range_mult = 0.15
+		ship_ftl_jumpdrive_range_mult = 0.30
 	}
 	leader_trait = { 
 		scientist
@@ -280,7 +281,7 @@ leader_trait_scientist_shimakaze_affection_lv5 = {
 		ship_anomaly_research_speed_mult = 0.50
 		ship_archeaological_site_clues_add = 3
 		ship_speed_mult = 0.5
-		ship_ftl_jumpdrive_range_mult = 0.25
+		ship_ftl_jumpdrive_range_mult = 0.5
 	}
 	leader_trait = { 
 		scientist
@@ -408,6 +409,7 @@ leader_trait_admiral_shimakaze_affection_lv4_max = {
 		ship_tracking_add = 15
 		ship_sensor_range_add = 3
 		ship_disengage_chance_mult = 0.2
+		ship_ftl_jumpdrive_range_mult = 0.25
 	}
 	leader_trait = { 
 		admiral
@@ -432,6 +434,7 @@ leader_trait_admiral_shimakaze_affection_lv5 = {
 		ship_sensor_range_add = 3
 		ship_weapon_damage = 0.20
 		ship_disengage_chance_mult = 0.3
+		ship_ftl_jumpdrive_range_mult = 0.5
 	}
 	leader_trait = { 
 		admiral
