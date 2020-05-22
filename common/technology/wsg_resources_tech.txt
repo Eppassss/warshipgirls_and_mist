@@ -144,6 +144,12 @@ tech_warshipgirl_assembly_plant = {
 	prerequisites = { "tech_basic_science_lab_1" }
 	weight = @tier1weight1
 	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "wsg_assembly_edicts"
+			desc = "wsg_assembly_edicts_desc"
+		}
+	}	
 	
 	weight_modifier = {
 		modifier = {

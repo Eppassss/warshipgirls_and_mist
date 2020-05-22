@@ -427,6 +427,14 @@ country_event = {
         }}
 		name = wsgranking.1000.b
 	}
+    option = {
+        name = OK
+        trigger = { NOR = {
+            has_authority = auth_warshipgirls
+            has_authority = auth_shenhai
+        }}		
+    }
+	
 }
 
 # 打开商店的主界面
@@ -3217,7 +3225,24 @@ country_event = {
 		add_modifier = { modifier = wg_modifier_combat_shipcraft days = 3600 }
 		country_event = { id = wsgranking.20004 days = 3600 }
     }
-    
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+        name = wg_modifier_combat_fleet_control2
+        trigger = { NOT = { has_modifier = wg_modifier_combat_fleet_control2 }}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 210 }
+                fail_text = too_low_rank_fail_210
+			}
+            resource_stockpile_compare = { resource = energy value >= 10000 }
+			resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
+		}
+        add_resource = { 
+			energy = -10000 
+			sr_pantsu = -3000
+		}
+		add_modifier = { modifier = wg_modifier_combat_fleet_control2 }
+    }    
     option = {
 		custom_gui = "enclave_caravaneer_option"
         name = wg_modifier_combat_uf

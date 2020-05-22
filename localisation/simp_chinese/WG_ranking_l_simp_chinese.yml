@@ -231,6 +231,7 @@
  wg_modifier_combat_hull_algorithm:0 "改进舰船结构设计"
  wg_modifier_combat_elite_pilot:0 "雇佣精英飞行员"
  wg_modifier_combat_shipcraft:0 "舰船建造经济化"
+ wg_modifier_combat_fleet_control2:0 "舰队辅助通讯装置"
  wg_modifier_combat_fleet_control:0 "便携式舰队CIC"
  wg_modifier_combat_uf:0 "§R对联合舰队紧急预案§!"
  wg_modifier_combat_enhancement:0 "战利品武器最优化"

@@ -1,3 +1,45 @@
+decision_bison = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_bison
+	
+	resources = {
+		category = decisions
+		cost = {
+			energy = 1500
+		}
+	}
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_authority="auth_warshipgirls"
+			has_technology = tech_warshipgirl_assembly_plant
+		}		
+		NOR = {
+			has_modifier = planet_growth_discouraged
+			has_modifier = planet_population_control
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = planet_bison }
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "planet_bison" days = 4800 }
+	}
+	
+	ai_weight = {
+		weight = 5
+
+		modifier = {
+			factor = 0
+			free_housing < 1
+		}
+	}
+}
+
 decision_planet_lp = {
 	owned_planets_only = yes
 	sound = event_administrative_work

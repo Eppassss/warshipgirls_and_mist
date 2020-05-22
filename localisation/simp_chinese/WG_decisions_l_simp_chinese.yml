@@ -1,5 +1,11 @@
 ﻿l_simp_chinese:
 ###############################
+ decision_bison:0 "组装厂全功率运作" 
+ decision_bison_desc:0 "没时间浪费了，快上滚轮！"
+ 
+ planet_bison:0 "组装厂全功率运作" 
+ planet_bison_desc:0 "整个星球的人口组装厂已经全功率运作"
+
  decision_planet_lp:0 "星球级誓约仪式" 
  decision_planet_lp_desc:0 "我宣布，这颗星球上的每一位舰娘都是我可爱的老婆。"
  planet_lp:0 "誓约之戒" 

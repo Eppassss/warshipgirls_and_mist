@@ -5,7 +5,9 @@ wg_modifier_weapon_payment = {
 wg_modifier_storage_habitat = {
 	country_resource_max_add = 4000
 }
-
+wg_modifier_combat_fleet_control2 = {
+	country_command_limit_add = 50
+}
 wg_modifier_decision = {
     planet_decision_enact_speed_mult = 0.25
 	country_base_sr_pantsu_produces_add = -6

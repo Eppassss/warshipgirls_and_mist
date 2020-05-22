@@ -93,6 +93,8 @@
  galokiller_edicts_desc:0 "将这些残忍的杀戮生物直接丢到敌对星球上。"
  wsg_pantsu_edicts:0 "§H解锁法令与星球决策：§!战利品法案"
  wsg_pantsu_edicts_desc:0 "对战利品的合理运用能极大的提高港区的舰队的实力"
+ wsg_assembly_edicts:0 "§H星球决策：§!组装厂全功率运作"
+ wsg_assembly_edicts_desc:0 "无数的仓鼠通过滚轮为我们的组装厂提供源源不断的动力"
  wsg_neo_edicts:0 "§H解锁星球决策：§!NEO运用"
  wsg_neo_edicts_desc:0 "NEO能帮助我们提高星球生产"
  wsg_381_edicts:0 "危险！381警告！！"
