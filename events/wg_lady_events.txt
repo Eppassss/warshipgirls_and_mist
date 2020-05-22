@@ -1962,7 +1962,7 @@ country_event = {
 		planet_background = root
 		graphical_culture = root
 		city_level = root
-		room = root
+		room = bathhouse_room
 	}
 
 	trigger = {

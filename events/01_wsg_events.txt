@@ -434,7 +434,7 @@ country_event = {
 	
 	option = {
 		name = "wsg.1103.a"
-		add_research_option = "tech_building_wsg_neo"
+			add_research_option = "tech_building_wsg_neo"
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1
@@ -444,7 +444,7 @@ country_event = {
 	}
 	option = {
 		name = "wsg.1103.b"
-		add_research_option = "tech_building_wsg_neo"
+			add_research_option = "tech_building_wsg_neo"
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1

@@ -69,20 +69,7 @@ country_event = {
 		else = {
 			every_owned_leader = {
 				limit = { 
-					OR = {
-						AND = {
-							is_wg_leader = yes
-							NOT = {	has_leader_flag = affection_max }
-						}
-						AND = {
-							has_leader_flag = wsg_lady_leader
-							owner = { NOT = { has_country_flag = lady_affection_max }}
-						}
-						AND = {
-							has_leader_flag = wsg_shimakaze_leader
-							owner = { NOT = { has_country_flag = shimakaze_affection_max }}
-						}
-					}
+					is_wg_leader_with_affection_not_full = yes
 				}
 				if = {
 					limit = {
@@ -280,12 +267,12 @@ country_event = {
 	immediate = {
 		change_variable = { which = shimakaze_affection value = 2 }
 		random_list = {
-			25 = { change_variable = { which = shimakaze_affection value = 1 }}
-			75 = {}
+			40 = { change_variable = { which = shimakaze_affection value = 1 }}
+			60 = {}
 		}
 		random_list = {
-			15 = { change_variable = { which = shimakaze_affection value = 1 }}
-			85 = {}
+			20 = { change_variable = { which = shimakaze_affection value = 1 }}
+			80 = {}
 		}
 		reset_shimakaze_affection_level = yes
 		if = {
@@ -2902,34 +2889,32 @@ country_event = {
 	immediate = {
 		every_system_within_border = {
 			every_system_planet = {
-				limit = { exists = archaeological_site }
-				if = {
+				limit = { 
+					exists = archaeological_site 
+					archaeological_site = { 
+						is_site_completed = no
+						is_site_under_excavation = yes 
+					}
+				}
+				random_fleet_in_orbit = {
 					limit = { 
-						archaeological_site = { 
-							is_site_completed = no
-							is_site_under_excavation = yes 
+						exists = leader
+						leader = { 
+							leader_class = scientist
+							is_wg_leader_with_affection_not_full = yes 
 						}
 					}
-					random_fleet_in_orbit = {
-						limit = { 
-							exists = leader
-							leader = { 
-								leader_class = scientist
-								is_wg_leader_with_affection_not_full = yes 
-							}
+					leader = { 
+						if = {
+							limit = { has_leader_flag = wsg_lady_scientist }
+							owner = { PREV = { add_lady_scientist_affection_monthly = yes }}
 						}
-						leader = { 
-							if = {
-								limit = { has_leader_flag = wsg_lady_scientist }
-								owner = { PREV = { add_lady_scientist_affection_monthly = yes }}
-							}
-							else_if = {
-								limit = { has_leader_flag = wsg_shimakaze_leader }
-								owner = { PREV = { add_shimakaze_scientist_affection_monthly = yes }}
-							}
-							else = {
-								add_scientist_affection_monthly = yes 
-							}
+						else_if = {
+							limit = { has_leader_flag = wsg_shimakaze_leader }
+							owner = { PREV = { add_shimakaze_scientist_affection_monthly = yes }}
+						}
+						else = {
+							add_scientist_affection_monthly = yes 
 						}
 					}
 				}
@@ -2938,7 +2923,7 @@ country_event = {
 	}
 }
 
-#考古完成一个坟加2~5好感
+#考古完成一个坟加4~7好感
 fleet_event = {
 	id = wg_aft.34
 	hide_window = yes
@@ -2954,7 +2939,7 @@ fleet_event = {
 
 	immediate = {
 		leader = {
-			while = { count = 2
+			while = { count = 4
 				add_scientist_affection_no_check = yes
 			}
 			random_list = {

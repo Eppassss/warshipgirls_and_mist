@@ -15,6 +15,19 @@ category = {
 		event_shimakaze_scientist
 		event_shimakaze_admiral
 		event_shimakaze_general
+		event_shimakaze_affection_level_2
+		event_shimakaze_affection_level_3
+		event_shimakaze_affection_level_4
+		event_shimakaze_affection_max
+		event_shimakaze_marry
+		event_shimakaze_marry_talk1
+		event_shimakaze_marry_talk2
+		event_shimakaze_marry_talk3
+		event_shimakaze_marry_talk4
+		event_shimakaze_marry_talk5
+		event_shimakaze_contact_hurt
+		event_shimakaze_hurt
+		event_shimakaze_recovered
 	}
 	
 	compressor =  {
