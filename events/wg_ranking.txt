@@ -995,7 +995,7 @@ country_event = {
             }
         }
         allow = {
-            resource_stockpile_compare = { resource = sr_pantsu value >= 5000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
             resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_210
@@ -1007,13 +1007,45 @@ country_event = {
             }
         }
         add_resource = {
-            sr_pantsu = -5000
+            sr_pantsu = -3000
             sr_alpha = -3000
         }
         add_research_option = tech_wsg_410
         add_tech_progress = { tech = tech_wsg_410 progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
     }
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = tech_wsg_EW
+        custom_tooltip = "tech_wsg_EW"
+        trigger = {
+            has_authority = auth_warshipgirls
+            has_technology = tech_wsg_406
+            NOR = {
+                has_tech_option = tech_wsg_EW
+                has_technology = tech_wsg_EW
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 4000 }
+            resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_230
+				check_variable = { which = "rankpts" value > 230 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -4000
+            sr_alpha = -3000
+        }
+        add_research_option = tech_wsg_EW
+        add_tech_progress = { tech = tech_wsg_EW progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+    }	
     ## 深海武器兑换
 	option = {
 		custom_gui = "enclave_caravaneer_option"

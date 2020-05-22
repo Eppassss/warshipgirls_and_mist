@@ -148,7 +148,6 @@ remove_wsg_shimakaze_leader_type = {
 	every_owned_leader = {
 		limit = { has_leader_flag = wsg_shimakaze_leader }
 		kill_leader = { show_notification = no }
-		
 	}
 }
 
