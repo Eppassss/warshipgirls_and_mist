@@ -6,6 +6,8 @@ can_species_be_assembled = {
 			OR = {
 				has_trait = trait_machine_unit
 				has_trait = trait_mechanical
+				#少前mod兼容
+				has_trait = trait_doll
 			}
 			ROOT = { owner = { NOT = { has_authority = auth_warshipgirls } } }
 			ROOT = { owner = { NOT = { has_authority = auth_shenhai } } }
@@ -54,6 +56,8 @@ can_build_branch_offices = {
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_corporate
+			#少前兼容
+			has_civic = civic_gk
 		}
 	}
 }
@@ -71,6 +75,8 @@ can_support_branch_offices = {
 	NOR = {
 		has_authority = auth_corporate
 		has_authority = auth_warshipgirls
+		#少前兼容
+		has_civic = civic_gk
 	}
 }
 can_build_branch_office_on_planet = {
