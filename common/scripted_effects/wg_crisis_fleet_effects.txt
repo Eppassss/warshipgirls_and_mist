@@ -272,6 +272,14 @@ create_wg_crisis_flagship_fleet = {
         effect = {
             set_owner = event_target:wg_crisis_country
             while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_UF_Flagship"
+                    graphical_culture = "wsg_01"
+                }
+            }			
+            while = {
                 count = 2
                 create_ship = {
                     name = random

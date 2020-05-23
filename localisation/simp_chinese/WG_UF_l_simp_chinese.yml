@@ -51,6 +51,7 @@
 
  wg_battlecrusier:0 "联合战列巡洋舰" 
  wg_dreadnought:0 "联合无畏舰" 
+ UF_Flagship:0 "联合旗舰" 
  uf_buffer:0 "联合电子战战舰" 
  wg_dimensional_small_portal: "侧窗"
  wg_dimensional_small_portal_plural: "侧窗" 
