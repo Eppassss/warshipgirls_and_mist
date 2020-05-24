@@ -31,6 +31,13 @@ can_species_be_assembled = {
 			}
 			ROOT = { owner = { has_authority = auth_shenhai } }
 		}
+		#星舰舰娘制造
+		AND = {
+			OR={
+				has_trait = swg_trait_starshipgirls
+			}
+			ROOT = { owner = { has_authority = auth_starshipgirls } }
+		}
 	}
 }
 
@@ -46,6 +53,8 @@ pop_generates_crime = {
 		has_trait = sh_trait_shenhai3
 		has_trait = sh_trait_silent
 		has_trait = trait_intelligent_galo
+		#星战舰娘
+		has_trait = swg_trait_starshipgirls
 	}
 }
 
