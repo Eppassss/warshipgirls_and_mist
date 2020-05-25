@@ -63,10 +63,10 @@ portrait_groups = {
 				portraits = {
 					sw01
 					sw01_1
+					sw01_2
 					sw02
 					sw03
 					sw03_1
-					sw03_2
 					sw04
 					sw06
 					sw07
@@ -93,10 +93,10 @@ portrait_groups = {
 				portraits = {
 					sw01
 					sw01_1
+					sw01_2
 					sw02
 					sw03
 					sw03_1
-					sw03_2
 					sw04
 					sw06
 					sw07
@@ -122,10 +122,10 @@ portrait_groups = {
 				portraits = {
 					sw01
 					sw01_1
+					sw01_2
 					sw02
 					sw03
 					sw03_1
-					sw03_2
 					sw04
 					sw06
 					sw07
@@ -151,10 +151,10 @@ portrait_groups = {
 				portraits = {
 					sw01
 					sw01_1
+					sw01_2
 					sw02
 					sw03
 					sw03_1
-					sw03_2
 					sw04
 					sw06
 					sw07

@@ -2104,3 +2104,15 @@ remove_ruler_negative_trait = {
 		leader_trait_arrested_development = { remove_trait = leader_trait_arrested_development }
 	}
 }
+
+# scope: leader
+check_and_remove_normal_leader_affection_traits = {
+	if = {
+		limit = { has_affection_trait = yes }
+		remove_governor_affection_trait = yes
+		remove_scientist_affection_trait = yes
+		remove_admiral_affection_trait = yes
+		remove_general_affection_trait = yes
+		remove_ruler_affection_trait = yes
+	}
+}

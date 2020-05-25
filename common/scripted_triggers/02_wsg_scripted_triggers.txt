@@ -111,7 +111,11 @@ has_enough_consumer_goods = {
 
 is_wg_leader = {
 	# 岛风是是特殊好感度领袖，不需要检查普通好感度特性
-	NOT = { has_leader_flag = wsg_special_affection_leader }
+	NOR = { 
+		has_leader_flag = wsg_special_affection_leader 
+		has_leader_flag = wsg_lady_leader
+	}
+	# 不能是缄默深海
 	owner = {
 		NOR = {
 			has_ascension_perk = ap_shenhai_silent

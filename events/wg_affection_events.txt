@@ -71,11 +71,11 @@ country_event = {
 				limit = { 
 					is_wg_leader_with_affection_not_full = yes
 				}
-				if = {
+				if = { #检查所有没有好感度特性的舰娘领袖并加特性
 					limit = {
 						has_global_flag = initialize_affection_traits
+						is_wg_leader = yes
 						has_affection_trait = no
-						NOT = { has_leader_flag = wsg_shimakaze_leader }
 					}
 					set_variable = { which = affection_level value = 1 }
 					switch = {
@@ -98,12 +98,13 @@ country_event = {
 								ROOT = { every_owned_planet = {
 									limit = { sector = { is_same_value = PREVPREVPREV }}
 									PREVPREVPREVPREV = { change_variable = {
+										# 数该总督正在管理多少个球，管理的球越多增加好感概率越大
 										which = admin_colonies value = 1
 									}}
 								}}
 							}}
 							random_list = {
-								1 = {
+								1 = { 
 									modifier = {
 										check_variable = { which = "admin_colonies" value >= 2 }
 										add = 1
@@ -128,7 +129,7 @@ country_event = {
 										default = { add_governor_affection = yes }
 									}
 								}
-								39 = {
+								39 = { # 伪随机
 									modifier = {
 										check_variable = { which = "months_no_affection" value >= 3 }
 										add = -5
@@ -3040,10 +3041,18 @@ country_event = {
 		if = {
 			limit = { has_country_flag = gain_wsg_lady }
 			reset_lady_affection_level = yes
+			random_owned_leader = {
+				limit = { has_leader_flag = wsg_lady_leader }
+				check_and_remove_normal_leader_affection_traits = yes
+			}
 		}
 		if = {
 			limit = { has_country_flag = get_wsg_shimakaze }
 			reset_shimakaze_affection_level = yes
+			random_owned_leader = {
+				limit = { has_leader_flag = wsg_shimakaze_leader }
+				check_and_remove_normal_leader_affection_traits = yes
+			}
 		}
 	}
 }

@@ -207,6 +207,8 @@ create_wg_crisis_main_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_bc value = 15 }
+            set_variable = { which = num_bc_exist value = 15 }
             while = { count = 15
                 create_ship = {
                     name = random
@@ -214,6 +216,8 @@ create_wg_crisis_main_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_dreadnought value = 1 }
+            set_variable = { which = num_dreadnought_exist value = 1 }
             while = { count = 1
                 create_ship = {
                     name = random
@@ -316,6 +320,8 @@ create_wg_crisis_flagship_fleet = {
 					upgradable = no
                 }
             }
+            set_variable = { which = num_bc value = 20 }
+            set_variable = { which = num_bc_exist value = 20 }
             while = { count = 20
                 create_ship = {
                     name = random
@@ -323,6 +329,8 @@ create_wg_crisis_flagship_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_dreadnought value = 2 }
+            set_variable = { which = num_dreadnought_exist value = 2 }
             while = { count = 2
                 create_ship = {
                     name = random
@@ -396,6 +404,11 @@ create_wg_crisis_guard_fleet = {
         name = "NAME_Portal_Guard_Fleet"
         effect = {
             set_owner = event_target:wg_crisis_country
+            create_ship = {
+                name = random
+                design = "NAME_UF_Flagship"
+                graphical_culture = "wsg_01"
+            }
             while = { count = 3
                 create_ship = {
                     name = random
@@ -403,6 +416,8 @@ create_wg_crisis_guard_fleet = {
                     graphical_culture = "wsg_01"
                 }
             }
+            set_variable = { which = num_bc value = 20 }
+            set_variable = { which = num_bc_exist value = 20 }
             while = { count = 20
                 create_ship = {
                     name = random
@@ -410,6 +425,8 @@ create_wg_crisis_guard_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_dreadnought value = 2 }
+            set_variable = { which = num_dreadnought_exist value = 2 }
             while = { count = 2
                 create_ship = {
                     name = random
@@ -535,6 +552,8 @@ create_wg_crisis_greater_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_bc value = 10 }
+            set_variable = { which = num_bc_exist value = 10 }
             while = { count = 10
                 create_ship = {
                     name = random
@@ -542,6 +561,8 @@ create_wg_crisis_greater_fleet = {
                     upgradable = no
                 }
             }
+            set_variable = { which = num_dreadnought value = 1 }
+            set_variable = { which = num_dreadnought_exist value = 1 }
             while = { count = 1
                 create_ship = {
                     name = random
@@ -869,6 +890,7 @@ create_wg_crisis_raider_fleet = {
             assign_leader = last_created_leader
             set_fleet_flag = raider_fleet
             fleet_event = { id = wg_crisis.96 } 
+            add_modifier = { modifier = uf_raider_buff days = -1}
             # if = {
             #     limit = { has_global_flag = wg_crisis_normal }
             #     add_modifier = {
