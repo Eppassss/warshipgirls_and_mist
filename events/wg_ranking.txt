@@ -961,7 +961,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = tech_wsg_356laser
-        custom_tooltip = "tech_wsg_356laser"
+        custom_tooltip = "tech_wsg_356laser_desc"
         trigger = {
             has_authority = auth_warshipgirls
             has_technology = tech_wsg_203
@@ -993,7 +993,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = tech_wsg_410
-        custom_tooltip = "tech_wsg_410"
+        custom_tooltip = "tech_wsg_410_desc"
         trigger = {
             has_authority = auth_warshipgirls
             has_technology = tech_wsg_406
@@ -1025,7 +1025,7 @@ country_event = {
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = tech_wsg_EW
-        custom_tooltip = "tech_wsg_EW"
+        custom_tooltip = "tech_wsg_EW_desc"
         trigger = {
             has_authority = auth_warshipgirls
             has_technology = tech_wsg_406
@@ -4072,9 +4072,9 @@ country_event = {
 		name = EXCELLENT
         # 干掉的奖励
 		add_resource = {
-			energy = 2000
-			minerals = 4000
-            sr_pantsu = 400
+			energy = 8000
+			minerals = 8000
+            sr_pantsu = 4000
 		}
 	}
 }

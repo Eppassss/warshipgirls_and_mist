@@ -1502,7 +1502,7 @@ create_ra_admiral_1004 = {
             trait = leader_trait_admiral_Cabot
         }
         effect = {
-            change_leader_portrait = wsg325
+            change_leader_portrait = wsg9991
             set_leader_flag = cobot
             set_leader_flag = ra_admiral
         }
