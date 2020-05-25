@@ -78,6 +78,9 @@ wg_titan = {
 		ship_armor_add = 25000
 		ship_shield_add = 25000
 		ships_upkeep_mult = -1.0
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
 	}
 	size_multiplier = 16
 	fleet_slot_size = 16
@@ -101,6 +104,9 @@ wg_dreadnought = {
 		ship_armor_add = 150000
 		ship_shield_add = 150000
 		ships_upkeep_mult = -1.0
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
 	}
 	size_multiplier = 24
 	fleet_slot_size = 16

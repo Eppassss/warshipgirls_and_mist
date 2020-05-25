@@ -9,6 +9,9 @@ wg_think_tank = {
 		ship_piracy_suppression_add = 3	
 		ship_shield_add = 2000
 		ship_armor_add = 30000	
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
 	}
 	ship_modifier = {
 		ship_hyperlane_range_add = 4
@@ -55,7 +58,10 @@ wg_fletcher = {
 		ship_evasion_add = 90
 		ship_upkeep_mult = -0.8
 		ship_armor_add = 1000
-		ship_shield_add = 1000	
+		ship_shield_add = 1000
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
 	}
 	max_hitpoints = 4000
 	size_multiplier = 32
@@ -94,7 +100,10 @@ wg_boss_gars = {
 	modifier = {
 		ship_evasion_mult = -10.0
 		ship_shield_add = 300000
-		ship_armor_add = 300000		
+		ship_armor_add = 300000
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
 	}
 	max_hitpoints = 500000
 	size_multiplier = 0.25
@@ -150,6 +159,8 @@ wg_boss_space_dragon_Yukikaze = {
 	modifier = {
 		ship_evasion_add = 25
 		ships_upkeep_mult = -1
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1	
 	}
 	max_hitpoints = 30000
 	size_multiplier = 16
@@ -200,6 +211,8 @@ VVsphere = {
 	modifier = {
 		ship_evasion_add = 180
 		ship_armor_add = 500000
+		ship_hull_regen_add_static = 3
+		ship_armor_regen_add_static = 3	
 	}
 	max_hitpoints = 500000
 	combat_size_multiplier = 50
@@ -224,7 +237,10 @@ wg_livestar = {
 	modifier = {
 		ship_evasion_mult = -1.0
 		ship_armor_add = 500000
-		ship_shield_add = 500000	
+		ship_shield_add = 500000
+		ship_hull_regen_add_static = 2
+		ship_armor_regen_add_static = 2
+		ship_shield_regen_add_static = 2	
 	}
 	max_hitpoints = 1000000
 	size_multiplier = 64

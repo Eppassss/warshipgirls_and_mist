@@ -7,6 +7,9 @@ UF_Flagship = {
 	modifier = {
 		ship_armor_add = 4000000
 		ship_shield_add = 4000000
+		ship_hull_regen_add_static = 5
+		ship_armor_regen_add_static = 5
+		ship_shield_regen_add_static = 5	
 	}
 	max_hitpoints = 6000000
 	size_multiplier = 256

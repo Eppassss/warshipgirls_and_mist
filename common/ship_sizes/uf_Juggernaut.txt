@@ -8,6 +8,9 @@ uf_Juggernaut = {
 	modifier = {
 		ship_armor_add = 300000
 		ship_shield_add = 300000
+		ship_hull_regen_add_static = 2
+		ship_armor_regen_add_static = 2
+		ship_shield_regen_add_static = 2	
 	}
 	max_hitpoints = 600000
 	size_multiplier = 128
