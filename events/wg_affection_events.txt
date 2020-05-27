@@ -695,7 +695,6 @@ fleet_event = {
 	}
 }
 
-# 赢得战斗增加好感
 country_event = {
 	id = wg_aft.11
 	hide_window = yes
@@ -716,6 +715,28 @@ country_event = {
 
 	immediate = {
 		FROMFROM = {
+            if = {
+                limit = { has_fleet_flag = counting_affection }
+                fleet_event = { id = wg_aft.11000 }
+            }
+        }
+        FROMFROMFROM = { every_combatant_fleet = {
+			limit = { has_fleet_flag = counting_affection }
+            fleet_event = { id = wg_aft.11000 }
+        }}
+	}
+
+}
+
+# 赢得战斗增加好感
+fleet_event = {
+	id = wg_aft.11000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { is_in_combat = no }
 			if = {
 				limit = { 
 					exists = leader
@@ -811,6 +832,8 @@ country_event = {
 					}
 				}
 			}
+		} else = {
+			fleet_event = { id = wg_aft.11000 days = 1 }
 		}
 	}
 }
@@ -1340,14 +1363,10 @@ country_event = {
 	}
 }
 
-# 誓约仪式
 country_event = {
 	id = wg_aft.19
-	title = wg_aft.19.name
-	desc = wg_aft.19.desc
+	hide_window = yes
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_marry
-	show_sound = event_wg_wedding
 
 	immediate = {
 		every_owned_leader = {
@@ -1355,6 +1374,27 @@ country_event = {
 		}
 		event_target:married_leader = {
 			set_leader_flag = married
+			switch = {
+				trigger = has_trait
+				leader_trait_admiral_Rodney = { ROOT = { country_event = { id = wg_aft.19001 }}}
+				leader_trait_ruler_lexington = { ROOT = { country_event = { id = wg_aft.19002 }}}
+				default = { ROOT = { country_event = { id = wg_aft.19000 }}}
+			}
+		}
+	}
+}
+
+# 誓约仪式
+country_event = {
+	id = wg_aft.19000
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_marry
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = {
 			if = {
 				limit = { NOT = { has_leader_flag = wsg_event_leader }}
 				set_leader_flag = can_revive
@@ -1392,6 +1432,55 @@ country_event = {
 	option = {
 		name = wg_aft.19.a
 		custom_tooltip = wg_aft.19.a.tooltip
+	}
+}
+
+# 老罗誓约
+country_event = {
+	id = wg_aft.19001
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wg_rodney_wedding
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = { if = {
+			limit = { has_leader_flag = affection_max }
+			set_variable = { which = affection_level value = 5 }
+			remove_admiral_affection_trait = yes
+			add_trait = leader_trait_admiral_affection_lv5
+		}}
+	}
+
+	option = {
+		name = wg_aft.19.a
+	}
+}
+
+# 太太誓约
+country_event = {
+	id = wg_aft.19002
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_marry
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = { 
+			change_leader_portrait = wsg29_1
+			if = {
+				limit = { has_leader_flag = affection_max }
+				set_variable = { which = affection_level value = 5 }
+				remove_ruler_affection_trait = yes
+				add_ruler_trait = leader_trait_ruler_affection_lv5
+			}
+		}
+	}
+
+	option = {
+		name = wg_aft.19.a
 	}
 }
 
@@ -2412,6 +2501,17 @@ country_event = {
 				}
 				break = yes
 			}
+			if = { #乜提督
+				limit = { has_trait = leader_trait_admiral_NieAdmiral }
+				ROOT = { 
+					country_event = { id = wg_aft.1020 days = 5 random = 5 }
+					set_variable = { which = nie_affection value = affection }
+					set_variable = { which = nie_affection_level value = affection_level }
+					#统治者可以直接放逐然后set leader
+					clone_leader = { target = PREV class = admiral effect = { set_leader_flag = nieAdmiral }} 
+				}
+				break = yes
+			}
 		}
 		set_variable = { which = affection value = 0 }
 		set_variable = { which = affection_level value = 0 }
@@ -2668,6 +2768,48 @@ country_event = {
 
 	option = {
 		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = wg_aft.1020
+	title = wg_aft.1020.name
+	desc = wg_aft.1020.desc
+	picture = GFX_evt_revive_leader
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = nieAdmiral }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = admiral 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = nieAdmiral
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = nieAdmiral }
+			set_variable = { which = nie_affection value = PREV }
+			set_variable = { which = nie_affection_level value = PREV }
+			set_variable = { which = affection value = nie_affection }
+			set_variable = { which = affection_level value = nie_affection_level }
+			subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
+			reset_admiral_affection_level = yes
+			set_variable = { which = nie_affection value = 0 }
+			set_variable = { which = nie_affection_level value = 0 }
+		}
+		set_variable = { which = nie_affection value = 0 }
+		set_variable = { which = nie_affection_level value = 0 }
+	}
+
+	option = {
+		name = ASTOUNDING
 	}
 }
 

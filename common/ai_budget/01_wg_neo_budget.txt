@@ -1,0 +1,90 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+
+neo_expenditure_edicts = {
+	resource = sr_neo
+	type = expenditure
+	category = edicts
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		base = 0.5
+	}
+}
+
+
+neo_expenditure_planets = {
+	resource = sr_neo
+	type = expenditure
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.2
+	}	
+}
+
+neo_expenditure_ships = {
+	resource = sr_neo
+	type = expenditure
+	category = ships
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.1
+	}	
+}
+
+
+# Upkeep --------------------------------------------------------
+
+neo_upkeep_planets = {
+	resource = sr_neo
+	type = upkeep
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.9
+	}	
+}
+
+neo_upkeep_ships = {
+	resource = sr_neo
+	type = upkeep
+	category = ships
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.1
+	}	
+}

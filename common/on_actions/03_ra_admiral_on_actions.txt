@@ -5,6 +5,7 @@
 on_entering_battle = {
 	events = {
 		raa_skill.1
+		wg_leader.1
 		# raa_skill.10
 	}
 }
@@ -16,6 +17,7 @@ on_entering_battle = {
 on_space_battle_won = {
 	events = {
 		raa_skill.2
+		# wg_leader.2
 		# raa_skill.150
 	}
 }
@@ -64,5 +66,6 @@ on_fleet_destroyed_victim = {
 on_ship_disabled = {
 	events = {
 		raa_skill.10040
+		wg_leader.101
 	}
 }

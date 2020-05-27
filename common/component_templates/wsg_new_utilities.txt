@@ -18,8 +18,8 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
- 			sr_living_metal = 0.7
-			alloys = 35
+ 			sr_living_metal = 1.5
+			alloys = 50
 		}		
 		upkeep = {
 			energy = 1.2
@@ -36,9 +36,9 @@ utility_component_template = {
 	power = -180
 	modifier = {
 		ship_armor_add = 1400
-		ship_hull_add = 1800
-		ship_hull_mult = 0.015
-		ship_armor_mult = 0.015
+		ship_hull_add = 1600
+		ship_hull_mult = 0.01
+		ship_armor_mult = 0.01
 	}
 	
 	prerequisites = { "tech_living_metal_bulge" }
@@ -46,8 +46,8 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_living_metal = 2
-			alloys = 50
+			sr_living_metal = 4
+			alloys = 80
 		}		
 		upkeep = {
 			energy = 3.5

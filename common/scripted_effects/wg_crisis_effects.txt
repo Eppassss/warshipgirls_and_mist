@@ -71,6 +71,34 @@ create_UF_ambient_object = {
 	random_system_planet = {
 		limit = { is_star = yes }
 		create_ambient_object = {
+			type = unitedfleet_1
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}		
+		create_ambient_object = {
+			type = unitedfleet_2
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+create_UF_ambient_object2 = {
+	random_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
 			type = UF_extradimensional_1
 			entity_offset_angle = { min = 0 max = 360 }
 			entity_offset = { min = 30 max = 200 }
@@ -86,5 +114,29 @@ create_UF_ambient_object = {
 			use_3d_location = no
 			entity_face_object = this
 		}
+	}
+}
+
+# scope: ship
+add_many_hp = {
+	if = {
+		limit = { has_hp < 1000 }
+		add_modifier = { modifier = add_hp_200000_times days = $DAYS$ }
+	}
+	else_if = {
+		limit = { has_hp < 2000 }
+		add_modifier = { modifier = add_hp_100000_times days = $DAYS$ }
+	}
+	else_if = {
+		limit = { has_hp < 20000 }
+		add_modifier = { modifier = add_hp_10000_times days = $DAYS$ }
+	}
+	else_if = {
+		limit = { has_hp < 200000 }
+		add_modifier = { modifier = add_hp_1000_times days = $DAYS$ }
+	}
+	else_if = {
+		limit = { has_hp < 1000000 }
+		add_modifier = { modifier = add_hp_200_times days = $DAYS$ }
 	}
 }

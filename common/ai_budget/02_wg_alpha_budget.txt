@@ -1,0 +1,106 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+
+alpha_expenditure_edicts = {
+	resource = sr_alpha
+	type = expenditure
+	category = edicts
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		base = 0.5
+	}
+}
+
+
+alpha_expenditure_planets = {
+	resource = sr_alpha
+	type = expenditure
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.2
+	}	
+}
+
+alpha_expenditure_ships = {
+	resource = sr_alpha
+	type = expenditure
+	category = ships
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.1
+	}	
+}
+
+alpha_expenditure_upgrade = {
+	resource = sr_alpha
+	type = expenditure
+	category = ship_upgrades
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		base = 0.1
+	}
+}
+
+
+# Upkeep --------------------------------------------------------
+
+alpha_upkeep_planets = {
+	resource = sr_alpha
+	type = upkeep
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.9
+	}	
+}
+
+alpha_upkeep_ships = {
+	resource = sr_alpha
+	type = upkeep
+	category = ships
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+		}	
+	}
+	
+	fraction = {
+		weight = 0.1
+	}	
+}

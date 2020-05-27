@@ -11,3 +11,18 @@ ambient_object = {
 	selectable = no
 	show_name = no
 }
+
+ambient_object = {
+	name = "unitedfleet_1"
+	entity = "unitedfleet_crisis_system_effect_entity"
+	selectable = no
+	show_name = no
+}
+
+# Contingency Main Base
+ambient_object = {
+	name = "unitedfleet_2"
+	entity = "unitedfleet_crisis_core_system_effect_entity"
+	selectable = no
+	show_name = no
+}
