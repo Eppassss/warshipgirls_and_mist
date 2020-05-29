@@ -1529,6 +1529,9 @@ country_event = {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f0b956c478845eb7fdf30efe6be9f4bd2b26b01d
 country_event = {
 	id = wg_aft.30000
 	title = wg_aft.30000.name
@@ -1554,8 +1557,11 @@ country_event = {
 	}
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> a4b6a49b8e770015e14f75c87deca6813ec13b87
+=======
+>>>>>>> f0b956c478845eb7fdf30efe6be9f4bd2b26b01d
 # 测试用：全领袖撸到4级
 country_event = {
 	id = wg_aft.12450
