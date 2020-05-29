@@ -337,8 +337,6 @@ country_event = {
 				limit = { exists = event_target:lady_contingency_fleet }
 				event_target:lady_contingency_fleet = {
 					set_event_locked = no
-					clear_fleet_actions = this
-	
 					fleet_action_research_special_project = {
 						special_project = wsg_lady_to_wg_fe
 						target = event_target:wg_wormhole

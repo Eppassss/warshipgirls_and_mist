@@ -38,7 +38,7 @@
  wsg_lady_to_wg_fe:0 "小型虫洞通道"
  wsg_lady_to_wg_fe_DESC:0 "为了方便将大小姐运送过去，[wg_fallen_empire.GetName]在我们的[capital_scope.solar_system.GetName]星系打开了一条临时的次元通道，我们只需要让大小姐钻进这个通道里就可以了。\n\n§R任何非大小姐的舰队将会导致此任务无法完成！§!"
  pre_wsg_lady_to_wg_fe:0 "说服大小姐前往[wg_fallen_empire.GetName]"
- pre_wsg_lady_to_wg_fe_DESC:0 "您只需要点击研究并完成该特殊项目，大小姐便会自动前往。但请注意§R大小姐不能处于战斗中！§!"
+ pre_wsg_lady_to_wg_fe_DESC:0 "您只需要点击研究并完成该特殊项目，大小姐便会自动前往。但请注意§R大小姐不能处于战斗中！§!\n\n如果大小姐卡主了就随便找个船完成任务重开吧"
 
  wg_lady.9.name:0 "瓮中捉鳖"
  wg_lady.9.desc:0 "我们将大小姐通过[wg_fallen_empire.GetName]临时架设的虫洞运送过去之后，早已在另一边埋伏好的[wg_fallen_empire.GetName]的舰队三两下便将大小姐捕获了，然后她们当场将大小姐的核心AI程序给转移了出来。"

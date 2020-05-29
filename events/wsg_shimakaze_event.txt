@@ -1294,9 +1294,10 @@ country_event = {
 			which = shimakaze_affection
 			value = @shimakaze_affection_reduce
 		}
+		add_modifier = { modifier = wsg_shimakaze_recovery_cd days = 360 }
 		country_event = {
 			id = wsg_shimakaze.9
-			days = 60
+			days = 360
 		}
 	}
 

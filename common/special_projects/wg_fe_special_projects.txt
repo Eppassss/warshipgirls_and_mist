@@ -64,7 +64,7 @@ special_project = {
 	cost = 0
 	picture = GFX_evt_wormhole
 	event_scope = ship_event
-	days_to_research = 99999
+	days_to_research = 1
 
 	requirements = {
 		shipclass_military = 1

@@ -303,3 +303,34 @@ site_clovertheater = {
 		}
 	}
 }
+
+#乜提督
+site_nieAdmiral = {
+	desc = "site_nieAdmiral_intro"
+	picture = GFX_evt_nieAdmiral_site
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_D3
+		event = wsg.3202
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsg.3203
+	}
+	
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

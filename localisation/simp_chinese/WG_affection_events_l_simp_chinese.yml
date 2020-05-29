@@ -45,6 +45,8 @@
  wg_aft.27.desc:0 "在最近一次战斗失踪的华盛顿突然回到了我们的首都！据说她仅用身上的落樱神斧便将包围她的敌人全部反杀并劫持了一艘太空船成功逃生。"
  wg_aft.28.name:0 "古神的宠儿"
  wg_aft.28.desc:0 "最近莫名失踪的，我们所有人的精神支柱[THIS.GetRulerTitle]列克星敦突然在一道光芒之下“降临”到我们首都，就如字面意思一般，所有人都目睹到这神圣的一刻。但这一切连她本人也不清楚缘由。可以肯定的是她体内蕴藏的某种神秘力量在暗中救了她一命。"
+ wg_aft.1020.name:0 "魔术师的秘密"
+ wg_aft.1020.desc:0 "尽管乜提督在战斗中创造了一次又一次奇迹，将无数条生命和战舰从死神身边带了回来，但这次轮到她遭遇不幸的时候，我们依然对她生存的概率做出了最坏的打算。但在数日后，一艘我们从未见过的全钢救生舱坠落到我们其中一处殖民地上，而在救生舱里我们竟然发现了被油包纸保存完好的乜提督！\n据我们的材料学家研究，这艘救生舱所使用的钢材比我们的战舰钢质量还要好47%，而这正是乜提督能从战场死里逃生的秘诀。"
 
  edict_check_affection:0 "查看领袖好感度"
  edict_check_affection_desc:0 "你可以点击此法令查看领袖的具体好感度数值。"
@@ -55,7 +57,9 @@
  wg_aft.2005.c:0 "查看所有§H海军上将§!的好感度"
  wg_aft.2005.d:0 "查看所有§H陆军将军§!的好感度"
  wg_aft.2005.e:0 "查看§H统治者§!的好感度"
- wg_aft.2005.f:0 "查看所有§H大小姐§!的好感度"
+ wg_aft.2005.f:0 "查看§H大小姐§!的好感度"
+ wg_aft.2005.h:0 "查看§H岛风§!的好感度"
+ wg_aft.2005.i:0 "查看§H灰风§!的好感度"
  wg_aft.2005.g:0 "退出"
  wg_aft.2006.name:0 "领袖好感度明细"
 
@@ -97,8 +101,23 @@
  wg_aft.2008.desc.a:0 "§H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"
  wg_aft.2008.desc.b:0 "£sr_ring£ §H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"
 
+ wg_aft.2009.name:0 "查看岛风好感度"
+ wg_aft.2009.desc.a:0 "§H岛风§!的好感度级别为§H[This.shimakaze_affection_level]§!，好感度为§H[This.shimakaze_affection]§!，距离下一级好感度还需要§H[This.shimakaze_affection_to_level_up]§!点好感。"
+ wg_aft.2009.desc.b:0 "£sr_ring£ §H岛风§!的好感度级别为§H[This.shimakaze_affection_level]§!，好感度为§H[This.shimakaze_affection]§!，距离下一级好感度还需要§H[This.shimakaze_affection_to_level_up]§!点好感。"
+
+ wg_aft.2010.name:0 "查看灰风好感度"
+ wg_aft.2010.desc.a:0 "§H灰风§!的好感度级别为§H[This.gray_affection_level]§!，好感度为§H[This.gray_affection]§!，距离下一级好感度还需要§H[This.gray_affection_to_level_up]§!点好感。"
+ wg_aft.2010.desc.b:0 "£sr_ring£ §H灰风§!的好感度级别为§H[This.gray_affection_level]§!，好感度为§H[This.gray_affection]§!，距离下一级好感度还需要§H[This.gray_affection_to_level_up]§!点好感。"
+
  wg_aft.10001.name:0 "旧存档警告"
  wg_aft.10001.desc:0 "如果您看到此事件框出现，即表示您正在使用本mod4.0以前的版本的存档进行游戏。本mod自更新至4.0后便§R不再兼容任何基于在4.0版本前的存档§!！\n关于本mod的更新内容，请参阅创意工坊中的更新日志。\n假如您继续游戏并遇到了任何BUG（尤其是大小姐的）（p.s.好感度系统应该没问题），那么多半是因为版本不兼容，请谨慎继续游戏！"
  wg_aft.10001.a:0 "我已确认以上事项"
 
+ marry_gray:0 "灰风，我有个东西想交给你"
+ wg_aft.30000.name:0 "与灰风的誓约仪式"
+ wg_aft.30000.desc:0 "这个环状的东西是...要套在无名指上吗？阿，你这是承认了我的忠诚了对吧？那么接下来是要进行什么愉快的同伴行为吗？\n\n...好吧，我承认这个笑话有点冷，不过跟你们相处的日子确实很开心，请让我永远效忠于你吧。"
+ wg_aft.30000.a:0 "你已经是我们的一份子了，灰风。"
+ wg_aft.30000.response:0 "这...是这样吗？\n\n...\n\n谢谢。"
+ 
+ 
  wsg_rings:0 "戒指"

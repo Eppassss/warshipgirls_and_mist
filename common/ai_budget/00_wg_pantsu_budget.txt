@@ -1,0 +1,96 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+
+pantsu_expenditure_edicts = {
+	resource = sr_pantsu
+	type = expenditure
+	category = edicts
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}	
+	}
+	
+	fraction = {
+		base = 0.5
+	}
+}
+
+
+pantsu_expenditure_planets = {
+	resource = sr_pantsu
+	type = expenditure
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}	
+	}
+	
+	fraction = {
+		weight = 0.2
+	}	
+}
+
+pantsu_expenditure_ships = {
+	resource = sr_pantsu
+	type = expenditure
+	category = ships
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}	
+	}
+	
+	fraction = {
+		weight = 0.1
+	}	
+}
+
+pantsu_expenditure_upgrade = {
+	resource = sr_pantsu
+	type = expenditure
+	category = ship_upgrades
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}	
+	}
+	
+	fraction = {
+		base = 0.1
+	}
+}
+
+
+# Upkeep --------------------------------------------------------
+
+pantsu_upkeep_planets = {
+	resource = sr_pantsu
+	type = upkeep
+	category = planets
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}	
+	}
+	
+	fraction = {
+		weight = 0.9
+	}	
+}
+

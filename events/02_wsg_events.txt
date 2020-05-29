@@ -473,6 +473,7 @@ country_event = {
 				class = admiral
 				species = event_target:wsg2_species
 				name = "Rodney"
+				immortal = yes
 				skill = 7
 				traits = {
 					trait = leader_trait_admiral_Rodney
@@ -754,6 +755,7 @@ country_event = {
 				class = governor
 				species = event_target:Ella_species
 				name = Ella
+				immortal = yes
 				skill = 5
 				traits = {
 					trait = leader_trait_governor_Ella
@@ -1753,6 +1755,7 @@ country_event = {
 			class = governor
 			species = event_target:santee_species
 			name = "NAME_Santee"
+			immortal = yes
 			skill = 6
 			event_leader = yes
 			effect = {
@@ -1991,6 +1994,7 @@ country_event = {
 			create_leader = {
 				class = general
 				species = event_target:aexman_species
+				immortal = yes
 				name = "Peanut"
 				skill = 6
 				traits = {
@@ -2898,6 +2902,7 @@ ship_event = {
 			is_ai = no
 			NOT = { has_country_flag = triggered_lex_sol_event }
 		}
+		NOT = { has_global_flag = finish_lex_sol_III_event }
 	}
 
 	immediate = {
@@ -3062,6 +3067,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = finish_lex_sol_III_event }
 		owner = {
 			has_authority = auth_warshipgirls
 			is_ai = no
@@ -3146,7 +3152,15 @@ country_event = {
 	picture = GFX_evt_lex_world
 
 	immediate = {
-		set_country_flag = finish_lex_sol_III_event
+		set_global_flag = finish_lex_sol_III_event
+		random_country = {
+			limit = { has_country_flag = sol_III_country }
+			set_primitive_age = industrial_age
+			set_country_flag = industrial_age
+			event_target:lex_sol_III = {
+				set_planet_flag = industrial_age
+			}
+		}
 	}
 
 	after = {
@@ -3246,52 +3260,67 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = set_lex_as_ruler
-	}
-
 	immediate = {
-		ruler = {
-			set_age = 17
-			change_leader_portrait = wsg29_3
-			if = {
-				limit = { NOT = { has_leader_flag = set_skills }}
-				add_ruler_trait = leader_trait_ruler_lexington
-				add_ruler_trait = leader_trait_ruler_lexington2
-
-				while = { count = 2
-					switch = {
-						trigger = has_ruler_trait
-						trait_ruler_corvette_focus = { remove_ruler_trait = trait_ruler_corvette_focus }
-						trait_ruler_destroyer_focus = { remove_ruler_trait = trait_ruler_destroyer_focus }
-						trait_ruler_cruiser_focus = { remove_ruler_trait = trait_ruler_cruiser_focus }
-						trait_ruler_battleship_focus = { remove_ruler_trait = trait_ruler_battleship_focus }
-						trait_ruler_recruiter = { remove_ruler_trait = trait_ruler_recruiter }
-						trait_ruler_from_the_ranks = { remove_ruler_trait = trait_ruler_from_the_ranks}
-						trait_ruler_fortifier = { remove_ruler_trait = trait_ruler_fortifier }
-						trait_ruler_logistic_understanding = { remove_ruler_trait = trait_ruler_logistic_understanding }
-						trait_ruler_military_pioneer = { remove_ruler_trait = trait_ruler_military_pioneer }
-						trait_ruler_warlike = { remove_ruler_trait = trait_ruler_warlike }
-						trait_ruler_architectural_sense = { remove_ruler_trait = trait_ruler_architectural_sense }
-						trait_ruler_frontier_spirit = { remove_ruler_trait = trait_ruler_frontier_spirit }
-						trait_ruler_world_shaper = { remove_ruler_trait = trait_ruler_world_shaper }
-						trait_ruler_home_in_the_sky = { remove_ruler_trait = trait_ruler_home_in_the_sky }
-						trait_ruler_industrialist = { remove_ruler_trait = trait_ruler_industrialist }
-						trait_ruler_deep_connections = { remove_ruler_trait = trait_ruler_deep_connections }
-						trait_ruler_charismatic = { remove_ruler_trait = trait_ruler_charismatic }
-						trait_ruler_champion_of_the_people = { remove_ruler_trait = trait_ruler_champion_of_the_people }
-						trait_ruler_expansionist = { remove_ruler_trait = trait_ruler_expansionist }
-						trait_ruler_fertility_preacher = { remove_ruler_trait = trait_ruler_fertility_preacher }
-						trait_ruler_investor = { remove_ruler_trait = trait_ruler_investor }
-						trait_ruler_space_miner = { remove_ruler_trait = trait_ruler_space_miner }
-						trait_ruler_explorer = { remove_ruler_trait = trait_ruler_explorer }
-						leader_trait_fleet_organizer = { remove_ruler_trait = leader_trait_fleet_organizer }
-						leader_trait_reformer = { remove_ruler_trait = leader_trait_reformer }
-						leader_trait_ruler_erudite = { remove_ruler_trait = leader_trait_ruler_erudite }
-						leader_trait_ruler_chosen = { remove_ruler_trait = leader_trait_ruler_chosen}
-					}
+		if = {
+			limit = { has_country_flag = set_lex_as_ruler }
+			ruler = {
+				set_age = 17
+				if = {
+					limit = { has_leader_flag = married }
+					change_leader_portrait = wsg29_1
+				} else = {
+					change_leader_portrait = wsg29_3
 				}
-				set_leader_flag = set_skills
+				if = {
+					limit = { NOT = { has_leader_flag = set_skills }}
+					add_ruler_trait = leader_trait_ruler_lexington
+					add_ruler_trait = leader_trait_ruler_lexington2
+
+					while = { count = 2
+						switch = {
+							trigger = has_ruler_trait
+							trait_ruler_corvette_focus = { remove_ruler_trait = trait_ruler_corvette_focus }
+							trait_ruler_destroyer_focus = { remove_ruler_trait = trait_ruler_destroyer_focus }
+							trait_ruler_cruiser_focus = { remove_ruler_trait = trait_ruler_cruiser_focus }
+							trait_ruler_battleship_focus = { remove_ruler_trait = trait_ruler_battleship_focus }
+							trait_ruler_recruiter = { remove_ruler_trait = trait_ruler_recruiter }
+							trait_ruler_from_the_ranks = { remove_ruler_trait = trait_ruler_from_the_ranks}
+							trait_ruler_fortifier = { remove_ruler_trait = trait_ruler_fortifier }
+							trait_ruler_logistic_understanding = { remove_ruler_trait = trait_ruler_logistic_understanding }
+							trait_ruler_military_pioneer = { remove_ruler_trait = trait_ruler_military_pioneer }
+							trait_ruler_warlike = { remove_ruler_trait = trait_ruler_warlike }
+							trait_ruler_architectural_sense = { remove_ruler_trait = trait_ruler_architectural_sense }
+							trait_ruler_frontier_spirit = { remove_ruler_trait = trait_ruler_frontier_spirit }
+							trait_ruler_world_shaper = { remove_ruler_trait = trait_ruler_world_shaper }
+							trait_ruler_home_in_the_sky = { remove_ruler_trait = trait_ruler_home_in_the_sky }
+							trait_ruler_industrialist = { remove_ruler_trait = trait_ruler_industrialist }
+							trait_ruler_deep_connections = { remove_ruler_trait = trait_ruler_deep_connections }
+							trait_ruler_charismatic = { remove_ruler_trait = trait_ruler_charismatic }
+							trait_ruler_champion_of_the_people = { remove_ruler_trait = trait_ruler_champion_of_the_people }
+							trait_ruler_expansionist = { remove_ruler_trait = trait_ruler_expansionist }
+							trait_ruler_fertility_preacher = { remove_ruler_trait = trait_ruler_fertility_preacher }
+							trait_ruler_investor = { remove_ruler_trait = trait_ruler_investor }
+							trait_ruler_space_miner = { remove_ruler_trait = trait_ruler_space_miner }
+							trait_ruler_explorer = { remove_ruler_trait = trait_ruler_explorer }
+							leader_trait_fleet_organizer = { remove_ruler_trait = leader_trait_fleet_organizer }
+							leader_trait_reformer = { remove_ruler_trait = leader_trait_reformer }
+							leader_trait_ruler_erudite = { remove_ruler_trait = leader_trait_ruler_erudite }
+							leader_trait_ruler_chosen = { remove_ruler_trait = leader_trait_ruler_chosen}
+						}
+					}
+					set_leader_flag = set_skills
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = obtained_nie_admiral }
+			random_country = {
+				limit = { has_country_flag = nie_admiral_owner }
+				random_owned_leader = {
+					limit = { has_leader_flag = NieAdmiral }
+					change_leader_portrait = wsg9990
+					set_age = 75
+				}
 			}
 		}
 	}
@@ -3535,5 +3564,160 @@ country_event = {
 				max = @tier2researchmax
 			}
 		}	
+	}
+}
+
+planet_event = {
+	id = wsg.3200
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = obtained_nie_admiral }
+		is_same_value = event_target:lex_sol_III
+		FROM = {
+			is_ai = no
+			has_authority = auth_warshipgirls
+		}
+	}
+
+	immediate = {
+		set_global_flag = obtained_nie_admiral
+		FROM = {
+			country_event = { id = wsg.3201 days = 30 random = 30 }
+		}
+	}
+}
+
+country_event = {
+	id = wsg.3201
+	title = wsg.3201.name
+	desc = wsg.3201.desc
+	picture = GFX_evt_nieAdmiral_site
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.3201.a
+		event_target:lex_sol_III = {
+			add_deposit = d_underground_conduit
+			create_archaeological_site = site_nieAdmiral
+		}
+	}
+}
+
+# Stage 2 - 油包纸
+fleet_event = {
+	id = wsg.3202
+	title = "wsg.3202.name"
+	desc = "wsg.3202.desc"
+	picture = GFX_evt_nieAdmiral_site
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsg.3202.a
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 3 - 乜提督
+fleet_event = {
+	id = wsg.3203
+	title = "wsg.3203.name"
+	desc = "wsg.3203.desc"
+	picture = GFX_evt_nieTurret
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:lex_sol_III = {
+			add_deposit = d_underground_conduit2
+			remove_deposit = d_underground_conduit
+		}
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsg.3203.a
+		medium_artifact_reward = yes
+		hidden_effect = {
+			owner = { country_event = { id = wsg.3204 }}
+		}
+	}
+}
+
+country_event = {
+	id = wsg.3204
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = nie_admiral_owner
+		set_global_flag = obtained_nie_admiral
+		create_species = {
+			name = QingDao
+			plural = QingDao
+			class = ART
+			portrait = art13
+			namelist = ART1
+			effect = {
+				save_global_event_target_as = nie_species
+			}
+		}		
+		create_leader = {
+			class = admiral
+			species = event_target:nie_species
+			name = "NieAdmiral"
+			skill = 7
+			immortal = yes
+			traits = {
+				trait = leader_trait_admiral_NieAdmiral
+				trait = leader_trait_admiral_NieAdmiral2
+			}
+			event_leader = yes	# prevents this leader from leading factions and winning elections
+			effect = {
+				change_leader_portrait = wsg9990
+				set_leader_flag = wsg_event_leader
+				set_leader_flag = NieAdmiral
+				set_leader_flag = has_gained_level_trait
+				set_leader_flag = has_gained_trait
+			}
+		}
+		last_created_leader = {
+			change_leader_portrait = wsg9990
+			set_age = 75
+			set_is_female = yes
+			if = {
+				limit = { owner = { has_country_flag = wsg_project_r }}
+				add_trait = leader_trait_admiral_warshipgirls
+				add_ruler_trait = leader_trait_ruler_warshipgirls
+			}
+			if = {
+				limit = { owner = { has_country_flag = wsg_mist }}
+				add_trait = leader_trait_admiral_mist
+				add_ruler_trait = leader_trait_ruler_mist
+			}	
+		}
+		country_event = { id = wsg.3106 days = 1 }
 	}
 }

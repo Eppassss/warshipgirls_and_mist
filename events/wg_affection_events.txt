@@ -126,6 +126,7 @@ country_event = {
 										trigger = has_leader_flag
 										wsg_shimakaze_leader = { add_shimakaze_governor_affection = yes }
 										wsg_lady_leader = { add_lady_governor_affection = yes }
+										灰风领袖 = { add_gray_governor_affection = yes }
 										default = { add_governor_affection = yes }
 									}
 								}
@@ -374,7 +375,7 @@ ship_event = {
 		leader = { random_list = {
 			1 = {
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 12 }
+					check_variable = { which = "planets_no_affection" value >= 9 }
 					add = 2
 				}
 				switch = {
@@ -394,23 +395,22 @@ ship_event = {
 					}
 				}
 				set_variable = { which = "planets_no_affection" value = 0 }
-				
 			}
 			7 = {
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 4 }
+					check_variable = { which = "planets_no_affection" value >= 2 }
 					add = -1
 				}
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 6 }
+					check_variable = { which = "planets_no_affection" value >= 4 }
 					add = -2
 				}
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 8 }
+					check_variable = { which = "planets_no_affection" value >= 6 }
 					add = -3
 				}
 				modifier = {
-					check_variable = { which = "planets_no_affection" value >= 15 }
+					check_variable = { which = "planets_no_affection" value >= 12 }
 					factor = 0
 				}
 				change_variable = { which = "planets_no_affection" value = 1 }
@@ -434,46 +434,45 @@ ship_event = {
 	}
 
 	immediate = {
-		leader = { random_list = {
-			1 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 3 }
-					add = 1
+		leader = { 
+			switch = {
+				trigger = has_leader_flag
+				wsg_lady_leader = {
+					owner = { event_target:lady_survey_scientist = {
+						add_lady_survey_scientist_affection = yes
+					}}
 				}
-				set_variable = { which = "systems_no_affection" value = 0 }
-				switch = {
-					trigger = has_leader_flag
-					wsg_lady_leader = {
-						owner = { event_target:lady_survey_scientist = {
-							add_lady_survey_scientist_affection = yes
-						}}
-					}
-					wsg_shimakaze_leader = {
-						owner = { event_target:shimakaze_scientist = { 
-							add_shimakaze_scientist_affection = yes
-						}}
-					}
-					default = {
-						add_scientist_affection = yes
-					}
+				wsg_shimakaze_leader = {
+					owner = { event_target:shimakaze_scientist = { 
+						add_shimakaze_scientist_affection = yes
+					}}
+				}
+				default = {
+					add_scientist_affection = yes
 				}
 			}
-			3 = {
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 1 }
-					add = -1
+			random_list = {
+				30 = {
+					switch = {
+						trigger = has_leader_flag
+						wsg_lady_leader = {
+							owner = { event_target:lady_survey_scientist = {
+								add_lady_survey_scientist_affection = yes
+							}}
+						}
+						wsg_shimakaze_leader = {
+							owner = { event_target:shimakaze_scientist = { 
+								add_shimakaze_scientist_affection = yes
+							}}
+						}
+						default = {
+							add_scientist_affection = yes
+						}
+					}
 				}
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 1 }
-					add = -1
-				}
-				modifier = {
-					check_variable = { which = "systems_no_affection" value >= 4 }
-					factor = 0
-				}
-				change_variable = { which = "systems_no_affection" value = 1 }
+				70 = {}
 			}
-		}}
+		}
 	}
 }
 
@@ -575,8 +574,14 @@ country_event = {
 								has_leader_flag = wsg_shimakaze_leader
 								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
 							}
+							AND = {
+								has_leader_flag = 灰风领袖
+								owner = { 
+									is_vaild_gray_owner = yes
+									NOT = { has_country_flag = gray_affection_max }
+								}
+							}
 						}
-						NOT = { has_leader_flag = wsg_lady_leader }
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -612,8 +617,14 @@ country_event = {
 								has_leader_flag = wsg_shimakaze_leader
 								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
 							}
+							AND = {
+								has_leader_flag = 灰风领袖
+								owner = { 
+									is_vaild_gray_owner = yes
+									NOT = { has_country_flag = gray_affection_max }
+								}
+							}
 						}
-						NOT = { has_leader_flag = wsg_lady_leader }
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -670,6 +681,9 @@ fleet_event = {
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
 						add_shimakaze_admiral_affection = yes
+					} else_if = {
+						limit = { has_leader_flag = 灰风领袖 }
+						add_gray_admiral_affection = { COUNTRY = owner }
 					} else = {
 						add_admiral_affection = yes
 					}
@@ -695,7 +709,6 @@ fleet_event = {
 	}
 }
 
-# 赢得战斗增加好感
 country_event = {
 	id = wg_aft.11
 	hide_window = yes
@@ -716,6 +729,28 @@ country_event = {
 
 	immediate = {
 		FROMFROM = {
+            if = {
+                limit = { has_fleet_flag = counting_affection }
+                fleet_event = { id = wg_aft.11000 }
+            }
+        }
+        FROMFROMFROM = { every_combatant_fleet = {
+			limit = { has_fleet_flag = counting_affection }
+            fleet_event = { id = wg_aft.11000 }
+        }}
+	}
+
+}
+
+# 赢得战斗增加好感
+fleet_event = {
+	id = wg_aft.11000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { is_in_combat = no }
 			if = {
 				limit = { 
 					exists = leader
@@ -729,6 +764,13 @@ country_event = {
 							AND = {
 								has_leader_flag = wsg_shimakaze_leader
 								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+							}
+							AND = {
+								has_leader_flag = 灰风领袖
+								owner = { 
+									is_vaild_gray_owner = yes
+									NOT = { has_country_flag = gray_affection_max }
+								}
 							}
 						}
 					}
@@ -749,9 +791,12 @@ country_event = {
 							}
 							set_variable = { which = "battles_won_no_affection" value = 0 }
 							if = {
-								limit = { owner = { has_country_flag = shimakaze_affection_max }}
+								limit = { has_leader_flag = wsg_shimakaze_leader }
 								add_shimakaze_admiral_affection = yes
-							} else = {
+							} else_if = {
+								limit = { has_leader_flag = 灰风领袖 }
+								add_gray_admiral_affection = { COUNTRY = owner }
+						 	} else = {
 								add_admiral_affection = yes
 							}
 						}
@@ -775,14 +820,14 @@ country_event = {
 						has_fleet_flag = lady_fleet2
 						has_fleet_flag = lady_armed_science
 					}
-					ROOT = { 
+					owner = { 
 						wsg_lady_available = yes
 						NOT = { has_country_flag = lady_affection_max }
 					}
 					has_fleet_flag = counting_affection
 				}
 				remove_fleet_flag = counting_affection
-				ROOT = {
+				owner = {
 					set_variable = { which = "days_combat_no_affection_lady" value = 0 }
 					random_list = {
 						1 = {
@@ -811,6 +856,8 @@ country_event = {
 					}
 				}
 			}
+		} else = {
+			fleet_event = { id = wg_aft.11000 days = 1 }
 		}
 	}
 }
@@ -882,6 +929,11 @@ country_event = {
 				change_variable = { which = shimakaze_affection value = 3 }
 				reset_shimakaze_affection_level = yes
 			}
+			if = {
+				limit = { is_vaild_gray_owner = yes }
+				change_variable = { which = gray_affection value = 3 }
+				reset_gray_affection_level = yes
+			}
 		}
 	}
 }
@@ -899,6 +951,10 @@ country_event = {
 			OR = {
 				leader = { is_wg_leader = yes }
 				is_lady_army = yes
+				AND = {
+					army_type = gray_army
+					ROOT = { is_vaild_gray_owner = yes }
+				}
 			}
 		}
 	}
@@ -913,8 +969,18 @@ country_event = {
 					is_lady_army = yes
 				}
 			}
-			change_variable = { which = lady_affection value = 1 }
 			add_lady_army_affection = yes
+		}
+		if = {
+			limit = { #灰风
+				any_owned_army = {
+					exists = planet
+					planet = { is_same_value = event_target:victory_planet }
+					army_type = gray_army
+				}
+			}
+			change_variable = { which = gray_affection value = 1 }
+			reset_gray_affection_level = yes
 		}
 		if = { # 其他陆军陆军
 			limit = {
@@ -1054,6 +1120,7 @@ country_event = {
 					}
 					has_leader_flag = wsg_shimakaze_leader
 					has_leader_flag = wsg_lady_leader
+					has_leader_flag = 灰风领袖
 				}
 			}
 			switch = {
@@ -1340,14 +1407,10 @@ country_event = {
 	}
 }
 
-# 誓约仪式
 country_event = {
 	id = wg_aft.19
-	title = wg_aft.19.name
-	desc = wg_aft.19.desc
+	hide_window = yes
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_marry
-	show_sound = event_wg_wedding
 
 	immediate = {
 		every_owned_leader = {
@@ -1355,6 +1418,27 @@ country_event = {
 		}
 		event_target:married_leader = {
 			set_leader_flag = married
+			switch = {
+				trigger = has_trait
+				leader_trait_admiral_Rodney = { ROOT = { country_event = { id = wg_aft.19001 }}}
+				leader_trait_ruler_lexington = { ROOT = { country_event = { id = wg_aft.19002 }}}
+				default = { ROOT = { country_event = { id = wg_aft.19000 }}}
+			}
+		}
+	}
+}
+
+# 誓约仪式
+country_event = {
+	id = wg_aft.19000
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_marry
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = {
 			if = {
 				limit = { NOT = { has_leader_flag = wsg_event_leader }}
 				set_leader_flag = can_revive
@@ -1392,6 +1476,80 @@ country_event = {
 	option = {
 		name = wg_aft.19.a
 		custom_tooltip = wg_aft.19.a.tooltip
+	}
+}
+
+# 老罗誓约
+country_event = {
+	id = wg_aft.19001
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wg_rodney_wedding
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = { if = {
+			limit = { has_leader_flag = affection_max }
+			set_variable = { which = affection_level value = 5 }
+			remove_admiral_affection_trait = yes
+			add_trait = leader_trait_admiral_affection_lv5
+		}}
+	}
+
+	option = {
+		name = wg_aft.19.a
+	}
+}
+
+# 太太誓约
+country_event = {
+	id = wg_aft.19002
+	title = wg_aft.19.name
+	desc = wg_aft.19.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_marry
+	show_sound = event_wg_wedding
+
+	immediate = {
+		event_target:married_leader = { 
+			change_leader_portrait = wsg29_1
+			if = {
+				limit = { has_leader_flag = affection_max }
+				set_variable = { which = affection_level value = 5 }
+				remove_ruler_affection_trait = yes
+				add_ruler_trait = leader_trait_ruler_affection_lv5
+			}
+		}
+	}
+
+	option = {
+		name = wg_aft.19.a
+	}
+}
+
+country_event = {
+	id = wg_aft.30000
+	title = wg_aft.30000.name
+	desc = wg_aft.30000.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_wg_wedding
+
+
+	picture_event_data = {
+		room = wg06_room
+		portrait = GrayTempest
+	}
+
+	immediate = {
+		set_country_flag = married_gray
+		reset_gray_affection_level = yes
+	}
+
+	option = {
+		name = wg_aft.30000.a
+		response_text = wg_aft.30000.response
 	}
 }
 
@@ -1812,14 +1970,7 @@ country_event = {
 	trigger = {
 		OR = {
 			FROM = { is_same_value = ROOT }
-			NOT = {
-				has_active_event = {
-					wg_aft.2005
-					wg_aft.2006
-					wg_aft.2007
-					wg_aft.2008
-				}
-			}
+			check_affection_event_active_diplo = no
 		}
 	}
 
@@ -1901,6 +2052,64 @@ country_event = {
 			}
 			subtract_variable = { which = lady_affection_to_level_up value = lady_affection }
 			country_event = { id = wg_aft.2008 }
+		}
+	}
+	option = { #查看岛风的好感度
+		name = wg_aft.2005.h
+		trigger = { has_country_flag = get_wsg_shimakaze }
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = shimakaze_affection_level value < 2 }}
+				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv2 }
+			}
+			else_if = {
+				limit = { check_variable = { which = shimakaze_affection_level value = 2 }}
+				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv3 }
+			}
+			else_if = {
+				limit = { check_variable = { which = shimakaze_affection_level value = 3 }}
+				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv4 }
+			}
+			else_if = {
+				limit = { check_variable = { which = shimakaze_affection_level value = 4 }}
+				if = {
+					limit = { has_country_flag = shimakaze_affection_max }
+					set_variable = { which = shimakaze_affection_to_level_up value = 0 }
+				}
+				else = { set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv5 }}
+			}
+			subtract_variable = { which = shimakaze_affection_to_level_up value = shimakaze_affection }
+			country_event = { id = wg_aft.2009 }
+		}
+	}
+	option = { #查看灰风的好感度
+		name = wg_aft.2005.i
+		trigger = {
+			is_vaild_gray_owner = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = gray_affection_level value < 2 }}
+				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv2 }
+			}
+			else_if = {
+				limit = { check_variable = { which = gray_affection_level value = 2 }}
+				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv3 }
+			}
+			else_if = {
+				limit = { check_variable = { which = gray_affection_level value = 3 }}
+				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv4 }
+			}
+			else_if = {
+				limit = { check_variable = { which = gray_affection_level value = 4 }}
+				if = {
+					limit = { has_country_flag = gray_affection_max }
+					set_variable = { which = gray_affection_to_level_up value = 0 }
+				}
+				else = { set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv5 }}
+			}
+			subtract_variable = { which = gray_affection_to_level_up value = gray_affection }
+			country_event = { id = wg_aft.2010 }
 		}
 	}
 	option = { #退出
@@ -2194,6 +2403,60 @@ country_event = {
 }
 
 country_event = {
+	id = wg_aft.2009
+	title = wg_aft.2009.name
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { NOT = { has_country_flag = married_wsg_shimakaze }}
+		text = wg_aft.2009.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = married_wsg_shimakaze }
+		text = wg_aft.2009.desc.b
+	}
+
+	option = { #返回主菜单
+		name = wg_aft.2006.a
+		hidden_effect = {
+			country_event = { id = wg_aft.2005 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.2010
+	title = wg_aft.2010.name
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { NOT = { has_country_flag = married_gray }}
+		text = wg_aft.2010.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = married_gray }
+		text = wg_aft.2010.desc.b
+	}
+
+	option = { #返回主菜单
+		name = wg_aft.2006.a
+		hidden_effect = {
+			country_event = { id = wg_aft.2005 }
+		}
+	}
+	option = { #退出
+		name = wg_aft.2005.g
+		default_hide_option = yes
+	}
+}
+
+country_event = {
 	id = wg_aft.20
 	is_triggered_only = yes
 	hide_window = yes
@@ -2409,6 +2672,17 @@ country_event = {
 					set_variable = { which = lex_affection_level value = affection_level }
 					#统治者可以直接放逐然后set leader
 					clone_leader = { target = PREV class = ruler effect = { exile_leader_as = Lexington }} 
+				}
+				break = yes
+			}
+			if = { #乜提督
+				limit = { has_trait = leader_trait_admiral_NieAdmiral }
+				ROOT = { 
+					country_event = { id = wg_aft.1020 days = 5 random = 5 }
+					set_variable = { which = nie_affection value = affection }
+					set_variable = { which = nie_affection_level value = affection_level }
+					#统治者可以直接放逐然后set leader
+					clone_leader = { target = PREV class = admiral effect = { set_leader_flag = nieAdmiral }} 
 				}
 				break = yes
 			}
@@ -2671,6 +2945,48 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wg_aft.1020
+	title = wg_aft.1020.name
+	desc = wg_aft.1020.desc
+	picture = GFX_evt_revive_leader
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:majia_country = { 
+			random_owned_leader = {
+				limit = { has_leader_flag = nieAdmiral }
+				ROOT = { clone_leader = { 
+					target = PREV 
+					class = admiral 
+					effect = {
+						set_leader_flag = wsg_event_leader
+						set_leader_flag = nieAdmiral
+					}
+				}}
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = { has_leader_flag = nieAdmiral }
+			set_variable = { which = nie_affection value = PREV }
+			set_variable = { which = nie_affection_level value = PREV }
+			set_variable = { which = affection value = nie_affection }
+			set_variable = { which = affection_level value = nie_affection_level }
+			subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
+			reset_admiral_affection_level = yes
+			set_variable = { which = nie_affection value = 0 }
+			set_variable = { which = nie_affection_level value = 0 }
+		}
+		set_variable = { which = nie_affection value = 0 }
+		set_variable = { which = nie_affection_level value = 0 }
+	}
+
+	option = {
+		name = ASTOUNDING
+	}
+}
+
 # 非统治者复活事件
 country_event = {
 	id = wg_aft.29
@@ -2924,7 +3240,7 @@ country_event = {
 	}
 }
 
-#考古完成一个坟加4~7好感
+#考古完成一个坟加5~12好感
 fleet_event = {
 	id = wg_aft.34
 	hide_window = yes
@@ -2940,16 +3256,32 @@ fleet_event = {
 
 	immediate = {
 		leader = {
-			while = { count = 4
+			while = { count = 5
 				add_scientist_affection_no_check = yes
 			}
 			random_list = {
-				40 = { add_scientist_affection_no_check = yes }
-				60 = {}
+				65 = { 
+					while = { count = 2
+						add_scientist_affection_no_check = yes 
+					}
+				}
+				35 = {}
 			}
 			random_list = {
-				25 = { add_scientist_affection_no_check = yes }
-				75 = {}
+				45 = { 
+					while = { count = 2
+						add_scientist_affection_no_check = yes 
+					}
+				}
+				55 = {}
+			}
+			random_list = {
+				35 = { 
+					while = { count = 2
+						add_scientist_affection_no_check = yes 
+					}
+				}
+				65 = {}
 			}
 			random_list = {
 				15 = { add_scientist_affection_no_check = yes }
@@ -3051,6 +3383,37 @@ country_event = {
 			reset_shimakaze_affection_level = yes
 			random_owned_leader = {
 				limit = { has_leader_flag = wsg_shimakaze_leader }
+				check_and_remove_normal_leader_affection_traits = yes
+			}
+		}
+		if = {
+			limit = { is_vaild_gray_owner = yes }
+			if = { 
+				limit = { #旧档适配
+					any_owned_leader = {
+						has_leader_flag = 灰风领袖
+						check_variable = { which = "affection" value > 0 }
+					}
+				}
+				random_owned_leader = {
+					limit = { has_leader_flag = 灰风领袖 }
+					ROOT = { 
+						set_variable = { which = affection value = PREV }
+						set_variable = { which = gray_affection value = affection }
+						set_variable = { which = affection value = 0 }
+					}
+					if = {
+						limit = { has_leader_flag = married }
+						ROOT = { set_country_flag = married_gray }
+						remove_leader_flag = married
+						remove_leader_flag = can_revive
+					}
+					set_variable = { which = affection value = 0 }
+				}
+			}
+			reset_gray_affection_level = yes
+			random_owned_leader = {
+				limit = { has_leader_flag = 灰风领袖 }
 				check_and_remove_normal_leader_affection_traits = yes
 			}
 		}

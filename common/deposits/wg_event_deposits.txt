@@ -47,3 +47,39 @@ d_blue_coward = {
 		weight = 0
 	}
 }
+
+
+d_underground_conduit = {
+	is_for_colonizeable = yes
+	icon = d_underground_conduit
+	blocker = yes
+	category = deposit_cat_blockers
+	can_be_cleared = { always = no }
+	potential = { always = no }
+	drop_weight = {
+		weight = 0
+	}
+	resources = {
+		category = planet_deposits
+	}
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+}
+d_underground_conduit2 = {
+	is_for_colonizeable = yes
+	icon = d_underground_conduit2
+	category = deposit_cat_rare
+
+	potential = { always = no }
+	drop_weight = {
+		weight = 0
+	}
+	resources = {
+		category = planet_deposits
+	}
+	planet_modifier = {
+		planet_buildings_cost_mult = -0.15
+		planet_districts_cost_mult = -0.15
+	}
+}

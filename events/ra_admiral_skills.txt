@@ -19,16 +19,13 @@ country_event = {
             # 隼鹰
             if = { 
                 limit = { leader = { has_leader_flag = junyo }}
-                owner = {
-                    every_owned_ship = {
-                        limit = {
-                            is_ship_size = scout_UAV
-                            Fleet = { is_same_value = PREVPREVPREV }
-                            NOT = { has_ship_flag = junyo_buff }
-                        }
-                        add_modifier = { modifier = Junyo_buff_to_drones days = -1 }
-                        set_ship_flag = junyo_buff
+                every_owned_ship = {
+                    limit = {
+                        is_ship_size = scout_UAV
+                        NOT = { has_ship_flag = junyo_buff }
                     }
+                    add_modifier = { modifier = Junyo_buff_to_drones days = -1 }
+                    set_ship_flag = junyo_buff
                 }
                 set_fleet_flag = junyo_buff
             }
@@ -38,16 +35,13 @@ country_event = {
                 every_combatant_fleet = {
                     if = {
                         limit = { owner = { NOT = { is_same_value = PREVPREV.owner }}}
-                        owner = {
-                            every_owned_ship = {
-                                limit = {
-                                    is_ship_size = scout_UAV
-                                    Fleet = { is_same_value = PREVPREVPREV }
-                                    NOT = { has_ship_flag = chongqing_debuff }
-                                }
-                                add_modifier = { modifier = chongqing_debuff_to_drones days = -1 }
-                                set_ship_flag = chongqing_debuff
+                        every_owned_ship = {
+                            limit = {
+                                is_ship_size = scout_UAV
+                                NOT = { has_ship_flag = chongqing_debuff }
                             }
+                            add_modifier = { modifier = chongqing_debuff_to_drones days = -1 }
+                            set_ship_flag = chongqing_debuff
                         }
                         if = {
                             limit = { NOT = { has_fleet_flag = chongqing_debuff } }
@@ -67,16 +61,13 @@ country_event = {
                 limit = { leader = { has_leader_flag = essex } }
                 FROM = {
                     every_combatant_fleet = {
-                        owner = {
-                            every_owned_ship = {
-                                limit = {
-                                    is_ship_size = scout_UAV
-                                    Fleet = { is_same_value = PREVPREVPREV }
-                                    NOT = { has_ship_flag = essex_buff }
-                                }
-                                add_modifier = { modifier = essex_buff_to_drones days = -1 }
-                                set_ship_flag = essex_buff
+                        every_owned_ship = {
+                            limit = {
+                                is_ship_size = scout_UAV
+                                NOT = { has_ship_flag = essex_buff }
                             }
+                            add_modifier = { modifier = essex_buff_to_drones days = -1 }
+                            set_ship_flag = essex_buff
                         }
                         if = {
                             limit = { NOT = { has_fleet_flag = essex_buff } }
@@ -85,16 +76,13 @@ country_event = {
                     }
                 }
                 every_combatant_fleet = {
-                    owner = {
-                        every_owned_ship = {
-                            limit = {
-                                is_ship_size = scout_UAV
-                                Fleet = { is_same_value = PREVPREVPREV }
-                                NOT = { has_ship_flag = essex_debuff }
-                            }
-                            add_modifier = { modifier = essex_debuff_to_drones days = -1 }
-                            set_ship_flag = essex_debuff
+                    every_owned_ship = {
+                        limit = {
+                            is_ship_size = scout_UAV
+                            NOT = { has_ship_flag = essex_debuff }
                         }
+                        add_modifier = { modifier = essex_debuff_to_drones days = -1 }
+                        set_ship_flag = essex_debuff
                     }
                     if = {
                         limit = { NOT = { has_fleet_flag = essex_debuff } }
@@ -135,15 +123,14 @@ country_event = {
             # 天狼星
             else_if = { 
                 limit = { leader = { has_leader_flag = sirius } }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = {
                         is_ship_size_dd_cl = yes
-                        Fleet = { is_same_value = PREVPREVPREV }
                         NOT = { has_ship_flag = sirius_buff }
                     }
                     add_modifier = { modifier = sirius_buff_to_dd_cl days = -1 }
                     set_ship_flag = sirius_buff
-                }}
+                }
             }
             # 前卫
             else_if = { 
@@ -204,15 +191,14 @@ country_event = {
             # 大和
             else_if = { 
                 limit = { leader = { has_leader_flag = yamato } }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = {
                         is_main_ship_size = yes
-                        Fleet = { is_same_value = PREVPREVPREV }
                         NOT = { has_ship_flag = yamato_buff }
                     }
                     add_modifier = { modifier = yamato_buff_to_main_ships days = -1 }
                     set_ship_flag = yamato_buff
-                }}
+                }
             }
             # 长春
             else_if = { 
@@ -230,17 +216,11 @@ country_event = {
                     leader = { has_leader_flag = johnston }
                 }
                 save_event_target_as = this_fleet
-                every_combatant_fleet = { owner = {
-                    every_owned_ship = {
-                        limit = { Fleet = { is_same_value = PREVPREVPREV }}
-                        event_target:this_fleet = { change_variable = { which = "num_enemy_ships" value = 1}}
-                    }
+                every_combatant_fleet = { every_owned_ship = {
+                    event_target:this_fleet = { change_variable = { which = "num_enemy_ships" value = 1}}
                 }}
-                owner = {
-                    every_owned_ship = {
-                        limit = { Fleet = { is_same_value = PREVPREVPREV }}
-                        Fleet = { change_variable = { which = "num_fleet_ships" value = 1}}
-                    }
+                every_owned_ship = {
+                    Fleet = { change_variable = { which = "num_fleet_ships" value = 1}}
                 }
                 if = {
                     limit = { check_variable = { which = "num_fleet_ships" value < "num_enemy_ships" }}
@@ -257,17 +237,12 @@ country_event = {
                     leader = { has_leader_flag = richelieu }
                 }
                 save_event_target_as = this_fleet
-                every_combatant_fleet = { owner = {
-                    every_owned_ship = {
-                        limit = { Fleet = { is_same_value = PREVPREVPREV }}
-                        event_target:this_fleet = { change_variable = { which = "num_enemy_ships" value = 1}}
-                    }
+                every_combatant_fleet = { every_owned_ship = {
+                    event_target:this_fleet = { change_variable = { which = "num_enemy_ships" value = 1}}
                 }}
-                owner = {
-                    every_owned_ship = {
-                        limit = { Fleet = { is_same_value = PREVPREVPREV }}
-                        Fleet = { change_variable = { which = "num_fleet_ships" value = 1}}
-                    }
+                every_owned_ship = {
+                    limit = { Fleet = { is_same_value = PREVPREVPREV }}
+                    Fleet = { change_variable = { which = "num_fleet_ships" value = 1}}
                 }
                 if = {
                     limit = { check_variable = { which = "num_fleet_ships" value < "num_enemy_ships" }}
@@ -309,16 +284,14 @@ country_event = {
                     set_fleet_flag = hutton_buff
                 }
                 every_combatant_fleet = {
-                    owner = {
-                        every_owned_ship = {
-                            limit = {
-                                is_ship_size = scout_UAV
-                                Fleet = { is_same_value = PREVPREVPREV }
-                                NOT = { has_ship_flag = hutton_buff }
-                            }
-                            add_modifier = { modifier = hutton_buff_to_enemy_drones days = -1 }
-                            set_ship_flag = hutton_buff
+                    every_owned_ship = {
+                        limit = {
+                            is_ship_size = scout_UAV
+                            Fleet = { is_same_value = PREVPREVPREV }
+                            NOT = { has_ship_flag = hutton_buff }
                         }
+                        add_modifier = { modifier = hutton_buff_to_enemy_drones days = -1 }
+                        set_ship_flag = hutton_buff
                     }
                 }
                 fleet_event = { id = raa_skill.1100 }
@@ -387,15 +360,14 @@ country_event = {
                 set_fleet_flag = lexington_buff
                 FROM = {
                     every_combatant_fleet = {
-                        owner = { every_owned_ship = {
+                        every_owned_ship = {
                             limit = {
                                 is_ship_size = scout_UAV
-                                Fleet = { is_same_value = PREVPREVPREV }
                                 NOT = { has_ship_flag = lexington_buff }
                             }
                             add_modifier = { modifier = lexington_buff_to_drones days = -1 }
                             set_ship_flag = lexington_buff
-                        }}
+                        }
                         if = {
                             limit = { NOT = { has_fleet_flag = lexington_buff }}
                             add_modifier = { modifier = lexington_buff_to_all days = -1 }
@@ -410,6 +382,7 @@ country_event = {
                     leader = { has_leader_flag = missouri }
                     NOT = { has_fleet_flag = missouri_skill_triggered }
                 }
+                set_fleet_flag = missouri_skill_triggered
                 fleet_event = { id = raa_skill.10020 }
             }
             # 深海大凤
@@ -418,15 +391,14 @@ country_event = {
                 set_fleet_flag = taiho_sh_buff
                 FROM = {
                     every_combatant_fleet = {
-                        owner = { every_owned_ship = {
+                        every_owned_ship = {
                             limit = {
                                 is_ship_size = scout_UAV
-                                Fleet = { is_same_value = PREVPREVPREV }
                                 NOT = { has_ship_flag = taiho_sh_buff }
                             }
                             add_modifier = { modifier = taiho_sh_buff_to_drones days = -1 }
                             set_ship_flag = taiho_sh_buff
-                        }}
+                        }
                         if = {
                             limit = { NOT = { has_fleet_flag = taiho_sh_buff }}
                             add_modifier = { modifier = taiho_sh_buff_to_all days = -1 }
@@ -435,15 +407,14 @@ country_event = {
                     }
                 }
                 every_combatant_fleet = {
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
                             is_ship_size = scout_UAV
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = taiho_sh_debuff }
                         }
                         add_modifier = { modifier = taiho_sh_debuff_to_enemy_drones days = -1 }
                         set_ship_flag = taiho_sh_debuff
-                    }}
+                    }
                     if = {
                         limit = { NOT = { has_fleet_flag = taiho_sh_debuff }}
                         add_modifier = { modifier = taiho_sh_debuff_to_enemy days = -1 }
@@ -469,15 +440,14 @@ country_event = {
                 if = {
                     limit = { NOT = { has_fleet_flag = cobot_skill_triggered }}
                     set_fleet_flag = cobot_skill_triggered
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = cobot_skill }
                             is_drones_or_corvette = no
                         }
                         set_ship_flag = cobot_skill
                         set_disable_at_health = 0.25
-                    }}
+                    }
                 }
                 FROM = {
                     every_combatant_fleet = {
@@ -487,9 +457,8 @@ country_event = {
                         }
                         set_fleet_flag = cobot_skill2_triggered
                         add_modifier = { modifier = cobot_buff_to_all days = -1 }
-                        owner = { every_owned_ship = {
+                        every_owned_ship = {
                             limit = {
-                                Fleet = { is_same_value = PREVPREVPREV }
                                 NOR = { 
                                     is_drones_or_corvette = yes
                                     has_ship_flag = cobot_skill
@@ -498,7 +467,7 @@ country_event = {
                             }
                             set_ship_flag = cobot_skill2
                             set_disable_at_health = 0.5
-                        }}
+                        }
                     }
                 }
             }
@@ -520,10 +489,22 @@ country_event = {
     }
 
     immediate = {
-        FROMFROMFROM = { every_combatant_fleet = {
-            fleet_event = { id = raa_skill.3 days = 1 }
-            set_variable = { which = "days" value = 1 }
-        }}
+        FROMFROMFROM = { 
+            if = {
+                limit = { has_fleet_flag = NieAdmiral_fleet }
+                fleet_event = { id = wg_leader.2 }
+            }
+            every_combatant_fleet = {
+                fleet_event = { id = raa_skill.3 days = 1 }
+                set_variable = { which = "days" value = 1 }
+            }
+        }
+        FROMFROM = {
+            if = {
+                limit = { has_fleet_flag = NieAdmiral_fleet }
+                fleet_event = { id = wg_leader.2 }
+            }
+        }
     }
 }
 
@@ -547,15 +528,14 @@ fleet_event = {
             # 隼鹰
             if = {
                 limit = { any_owned_ship = { has_ship_flag = junyo_buff }}
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = junyo_buff
                     }
                     remove_modifier = Junyo_buff_to_drones
                     remove_ship_flag = junyo_buff
-                }}
+                }
             }
             if = {
                 limit = { has_fleet_flag = junyo_buff }
@@ -564,15 +544,14 @@ fleet_event = {
             # 重庆
             if = {
                 limit = { any_owned_ship = { has_ship_flag = chongqing_debuff }}
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = chongqing_debuff
                     }
                     remove_modifier = chongqing_debuff_to_drones
                     remove_ship_flag = chongqing_debuff
-                }}
+                }
             }
             if = {
                 limit = { has_fleet_flag = chongqing_debuff }
@@ -591,30 +570,28 @@ fleet_event = {
             }
             if = {
                 limit = { any_owned_ship = { has_ship_flag = essex_buff }}
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = essex_buff
                     }
                     remove_modifier = essex_buff_to_drones
                     remove_ship_flag = essex_buff
-                }}
+                }
             }
             if = {
                 limit = { 
                     NOT = { has_fleet_flag = drones }
                     any_owned_ship = { has_ship_flag = essex_debuff }
                 }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = essex_debuff
                     }
                     remove_modifier = essex_debuff_to_drones
                     remove_ship_flag = essex_debuff
-                }}
+                }
             }
             # 内华达
             if = {
@@ -632,19 +609,16 @@ fleet_event = {
             # 天狼星
             if = {
                 limit = { any_owned_ship = { has_ship_flag = sirius_buff }}
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                        has_ship_flag = sirius_buff
-                    }
+                every_owned_ship = {
+                    limit = { has_ship_flag = sirius_buff }
                     remove_modifier = sirius_buff_to_dd_cl
                     remove_ship_flag = sirius_buff
-                }}
+                }
                 fleet_event = { id = raa_skill.90 }
             }
             # 前卫
             if = {
-                limit = { check_variable = { which = "vangurad_buff" value > 0 } }
+                limit = { check_variable = { which = "vanguard_buff" value > 0 } }
                 while = { count = 5 remove_modifier = vanguard_buff }
                 set_variable = { which = "vanguard_buff" value = 0 }
                 remove_fleet_flag = vanguard_buff_cooldown
@@ -676,14 +650,11 @@ fleet_event = {
             }
             if = {
                 limit = { any_owned_ship = { has_ship_flag = helena_buff }}
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                        has_ship_flag = helena_buff
-                    }
+                every_owned_ship = {
+                    limit = { has_ship_flag = helena_buff }
                     remove_modifier = helena_buff_to_dd_cl
                     remove_ship_flag = helena_buff
-                }}
+                }
             }
             # 声望
             if = {
@@ -695,14 +666,11 @@ fleet_event = {
             # 紫白菜
             if = {
                 limit = { any_owned_ship = { has_ship_flag = yamato_buff }}
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                        has_ship_flag = yamato_buff
-                    }
+                every_owned_ship = {
+                    limit = {  has_ship_flag = yamato_buff }
                     remove_modifier = yamato_buff_to_main_ships
                     remove_ship_flag = yamato_buff
-                }}
+                }
             }
             # 长春
             if = {
@@ -749,15 +717,14 @@ fleet_event = {
                     NOT = { has_fleet_flag = drones }
                     any_owned_ship = { has_ship_flag = hutton_buff }
                 }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = hutton_buff
                     }
                     remove_modifier = hutton_buff_to_enemy_drones
                     remove_ship_flag = hutton_buff
-                }}
+                }
             }
             ##################################################################
             #       SR                                                       #
@@ -766,13 +733,10 @@ fleet_event = {
             # 企业
             if = {
                 limit = { any_owned_ship = { has_ship_flag = enterprise_damage_control }}
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                        has_ship_flag = enterprise_damage_control
-                    }
+                every_owned_ship = {
+                    limit = { has_ship_flag = enterprise_damage_control }
                     remove_ship_flag = enterprise_damage_control
-                }}
+                }
             }
             if = { 
                 limit = { has_fleet_flag = enterprise_debuff }
@@ -822,15 +786,14 @@ fleet_event = {
                     NOT = { has_fleet_flag = drones }
                     any_owned_ship = { has_ship_flag = lexington_buff }
                 }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = lexington_buff
                     }
                     remove_modifier = lexington_buff_to_drones
                     remove_ship_flag = lexington_buff
-                }}
+                }
             }
             # 秘书
             if = {
@@ -861,56 +824,48 @@ fleet_event = {
                     NOT = { has_fleet_flag = drones }
                     any_owned_ship = { has_ship_flag = taiho_sh_buff }
                 }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = taiho_sh_buff
                     }
                     remove_modifier = taiho_sh_buff_to_drones
                     remove_ship_flag = taiho_sh_buff
-                }}
+                }
             }
             if = {
                 limit = { 
                     NOT = { has_fleet_flag = drones }
                     any_owned_ship = { has_ship_flag = taiho_sh_debuff }
                 }
-                owner = { every_owned_ship = {
+                every_owned_ship = {
                     limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
                         is_ship_size = scout_UAV
                         has_ship_flag = taiho_sh_debuff
                     }
                     remove_modifier = taiho_sh_debuff_to_enemy_drones
                     remove_ship_flag = taiho_sh_debuff
-                }}
+                }
             }
             # 卡伯特
             if = {
                 limit = { has_fleet_flag = cobot_skill_triggered }
                 remove_fleet_flag = cobot_skill_triggered
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                    }
+                every_owned_ship = {
                     set_disable_at_health = -1
                     remove_ship_flag = cobot_skill
                     remove_modifier = cobot_buff
-                }}
+                }
             }
             if = {
                 limit = { has_fleet_flag = cobot_skill2_triggered }
                 remove_fleet_flag = cobot_skill2_triggered
                 remove_modifier = cobot_buff_to_all
-                owner = { every_owned_ship = {
-                    limit = { 
-                        Fleet = { is_same_value = PREVPREVPREV }
-                    }
+                every_owned_ship = {
                     set_disable_at_health = -1
                     remove_ship_flag = cobot_skill2
                     remove_modifier = cobot_buff
-                }}
+                }
             }
         }
         else = {
@@ -944,15 +899,14 @@ fleet_event = {
                         add_modifier = { modifier = chongqing_debuff_to_enemy days = -1 }
                         set_fleet_flag = chongqing_debuff
                     }
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = chongqing_debuff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = chongqing_debuff_to_drones days = -1 }
                         set_ship_flag = chongqing_debuff
-                    }}
+                    }
                 }}
             }
             # 饺子
@@ -965,15 +919,14 @@ fleet_event = {
                         add_modifier = { modifier = essex_debuff_to_enemy days = -1 }
                         set_fleet_flag = essex_debuff
                     }
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = essex_debuff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = essex_debuff_to_drones days = -1 }
                         set_ship_flag = essex_debuff
-                    }}
+                    }
                 }}
             }
             # 内华达
@@ -1011,14 +964,13 @@ fleet_event = {
                                 NOT = { has_ship_flag = hutton_buff }
                             }
                         }
-                        owner = { every_owned_ship = {
+                        every_owned_ship = {
                             limit = {
-                                Fleet = { is_same_value = PREVPREVPREV }
                                 is_ship_size = scout_UAV
                                 NOT = { has_ship_flag = hutton_buff }
                             }
                             add_modifier = { modifier = hutton_buff_to_enemy_drones days = -1 }
-                        }}
+                        }
                     }
                 }}
             }
@@ -1041,15 +993,14 @@ fleet_event = {
                         add_modifier = { modifier = taiho_sh_debuff_to_enemy days = -1 }
                         set_fleet_flag = taiho_sh_debuff
                     }
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = taiho_sh_debuff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = taiho_sh_debuff_to_enemy_drones days = -1 }
                         set_ship_flag = taiho_sh_debuff
-                    }}
+                    }
                 }}
             }
         }
@@ -1061,15 +1012,14 @@ fleet_event = {
                 limit = { has_leader_flag = essex }
                 PREVPREVPREV = { every_combatant_fleet = { 
                     limit = { NOT = { has_fleet_flag = drones }}
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = essex_buff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = essex_buff_to_drones days = -1 }
                         set_ship_flag = essex_buff
-                    }}
+                    }
                     if = {
                         limit = { NOT = { has_fleet_flag = essex_buff }}
                         set_fleet_flag = essex_buff
@@ -1108,15 +1058,14 @@ fleet_event = {
                 limit = { has_leader_flag = lexington }
                 PREVPREVPREV = { every_combatant_fleet = { 
                     limit = { NOT = { has_fleet_flag = drones }}
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = lexington_buff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = lexington_buff_to_drones days = -1 }
                         set_ship_flag = lexington_buff
-                    }}
+                    }
                     if = {
                         limit = { NOT = { has_fleet_flag = lexington_buff }}
                         add_modifier = { modifier = lexington_buff_to_all days = -1}
@@ -1129,15 +1078,14 @@ fleet_event = {
                 limit = { has_leader_flag = taiho_sh }
                 PREVPREVPREV = { every_combatant_fleet = { 
                     limit = { NOT = { has_fleet_flag = drones }}
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
-                            Fleet = { is_same_value = PREVPREVPREV }
                             NOT = { has_ship_flag = taiho_sh_buff }
                             is_ship_size = scout_UAV
                         }
                         add_modifier = { modifier = taiho_sh_buff_to_drones days = -1 }
                         set_ship_flag = taiho_sh_buff
-                    }}
+                    }
                     if = {
                         limit = { NOT = { has_fleet_flag = taiho_sh_buff }}
                         add_modifier = { modifier = taiho_sh_buff_to_all days = -1}
@@ -1166,7 +1114,7 @@ fleet_event = {
                     }}
                     set_fleet_flag = cobot_skill2_triggered
                     add_modifier = { modifier = cobot_buff_to_all days = -1 }
-                    owner = { every_owned_ship = {
+                    every_owned_ship = {
                         limit = {
                             Fleet = { is_same_value = PREVPREVPREV }
                             NOR = { 
@@ -1177,7 +1125,7 @@ fleet_event = {
                         }
                         set_disable_at_health = 0.5
                         set_ship_flag = cobot_skill2
-                    }}
+                    }
                 }}
             }
         }}
@@ -1194,37 +1142,15 @@ fleet_event = {
     }
 
     immediate = {
-        owner = {
-            every_owned_ship = {
-                limit = { Fleet = { is_same_value = PREVPREVPREV }}
-                random_list = {
-                    1 = {
-                        set_timed_ship_flag = { flag = invincible days = 3 }
-                        #临时加生命避免一击秒杀
-                        if = {
-                            limit = { has_hp < 1000 }
-                            add_modifier = { modifier = add_hp_2000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 2000 }
-                            add_modifier = { modifier = add_hp_1000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 20000 }
-                            add_modifier = { modifier = add_hp_100_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 200000 }
-                            add_modifier = { modifier = add_hp_10_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 1000000 }
-                            add_modifier = { modifier = add_hp_2_times days = 3 }
-                        }
-                        ship_event = { id = raa_skill.2021 }
-                    }
-                    9 = {}
+        every_owned_ship = {
+            random_list = {
+                1 = {
+                    set_timed_ship_flag = { flag = invincible days = 3 }
+                    #临时加生命避免一击秒杀
+                    add_many_hp = { DAYS = 3 }
+                    ship_event = { id = raa_skill.2021 }
                 }
+                9 = {}
             }
         }
         fleet_event = { id = raa_skill.40 days = 1 }
@@ -1246,7 +1172,7 @@ fleet_event = {
                 random_combatant_fleet = {
                     random_owned_ship = {
                         limit = { is_ship_size_dd = yes }
-                        destroy_ship = this
+                        reduce_hp_percent = 100
                     }
                 }
             }
@@ -1469,40 +1395,16 @@ fleet_event = {
     }
 
     immediate = {
-        owner = {
-            every_owned_ship = {
-                limit = { 
-                    Fleet = { is_same_value = PREVPREVPREV }
-                    NOT = { has_ship_flag = invincible }
+        every_owned_ship = {
+            limit = { NOT = { has_ship_flag = invincible }}
+            random_list = {
+                1 = {
+                    set_timed_ship_flag = { flag = invincible days = 3 }
+                    #临时加生命避免一击秒杀
+                    add_many_hp = { DAYS = 3 }
+                    ship_event = { id = raa_skill.2021 }
                 }
-                random_list = {
-                    1 = {
-                        set_timed_ship_flag = { flag = invincible days = 3 }
-                        #临时加生命避免一击秒杀
-                        if = {
-                            limit = { has_hp < 1000 }
-                            add_modifier = { modifier = add_hp_2000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 2000 }
-                            add_modifier = { modifier = add_hp_1000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 20000 }
-                            add_modifier = { modifier = add_hp_100_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 200000 }
-                            add_modifier = { modifier = add_hp_10_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 1000000 }
-                            add_modifier = { modifier = add_hp_2_times days = 3 }
-                        }
-                        ship_event = { id = raa_skill.2021 }
-                    }
-                    7 = {}
-                }
+                7 = {}
             }
         }
         fleet_event = { id = raa_skill.1010 days = 1 }
@@ -1525,8 +1427,9 @@ fleet_event = {
                     is_ship_size_dd_cl = yes
                     NOT = { has_ship_flag = helena_buff }
                 }
+                set_ship_flag = helena_buff
                 add_modifier = { modifier = helena_buff_to_dd_cl days = -1 }
-            } }
+            }}
             4 = {}
         }
         fleet_event = { id = raa_skill.1020 days = 1 }
@@ -1569,7 +1472,7 @@ fleet_event = {
             limit = { any_owned_ship = { is_main_ship_size = yes } }
             random_owned_ship = {
                 limit = { is_main_ship_size = yes }
-                destroy_ship = this
+                reduce_hp_percent = 100
             }
         }
     }
@@ -1617,7 +1520,7 @@ country_event = {
             FROMFROMFROM.Fleet = {
                 random_list = {
                     1 = {
-                        random_owned_ship = { destroy_ship = this}
+                        random_owned_ship = { reduce_hp_percent = 100}
                     }
                     14 = {}
                 }
@@ -1627,7 +1530,7 @@ country_event = {
             FROMFROMFROM.Fleet = {
                 random_list = {
                     1 = {
-                        random_owned_ship = { destroy_ship = this}
+                        random_owned_ship = { reduce_hp_percent = 100}
                     }
                     9 = {}
                 }
@@ -1706,7 +1609,7 @@ fleet_event = {
                     limit = { NOT = { has_fleet_flag = drones }}
                     random_owned_ship = {
                         limit = { is_convoy_ship_size = yes }
-                        destroy_ship = this
+                        reduce_hp_percent = 100
                     }
                 }
             }
@@ -1729,36 +1632,12 @@ fleet_event = {
         random_list = {
             1 = {
                 set_fleet_flag = hutton_skill_triggered
-                owner = {
-                    every_owned_ship = {
-                        limit = {
-                            fleet = { is_same_value = PREVPREVPREV }
-                            is_drones_or_corvette = no
-                        }
-                        set_timed_ship_flag = { flag = invincible days = 3 }
-                        #临时加生命避免一击秒杀
-                        if = {
-                            limit = { has_hp < 1000 }
-                            add_modifier = { modifier = add_hp_2000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 2000 }
-                            add_modifier = { modifier = add_hp_1000_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 20000 }
-                            add_modifier = { modifier = add_hp_100_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 200000 }
-                            add_modifier = { modifier = add_hp_10_times days = 3 }
-                        }
-                        else_if = {
-                            limit = { has_hp < 1000000 }
-                            add_modifier = { modifier = add_hp_2_times days = 3 }
-                        }
-                        ship_event = { id = raa_skill.2021 }
-                    }
+                every_owned_ship = {
+                    limit = { is_drones_or_corvette = no }
+                    set_timed_ship_flag = { flag = invincible days = 3 }
+                    #临时加生命避免一击秒杀
+                    add_many_hp = { DAYS = 3 }
+                    ship_event = { id = raa_skill.2021 }
                 }
             }
             7 = {}
@@ -1797,7 +1676,7 @@ fleet_event = {
                         is_ship_size = wg_titan
                     }
                 }
-                destroy_ship = this
+                reduce_hp_percent = 100
             }
         }
         else_if = {
@@ -1818,7 +1697,7 @@ fleet_event = {
                         is_ship_size = wg_carrier
                     }
                 }
-                destroy_ship = this
+                reduce_hp_percent = 100
             }
         }
     }
@@ -1830,12 +1709,9 @@ fleet_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            every_owned_ship = {
-                limit = { fleet = { is_same_value = PREVPREVPREV } }
-                set_ship_flag = enterprise_damage_control
-                set_disable_at_health = 0.1
-            }
+        every_owned_ship = {
+            set_ship_flag = enterprise_damage_control
+            set_disable_at_health = 0.1
         }
     }
 }
@@ -1851,36 +1727,14 @@ fleet_event = {
 
     immediate = {
         set_fleet_flag = VV_skill_triggered
-        owner = {
-            every_owned_ship = {
-                limit = {
-                    fleet = { is_same_value = PREVPREVPREV }
-                    is_drones_or_corvette = no
-                }
-                set_timed_ship_flag = { flag = invincible days = 7 }
-                #临时加生命避免一击秒杀
-                if = {
-                    limit = { has_hp < 1000 }
-                    add_modifier = { modifier = add_hp_2000_times days = 6 }
-                }
-                else_if = {
-                    limit = { has_hp < 2000 }
-                    add_modifier = { modifier = add_hp_1000_times days = 6 }
-                }
-                else_if = {
-                    limit = { has_hp < 20000 }
-                    add_modifier = { modifier = add_hp_100_times days = 6 }
-                }
-                else_if = {
-                    limit = { has_hp < 200000 }
-                    add_modifier = { modifier = add_hp_10_times days = 6 }
-                }
-                else_if = {
-                    limit = { has_hp < 1000000 }
-                    add_modifier = { modifier = add_hp_2_times days = 6 }
-                }
-                ship_event = { id = raa_skill.2021 }
+        every_owned_ship = {
+            limit = {
+                is_drones_or_corvette = no
             }
+            set_timed_ship_flag = { flag = invincible days = 7 }
+            #临时加生命避免一击秒杀
+            add_many_hp = { DAYS = 6 }
+            ship_event = { id = raa_skill.2021 }
         }
     }
 }
@@ -1916,7 +1770,7 @@ fleet_event = {
                     random_combatant_fleet = {
                         limit = { NOT = { has_fleet_flag = drones }}
                         random_owned_ship = {
-                            destroy_ship = this
+                            reduce_hp_percent = 100
                         }
                     }
                 }
@@ -1960,12 +1814,12 @@ fleet_event = {
                                     is_ship_size = wg_carrier
                                 }
                             }
-                            destroy_ship = this
+                            reduce_hp_percent = 100
                         }}
                     }
                     else = {
                         random_combatant_fleet = { random_owned_ship = {
-                            destroy_ship = this
+                            reduce_hp_percent = 100
                         }}
                     }
                 }
@@ -1974,7 +1828,7 @@ fleet_event = {
                 while = {
                     count = 2
                     random_combatant_fleet = { random_owned_ship = {
-                        destroy_ship = this
+                        reduce_hp_percent = 100
                     }}
                 }
             }
@@ -1999,15 +1853,12 @@ fleet_event = {
                     solar_system = {
                         every_fleet_in_system = {
                             limit = { NOT = { is_same_value = root }}
-                            owner = {
-                                every_owned_ship = {
-                                    limit = { FLEET = { is_same_value = PREVPREVPREV }}
-                                    random_list = {
-                                        1 = {
-                                            destroy_ship = this
-                                        }
-                                        4 = {}
+                            every_owned_ship = {
+                                random_list = {
+                                    1 = {
+                                        reduce_hp_percent = 100
                                     }
+                                    4 = {}
                                 }
                             }
                         }
@@ -2056,7 +1907,7 @@ fleet_event = {
                     }}}
                     random_combatant_fleet = { random_owned_ship = { 
                         limit = { is_main_ship_size = yes }
-                        destroy_ship = this
+                        reduce_hp_percent = 100
                     }}
                 }
             }
@@ -2092,26 +1943,7 @@ ship_event = {
             remove_ship_flag = cobot_skill
             set_timed_ship_flag = { flag = invincible days = 3 }
             #临时加生命避免一击秒杀
-            if = {
-                limit = { has_hp < 1000 }
-                add_modifier = { modifier = add_hp_2000_times days = 3 }
-            }
-            else_if = {
-                limit = { has_hp < 2000 }
-                add_modifier = { modifier = add_hp_1000_times days = 3 }
-            }
-            else_if = {
-                limit = { has_hp < 20000 }
-                add_modifier = { modifier = add_hp_100_times days = 3 }
-            }
-            else_if = {
-                limit = { has_hp < 200000 }
-                add_modifier = { modifier = add_hp_10_times days = 3 }
-            }
-            else_if = {
-                limit = { has_hp < 1000000 }
-                add_modifier = { modifier = add_hp_2_times days = 3 }
-            }
+            add_many_hp = { DAYS = 3 }
             repair_ship = yes
             ship_event = { id = raa_skill.2021 }
             ship_event = { id = raa_skill.10031 days = 4 }

@@ -4,7 +4,7 @@ soundeffect = {
 	sounds = {
 		sound = event_wg_wedding
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -14,7 +14,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_first_meet
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -24,7 +24,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_contact
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -34,7 +34,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_talk1
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -44,7 +44,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_talk2
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -54,7 +54,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_talk3
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -64,7 +64,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_governor
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -74,7 +74,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_scientist
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -84,7 +84,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_admiral
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -94,7 +94,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_general
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -104,7 +104,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_affection_level_2
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -114,7 +114,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_affection_level_3
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -124,7 +124,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_affection_level_4
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -134,7 +134,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_affection_max
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -144,7 +144,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -154,7 +154,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry_talk1
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -164,7 +164,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry_talk2
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -174,7 +174,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry_talk3
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -184,7 +184,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry_talk4
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -194,7 +194,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_marry_talk5
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -204,7 +204,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_contact_hurt
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -214,7 +214,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_hurt
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
@@ -224,7 +224,7 @@ soundeffect = {
 	sounds = {
 		sound = event_shimakaze_recovered
 	}
-	volume = 1.0
+	volume = 1.5
 	max_audible = 1
 	max_audible_behaviour = fail
 }
