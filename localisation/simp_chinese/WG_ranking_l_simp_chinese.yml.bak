@@ -39,7 +39,7 @@
  wsgranking.1007.desc:0 "我们的专业团队将会听您调遣，她们只吃PATPAT牌营养冰淇淋和“没味道”牌面条，且极少制造麻烦。任务的时间也与任务的难度有关！\n目前您还可以再持有 §Y[Root.max_allowed_shop_buffs]§! 个战利品商店增益。"
  wsgranking.1007.a:0 "我们希望你们来改善我们的工业生产。"
  wsgranking.1007.b:0 "我们希望你们充当我们的外交使节"
- wsgranking.1007.c:0 "可否指导我们的太空技术？"
+ wsgranking.1007.c:0 "可否指导我们的军事作战？"
  wsgranking.1020.desc:0 "我们有各种方法来提升工业生产的效率。奥秘隐藏在我们数千年来对数百个舰娘与深海社会的观察当中。 \n 当然，奇迹和魔法都不是免费的。强大的生产力提升也一样。"
  wsgranking.1021.desc:0 "是的，是的。我们之所以孑然一身生存至今，坐拥滚滚财源，正是因为擅长和外星佬们打交道。 \n 找我们，就对了。但战场上拿不到的，外交谈判桌上也拿不到。不付钱就更拿不到了。"
  wsgranking.1022.desc:0 "您这回可找对专家了。我们断椅族能在这个危机丛生又充满变化的宇宙的秘密便是我们领先全宇宙200年的换家战术！正所谓“学会了姐的营运，剩下的就只有F2A了。”"
@@ -226,8 +226,6 @@
  wg_modifier_diplomacy_trade:0 "促进星际贸易"
  wg_modifier_diplomacy_weight:0 "增加外交话语权"
  
- wg_modifier_station_gatherers:0 "巨型采矿钻"
- wg_modifier_survey:0 "深空扫描仪"
  wg_modifier_ship_repair:0 "老练的损管妖精"
  wg_modifier_ship_speed:0 "低德导航线路图"
  wg_modifier_combat_hull_algorithm:0 "改进舰船结构设计"

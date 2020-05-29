@@ -57,7 +57,9 @@
  wg_aft.2005.c:0 "查看所有§H海军上将§!的好感度"
  wg_aft.2005.d:0 "查看所有§H陆军将军§!的好感度"
  wg_aft.2005.e:0 "查看§H统治者§!的好感度"
- wg_aft.2005.f:0 "查看所有§H大小姐§!的好感度"
+ wg_aft.2005.f:0 "查看§H大小姐§!的好感度"
+ wg_aft.2005.h:0 "查看§H岛风§!的好感度"
+ wg_aft.2005.i:0 "查看§H灰风§!的好感度"
  wg_aft.2005.g:0 "退出"
  wg_aft.2006.name:0 "领袖好感度明细"
 
@@ -99,8 +101,23 @@
  wg_aft.2008.desc.a:0 "§H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"
  wg_aft.2008.desc.b:0 "£sr_ring£ §H大小姐§!的好感度级别为§H[This.lady_affection_level]§!，好感度为§H[This.lady_affection]§!，距离下一级好感度还需要§H[This.lady_affection_to_level_up]§!点好感。"
 
+ wg_aft.2009.name:0 "查看岛风好感度"
+ wg_aft.2009.desc.a:0 "§H岛风§!的好感度级别为§H[This.shimakaze_affection_level]§!，好感度为§H[This.shimakaze_affection]§!，距离下一级好感度还需要§H[This.shimakaze_affection_to_level_up]§!点好感。"
+ wg_aft.2009.desc.b:0 "£sr_ring£ §H岛风§!的好感度级别为§H[This.shimakaze_affection_level]§!，好感度为§H[This.shimakaze_affection]§!，距离下一级好感度还需要§H[This.shimakaze_affection_to_level_up]§!点好感。"
+
+ wg_aft.2010.name:0 "查看灰风好感度"
+ wg_aft.2010.desc.a:0 "§H灰风§!的好感度级别为§H[This.gray_affection_level]§!，好感度为§H[This.gray_affection]§!，距离下一级好感度还需要§H[This.gray_affection_to_level_up]§!点好感。"
+ wg_aft.2010.desc.b:0 "£sr_ring£ §H灰风§!的好感度级别为§H[This.gray_affection_level]§!，好感度为§H[This.gray_affection]§!，距离下一级好感度还需要§H[This.gray_affection_to_level_up]§!点好感。"
+
  wg_aft.10001.name:0 "旧存档警告"
  wg_aft.10001.desc:0 "如果您看到此事件框出现，即表示您正在使用本mod4.0以前的版本的存档进行游戏。本mod自更新至4.0后便§R不再兼容任何基于在4.0版本前的存档§!！\n关于本mod的更新内容，请参阅创意工坊中的更新日志。\n假如您继续游戏并遇到了任何BUG（尤其是大小姐的）（p.s.好感度系统应该没问题），那么多半是因为版本不兼容，请谨慎继续游戏！"
  wg_aft.10001.a:0 "我已确认以上事项"
 
+ marry_gray:0 "灰风，我有个东西想交给你"
+ wg_aft.30000.name:0 "与灰风的誓约仪式"
+ wg_aft.30000.desc:0 "这个环状的东西是...要套在无名指上吗？阿，你这是承认了我的忠诚了对吧？那么接下来是要进行什么愉快的同伴行为吗？\n\n...好吧，我承认这个笑话有点冷，不过跟你们相处的日子确实很开心，请让我永远效忠于你吧。"
+ wg_aft.30000.a:0 "你已经是我们的一份子了，灰风。"
+ wg_aft.30000.response:0 "这...是这样吗？\n\n...\n\n谢谢。"
+ 
+ 
  wsg_rings:0 "戒指"

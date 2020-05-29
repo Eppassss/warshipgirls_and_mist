@@ -441,3 +441,7 @@ nie_admiral_buff = {
 	ship_fire_rate_mult = -999.9
 	ship_weapon_damage = -999.9
 }
+
+wsg_shimakaze_recovery_cd = {
+	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
+}

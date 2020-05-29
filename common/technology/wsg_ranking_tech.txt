@@ -13,8 +13,8 @@ tech_wsg_trading_pantsu = {
 	}
     weight = 0 #Hidden Tech
     modifier = {
-        planet_jobs_sr_pantsu_produces_mult = 0.20
-		trade_value_mult = 0.20
+        planet_jobs_sr_pantsu_produces_mult = 0.10
+		trade_value_mult = 0.10
     }
 	ai_weight = {
 		factor = 0

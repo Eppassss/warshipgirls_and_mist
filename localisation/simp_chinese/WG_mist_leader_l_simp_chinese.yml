@@ -16,6 +16,8 @@
  wsg_shimakaze.5.desc: "提督君……该睡觉啦……岛风已经好困了……zzzzz"
  wsg_shimakaze.8.desc: "才不要，在这里结束呢……！"
  wsg_shimakaze.8.tooltip: "岛风进入了大破状态，需要一段时间才能恢复"
+ wsg_shimakaze_recovery_cd: "岛风大破"
+ wsg_shimakaze_recovery_cd: "岛喵入浴中......不可以做奇怪的事情哦"
  wsg_shimakaze.9.desc: "提督君早啊——！天亮了哦——该起床啦。嗯，那么， 今天也请多指教咯。"
  wsg_shimakaze.9.tooltip: "岛风已从大破状态恢复"
 

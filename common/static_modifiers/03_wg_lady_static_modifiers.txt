@@ -1,4 +1,6 @@
-wsg_lady_recover_cd = {}
+wsg_lady_recover_cd = {
+	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
+}
 wsg_lady_modify_consume = {
 	country_base_nanites_produces_add = -3
 	country_base_alloys_produces_add = -50

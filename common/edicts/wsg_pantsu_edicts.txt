@@ -745,14 +745,7 @@ check_affection = {
 	length = 0
 
 	potential = {
-		NOT = {
-			has_active_event = {
-				wg_aft.2005
-				wg_aft.2006
-				wg_aft.2007
-				wg_aft.2008
-			}
-		}
+		check_affection_event_active_diplo = no
 		OR = {
 			has_authority = auth_shenhai
 			has_authority = auth_warshipgirls

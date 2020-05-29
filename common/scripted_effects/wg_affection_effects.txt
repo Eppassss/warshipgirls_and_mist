@@ -2,14 +2,20 @@
 @lady_affection_to_lv2 = 30
 @lady_affection_to_lv3 = 70
 @lady_affection_to_lv4 = 125
-@lady_affection_to_lv5 = 200
+@lady_affection_to_lv5 = 185
 @lady_affection_reduce = 40
 #岛风
-@shimakaze_affection_to_lv2 = 36
-@shimakaze_affection_to_lv3 = 84
-@shimakaze_affection_to_lv4 = 150
-@shimakaze_affection_to_lv5 = 240
+@shimakaze_affection_to_lv2 = 30
+@shimakaze_affection_to_lv3 = 70
+@shimakaze_affection_to_lv4 = 130
+@shimakaze_affection_to_lv5 = 185
 @shimakaze_affection_reduce = 40
+#灰风
+@gray_affection_to_lv2 = 25
+@gray_affection_to_lv3 = 55
+@gray_affection_to_lv4 = 90
+@gray_affection_to_lv5 = 150
+@gray_affection_reduce = 30
 #总督
 @governor_affection_to_lv2 = 30
 @governor_affection_to_lv3 = 60
@@ -910,6 +916,53 @@ add_scientist_affection_monthly = {
 	}
 }
 
+add_scientist_affection_arch = {
+	random_list = {
+		1 = {
+			modifier = {
+				check_variable = { which = "clues_no_affection" value >= 7 }
+				add = -3
+			}
+			switch = {
+				trigger = has_leader_flag
+				wsg_lady_leader = {
+					owner = { event_target:lady_survey_scientist = {
+						add_lady_survey_scientist_affection = yes
+					}}
+				}
+				wsg_shimakaze_leader = {
+					owner = { event_target:shimakaze_scientist = { 
+						add_shimakaze_scientist_affection = yes
+					}}
+				}
+				default = {
+					add_scientist_affection = yes
+				}
+			}
+			set_variable = { which = "clues_no_affection" value = 0 }
+		}
+		7 = {
+			modifier = {
+				check_variable = { which = "rolls_no_affection" value >= 1 }
+				add = -1
+			}
+			modifier = {
+				check_variable = { which = "rolls_no_affection" value >= 3 }
+				add = -2
+			}
+			modifier = {
+				check_variable = { which = "clues_no_affection" value >= 5 }
+				add = -3
+			}
+			modifier = {
+				check_variable = { which = "rolls_no_affection" value >= 8 }
+				factor = 0
+			}
+			change_variable = { which = "clues_no_affection" value = $CLUES$ }
+		}
+	}
+}
+
 # scope: leader
 # PREV: country
 add_shimakaze_scientist_affection_monthly = {
@@ -984,6 +1037,44 @@ add_lady_scientist_affection_monthly = {
 		}
 	}
 }
+
+# scope: leader
+# PREV: country
+add_lady_scientist_affection_monthly = {
+	random_list = {
+		1 = {
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 8 }
+				add = 4
+			}
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 10 }
+				add = 4
+			}
+			add_lady_survey_scientist_affection = yes 
+		}
+		14 = {
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 2 }
+				add = -3
+			}
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 4 }
+				add = -2
+			}
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 6 }
+				add = -5
+			}
+			modifier = {
+				check_variable = { which = "months_no_affection_lady" value >= 12 }
+				factor = 0
+			}
+			change_variable = { which = "months_no_affection_lady" value = 1 }
+		}
+	}
+}
+
 
 add_ruler_affection_monthly = {
 	random_list = {
@@ -1648,9 +1739,9 @@ add_shimakaze_governor_affection = {
 	if = {
 		limit = { PREV = { check_variable = { which = "shimakaze_affection" value = @shimakaze_affection_to_lv5 }}}
 		remove_shimakaze_governor_affection_trait = yes
-		PREV = { set_country_flag = affection_max }
+		PREV = { set_country_flag = shimakaze_affection_max }
 		if = {
-			limit = { PREV = { has_country_flag = married_shimakaze }}
+			limit = { PREV = { has_country_flag = married_wsg_shimakaze }}
 			add_trait = leader_trait_governor_shimakaze_affection_lv5
 			PREV = { set_variable = { which = shimakaze_affection_level value = 5 }}
 		}
@@ -1741,7 +1832,7 @@ add_shimakaze_scientist_affection = {
 	if = {
 		limit = { PREV = { check_variable = { which = "shimakaze_affection" value = @shimakaze_affection_to_lv5 }}}
 		remove_shimakaze_scientist_affection_trait = yes
-		PREV = { set_country_flag = affection_max }
+		PREV = { set_country_flag = shimakaze_affection_max }
 		if = {
 			limit = { has_leader_flag = married }
 			add_trait = leader_trait_scientist_shimakaze_affection_lv5
@@ -1831,7 +1922,7 @@ add_shimakaze_admiral_affection = {
 		remove_shimakaze_admiral_affection_trait = yes
 		owner = { set_country_flag = shimakaze_affection_max }
 		if = {
-			limit = { owner = { has_country_flag = married_shimakaze }}
+			limit = { owner = { has_country_flag = married_wsg_shimakaze }}
 			add_trait = leader_trait_admiral_shimakaze_affection_lv5
 			owner = { set_variable = { which = shimakaze_affection_level value = 5 }}
 		}
@@ -1920,9 +2011,9 @@ add_shimakaze_general_affection = {
 	if = {
 		limit = { owner = { check_variable = { which = "shimakaze_affection" value = @shimakaze_affection_to_lv5 }}}
 		remove_shimakaze_general_affection_trait = yes
-		set_leader_flag = affection_max
+		owner = { set_country_flag = shimakaze_affection_max }
 		if = {
-			limit = { owner = { has_country_flag = married_shimakaze }}
+			limit = { owner = { has_country_flag = married_wsg_shimakaze }}
 			add_trait = leader_trait_general_shimakaze_affection_lv5
 			owner = { set_variable = { which = shimakaze_affection_level value = 5 }}
 		}
@@ -2011,7 +2102,7 @@ reset_shimakaze_affection_level = {
 	if = {
 		limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv5 }}
 		if = {
-			limit = { has_country_flag = married_shimakaze }
+			limit = { has_country_flag = married_wsg_shimakaze }
 			set_variable = { which = "shimakaze_affection_level" value = 5 }
 		}
 		else = { 
@@ -2042,6 +2133,270 @@ reset_shimakaze_affection_level = {
 		if = {
 			limit = { check_variable = { which = "shimakaze_affection" value < 1}}
 			set_variable = { which = "shimakaze_affection" value = 1 }
+		}
+		break = yes
+	}
+}
+
+#####################################################################
+#  灰风好感度
+#####################################################################
+
+# scope: leader
+# PREV scope: country
+add_gray_governor_affection_trait = {
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value >= @gray_affection_to_lv5
+		}}}
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_governor_gray_affection_lv5
+		} else = {
+			add_trait = leader_trait_governor_gray_affection_lv4_max
+		}
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv2
+		}}}
+		add_trait = leader_trait_governor_affection_lv1
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv3
+		}}}
+		add_trait = leader_trait_governor_gray_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv4
+		}}}
+		add_trait = leader_trait_governor_gray_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv5
+		}}}
+		add_trait = leader_trait_governor_gray_affection_lv4
+		break = yes
+	}
+}
+
+# scope: leader
+remove_gray_governor_affection_trait = {
+	remove_trait = leader_trait_governor_affection_lv1
+	remove_trait = leader_trait_governor_gray_affection_lv2
+	remove_trait = leader_trait_governor_gray_affection_lv3 
+	remove_trait = leader_trait_governor_gray_affection_lv4 
+	remove_trait = leader_trait_governor_gray_affection_lv4_max 
+	remove_trait = leader_trait_governor_gray_affection_lv5 
+}
+
+# scope: leader
+# PREV: country
+add_gray_governor_affection = {
+	PREV = { change_variable = { which = "gray_affection" value = 1 }}
+	if = {
+		limit = { PREV = { check_variable = { which = gray_affection_level value >= 5 }}}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv2 }}}
+		remove_gray_governor_affection_trait = yes
+		add_trait = leader_trait_governor_gray_affection_lv2
+		PREV = { set_variable = { which = gray_affection_level value = 2 }}
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv3 }}}
+		remove_gray_governor_affection_trait = yes
+		add_trait = leader_trait_governor_gray_affection_lv3
+		PREV = { set_variable = { which = gray_affection_level value = 3 }}
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv4 }}}
+		remove_gray_governor_affection_trait = yes
+		add_trait = leader_trait_governor_gray_affection_lv4
+		PREV = { set_variable = { which = gray_affection_level value = 4 }}
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv5 }}}
+		remove_gray_governor_affection_trait = yes
+		PREV = { set_country_flag = gray_affection_max }
+		if = {
+			limit = { PREV = { has_country_flag = married_gray }}
+			add_trait = leader_trait_governor_gray_affection_lv5
+			PREV = { set_variable = { which = gray_affection_level value = 5 }}
+		}
+		else = {
+			add_trait = leader_trait_governor_gray_affection_lv4_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV scope: country
+add_gray_admiral_affection_trait = {
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value >= @gray_affection_to_lv5
+		}}}
+		if = {
+			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			add_trait = leader_trait_admiral_gray_affection_lv5
+		} else = {
+			add_trait = leader_trait_admiral_gray_affection_lv4_max
+		}
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv2
+		}}}
+		add_trait = leader_trait_admiral_affection_lv1
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv3
+		}}}
+		add_trait = leader_trait_admiral_gray_affection_lv2
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv4
+		}}}
+		add_trait = leader_trait_admiral_gray_affection_lv3
+		break = yes
+	}
+	if = {
+		limit = { PREV = { check_variable = {
+			which = "gray_affection" value < @gray_affection_to_lv5
+		}}}
+		add_trait = leader_trait_admiral_gray_affection_lv4
+		break = yes
+	}
+}
+
+# scope: leader
+# PREV: country
+add_gray_admiral_affection = {
+	$COUNTRY$ = { change_variable = { which = gray_affection value = 1 }}
+	if = {
+		limit = { 
+			$COUNTRY$ = { OR = { 
+				has_country_flag = gray_affection_max
+				check_variable = { which = gray_affection_level value >= 5 }
+			}}
+		}
+		break = yes #已爆满不需要再测
+	}
+	if = {
+		limit = { $COUNTRY$ = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv2 }}}
+		remove_gray_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_gray_affection_lv2
+		$COUNTRY$ = { set_variable = { which = gray_affection_level value = 2 }}
+		break = yes
+	}
+	if = {
+		limit = { $COUNTRY$ = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv3 }}}
+		remove_gray_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_gray_affection_lv3
+		$COUNTRY$ = { set_variable = { which = gray_affection_level value = 3 }}
+		break = yes
+	}
+	if = {
+		limit = { $COUNTRY$ = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv4 }}}
+		remove_gray_admiral_affection_trait = yes
+		add_trait = leader_trait_admiral_gray_affection_lv4
+		$COUNTRY$ = { set_variable = { which = gray_affection_level value = 4 }}
+		break = yes
+	}
+	if = {
+		limit = { $COUNTRY$ = { check_variable = { which = "gray_affection" value = @gray_affection_to_lv5 }}}
+		remove_gray_admiral_affection_trait = yes
+		$COUNTRY$ = { set_country_flag = gray_affection_max }
+		if = {
+			limit = { $COUNTRY$ = { has_country_flag = married_gray }}
+			add_trait = leader_trait_admiral_gray_affection_lv5
+			$COUNTRY$ = { set_variable = { which = gray_affection_level value = 5 }}
+		}
+		else = {
+			add_trait = leader_trait_admiral_gray_affection_lv4_max
+		}
+		break = yes
+	}
+}
+
+# scope: leader
+remove_gray_admiral_affection_trait = {
+	remove_trait = leader_trait_admiral_affection_lv1
+	remove_trait = leader_trait_admiral_gray_affection_lv2
+	remove_trait = leader_trait_admiral_gray_affection_lv3 
+	remove_trait = leader_trait_admiral_gray_affection_lv4 
+	remove_trait = leader_trait_admiral_gray_affection_lv4_max 
+	remove_trait = leader_trait_admiral_gray_affection_lv5 
+}
+
+reset_gray_affection_level = {
+	switch = {
+		trigger = has_country_flag
+		gray_governor_active = { 
+			event_target:gray_governor = {
+				remove_gray_admiral_affection_trait = yes 
+				add_gray_governor_affection_trait = yes
+			}
+		}
+		gray_warship_active = { 
+			event_target:huifeng_leader_admiral = {
+				remove_gray_admiral_affection_trait = yes 
+				add_gray_admiral_affection_trait = yes
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv5 }}
+		if = {
+			limit = { has_country_flag = married_gray }
+			set_variable = { which = "gray_affection_level" value = 5 }
+		}
+		else = { 
+			set_variable = { which = "gray_affection_level" value = 4 }
+			set_country_flag = gray_affection_max
+		}
+		break = yes
+	}
+	else = { remove_country_flag = gray_affection_max }
+	if = {
+		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv4 }}
+		set_variable = { which = "gray_affection_level" value = 4 }
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv3 }}
+		set_variable = { which = "gray_affection_level" value = 3 }
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv2 }}
+		set_variable = { which = "gray_affection_level" value = 2 }
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = "gray_affection" value < @gray_affection_to_lv2 }}
+		set_variable = { which = "gray_affection_level" value = 1 }
+		if = {
+			limit = { check_variable = { which = "gray_affection" value < 1}}
+			set_variable = { which = "gray_affection" value = 1 }
 		}
 		break = yes
 	}

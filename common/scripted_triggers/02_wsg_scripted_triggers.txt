@@ -114,6 +114,7 @@ is_wg_leader = {
 	NOR = { 
 		has_leader_flag = wsg_special_affection_leader 
 		has_leader_flag = wsg_lady_leader
+		has_leader_flag = 灰风领袖
 	}
 	# 不能是缄默深海
 	owner = {
@@ -143,6 +144,7 @@ is_wg_leader = {
 	}
 }
 
+# scope: leader
 is_wg_leader_with_affection_not_full = {
 	OR = {
 		AND = {
@@ -163,9 +165,38 @@ is_wg_leader_with_affection_not_full = {
 				NOT = { has_country_flag = lady_affection_max }
 			}
 		}
+		AND = {
+			has_leader_flag = 灰风领袖
+			owner = { 
+				is_vaild_gray_owner = yes
+				NOT = { has_country_flag = gray_affection_max }
+			}
+		}
 	}
 }
 
+# scope: country
+is_vaild_gray_owner = {
+	is_same_value = event_target:gray_owner 
+	OR = {
+		has_authority = auth_warshipgirls
+		has_authority = auth_shenhai
+	}
+}
+
+# scope: country
+check_affection_event_active_diplo = {
+	has_active_event = {
+		wg_aft.2005
+		wg_aft.2006
+		wg_aft.2007
+		wg_aft.2008
+		wg_aft.2009
+		wg_aft.2010
+	}
+}
+
+# scope: leader
 has_affection_trait = {
 	OR = {
 		# 总督

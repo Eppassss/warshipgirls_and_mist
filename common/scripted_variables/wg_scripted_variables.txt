@@ -17,14 +17,20 @@
 @lady_affection_to_lv2 = 30
 @lady_affection_to_lv3 = 70
 @lady_affection_to_lv4 = 125
-@lady_affection_to_lv5 = 200
+@lady_affection_to_lv5 = 185
 @lady_affection_reduce = 40
 #岛风
-@shimakaze_affection_to_lv2 = 36
-@shimakaze_affection_to_lv3 = 84
-@shimakaze_affection_to_lv4 = 150
-@shimakaze_affection_to_lv5 = 240
+@shimakaze_affection_to_lv2 = 30
+@shimakaze_affection_to_lv3 = 70
+@shimakaze_affection_to_lv4 = 130
+@shimakaze_affection_to_lv5 = 185
 @shimakaze_affection_reduce = 40
+#灰风
+@gray_affection_to_lv2 = 25
+@gray_affection_to_lv3 = 55
+@gray_affection_to_lv4 = 90
+@gray_affection_to_lv5 = 150
+@gray_affection_reduce = 30
 #总督
 @governor_affection_to_lv2 = 40
 @governor_affection_to_lv3 = 80
@@ -46,10 +52,10 @@
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 40
-@ruler_affection_to_lv3 = 80
-@ruler_affection_to_lv4 = 120
-@ruler_affection_to_lv5 = 160
+@ruler_affection_to_lv2 = 35
+@ruler_affection_to_lv3 = 70
+@ruler_affection_to_lv4 = 105
+@ruler_affection_to_lv5 = 140
 
 ######################################
 #反抗军舰队持有上限

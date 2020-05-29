@@ -3125,46 +3125,6 @@ country_event = {
     }
  	option = {
 		custom_gui = "enclave_caravaneer_option"
-        name = wg_modifier_station_gatherers
-        trigger = { NOT = { has_modifier = wg_modifier_station_gatherers }}
-		allow = {
-			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
-                fail_text = too_low_rank_fail_20
-			}
-			custom_tooltip = {
-				check_variable = { which = max_allowed_shop_buffs value > 0 }
-                fail_text = reached_max_allowed_shop_buffs
-            }
-            resource_stockpile_compare = { resource = energy value >= 500 }
-		}
-		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
-        add_resource = { energy = -500 }
-		add_modifier = { modifier = wg_modifier_station_gatherers days = 3600 }
-		country_event = { id = wsgranking.20004 days = 3600 }
-    }	
- 	option = {
-		custom_gui = "enclave_caravaneer_option"
-        name = wg_modifier_survey
-        trigger = { NOT = { has_modifier = wg_modifier_survey }}
-		allow = {
-			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
-                fail_text = too_low_rank_fail_20
-			}
-			custom_tooltip = {
-				check_variable = { which = max_allowed_shop_buffs value > 0 }
-                fail_text = reached_max_allowed_shop_buffs
-            }
-            resource_stockpile_compare = { resource = energy value >= 500 }
-		}
-		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
-        add_resource = { energy = -500 }
-		add_modifier = { modifier = wg_modifier_survey days = 3600 }
-		country_event = { id = wsgranking.20004 days = 3600 }
-    }
- 	option = {
-		custom_gui = "enclave_caravaneer_option"
         name = wg_modifier_ship_repair
         trigger = { NOT = { has_modifier = wg_modifier_ship_repair }}
 		allow = {
