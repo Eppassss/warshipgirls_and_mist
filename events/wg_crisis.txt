@@ -444,6 +444,9 @@ country_event = {
 						PREV = { random_system_planet = {
 							limit = { is_primary_star = yes }
 							create_wg_crisis_guard_fleet = yes 
+							last_created_fleet = {
+								set_fleet_flag = first_portal_guard_fleet
+							}
 						}}
 					}
 				}
@@ -842,11 +845,20 @@ country_event = {
 		if = {
 			limit = {
 				# 检查第一传送门守家舰队
-				NOT = { has_global_flag = first_portal_destroyed }
-				event_target:first_portal_system = {
-					count_system_ships = {
-						limit = { fleet = { has_fleet_flag = defence_fleet }}
-						count < 1
+				NOR = { 
+					has_global_flag = first_portal_destroyed
+					any_owned_fleet = {
+						exists = this
+						has_fleet_flag = defence_fleet
+						OR = {
+							has_fleet_flag = first_portal_guard_fleet
+							solar_system = {
+								OR = {
+									has_star_flag = first_portal_system
+									is_same_value = event_target:first_dimensional_portal
+								}
+							}
+						}
 					}
 				}
 			}
@@ -860,11 +872,20 @@ country_event = {
 			limit = { 
 				# 检查第二传送门守家舰队
 				has_global_flag = second_portal_opened
-				NOT = { has_global_flag = second_portal_destroyed }
-				event_target:second_portal_system = {
-					count_system_ships = {
-						limit = { fleet = { has_fleet_flag = defence_fleet }} 
-						count < 1
+				NOR = { 
+					has_global_flag = second_portal_destroyed 
+					any_owned_fleet = {
+						exists = this
+						has_fleet_flag = defence_fleet
+						OR = {
+							has_fleet_flag = second_portal_guard_fleet
+							solar_system = {
+								OR = {
+									has_star_flag = second_portal_system
+									is_same_value = event_target:second_dimensional_portal
+								}
+							}
+						}
 					}
 				}
 			}
@@ -878,11 +899,20 @@ country_event = {
 			limit = { 
 				# 检查第三传送门守家舰队
 				has_global_flag = third_portal_opened
-				NOT = { has_global_flag = third_portal_destroyed }
-				event_target:third_portal_system = {
-					count_system_ships = {
-						limit = { fleet = { has_fleet_flag = defence_fleet }}
-						count < 1
+				NOR = { 
+					has_global_flag = third_portal_destroyed 
+					any_owned_fleet = {
+						exists = this
+						has_fleet_flag = defence_fleet
+						OR = {
+							has_fleet_flag = third_portal_guard_fleet
+							solar_system = {
+								OR = {
+									has_star_flag = third_portal_system
+									is_same_value = event_target:third_dimensional_portal
+								}
+							}
+						}
 					}
 				}
 			}
@@ -1473,6 +1503,9 @@ country_event = {
 					PREV = { random_system_planet = {
 						limit = { is_primary_star = yes }
 						create_wg_crisis_guard_fleet = yes
+						last_created_fleet = {
+							set_fleet_flag = second_portal_guard_fleet
+						}
 					}}
 				}
 				while = {
@@ -1561,6 +1594,9 @@ country_event = {
 					PREV = { random_system_planet = {
 						limit = { is_primary_star = yes }
 						create_wg_crisis_guard_fleet = yes
+						last_created_fleet = {
+							set_fleet_flag = third_portal_guard_fleet
+						}
 					}}
 				}
 				while = {

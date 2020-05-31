@@ -268,13 +268,7 @@ country_event = {
 				limit = {
 					OR = {
 						is_same_species = root
-						species = { 
-							OR = {
-								has_trait = sh_trait_shenhai
-								has_trait = sh_trait_shenhai1
-							}
-						}
-						has_leader_flag = wsg_event_leader
+						is_wg_leader = yes
 					}
 					NOR = {
 						has_trait =	leader_trait_admiral_shenhai
@@ -477,10 +471,8 @@ country_event = {
 		hidden_effect = {
 			every_owned_leader = {
 				limit = {
-					OR = {
-						is_same_species = root
-						has_leader_flag = wsg_event_leader
-					}
+					is_same_species = root
+					is_wg_leader = yes
 					NOR = {
 						has_trait =	leader_trait_admiral_shenhai1
 						has_trait =	leader_trait_general_shenhai1
@@ -679,10 +671,8 @@ country_event = {
 		hidden_effect = {
 			every_owned_leader = {
 				limit = {
-					OR = {
-						is_same_species = root
-						has_leader_flag = wsg_event_leader
-					}
+					is_same_species = root
+					is_wg_leader = yes
 					NOR = {
 						has_trait =	leader_trait_admiral_shenhai2
 						has_trait =	leader_trait_general_shenhai2

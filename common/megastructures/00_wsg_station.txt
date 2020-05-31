@@ -115,11 +115,14 @@ wsg_station = {
 	on_build_complete = {
 		set_star_flag = wsg_station_built_flag
 		from = { 
-			set_country_flag = built_wsg_station
-			country_event = { id = wsg.3025 }
 			change_variable = {
 				which = num_wsg_station
 				value = 1
+			}
+			if = {
+				limit = { NOT = { has_country_flag = built_wsg_station }
+				set_country_flag = built_wsg_station
+				change_variable = { which = rankpts value = 3 }
 			}
 			if = {
 				limit = { is_country_type = default_ev }
@@ -261,10 +264,11 @@ dyson_yamato = {
 	on_build_cancel = {}
 	on_build_complete = {
 		set_star_flag = dyson_yamato_built
-		from = { 
+		FROM = { if = {
+			limit = { NOT = { has_country_flag = built_dyson_yamato }
 			set_country_flag = built_dyson_yamato
-			country_event = { id = wsg.3028 }
-		}
+			change_variable = { which = rankpts value = 3 }
+		}}
 	}
 }
 
@@ -301,7 +305,7 @@ wsg_mining_station = {
 	}	
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes }}
 			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
 			custom_tooltip = {
 				fail_text = "requires_no_existing_megastructure"
@@ -323,7 +327,11 @@ wsg_mining_station = {
 	on_build_complete = {
 		set_star_flag = wsg_mining_station_built
 		from = { 
-			set_country_flag = built_wsg_mining_station
+			if = {
+				limit = { NOT = { has_country_flag = built_wsg_mining_station }
+				set_country_flag = built_wsg_mining_station
+				change_variable = { which = rankpts value = 3 }
+			}
 		}
 	}
 }
@@ -398,7 +406,11 @@ wsg_hidden_capital = {
 	on_build_complete = {
 		set_star_flag = wsg_hidden_capital_built
 		from = { 
-			set_country_flag = built_wsg_hidden_capital
+			if = {
+				limit = { NOT = { has_country_flag = built_wsg_hidden_capital }
+				set_country_flag = built_wsg_hidden_capital
+				change_variable = { which = rankpts value = 4 }
+			}
 			set_country_flag = has_built_or_repaired_megastructure	
 			country_event = { id = wsg.3032 }			
 		}

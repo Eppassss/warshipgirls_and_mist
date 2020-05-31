@@ -71,13 +71,13 @@ special_project = {
 	}
 
 	on_start = {
-		from.fleet = {
+		fleet = {
 			fleet_event = { id = wg_lady.7000 }
 		}
 	}
 
 	on_success = {
-		from.fleet = {
+		fleet = {
 			fleet_event = { id = wg_lady.7000 }
 		}
 	}
@@ -107,24 +107,24 @@ special_project = {
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
-	
 	event_scope = ship_event
 	
 	requirements = {
-		shipclass_military = 1
+		has_trait = leader_trait_admiral_wsg_lady
 	}
 
 	on_start = {
-		from.owner = {
-			country_event = { id = wg_lady.53 }
-		}
+		from.owner = { country_event = { id = wg_lady.53 }}
 	}
 	on_cancel = {
-		from.owner = {
-			country_event = { id = wg_lady.54 }
-		}
+		from.owner = { country_event = { id = wg_lady.54 }}
 	}
 
+	on_progress_50 = {
+		owner = {
+			country_event = { id = wg_lady.47 }
+		}
+	}
 	on_progress_75 = {
 		owner = {
 			country_event = { id = wg_lady.47 }
@@ -153,18 +153,14 @@ special_project = {
 	event_scope = ship_event
 	
 	requirements = {
-		shipclass_military = 1
+		has_trait = leader_trait_admiral_wsg_lady
 	}
 
 	on_start = {
-		from.owner = {
-			country_event = { id = wg_lady.53 }
-		}
+		from.owner = { country_event = { id = wg_lady.53 }}
 	}
 	on_cancel = {
-		from.owner = {
-			country_event = { id = wg_lady.55 }
-		}
+		from.owner = { country_event = { id = wg_lady.55 }}
 	}
 
 	on_success = {
@@ -179,7 +175,7 @@ special_project = {
 special_project = {
 	key = "WSG_LADY_MODIFICATION3"
 	cost = 65000 # should be 65000
-	# days_to_research = 1080 # should be 1080
+	# days_to_research = 720 # should be 1080
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
@@ -187,18 +183,19 @@ special_project = {
 	event_scope = ship_event
 	
 	requirements = {
-		shipclass_military = 1
+		has_trait = leader_trait_admiral_wsg_lady
 	}
 
 	on_start = {
-		from.owner = {
-			country_event = { id = wg_lady.53 }
+		if = {
+			limit = { exists = from.owner }
+			from.owner = { country_event = { id = wg_lady.53 }}
+		} else = {
+			log = "fxxk you stubid paradox"
 		}
 	}
 	on_cancel = {
-		from.owner = {
-			country_event = { id = wg_lady.56 }
-		}
+		from.owner = { country_event = { id = wg_lady.56 }}
 	}
 
 	on_success = {

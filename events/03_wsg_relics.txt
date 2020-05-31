@@ -658,12 +658,12 @@ country_event = {
 			}
 			every_system = {
 				limit = {
-					distance = {
-						source = event_target:spawn_precursors_system_source
-						min_jumps = 1
-						max_jumps = 4
-						type = hyperlane 
-						use_bypasses = no
+					exists = space_owner
+					space_owner = { is_same_value = root }
+					closest_system = {
+						min_steps = 1
+						max_steps = 4
+						is_same_value = event_target:spawn_precursors_system_source
 					}
 				}
 				set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }

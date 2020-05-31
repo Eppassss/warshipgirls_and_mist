@@ -1742,8 +1742,8 @@ country_event = {
 									has_country_flag = start_wsg_lady_events
 									has_country_flag = finish_wsg_lady_events
 									NAND = { # 必须有大小姐战舰而且已触发大小姐事件
-										has_country_flag = gain_lady_Contingency
-										any_owned_fleet = { has_fleet_flag = lady_fleet }
+										is_same_value = event_target:lady_contingency_owner
+										exists = event_target:lady_contingency_fleet
 									}
 								}
                             }

@@ -54,58 +54,8 @@ on_entering_system_first_time = {
 #Ranking Increment Check
 on_monthly_pulse_country = {
 	events = {
-        wsgranking.101
-        wsgranking.102
-        wsgranking.103
-        wsgranking.104
-        wsgranking.111
-        wsgranking.112
-        wsgranking.113
-        wsgranking.114
-        wsgranking.121
-        wsgranking.122
-        wsgranking.123
-        wsgranking.124
-        wsgranking.131
-        wsgranking.132
-        wsgranking.133
-        wsgranking.134
-        wsgranking.211
-        wsgranking.212
-        wsgranking.213
-        wsgranking.214
-        wsgranking.221
-        wsgranking.222
-        wsgranking.223
-        wsgranking.224
-        wsgranking.225
-        wsgranking.226
-        wsgranking.231
-        wsgranking.232
-        wsgranking.233
-        wsgranking.234
-        wsgranking.301
-        wsgranking.302
-        wsgranking.303
-        wsgranking.304
-        wsgranking.321
-        wsgranking.322
-        wsgranking.323
-        wsgranking.324
-        wsgranking.325
-        wsgranking.3231
-        wsgranking.326
-        wsgranking.327
-        wsgranking.331
-        wsgranking.332
-        wsgranking.333
-        wsgranking.334
-        wsgranking.335
-        wsgranking.336
-        wsgranking.337
-        wsgranking.338
-        wsgranking.341
-        wsgranking.342
+        wsgranking.100 
+        
         wsgranking.343
         wsgranking.344
         wsgranking.345
@@ -113,6 +63,15 @@ on_monthly_pulse_country = {
         wsgranking.347
        
 	}
+}
+
+# A ship has been built
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+        wsgranking.220
+    }
 }
 
 # This = owner of fleet 1 (destroyed)
@@ -133,18 +92,35 @@ on_fleet_destroyed_victim = {
 # FromFromFrom = Fleet
 on_megastructure_built = {
 	events = {
-        wsgranking.315
+        wsgranking.310
+        wsgranking.3201 # strategic_coordination_center
+        wsgranking.3203 # think_tank
+        wsgranking.3205 # spy_orb
+        wsgranking.3210 # dyson sphere
+        wsgranking.3212 # matter decompressor
+        wsgranking.3214 # interstellar assembly
+        wsgranking.3216 # mega art
+        wsgranking.3218 # mega shipyard
     }
 }
 
-# A Megastructure has begun to be upgraded
+# A Megastructure has been upgraded
 # Root = Country
 # From = Megastructure
 # FromFrom = System
 on_megastructure_upgraded = {
 	events = {
-        wsgranking.315
-        wsgranking.328
+        wsgranking.310
+        wsgranking.3202 # strategic_coordination_center
+        wsgranking.3204 # think_tank
+        wsgranking.3206 # spy_orb
+        wsgranking.3209 # ringworld restore
+        wsgranking.3211 # dyson sphere
+        wsgranking.3213 # matter decompressor
+        wsgranking.3215 # interstellar assembly
+        wsgranking.3217 # mega art
+        wsgranking.3219 # mega shipyard
+        wsgranking.3220 # gateway
     }
 }
 

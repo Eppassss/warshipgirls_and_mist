@@ -3,6 +3,7 @@ is_finished_megastructure = {
 		is_megastructure_type = think_tank_3
 		is_megastructure_type = think_tank_restored
 		is_megastructure_type = dyson_sphere_5
+		is_megastructure_type = dyson_sphere_restored
 		is_megastructure_type = ring_world_3_intermediate
 		is_megastructure_type = ring_world_restored
 		is_megastructure_type = spy_orb_4

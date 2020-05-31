@@ -17,7 +17,7 @@ create_gray_governor = {
 	set_country_flag = gray_governor_active
 	create_leader = {							#创建灰风总督
 		class = governor
-		species = root
+		species = event_target:gray_species
 		name = NAME_Gray
 		event_leader = yes
 		skill = 10
@@ -25,14 +25,17 @@ create_gray_governor = {
 		traits = {
 			trait = leader_trait_governor_gray
 		}
+		effect = {
+			save_global_event_target_as = gray_governor
+			change_leader_portrait = GrayTempest
+			set_leader_flag = has_gained_level_trait
+			set_leader_flag = gray_governor
+			set_leader_flag = "灰风领袖"
+		}
 	}
-	last_created_leader = {
+	event_target:gray_governor = {
+		set_is_female = yes
 		add_gray_governor_affection_trait = yes
-		save_global_event_target_as = gray_governor
-		change_leader_portrait = GrayTempest
-		set_leader_flag = has_gained_level_trait
-		set_leader_flag = gray_governor
-		set_leader_flag = "灰风领袖"
 	}
 }
 
@@ -95,19 +98,25 @@ create_gray_warship = {
 			owner = {
 				create_leader = {
 					class = admiral
-					species = root
+					species = event_target:gray_species
 					name = "灰风"
 					skill = 10
 					set_age = 0
+					traits = {
+						trait = gray_admiral
+					}
 					effect = {
 						save_global_event_target_as = huifeng_leader_admiral
 						last_created_leader = {
 							set_leader_flag = "灰风领袖"
 							change_leader_portrait = GrayTempest
 						}
-						add_gray_admiral_affection_trait = yes
 					}
 				}
+			}
+			event_target:huifeng_leader_admiral = {
+				set_is_female = yes
+				add_gray_admiral_affection_trait = yes
 			}
 			assign_leader = event_target:huifeng_leader_admiral
 		}

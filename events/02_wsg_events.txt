@@ -415,13 +415,16 @@ country_event = {
 	desc = wsg.3025.desc
 	picture = GFX_evt_WGstation
 	show_sound = event_cityscape
-	location = root
+	location = fromfrom
 
 	is_triggered_only = yes
 
 	trigger = {
-		has_megastructure = wsg_station
-		has_country_flag = built_wsg_station
+		FROM = { is_megastructure_type = wsg_station }
+	}
+
+	immediate = {
+		set_country_flag = built_wsg_station
 	}
 
 	option = {
@@ -542,8 +545,11 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		has_megastructure = dyson_yamato
-		has_country_flag = built_dyson_yamato
+		FROM = { is_megastructure_type = dyson_yamato }
+	}
+
+	immediate = {
+		set_country_flag = built_dyson_yamato
 	}
 
 	option = {
@@ -2662,7 +2668,7 @@ country_event = {
 				spawn_debris = no 
 			}
 		}
-		set_timed_country_flag = { flag = wsg_lady_mod_cd days = 5400 }
+		set_timed_country_flag = { flag = wsg_lady_mod_cd days = 2700 }
 	}
 }
 
@@ -2681,7 +2687,7 @@ event = {
 				}
 				is_ai = no
 			}
-			country_event = { id = wsg.3066 days = 9000 random = 9000 }
+			country_event = { id = wsg.3066 days = 9000 random = 4500 }
 		}
 	}
 }

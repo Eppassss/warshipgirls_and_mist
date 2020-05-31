@@ -1,440 +1,171 @@
 namespace = wsgranking
 
- # # WSG RANKING EVENTS
+## WSG RANKING EVENTS
+country_event = {
+	id = wsgranking.100
+	is_triggered_only = yes
+	hide_window = yes
 
-# country_event = {
-# 	id = wsgranking.1
-# 	title = "wsgranking.1.name"
-# 	desc = "wsgranking.1.desc"
-# 	picture = GFX_evt_hangar_bay
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	fire_only_once = yes
-# 	trigger = {
-# 		is_ai = no
-# 		OR = {
-# 			has_authority = auth_warshipgirls
-# 			has_authority = auth_shenhai
-# 		}
-# 	}
-# 	immediate = {
-# 		set_country_flag = ranking_system_fired
-# 		set_variable = {
-# 			which = rankpts
-# 			value = 0
-# 		}
-# 	}
-# 	option = {
-# 		name = "OK"
-# 		root = {
-# 			add_resource = {
-# 				influence = 5
-# 			}
-# 		}
-# 	}
-# }
+	trigger = {
+		is_ai = no
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+	}
 
-# # DEBUG EVENTS
-# country_event = {
-# 	id = "wsgranking.2"
-# 	title = "wsgranking.2.name"
-# 	desc = "wsgranking.2.desc"
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	option = {
-# 		name = "OK"
-# 	}
-# } 
+	immediate = {
+		# Increment events - resources
+		country_event = { id = wsgranking.101 days = 5 } # 电
+		country_event = { id = wsgranking.111 days = 5 } # 矿
+		country_event = { id = wsgranking.121 days = 5 } # 食物
+		country_event = { id = wsgranking.131 days = 5 } # 合金
+		# country_event = { id = wsgranking.141 days = 5 } # 消费品
 
-# country_event = {
-# 	id = "wsgranking.3"
-# 	title = "wsgranking.3.name"
-# 	desc = "wsgranking.3.desc"
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	option = {
-# 		name = "OK"
-# 		change_variable = {
-# 			which = rankpts
-# 			value = 1
-# 		}
-# 	}
-# }
+		
+		country_event = { id = wsgranking.211 days = 6 } # Fleet power
+		country_event = { id = wsgranking.301 days = 6} # Empire size
+		country_event = { id = wsgranking.339 days = 6 } # number of pops
+		country_event = { id = wsgranking.340 days = 6 } # number of planet pops
+		country_event = { id = wsgranking.341 days = 6 } # vassals
 
-# country_event = {
-# 	id = "wsgranking.4"
-# 	title = "wsgranking.4.name"
-# 	desc = "wsgranking.4.desc"
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	option = {
-# 	name = "OK"
-# 		change_variable = {
-# 			which = rankpts
-# 			value = -1
-# 		}
-# 	}
-# }
+		country_event = { id = wsgranking.3207 days = 6 } # ringworld
+	}
 
-# country_event = {
-# 	id = "wsgranking.5"
-# 	title = "wsgranking.5.name"
-# 	desc = "wsgranking.5.desc"
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	option = {
-# 		name = "OK"
-# 		set_timed_country_flag = {
-# 			flag = wsgranking_cd
-# 			days = 10
-# 		}
-# 	}
-# }
-
-# country_event = {
-# 	id = "wsgranking.6"
-# 	title = "wsgranking.6.name"
-# 	desc = "wsgranking.6.desc"
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	option = {
-# 		name = "OK"
-# 		allow = {
-# 			fail_text = "wsgranking.6.fail1"
-# 			NOT = {
-# 				has_country_flag = wsgranking_cd
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = "wsgranking.6.b"
-# 		allow = {
-# 			fail_text = "wsgranking.6.fail2"
-# 			has_country_flag = wsgranking_cd
-# 		}
-# 	}
-# }
-
-# #Main menu legacy
-# country_event = {
-# 	id = wsgranking.10010
-# 	title = "wsgranking.10010.name"
-# 	desc = "wsgranking.10010.desc"
-# 	picture = GFX_evt_hangar_bay
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	trigger = {
-# 		OR = {
-# 			has_authority = auth_warshipgirls
-# 			has_authority = auth_shenhai
-# 		}
-# 	}
-# 	option = {
-# 		name = "OK"
-# 		trigger = {
-# 			NOT = {
-# 				has_country_flag = wsgranking_cd
-# 			}
-# 			check_variable = {
-# 				which = rankpts
-# 				value > 1
-# 			}
-# 		}
-# 		add_resource = {
-# 			alloys = 114514
-# 		}
-# 		hidden_effect = {
-# 			set_timed_country_flag = {
-# 				flag = wsgranking_cd
-# 				days = 1800
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = wsgranking.10010.b
-# 	}
-# 	option = {
-# 		name = wsgranking.10010.c
-# 	}
-# }
-
-# country_event = {
-# 	id = wsgranking.10011
-# 	title = "wsgranking.10011.name"
-# 	desc = "wsgranking.10011.desc"
-# 	picture = GFX_evt_hangar_bay
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	trigger = {
-# 		OR = {
-# 			has_authority = auth_warshipgirls
-# 			has_authority = auth_shenhai
-# 		}
-# 	}
-# 	option = {
-# 		name = "OK"
-# 	}
-# 	option = {
-# 		name = wsgranking.10011.b
-# 	}
-# 	option = {
-# 		name = wsgranking.10011.c
-# 	}
-# }
-
-# country_event = {
-# 	id = wsgranking.10012
-# 	title = "wsgranking.10012.name"
-# 	desc = "wsgranking.10012.desc"
-# 	picture = GFX_evt_hangar_bay
-# 	is_triggered_only = yes
-# 	show_sound = event_celebration
-# 	trigger = {
-# 		OR = {
-# 			has_authority = auth_warshipgirls
-# 			has_authority = auth_shenhai
-# 		}
-# 	}
-# 	option = {
-# 		name = "OK"
-# 	}
-# 	option = {
-# 		name = wsgranking.10012.b
-# 	}
-# 	option = {
-# 		name = wsgranking.10012.c
-# 	}
-# }
-
-#Increment events - resources
+}
 country_event = {
 	id = wsgranking.101
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking101 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = energy
-			value >= 100
+		NAND = {
+			has_country_flag = wsgranking101
+			has_country_flag = wsgranking102
+			has_country_flag = wsgranking103
+			has_country_flag = wsgranking104
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking101
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10101 }
+			limit = { NOT = { has_country_flag = wsgranking101 }}
+			if = {
+				limit = { resource_income_compare = { resource = energy value >= 200 }}
+				set_country_flag = wsgranking101
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10101 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking102 }}
+			if = {
+				limit = { resource_income_compare = { resource = energy value >= 500 }}
+				set_country_flag = wsgranking102
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10102 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking103 }}
+			if = {
+				limit = { resource_income_compare = { resource = energy value >= 1000 }}
+				set_country_flag = wsgranking103
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10103 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking104 }}
+			if = {
+				limit = { resource_income_compare = { resource = energy value >= 4000 }}
+				set_country_flag = wsgranking104
+				change_variable = { which = rankpts value = 7 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10104 }
+				}
+			}
+			break = yes
 		}
 	}
 }
 
-country_event = {
-	id = wsgranking.102
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking102 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = energy
-			value >= 500
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking102
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10102 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.103
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking103 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = energy
-			value >= 1000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking103
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10103 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 20
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.104
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking104 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = energy
-			value >= 4000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking104
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10104 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 8
-		}
-	}
-}
-
+# 矿物
 country_event = {
 	id = wsgranking.111
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking111 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = minerals
-			value >= 100
+		NAND = {
+			has_country_flag = wsgranking111
+			has_country_flag = wsgranking112
+			has_country_flag = wsgranking113
+			has_country_flag = wsgranking114
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking111
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10111 }
+			limit = { NOT = { has_country_flag = wsgranking111 }}
+			if = {
+				limit = { resource_income_compare = { resource = minerals value >= 200 }}
+				set_country_flag = wsgranking111
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10111 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.112
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking112 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = minerals
-			value >= 500
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking112
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10112 }
+			limit = { NOT = { has_country_flag = wsgranking112 }}
+			if = {
+				limit = { resource_income_compare = { resource = minerals value >= 500 }}
+				set_country_flag = wsgranking112
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10112 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 8
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.113
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking113 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = minerals
-			value >= 1000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking113
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10113 }
+			limit = { NOT = { has_country_flag = wsgranking113 }}
+			if = {
+				limit = { resource_income_compare = { resource = minerals value >= 1000 }}
+				set_country_flag = wsgranking113
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10113 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 20
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.114
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking114 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = minerals
-			value >= 3000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking114
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10114 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 8
+			limit = { NOT = { has_country_flag = wsgranking114 }}
+			if = {
+				limit = { resource_income_compare = { resource = minerals value >= 3000 }}
+				set_country_flag = wsgranking114
+				change_variable = { which = rankpts value = 7 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10114 }
+				}
+			}
+			break = yes
 		}
 	}
 }
@@ -444,113 +175,65 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking121 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = food
-			value >= 100
+		NAND = {
+			has_country_flag = wsgranking121
+			has_country_flag = wsgranking122
+			has_country_flag = wsgranking123
+			has_country_flag = wsgranking124
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking121
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10121 }
+			limit = { NOT = { has_country_flag = wsgranking121 }}
+			if = {
+				limit = { resource_income_compare = { resource = food value >= 200 }}
+				set_country_flag = wsgranking121
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10121 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.122
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking122 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = food
-			value >= 500
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking122
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10122 }
+			limit = { NOT = { has_country_flag = wsgranking122 }}
+			if = {
+				limit = { resource_income_compare = { resource = food value >= 500 }}
+				set_country_flag = wsgranking122
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10122 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.123
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking123 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = food
-			value >= 1000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking123
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10123 }
+			limit = { NOT = { has_country_flag = wsgranking123 }}
+			if = {
+				limit = { resource_income_compare = { resource = food value >= 1000 }}
+				set_country_flag = wsgranking123
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10123 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 20
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.124
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking124 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = food
-			value >= 2000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking124
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10124 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 8
+			limit = { NOT = { has_country_flag = wsgranking124 }}
+			if = {
+				limit = { resource_income_compare = { resource = food value >= 2000 }}
+				set_country_flag = wsgranking124
+				change_variable = { which = rankpts value = 7 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10124 }
+				}
+			}
+			break = yes
 		}
 	}
 }
@@ -560,113 +243,65 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking131 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = alloys
-			value >= 100
+		NAND = {
+			has_country_flag = wsgranking131
+			has_country_flag = wsgranking132
+			has_country_flag = wsgranking133
+			has_country_flag = wsgranking134
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking131
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10131 }
+			limit = { NOT = { has_country_flag = wsgranking131 }}
+			if = {
+				limit = { resource_income_compare = { resource = alloys value >= 100 }}
+				set_country_flag = wsgranking131
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10131 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.132
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking132 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = alloys
-			value >= 500
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking132
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10132 }
+			limit = { NOT = { has_country_flag = wsgranking132 }}
+			if = {
+				limit = { resource_income_compare = { resource = alloys value >= 500 }}
+				set_country_flag = wsgranking132
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10132 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.133
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking133 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = alloys
-			value >= 1000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking133
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10133 }
+			limit = { NOT = { has_country_flag = wsgranking133 }}
+			if = {
+				limit = { resource_income_compare = { resource = alloys value >= 1000 }}
+				set_country_flag = wsgranking133
+				change_variable = { which = rankpts value = 5 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10133 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 20
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.134
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking134 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		resource_income_compare = {
-			resource = alloys
-			value >= 2000
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking134
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10134 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 8
+			limit = { NOT = { has_country_flag = wsgranking134 }}
+			if = {
+				limit = { resource_income_compare = { resource = alloys value >= 2000 }}
+				set_country_flag = wsgranking134
+				change_variable = { which = rankpts value = 9 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10134 }
+				}
+			}
+			break = yes
 		}
 	}
 }
@@ -677,101 +312,133 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking211 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
+		NAND = {
+			has_country_flag = wsgranking211
+			has_country_flag = wsgranking212
+			has_country_flag = wsgranking213
+			has_country_flag = wsgranking214
 		}
-		fleet_power > 5000
 	}
 	immediate = {
-		set_country_flag = wsgranking211
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10211 }
+			limit = { NOT = { has_country_flag = wsgranking211 }}
+			if = {
+				limit = { fleet_power > 5000 }
+				set_country_flag = wsgranking211
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10211 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking212 }}
+			if = {
+				limit = { fleet_power > 50000 }
+				set_country_flag = wsgranking212
+				change_variable = { which = rankpts value = 5 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10212 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking213 }}
+			if = {
+				limit = { fleet_power > 500000 }
+				set_country_flag = wsgranking213
+				change_variable = { which = rankpts value = 8 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10213 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking214 }}
+			if = {
+				limit = { fleet_power > 5000000 }
+				set_country_flag = wsgranking214
+				change_variable = { which = rankpts value = 10 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10214 }
+				}
+			}
+			break = yes
 		}
 	}
 }
 
-country_event = {
-	id = wsgranking.212
+ship_event = {
+	id = wsgranking.220
 	is_triggered_only = yes
 	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking212 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		fleet_power > 50000
-	}
-	immediate = {
-		set_country_flag = wsgranking212
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10212 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 20
-		}
-	}
-}
 
-country_event = {
-	id = wsgranking.213
-	is_triggered_only = yes
-	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking213 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		fleet_power > 500000
-	}
-	immediate = {
-		set_country_flag = wsgranking213
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10213 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 12
+		owner = {
+			is_ai = no
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
 		}
 	}
-}
 
-country_event = {
-	id = wsgranking.214
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking214 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		fleet_power > 5000000
-	}
 	immediate = {
-		set_country_flag = wsgranking214
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10214 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 20
+		switch = {
+			trigger = is_ship_size
+			destroyer = { owner = { country_event = { id = wsgranking.221 }}}
+			cruiser = { owner = { country_event = { id = wsgranking.222 }}}
+			titan = { owner = { country_event = { id = wsgranking.224 }}}
+			colossus = { owner = { country_event = { id = wsgranking.225 }}}
+			Dreadnaught = { owner = { country_event = { id = wsgranking.226 }}}
+			Flagship = { owner = { country_event = { id = wsgranking.228 }}}
+			battleship = {
+				owner = { 
+					if = {
+						limit = {
+							NAND = {
+								has_country_flag = wsgranking223
+								has_country_flag = wsgranking231
+								has_country_flag = wsgranking232
+								has_country_flag = wsgranking233
+								has_country_flag = wsgranking233
+							}
+						}
+						if = {
+							limit = { NOT = { has_country_flag = wsgranking223 }}
+							country_event = { id = wsgranking.223 }
+							break = yes
+						}
+						if = {
+							limit = { NOT = { has_country_flag = wsgranking231 }}
+							country_event = { id = wsgranking.231 }
+							break = yes
+						}
+						if = {
+							limit = { NOT = { has_country_flag = wsgranking232 }}
+							country_event = { id = wsgranking.232 }
+							break = yes
+						}
+						if = {
+							limit = { NOT = { has_country_flag = wsgranking233 }}
+							country_event = { id = wsgranking.233 }
+							break = yes
+						}
+						if = {
+							limit = { NOT = { has_country_flag = wsgranking234 }}
+							country_event = { id = wsgranking.234 }
+							break = yes
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -782,18 +449,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking221 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = destroyer
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking221
@@ -813,18 +469,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking222 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = cruiser
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking222
@@ -844,12 +489,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking223 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
 		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
@@ -875,18 +514,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking224 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = titan
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking224
@@ -906,18 +534,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking225 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = colossus
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking225
@@ -937,18 +554,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking226 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = Dreadnaught
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking226
@@ -968,18 +574,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking227 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = wsg_dreadnought
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking227
@@ -999,18 +594,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
 		NOT = { has_country_flag = wsgranking228 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		count_owned_ship = {
-			limit = {
-				is_ship_size = Flagship
-			}
-			count > 1
-		}
 	}
 	immediate = {
 		set_country_flag = wsgranking228
@@ -1030,12 +614,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking231 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
 		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
@@ -1061,12 +639,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking232 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
 		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
@@ -1092,12 +664,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking233 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
 		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
@@ -1123,12 +689,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking234 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
 		count_owned_ship = {
 			limit = {
 				is_ship_size = battleship
@@ -1154,214 +714,72 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking301 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
+		NAND = { 
+			has_country_flag = wsgranking301 
+			has_country_flag = wsgranking302 
+			has_country_flag = wsgranking303 
+			has_country_flag = wsgranking304 
 		}
-		empire_size > 75
 	}
 	immediate = {
-		set_country_flag = wsgranking301
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10301 }
+			limit = { NOT = { has_country_flag = wsgranking301 }}
+			if = {
+				limit = { empire_size > 75 }
+				set_country_flag = wsgranking301
+				change_variable = { which = rankpts value = 1 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10301 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 1
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.302
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking302 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		empire_size > 150
-	}
-	immediate = {
-		set_country_flag = wsgranking302
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10302 }
+			limit = { NOT = { has_country_flag = wsgranking302 }}
+			if = {
+				limit = { empire_size > 150 }
+				set_country_flag = wsgranking302
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10302 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.303
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking303 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		empire_size > 300
-	}
-	immediate = {
-		set_country_flag = wsgranking303
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10303 }
+			limit = { NOT = { has_country_flag = wsgranking303 }}
+			if = {
+				limit = { empire_size > 300 }
+				set_country_flag = wsgranking303
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10303 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 3
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.304
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking304 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		empire_size > 600
-	}
-	immediate = {
-		set_country_flag = wsgranking304
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10304 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.311
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking311 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		check_variable = { which = built_ms_count value >= 1 }
-	}
-	immediate = {
-		set_country_flag = wsgranking311
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10311 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-	
-}
-
-
-country_event = {
-	id = wsgranking.312
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking312 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		check_variable = { which = built_ms_count value >= 3 }
-	}
-	immediate = {
-		set_country_flag = wsgranking312
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10312 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.313
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking313 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		check_variable = { which = built_ms_count value >= 6 }
-	}
-	immediate = {
-		set_country_flag = wsgranking313
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10313 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 3
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.314
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking314 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		check_variable = { which = built_ms_count value >= 15 }
-	}
-	immediate = {
-		set_country_flag = wsgranking314
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10314 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 12
+			limit = { NOT = { has_country_flag = wsgranking304 }}
+			if = {
+				limit = { empire_size > 600 }
+				set_country_flag = wsgranking304
+				change_variable = { which = rankpts value = 5 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10304 }
+				}
+			}
+			break = yes
 		}
 	}
 }
 
 # count megastructure
 country_event = {
-	id = wsgranking.315
+	id = wsgranking.310
 	is_triggered_only = yes
 	hide_window = yes
 
@@ -1372,34 +790,81 @@ country_event = {
 
 	immediate = {
 		change_variable = { which = built_ms_count value = 1 }
-		country_event = { id = wsgranking.311 }
-		country_event = { id = wsgranking.312 }
-		country_event = { id = wsgranking.313 }
-		country_event = { id = wsgranking.314 }
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking311 }}
+			if = {
+				limit = { check_variable = { which = built_ms_count value >= 1 }}
+				set_country_flag = wsgranking311
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10311 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking312 }}
+			if = {
+				limit = { check_variable = { which = built_ms_count value >= 1 }}
+				set_country_flag = wsgranking312
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10312 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking313 }}
+			if = {
+				limit = { check_variable = { which = built_ms_count value >= 1 }}
+				set_country_flag = wsgranking313
+				change_variable = { which = rankpts value = 6 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10313 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking314 }}
+			if = {
+				limit = { check_variable = { which = built_ms_count value >= 1 }}
+				set_country_flag = wsgranking314
+				change_variable = { which = rankpts value = 10 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10314 }
+				}
+			}
+			break = yes
+		}
 	}
 }
 
 country_event = {
-	id = wsgranking.321
+	id = wsgranking.3201
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking321 }
+		NOT = { has_country_flag = wsgranking3201 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
+		FROM = {
 			is_megastructure_type = strategic_coordination_center_1
-			count = 1
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking321
+		set_country_flag = wsgranking3201
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10321 }
+			country_event = { id = wsgranking.13201 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1409,26 +874,28 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.322
+	id = wsgranking.3202
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking322 }
+		NOT = { has_country_flag = wsgranking3202 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
-			is_megastructure_type = strategic_coordination_center_3
-			count = 1
+		FROM = {
+			OR = {
+				is_megastructure_type = strategic_coordination_center_3
+				is_megastructure_type = strategic_coordination_center_restored
+			}
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking322
+		set_country_flag = wsgranking3202
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10322 }
+			country_event = { id = wsgranking.13202 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1438,26 +905,25 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.323
+	id = wsgranking.3203
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking323 }
+		NOT = { has_country_flag = wsgranking3203 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
+		FROM = {
 			is_megastructure_type = think_tank_1
-			count = 1
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking323
+		set_country_flag = wsgranking3203
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10323 }
+			country_event = { id = wsgranking.13203 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1467,26 +933,28 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.3231
+	id = wsgranking.3204
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking3231 }
+		NOT = { has_country_flag = wsgranking3204 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
-			is_megastructure_type = think_tank_3
-			count = 1
+		FROM = {
+			OR = {
+				is_megastructure_type = think_tank_3
+				is_megastructure_type = think_tank_restored
+			}
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking3231
+		set_country_flag = wsgranking3204
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.13231 }
+			country_event = { id = wsgranking.13204 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1496,26 +964,25 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.324
+	id = wsgranking.3205
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking324 }
+		NOT = { has_country_flag = wsgranking3205 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
+		FROM = {
 			is_megastructure_type = spy_orb_1
-			count = 1
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking324
+		set_country_flag = wsgranking3205
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10324 }
+			country_event = { id = wsgranking.13205 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1525,26 +992,28 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.325
+	id = wsgranking.3206
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking325 }
+		NOT = { has_country_flag = wsgranking3206 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		any_owned_megastructure = {
-			is_megastructure_type = spy_orb_3
-			count = 1
+		FROM = {
+			OR = {
+				is_megastructure_type = spy_orb_4
+				is_megastructure_type = spy_orb_restored
+			}
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking325
+		set_country_flag = wsgranking3206
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10325 }
+			country_event = { id = wsgranking.13206 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1554,64 +1023,52 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.326
+	id = wsgranking.3207
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking326 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
+		NAND = { 
+			has_country_flag = wsgranking3207
+			has_country_flag = wsgranking3208
 		}
-		has_country_flag = started_first_ring_world
 	}
 	immediate = {
-		set_country_flag = wsgranking326
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10326 }
+			limit = { NOT = { has_country_flag = wsgranking3207 }}
+			if = {
+				limit = { has_country_flag = started_first_ring_world }
+				set_country_flag = wsgranking3207
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.13207 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 4
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking3208 }}
+			if = {
+				limit = { has_country_flag = finished_ringworld }
+				set_country_flag = wsgranking3208
+				change_variable = { which = rankpts value = 12 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.13208 }
+				}
+			}
+			break = yes
 		}
 	}
 }
 
 country_event = {
-	id = wsgranking.327
+	id = wsgranking.3209
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking327 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		has_country_flag = finished_ringworld
-	}
-	immediate = {
-		set_country_flag = wsgranking327
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10327 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 12
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.328
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking328 }
+		NOT = { has_country_flag = wsgranking3209 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
@@ -1628,10 +1085,10 @@ country_event = {
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking328
+		set_country_flag = wsgranking3209
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10328 }
+			country_event = { id = wsgranking.13209 }
 		}
 		change_variable = {
 			which = rankpts
@@ -1641,217 +1098,430 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.331
+	id = wsgranking.3210
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_ai = no
-		NOT = { has_country_flag = wsgranking331 }
+		NOT = { has_country_flag = wsgranking3210 }
 		OR = {
 			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
 		}
-		num_pops > 50
+		FROM = {
+			is_megastructure_type = dyson_sphere_1
+		}
 	}
 	immediate = {
-		set_country_flag = wsgranking331
+		set_country_flag = wsgranking3210
 		if = {
 			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10331 }
+			country_event = { id = wsgranking.13210 }
 		}
-		change_variable = {
-			which = rankpts
-			value = 1
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3211
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3211 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = dyson_sphere_5
+				is_megastructure_type = dyson_sphere_restored
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3211
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13211 }
+		}
+		change_variable = { which = rankpts value = 12 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3212
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3212 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			is_megastructure_type = matter_decompressor_1
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3212
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13212 }
+		}
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3213
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3213 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = matter_decompressor_1
+				is_megastructure_type = matter_decompressor_restored
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3213
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13213 }
+		}
+		change_variable = { which = rankpts value = 12 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3214
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3214 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			is_megastructure_type = interstellar_assembly_1
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3214
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13214 }
+		}
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3215
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3215 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = interstellar_assembly_4
+				is_megastructure_type = interstellar_assembly_restored
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3215
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13215 }
+		}
+		change_variable = { which = rankpts value = 12 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3216
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3216 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			is_megastructure_type = mega_art_installation_1
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3216
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13216 }
+		}
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3217
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3217 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = mega_art_installation_4
+				is_megastructure_type = mega_art_installation_restored_2
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3217
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13217 }
+		}
+		change_variable = { which = rankpts value = 12 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3218
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3218 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			is_megastructure_type = mega_shipyard_1
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3218
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13218 }
+		}
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3219
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3219 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = mega_shipyard_3
+				is_megastructure_type = mega_shipyard_restored
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3219
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13219 }
+		}
+		change_variable = { which = rankpts value = 12 }
+	}
+}
+
+country_event = {
+	id = wsgranking.3220
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = wsgranking3220 }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+		FROM = {
+			OR = {
+				is_megastructure_type = gateway_final
+				is_megastructure_type = gateway_restored
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = wsgranking3220
+		if = {
+			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+			country_event = { id = wsgranking.13220 }
+		}
+		change_variable = { which = rankpts value = 3 }
+	}
+}
+
+country_event = {
+	id = wsgranking.339
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		NAND = { 
+			has_country_flag = wsgranking331 
+			has_country_flag = wsgranking332
+			has_country_flag = wsgranking333
+			has_country_flag = wsgranking334
+		}
+	}
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking331 }}
+			if = {
+				limit = { num_pops > 75 }
+				set_country_flag = wsgranking331
+				change_variable = { which = rankpts value = 1 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10331 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking332 }}
+			if = {
+				limit = { num_pops > 200 }
+				set_country_flag = wsgranking332
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10332 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking333 }}
+			if = {
+				limit = { num_pops > 500 }
+				set_country_flag = wsgranking333
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10333 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = wsgranking334 }}
+			if = {
+				limit = { num_pops > 1500 }
+				set_country_flag = wsgranking334
+				change_variable = { which = rankpts value = 5 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10334 }
+				}
+			}
+			break = yes
 		}
 	}
 }
 
 country_event = {
-	id = wsgranking.332
+	id = wsgranking.340
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking332 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		num_pops > 200
-	}
-	immediate = {
-		set_country_flag = wsgranking332
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10332 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 3
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.333
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking333 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		num_pops > 500
-	}
-	immediate = {
-		set_country_flag = wsgranking333
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10333 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 5
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.334
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking334 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		num_pops > 1000
-	}
-	immediate = {
-		set_country_flag = wsgranking334
-		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10334 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 7
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.335
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking335 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		any_owned_planet = {
-			num_pops > 25
+		NAND = { 
+			has_country_flag = wsgranking335
+			has_country_flag = wsgranking336
+			has_country_flag = wsgranking337
+			has_country_flag = wsgranking338
 		}
 	}
 	immediate = {
-		set_country_flag = wsgranking335
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10335 }
+			limit = { NOT = { has_country_flag = wsgranking335 }}
+			if = {
+				limit = { any_owned_planet = { num_pops > 30 }}
+				set_country_flag = wsgranking335
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10335 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 1
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.336
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking336 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		any_owned_planet = {
-			num_pops > 50
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking336
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10336 }
+			limit = { NOT = { has_country_flag = wsgranking336 }}
+			if = {
+				limit = { any_owned_planet = { num_pops > 50 }}
+				set_country_flag = wsgranking336
+				change_variable = { which = rankpts value = 3 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10336 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.337
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking337 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		any_owned_planet = {
-			num_pops > 125
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking337
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10337 }
+			limit = { NOT = { has_country_flag = wsgranking337 }}
+			if = {
+				limit = { any_owned_planet = { num_pops > 80 }}
+				set_country_flag = wsgranking337
+				change_variable = { which = rankpts value = 4 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10337 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 4
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.338
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking338 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		any_owned_planet = {
-			num_pops > 250
-		}
-	}
-	immediate = {
-		set_country_flag = wsgranking338
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10338 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 8
+			limit = { NOT = { has_country_flag = wsgranking338 }}
+			if = {
+				limit = { any_owned_planet = { num_pops > 150 }}
+				set_country_flag = wsgranking338
+				change_variable = { which = rankpts value = 7 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10338 }
+				}
+			}
+			break = yes
 		}
 	}
 }
@@ -1861,49 +1531,37 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking341 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
+		NAND = { 
+			has_country_flag = wsgranking341
+			has_country_flag = wsgranking342
 		}
-		vassals > 1
 	}
 	immediate = {
-		set_country_flag = wsgranking341
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10341 }
+			limit = { NOT = { has_country_flag = wsgranking341 }}
+			if = {
+				limit = { vassals >= 1 }
+				set_country_flag = wsgranking341
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10341 }
+				}
+			}
+			break = yes
 		}
-		change_variable = {
-			which = rankpts
-			value = 2
-		}
-	}
-}
-
-country_event = {
-	id = wsgranking.342
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		is_ai = no
-		NOT = { has_country_flag = wsgranking342 }
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
-		vassals > 2
-	}
-	immediate = {
-		set_country_flag = wsgranking342
 		if = {
-			limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
-			country_event = { id = wsgranking.10342 }
-		}
-		change_variable = {
-			which = rankpts
-			value = 2
+			limit = { NOT = { has_country_flag = wsgranking342 }}
+			if = {
+				limit = { vassals >= 2 }
+				set_country_flag = wsgranking342
+				change_variable = { which = rankpts value = 2 }
+				if = {
+					limit = { NOT = { has_country_flag = ban_notice_wsgranking }}
+					country_event = { id = wsgranking.10342 }
+				}
+			}
+			break = yes
 		}
 	}
 }
@@ -2772,7 +2430,7 @@ country_event = {
 	show_sound = event_celebration
 
 	option = {
-		name = "OK"
+		name = wsgranking.226.a
 	}
 	option = {
         name = raa_skill.150.a
@@ -3020,9 +2678,9 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10321
-	title = "wsgranking.321.name"
-	desc = "wsgranking.321.desc"
+	id = wsgranking.13201
+	title = "wsgranking.3201.name"
+	desc = "wsgranking.3201.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_wsg_rank3
 	show_sound = event_celebration
@@ -3037,9 +2695,9 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10322
-	title = "wsgranking.322.name"
-	desc = "wsgranking.322.desc"
+	id = wsgranking.13202
+	title = "wsgranking.3202.name"
+	desc = "wsgranking.3202.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_wsg_rank3
 	show_sound = event_celebration
@@ -3054,9 +2712,9 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10323
-	title = "wsgranking.323.name"
-	desc = "wsgranking.323.desc"
+	id = wsgranking.13203
+	title = "wsgranking.3203.name"
+	desc = "wsgranking.3203.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_wsg_rank3
 	show_sound = event_celebration
@@ -3071,9 +2729,9 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.13231
-	title = "wsgranking.3231.name"
-	desc = "wsgranking.3231.desc"
+	id = wsgranking.13204
+	title = "wsgranking.3204.name"
+	desc = "wsgranking.3204.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_wsg_rank3
 	show_sound = event_celebration
@@ -3088,11 +2746,11 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10324
-	title = "wsgranking.324.name"
-	desc = "wsgranking.324.desc"
+	id = wsgranking.13205
+	title = "wsgranking.3205.name"
+	desc = "wsgranking.3205.desc"
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_rank3
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 
 	option = {
@@ -3105,11 +2763,11 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10325
-	title = "wsgranking.325.name"
-	desc = "wsgranking.325.desc"
+	id = wsgranking.13206
+	title = "wsgranking.3206.name"
+	desc = "wsgranking.3206.desc"
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_rank3
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 
 	option = {
@@ -3122,11 +2780,11 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10326
-	title = "wsgranking.326.name"
-	desc = "wsgranking.326.desc"
+	id = wsgranking.13207
+	title = "wsgranking.3207.name"
+	desc = "wsgranking.3207.desc"
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_rank3
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 
 	option = {
@@ -3139,11 +2797,11 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10327
-	title = "wsgranking.327.name"
-	desc = "wsgranking.327.desc"
+	id = wsgranking.13208
+	title = "wsgranking.3208.name"
+	desc = "wsgranking.3208.desc"
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_rank3
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 
 	option = {
@@ -3156,11 +2814,198 @@ country_event = {
 }
 
 country_event = {
-	id = wsgranking.10328
-	title = "wsgranking.328.name"
-	desc = "wsgranking.328.desc"
+	id = wsgranking.13209
+	title = "wsgranking.3209.name"
+	desc = "wsgranking.3209.desc"
 	is_triggered_only = yes
-	picture = GFX_evt_wsg_rank3
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13210
+	title = "wsgranking.3210.name"
+	desc = "wsgranking.3210.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13211
+	title = "wsgranking.3211.name"
+	desc = "wsgranking.3211.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13212
+	title = "wsgranking.3212.name"
+	desc = "wsgranking.3212.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13213
+	title = "wsgranking.3213.name"
+	desc = "wsgranking.3213.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13214
+	title = "wsgranking.3214.name"
+	desc = "wsgranking.3214.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13215
+	title = "wsgranking.3215.name"
+	desc = "wsgranking.3215.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13216
+	title = "wsgranking.3216.name"
+	desc = "wsgranking.3216.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13217
+	title = "wsgranking.3217.name"
+	desc = "wsgranking.3217.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13218
+	title = "wsgranking.3218.name"
+	desc = "wsgranking.3218.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13219
+	title = "wsgranking.3219.name"
+	desc = "wsgranking.3219.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
+	show_sound = event_celebration
+
+	option = {
+		name = "OK"
+	}
+	option = {
+        name = raa_skill.150.a
+        hidden_effect = { set_country_flag = ban_notice_wsgranking }
+    }
+}
+
+country_event = {
+	id = wsgranking.13220
+	title = "wsgranking.3220.name"
+	desc = "wsgranking.3220.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 
 	option = {
@@ -3395,6 +3240,7 @@ country_event = {
 	title = "wsgranking.346.name"
 	desc = "wsgranking.346.desc"
 	is_triggered_only = yes
+	picture = GFX_evt_wsg_rank5
 	show_sound = event_celebration
 	option = {
 		name = "OK"

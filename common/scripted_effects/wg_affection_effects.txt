@@ -2250,7 +2250,7 @@ add_gray_admiral_affection_trait = {
 			which = "gray_affection" value >= @gray_affection_to_lv5
 		}}}
 		if = {
-			limit = { PREV = { has_country_flag = married_wsg_lady }}
+			limit = { PREV = { has_country_flag = married_gray }}
 			add_trait = leader_trait_admiral_gray_affection_lv5
 		} else = {
 			add_trait = leader_trait_admiral_gray_affection_lv4_max

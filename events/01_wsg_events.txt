@@ -231,7 +231,7 @@ country_event = {
 				limit = {
 					OR = {
 						is_same_species = root.owner_species
-						has_leader_flag = wsg_event_leader
+						is_wg_leader = yes
 					}
 					NOR = {
 						has_trait =	leader_trait_admiral_warshipgirls
@@ -517,7 +517,7 @@ country_event = {
 				limit = {
 					OR = {
 						is_same_species = root
-						has_leader_flag = wsg_event_leader
+						is_wg_leader = yes
 					}
 					NOR = {
 						has_trait =	leader_trait_admiral_mist

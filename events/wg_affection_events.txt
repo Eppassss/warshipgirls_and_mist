@@ -1528,10 +1528,6 @@ country_event = {
 	}
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f0b956c478845eb7fdf30efe6be9f4bd2b26b01d
 country_event = {
 	id = wg_aft.30000
 	title = wg_aft.30000.name
@@ -1557,11 +1553,6 @@ country_event = {
 	}
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> a4b6a49b8e770015e14f75c87deca6813ec13b87
-=======
->>>>>>> f0b956c478845eb7fdf30efe6be9f4bd2b26b01d
 # 测试用：全领袖撸到4级
 country_event = {
 	id = wg_aft.12450
@@ -3399,11 +3390,13 @@ country_event = {
 			limit = { is_vaild_gray_owner = yes }
 			if = { 
 				limit = { #旧档适配
+					NOT = { has_country_flag = transfer_gray_affection }
 					any_owned_leader = {
 						has_leader_flag = 灰风领袖
 						check_variable = { which = "affection" value > 0 }
 					}
 				}
+				set_country_flag = transfer_gray_affection
 				random_owned_leader = {
 					limit = { has_leader_flag = 灰风领袖 }
 					ROOT = { 

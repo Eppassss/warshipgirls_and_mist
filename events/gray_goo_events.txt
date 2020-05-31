@@ -2453,6 +2453,16 @@ country_event = {
 				}
 			}
 		}
+		create_species = {
+			name = GRAY_SPECIES
+			plural = GRAY_SPECIES
+			class = ART
+			portrait = art13
+			namelist = ART1
+			effect = {
+				save_global_event_target_as = gray_species
+			}
+		}
 		last_created_country = {
 			establish_communications_no_message = root
 		}
