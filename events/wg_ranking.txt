@@ -3273,7 +3273,11 @@ country_event = {
 			custom_tooltip = {
 				check_variable = { which = "rankpts" value > 210 }
                 fail_text = too_low_rank_fail_210
-			}
+            }
+            # custom_tooltip = {
+            #     check_variable = { which = max_allowed_shop_buffs value > 0 }
+            #     fail_text = reached_max_allowed_shop_buffs
+            # }
             resource_stockpile_compare = { resource = energy value >= 10000 }
 			resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
 		}
@@ -3281,13 +3285,13 @@ country_event = {
 			energy = -10000 
 			sr_pantsu = -3000
 		}
-		add_modifier = { modifier = wg_modifier_combat_fleet_control2 }
+        add_modifier = { modifier = wg_modifier_combat_fleet_control2 }
+        custom_tooltip = not_count_in_buff_limit
     }    
     option = {
 		custom_gui = "enclave_caravaneer_option"
         name = wg_modifier_combat_uf
         trigger = {
-            always = no # 暂时屏蔽
             has_global_flag = wg_invasion_happened
         }
 		allow = {
@@ -3295,16 +3299,12 @@ country_event = {
                 check_variable = { which = "rankpts" value > rankpts_require }
                 fail_text = rankpts_not_reach_requirment
             }
-			custom_tooltip = {
-				check_variable = { which = max_allowed_shop_buffs value > 0 }
-                fail_text = reached_max_allowed_shop_buffs
-            }
             resource_stockpile_compare = { resource = energy value >= 3000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 500 }
 		}
-		hidden_effect = { change_variable = { which = max_allowed_shop_buffs value = -1 }}
-        add_resource = { energy = -3000 }
-		add_modifier = { modifier = wg_modifier_combat_uf days = 3600 }
-		country_event = { id = wsgranking.20004 days = 3600 }
+        add_resource = { energy = -3000 sr_pantsu = -500 }
+        add_modifier = { modifier = wg_modifier_combat_uf days = 7200 }
+        custom_tooltip = not_count_in_buff_limit
 	}
     
 	# 返回一级菜单

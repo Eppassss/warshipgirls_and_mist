@@ -120,7 +120,7 @@ wsg_station = {
 				value = 1
 			}
 			if = {
-				limit = { NOT = { has_country_flag = built_wsg_station }
+				limit = { NOT = { has_country_flag = built_wsg_station }}
 				set_country_flag = built_wsg_station
 				change_variable = { which = rankpts value = 3 }
 			}
@@ -265,7 +265,7 @@ dyson_yamato = {
 	on_build_complete = {
 		set_star_flag = dyson_yamato_built
 		FROM = { if = {
-			limit = { NOT = { has_country_flag = built_dyson_yamato }
+			limit = { NOT = { has_country_flag = built_dyson_yamato }}
 			set_country_flag = built_dyson_yamato
 			change_variable = { which = rankpts value = 3 }
 		}}
@@ -328,7 +328,7 @@ wsg_mining_station = {
 		set_star_flag = wsg_mining_station_built
 		from = { 
 			if = {
-				limit = { NOT = { has_country_flag = built_wsg_mining_station }
+				limit = { NOT = { has_country_flag = built_wsg_mining_station }}
 				set_country_flag = built_wsg_mining_station
 				change_variable = { which = rankpts value = 3 }
 			}
@@ -407,7 +407,7 @@ wsg_hidden_capital = {
 		set_star_flag = wsg_hidden_capital_built
 		from = { 
 			if = {
-				limit = { NOT = { has_country_flag = built_wsg_hidden_capital }
+				limit = { NOT = { has_country_flag = built_wsg_hidden_capital }}
 				set_country_flag = built_wsg_hidden_capital
 				change_variable = { which = rankpts value = 4 }
 			}

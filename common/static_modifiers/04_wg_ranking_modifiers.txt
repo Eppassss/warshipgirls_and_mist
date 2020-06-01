@@ -128,8 +128,6 @@ wg_modifier_combat_shipcraft = {
 
 wg_modifier_combat_uf = {
 	damage_vs_country_type_wg_crisis_country_mult = 0.2
-	damage_vs_country_type_wg_crisis_sub_gate_country_mult = 0.2
-	custom_tooltip = wg_modifier_combat_uf_desc
 }
 
 wg_modifier_combat_fleet_control = {

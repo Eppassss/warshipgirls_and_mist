@@ -799,7 +799,7 @@ country_event = {
 		has_global_flag = wg_invasion_happened
 		is_country_type = wg_crisis_country
 		OR = {
-			FROM = { is_same_value = ROOT }
+			NOT = { exists = FROM }
 			FROMFROM = { has_fleet_flag = defence_fleet }
 		}
 		NOR = { 
@@ -836,7 +836,7 @@ country_event = {
 		is_country_type = wg_crisis_country
 		has_global_flag = wg_crisis_insane
 		OR = {
-			FROM = { is_same_value = ROOT }
+			NOT = { exists = FROM }
 			FROMFROM = { has_fleet_flag = defence_fleet }
 		}
 	}
@@ -954,6 +954,10 @@ country_event = {
 			FROM = { 
 				save_event_target_as = portal_killer
 				country_event = { id = wg_crisis.101 }
+			}
+			every_country = {
+				limit = { has_point_of_interest = { poi = wg_invasion_poi.1 }}
+				remove_point_of_interest = wg_invasion_poi.1
 			}
 		}
         else = {
@@ -1132,6 +1136,9 @@ country_event = {
 		} else = {
 			set_country_flag = retreat
 			event_target:wg_crisis_country = { country_event = { id = wg_crisis.13 }}
+			every_playable_country = {
+				country_event = { id = wg_crisis.998 days = 60 }
+			}
 		}
 	}
 }
@@ -4689,12 +4696,13 @@ country_event = {
 			has_authority = auth_shenhai
 			has_authority = auth_warshipgirls
 		}	
+		NOT = { has_relic = "r_united_fleet" }
 	}
 	option = {
 		name = "wg_crisis.998.a"
 		owner = {
-		add_relic = "r_united_fleet" 
-		add_resource = { influence = 200 }
+			add_relic = "r_united_fleet" 
+			add_resource = { influence = 200 }
 		}
 	}
 }

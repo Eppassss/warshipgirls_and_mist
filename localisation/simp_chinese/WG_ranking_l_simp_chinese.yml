@@ -176,6 +176,8 @@
  rankpts:0 "§H军阶点数§!"
  owned_rpts:0 "$rankpts$"
  reached_max_allowed_shop_buffs:0 "§R已经达到最大同时持有的增益数。请等待至任意一个增益到达期限。§!"
+ not_count_in_buff_limit:0 "§G此增益不受购买上限限制，及不会影响其他增益购买限制§!"
+ rankpts_not_reach_requirment2:0 "您的军阶点数($RANK_PTS|0Y$)目前未达到该项目要求($REQUIRE_PTS|0R$)，您还需要($PTS_TO_REQUIRE|0Y$)点军阶点数以解锁购买该项目"
 
  too_low_rank_fail_20:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y20§R点$rankpts$"
  too_low_rank_fail_30:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y30§R点$rankpts$"

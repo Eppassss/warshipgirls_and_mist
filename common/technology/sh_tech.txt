@@ -2127,7 +2127,12 @@ tech_building_sh_fortress = {
 	prerequisites = { "tech_sh_experiment" }
 	weight = @tier2weight3
 	
-	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "wg_military_edicts"
+			desc = "wg_military_edicts_desc"
+		}
+	}	
 	weight_modifier = {
 		modifier = {
 			factor = 0

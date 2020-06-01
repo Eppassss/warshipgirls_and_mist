@@ -91,3 +91,83 @@ wsg_war_doctrine = {
 		}		
 	}	
 }
+
+wsg_soldier_policy = {
+	potential = {
+		is_country_type = default
+		OR = {
+			has_technology = tech_building_sh_fortress
+			has_technology = tech_wsg_military
+		}
+	}
+		
+	option = {
+		name = "wg_soldier_balance"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = {}	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}
+	option = {
+		name = "wg_soldier_military"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = { wg_soldier_military_flag }	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}
+	option = {
+		name = "wg_soldier_bureaucratic"	
+		
+		valid = {
+			OR = {
+				has_authority="auth_warshipgirls"
+				has_authority="auth_shenhai"
+			}	
+		}
+		
+		policy_flags = { wg_soldier_bureaucratic_flag }	
+
+		AI_weight = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOR = { 
+					has_ai_personality = honorbound_warriors 
+					has_ai_personality = devouring_swarm 
+				}
+			}
+		}		
+	}	
+}

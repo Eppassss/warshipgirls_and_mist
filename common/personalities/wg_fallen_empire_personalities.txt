@@ -64,7 +64,7 @@ awakened_wg_fallen_empire = {
 	behaviour = {
 		conqueror = no
 		subjugator = no
-		liberator = no
+		liberator = yes
 		opportunist = no
 		slaver = no
 		uplifter = no
@@ -74,11 +74,11 @@ awakened_wg_fallen_empire = {
 		robot_exploiter = no
 		robot_liberator = no
 		propagator = no
-		multispecies = no
+		multispecies = yes
 		crisis_fighter = yes
 		crisis_leader = yes 	# special for awakened fallen empires
 		custodian = yes	# special for awakened machine fallen empires, prevents colonization & locks attitude
-		limited = yes # prevents certain AI behaviours
+		# limited = yes # prevents certain AI behaviours
 	}
 
 	allow = {

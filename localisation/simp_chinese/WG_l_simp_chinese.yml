@@ -116,5 +116,15 @@
  opinion_wsg_diplomacy2:0 "外交姐妹花"
  opinion_sh_to_wsg_diplomacy:0 "外交优先？我怀疑你在骗我"
  
- 
- 
+ ###############
+ policy_wsg_soldier_policy:0 "WG调度员调整"
+ policy_wsg_soldier_policy_desc:0 "通过调整调度员的工作重心来决定她们要注重哪一方面的调度工作。"
+ wg_soldier_balance:0 "均衡管理"
+ wg_soldier_balance_name:0 "均衡管理"
+ wg_soldier_balance_desc:0 "舰队管理和帝国行政必须两手抓。\n调度员的产出为 8£mod_country_admin_cap_add£§Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!和 4£mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!\n\n"
+ wg_soldier_military:0 "注重军事"
+ wg_soldier_military_name:0 "注重军事"
+ wg_soldier_military_desc:0 "海军的发展是我们帝国的重中之重，优先进行舰队调度。\n调度员的产出为 2£mod_country_admin_cap_add£§Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!和 8£mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!\n\n"
+ wg_soldier_bureaucratic:0 "注重行政"
+ wg_soldier_bureaucratic_name:0 "注重行政"
+ wg_soldier_bureaucratic_desc:0 "我们要优先处理内政问题，才能考虑其他方面的事项。\n调度员的产出为 10£mod_country_admin_cap_add£§Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!和 2£mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!\n\n"

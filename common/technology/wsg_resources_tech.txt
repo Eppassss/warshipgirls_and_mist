@@ -470,7 +470,12 @@ tech_wsg_military = {
 	weight = @tier1weight1
 	is_rare = yes
 	
-	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "wg_military_edicts"
+			desc = "wg_military_edicts_desc"
+		}
+	}	
 	weight_modifier = {
 		modifier = {
 			factor = 0
