@@ -1,0 +1,339 @@
+﻿l_english:
+
+#################################
+ wsgranking.1013.name: "One-time exchange of goods"
+ wsgranking.1013.desc: "Here are various items that can be exchanged at one time."
+ 
+ wsgranking.101.name: "Trickle Energy Flow"
+ wsgranking.101.desc: "Your §H $ energy $ §! income exceeds §Y200§ !! Your rank points have increased by 2."
+ wsgranking.101.a: "OK"
+ 
+ wsgranking.102.name: "Energy Surge"
+ wsgranking.102.desc: "Your §H$energy$§! income exceeds §Y500§!! Your rank points have increased by 4."
+ wsgranking.102.a: "OK"
+ 
+ wsgranking.103.name: "Rolling Energy"
+ wsgranking.103.desc: "Your §H $ energy $ §! income exceeds §Y1000§ !! Your rank points have increased by 4."
+ wsgranking.103.a: "OK"
+ 
+ wsgranking.104.name: "Beyond Dyson Ball"
+ wsgranking.104.desc: "It's really impressive! Your §H$energy$§! income exceeds 4000! Your rank points have increased by 7."
+ wsgranking.104.a: "OK"
+ 
+ wsgranking.111.name: "It's mining time!"
+ wsgranking.111.desc: "Your §H$minerals$§! income exceeds §Y200§!! Your rank points have increased by 2."
+ wsgranking.111.a: "OK"
+ 
+ wsgranking.112.name: "Emerging Mining!"
+ wsgranking.112.desc: "Your §H$minerals$§! income exceeds §Y500§!! Your rank points have increased by 4."
+ wsgranking.112.a: "OK"
+ 
+ wsgranking.113.name: "Drilling Mania"
+ wsgranking.113.desc: "Your §H$minerals$§! income exceeds §Y1000§!! Your rank points have increased by 4."
+ wsgranking.113.a: "OK"
+ 
+ wsgranking.114.name: "Beyond Matter Decompressor"
+ wsgranking.114.desc: "Your §H$minerals$§! income exceeds 3000! Your rank points have increased by 7."
+ wsgranking.114.a: "OK"
+ 
+ wsgranking.121.name: "Reclaiming wasteland"
+ wsgranking.121.desc: "Your §G $ food $ §! income exceeds §Y200§ !! Your rank points have increased by 2."
+ wsgranking.121.a: "OK"
+ 
+ wsgranking.122.name: "balanced diet"
+ wsgranking.122.desc: "Your §G$food$§! income exceeds §Y500§!! Try all the Galaxy ingredients, even if it is bad for your health. As long as it is an organic empire, you need a variety of foods to nourish it !Your rank has increased by 4."
+ wsgranking.122.a: "OK"
+ 
+ wsgranking.123.name: "Sufficient nutrition"
+ wsgranking.123.desc: "Your §G$food$§! income exceeds §Y1000§! Maybe you have used a bad steel hoe, and then reconsidered your life choices! The points of each rank increase 4."
+ wsgranking.123.a: "OK"
+ 
+ wsgranking.124.name: "Beyond the World Tree Orchid"
+ wsgranking.124.desc: "Your §G$food$§! income exceeds 2000! Your rank points have increased by 7."
+ wsgranking.124.a: "OK"
+
+ wsgranking.131.name: "Not better than iron"
+ wsgranking.131.desc: "Your §H$alloys$§! income exceeds §Y100§!! The alloy of the Star Age may not be better than iron. Your military rank points have increased by 2."
+ wsgranking.131.a: "OK"
+ 
+ wsgranking.132.name: "Come Hard"
+ wsgranking.132.desc: "Your §H $ alloys $ §! income exceeds §Y500§! Sometimes money can't solve the problem, and you must ask for iron money. Your military rank points have increased by 4."
+ wsgranking.132.a: "OK"
+ 
+ wsgranking.133.name: "Joint Smelting"
+ wsgranking.133.desc: "Your §H$alloys$§! income exceeds §Y1000§!! Your rank points have increased by 5."
+ wsgranking.133.a: "OK"
+
+ wsgranking.134.name: "Beyond Nidawei Alloy Furnace"
+ wsgranking.134.desc: "Your §H $ alloys $ §! income exceeds §Y2000§ !! Pass your rank points increased by 9."
+ wsgranking.134.a: "OK"
+
+ wsgranking.211.name: "War drum beat"
+ wsgranking.211.desc: "Your §H fleet combat power §! exceeds §Y5K§!! Your rank points have increased by 2."
+ wsgranking.211.a: "OK"
+
+ wsgranking.212.name: "Starting to take shape"
+ wsgranking.212.desc: "Your §H fleet combat power §! surpasses §Y50K§ !! Curators will think that your fleet is enough to wrestle with Leviathan, but it is true and false only you know. An increase of 5. "
+ wsgranking.212.a: "OK"
+
+ wsgranking.213.name: "Large Shipbuilding"
+ wsgranking.213.desc: "Your §H fleet combat power §! exceeds §Y500K§!! Your rank points have increased by 8."
+ wsgranking.213.a: "OK"
+
+ wsgranking.214.name: "Imperial Fleet"
+ wsgranking.214.desc: "Your §H fleet combat power §! exceeds §Y5M§ !! No matter what difficulties you encounter, do n’t be afraid, face it with a smile, the best way to eliminate fear is to face fear! Your rank points have increased by 10. "
+ wsgranking.214.a: "OK"
+
+ wsgranking.221.name: "The first destroyer"
+ wsgranking.221.desc: "You built the first destroyer! Your rank points have increased by 2."
+ wsgranking.221.a: "OK"
+
+ wsgranking.222.name: "The First Cruiser"
+ wsgranking.222.desc: "You built the first cruiser! Your rank points have increased by 2."
+ wsgranking.222.a: "OK"
+
+ wsgranking.223.name: "The first battleship"
+ wsgranking.223.desc: "You built the first battleship! Your rank points have increased by 4."
+ wsgranking.223.a: "OK"
+
+ wsgranking.224.name: "The First Titan"
+ wsgranking.224.desc: "You built the first Titan! Your rank points have increased by 4."
+ wsgranking.224.a: "OK"
+
+ wsgranking.225.name: "Colossus completed"
+ wsgranking.225.desc: "You have built a colossus that can destroy the world! Your rank rank has increased by 8."
+ wsgranking.225.a: "OK"
+
+ wsgranking.226.name: "Dreadnought Ship Completed"
+ wsgranking.226.desc: "You built the first fearless ship! Your rank points increased by 4. You see this event because you installed the NSC Mod."
+ wsgranking.226.a: "Absolutely"
+
+ wsgranking.227.name: "The ship's fearless ship is completed!"
+ wsgranking.227.desc: "The collaborative project from Neoforce is finally complete. An impressive super battleship with an Urban Superstar Cannon that can destroy an Optimus Castle in one shot. Your rank points have increased by 12 . "
+
+ wsgranking.228.name: "Flagship completed!"
+ wsgranking.228.desc: "You built the first fearless ship! Your rank points have increased by §Y10§!. You see this event because you installed the NSC Mod."
+
+
+ wsgranking.231.name: "Build 25 Battleships"
+ wsgranking.231.desc: "You now have §Y25§! battleships! Your rank points have increased by §Y2§ !."
+ wsgranking.231.a: "OK"
+
+ wsgranking.232.name: "Build 50 battleships"
+ wsgranking.232.desc: "You now have §Y50§! battleships! Impressive. Your rank points have increased by §Y4§!."
+ wsgranking.232.a: "OK"
+
+ wsgranking.233.name: "Build 125 Battleships"
+ wsgranking.233.desc: "You now have §Y125§! battleships! What a huge fleet! Your rank points have increased by §Y8§ !."
+ wsgranking.233.a: "OK"
+
+ wsgranking.234.name: "Build 250 Battleships"
+ wsgranking.234.desc: "You now have as many battleships as §Y250§!, enough to cover the sky and sky! Enough for 10 fleets to use! Your rank points have increased by §Y12§!.""
+ wsgranking.234.a: "OK"
+
+ wsgranking.301.name: "Empire Egg"
+ wsgranking.301.desc: "Your empire has reached §Y75§ !. Managing a small interstellar empire is usually not difficult, but as the empire grows larger, the difficulty of management will increase. Your military rank points have increased Y1§!."
+ wsgranking.301.a: "OK"
+
+ wsgranking.302.name: "Starting to take shape"
+ wsgranking.302.desc: "Your empire has reached §Y200§ !. Now your empire may already have several colonies. Your military rank points have increased by §Y2§ !."
+ wsgranking.302.a: "OK"
+
+ wsgranking.303.name: "Imperial Conquest"
+ wsgranking.303.desc: "Your empire has reached §Y500§!, now your empire may already have several different star zones, recruit star zone governors to govern them! Your military rank points have increased by §Y3 § !. "
+ wsgranking.303.a: "OK"
+
+ wsgranking.304.name: "Xinghe Ambitious"
+ wsgranking.304.desc: "Your empire has reached §Y1500§!, and now your empire may already be facing management problems! Work harder! Your military rank points have increased by §Y5§!."
+ wsgranking.304.a: "OK"
+
+ wsgranking.311.name: "The construction of the giant structure is completed"
+ wsgranking.311.desc: "You built your first giant structure! Whatever it is, it must be spectacular. Your rank has increased by 2."
+ wsgranking.311.a: "OK"
+
+ wsgranking.312.name: "Complete the construction of 3 giant structures"
+ wsgranking.312.desc: "You built 3 giant structures! Your rank points have increased by 4."
+ wsgranking.312.a: "OK"
+
+ wsgranking.313.name: "Complete the construction of 6 giant structures"
+ wsgranking.313.desc: "You built 6 giant structures! What a magnificent undertaking! Your military rank has increased by 6."
+ wsgranking.313.a: "OK"
+
+ wsgranking.314.name: "Complete the construction of 15 giant structures"
+ wsgranking.314.desc: "You built 15 giant structures! You are definitely one of the few master architects in the universe! Your military rank has increased by 10."
+ wsgranking.314.a: "OK"
+
+ wsgranking.3201.name: "The foundation stone of the strategic command center"
+ wsgranking.3201.desc: "We have noticed that the base of the strategic command center has been completed. Your rank points have increased by 4."
+ wsgranking.3201.a: "OK"
+
+ wsgranking.3202.name: "Complete Strategic Command Center"
+ wsgranking.3202.desc: "Strategic Command Center! A multi-functional military training facility has finally been completed! Your rank points have increased by 8."
+ wsgranking.3202.a: "OK"
+
+ wsgranking.3203.name: "The foundation stone of the United College of Science"
+ wsgranking.3203.desc: "We have noticed that the base site of the United Academy of Science has been completed. Your rank points have increased by 4."
+ wsgranking.3203.a: "OK"
+
+ wsgranking.3204.name: "Completed by the United College of Science"
+ wsgranking.3204.desc: "The United College of Science is completed! We recommend that you designate it as the highest institution in the country. Your military rank has increased by 8."
+ wsgranking.3204.a: "OK"
+
+ wsgranking.3205.name: "Open your eyes and watch the galaxy"
+ wsgranking.3205.desc: "We have noticed that the sentinel array has taken shape. Your rank points have increased by 4."
+ wsgranking.3205.a: "OK"
+
+ wsgranking.3206.name: "Eyes of omniscience"
+ wsgranking.3206.desc: "The Sentinel Array has been completed, and now the fleet movements in any corner of the galaxy have all your eyes, but it still cannot penetrate the nebula. Your military rank points have increased by 8."
+ wsgranking.3206.a: "OK"
+
+ wsgranking.3207.name: "The foundation of the world"
+ #Start hammer ring
+ wsgranking.3207.desc: "The construction of the ring world has already begun. This is a great vision to provide shelter for tens of billions of residents. Your military rank points have increased by 4."
+ wsgranking.3207.a: "OK"
+
+ wsgranking.3208.name: "Complete the Ring World"
+ # 环 锤 完
+ wsgranking.3208.desc: "The construction of the ring world is completed! Your rank points have increased by 12."
+ wsgranking.3208.a: "OK"
+
+ wsgranking.3209.name: "Repair Ring World Stage"
+ wsgranking.3209.desc: "For thousands of years, the cold and empty ruins of the ancient ring-shaped world have floated in the galaxy. Now you have repaired a section of it to bring it back to life. Your military rank points have increased by §Y4§!. "
+ wsgranking.3209.a: "OK"
+
+ wsgranking.3210.name: "Dyson Ball Frame"
+ wsgranking.3210.desc: "You have finally taken the first step in this craziest fantasy project. Your military rank points have increased by §Y3§!."
+
+ wsgranking.3211.name: "Dyson Ball Built"
+ wsgranking.3211.desc: "Facts have proved that even a giant galaxy does not make us feel small. You have finally captured a star! Your military rank points have increased by §Y12§!."
+
+ wsgranking.3212.name: "Physics or Magic?"
+ wsgranking.3212.desc: "Substance decompressor, a project that may make Hawking jump out of the coffin, and you have taken the first step! Your military rank points have increased by §Y3§!."
+
+ wsgranking.3213.name: "Matter decompressor built"
+ wsgranking.3213.desc: "Even if our civilization has developed countless days and months, we can only find minerals to obtain minerals. But now, minerals can be born out of nothing! Your military rank has increased by §Y12§ !."
+
+ wsgranking.3214.name: "Face Engineering"
+ wsgranking.3214.desc: "There may be many people who blame you for the work and money that you are doing, but this is also a manifestation of the country's comprehensive strength, isn't it? Your military rank points have increased by §Y3§!."
+
+ wsgranking.3215.name: "Interstellar Rally Completed"
+ wsgranking.3215.desc: ""Everyone, please give me a face"\nYour rank points have increased by §Y3§!."
+
+ wsgranking.3216.name: "Relic Protector"
+ wsgranking.3216.desc: "" Take history as a mirror, you can know the rise and fall "\nYour military rank points have increased by §Y3§ !."
+
+ wsgranking.3217.name: "Giant art facility built"
+ wsgranking.3217.desc: "Please be assured that the collection here will not move casually even at night. Your military rank points have increased by §Y12§!."
+
+ wsgranking.3218.name: "Xia Dumplings"
+ wsgranking.3218.desc: "" How can you tell me if you have 180 ships and 120 ships and have a Titan face? Direct A face has won, how could it be lost. "————A well-known military scholar\nYour rank points have increased by §Y3§!."
+
+ wsgranking.3219.name: "Huge dock built"
+ wsgranking.3219.desc: "" wo men you shi hen da "--- a national wife. Your rank points have increased by §Y12§ !."
+
+ wsgranking.3220.name: "Star Gate Built"
+ wsgranking.3220.desc: "Now distance is no longer difficult for you. Your military rank points have increased by §Y3§!."
+
+ wsgranking.331.name: "Vibrant Empire"
+ wsgranking.331.desc: ""If the land is lost, everyone will be lost; if the land is lost, everyone will be lost. "\nYour empire population reaches §Y50§! Your rank rank has increased by 1."
+ wsgranking.331.a: "OK"
+
+ wsgranking.332.name: "Regional Power"
+ wsgranking.332.desc: ""The strength of a country depends only on its attitude towards the people. "\nYour empire population reaches §Y200§!! Your rank rank has increased by §Y3§!."
+ wsgranking.332.a: "OK"
+
+ wsgranking.333.name: "Popular Population"
+ wsgranking.333.desc: "Your empire population reaches §Y500§! You should consider your population management issues. Your military rank points have increased by §Y3§!."
+ wsgranking.333.a: "OK"
+
+ wsgranking.334.name: "People and people (physics)!"
+ wsgranking.334.desc: "" If there is a person in this universe who looks like a purple potato, then he should come to you soon. "\nYour empire population reaches §Y1000§! Your rank points have increased by §Y5 § !. "
+ wsgranking.334.a: "OK"
+
+ wsgranking.335.name: "A fast-growing city"
+ wsgranking.335.desc: "The people are the foundation of development! The population of one of your colonies has exceeded §Y30§ !! Your rank rank has increased by §Y2§ !."
+ wsgranking.335.a: "OK"
+
+ wsgranking.336.name: "Super Metropolis"
+ wsgranking.336.desc:""The development of the city and the needs of the people will always be a pair of spears and shields. "\nThe population of one of your colonies has exceeded §Y50§!! Your rank points have increased by §Y3§!."
+ wsgranking.336.a: "OK"
+
+ wsgranking.337.name: "Sky City"
+ wsgranking.337.desc: ""Barus! ... Ah, nothing happened. "\nOne of your colony population has exceeded §Y80§!! Your military rank points have increased by §Y4§!."
+ wsgranking.337.a: "OK"
+
+ wsgranking.338.name: "Ideal City"
+ wsgranking.338.desc: ""Damn, how can this place fill so many people? "\nYou already have a §Y150§! Population colony! Your military rank points have increased by §Y7§ !."
+ wsgranking.338.a: "OK"
+
+ wsgranking.341.name: "Conqueror"
+ wsgranking.341.desc: "You already have a dependent country! Your rank points have increased by §Y2§ !."
+ wsgranking.341.a: "OK"
+
+ wsgranking.342.name: "Overlord"
+ wsgranking.342.desc: "You already have 2 dependent states! Your rank points have increased by §Y2§!."
+ wsgranking.342.a: "OK"
+
+ wsgranking.343.name: "Full Employment"
+ wsgranking.343.desc: ""If everyone in a country does not have to worry about finding a job, it is probably the utopia of dreams. "\nYou have a colony with a population of 50 and no free jobs! The jobs in this colony are now fully utilized. Your rank points have increased by 2."
+ wsgranking.343.a: "OK"
+
+ wsgranking.344.name: "Stable overwhelms everything"
+ wsgranking.344.desc: ""The prerequisite for the country to develop is that people can live and work in peace and contentment. "\nYou have a planet with 100 stability and 0 crime! Your military rank has increased by 2."
+ wsgranking.344.a: "OK"
+
+ wsgranking.345.name: "fully constructed"
+ wsgranking.345.desc: "You have a colony with all 16 buildings! The planet's infrastructure seems to have been fully improved. Your military rank points have increased by 4."
+ wsgranking.345.a: "OK"
+
+ wsgranking.346.name: "Infrastructure Devil"
+ wsgranking.346.desc: "You have a colony that has reached the upper limit of zoning! The natural endowment of the planet has been fully utilized. Your rank points have increased by 4."
+ wsgranking.346.a: "OK"
+
+ wsgranking.347.name: "Involved in the First War"
+ wsgranking.347.desc: ""Government in the barrel of the gun! ". Your rank rank increased by 2."
+ wsgranking.347.a: "OK"
+
+ wsgranking.348.name: "Make Dark Matter Technology"
+ wsgranking.348.desc: "The dark matter technology that the old diehards are proud of is now in your hands! (You better hope you haven't played any glittering mods) Your military rank has increased by 1."
+ wsgranking.348.a: "OK"
+
+ wsgranking.400.name: "Repair the Intrepid Ship"
+ wsgranking.400.desc: "Destroyed automated fearless ship has been repaired! However, this is not a month. Your rank points have increased by 2."
+ wsgranking.400.a: "OK"
+
+ wsgranking.401.name: "shot down the fearless ship"
+ wsgranking.401.desc: "The automated fearless ship was shot down! The incomparable war machine finally lowered its head. Your rank rank increased by 2."
+ wsgranking.401.a: "OK"
+
+ wsgranking.402.name: "Down the nightmare of the plane"
+ wsgranking.402.desc: "The nightmare stuck in the plane between other dimensions and ours was shot down! I hope you have no strange idea about it. Your rank points have increased by 4."
+ wsgranking.402.a: "OK"
+
+ wsgranking.403.name: "Complete the Star Eater Project"
+ wsgranking.403.desc: "All the engulfed stellar matter has been returned! Several cold worlds are now livable. Your rank points have increased by 4."
+ wsgranking.403.a: "OK"
+
+ wsgranking.404.name: "Ether Dragon was killed"
+ wsgranking.404.desc: "That ether faucet is really amazing! But we can never know how it fired a light spear from its mouth. Your rank rank has increased by 4."
+ wsgranking.404.a: "OK"
+
+ wsgranking.405.name: "Decode the Mysterious Fortress Completely"
+ wsgranking.405.desc: "The mysterious fortress is actually an April Fool's Day joke. I hope the little gift left by the builder will be of some use to you. Your military rank points have increased by 4."
+ wsgranking.405.a: "OK"
+
+ wsgranking.406.name: "Completely Demystify the Void"
+ wsgranking.406.desc: "The disgusting monster hatched from the planet was killed! Your military rank increased by 4."
+ wsgranking.406.a: "OK"
+
+ wsgranking.407.name: "Decode mysterious tanker"
+ wsgranking.407.desc: "After eliminating the mysterious psionic entity, the rejuvenating medicine in the mysterious tanker is yours! Give me a cup too. Your rank points have increased by 4."
+ wsgranking.407.a: "OK"
+
+ wsgranking.408.name: "Teardown Robot"
+ wsgranking.408.desc: "After fully dismantling the waste picking machine, the nano repair system is no longer a secret. Your military rank points have increased by 4."
+ wsgranking.408.a: "OK"
+
+
+ 
+ 

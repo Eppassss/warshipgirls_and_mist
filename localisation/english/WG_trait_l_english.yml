@@ -79,7 +79,7 @@
  TRAIT_WSG_ALLOYS_EFFECT:0 "Each Warship Girl pop produces 0.1 £alloys£ §Y$alloys$§! per month."
  wsg_trait_consumer_goods:0 "Handicraft Confiscation"
  wsg_trait_consumer_goods_desc:0 "According to reports, some shipgirls are going to sculpt exquisite handicrafts in private. We will confiscate them and resell them to other shipgirls periodically, which will undoubtedly greatly increase the output of consumer goods."
- TRAIT_WSG_GOODS_EFFECT:0 "$MOD_POP_HAPPINESS$: §R-15%§! \n\nEach Warship Girl pop produces 0.2 £consumer_goods£ §Y$consumer_goods$§! per month."
+ TRAIT_WSG_GOODS_EFFECT:0 "$MOD_POP_HAPPINESS$: §R-15%§! \nEach Warship Girl pop produces 0.2 £consumer_goods£ §Y$consumer_goods$§! per month."
  trait_intelligent_galo:0 "Intelligent Galo"
  trait_intelligent_galo_desc:0 "Those Galos with intelligence may be accidental products from our laboratories, but they have shown loyalty and high productivity to us. §!§R-Confidential: They are delicious-§!"
  wsg_modifier_warshipgirls:0 "Harbor AI Assembly Protocol"

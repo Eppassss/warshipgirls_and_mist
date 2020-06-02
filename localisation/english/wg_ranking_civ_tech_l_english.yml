@@ -1,0 +1,64 @@
+﻿l_english:
+
+tech_wsg_trading_pantsu:"Production of Pantsu"
+tech_wsg_trading_pantsu_desc:"Broken Chair Clan has developed a variety of loot-based financial products, such as Fatty Futures, Fatty WTF and Fatty Options. By learning how Brokers Clan financialize loot, we can greatly increase the country ’s loot output Trade volume. "
+
+tech_wsg_trading_1:"Business Insights of Broken Chair People"
+tech_wsg_trading_1_desc:"The generations of Broken Chairmen do business. They work together to earn high profits from alien races. By learning the trade methods of Broken Chairmen Chamber of Commerce, we can get more profit from every point of trade."
+
+tech_wsg_trading_2:"Broken Chair People's Trade and Economic Disclosure"
+tech_wsg_trading_2_desc:"The trading tactics of the Broken Chair Clan are shocking. Once again, reducing market restrictions and opening up trade will naturally bring in financial resources."
+
+tech_wsg_trading_branch:"Structure of Broken Chair Group Distributed Trade Organization"
+tech_wsg_trading_branch_desc:"Broken chair people rely on the method of hiring local employees and giving them full trust to build hundreds of millions of trade branches in the Galaxy and create a lot of jobs. Learning from their experience will help us establish a corporate branch Very beneficial. "
+
+mod_trade_routes_produces_mult:"£trade_value£ §Y trade volume§! Resources converted from £job_merchant£ §Ytrade routes§!"
+mod_planet_branch_offices_influence_cost_mult:"£influence£ influence cost for opening a branch"
+mod_planet_branch_offices_energy_cost_mult:"£energy£ energy cost for opening a branch"
+
+ tech_wg_buff_1:0 "Loot Shop Dispatch Agreement (Phase 1)"
+ tech_wg_buff_1_desc:0 "By sending additional personnel to the loot shop, we can ask the loot shop to provide us with more services."
+ tech_wg_buff_2:0 "Loot Shop Dispatch Agreement (Phase 2)"
+ tech_wg_buff_2_desc:0 "Compared to the deep sea, the ship's mother has a higher affinity and a stronger business talent, so we can send an additional group of personnel to increase the service capabilities of the loot shop."
+ wsg_shop_buff_plus:0 "The loot shop gain that can be held at the same time: §G + 1§"
+
+wg_modifier_storage_habitat:"Empty resident station cargo compartment"
+d_smuggling_bay:"Smuggling Pier"
+d_smuggling_bay_desc:"The Broken Chair tribe ’s trading space station attracts a large number of unscrupulous merchants living here to engage in dirty trades. These trades may benefit us, but they are not legal at all."
+d_hacking_device:"Broken Chair Family Trading Terminal"
+d_hacking_device_desc:"The trading terminal connected to the trading space station uses subspace communication to ensure the real-time nature of the transaction, and is a good helper for Galaxy Securities players."
+d_stuffed_strange_storage:"Cluttered Cargo Hold of Residential Station"
+d_stuffed_strange_storage_desc:"This cargo compartment is filled with goods that are unknown to which merchant groups and when they were dropped. There are many rare and precious materials."
+d_cleared_strange_storage:"Empty Cargo Hold of Residential Station"
+d_cleared_strange_storage_desc:"The precious and cluttered cargo in the cargo bay has been cleared. Now the space here can be reserved for construction and storage."
+d_space_scavange_walking:"Space Obstruction Port"
+d_space_scavange_walking_desc:"Some of the wreckage of cargo ships containing live metals are scattered near this residence station. This harbor was opened to clean up these crashed cargo ships."
+
+
+
+
+# To Be Continued......
+
+# wg_modifier_toastbread:"吐司面包"
+# wg_modifier_applepie:"苹果派"
+# wg_modifier_bakedbeans:"海军烘豆子"
+# wg_modifier_dwamak_soup:"马赛惰麻汤"
+# wg_modifier_latiao:"辣条"
+# wg_modifier_goldenbun:"金镶玉包子"
+# wg_modifier_fishandchips:"炸鱼薯条"
+
+# wg_modifier_hamburger:"美式汉堡"
+# wg_modifier_friedrice:"什锦叉烧炒饭"
+# wg_modifier_sausageandbeer:"图林根肠啤酒"
+# wg_modifier_curry:"海军咖喱"
+# wg_modifier_pretzel:"白香肠面包圈"
+# wg_modifier_salamipizza:"萨拉米披萨"
+# wg_modifier_dongporou:"东坡肉"
+
+# wg_modifier_sweetandsalty:"甜咸豆腐脑之争"
+# wg_modifier_seastar:"食用了有毒海星"
+# wg_modifier_ooass:"陆军感到不满"
+# wg_modifier_london:"对不明物质的洞见"
+# wg_modifier_surstomming:"至少还有臭气"
+
+

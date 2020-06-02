@@ -1,0 +1,250 @@
+﻿l_english:
+#################################################
+# Affection特性
+#################################################
+ immune_negative_trait:0 "§GImmunes all negative traits in original game.§!"
+ can_revive:0 "§GCan revive once§!"
+ max_affection:0 "Affection of this leader reaches max value."
+ max_affection_lady:0 "Affection of The lady reaches max value."
+ require_engagement:0 "You need to§H marry this leader §!to unlock the last affection level."
+ require_engagement_lady:0 "You need to§H marry the lady §!to unlock the last affection level."
+ max_affection_shimakaze: "Affection of Shimakaze reaches max value."
+ require_engagement_shimakaze: "You need to§H marry Shimakaze §!to unlock the last affection level."
+ max_affection_gray: "Affection of the lady Gray reaches max value."
+ require_engagement_gray: "You need to§H marry Gray§!to unlock the last affection level."
+ affection_lv1: "Affection: little"
+ affection_lv2: "Affection: low"
+ affection_lv3: "Affection: intermediate"
+ affection_lv4: "Affection: high"
+ affection_lv4_max: "Affection: high (max value)"
+ affection_lv5: "Affection: greatest"
+
+#################################################
+# 总督
+#################################################
+# 大小姐
+ leader_trait_governor_lady_affection_lv1:0 "$affection_lv1$"
+ leader_trait_governor_lady_affection_lv2:0 "$affection_lv2$"
+ leader_trait_governor_lady_affection_lv3:0 "$affection_lv3$"
+ leader_trait_governor_lady_affection_lv4:0 "$affection_lv4$"
+ leader_trait_governor_lady_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_governor_lady_affection_lv5:0 "$affection_lv5$"
+ leader_trait_governor_lady_affection_lv1_desc:0 "Affection can earn by §Y working in sectors§!."
+ leader_trait_governor_lady_affection_lv2_desc:0 "$leader_trait_governor_lady_affection_lv1_desc$"
+ leader_trait_governor_lady_affection_lv3_desc:0 "$leader_trait_governor_lady_affection_lv1_desc$"
+ leader_trait_governor_lady_affection_lv4_desc:0 "$leader_trait_governor_lady_affection_lv3_desc$"
+ leader_trait_governor_lady_affection_lv4_max_desc:0 "$max_affection_lady$ $require_engagement_lady$"
+ leader_trait_governor_lady_affection_lv5_desc:0 "$max_affection_lady$"
+
+#岛风
+ leader_trait_governor_shimakaze_affection_lv1: "$affection_lv1$"
+ leader_trait_governor_shimakaze_affection_lv2: "$affection_lv2$"
+ leader_trait_governor_shimakaze_affection_lv3: "$affection_lv3$"
+ leader_trait_governor_shimakaze_affection_lv4: "$affection_lv4$"
+ leader_trait_governor_shimakaze_affection_lv4_max: "$affection_lv4_max$"
+ leader_trait_governor_shimakaze_affection_lv5: "$affection_lv5$"
+ leader_trait_governor_shimakaze_affection_lv1_desc: "Affection can earn by§Y working in sectors§!."
+ leader_trait_governor_shimakaze_affection_lv2_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv3_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv4_desc: "$leader_trait_governor_shimakaze_affection_lv1_desc$"
+ leader_trait_governor_shimakaze_affection_lv4_max_desc: "$max_affection_shimakaze$ $require_engagement_shimakaze$"
+ leader_trait_governor_shimakaze_affection_lv5_desc: "$max_affection_shimakaze$"
+
+#灰风
+ leader_trait_governor_gray_affection_lv1: "$affection_lv1$"
+ leader_trait_governor_gray_affection_lv2: "$affection_lv2$"
+ leader_trait_governor_gray_affection_lv3: "$affection_lv3$"
+ leader_trait_governor_gray_affection_lv4: "$affection_lv4$"
+ leader_trait_governor_gray_affection_lv4_max: "$affection_lv4_max$"
+ leader_trait_governor_gray_affection_lv5: "$affection_lv5$"
+ leader_trait_governor_gray_affection_lv1_desc: "Affection can earn by§Y working in sectors§!."
+ leader_trait_governor_gray_affection_lv2_desc: "$leader_trait_governor_gray_affection_lv1_desc$"
+ leader_trait_governor_gray_affection_lv3_desc: "$leader_trait_governor_gray_affection_lv1_desc$"
+ leader_trait_governor_gray_affection_lv4_desc: "$leader_trait_governor_gray_affection_lv1_desc$"
+ leader_trait_governor_gray_affection_lv4_max_desc: "$max_affection_gray$ $require_engagement_gray$"
+ leader_trait_governor_gray_affection_lv5_desc: "$max_affection_gray$"
+
+# 其他领袖
+ leader_trait_governor_affection_lv1:0 "$affection_lv1$"
+ leader_trait_governor_affection_lv2:0 "$affection_lv2$"
+ leader_trait_governor_affection_lv3:0 "$affection_lv3$"
+ leader_trait_governor_affection_lv4:0 "$affection_lv4$"
+ leader_trait_governor_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_governor_affection_lv5:0 "$affection_lv5$"
+ leader_trait_governor_affection_lv1_desc:0 "Affection can earn by§Y working in sectors§!. Furthermore，this leader will gain affection when §Yleveling up§!."
+ leader_trait_governor_affection_lv2_desc:0 "$leader_trait_governor_affection_lv1_desc$"
+ leader_trait_governor_affection_lv3_desc:0 "$leader_trait_governor_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_governor_affection_lv4_desc:0 "$leader_trait_governor_affection_lv1_desc$"
+ leader_trait_governor_affection_lv4_max_desc:0 "$max_affection$ $require_engagement$\neffects: $immune_negative_trait$"
+ leader_trait_governor_affection_lv5_desc:0 "$max_affection$\neffects: $immune_negative_trait$，$can_revive$"
+
+#################################################
+# 科学家
+#################################################
+# 大小姐
+ leader_trait_scientist_lady_affection_science_ship_lv1:0 "$affection_lv1$"
+ leader_trait_scientist_lady_affection_science_ship_lv2:0 "$affection_lv2$"
+ leader_trait_scientist_lady_affection_science_ship_lv3:0 "$affection_lv3$"
+ leader_trait_scientist_lady_affection_science_ship_lv4:0 "$affection_lv4$"
+ leader_trait_scientist_lady_affection_science_ship_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_scientist_lady_affection_science_ship_lv5:0 "$affection_lv5$"
+ leader_trait_scientist_lady_affection_science_ship_lv1_desc:0 "Affection can earn by§Y exploring systems§!,§Y excavating archaeological sites§! or§Y assists research of a colony§!. When§Y a system is completely explored§!, there is a higher chance to earn affection; §Y Completeing a archaeological sites§! will earn much more affections."
+ leader_trait_scientist_lady_affection_science_ship_lv2_desc:0 "$leader_trait_scientist_lady_affection_science_ship_lv1_desc$"
+ leader_trait_scientist_lady_affection_science_ship_lv3_desc:0 "$leader_trait_scientist_lady_affection_science_ship_lv1_desc$"
+ leader_trait_scientist_lady_affection_science_ship_lv4_desc:0 "$leader_trait_scientist_lady_affection_science_ship_lv3_desc$"
+ leader_trait_scientist_lady_affection_science_ship_lv4_max_desc:0 "$max_affection_lady$ $require_engagement_lady$"
+ leader_trait_scientist_lady_affection_science_ship_lv5_desc:0 "$max_affection_lady$"
+
+#岛风
+ leader_trait_scientist_shimakaze_affection_lv1: "$affection_lv1$"
+ leader_trait_scientist_shimakaze_affection_lv2: "$affection_lv2$"
+ leader_trait_scientist_shimakaze_affection_lv3: "$affection_lv3$"
+ leader_trait_scientist_shimakaze_affection_lv4: "$affection_lv4$"
+ leader_trait_scientist_shimakaze_affection_lv4_max: "$affection_lv4_max$"
+ leader_trait_scientist_shimakaze_affection_lv5: "$affection_lv5$"
+ leader_trait_scientist_shimakaze_affection_lv1_desc: "Affection can earn by §Y setting Shimakaze to be head of one of three researching areas§!, send Shimakaze to an exploration ship to§Y explore systems§!, §Yexcavating archaeological sites§! or§Y assists research of a colony§!. When Shimakaze§Y completely explored a system§!, there is a higher chance to earn affection; §Y Completeing an archaeological sites§! will earn much more affections; in addition, when §Y any technology has finished research§!, Shimakaze will gain additional affection if she is one of the head of three research area."
+ leader_trait_scientist_shimakaze_affection_lv2_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv3_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv4_desc: "$leader_trait_scientist_shimakaze_affection_lv1_desc$"
+ leader_trait_scientist_shimakaze_affection_lv4_max_desc: "$max_affection_shimakaze$ $require_engagement_shimakaze$"
+ leader_trait_scientist_shimakaze_affection_lv5_desc: "$max_affection_shimakaze$"
+ 
+# 其他领袖
+ leader_trait_scientist_affection_lv1: "$affection_lv1$"
+ leader_trait_scientist_affection_lv2: "$affection_lv2$"
+ leader_trait_scientist_affection_lv3: "$affection_lv3$"
+ leader_trait_scientist_affection_lv4: "$affection_lv4$"
+ leader_trait_scientist_affection_lv4_max: "$affection_lv4_max$"
+ leader_trait_scientist_affection_lv5: "$affection_lv5$"
+ leader_trait_scientist_affection_lv1_desc:0 "Affection can earn by §Y setting the scientist to be head of one of three researching areas§!, send the scientist to an exploration ship to§Y explore systems§!, §Yexcavating archaeological sites§! or§Y assists research of a colony§!. When the scientist§Y completely explored a system§!, there is a higher chance to earn affection; §Y Completeing an archaeological sites§! will earn much more affections; in addition, when §Y any technology has finished research§!, the scientist will gain additional affection if the scientist is one of the head of three research area. Furthermore，this leader will gain affection when §Yleveling up§!."
+ leader_trait_scientist_affection_lv2_desc:0 "$leader_trait_scientist_affection_lv1_desc$"
+ leader_trait_scientist_affection_lv3_desc:0 "$leader_trait_scientist_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_scientist_affection_lv4_desc:0 "$leader_trait_scientist_affection_lv3_desc$"
+ leader_trait_scientist_affection_lv4_max_desc:0 "$max_affection$ $require_engagement$\neffects: $immune_negative_trait$"
+ leader_trait_scientist_affection_lv5_desc:0 "$max_affection$\neffects: $immune_negative_trait$，$can_revive$"
+
+#################################################
+# 海军提督
+#################################################
+# 大小姐
+ leader_trait_admiral_lady_affection_lv1:0 "$affection_lv1$"
+ leader_trait_admiral_lady_affection_lv2:0 "$affection_lv2$"
+ leader_trait_admiral_lady_affection_lv3:0 "$affection_lv3$"
+ leader_trait_admiral_lady_affection_lv4:0 "$affection_lv4$"
+ leader_trait_admiral_lady_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_admiral_lady_affection_lv5:0 "$affection_lv5$"
+ leader_trait_admiral_lady_affection_lv1_desc:0 "Affection can earn §Y in battle§!. For§Y every battle wins§! will have a greater chance to earn affection."
+ leader_trait_admiral_lady_affection_lv2_desc:0 "$leader_trait_admiral_lady_affection_lv1_desc$"
+ leader_trait_admiral_lady_affection_lv3_desc:0 "$leader_trait_admiral_lady_affection_lv1_desc$"
+ leader_trait_admiral_lady_affection_lv4_desc:0 "$leader_trait_admiral_lady_affection_lv3_desc$"
+ leader_trait_admiral_lady_affection_lv4_max_desc:0 "$max_affection$ $require_engagement_lady$"
+ leader_trait_admiral_lady_affection_lv5_desc:0 "$max_affection$"
+
+# 灰风
+ leader_trait_admiral_gray_affection_lv1:0 "$affection_lv1$"
+ leader_trait_admiral_gray_affection_lv2:0 "$affection_lv2$"
+ leader_trait_admiral_gray_affection_lv3:0 "$affection_lv3$"
+ leader_trait_admiral_gray_affection_lv4:0 "$affection_lv4$"
+ leader_trait_admiral_gray_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_admiral_gray_affection_lv5:0 "$affection_lv5$"
+ leader_trait_admiral_gray_affection_lv1_desc:0 "Affection can earn §Y in battle§!. For§Y every battle wins§! will have a greater chance to earn affection."
+ leader_trait_admiral_gray_affection_lv2_desc:0 "$leader_trait_admiral_gray_affection_lv1_desc$"
+ leader_trait_admiral_gray_affection_lv3_desc:0 "$leader_trait_admiral_gray_affection_lv1_desc$"
+ leader_trait_admiral_gray_affection_lv4_desc:0 "$leader_trait_admiral_gray_affection_lv3_desc$"
+ leader_trait_admiral_gray_affection_lv4_max_desc:0 "$max_affection_gray$ $require_engagement_gray$"
+ leader_trait_admiral_gray_affection_lv5_desc:0 "$max_affection_gray$"
+
+#岛风
+ leader_trait_admiral_shimakaze_affection_lv1:0 "$affection_lv1$"
+ leader_trait_admiral_shimakaze_affection_lv2:0 "$affection_lv2$"
+ leader_trait_admiral_shimakaze_affection_lv3:0 "$affection_lv3$"
+ leader_trait_admiral_shimakaze_affection_lv4:0 "$affection_lv4$"
+ leader_trait_admiral_shimakaze_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_admiral_shimakaze_affection_lv5:0 "$affection_lv5$"
+ leader_trait_admiral_shimakaze_affection_lv1_desc:0 "Affection can earn by sending Shimakaze to any fleet fight§Y in battles§!. For§Y every battle wins§! will have a greater chance to earn affection."
+ leader_trait_admiral_shimakaze_affection_lv2_desc:0 "$leader_trait_admiral_shimakaze_affection_lv1_desc$"
+ leader_trait_admiral_shimakaze_affection_lv3_desc:0 "$leader_trait_admiral_shimakaze_affection_lv1_desc$"
+ leader_trait_admiral_shimakaze_affection_lv4_desc:0 "$leader_trait_admiral_shimakaze_affection_lv1_desc$"
+ leader_trait_admiral_shimakaze_affection_lv4_max_desc:0 "$max_affection_shimakaze$ $require_engagement_shimakaze$"
+ leader_trait_admiral_shimakaze_affection_lv5_desc:0 "$max_affection_shimakaze$"
+
+# 其他领袖
+ leader_trait_admiral_affection_lv1:0 "$affection_lv1$"
+ leader_trait_admiral_affection_lv2:0 "$affection_lv2$"
+ leader_trait_admiral_affection_lv3:0 "$affection_lv3$"
+ leader_trait_admiral_affection_lv4:0 "$affection_lv4$"
+ leader_trait_admiral_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_admiral_affection_lv5:0 "$affection_lv5$"
+ leader_trait_admiral_affection_lv1_desc:0 "Affection can earn by sending the admiral to any fleet fight§Y in battles§!. For§Y every battle wins§! will have a greater chance to earn affection. Furthermore，this leader will gain affection when §Yleveling up§!."
+ leader_trait_admiral_affection_lv2_desc:0 "$leader_trait_admiral_affection_lv1_desc$"
+ leader_trait_admiral_affection_lv3_desc:0 "$leader_trait_admiral_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_admiral_affection_lv4_desc:0 "$leader_trait_admiral_affection_lv3_desc$"
+ leader_trait_admiral_affection_lv4_max_desc:0 "$max_affection$ $require_engagement$\neffects: $immune_negative_trait$。"
+ leader_trait_admiral_affection_lv5_desc:0 "$max_affection$\neffects: $immune_negative_trait$，$can_revive$"
+ 
+#################################################
+# 陆军将军
+#################################################
+#岛风
+ leader_trait_general_shimakaze_affection_lv1:0 "$affection_lv1$"
+ leader_trait_general_shimakaze_affection_lv2:0 "$affection_lv2$"
+ leader_trait_general_shimakaze_affection_lv3:0 "$affection_lv3$"
+ leader_trait_general_shimakaze_affection_lv4:0 "$affection_lv4$"
+ leader_trait_general_shimakaze_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_general_shimakaze_affection_lv5:0 "$affection_lv5$"
+ leader_trait_general_shimakaze_affection_lv1_desc:0 "Affection can earn by sending Shimakaze to any troops§Y fight in ground battles§!. For§Y every ground battle wins§! Shimakaze will ensure to earn affection."
+ leader_trait_general_shimakaze_affection_lv2_desc:0 "$leader_trait_general_affection_lv1_desc$"
+ leader_trait_general_shimakaze_affection_lv3_desc:0 "$leader_trait_general_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_general_shimakaze_affection_lv4_desc:0 "$leader_trait_general_affection_lv3_desc$"
+ leader_trait_general_shimakaze_affection_lv4_max_desc:0 "$max_affection_shimakaze$$require_engagement_shimakaze$"
+ leader_trait_general_shimakaze_affection_lv5_desc:0 "$max_affection_shimakaze$"
+
+# 其他领袖
+ leader_trait_general_affection_lv1:0 "$affection_lv1$"
+ leader_trait_general_affection_lv2:0 "$affection_lv2$"
+ leader_trait_general_affection_lv3:0 "$affection_lv3$"
+ leader_trait_general_affection_lv4:0 "$affection_lv4$"
+ leader_trait_general_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_general_affection_lv5:0 "$affection_lv5$"
+ leader_trait_general_affection_lv1_desc:0 "Affection can earn by sending the general to any troops§Y fight in ground battles§!. For§Y every ground battle wins§! this general will ensure to earn affection. Furthermore，this leader will gain affection when §Yleveling up§!."
+ leader_trait_general_affection_lv2_desc:0 "$leader_trait_general_affection_lv1_desc$"
+ leader_trait_general_affection_lv3_desc:0 "$leader_trait_general_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_general_affection_lv4_desc:0 "$leader_trait_general_affection_lv3_desc$"
+ leader_trait_general_affection_lv4_max_desc:0 "$max_affection$$require_engagement$\neffects: $immune_negative_trait$。"
+ leader_trait_general_affection_lv5_desc:0 "$max_affection$\neffects: $immune_negative_trait$，$can_revive$"
+
+#################################################
+# 统治者
+#################################################
+# 其他领袖
+ leader_trait_ruler_affection_lv1:0 "$affection_lv1$"
+ leader_trait_ruler_affection_lv2:0 "$affection_lv2$"
+ leader_trait_ruler_affection_lv3:0 "$affection_lv3$"
+ leader_trait_ruler_affection_lv4:0 "$affection_lv4$"
+ leader_trait_ruler_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_ruler_affection_lv5:0 "$affection_lv5$"
+ leader_trait_ruler_affection_lv1_desc:0 "Affection will increase §Y whenever the ruler is working§!. In addition, ruler will gain affection when§Y establishing communication with other countries§!. Furthermore，this leader will gain affection when §Yleveling up§!."
+ leader_trait_ruler_affection_lv2_desc:0 "$leader_trait_ruler_affection_lv1_desc$"
+ leader_trait_ruler_affection_lv3_desc:0 "$leader_trait_ruler_affection_lv1_desc$\neffects: $immune_negative_trait$"
+ leader_trait_ruler_affection_lv4_desc:0 "$leader_trait_ruler_affection_lv3_desc$"
+ leader_trait_ruler_affection_lv4_max_desc:0 "$max_affection$$require_engagement$\neffects: $immune_negative_trait$。"
+ leader_trait_ruler_affection_lv5_desc:0 "$max_affection$\neffects: $immune_negative_trait$，$can_revive$"
+
+#################################################
+# 其他叙述
+#################################################
+ leader_trait_governor_lady_affection_lv5_tooltip:0 "$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$: §G30%§!\n$mod_planet_districts_cost_mult$: §G-20%§!\n$mod_planet_jobs_produces_mult$: §G15%§!\nBuilding speed of every rural districts, Every Port planet districts, and every abyssal planet districts §G+50%§!"
+ 
+ mod_planet_district_arcology_housing_build_speed_mult:0 "理想城居住区划建造速度"
+ mod_planet_district_arcology_wsg_housing_build_speed_mult:0 "宿舍区划建造速度"
+ mod_planet_district_arcology_wsg_neo_build_speed_mult:0 "NEO合金厂区划建造速度"
+ mod_planet_district_arcology_wsg_science_build_speed_mult:0 "科研区划建造速度"
+ mod_planet_district_arcology_wsg_military_build_speed_mult:0 "港区调度区划建造速度"
+ mod_planet_district_rw_sh_city_build_speed_mult:0 "深海城市环区划建造速度"
+ mod_planet_district_rw_sh_alloys_build_speed_mult:0 "深海熔炉环区划建造速度"
+ mod_planet_district_rw_sh_goods_build_speed_mult:0 "深海科研环区划建造速度"
+ mod_planet_district_rw_sh_soldier_build_speed_mult:0 "深海调度环建造速度"
+ mod_planet_district_sh_foundry_shpc_build_speed_mult:0 "深海星球复合工厂区划建造速度"
+
+ gray_admiral: "Gray Warship"
+ gray_admiral_desc: "This ship is made by numerous sub-atomic level nanites which same as lady Gray, so you can say it is same as your lady. Who would asked that warship cannot be a waifu?"
