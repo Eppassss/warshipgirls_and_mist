@@ -232,10 +232,6 @@ dyson_yamato = {
 				fail_text = "requires_no_anomaly"
 				NOT = { has_anomaly = yes }
 			}
-			custom_tooltip = {
-				fail_text = "requires_no_orbital_station"
-				has_orbital_station = no
-			}
 		}
 	}
 	
@@ -269,6 +265,14 @@ dyson_yamato = {
 			set_country_flag = built_dyson_yamato
 			change_variable = { which = rankpts value = 3 }
 		}}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+		}
 	}
 }
 
@@ -306,7 +310,6 @@ wsg_mining_station = {
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes }}
-			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
 			custom_tooltip = {
 				fail_text = "requires_no_existing_megastructure"
 				NOR = {
@@ -331,6 +334,14 @@ wsg_mining_station = {
 				limit = { NOT = { has_country_flag = built_wsg_mining_station }}
 				set_country_flag = built_wsg_mining_station
 				change_variable = { which = rankpts value = 3 }
+			}
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
 			}
 		}
 	}
@@ -385,7 +396,6 @@ wsg_hidden_capital = {
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
-			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
 			custom_tooltip = {
 				fail_text = "requires_no_existing_megastructure"
 				NOR = {
@@ -413,6 +423,14 @@ wsg_hidden_capital = {
 			}
 			set_country_flag = has_built_or_repaired_megastructure	
 			country_event = { id = wsg.3032 }			
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
 		}
 	}
 }

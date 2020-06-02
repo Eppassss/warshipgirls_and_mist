@@ -438,7 +438,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1
-				days = 10 
+				days = 720 
 			}
 		}
 	}
@@ -448,7 +448,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1
-				days = 10 
+				days = 720
 			}
 		}
 	}

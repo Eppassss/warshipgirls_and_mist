@@ -65,10 +65,6 @@ wg_space_mine_0 = {
 				fail_text = "requires_no_anomaly"
 				NOT = { has_anomaly = yes }
 			}
-			custom_tooltip = {
-				fail_text = "requires_no_orbital_station"
-				has_orbital_station = no
-			}
 		}
 	}
 	
@@ -84,6 +80,14 @@ wg_space_mine_0 = {
 		from = { 
 			set_country_flag = built_wg_space_mine
 			country_event = { id = wsg.3062 }
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
 		}
 	}
 }

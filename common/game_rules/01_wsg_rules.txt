@@ -11,6 +11,7 @@ can_species_be_assembled = {
 			}
 			ROOT = { owner = { NOT = { has_authority = auth_warshipgirls } } }
 			ROOT = { owner = { NOT = { has_authority = auth_shenhai } } }
+			ROOT = { owner = { NOT = { has_authority = auth_starshipgirls } } }
 		}
 		#战舰少女制造
 		AND = {

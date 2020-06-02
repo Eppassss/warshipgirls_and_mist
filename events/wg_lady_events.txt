@@ -2556,62 +2556,69 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = wg_lady.45 days = 30 }
 		if = {
-			limit = {
-				is_researching_special_project = WSG_LADY_MODIFICATION1
-			}
-			set_country_flag = modifing_wsg_lady
-			if = {
-				limit = { NOT = { has_modifier = wsg_lady_modify_consume }}
-				event_target:lady_warship_fleet = { set_event_locked = yes }
-				add_modifier = { modifier = wsg_lady_modify_consume }
-			} else_if = {
-				limit = {
-					OR = {
-						resource_stockpile_compare = { resource = nanites value < 1 }
-						resource_stockpile_compare = { resource = alloys value < 1 }
-					}
-				}
-				country_event = { id = wg_lady.48 }
-			}
-		} else_if = {
 			limit = { 
-				is_researching_special_project = WSG_LADY_MODIFICATION2
-			}
-			set_country_flag = modifing_wsg_lady
-			if = {
-				limit = { NOT = { has_modifier = wsg_lady_modify_consume2 }}
-				event_target:lady_warship_fleet = { set_event_locked = yes }
-				add_modifier = { modifier = wsg_lady_modify_consume2 }
-			} else_if = {
-				limit = {
-					OR = {
-						resource_stockpile_compare = { resource = nanites value < 1 }
-						resource_stockpile_compare = { resource = alloys value < 1 }
-						resource_stockpile_compare = { resource = minerals value < 1 }
-					}
+				OR = {
+					has_country_flag = modifing_wsg_lady 
+					NOT = { has_country_flag = modified_wsg_lady }
 				}
-				country_event = { id = wg_lady.48 }
 			}
-		} else_if = {
-			limit = { 
-				is_researching_special_project = WSG_LADY_MODIFICATION3
-			}
-			set_country_flag = modifing_wsg_lady
+			country_event = { id = wg_lady.45 days = 30 }
 			if = {
-				limit = { NOT = { has_modifier = wsg_lady_modify_consume3 }}
-				event_target:lady_warship_fleet = { set_event_locked = yes }
-				add_modifier = { modifier = wsg_lady_modify_consume3 }
+				limit = {
+					is_researching_special_project = WSG_LADY_MODIFICATION1
+				}
+				set_country_flag = modifing_wsg_lady
+				if = {
+					limit = { NOT = { has_modifier = wsg_lady_modify_consume }}
+					event_target:lady_warship_fleet = { set_event_locked = yes }
+					add_modifier = { modifier = wsg_lady_modify_consume }
+				} else_if = {
+					limit = {
+						OR = {
+							resource_stockpile_compare = { resource = nanites value < 1 }
+							resource_stockpile_compare = { resource = alloys value < 1 }
+						}
+					}
+					country_event = { id = wg_lady.48 }
+				}
 			} else_if = {
-				limit = { resource_stockpile_compare = { resource = nanites value < 1 }}
-				country_event = { id = wg_lady.48 }
+				limit = { 
+					is_researching_special_project = WSG_LADY_MODIFICATION2
+				}
+				set_country_flag = modifing_wsg_lady
+				if = {
+					limit = { NOT = { has_modifier = wsg_lady_modify_consume2 }}
+					event_target:lady_warship_fleet = { set_event_locked = yes }
+					add_modifier = { modifier = wsg_lady_modify_consume2 }
+				} else_if = {
+					limit = {
+						OR = {
+							resource_stockpile_compare = { resource = nanites value < 1 }
+							resource_stockpile_compare = { resource = alloys value < 1 }
+							resource_stockpile_compare = { resource = minerals value < 1 }
+						}
+					}
+					country_event = { id = wg_lady.48 }
+				}
+			} else_if = {
+				limit = { 
+					is_researching_special_project = WSG_LADY_MODIFICATION3
+				}
+				set_country_flag = modifing_wsg_lady
+				if = {
+					limit = { NOT = { has_modifier = wsg_lady_modify_consume3 }}
+					event_target:lady_warship_fleet = { set_event_locked = yes }
+					add_modifier = { modifier = wsg_lady_modify_consume3 }
+				} else_if = {
+					limit = { resource_stockpile_compare = { resource = nanites value < 1 }}
+					country_event = { id = wg_lady.48 }
+				}
+			} else = {
+				country_event = { id = wg_lady.999 }
 			}
 		} else = {
-			event_target:lady_warship_fleet = { set_event_locked = no }
-			remove_modifier = wsg_lady_modify_consume
-			remove_modifier = wsg_lady_modify_consume2
-			remove_modifier = wsg_lady_modify_consume3
+			country_event = { id = wg_lady.999 }
 		}
 	}
 }
@@ -3351,6 +3358,31 @@ country_event = {
 			country_event = { id = wg_lady.60 days = 1}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+}
+
+country_event = {
+	id = wg_lady.999
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_country_flag = modifing_wsg_lady }
+					has_country_flag = modified_wsg_lady
+				}
+			}
+			remove_country_flag = modifing_wsg_lady
+			remove_modifier = wsg_lady_modify_consume
+			remove_modifier = wsg_lady_modify_consume2
+			remove_modifier = wsg_lady_modify_consume3
+			if = {
+				limit = { exists = event_target:lady_warship_fleet }
+				event_target:lady_warship_fleet = { set_event_locked = no }
+			}
+		}
 	}
 }
 
