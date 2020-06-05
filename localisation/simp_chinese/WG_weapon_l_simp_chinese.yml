@@ -92,6 +92,7 @@
  COMBAT_COMPUTER_LINE_WSG:0 "0v作战计算机0式（战列）"
  COMBAT_COMPUTER_ARTILLERY_WSG:0 "0v作战计算机0式（火炮）"
  COMBAT_COMPUTER_PLATFORM_WSG:0 "0v作战计算机0式（平台）"
+ COMBAT_COMPUTER_CARRIER_WSG:0 "0v作战计算机0式（航母）"
  
  CORVETTE_wsg_alpha_REACTOR:0 "阿尔法结晶反应堆"
  DESTROYER_wsg_alpha_REACTOR:0 "阿尔法结晶反应堆"
@@ -237,6 +238,7 @@
  COMBAT_COMPUTER_LINE_SH:0 "深海智能作战计算机（战列）"
  COMBAT_COMPUTER_ARTILLERY_SH:0 "深海智能作战计算机（火炮）"
  COMBAT_COMPUTER_PLATFORM_SH:0 "深海智能作战计算机（平台）"
+ COMBAT_COMPUTER_CARRIER_SH:0 "深海智能作战计算机（航母）"
 
  SH_JUMP_DRIVE:0 "深海跃迁引擎"
  SENSOR_SH:0 "深海先进探测器" 
@@ -326,4 +328,5 @@
  WG_LINE_BEHAVIOR_DESC:0 "§H队列战术：§!飞船会保持在远距离（§Y150§!）并保持队形。"
  UF_ARTILLERY_BEHAVIOR_DESC:0 "§H炮兵战术：§!飞船会在远距离（§Y200§!）开火，并用远距离武器攻击敌人。"
  UF_CV_BEHAVIOR_DESC:0 "§H航母战术：§!飞船会试图保持交战距离（§Y400§!），并用交战后尝试后撤。"
+ WG_CARRIER_BEHAVIOR_DESC:0 "§H航母战术：§!舰船会停留在超远距（§Y200§!），并使用长程武器打击目标。"
 

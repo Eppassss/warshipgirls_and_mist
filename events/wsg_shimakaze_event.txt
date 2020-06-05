@@ -1042,6 +1042,7 @@ country_event = {
 		play_sound = event_wg_wedding
 		set_country_flag = married_wsg_shimakaze
 		remove_country_flag = can_marry_wsg_shimakaze
+		reset_shimakaze_affection_level = yes
 	}
 
 	option = {
@@ -1430,5 +1431,33 @@ country_event = {
 			}
 		}
 		
+	}
+}
+
+country_event = {
+	id = wsg_shimakaze.23338
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		switch = {
+			trigger = has_country_flag
+			wsg_shimakaze_governor_active = {
+				event_target:shimakaze_governor = { add_experience = 500 }
+			}
+			wsg_shimakaze_scientist_active = {
+				event_target:shimakaze_scientist = { add_experience = 500 }
+			}
+			wsg_shimakaze_admiral_active = {
+				event_target:shimakaze_admiral = { add_experience = 500 }
+			}
+			wsg_shimakaze_general_active = {
+				event_target:shimakaze_general = { add_experience = 500 }
+			}
+		}
 	}
 }

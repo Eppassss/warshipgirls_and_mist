@@ -2568,7 +2568,6 @@ country_event = {
 				limit = {
 					is_researching_special_project = WSG_LADY_MODIFICATION1
 				}
-				set_country_flag = modifing_wsg_lady
 				if = {
 					limit = { NOT = { has_modifier = wsg_lady_modify_consume }}
 					event_target:lady_warship_fleet = { set_event_locked = yes }
@@ -2586,7 +2585,6 @@ country_event = {
 				limit = { 
 					is_researching_special_project = WSG_LADY_MODIFICATION2
 				}
-				set_country_flag = modifing_wsg_lady
 				if = {
 					limit = { NOT = { has_modifier = wsg_lady_modify_consume2 }}
 					event_target:lady_warship_fleet = { set_event_locked = yes }
@@ -2605,7 +2603,6 @@ country_event = {
 				limit = { 
 					is_researching_special_project = WSG_LADY_MODIFICATION3
 				}
-				set_country_flag = modifing_wsg_lady
 				if = {
 					limit = { NOT = { has_modifier = wsg_lady_modify_consume3 }}
 					event_target:lady_warship_fleet = { set_event_locked = yes }

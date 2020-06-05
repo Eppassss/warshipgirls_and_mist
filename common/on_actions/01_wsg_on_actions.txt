@@ -452,6 +452,7 @@ on_fleet_enter_orbit = {
 on_leader_level_up = {
 	events = {
 		wg_aft.3
+		wg_aft.10003
 	}
 }
 

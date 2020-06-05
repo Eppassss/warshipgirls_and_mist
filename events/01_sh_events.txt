@@ -250,14 +250,15 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop_species = {
+		every_owned_pop = {
 			limit = { has_trait = sh_trait_shenhai }
-			PREV = { modify_species = {
+			modify_species = {
 				species = prev
 				add_trait = sh_trait_shenhai1
-			}}
+			}
+			species = { save_event_target_as = sh_species }
 		}
-		change_dominant_species = { species = last_created change_all = yes }
+		change_dominant_species = { species = event_target:sh_species change_all = yes }
 	}
 	
 	option = {
@@ -442,7 +443,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop_species = {
+		every_owned_pop = {
 			limit = {
 				OR = {
 					has_trait = sh_trait_shenhai1
@@ -451,18 +452,19 @@ country_event = {
 			}
 			if = {
 				limit = { has_trait = sh_trait_shenhai }
-				PREV = { modify_species = {
+				modify_species = {
 					species = this
 					remove_trait = sh_trait_shenhai
-				}}
+				}
 			}
-			PREV = { modify_species = {
+			modify_species = {
 				species = this
 				remove_trait = sh_trait_shenhai1
 				add_trait = sh_trait_shenhai2
-			}}
+			}
+			species = { save_event_target_as = sh_species }
 		}
-		change_dominant_species = { species = last_created change_all = yes }
+		change_dominant_species = { species = event_target:sh_species change_all = yes }
 		country_event = { id = wg_aft.4 }
 	}
 	
@@ -646,24 +648,28 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop_species = {
+		every_owned_pop = {
 			limit = {
 				OR = {
 					has_trait = sh_trait_shenhai1
 					has_trait = sh_trait_shenhai
 				}
 			}
-			PREV = { modify_species = {
-				species = this
-				remove_trait = sh_trait_shenhai
-			}}
-			PREV = { modify_species = {
+			if = {
+				limit = { has_trait = sh_trait_shenhai }
+				modify_species = {
+					species = this
+					remove_trait = sh_trait_shenhai
+				}
+			}
+			modify_species = {
 				species = this
 				remove_trait = sh_trait_shenhai1
 				add_trait = sh_trait_shenhai3
-			}}
+			}
+			species = { save_event_target_as = sh_species }
 		}
-		change_dominant_species = { species = last_created change_all = yes }
+		change_dominant_species = { species = event_target:sh_species change_all = yes }
 	}
 	
 	option = {

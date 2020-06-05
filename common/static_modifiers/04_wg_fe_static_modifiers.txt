@@ -76,7 +76,6 @@ VV_buff_fe = {
 	pop_happiness = 0.1
 	pop_growth_speed = 0.1
 }
-retry_modify_wsg_lady_cd = {}
 
 gifted_fleet_early_debuff = {
 	ship_weapon_damage = -0.5

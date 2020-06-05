@@ -110,6 +110,8 @@ special_project = {
 	event_scope = ship_event
 	
 	requirements = {
+		shipclass_military = 1
+		leader = admiral
 		has_trait = leader_trait_admiral_wsg_lady
 	}
 
@@ -153,6 +155,8 @@ special_project = {
 	event_scope = ship_event
 	
 	requirements = {
+		shipclass_military = 1
+		leader = admiral
 		has_trait = leader_trait_admiral_wsg_lady
 	}
 
@@ -183,6 +187,8 @@ special_project = {
 	event_scope = ship_event
 	
 	requirements = {
+		shipclass_military = 1
+		leader = admiral
 		has_trait = leader_trait_admiral_wsg_lady
 	}
 

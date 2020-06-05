@@ -29,6 +29,24 @@ ship_behavior = {
 	
 	desc = "WG_LINE_BEHAVIOR_DESC"
 }
+
+ship_behavior = {
+	name = "WGcarrier"
+	preferred_attack_range = 200
+	formation_distance = 200
+	return_to_formation_distance = 200
+
+	combat_target_anchor = root
+
+	collision_awareness = 0.75
+	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = stay_at_range
+
+	desc = "WG_CARRIER_BEHAVIOR_DESC"
+}
+
 ship_behavior = {
 	name = "SHartillery"
 	preferred_attack_range = 180
@@ -91,3 +109,4 @@ ship_behavior = {
 	
 	desc = "UF_CV_BEHAVIOR_DESC"
 }
+

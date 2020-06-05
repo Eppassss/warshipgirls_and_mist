@@ -267,6 +267,7 @@ country_event = {
 	}
 
 	immediate = {
+		change_variable = { which = shimakaze_level value = 1 }
 		change_variable = { which = shimakaze_affection value = 2 }
 		random_list = {
 			40 = { change_variable = { which = shimakaze_affection value = 1 }}
@@ -277,10 +278,6 @@ country_event = {
 			80 = {}
 		}
 		reset_shimakaze_affection_level = yes
-		if = {
-			limit = { check_variable = { which = shimakaze_level value <= 10 }}
-			change_variable = { which = shimakaze_level value = 1 }
-		}
 	}
 }
 

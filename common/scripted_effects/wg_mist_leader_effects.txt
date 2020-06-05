@@ -153,31 +153,31 @@ remove_wsg_shimakaze_leader_type = {
 
 level_up_shimakaze = {
 	if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 2 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 2 }}}
 		set_skill = 2
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 3 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 3 }}}
 		set_skill = 3
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 4 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 4 }}}
 		set_skill = 4
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 5 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 5 }}}
 		set_skill = 5
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 6 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 6 }}}
 		set_skill = 6
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 7 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 7 }}}
 		set_skill = 7
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 8 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 8 }}}
 		set_skill = 8
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 9 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 9 }}}
 		set_skill = 9
 	} else_if = {
-		limit = { PREV = { check_variable = { which = shimakaze_level value = 10 }}}
+		limit = { owner = { check_variable = { which = shimakaze_level value = 10 }}}
 		set_skill = 10
 	}
 }

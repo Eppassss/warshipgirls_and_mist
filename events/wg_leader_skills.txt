@@ -6,8 +6,14 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = { 
-        FROMFROM = { NOT = { has_fleet_flag = drones }}
-        FROMFROMFROM = { NOT = { has_fleet_flag = drones }}
+        FROMFROM = { 
+			exists = leader
+			NOT = { has_fleet_flag = drones }
+		}
+        FROMFROMFROM = { 
+			exists = leader
+			NOT = { has_fleet_flag = drones }
+		}
     }
 	
 	immediate = {

@@ -40,6 +40,7 @@ ap_mind_over_matter = {
 			has_authority = "auth_machine_intelligence"
 			has_authority = "auth_warshipgirls"
 			has_authority = "auth_shenhai"
+			has_authority = "auth_starshipgirls"
 		}
 		is_mechanical_empire = no
 		is_cyborg_empire = no
@@ -106,6 +107,7 @@ ap_the_flesh_is_weak = {
 			has_authority = "auth_machine_intelligence"
 			has_authority = "auth_warshipgirls"
 			has_authority = "auth_shenhai"
+			has_authority = "auth_starshipgirls"
 		}
 		is_mechanical_empire = no		
 	}
@@ -176,6 +178,7 @@ ap_engineered_evolution = {
 			has_authority = "auth_machine_intelligence"
 			has_authority = "auth_warshipgirls"
 			has_authority = "auth_shenhai"
+			has_authority = "auth_starshipgirls"
 		}
 		is_mechanical_empire = no
 		is_cyborg_empire = no

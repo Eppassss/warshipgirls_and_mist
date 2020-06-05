@@ -1,7 +1,7 @@
 ap_shenhai_space = {
 	modifier = {
+		empire_size_pops_mult = -0.25
 		starbase_outpost_cost_mult = -0.50
-		empire_size_penalty_mult = -0.50
 	}
 	
 	potential = {

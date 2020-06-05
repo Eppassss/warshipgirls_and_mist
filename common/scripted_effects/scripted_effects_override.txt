@@ -19,6 +19,7 @@ create_gray_governor = {
 		class = governor
 		species = event_target:gray_species
 		name = NAME_Gray
+		immortal = yes
 		event_leader = yes
 		skill = 10
 		set_age = 0
@@ -36,6 +37,7 @@ create_gray_governor = {
 	event_target:gray_governor = {
 		set_is_female = yes
 		add_gray_governor_affection_trait = yes
+		change_leader_portrait = GrayTempest
 	}
 }
 
@@ -100,6 +102,8 @@ create_gray_warship = {
 					class = admiral
 					species = event_target:gray_species
 					name = "灰风"
+					immortal = yes
+					event_leader = yes
 					skill = 10
 					set_age = 0
 					traits = {
@@ -107,16 +111,15 @@ create_gray_warship = {
 					}
 					effect = {
 						save_global_event_target_as = huifeng_leader_admiral
-						last_created_leader = {
-							set_leader_flag = "灰风领袖"
-							change_leader_portrait = GrayTempest
-						}
+						set_leader_flag = "灰风领袖"
+						change_leader_portrait = GrayTempest
 					}
 				}
 			}
 			event_target:huifeng_leader_admiral = {
 				set_is_female = yes
 				add_gray_admiral_affection_trait = yes
+				change_leader_portrait = GrayTempest
 			}
 			assign_leader = event_target:huifeng_leader_admiral
 		}

@@ -1501,46 +1501,42 @@ reset_lady_affection_level = {
 			set_variable = { which = "lady_affection_level" value = 4 }
 			set_country_flag = lady_affection_max
 		}
-		break = yes
-	}
-	else = { remove_country_flag = lady_affection_max }
-	if = {
-		limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv4 }}
-		set_variable = { which = "lady_affection_level" value = 4 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv3 }}
+	} else = { 
+		remove_country_flag = lady_affection_max 
 		if = {
-			limit = { 
-				NOT = { check_variable = { which = "lady_affection_level" value = 3 }}
-				has_country_flag = wsg_lady_army_active
+			limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv4 }}
+			set_variable = { which = "lady_affection_level" value = 4 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv3 }}
+			if = {
+				limit = { 
+					NOT = { check_variable = { which = "lady_affection_level" value = 3 }}
+					has_country_flag = wsg_lady_army_active
+				}
+				country_event = { id = wg_aft.13000 }
 			}
-			country_event = { id = wg_aft.13000 }
+			set_variable = { which = "lady_affection_level" value = 3 }
 		}
-		set_variable = { which = "lady_affection_level" value = 3 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv2 }}
-		set_variable = { which = "lady_affection_level" value = 2 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "lady_affection" value < @lady_affection_to_lv2 }}
-		if = {
-			limit = { 
-				NOT = { check_variable = { which = "lady_affection_level" value = 1 }}
-				has_country_flag = wsg_lady_army_active
+		else_if = {
+			limit = { check_variable = { which = "lady_affection" value >= @lady_affection_to_lv2 }}
+			set_variable = { which = "lady_affection_level" value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "lady_affection" value < @lady_affection_to_lv2 }}
+			if = {
+				limit = { 
+					NOT = { check_variable = { which = "lady_affection_level" value = 1 }}
+					has_country_flag = wsg_lady_army_active
+				}
+				country_event = { id = wg_aft.13000 }
 			}
-			country_event = { id = wg_aft.13000 }
+			set_variable = { which = "lady_affection_level" value = 1 }
+			if = {
+				limit = { check_variable = { which = "lady_affection" value < 1}}
+				set_variable = { which = "lady_affection" value = 1 }
+			}
 		}
-		set_variable = { which = "lady_affection_level" value = 1 }
-		if = {
-			limit = { check_variable = { which = "lady_affection" value < 1}}
-			set_variable = { which = "lady_affection" value = 1 }
-		}
-		break = yes
 	}
 }
 
@@ -2109,32 +2105,28 @@ reset_shimakaze_affection_level = {
 			set_variable = { which = "shimakaze_affection_level" value = 4 }
 			set_country_flag = shimakaze_affection_max
 		}
-		break = yes
-	}
-	else = { remove_country_flag = shimakaze_affection_max }
-	if = {
-		limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv4 }}
-		set_variable = { which = "shimakaze_affection_level" value = 4 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv3 }}
-		set_variable = { which = "shimakaze_affection_level" value = 3 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv2 }}
-		set_variable = { which = "shimakaze_affection_level" value = 2 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "shimakaze_affection" value < @shimakaze_affection_to_lv2 }}
-		set_variable = { which = "shimakaze_affection_level" value = 1 }
+	} else = { 
+		remove_country_flag = shimakaze_affection_max 
 		if = {
-			limit = { check_variable = { which = "shimakaze_affection" value < 1}}
-			set_variable = { which = "shimakaze_affection" value = 1 }
+			limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv4 }}
+			set_variable = { which = "shimakaze_affection_level" value = 4 }
 		}
-		break = yes
+		else_if = {
+			limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv3 }}
+			set_variable = { which = "shimakaze_affection_level" value = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "shimakaze_affection" value >= @shimakaze_affection_to_lv2 }}
+			set_variable = { which = "shimakaze_affection_level" value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "shimakaze_affection" value < @shimakaze_affection_to_lv2 }}
+			set_variable = { which = "shimakaze_affection_level" value = 1 }
+			if = {
+				limit = { check_variable = { which = "shimakaze_affection" value < 1}}
+				set_variable = { which = "shimakaze_affection" value = 1 }
+			}
+		}
 	}
 }
 
@@ -2373,32 +2365,28 @@ reset_gray_affection_level = {
 			set_variable = { which = "gray_affection_level" value = 4 }
 			set_country_flag = gray_affection_max
 		}
-		break = yes
-	}
-	else = { remove_country_flag = gray_affection_max }
-	if = {
-		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv4 }}
-		set_variable = { which = "gray_affection_level" value = 4 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv3 }}
-		set_variable = { which = "gray_affection_level" value = 3 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv2 }}
-		set_variable = { which = "gray_affection_level" value = 2 }
-		break = yes
-	}
-	if = {
-		limit = { check_variable = { which = "gray_affection" value < @gray_affection_to_lv2 }}
-		set_variable = { which = "gray_affection_level" value = 1 }
+	} else = { 
+		remove_country_flag = gray_affection_max
 		if = {
-			limit = { check_variable = { which = "gray_affection" value < 1}}
-			set_variable = { which = "gray_affection" value = 1 }
+			limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv4 }}
+			set_variable = { which = "gray_affection_level" value = 4 }
 		}
-		break = yes
+		else_if = {
+			limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv3 }}
+			set_variable = { which = "gray_affection_level" value = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "gray_affection" value >= @gray_affection_to_lv2 }}
+			set_variable = { which = "gray_affection_level" value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = "gray_affection" value < @gray_affection_to_lv2 }}
+			set_variable = { which = "gray_affection_level" value = 1 }
+			if = {
+				limit = { check_variable = { which = "gray_affection" value < 1}}
+				set_variable = { which = "gray_affection" value = 1 }
+			}
+		}
 	}
 }
 ###############################

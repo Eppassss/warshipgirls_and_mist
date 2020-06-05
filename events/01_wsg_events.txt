@@ -212,15 +212,16 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop_species = {
+		every_owned_pop = {
 			limit = { has_trait = wsg_trait_warshipgirls }
-			PREV = { modify_species = {
+			modify_species = {
 				species = prev
 				remove_trait = wsg_trait_warshipgirls
 				add_trait = wsg_trait_warshipgirls1
-			}}
+			}
+			species = { save_event_target_as = wsg_species }
 		}
-		change_dominant_species = { species = last_created change_all = yes }
+		change_dominant_species = { species = event_target:wsg_species change_all = yes }
 	}
 	
 	option = {
@@ -466,17 +467,16 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_owned_pop_species = {
+		every_owned_pop = {
 			limit = { has_trait = wsg_trait_warshipgirls }
-			ROOT = {
-				modify_species = {
-					species = prev
-					remove_trait = wsg_trait_warshipgirls
-					add_trait = wsg_trait_warshipgirls1
-				}
-				change_dominant_species = { species = last_created change_all = yes }
+			modify_species = {
+				species = prev
+				remove_trait = wsg_trait_warshipgirls
+				add_trait = wsg_trait_warshipgirls1
 			}
+			species = { save_event_target_as = wsg_species }
 		}
+		change_dominant_species = { species = event_target:wsg_species change_all = yes }
 	}
 	
 	option = {
@@ -497,16 +497,15 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_owned_pop_species = {
+		every_owned_pop = {
 			limit = { has_trait = wsg_trait_warshipgirls1 }
-			ROOT = {
-				modify_species = {
-					species = prev
-					add_trait = wsg_trait_mist
-				}
-				change_dominant_species = { species = last_created change_all = yes }
+			modify_species = {
+				species = prev
+				add_trait = wsg_trait_mist
 			}
+			species = { save_event_target_as = wsg_species }
 		}
+		change_dominant_species = { species = event_target:wsg_species change_all = yes }
 	}
 	
 	option = {

@@ -152,7 +152,7 @@ is_wg_leader_with_affection_not_full = {
 			NOT = { has_leader_flag = affection_max }
 		}
 		AND = {
-			has_leader_flag = wsg_shimakaze_scientist
+			has_leader_flag = wsg_shimakaze_leader
 			owner = { 
 				has_country_flag = get_wsg_shimakaze 
 				NOT = { has_country_flag = shimakaze_affection_max }
