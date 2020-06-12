@@ -8,8 +8,8 @@ country_event ={
 	
 	immediate = {
 		every_country = {
-			if={
-				limit={has_authority = auth_warshipgirls}
+			if= {
+				limit = { has_authority = auth_warshipgirls }
 				set_country_flag = f_wsg_country
 			}
 		}
@@ -147,41 +147,67 @@ country_event = {
 				has_authority = auth_warshipgirls
 				is_ai = no
 			}
-			capital_scope = { 
-				solar_system = { 
-					if = {
-						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
-						save_event_target_as = spawn_sol_system_source
-					} else = {
-						random_neighbor_system = {
-							limit = { 
-								NOT = { has_star_flag = sealed_system }
-								any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
-							}
-							ignore_hyperlanes = yes
+			if = {
+				limit = { exists = capital_scope }
+				capital_scope = { 
+					solar_system = { 
+						if = {
+							limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
 							save_event_target_as = spawn_sol_system_source
+						} else = {
+							random_neighbor_system = {
+								limit = { NOT = { has_star_flag = sealed_system }}
+								ignore_hyperlanes = yes
+								save_event_target_as = spawn_sol_system_source
+							}
 						}
 					}
 				}
-				every_system = {
-					limit = {
-						distance = {
-							source = event_target:spawn_sol_system_source
-							min_jumps = 0
-							max_jumps = 4
-							type = hyperlane 
-							use_bypasses = no
-						}
-						NOR = {
-							exists = space_owner
-							has_star_flag = hostile_system
-							has_star_flag = guardian
-							has_star_flag = sealed_system
-							has_star_flag = wg_Parit_system
+			} else_if = {
+				limit = { 
+					OR = {
+						has_origin = origin_ev_meg_homeless_ship_strat
+						is_country_type = default_ev 
+					}
+				}
+				random_owned_fleet = {
+					limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+					solar_system = { 
+						if = {
+							limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+							save_event_target_as = spawn_sol_system_source
+						} else = {
+							random_neighbor_system = {
+								limit = { NOT = { has_star_flag = sealed_system }}
+								ignore_hyperlanes = yes
+								save_event_target_as = spawn_sol_system_source
+							}
 						}
 					}
-					set_timed_star_flag = { flag = can_spawn_sol_system days = 1 }
 				}
+			} else = {
+				random_owned_fleet = { solar_system = {
+					save_event_target_as = spawn_sol_system_source
+				}}
+			}
+			every_system = {
+				limit = {
+					distance = {
+						source = event_target:spawn_sol_system_source
+						min_jumps = 0
+						max_jumps = 4
+						type = hyperlane 
+						use_bypasses = no
+					}
+					NOR = {
+						exists = space_owner
+						has_star_flag = hostile_system
+						has_star_flag = guardian
+						has_star_flag = sealed_system
+						has_star_flag = wg_Parit_system
+					}
+				}
+				set_timed_star_flag = { flag = can_spawn_sol_system days = 1 }
 			}
 		}
 		random_system = {

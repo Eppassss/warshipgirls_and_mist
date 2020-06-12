@@ -18,7 +18,8 @@ create_gray_governor = {
 	create_leader = {							#创建灰风总督
 		class = governor
 		species = event_target:gray_species
-		name = NAME_Gray
+		name = "NAME_Gray"
+		gender = female
 		immortal = yes
 		event_leader = yes
 		skill = 10
@@ -34,10 +35,9 @@ create_gray_governor = {
 			set_leader_flag = "灰风领袖"
 		}
 	}
-	event_target:gray_governor = {
-		set_is_female = yes
+	random_owned_leader = {
+		limit = { has_leader_flag = gray_governor }
 		add_gray_governor_affection_trait = yes
-		change_leader_portrait = GrayTempest
 	}
 }
 
@@ -74,6 +74,25 @@ create_gray_warship = {
 		capital_scope = { save_event_target_as = gray_warship_location }
 	}
 	set_country_flag = gray_warship_active
+	create_leader = {
+		class = admiral
+		species = event_target:gray_species
+		name = "NAME_Gray"
+		immortal = yes
+		event_leader = yes
+		gender = female
+		skill = 10
+		set_age = 0
+		traits = {
+			trait = gray_admiral
+		}
+		effect = {
+			save_global_event_target_as = huifeng_leader_admiral
+			set_leader_flag = gray_admiral
+			set_leader_flag = "灰风领袖"
+			change_leader_portrait = GrayTempest
+		}
+	}
 	create_fleet = {
 		name = "NAME_Gray"
 		settings = {
@@ -97,30 +116,6 @@ create_gray_warship = {
 			set_fleet_flag = gray_fleet
 			save_global_event_target_as = gray_warship
 			set_location = event_target:gray_warship_location
-			owner = {
-				create_leader = {
-					class = admiral
-					species = event_target:gray_species
-					name = "灰风"
-					immortal = yes
-					event_leader = yes
-					skill = 10
-					set_age = 0
-					traits = {
-						trait = gray_admiral
-					}
-					effect = {
-						save_global_event_target_as = huifeng_leader_admiral
-						set_leader_flag = "灰风领袖"
-						change_leader_portrait = GrayTempest
-					}
-				}
-			}
-			event_target:huifeng_leader_admiral = {
-				set_is_female = yes
-				add_gray_admiral_affection_trait = yes
-				change_leader_portrait = GrayTempest
-			}
 			assign_leader = event_target:huifeng_leader_admiral
 		}
 	}
@@ -135,6 +130,10 @@ create_gray_warship = {
 			}
 			remove_army = yes
 		}
+	}
+	random_owned_leader = { 
+		limit = { has_leader_flag = gray_admiral }
+		add_gray_admiral_affection_trait = yes
 	}
 }
 #创造灰风地面单位
@@ -210,7 +209,7 @@ standard_archaeological_site_on_roll_failed = {
 			5 <= {
 				prev = {
 					leader = { 
-						add_scientist_affection_arch = { CLUES = 1 }
+						add_scientist_affection_arch = { CLUES=1 }
 						add_experience = @ARCHAEOLOGICAL_SITE_XP_0_CLUE 
 					}
 					random_list = {
@@ -228,11 +227,11 @@ standard_archaeological_site_on_roll_failed = {
 				}
 			}
 			10 <= { add_stage_clues = 1 prev = { leader = { 
-				add_scientist_affection_arch = { CLUES = 2 }
+				add_scientist_affection_arch = { CLUES=2 }
 				add_experience = @ARCHAEOLOGICAL_SITE_XP_1_CLUE 
 			}}}
 			13 <= { add_stage_clues = 2 prev = { leader = {
-				add_scientist_affection_arch = { CLUES = 3 }
+				add_scientist_affection_arch = { CLUES=3 }
 				add_experience = @ARCHAEOLOGICAL_SITE_XP_2_CLUE 
 			}}}
 		}

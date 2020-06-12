@@ -34,9 +34,7 @@ wsg_station = {
 		custom_tooltip = {
 			fail_text = "requires_maximum_eight"
 			from = {
-				OR = { has_authority = auth_warshipgirls
-						has_authority = auth_shenhai
-					}
+				has_wg_special_authority = yes
 				check_variable = { 
 					which = num_wsg_station
 					value < 8

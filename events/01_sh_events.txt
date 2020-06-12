@@ -1283,10 +1283,7 @@ country_event = {
 		mid_game_years_passed >= 0
 		any_country = {
 			is_ai = yes
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
 	}
 	immediate = {
@@ -1308,6 +1305,7 @@ country_event = {
 	}
 	immediate = {
 		country_event = { id = sh.3018 days = 720  }
+		country_event = { id = sh.3042 days = 3600 random = 720 }#寻找深海主宰事件
 	}
 }
 
@@ -1919,7 +1917,12 @@ country_event = {
 					days = -1
 				}				
 			}
-			break = yes
+			settings = {
+				spawn_debris = no
+				can_change_composition = no
+				can_upgrade = no
+				can_disband = no
+			}
 		}
 		country_event = { id = sh.3035 days = 15 } 
 	}
@@ -2106,4 +2109,361 @@ country_event = {
 			}	
 		}
 	}
+}
+
+
+#非主宰开局固定事件(只有一个人有)
+country_event = {
+	id = sh.3042
+	title = "sh.3042.name"
+	desc = "sh.3042.desc"
+	picture = GFX_evt_juggernaut
+	location = from
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_sh_juggernaut }
+	}	
+	option = {
+		name = sh.3042.a
+		custom_tooltip = sh.3042.a.tooltip
+		set_country_flag = wg_juggernaut_event_owner
+		hidden_effect = {
+			capital_scope = {
+				closest_system = {
+					min_steps = 2
+					limit = {
+						has_access_fleet = root.owner
+						has_owner = no
+						NOT = {
+							any_ship_in_system = {
+								owner = { 
+									is_hostile = root.owner
+								}	
+							}
+						}
+					}
+				}
+				spawn_system = {
+					min_distance = 10
+					max_distance = 30
+					min_jumps = 2
+					max_jumps = 4
+					initializer = Sh_juggernaut_system
+				}
+			}
+		}		
+	}
+	option = {
+		name = sh.3042.b
+		owner = {
+			add_resource = { influence = 50 }
+		}		
+	}
+}
+
+ship_event = {
+	id = sh.3043
+	title = "sh.3043.name"
+	desc = "sh.3043.desc"
+
+	is_triggered_only = yes
+	picture = GFX_evt_wg_juggernaut_ruined
+
+	trigger = {
+		FROM = {
+			has_star_flag = Sh_juggernaut_system
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_Sh_juggernaut_event }
+		}
+	}
+
+	immediate = {
+	    owner = { set_country_flag = triggered_Sh_juggernaut_event }
+		create_country = {
+			name = "NAME_wg_drone_country"
+			type = faction
+			flag = {
+				icon = {
+					category = "legion"
+					file = "flag_mp_beta_04.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				establish_communications_no_message = root.owner
+				set_country_flag = wg_drone_country_flag
+			}				
+		}
+		last_created_country = {
+			if = {
+				limit = {
+					NOT = {
+						has_modifier = wg_drone_power
+					}
+				}
+				add_modifier = {
+					modifier = wg_drone_power
+					days = -1
+				}
+			}
+			save_global_event_target_as = wg_drone_country
+		}
+		create_fleet = {
+			name = "NAME_WG_wg_drone_fleet"
+			effect = {
+				set_owner = event_target:wg_drone_country
+				create_ship = {
+					name = random
+					design = "NAME_Ancient_Khan_Battleship"
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Mining_Drone"
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Combat_Drone"
+					}
+				}
+				while = {
+					count = 5
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Destroyer"
+					}
+				}
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_fleet_flag = wg_drone_fleet
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:wg_juggernaut_target
+					distance = 20
+					angle = 120
+				}
+			}
+			settings = {
+				garrison = yes
+				spawn_debris = no
+			}
+		}
+	}
+
+	option = {
+		name = "sh.3043.a"
+		owner = {
+			hidden_effect = {
+				random_list = {
+					80 = {
+						country_event = { id = sh.3044 days = 3300 random = 360 }
+					}
+					20 = {
+						country_event = { id = sh.3045 days = 2048 }
+					}
+				}
+			}	
+		}
+	}
+}
+#被拆掉惹
+country_event = {
+	id = sh.3044
+	title = "sh.3044.name"
+	picture = GFX_evt_sabotaged_ship
+	desc = sh.3044.desc
+	location = from
+	
+	trigger = {
+		NOT = { has_global_flag = wg_drone_country_destroyed }
+	}
+	is_triggered_only = yes
+	immediate = {
+		event_target:wg_juggernaut_target = { destroy_ambient_object = this }
+	}
+	option = {
+		name = sh.3044.a
+		custom_tooltip = sh.3044.a.tooltip
+	}
+}
+#炸掉了
+country_event = {
+	id = sh.3045
+	title = "sh.3045.name"
+	picture = GFX_evt_large_explosion
+	desc = sh.3045.desc
+	location = from
+	trigger = {
+		NOT = { has_global_flag = wg_drone_country_destroyed }
+	}
+	is_triggered_only = yes
+	immediate = {
+		event_target:wg_juggernaut_target = { destroy_ambient_object = this }
+		random_country = {
+			limit = { has_country_flag = wg_drone_country_flag }
+			destroy_country = yes
+		}
+	}
+	option = {
+		name = sh.3045.a
+		custom_tooltip = sh.3045.a.tooltip
+	}
+}
+
+country_event = {
+	id = sh.3046
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_drone_fleet
+		}
+	}
+	immediate = {
+		FROM = { country_event = { id = sh.3047 }}#非事件链玩家击杀
+		FROM = { country_event = { id = sh.3049 }}#玩家击杀
+		set_global_flag = wg_drone_country_destroyed
+	}	
+}
+
+country_event = {
+	id = sh.3047
+	title = sh.3047.name
+	desc = sh.3047.desc
+	picture = GFX_evt_large_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+    trigger = {
+		NOT = { has_country_flag = wg_juggernaut_event_owner }
+	}
+	immediate = {
+		event_target:wg_juggernaut_target = { destroy_ambient_object = this }
+		random_playable_country = {
+			limit = { has_country_flag = wg_juggernaut_event_owner }
+			country_event = { id = sh.3048 days = 5 }
+		}
+		save_event_target_as = wg_juggernaut_killer_country
+	}
+	option = {
+		name = sh.3047.a
+		owner = {
+			add_resource = { influence = 100 }
+			add_resource = { alloys = 500 }
+		}
+	}	
+}
+
+country_event = {
+	id = sh.3048
+	title = sh.3048.name
+	desc = sh.3048.desc
+	picture = GFX_evt_large_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sh.3048.a
+	}	
+}
+
+country_event = {
+	id = sh.3049
+	title = sh.3049.name
+	desc = sh.3049.desc
+	picture = GFX_evt_small_space_battle
+	location = from
+	
+	is_triggered_only = yes
+	
+    trigger = {
+		has_country_flag = wg_juggernaut_event_owner
+	}
+	option = {
+		name = sh.3049.a
+		enable_special_project = {
+			name = "WG_JUGGERNAUT_PROJECT"
+			location = event_target:wg_juggernaut_target
+		}
+	}
+	option = {
+		name = sh.3049.b
+		enable_special_project = {
+			name = "WG_JUGGERNAUT_PROJECT2"
+			location = event_target:wg_juggernaut_target
+		}
+	}
+	option = {
+		name = sh.3049.c
+		owner = {
+			add_resource = { unity = 1000 }
+		}
+		add_modifier = {
+			modifier = wg_juggernaut_monument
+			days = 10800
+		}
+	}
+}
+
+country_event = {
+	id = sh.3050
+	title = sh.3050.name
+	desc = sh.3050.desc
+	picture = GFX_evt_wg_juggernaut_ruined
+	location = from
+	
+	is_triggered_only = yes
+	immediate = {
+		event_target:wg_juggernaut_target = { destroy_ambient_object = this }
+	}
+	option = {
+		name = sh.3050.a
+		custom_tooltip = sh.3051.a.tooltip
+		owner = {
+			add_resource = { alloys = 3000 }
+			add_resource = { volatile_motes = 300 }	
+		}
+	}	
+}
+
+country_event = {
+	id = sh.3051
+	title = sh.3051.name
+	desc = sh.3051.desc
+	picture = GFX_evt_juggernaut
+	location = from
+	
+	is_triggered_only = yes
+	immediate = {
+		event_target:wg_juggernaut_target = { destroy_ambient_object = this }
+	}
+	option = {
+		name = sh.3051.a
+		custom_tooltip = sh.3051.a.tooltip
+		add_modifier = {
+			modifier = wg_juggernaut_core_buff
+			days = 7200
+		}
+	}	
 }

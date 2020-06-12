@@ -22,3 +22,12 @@ ambient_object = {
 	tooltip = "bug_object_tooltip"
 	description = "bug_object_desc"
 }
+
+
+ambient_object = {
+	name = "wg_juggernaut_object"
+	entity = "mammalian_01_juggernaut_core_section_entity"
+	selectable = yes
+	show_name = yes
+	description = "wg_juggernaut_object_desc"
+}

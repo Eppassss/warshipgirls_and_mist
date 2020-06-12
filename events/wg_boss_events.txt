@@ -11,10 +11,7 @@ country_event = {
 
 	trigger = {
 		any_country = {
-			OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+			has_wg_special_authority = yes
 			is_ai = no
 		}
 		NOT = { has_global_flag = wg_boss_created }
@@ -23,73 +20,87 @@ country_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				is_ai = no
 			}		
-			capital_scope = {
-				solar_system = { 
-					if = {
-						limit = { 
-							any_neighbor_system = { 
-								ignore_hyperlanes = yes 
-								has_hyperlane_to = PREV 
-							}
-						}
-						save_event_target_as = spawn_boss_system_source
-					} 
-					else = {
-						random_neighbor_system = {
-							limit = { 
-								NOT = { has_star_flag = sealed_system }
-								any_neighbor_system = { 
-									ignore_hyperlanes = yes 
-									has_hyperlane_to = PREV 
-								}
-							}
-							ignore_hyperlanes = yes
+			if = {
+				limit = { exists = capital_scope }
+				capital_scope = { 
+					solar_system = { 
+						if = {
+							limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
 							save_event_target_as = spawn_boss_system_source
-						}
-					}
-				}
-				every_system = {
-					limit = { 
-						distance = { 
-							source = event_target:spawn_boss_system_source
-							min_jumps = 4
-							max_jumps = 9
-							type = hyperlane 
-							use_bypasses = no
-						}
-						NOR = { 
-							closest_system = {
-								exists = space_owner
-								min_steps = 0
-								max_steps = 2
+						} else = {
+							random_neighbor_system = {
+								limit = { NOT = { has_star_flag = sealed_system }}
+								ignore_hyperlanes = yes
+								save_event_target_as = spawn_boss_system_source
 							}
-							has_star_flag = sealed_system
 						}
 					}
-					set_timed_star_flag = { flag = can_spawn_boss_system days = 6 }
 				}
+			} else_if = {
+				limit = { 
+					OR = {
+						has_origin = origin_ev_meg_homeless_ship_strat
+						is_country_type = default_ev 
+					}
+				}
+				random_owned_fleet = {
+					limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+					solar_system = { 
+						if = {
+							limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+							save_event_target_as = spawn_boss_system_source
+						} else = {
+							random_neighbor_system = {
+								limit = { NOT = { has_star_flag = sealed_system }}
+								ignore_hyperlanes = yes
+								save_event_target_as = spawn_boss_system_source
+							}
+						}
+					}
+				}
+			} else = {
+				random_owned_fleet = { solar_system = {
+					save_event_target_as = spawn_boss_system_source
+				}}
 			}
-			country_event = { id = wg_boss.19 days = 1 }#无人机之主
-			country_event = { id = wg_boss.35 days = 2 }#雪风
-			country_event = { id = wsgranking.1919 days = 3 }#胖次商店
+			every_system = {
+				limit = { 
+					distance = { 
+						source = event_target:spawn_boss_system_source
+						min_jumps = 4
+						max_jumps = 9
+						type = hyperlane 
+						use_bypasses = no
+					}
+					NOR = { 
+						closest_system = {
+							exists = space_owner
+							min_steps = 0
+							max_steps = 2
+						}
+						has_star_flag = hostile_system
+						has_star_flag = guardian
+						has_star_flag = sealed_system
+					}
+				}
+				set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
+			}
+			country_event = { id = wg_boss.19 }#无人机之主
+			country_event = { id = wg_boss.35 }#雪风
+			country_event = { id = wg_khan.2 }#大可汗
+			country_event = { id = wsgranking.1919 }#胖次商店
 		}	
 		random_list = { 
 			4 = {
 				random_country = {
 					limit = {
-						OR = {
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
-					country_event = { id = wg_boss.45 days = 4 }#巴格维
+					country_event = { id = wg_boss.45 }#巴格维
 				}
 			}
 			6 = { }
@@ -98,13 +109,10 @@ country_event = {
 			60 = {
 				random_country = {
 					limit = {
-						OR = {
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
-					country_event = { id = wg_boss.26 days = 4 }#GARS
+					country_event = { id = wg_boss.26 }#GARS
 				}
 			}
 			40 = { }
@@ -113,13 +121,10 @@ country_event = {
 			60 = {
 				random_country = {
 					limit = {
-						OR = {
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
-					country_event = { id = wg_boss.2 days = 5 }#星极
+					country_event = { id = wg_boss.2 }#星极
 				}
 			}
 			40 = { }
@@ -128,13 +133,10 @@ country_event = {
 			30 = {
 				random_country = {
 					limit = {
-						OR = {
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
-					country_event = { id = wg_boss.72 days = 5 }#向日葵
+					country_event = { id = wg_boss.72 }#向日葵
 				}
 			}
 			70 = { }
@@ -248,10 +250,7 @@ ship_event = {
 			owner = {
 				if = {
 					limit = { 
-						OR = { 
-							has_authority = auth_warshipgirls
-							has_authority = auth_shenhai
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
 					country_event = { id = wg_boss.15 days = 1080 random = 1080 }
@@ -861,10 +860,7 @@ country_event = {
     option = {
 		name = wg_boss.22.a
         trigger = { 
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
 			NOT = { has_technology = tech_uav4 }
 		}
 		change_variable = { which = rankpts value = 6 }
@@ -877,10 +873,7 @@ country_event = {
     option = {
 		name = wg_boss.22.a
         trigger = { 
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
 			has_technology = tech_uav4
 		}
 		change_variable = { which = rankpts value = 6 }
@@ -894,10 +887,7 @@ country_event = {
 	option = {
 		name = wg_boss.22.a
         trigger = { 
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
         }
 		owner = {
 			add_monthly_resource_mult = {
@@ -1782,10 +1772,7 @@ country_event = {
 	trigger = {
 		has_global_flag = wg_boss_bugv_created
 		NOT = { has_global_flag = bugv_wormhole_created } 
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
+		has_wg_special_authority = yes
 		is_ai = no
 	}
 
@@ -2662,10 +2649,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
+				has_wg_special_authority = yes
 			}
 			change_variable = { which = rankpts value = 5 }	
 		}
@@ -3002,7 +2986,7 @@ country_event = {
 	}	
 }
 
-event = { #延迟生成星系
+event = { #生成星系
 	id = wg_boss.1000
 	hide_window = yes
 	is_triggered_only = yes
@@ -3010,23 +2994,17 @@ event = { #延迟生成星系
 	immediate = {
 		if = {
 			limit = { any_country = {
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
+				has_wg_special_authority = yes
 				is_ai = no
 			}}
 			random_country = {
 				limit = {
-					OR = {
-						has_authority = auth_shenhai
-						has_authority = auth_warshipgirls
-					}
+					has_wg_special_authority = yes
 					is_ai = no
 				}
-				country_event = { id =  wg_boss.1 days = 5 } #boss
+				country_event = { id =  wg_boss.1 } #boss
 				random_list = {
-					50 = { country_event = { id =  wg_parit.1 days = 4 }} #帕里特
+					50 = { country_event = { id =  wg_parit.1 }} #帕里特
 					50 = {}
 				}
 			}
@@ -3041,7 +3019,8 @@ event = { #延迟生成星系
 					has_authority = auth_warshipgirls
 					is_ai = no
 				}
-				country_event = { id = wsg.4 days = 4 } #sol3
+				get_capital_system = yes
+				country_event = { id = wsg.4 } #sol3
 			}
 		}
 	}

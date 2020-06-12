@@ -261,8 +261,7 @@ assault_army = {
 		owner = {
 			OR = {
 				NOT = { has_authority = auth_machine_intelligence }
-				NOT = { has_authority = auth_warshipgirls }
-				NOT = { has_authority = auth_shenhai }
+				has_wg_special_authority = no
 				has_valid_civic = civic_machine_assimilator
 			}
 		}

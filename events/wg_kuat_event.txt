@@ -6,23 +6,11 @@ event = {
 
     trigger = {
 		any_country = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
 	}
 
     immediate = {
-        random_country = {
-			limit = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
-				is_ai = no
-			}
-			set_global_flag = has_wg_country
-		}		
+        set_global_flag = has_wg_country	
     }
 }  

@@ -12,41 +12,67 @@ country_event = {
 		NOT = { has_global_flag = wg_parit_created }
 	}	
 	immediate = {
-		capital_scope = { 
-			solar_system = { 
-				if = {
-					limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
-					save_event_target_as = spawn_parit_system_source
-				} else = {
-					random_neighbor_system = {
-						limit = { 
-							NOT = { has_star_flag = sealed_system }
-							any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
-						}
-						ignore_hyperlanes = yes
+		if = {
+			limit = { exists = capital_scope }
+			capital_scope = { 
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
 						save_event_target_as = spawn_parit_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { NOT = { has_star_flag = sealed_system }}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_parit_system_source
+						}
 					}
 				}
 			}
-			every_system = {
-				limit = {
-					distance = {
-						source = event_target:spawn_parit_system_source
-						min_jumps = 1
-						max_jumps = 4
-						type = hyperlane 
-						use_bypasses = no
-					}
-					NOR = {
-						exists = space_owner
-						has_star_flag = hostile_system
-						has_star_flag = guardian
-						has_star_flag = sealed_system
-						has_star_flag = lex_sol
+		} else_if = {
+			limit = { 
+				OR = {
+					has_origin = origin_ev_meg_homeless_ship_strat
+					is_country_type = default_ev 
+				}
+			}
+			random_owned_fleet = {
+				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = spawn_parit_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { NOT = { has_star_flag = sealed_system }}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_parit_system_source
+						}
 					}
 				}
-				set_timed_star_flag = { flag = can_spawn_parit_system days = 1 }
 			}
+		} else = {
+			random_owned_fleet = { solar_system = {
+				save_event_target_as = spawn_parit_system_source
+			}}
+		}
+		every_system = {
+			limit = {
+				distance = {
+					source = event_target:spawn_parit_system_source
+					min_jumps = 1
+					max_jumps = 4
+					type = hyperlane 
+					use_bypasses = no
+				}
+				NOR = {
+					exists = space_owner
+					has_star_flag = hostile_system
+					has_star_flag = guardian
+					has_star_flag = sealed_system
+					has_star_flag = lex_sol
+				}
+			}
+			set_timed_star_flag = { flag = can_spawn_parit_system days = 1 }
 		}
 		country_event = { id = wg_parit.2 }
 	}
@@ -557,10 +583,7 @@ country_event = {
 	option = {
 		name = "wg_parit.11.a"
         trigger = { 
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
 			has_country_flag = eddy_flag
         }		
 		owner = {

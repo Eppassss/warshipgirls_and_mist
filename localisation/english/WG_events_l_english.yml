@@ -517,3 +517,143 @@
  wg_aft.10001.name:0 "Old Version Save File"
  wg_aft.10001.desc:0 "You are playing §YWarship Girls Mod§! with an old version safe file. Our mod's current version is NOT compatible with safe files before our V4.0 update (Update date 2020.04.28). §RThere may be some bugs or game collapse if you still continue to play on this safe-game.§!\nPlease visit our Mod Workshop to view the update log: https://steamcommunity.com/sharedfiles/filedetails/?id=1747099270"
  wg_aft.10001.a:0 "OK"
+ 
+##################################以下为机翻
+ sh.3035.name:0 "Guardian"
+ sh.3035.desc:0 "The master has arrived in our new home, and it will continue to protect us for the last ten years."
+ sh.3035.a:0 "It is with us!"
+ sh.3035.a.tooltip:0 "Master R will destroy itself in 15-20 years§!"
+ 
+ sh.3036.name:0 "Reactor heating up"
+ sh.3036.desc:0 "Our guardian has reached the end of its life, and its reactor has begun to heat up sharply, and it is expected that it will completely destroy itself in ten days."
+ sh.3036.a:0 "Evacuate personnel on board immediately!"
+ sh.3036.a.tooltip:0 "§R Master will destroy himself in 10 days§!"
+ 
+ sh.3037.name:0 "Guardian Rests"
+ sh.3037.desc:0 "Our guardians finally rested, and the explosion caused by the melted reactor completely destroyed ourselves.\n\nAlthough we lost this powerful battleship, our engineers still In the wreckage we discovered some knowledge that we did not learn."
+ sh.3037.a:0 "We must rely on ourselves"  
+ sh.3037.a.tooltip:0 "§R Lord has self-destructed§!"
+ sh_juggernaut2:0 "The Legacy of the Guardian"
+ 
+ wsg.3112.name:0 "The surge in the number of seals"
+ wsg.3112.desc:0 "The seal was once considered to be a harmless animal for humans and animals, but recently the number of such creatures has surged in our capital, and a lot of food has been swept away by seals. If we do not stop it, it will soon There will be famine."
+ wsg.3112.a:0 "It's too bad, we have to think of a way!"
+ planet_badseal:0 "Lots of seals"
+ planet_badseal_desc:0 "The number of seals has not been effectively suppressed, and many crops have been eaten up in the seedling stage."
+ 
+ wsg.3113.name:0 "Seal Slingshot"
+ wsg.3113.desc:0 "We used, including, but not limited to, chemical suppression, castration, meat grinders, etc. for the seals, but none of them have worked effectively.\nFinally, a naval officer had a whimsy— —Let the seals become artillery shells for fleet shooting training!\n\nSoon, the number of seals has dropped sharply, and even a shortage of supplies has occurred within the navy."
+ wsg.3113.a:0 "Good"
+ wsg.3113.a.tooltip:0 "Unlock spacecraft weapons: §Y SEAL Slingshot§!"
+ tech_wg_badseal:0 "Seal Slingshot"
+ tech_wg_badseal_desc:0 "Since the number of seals cannot be effectively suppressed, the ship’s mother committee now decides to launch it as a naval training shell."
+ wg_badseal1:0 "Mysterious fast son signal"
+ wg_badseal2:0 "Mysterious fast son signal"
+ 
+ wsg.3114.name:0 "Mysterious fast son signal"
+ wsg.3114.desc:0 "Shortly after the seal crisis was resolved, our major colonies received a strange fast son signal. This strange signal can not only interfere with our production machinery control module, but also allow organisms to produce The feedback from Moyu didn't work.\n\nThis fast son signal was continuously transmitted through a secret site, and its source could not be investigated, but it is worth noting that this signal did not exceed our national borders. Obviously this was targeted together. Our action!"
+ wsg.3114.a:0 "Must think of a way"
+ 
+ wsg.3115.name:0 "One wave after another, one wave after another"
+ wsg.3115.desc:0 "While we are racking our brains to search for ways to deal with this mysterious fast son signal, a new fast son signal has appeared! It is different from the previous interference with our production. This time it is aimed at Our fleet! All the weapons of the spacecraft have received different degrees of interference.\n\nFortunately, the new signal has exposed the position in one transmission, and theoretically only need to follow the search to find the source.\n \nNow the voice of the culprit is rising across the country, and we must act as soon as possible."
+ wsg.3115.a:0 "Action now!"
+ 
+ wsg.3116.name:0 "Bad Seal"
+ wsg.3116.desc:0 "Finally, we followed the signal to find the source of the signal-§Hour capital §!\nOur troops immediately locked in position and found an abandoned ancient facility.\n\ n As soon as we entered the facility, we immediately arrested the culprit of this long-standing riot, §H seals§!, that it has been sending us a signal through this ancient communication station\n\nNow the stink seals have been conquered , And expressed its willingness to become our governor to atone for the merits. It said that it would prove itself with actual ability, and it would not let us down, only we need to give a chance."
+ wsg.3116.a:0 "Then let us see what you have skills"
+ wsg.3116.a.tooltip:0 "§Y The seal will become the governor§!"
+ wsg.3116.b:0 "Must be sliced"
+ 
+ wsg.3117.name:0 "[event_target:bad_seal_food_target.GetName] ate bad stomach!"
+ wsg.3117.desc:0 "Obviously just being a leader does not pay back our losses, so it was quickly sliced ​​by us. Unfortunately, our leader [event_target:bad_seal_food_target.GetName] recently ate his stomach She was rushed to the hospital for treatment. According to laboratory tests, she unfortunately ate a piece of seal meat.\n\n[event_target:bad_seal_food_target.GetName] means she will never forget that terrible taste, this matter has already been Became her psychological shadow."
+ wsg.3117.a:0 "Damn"
+ 
+ leader_trait_badseal:0 "Seal Phobia"
+ leader_trait_badseal_desc:0 "The terrible taste of immortality."
+ #############
+ sh.3040.name:0 "Quiet-Bismarck"
+ sh.3040.desc:0 "After the fleet's silence was completed, Bismarck, who was originally only the captain of the ship, showed amazing work efficiency, and soon became one of the best fleet commanders in the fleet."
+ sh.3040.a:0 "Understanding"
+
+ Bismark_sh:0 "Deep Sea Ship Mother"
+ leader_trait_admiral_Bismark:0 "Bismarck"
+ leader_trait_admiral_Bismark_desc:0 "Commander Bismarck understands her enemies and knows how to cause the most damage."
+ ###################################
+ wsg.3118.name:0 "Veneto: §H Past is Future§!"
+ wsg.3118.desc:0 "Veneto’s recent mental state is not very good, she is dominated by endless nightmares-the non-existent maze, the dizziness that accompanies in the infinite space, is constantly being in the dark Called by the name. Eventually, Veneto found the circle in the dream...the end?\nThere, the paradox intertwined into a knot and eventually condensed into a conscious body, a desire and time outside of time The connection of will.\n\nWhen Veneto woke up, her body was no different, but there seemed to be some invisible power that drove her to write a million words one after another in her sleep for days. Article titled §H Past is Future§!\n\nThis article explains the different roles played by Veneto in an endless period of time, either bravery, cunning, or plain, but eternal but unchanged The amount of milk that links time and space eventually forms a constant circle.\n\nMaybe, it can only be changed if it exceeds §HTime and Space§!."
+ wsg.3118.a:0 "Sorry, the worm of time has also tried its best"
+#####################################
+ wsg.3201.name:0 "Strange Structure"
+ wsg.3201.desc:0 "After the invasion of sol3, we found a sewer that far exceeded the level of indigenous technology when rebuilding the city’s infrastructure. It has a history of thousands of years ago. The local interim government has immediately blocked the relevant area and instructed A team of archaeologists is waiting for further instructions."
+ d_underground_conduit:0 "Abandoned sewer"
+ d_underground_conduit_desc:0 "Underground in this area is a pipeline system that is too advanced for the aborigines of the planet. Regardless of who built it, these pipelines are now completely blocked by 114,514 pounds of garbage and can no longer be used."
+ d_underground_conduit2:0 "Advanced sewer"
+ d_underground_conduit2_desc:0 "Underground in this area are buried pipeline systems that are too advanced for the planet’s aborigines, but after our thorough cleanup, these pipelines are now ready for use. Our engineers expect these pipelines to significantly reduce construction The cost of pipeline laying during construction."
+ site_nieAdmiral:0 "Clogged sewer"
+ site_nieAdmiral_intro:0 "In addition to having strange beliefs on this aboriginal planet, there is also a sewer that is far more than its civilized technology can build.\nWe can’t know who built it, or even what history is buried behind it , But you may be able to find a hint after cleaning it up."
+ wsg.3201.a:0 "It's such a smelly sewer"
+ wsg.3202.name:0 "Oil-coated paper"
+ wsg.3202.desc:0 "After preliminary cleaning of the garbage in the sewer, we found that the design of this sewer is very good, even comparable to our space civilization. Our expedition team found a cabin and found a lot of use A part wrapped in oil paper, but one of the oil paper is very special and is wrapped in layers. Our expedition team needs to spend some time to open it."
+ wsg.3202.a:0 "Let us see what is hiding"
+ wsg.3203.name:0 "Dr. Admiral"
+ wsg.3203.desc:0 "The oil paper was opened, and it turned out to be a gun belonging to the ship's mother! Our expedition team randomly conducted a rugby search of the surroundings, and finally found the owner of the gun, which was wrapped in oil paper. Admiral! When she woke up, she was willing to join our empire and demonstrated amazing fleet command capabilities."
+ wsg.3203.a:0 "Welcome Admiral!"
+ leader_trait_admiral_NieAdmiral:0 "Wind Passing the Corridor"
+ leader_trait_admiral_NieAdmiral_desc:0 "Although it is a strange commander from the oil paper bag, Admiral Ye obviously has too much fleet combat experience. Although I am a tad, but we speculate that she may be an important fleet commander in the ancient world because The terminal dug out of the oil paper bag has such a statement: "We have launched the largest expedition in the history of the galaxy in Xinghai, thousands of light years, is it just to add Wu Xun to Pasha? "\N\n§Y since Admiral Ya was sealed with oil-in-paper, her body and age were permanently preserved as they were thousands of years ago§!"
+ leader_trait_admiral_NieAdmiral2:0 "The retreating magician"
+ leader_trait_admiral_NieAdmiral2_desc:0 "Commissioner Admiral has a special ability, no matter how bad the battlefield situation is, she can retreat successfully and retain the vitality for the fleet. Although the Fleet Department claims that this ability is meaningless in the current advance of our army, there are also people Claimed that this would help to create a miracle in the defeat. For this dispute, Admiral Dr. who was drinking black tea only wanted his pension, and even wanted to add some brandy.\n\n§YAfter entering the battle, the warship There is an additional 50% probability that the retreat will succeed when the battle is lost§!"
+ #################################
+
+ wg_ancient_battleship:0 "Ancient Battleship"
+ wg_juggernaut_monument:0 "Guardian Monument"
+ wg_juggernaut_core_buff:0 "Guardian Database"
+ 
+ wg_juggernaut_object:0 "Guardian"
+ wg_juggernaut_object_desc:0 "Guardian who once escorted the deep sea fleet but has scrapped it."
+ WG_JUGGERNAUT_PROJECT:0 "Remove the Guardian"
+ WG_JUGGERNAUT_PROJECT_DESC:0 "Guardian Master has no possibility of repair, but we can still recover a lot of available resources from it."
+ WG_JUGGERNAUT_PROJECT2:0 "Search the database"
+ WG_JUGGERNAUT_PROJECT2_DESC:0 "We need to send a research team into the guardian to see if there is any data that can be recovered."
+ 
+ sh.3042.name:0 "Guardian"
+ sh.3042.desc:0 "In the course of our exile, if it were not for the occasion that the powerful Guardian ruled us to escort us, we might have become space junk. Even more valuable, we dominated advanced ships Technically, a large number of advanced technologies have been reversed. It can be said that the Guardian has greatly affected our technology.\n\nHowever, unfortunately, the Guardian has been completely scrapped due to serious accidents and failed to join us. Arrive at [Root.Owner.Capital.GetName] and be abandoned by us in Dark Star. Some of us proposed to go back and look for our former guardians to see if we can find some useful resources."
+ sh.3042.a:0 "Permit"
+ sh.3042.a.tooltip:0 "Start searching for the watchman event chain"
+ sh.3042.b:0 "A scrapped ship, no need to waste resources"
+ 
+ sh.3043.name:0 "Whale Falls"
+ sh.3043.desc:0 "Our ship has reached the Dark Star, and the Guardian, who is always sleeping, is still there...\nIt’s just that there are many ancient no-ones around its huge body. And they are dismantling the Guardian! We don’t know why these drone units that should have been dormant have become active again.\n\nOur engineers said that if we don’t stop it, the Guardian The master will be completely dismantled in about 10 years. If there is any accident, the time will be shorter, and there will be no recyclable resources and data."
+ sh.3043.a:0 "True headache"
+ 
+ sh.3044.name:0 "Eating All"
+ sh.3044.desc:0 "Due to our laissez-faire for the drone, the guardian has now been completely dismantled, and there is no longer any material that can be recovered."
+ sh.3044.a:0 "No way"
+ sh.3044.a.tooltip:0 "Guardian was completely dismantled"
+ 
+ sh.3045.name:0 "Together to the End"
+ sh.3045.desc:0 "There is no plan for the dismantling of the guardians by these ancient drones, it is simply following the set procedures, so when the demolition is triggered, some organs are unknown, causing the dead master to happen. A huge explosion. The huge explosion exploded the guardian and all the drones into non-recyclable space garbage."
+ sh.3045.a:0 "Unlucky"
+ sh.3045.a.tooltip:0 "Guardians and ancient drones are destroyed"
+ 
+ sh.3047.name:0 "Drone has been shut down"
+ sh.3047.desc:0 "We destroyed the drone cluster around the dark star dominating battleships, but unfortunately a deflected shell when our fleet exchanged fire seemed to detonate the remaining shells on the dominating battleship. The huge explosion will Dominate the battleship completely destroyed, but we recovered some alloys that can still be used."
+ sh.3047.a:0 "Not bad"
+ 
+ sh.3048.name:0 "[wg_juggernaut_killer_country.GetName] destroyed the guardian!"
+ sh.3048.desc:0 "We found that the fleet of [wg_juggernaut_killer_country.GetName] took the lead. Their rude tactics successfully destroyed the drone fleet, but they also destroyed the dominant warship together. There is nothing to watch now. Now."
+ sh.3048.a:0 "The gangsters"
+ 
+ sh.3049.name:0 "Expel the Vulture"
+ sh.3049.desc:0 "We destroyed the ancient drone cluster around the guardian master, and our old friends returned to us.\n\nRepairing the master has been determined to be impossible, but we still You can recycle a lot of useful resources, or send a research team to search for useful data in the spacecraft database, or use the master as a monument, and don’t bother her anymore."
+ sh.3049.a:0 "Dismantling work to recover available resources"
+ sh.3049.b:0 "Send a research team to recover available data"
+ sh.3049.c:0 "Take the guardian as a monument, let us not disturb her"
+ 
+ sh.3050.name:0 "The Last Gift"
+ sh.3050.desc:0 "Our engineering team has completed the demolition work and recovered a large amount of available resources.\n\nThis is the last gift the guardian gave to our civilization, and it is also the ultimate solace for us.\nnow We have lost the protection of the cradle, it is time to face this cold and cruel space. In the name of the master, the sword points to the galaxy."
+ sh.3050.a:0 "Understood"
+
+ sh.3051.name:0 "The Last Gift"
+ sh.3051.desc:0 "Our scientific research team reached the data core of the master, but we found that due to the violent dismantling of the master by the drone and the harmlessness of the previous battle, a large number of structural fractures have begun to appear inside the master. Leaked with the reactor, it will be completely damaged in a short time.\nOur research team rescued the data within the priority time, and evacuated before the master was completely damaged.\n\nThis is the guardian who gave us civilization The final gift is also our ultimate solace.\nNow that we have lost the refuge of the cradle, it is time to face this cold and cruel space. In the name of the master, the sword refers to the Milky Way."
+ sh.3051.a:0 "Understood"
+ sh.3051.a.tooltip:0 "End the chain of events to find the watchman"

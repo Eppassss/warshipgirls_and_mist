@@ -40,10 +40,7 @@ tech_wg_waterB = {
 	potential = {
 		has_country_flag = tech_waterB_allowed_flag	
 		has_ascension_perk = ap_colossus
-		OR = {
-			has_authority = auth_warshipgirls	
-			has_authority = auth_shenhai
-		}
+		has_wg_special_authority = yes
 	}
 }
 
@@ -61,8 +58,7 @@ tech_UNITEDFLEET2 = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls	
-			has_authority = auth_shenhai
+			has_wg_special_authority = yes
 			is_country_type = wg_crisis_country
 		}
 	}	

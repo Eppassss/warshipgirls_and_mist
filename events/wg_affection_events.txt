@@ -12,10 +12,7 @@ event = {
 	immediate = {
 		every_country = {
 			limit = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				NOR = {
 					has_ascension_perk = ap_shenhai_silent
 					has_civic = civic_CM
@@ -31,10 +28,7 @@ event = {
 		every_country = {
 			limit = {
 				any_owned_leader = { has_affection_trait = yes }
-				NOR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = no
 			}
 			country_event = { id = wg_aft.101 days = 21 }
 		}
@@ -78,13 +72,13 @@ country_event = {
 						has_affection_trait = no
 					}
 					set_variable = { which = affection_level value = 1 }
+					add_ruler_trait = leader_trait_ruler_affection_lv1
 					switch = {
 						trigger = leader_class
 						governor = { add_trait = leader_trait_governor_affection_lv1 }
 						scientist = { add_trait = leader_trait_scientist_affection_lv1 }
 						admiral = { add_trait = leader_trait_admiral_affection_lv1 }
 						general = { add_trait = leader_trait_general_affection_lv1 }
-						ruler = { add_ruler_trait = leader_trait_ruler_affection_lv1 }
 					}
 				}
 				switch = {
@@ -188,10 +182,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
+		has_wg_special_authority = yes
 		NOR = {
 			has_ascension_perk = ap_shenhai_silent
 			has_civic = civic_CM
@@ -318,10 +309,7 @@ event = {
 		set_global_flag = initialize_affection_traits
 		every_country = {
 			limit = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				NOR = {
 					has_ascension_perk = ap_shenhai_silent
 					has_civic = civic_CM
@@ -792,7 +780,7 @@ fleet_event = {
 								add_shimakaze_admiral_affection = yes
 							} else_if = {
 								limit = { has_leader_flag = 灰风领袖 }
-								add_gray_admiral_affection = { COUNTRY = owner }
+								add_gray_admiral_affection = { COUNTRY=owner }
 						 	} else = {
 								add_admiral_affection = yes
 							}
@@ -867,10 +855,7 @@ country_event = {
 
 	trigger = {
 		FROMFROM = { any_attacker = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 			NOR = {
 				has_ascension_perk = ap_shenhai_silent
 				has_civic = civic_CM
@@ -882,10 +867,7 @@ country_event = {
 		every_war_attacker = {
 			enemy = FROM
 			limit = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				NOR = {
 					has_ascension_perk = ap_shenhai_silent
 					has_civic = civic_CM
@@ -1077,10 +1059,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
+		has_wg_special_authority = yes
 		NOR = {
 			has_ascension_perk = ap_shenhai_silent
 			has_civic = civic_CM
@@ -1443,6 +1422,8 @@ country_event = {
 			if = {
 				limit = { has_leader_flag = affection_max }
 				set_variable = { which = affection_level value = 5 }
+				remove_ruler_affection_trait = yes
+				add_ruler_trait = leader_trait_ruler_affection_lv5
 				switch = {
 					trigger = leader_class
 					governor = {
@@ -1460,10 +1441,6 @@ country_event = {
 					general = {
 						remove_general_affection_trait = yes
 						add_trait = leader_trait_general_affection_lv5
-					}
-					ruler = {
-						remove_ruler_affection_trait = yes
-						add_trait = leader_trait_ruler_affection_lv5
 					}
 				}
 			}
@@ -3344,7 +3321,6 @@ country_event = {
 		every_owned_leader = {
 			limit = {
 				is_wg_leader = yes
-				NOT = { has_leader_flag = wsg_lady_leader }
 			}
 			calculate_affection_to_level_up = yes
 			if = {
@@ -3385,35 +3361,14 @@ country_event = {
 		}
 		if = {
 			limit = { is_vaild_gray_owner = yes }
-			if = { 
-				limit = { #旧档适配
-					NOT = { has_country_flag = transfer_gray_affection }
-					any_owned_leader = {
-						has_leader_flag = 灰风领袖
-						check_variable = { which = "affection" value > 0 }
-					}
-				}
-				set_country_flag = transfer_gray_affection
-				random_owned_leader = {
-					limit = { has_leader_flag = 灰风领袖 }
-					ROOT = { 
-						set_variable = { which = affection value = PREV }
-						set_variable = { which = gray_affection value = affection }
-						set_variable = { which = affection value = 0 }
-					}
-					if = {
-						limit = { has_leader_flag = married }
-						ROOT = { set_country_flag = married_gray }
-						remove_leader_flag = married
-						remove_leader_flag = can_revive
-					}
-					set_variable = { which = affection value = 0 }
-				}
-			}
 			reset_gray_affection_level = yes
 			random_owned_leader = {
 				limit = { has_leader_flag = 灰风领袖 }
-				check_and_remove_normal_leader_affection_traits = yes
+				change_leader_portrait = GrayTempest
+				if = {
+					limit = { check_variable = { which = affection_level value > 1 }}
+					check_and_remove_normal_leader_affection_traits = yes
+				}
 			}
 		}
 	}
@@ -3449,10 +3404,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		OR = {
-			has_authority = auth_warshipgirls
-			has_authority = auth_shenhai
-		}
+		has_wg_special_authority = yes
 		NOR = {
 			has_ascension_perk = ap_shenhai_silent
 			has_civic = civic_CM

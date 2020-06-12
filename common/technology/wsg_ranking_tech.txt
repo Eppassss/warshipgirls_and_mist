@@ -180,8 +180,8 @@ tech_wg_buff_1 = {
 
 	potential = {
 		OR = {
-		has_authority = auth_warshipgirls
-		has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
 		}
 	}
 	
@@ -235,7 +235,10 @@ tech_wg_buff_2 = {
 	}
 
 	potential = {
-		has_authority = auth_warshipgirls
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
 	}
 	is_rare = yes
 	weight_modifier = {

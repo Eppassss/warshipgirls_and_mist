@@ -602,8 +602,7 @@ wg_readjust_crisis = {
 
 	potential = {
 		OR = {
-			has_authority = auth_shenhai
-			has_authority = auth_warshipgirls
+			has_wg_special_authority = yes
 			has_country_flag = can_adjust_wg_crisis_diff
 		}
 		NOR = { 
@@ -746,10 +745,7 @@ check_affection = {
 
 	potential = {
 		check_affection_event_active_diplo = no
-		OR = {
-			has_authority = auth_shenhai
-			has_authority = auth_warshipgirls
-		}
+		has_wg_special_authority = yes
 		NOR = {
 			has_ascension_perk = ap_shenhai_silent
 			has_civic = civic_CM

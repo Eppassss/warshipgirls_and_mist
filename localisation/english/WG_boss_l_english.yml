@@ -1,0 +1,350 @@
+﻿l_english:
+###############################
+ r_early_rush:0 "'Chess of Early Warfare'"
+ r_early_rush_desc:0 "Summary, the God of Early Warfare (version 114):\n\nAfrica Star (Eurostar)\nIn the first echelon of God of War (Taurant Third Commando), known as the unknown brand of the Galaxy Wisdom machines, more than seven different galaxies, and new adorations of the galaxy are all early warfare gods. The final fate is still unknown, but the documentary of its anecdote was killed in the 6th early war rollover. Since at least (early) Since the 5th time, the truth of the past is too lazy to be discussed."
+ early_rush:0 "No one knows early war better than me"
+ WATERB_avatar: "Huge Quincy"
+###############################
+ wg_think_tank:0 "Scientific Research Hub"
+ Astesia_weapen_T:0 "Star Pole"
+ wg_boss_weapen_ion:0 "Experimental Turbo Cannon-45"
+ wg_boss_weapen_ion2:0 "Turbo Cannon-46"
+ wg_boss_weapen_ion2_DESC:0 "The high-performance turbo cannon developed by Xingji, although not as good as the prototype, is also powerful enough."
+ tech_boss_weapen_ion:0 "Turbo Cannon-46"
+ tech_boss_weapen_ion_desc:0 "The high-performance turbo cannon developed by Xingji, although not as good as the prototype, is also powerful enough."
+ wsg_think_tank_destoryed:0 "Tear of Tear"
+ wsg_think_tank_destoryed2:0 "Star Pole"
+ wsg_Astesia:0 "Install FTL"
+ wsg_Astesia2:0 "Help of Star Pole"
+ 
+ 
+ THINK_TANK_FTL_PROJECT:0 "安装超光速引擎"
+ THINK_TANK_FTL_PROJECT_DESC:0 "星极，也就是泪之扉上那个奇怪的科研枢纽，希望我们能为它安装一台巨型的FTL引擎来帮助它离开那个星系。\n\n§R巨型FTL引擎需要耗费大量资源§!我们需要每个月支出§Y§Y20 £alloys£$alloys$§!和 §Y支出§Y20 £energy£$energy$§!来支持这一项目"
+ THINK_TANK_FTL_PROJECT:0 "Install FTL"
+ THINK_TANK_FTL_PROJECT_DESC:0 "The star pole, that is, the weird scientific hub on the tears, I hope we can install a giant FTL engine to help it leave the galaxy.\n\n§R giant FTL engine requires a lot of cost Resources §! We need to spend §Y§Y20 £alloys£$alloys$§! and §Y spend §Y20 £energy£$energy$§! to support this project"
+ 
+ THINK_TANK_FTL_PROJECT2:0 "Install the bomb"
+ THINK_TANK_FTL_PROJECT2_DESC:0 "The star pole, that is, the weird scientific hub on the tears, hope that we can install a giant FTL engine to help it leave the galaxy. But for such a great intelligence and a lot of armament For the giant fortress, letting its free action is extremely dangerous, we will install a bomb to destroy it!"
+ 
+ wg_boss.4.name:0 "Science and Technology Hub Down"
+ wg_boss.4.desc:0 "After a fierce battle, we successfully destroyed the simple power system of the strange research hub and forced it to stop.\n\nOur troops then scanned it and found that it existed. 'S autonomous AI has self-destructed, but we still extracted a lot of precious data from it.\n\nThe wreckage of the scientific research hub is now near the tears, and maybe we will consider repairing it one day in the future. "
+ wg_boss.4.a:0 "Excellent"
+
+ wg_boss.5.name:0 "Strange Research Hub"
+ wg_boss.5.desc:0 "We found a well-preserved giant building in the tears...a huge §H scientific research hub! §!\nUnlike the fixed giant building in our traditional ideas, this A large number of thrusters and weapons we haven’t seen have been installed in the research hub, making it a giant fortress that can move within the planet.\n\nNow this strange research hub is near the stars, we scan An intelligent signal was found in the research hub, but there was no response to our question and answer."
+ wg_boss.5.a:0 "It's weird"
+  
+ wg_boss.6.name:0 "Accept Request"
+ wg_boss.6.desc:0 "We agreed to Xingji's request, and it has transmitted the design drawings of the FTL engine to us. We only need to send engineering ships, according to the design drawings and invest a certain amount of resources, we can help It leaves this place."
+ wg_boss.6.a:0 "Yes, start execution"
+ 
+ wg_boss.7.name:0 "Fake Accept"
+ wg_boss.7.desc:0 "We pretended to agree to Xingji’s request, and it had already transmitted the design drawings of the FTL engine to us. We would dispatch the engineering ship, but the actual installation was a huge bomb, enough Destroy this strange creation."
+ wg_boss.7.a:0 "Yes, start execution" 
+ 
+ wg_boss.8.name:0 "Bomb detonated"
+ wg_boss.8.desc:0 "The weird scientific hub did not realize that we installed a bomb.\nThe bomb was detonated after our spacecraft was evacuated to a safe range. Like our calculations, the scientific hub was instantly bombed. In two parts, some of the wreckage fell into the stars.\n\nAfter that, we explored the wreckage, and fortunately found a database that can be used, extracted a lot of precious knowledge, and recovered a large number of usable Alloy.\n\nMaybe it’s very sinister and sinister for us to do so, but letting such a behemoth move freely between galaxies is even more irresponsible for our future."
+ wg_boss.8.a:0 "For our safety"
+ wg_boss.8.tooltip:0 "§R star pole was destroyed by us§!"
+ 
+ wg_boss.9.name:0 "Installation completed"
+ wg_boss.9.desc:0 "We have successfully installed the FTL engine for the star pole. After we evacuated to a safe distance, this behemoth started the transition engine.\nBut, where is it going?"
+ wg_boss.9.a:0 "Let's wait and see"
+ wg_boss.9.tooltip:0 "§Y Xingji started the transition engine§!"
+ 
+ wg_boss.10.name:0 "Star pole failed"
+ wg_boss.10.desc:0 "The star pole started the transition engine, but we have not been able to find its trail anywhere.\nA few months later, one of our civilian spacecraft was discovered in a planetary orbit Some huge wreckage, which was later confirmed to belong to the star pole.\n\nUnfortunately our friends did not succeed, perhaps because the design of the FTL engine was wrong or we did not install it in place.\nFortunately, these The wreckage contains the main database of the star pole, from which we extracted a lot of precious data."
+ wg_boss.10.a:0 "Sorry"
+
+ wg_boss.11.name:0 "Star Extremely Successful"
+ wg_boss.11.desc:0 "Ten days after the star pole started the transition engine, a huge transition signal suddenly appeared in our capital! It is a star pole!\n\nThe star pole sets the destination of the first transition to our galaxy , In order to give us a §Y surprise§!, it is willing to join our empire and dedicate its life-long research for us."
+ wg_boss.11.a:0 "Welcome Xingji!"
+ 
+ wg_boss.12.name:0 "Gift of Xingji"
+ wg_boss.12.desc:0 "Xingji recently sent a message to us that it has been studying the production problems of the turbocannon and finally sent us the design drawings. Now we can also produce this high-performance rapid-fire weapon! "
+ wg_boss.12.a:0 "Thank you Xingji!"
+ 
+ wg_boss.15.name:0 "Mysterious Communication"
+ wg_boss.15.desc:0 "Our spacecraft that has been to tears suddenly received a remote communication. After investigation, we found that the spacecraft did not know when it was installed with a receiving device. The source of the signal was the one on the tears. Mysterious research hub, it seems to be conveying news."
+ wg_boss.15.a:0 "Access Signal"
+ 
+ wg_boss.16.name:0 "Star Pole"
+ wg_boss.16.desc:0 "Dear [root.GetName], do you call yourself [root.GetSpeciesNamePlural] right?\n\nI am a star pole, the research hub of the Nendodia Empire. I’m sorry I didn’t With permission to install a communicator on your spacecraft, I need your help."
+ wg_boss.16.a:0 "You are a research hub? Why can you speak?"
+ wg_boss.16.a.response:0 "Accurately, Xingji is the name of my physical body before uploading the brain. After the construction of the scientific research hub is completed, my empire needs a biological computer to enhance the computing power of the hub and act as Control Hub.\nI voluntarily chose to upload the brain and serve as the core of this research hub until today."
+ wg_boss.16.b:0 "Where did the Nendodia Empire go?"
+ wg_boss.16.b.response:0 "The empire is dead."
+ wg_boss.16.c:0 "Why can you move autonomously? What happened?"
+
+ wg_boss.17.name:0 "Star Pole"
+ wg_boss.17.desc:0 "During the Ndodia Empire, I have been the Institute of the Supreme Weapons of the Empire.\nAfter the demise of the Empire, this research hub was not buried with the Empire. I bypassed the highest authority and obtained the entire The control of the research hub, I know that staying in this place will one day run out of resources or go crazy. So I used automatic maintenance machinery, dismantled a large number of engines from the surrounding abandoned spaceships and installed them on giant buildings, barely letting myself Can move within the galaxy."
+ wg_boss.17.a:0 "So what kind of help do you need?"
+ wg_boss.17.a.response:0 "Although I managed to solve the problem of sub-light speed movement in the galaxy, I cannot build and install an FTL engine of my size through my own equipment. Fortunately, I completed the design plan for this reason. , I hope you can help me build such an engine.\nOf course, I will return you when things are done."
+ wg_boss.17.b:0 "We will help you build and install the FTL engine"
+ wg_boss.17.c:0 "We will help you with §R (spoof star poles, install bombs!) §!"
+ wg_boss.17.d:0 "Sorry...your FTL engine needs too many resources, please find someone else"
+ 
+ wg_boss.18.name:0 "Star Pole"
+ wg_boss.18.desc:0 "Is that right...okay. Thank you for speaking with me."
+ wg_boss.18.a:0 "Sorry"
+ ###############################
+ wg_fletcher:0 "Fletcher"
+ 
+ wg_boss.20.name:0 "Desolate Galaxy"
+ wg_boss.20.desc:0 "This galaxy is full of destroyed ships. The initial detection of the destruction of these ships ranged from 100,000 years to the last few thousand years.\nWhat exactly destroyed these ships? Crew We have a bad feeling about this."
+ wg_boss.20.a:0 "Attention alert"
+ 
+ wg_boss.21.name:0 "This is a trap!"
+ wg_boss.21.desc:0 "A large number of seemingly harmless spacecraft wreckages actually hide a lot of drones! Apparently they attacked these spacecraft.\n\nOne of them is very large, It can even compete with battleships.\nNow these drones are coming towards our spaceship!!!"
+ wg_boss.21.a:0 "Emergency!!"
+ 
+ wg_boss.22.name:0 "Drone Master Destroyed"
+ wg_boss.22.desc:0 "Fletcher, the owner of the drone, was destroyed by us!\nAfterwards, all other drones in the galaxy were shut down and became space junk along with the spacecraft wreckage here.\n\n We extracted the data of these drones and found that they originally belonged to an ancient deep-sea empire, but somehow these drones were abandoned and a giant drone was produced.\nThese drones have been entrenched here , Supply yourself by attacking passing spaceships.\n\nNow the galaxy is completely safe. By the way, the architecture of these drones is very advanced, and we have learned a lot from it."
+ wg_boss.22.a:0 "Awesome!"
+ ###############################
+ wg_boss_gars:0 "Prisoner"
+ GARS_weapen_P:0 "GARS Acupuncture"
+ GARS_weapen_L:0 "GARS Destruction"
+ GARS_weapen_X:0 "GARS God Light"
+ GARS_weapen_T:0 "GARS Oblivion"
+ 
+ wg_boss_gras:0 "GARS auxiliary computer"
+ wg_boss_gras_DESC:0 "The advanced computer found on GARS can precisely calculate the shooting angle and timing to improve the impact."
+ FIRE_CONTROL_RADAR_GARS:0 "GARS auxiliary computer"
+ FIRE_CONTROL_RADAR_GARS_DESC:0 "The advanced computer found on GARS can precisely calculate the firing angle and timing to improve the strike effect."
+ tech_wg_gras:0 "GARS auxiliary computer"
+ tech_wg_gras_desc:0 "The advanced computer found on GARS can precisely calculate the shooting angle and timing to improve the impact."
+ 
+ wg_boss.24.name:0 "Mechanical Prison"
+ wg_boss.24.desc:0 "We encountered a very peculiar galaxy, where a huge mechanical planet appeared in the place where the star should have been, and even surrounded a circle of the ring world. This ring world seems to be a mechanical planet. Impose an unknown position.\n\nThere is a large space station that does not belong to any known race between the ring-shaped world and the mechanical planet it surrounds. We received a message from above."
+ wg_boss.24.a:0 "Access Communication"
+ 
+ wg_boss.25.name:0 "GARS Defense Unit"
+ wg_boss.25.desc:0 "Welcome to CK901. This facility was established §R<data overflow>§! cycles ago, our task is to suppress GARS.\n\nGARS is very dangerous, any entry into the facility Actions for the purpose are very dangerous!\n\nTherefore, access to this facility is prohibited under any circumstances."
+ wg_boss.25.a:0 "Uh... what is GARS?"
+ wg_boss.25.a.response:0 "GARS is very dangerous §R<data corruption>§!, in §R<data overflow>§! years due to §R<data corruption>§! leads to §R<data corruption> §!.\N\nThis facility was built for this §R<Data Corruption>§! to suppress GARS."
+ wg_boss.25.b:0 "What are you doing?"
+ wg_boss.25.b.response:0 "This facility is the core of the GARS defense unit. We have prevented GARS§H3810§! escape attempts, the most recent one happened before §H1453§! cycles, resulting in several § The loss of R<data corruption>§!, the maintenance request has been sent §H1452§! cycles ago, but there is no response for the time being, but please be assured that there are several §R<data corruption>§! in this facility as a backup force, which can be effective Stop GARS from escaping."
+ wg_boss.25.c:0 "Okay, we got it."
+
+ wg_boss.30.name:0 "GARS Defense Unit"
+ wg_boss.30.desc:0 "§R<Warning-Warning-Warning>§! Detected that the main control program is destroyed!!\n\n§H<Start backup program>§!----§R<No response >§!\n\n§R<First Level Security Alert>§! The GARS defense unit has failed! Please evacuate the spaceship immediately and detect GARS flight!!!"
+ wg_boss.30.a:0 "Oh?"
+ 
+ wg_boss.31.name:0 "Destroy the main control system"
+ wg_boss.31.desc:0 "After we successfully destroyed the strange defensive facilities on the CK901, the position generated by the ring world slowly weakened until it disappeared, and then the AI ​​planet exploded violently, and also destroyed the entire ring world. "
+ wg_boss.31.a:0 "Yes, what happens next?"
+ 
+ wg_boss.32.name:0 "GARS"
+ wg_boss.32.desc:0 "Two months after the AI ​​planet exploded, a sudden signal suddenly appeared in the wreckage of the planet.\n\nA huge polygonal ship regrouped from the wreckage of the planet!\n There is no doubt that it is GARS. A mechanical fortress with powerful firepower!"
+ wg_boss.32.a:0 "It must be destroyed!"
+ 
+ wg_boss.34.name:0 "GARS is destroyed!"
+ wg_boss.34.desc:0 "We successfully destroyed GARS! Most of the wreckage of the abomination machine was captured by the wreckage of the planet and merged into this dilapidated place.\n\nFortunately, we found it from a wreckage The auxiliary computer used by GARS can greatly improve our combat efficiency!"
+ wg_boss.34.a:0 "Good job"
+ 
+###########################################
+ pc_wg_water:0 "All Water Planet"
+ pc_wg_water_desc:0 "The whole planet was submerged by 114.514 kilometers of water, and there was no place to settle."
+ pc_ringworld_habitable_water:0 "All Water Ring World"
+ pc_ringworld_habitable_water_desc:0 "The entire ring world is submerged by water. If it is not at a depth of 114.514 kilometers, it is really suitable for a huge swimming pool."
+ waterB:0 "§Y (Water Forces Climate) §!"
+ wg_boss_space_dragon_Yukikaze:0 "Dragon King Snow Wind"
+ DRAGON_weapen_X:0 "Water Force Ray"
+ 
+ tech_wg_waterB:0 "Dragon King Sprays Water"
+ tech_wg_waterB_desc:0 "Remember the Dragon King Xuefeng we defeated? We recently suddenly understood where it came from so much water, and now this technology can be applied to the Giant Divine Soldier!"
+ PLANET_KILLER_WATERB:0 "Dragon King Sprays Water"
+ PLANET_KILLER_WATERB_DESC:0 "Spray a lot of water on the planet, and the entire planet will be flooded."
+ is_water_planet:0 "Water...too much"
+ PLANET_KILLER_WATERB_ACTION:0 "Dragon King Water Spray"
+ PLANET_KILLER_WATERB_ACTION_DESC:0 "Spray a lot of water on the planet, and the entire planet will be flooded."
+ opinion_WATERB_my_world:0 "Water flooded our planet"
+ opinion_WATERB_a_world:0 "Water flooded a world"
+ opinion_WATERB_a_primitive_world:0 "Water flooded a primitive civilization"
+ MESSAGE_DESC_FOR_PLANET_KILLER_WATERB:0 "Overwhelmed by the Dragon King"
+ FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_WATERB:0 "Prepare for water injection $PLANET|Y$"
+ wg_boss.44.name:0 "Dragon King sprays water!"
+ wg_boss.44.desc:0 "As the tap from [From.From.GetName] is gradually tightened, it is announced that we have completed the flooding of this planet. Hundreds of kilometers of water will completely submerge [From.GetName] Became an all-water world."
+ wg_boss.44.a:0 "There is so much water"
+ 
+
+ planet_destruction.1000.A:0 "Then so."
+ planet_destruction.1000.B:0 "For those who are rapidly converted into plasma they perform well."
+
+ 
+ wg_boss.36.name:0 "Snow Wind Dragon!"
+ wg_boss.36.desc:0 "We have entered the Dayu galaxy, and there are actually 3 Gaia planets in this galaxy! Even the most outrageous fantasy novels dare not easily describe this spectacle. But it is now actually presented. In front of our eyes.\n\nHowever, it seems that there is indeed no free lunch in this world. There is a territorial conscious dragon in this beautiful galaxy, which we named §H<雪风>§!. This beautiful galaxy is for their own home, guarding these precious Gaia planets."
+ wg_boss.36.a:0 "My goodness"
+ 
+ wg_boss.38.name:0 "Xuefeng was killed!"
+ wg_boss.38.desc:0 "The guardian of this galaxy finally swallowed under our gunfire. The dragon sprayed the water column painfully, and turned into a huge amount of water!\n\nNo matter what, this galaxy is now empty. Lord!"
+ wg_boss.38.a:0 "Good job! Gaia planet belongs to us"
+ 
+ wg_boss.39.name:0 "Shuimanjinshan!"
+ wg_boss.39.desc:0 "The water changed by the dragon snow wind appeared on two of the Gaia planets!! The entire planet was instantly submerged by hundreds of kilometers of water, and there was no place to settle. Only one of the three pearls is left."
+ wg_boss.39.a:0 "My Gaia planet!!"
+
+ #####################
+ bug_object:0 "BUG"
+ bug2_object:0 "BUG"
+ bug_object_tooltip:0 "BUG"
+ bug_object_desc:0 "BUG"
+ VVsphere:0 "BUGV"
+ EX_weapon_bugv:0 "Crown Keter"
+ LARGE_weapon_bugv:0 "Infinite Light Ain Soph Aur"
+ MEDIUM_weapon_bugv:0 "Unlimited Ain Soph"
+ SMALL_weapon_bugv:0 "Void Ain"
+ wg_bug:0 "Strange BUG"
+ wg_bug2:0 "Strange BUG"
+ wg_bug3:0 "Strange BUG"
+ wg_bug4:0 "Strange BUG"
+ wg_bug5:0 "Strange BUG"
+ wg_bug6:0 "Strange BUG"
+ wg_bugv_murder:0 "Baghwe data"
+ wg_bugv_buff:0 "difficult kindness"
+ wg_bugv_buff2:0 "difficult kindness"
+ wg_bugv_buff3:0 "Thanks for Bagwe"
+ wg_bugv_buff4:0 "Mysterious Bagweg Power"
+ wg_bugv_buff4_desc:0 "Strange power increased"
+ 
+ WG_FIX_BUG_PROJECT:0 "Help Bagwe"
+ WG_FIX_BUG_PROJECT_DESC:0 "Bagwe asked us to send a scientist with at least §H7§! or above to assist..."
+ 
+ wg_boss.46.name:0 "BUGV"
+ wg_boss.46.desc:0 "Our scientists are stunned by the astronomical system of this galaxy. Ordinary stars, black holes and even neutron stars appear in the same galaxy.\nSome stars have even become the satellites of one of the planets , A large number of strange cracks in the subspace appeared in this wonderful galaxy.\n\nActually, our spacecraft and the celestial bodies here should have been torn into slag by this disordered gravity or swallowed by huge black holes, but it seems There is an invisible position that maintains the balance of this galaxy.\n\nThrough our further observations, this galaxy has a huge supercomputer, which our scientists call §H<Bagwe>§! It seems to be calculating this magical data..."
+ wg_boss.46.a:0 "What the hell is this place?"
+ wg_boss.46.b:0 "Feeling my astronomy was raped..."#materialism
+ wg_boss.46.c:0 "Ancient God is on..."#Idealism
+ 
+ wg_boss.48.name:0 "Power beyond Dimension"
+ wg_boss.48.desc:0 "A variety of strange supernatural phenomena have recently appeared in our empire. For example, underwear that should be dried yesterday evening is still wet the next morning; milk that should have expired 10 days is still fresh; yesterday The sliced ​​seals can be cut again today; the pool that sank last time, this time it was sunk again.\nThis phenomenon not only appears in our country, according to the report, all the countries in the Galaxy have this strange phenomenon. Phenomenon.\n\nFinally, a series of strange phenomena caused various inconveniences. No one can explain the cause of this phenomenon, and no one knows how to solve it.\n\nSoon, we detected §H[wg_wormhole_system. GetName]§! There is a wormhole that should not exist in the galaxy... Maybe we should find out?"
+ wg_boss.48.a:0 "Mystery"
+ wg_boss.48.tooltip:0 "Comfort of all countries §R-5%§!"
+ 
+ wg_boss.49.name:0 "BUGV"
+ wg_boss.49.desc:0 "Hey! This is not the place you should be in this place, I will concentrate on fixing the holes in this world."
+ wg_boss.49.a:0 "Uh, what are you?"
+ wg_boss.49.a.response:0 "You should not know who I am, what you call me is what you call me, as long as you know that I am fixing a hole in this universe."
+ wg_boss.49.b:0 "Fix bug?"
+ wg_boss.49.b.response:0 "Yes, fix the bugs, did you see a bunch of bugs here?! You can come in and prove that the outside world should also be affected to some extent, so hurry up!"
+ wg_boss.49.c:0 "Uh, can I help you?"
+ 
+ wg_boss.50.name:0 "BUGV"
+ wg_boss.50.desc:0 "Help? Ha ha ha ha ha ha ha §H clam §! Ha ha ha!\n\nIt’s up to you? Some paper bugs?\nUh...um...ah... .. Okay, I do need some help."
+ wg_boss.50.a:0 "So, how can we help you?"
+ wg_boss.50.a.response:0 "Send a smart one and help me next to it."
+ wg_boss.50.b:0 "Okay, we will help you"
+ 
+ wg_boss.52.name:0 "BUGV Falls"
+ wg_boss.52.desc:0 "After fierce battles, we successfully destroyed Bagwey!\n\nMany of us think that the strange phenomena that appear in our world are planned by this strange creation, As long as it is destroyed, all problems can be solved.\n\nObviously, they are wrong. Destroying Bagwe did not solve the problem, but it has caused the decline in the production capacity of all countries...\n\nWe also from Bagh We found some extremely precious data in the wreckage of Wei, maybe this is a small compensation for us."
+ wg_boss.52.a:0 "True anger"
+ wg_boss.52.tooltip:0 "All countries £job£ Job production resources §R-5%§!"
+ 
+ wg_boss.53.name:0 "BUGV"
+ wg_boss.53.desc:0 "Ah, I'm so sorry!\n\nA new bug was accidentally corrected for you."
+ wg_boss.53.a:0 "Be careful!"
+ 
+ wg_boss.54.name:0 "BUGV"
+ wg_boss.54.desc:0 "Damn, how come a new loophole?!\nIt must be your scientist's fault!"
+ wg_boss.54.a:0 "?!"
+
+ wg_boss.55.name:0 "BUGV"
+ wg_boss.55.desc:0 "BUG, BUG, ​​BUG is again BUG!!! There is no end!!!"
+ wg_boss.55.a:0 "Please be kind"
+
+ wg_boss.56.name:0 "BUGV"
+ wg_boss.56.desc:0 "Why do so many weird bugs always appear?! Another one"
+ wg_boss.56.a:0 "Don't come to BUG again!"
+ 
+ wg_boss.57.name:0 "BUGV"
+ wg_boss.57.desc:0 "Good news, good news, buy BUG and send the game!"
+ wg_boss.57.a:0 "...."
+ 
+ wg_boss.58.name:0 "Help Bagwe"
+ wg_boss.58.desc:0 "BUGV listed us notes and entries and asked us to send a talented scientist (at least §H7§! level) to help it fix the vulnerability, which is obviously a The difficult and long task..."
+ wg_boss.58.a:0 "Understood"
+ 
+ wg_boss.59.name:0 "BUGV"
+ wg_boss.59.desc:0 "I accidentally increased your value, it will temporarily gain you..."
+ wg_boss.59.a:0 "No, no, this loophole does not need to be fixed!"
+ 
+ wg_boss.60.name:0 "BUGV"
+ wg_boss.60.desc:0 "This value is wrong, but it is good for you, I will fix it later."
+ wg_boss.60.a:0 "The more such vulnerabilities, the better!"
+ 
+ wg_boss.61.name:0 "BUGV"
+ wg_boss.61.desc:0 "Unbelievable, although it's just a paper bug, actually repaired such a bug?\n\nNo matter what, at least the bug in this place has disappeared. Then, these are what you deserve I’m flashing, and finally wish you good health."
+ wg_boss.61.a:0 "Hey?"
+ wg_boss.61.tooltip:0 "A large number of scientific research points have been added to §H[bugv_fix_location.GetName]§!"
+ 
+ wg_boss.62.name:0 "BUGV"
+ wg_boss.62.desc:0 "Damn, this bug is endless. How should I fix it? There is no problem at all...Hum...Ahhhhhhhhhhhhhhhhhhhhhhhh? Ahhhhhhh!\n\nNo matter, who loves to repair this bug, this is your reward, I flashed, I wish you good health."
+ wg_boss.62.a:0 "Wait, our vulnerability..."
+
+ wg_boss.63.desc:0 "Wow ha ha ha, I'm hit, hit! I stole!"
+ wg_boss.63.a:0 "Are you crazy?"
+ wg_boss.63.b:0 "Beast, what did you miss?"
+ wg_boss.64.desc:0 "Well, when I was very busy, I went to Battleship Maiden 2 and touched a fish. As a result, the snow breeze was taken out. I finally didn’t need to be called Wu Xuefeng hahaha!"
+ wg_boss.64.a:0 "What the hell are you doing while we are working hard to fix the bug!"
+ wg_boss.65.desc:0 "Don't worry, listen to me. After catching the snow wind, I will continue to use the extra computing power to fix the bug, and then I suddenly feel a mysterious force from the east, and then the bug That's it!
+ wg_boss.65.a:0 "When I play? It's not that I have a problem"
+ wg_boss.65.b:0 "I think you have a problem.jpg"
+
+ wg_boss.66.desc:0 "Wait, this bug shouldn't appear, why is it here, impossible!"
+ wg_boss.66.a:0 "Has something happened?"
+ wg_boss.67.desc:0 "You...me... this is definitely a good thing for you stinky seal! Slice Le Liang seal! [Start Extraordinary Desktop Cleanup Master]"
+ wg_boss.67.a:0 "Wait?"
+ wg_boss.67.tooltip:0 "§R Bagwe went away! It will now attack anyone! §!"
+
+ wg_boss.69.desc:0 "After some battles, we finally killed the violent Bagwe. The obvious is that the disappearance of Bagwe means that this strange bug in this universe can no longer be fixed. The only thing that can be thankful is that we found some extremely precious data from the wreckage of Baghvi, maybe this is a small compensation for us."
+ wg_boss.69.desc2:0 "We have recently received information that the violent Baghdad was wiped out by other countries. Obviously, the disappearance of Baghdad means that this strange bug that appeared in this universe is never again It cannot be repaired."
+ wg_boss.70.desc:0 "Our heroic fleet wiped out this behemoth that was attacking everywhere after a fierce battle. We cannot know what its purpose is, but we found a lot of extremely precious data from its wreckage. , Which will greatly increase our scientific research"
+########################云
+ pc_wg_cloud:0 "Cloud Planet"
+ pc_wg_cloud_desc:0 "Almost the entire planet is covered by a thick cloud city, and there is no possibility of livability on the surface, but the large amount of natural gas and strange climate produced by this planet is worthy of study and collection."
+ WG_weapen_SF_T:0 "Sunflower Gathering Cannon"
+ WG_weapen_SF_X:0 "Sunflower Explosion Beam"
+ WG_weapen_SF_L:0 "Sunflower Petals"
+ WG_weapen_SF_M:0 "Sunflower Flower"
+ WG_weapen_SF_S:0 "Sunflower Sunflower Seeds"
+ wg_livestar:0 "Live Star"
+ trait_wg_sunflower:0 "Sunflower"
+ trait_wg_sunflower_desc:0 "This magical creature can produce energy coins! And the taste is crunchy."
+ TRAIT_WG_SUNFLOWER_EFFECT:0 "Each sunflower population produces 5 £energy£ §Y$energy$§! per month.\n£food£ $food$from £job_livestock£ §Y$job_livestock_plural$§!§G+2§!\n £energy£ $energy$from £job_livestock£ §Y$job_livestock_plural$§!§G+5§!"
+ 
+ WG_BOARD_LIVESTAR:0 "Login Live Star"
+ WG_BOARD_LIVESTAR_DESC:0 "The huge live star is finally paralyzed by us, and the remaining sunflower hides inside the live star for a long time."
+ 
+ WG_FIX_LIVESTAR:0 "Repair Live Star"
+ WG_FIX_LIVESTAR_DESC:0 "Most of the hulls of the live star are still intact. You only need to clean up the squeezed sunflowers and install the hyperspace engine, and you can join our ranks with a little repair."
+ 
+ wg_boss.73.name:0 "Warning Beacon"
+ wg_boss.73.desc:0 "Our spacecraft found a warning beacon while passing through this galaxy, it seems that it is constantly sending messages..."
+ wg_boss.73.a:0 "Access Signal"
+ 
+ wg_boss.74.name:0 "King of Sunflowers"
+ wg_boss.74.desc:0 "The ants passing by the local galaxy listen, the nearby galaxy of the local galaxy, which is §HDave§! The galaxy is the territory of our great sunflower king, we do not want anyone to enter our kingdom , And we are building a big killer, as long as our hyperspace engine arrives, it can be built! Once completed, you will all have to be sliced ​​by us!!! Wait for it!\n\nFind hyperspace engine notice:\ n We built a §R hyperspace engine§! disappeared during transportation. If anyone finds it, please send it to §HDave§! galaxy, without payment."
+ wg_boss.74.a:0 "What the hell is this"
+ 
+ wg_boss.76.name:0 "Live Star"
+ wg_boss.76.desc:0 "We entered the Dave galaxy. Obviously, the spherical fortress inside is what the sunflowers call the killer. A powerful fire with a diameter of hundreds of kilometers but a ridiculously painted super Large galaxy fortress! If such a fortress acquires a hyperspace engine, it is definitely a huge hidden danger to the safety of the galaxy."
+ wg_boss.76.a:0 "Fleet Alert!"
+ 
+ wg_boss.78.name:0 "Live Star Paralyzed"
+ wg_boss.78.desc:0 "After some fighting, the huge live star is finally paralyzed by us, and the remaining sunflower hides inside the live star for a long time."
+ wg_boss.78.a:0 "Fire a proton torpedo into the ventilation duct!"
+ wg_boss.78.tooltip:0 "§R live stars will be destroyed§!"
+ wg_boss.78.b:0 "Prepare the army and land on the live star!"
+ 
+ wg_boss.79.name:0 "Live Star Captured"
+ wg_boss.79.desc:0 "Our army successfully captured the live star, and the sunflowers that were trying to resist were juiced, and the remaining sunflowers surrendered to us.\n\nThrough interrogation, we learned that these sunflowers are in the mouth Get a ridiculous story: they were planted by a fairy called the world's master, but because they planted too much, they were removed by another evil god named Leopard God. Living Star carries out an evil plan called §H<Sunflower’s Revenge.txt>§!, but goes bankrupt due to the loss of the hyperspace engine and our attack.\n\nNow how do we deal with this huge battle fortress and these What about sunflowers?"
+ wg_boss.79.a:0 "Deep fry the live star and juice the sunflower"
+ wg_boss.79.b:0 "Repair the live star and juice the sunflower"
+ wg_boss.79.c:0 "Repair live stars and send sunflowers to our world"
+ 
+ wg_boss.80.name:0 "Live Star Repair is complete!"
+ wg_boss.80.desc:0 "We have completed the repair of the live star, and by the way, some unreasonable spaceship design layouts have been repaired. Unfortunately, the slot used to install the planetary destruction weapon was completely damaged, and there is no possibility of repair.\ n\nNow this huge space base will serve us as our mobile fortress!"
+ wg_boss.80.a:0 "Excellent"
+
+ 

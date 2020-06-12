@@ -247,31 +247,34 @@ country_event = {
 }
 
 # 判断是否大小姐在执行项目
-fleet_event = {
+country_event = {
 	id = wg_lady.7000
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
-		owner = {
-			abort_special_project = {
-				type = pre_wsg_lady_to_wg_fe
-			}
-			abort_special_project = {
-				type = wsg_lady_to_wg_fe
-			}
-		}
 		if = {
 			limit = {
-				OR = {
-					is_same_value = event_target:lady_contingency_fleet
-					has_fleet_flag = lady_fleet
+				any_owned_fleet = {
+					OR = {
+						is_same_value = event_target:lady_contingency_fleet
+						has_fleet_flag = lady_fleet
+					}
+					has_fleet_flag = has_to_wgfe_project
+					solar_system = {
+						any_system_planet = { 
+							OR = {
+								is_same_value = event_target:wg_project_planet 
+								is_same_value = ROOT.capital_scope
+							}
+						}
+					}
 				}
 			}
 			event_target:lady_contingency_owner = { country_event = { id = wg_lady.9 }}
 		} else = {
 			destroy_ambient_object = event_target:wg_wormhole
-			owner = { country_event = { id = wg_lady.8 }}
+			country_event = { id = wg_lady.8 }
 		}
 	}
 }
@@ -319,6 +322,10 @@ country_event = {
 
 	immediate = {
 		if = {
+			limit = { exists = event_target:lady_contingency_fleet }
+			event_target:lady_contingency_fleet = { set_fleet_flag = has_to_wgfe_project }
+		}
+		if = {
 			limit = { NOT = { has_special_project = wsg_lady_to_wg_fe }}
 			if = {
 				limit = {
@@ -338,12 +345,6 @@ country_event = {
 						}
 					}
 				}
-				abort_special_project = {
-					type = pre_wsg_lady_to_wg_fe
-				}
-				abort_special_project = {
-					type = wsg_lady_to_wg_fe
-				}
 				event_target:lady_contingency_owner = { country_event = { id = wg_lady.9 }}
 			} else = {
 				event_target:lady_contingency_owner = { country_event = { id = wg_lady.7 }}
@@ -352,7 +353,6 @@ country_event = {
 			country_event = { id = wg_lady.7002 days = 10 }
 		}
 	}
-
 }
 
 country_event = {
@@ -378,6 +378,7 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		abort_special_project = { type = wsg_lady_to_wg_fe }
 		# set_country_flag = modifing_wsg_lady
 		set_country_flag = finish_wsg_lady_to_wg_fe_project
 		destroy_ambient_object = event_target:wg_wormhole
@@ -2473,7 +2474,7 @@ country_event = {
 			resource = nanites
 			value >= 10
 		}
-		has_technology = tech_nanite_transmutation
+		has_global_flag = lgates_activated_globally
 	}
 
 	immediate = {
@@ -2558,10 +2559,8 @@ country_event = {
 	immediate = {
 		if = {
 			limit = { 
-				OR = {
-					has_country_flag = modifing_wsg_lady 
-					NOT = { has_country_flag = modified_wsg_lady }
-				}
+				has_country_flag = modifing_wsg_lady 
+				NOT = { has_country_flag = modified_wsg_lady }
 			}
 			country_event = { id = wg_lady.45 days = 30 }
 			if = {
@@ -2983,6 +2982,10 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
+	trigger = {
+		NOT = { has_country_flag = modified_wsg_lady }
+	}
+
 	immediate = {
 		event_target:lady_warship_fleet = { set_event_locked = yes }
 		event_target:wsg_lady_own_country = {
@@ -3366,12 +3369,8 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					NOT = { has_country_flag = modifing_wsg_lady }
-					has_country_flag = modified_wsg_lady
-				}
+				NOT = { has_country_flag = modifing_wsg_lady }
 			}
-			remove_country_flag = modifing_wsg_lady
 			remove_modifier = wsg_lady_modify_consume
 			remove_modifier = wsg_lady_modify_consume2
 			remove_modifier = wsg_lady_modify_consume3

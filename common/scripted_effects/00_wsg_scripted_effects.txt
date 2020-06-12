@@ -1,6 +1,47 @@
-﻿#scope:country
-wsg_init_tech = {
-	give_technology = { tech = tech_powered_exoskeletons message = no } #外骨骼动力
-	#give_technology = { tech = tech_robotic_workers message = no } #机器人
+﻿# scope = country
+get_capital_system = {
+	if = {
+		limit = { exists = capital_scope }
+		capital_scope = { 
+			solar_system = { 
+				if = {
+					limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+					set_timed_star_flag = { flag = wg_capital_system days = 1 }
+				} else = {
+					random_neighbor_system = {
+						limit = { NOT = { has_star_flag = sealed_system }}
+						ignore_hyperlanes = yes
+						set_timed_star_flag = { flag = wg_capital_system days = 1 }
+					}
+				}
+			}
+		}
+	} else_if = {
+		limit = { 
+			OR = {
+				has_origin = origin_ev_meg_homeless_ship_strat
+				is_country_type = default_ev 
+			}
+		}
+		random_owned_fleet = {
+			limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+			solar_system = { 
+				if = {
+					limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+					set_timed_star_flag = { flag = wg_capital_system days = 1 }
+				} else = {
+					random_neighbor_system = {
+						limit = { NOT = { has_star_flag = sealed_system }}
+						ignore_hyperlanes = yes
+						set_timed_star_flag = { flag = wg_capital_system days = 1 }
+					}
+				}
+			}
+		}
+	} else = {
+		random_owned_fleet = { solar_system = {
+			set_timed_star_flag = { flag = wg_capital_system days = 1 }
+		}}
+	}
 }
 

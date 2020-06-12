@@ -6,12 +6,9 @@ can_species_be_assembled = {
 			OR = {
 				has_trait = trait_machine_unit
 				has_trait = trait_mechanical
-				#少前mod兼容
-				has_trait = trait_doll
 			}
-			ROOT = { owner = { NOT = { has_authority = auth_warshipgirls } } }
-			ROOT = { owner = { NOT = { has_authority = auth_shenhai } } }
-			ROOT = { owner = { NOT = { has_authority = auth_starshipgirls } } }
+			ROOT = { owner = { has_wg_special_authority = no }}
+			ROOT = { owner = { NOT = { has_authority = auth_commonwealth } } }#少前mod兼容
 		}
 		#战舰少女制造
 		AND = {
@@ -38,6 +35,13 @@ can_species_be_assembled = {
 				has_trait = swg_trait_starshipgirls
 			}
 			ROOT = { owner = { has_authority = auth_starshipgirls } }
+		}
+		#人形制造
+		AND = {
+			OR={
+				has_trait = trait_doll
+			}
+			ROOT = { owner = { has_authority = auth_commonwealth } }
 		}
 	}
 }

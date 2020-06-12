@@ -171,8 +171,8 @@ building_energy_Parit = {
 			OR = {
 				has_country_flag = Parit_age
 				is_regular_empire = yes
-				has_authority = auth_warshipgirls
 				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
 			}
 		}
 	}

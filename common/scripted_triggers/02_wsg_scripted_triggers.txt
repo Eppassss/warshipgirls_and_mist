@@ -1,3 +1,11 @@
+has_wg_special_authority = {
+	OR = {
+		has_authority = auth_shenhai
+		has_authority = auth_warshipgirls
+		has_authority = auth_starshipgirls
+	}
+}
+
 colonizeable_planet = {
 	OR = {
 		is_planet_class = pc_city
@@ -177,11 +185,11 @@ is_wg_leader_with_affection_not_full = {
 
 # scope: country
 is_vaild_gray_owner = {
-	is_same_value = event_target:gray_owner 
 	OR = {
-		has_authority = auth_warshipgirls
-		has_authority = auth_shenhai
+		is_same_value = event_target:gray_owner 
+		has_country_flag = gray_owner
 	}
+	has_wg_special_authority = yes
 }
 
 # scope: country

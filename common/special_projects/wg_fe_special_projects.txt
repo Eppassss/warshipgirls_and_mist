@@ -71,14 +71,14 @@ special_project = {
 	}
 
 	on_start = {
-		fleet = {
-			fleet_event = { id = wg_lady.7000 }
+		from.owner = {
+			country_event = { id = wg_lady.7000 }
 		}
 	}
 
 	on_success = {
-		fleet = {
-			fleet_event = { id = wg_lady.7000 }
+		from.owner = {
+			country_event = { id = wg_lady.7000 }
 		}
 	}
 

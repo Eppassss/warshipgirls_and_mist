@@ -1186,10 +1186,7 @@ country_event = {
     desc = {
         trigger = {
 			NAND = {
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
+				has_wg_special_authority = yes
 				has_global_flag = wg_crisis_insane
 			}
         }
@@ -1198,10 +1195,7 @@ country_event = {
 
     desc = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
 			NOT = { has_global_flag = wg_crisis_insane }
         }
         text = wg_crisis.12.desc.b
@@ -1209,10 +1203,7 @@ country_event = {
 
 	desc = {
         trigger = {
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
 			has_global_flag = wg_crisis_insane
         }
         text = wg_crisis.12.desc.c
@@ -1220,10 +1211,7 @@ country_event = {
 
     desc = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
 			has_global_flag = wg_crisis_insane
         }
         text = wg_crisis.12.desc.d
@@ -1232,20 +1220,14 @@ country_event = {
 	option = {
 		name = wg_crisis.12.a
         trigger = { 
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
         }
 	}
 
     option = {
 		name = wg_crisis.12.b
         trigger = { 
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
         }
 	}
 }
@@ -1691,20 +1673,14 @@ country_event = {
         # 普通帝国
         text = wg_crisis.20.desc_01
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
     desc = {
         # 舰娘政体 / 深海政体
         text = wg_crisis.20.desc_02
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1728,10 +1704,7 @@ country_event = {
         name = wg_crisis.20.a
         response_text = wg_crisis.20.a.response
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
 
@@ -1741,10 +1714,7 @@ country_event = {
         is_dialog_only = yes
         response_text = wg_crisis.20.b.a.response
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1754,10 +1724,7 @@ country_event = {
         is_dialog_only = yes
         response_text = wg_crisis.20.b.b.response
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1767,10 +1734,7 @@ country_event = {
         response_text = wg_crisis.20.b.c.response
         # 舰娘 / 深海政体 3
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1780,10 +1744,7 @@ country_event = {
         is_dialog_only = yes
         response_text = wg_crisis.20.b.d.response
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1793,10 +1754,7 @@ country_event = {
         is_dialog_only = yes
         response_text = wg_crisis.20.b.e.response
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1805,10 +1763,7 @@ country_event = {
         name = wg_crisis.20.b.f
         response_text = wg_crisis.20.b.f.response
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -1938,9 +1893,9 @@ fleet_event = {
 			limit = { 
 				NOR = {
 					exists = event_target:move_to_planet 
-					event_target:move_to_planet.solar_system = {
+					event_target:move_to_planet = { solar_system = {
 						has_access_fleet = event_target:wg_crisis_country
-					}
+					}}
 				}
 				event_target:wg_crisis_country = {
 					check_variable = { which = planet_count value > 0}
@@ -2538,25 +2493,24 @@ country_event = {
 
 	immediate = {
 		FROMFROM = { save_event_target_as = destroyed_fleet }
+		set_variable = { which = "fleet_id" value = event_target:destroyed_fleet }
 		every_planet = {
 			limit = { 
-				has_planet_flag = uf_target
+				OR = {
+					has_owner = yes
+					has_planet_flag = uf_target
+				}
 				check_variable = { which = "planet_id" value > 0 }
 			}
-			if = { 
-				limit = { is_scope_type = planet }
-				set_variable = { which = "fleet_id" value = event_target:destroyed_fleet }
-			}
+			set_variable = { which = "fleet_id" value = root }
 			if = {
 				limit = { check_variable = { which = "planet_id" value = "fleet_id" }}
 				remove_planet_flag = target_planet
 				set_variable = { which = "planet_id" value = 0 }
 			}
-			if = { 
-				limit = { is_scope_type = planet }
-				set_variable = { which = "fleet_id" value = 0 }
-			}
+			set_variable = { which = "fleet_id" value = 0 }
 		}
+		set_variable = { which = "fleet_id" value = 0 }
 	}
 }
 
@@ -2792,19 +2746,13 @@ country_event = {
     desc = {
         text = "wg_crisis.51.desc.a"
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
         }
     }
     desc = {
         text = "wg_crisis.51.desc.b"
         trigger = {
-            OR = {
-                has_authority = auth_warshipgirls
-                has_authority = auth_shenhai
-            }
+            has_wg_special_authority = yes
         }
     }
 
@@ -3078,39 +3026,27 @@ country_event = {
         # 普通帝国
         text = wg_crisis.57.desc.a
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
     desc = {
         # 舰娘政体 / 深海政体
         text = wg_crisis.57.desc.b
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
 	option = {
 		trigger = {
-			NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+			has_wg_special_authority = no
 		}
 		name = wg_crisis.57.a
 	}
 
     option = {
         trigger = {
-			OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+			has_wg_special_authority = yes
 		}
         name = wg_crisis.57.b
     }
@@ -3132,29 +3068,20 @@ country_event = {
         # 普通帝国
         text = wg_crisis.58.desc.a
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
     desc = {
         # 舰娘政体 / 深海政体
         text = wg_crisis.58.desc.b
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
 	option = {
 		trigger = {
-			NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+			has_wg_special_authority = no
 		}
 		name = wg_crisis.58.a
 		response_text = wg_crisis.58.a.response
@@ -3162,10 +3089,7 @@ country_event = {
 
     option = {
         trigger = {
-			OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+			has_wg_special_authority = yes
 		}
         name = wg_crisis.58.b
 		response_text = wg_crisis.58.b.response
@@ -3195,10 +3119,7 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				is_ai = no
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
+				has_wg_special_authority = yes
 			}
 			ROOT = { random_owned_ship = {
 				limit = { is_ship_size = wg_dimensional_portal }
@@ -3230,10 +3151,7 @@ country_event = {
 				every_playable_country = {
 					limit = {
 						#is_ai = no
-						OR = {
-							has_authority = auth_shenhai
-							has_authority = auth_warshipgirls
-						}
+						has_wg_special_authority = yes
 					}
 					save_event_target_as = target_country
 					event_target:wg_crisis_country = {
@@ -3279,10 +3197,7 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				# is_ai = no
-				OR = {
-					has_authority = auth_shenhai
-					has_authority = auth_warshipgirls
-				}
+				has_wg_special_authority = yes
 				NOT = { has_country_flag = finish_searching }
 			}
 			save_event_target_as = target_country
@@ -4015,11 +3930,6 @@ fleet_event = {
 					OR = {
 						check_variable = { which = num_bf value <= 0 }
 						check_variable = { which = num_bf_exist value >= num_bf }
-					}
-				}
-				modifier = {
-					factor = 0
-					OR = {
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4042,11 +3952,6 @@ fleet_event = {
 					OR = {
 						check_variable = { which = num_bf_portal value <= 0 }
 						check_variable = { which = num_bf_portal_exist value >= num_bf_portal }
-					}
-				}
-				modifier = {
-					factor = 0
-					OR = {
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4070,11 +3975,6 @@ fleet_event = {
 					OR = {
 						check_variable = { which = num_carrier value <= 0 }
 						check_variable = { which = num_carrier_exist value >= num_carrier }
-					}
-				}
-				modifier = {
-					factor = 0
-					OR = {
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4098,11 +3998,6 @@ fleet_event = {
 					OR = {
 						check_variable = { which = num_dreadnought value <= 0 }
 						check_variable = { which = num_dreadnought_exist value >= num_carrier }
-					}
-				}
-				modifier = {
-					factor = 0
-					OR = {
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4123,11 +4018,9 @@ fleet_event = {
 			10 = {
 				modifier = {
 					factor = 0
-					check_variable = { which = num_titan_exist value >= num_titan }
-				}
-				modifier = {
-					factor = 0
 					OR = {
+						check_variable = { which = num_titan value <= 0 }
+						check_variable = { which = num_titan_exist value >= num_titan }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4150,11 +4043,9 @@ fleet_event = {
 			8 = {
 				modifier = {
 					factor = 0
-					check_variable = { which = num_bc_exist value >= num_bc }
-				}
-				modifier = {
-					factor = 0
 					OR = {
+						check_variable = { which = num_bc value <= 0 }
+						check_variable = { which = num_bc_exist value >= num_bc }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4175,11 +4066,9 @@ fleet_event = {
 			6 = {
 				modifier = {
 					factor = 0
-					check_variable = { which = num_bb_exist value >= num_bb }
-				}
-				modifier = {
-					factor = 0
 					OR = {
+						check_variable = { which = num_bb value <= 0 }
+						check_variable = { which = num_bb_exist value >= num_bb }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4201,11 +4090,9 @@ fleet_event = {
 			3 = {
 				modifier = {
 					factor = 0
-					check_variable = { which = num_ca_exist value >= num_ca }
-				}
-				modifier = {
-					factor = 0
 					OR = {
+						check_variable = { which = num_ca value <= 0 }
+						check_variable = { which = num_ca_exist value >= num_ca }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4227,11 +4114,9 @@ fleet_event = {
 			10 = {
 				modifier = {
 					factor = 0
-					check_variable = { which = num_dd_exist value >= num_dd }
-				}
-				modifier = {
-					factor = 0
 					OR = {
+						check_variable = { which = num_dd value <= 0 }
+						check_variable = { which = num_dd_exist value >= num_dd }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4692,10 +4577,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		OR = {
-			has_authority = auth_shenhai
-			has_authority = auth_warshipgirls
-		}	
+		has_wg_special_authority = yes
 		NOT = { has_relic = "r_united_fleet" }
 	}
 	option = {
@@ -5136,10 +5018,7 @@ event = {
 			has_global_flag = wg_invasion_happened
 		}
 		any_country = {
-			OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+			has_wg_special_authority = yes
 		}
 	}
 
@@ -5203,18 +5082,12 @@ event = {
 	immediate = {
 		if = { #玩家是舰娘国家
 			limit = { any_country = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				is_ai = no
 			}}
 			random_country = {
 				limit = {
-					OR = {
-						has_authority = auth_warshipgirls
-						has_authority = auth_shenhai
-					}
+					has_wg_special_authority = yes
 					is_ai = no
 				}
 				country_event = { id = wg_crisis.10000 }
@@ -5223,10 +5096,7 @@ event = {
 		} 
 		if = { #有AI舰娘国家
 			limit = { any_country = {
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}
+				has_wg_special_authority = yes
 				is_ai = yes
 			}}
 			random_country = {

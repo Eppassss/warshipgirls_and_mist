@@ -649,10 +649,29 @@ country_event = {
 						save_event_target_as = spawn_precursors_system_source
 					} else = {
 						random_neighbor_system = {
-							limit = { 
-								NOT = { has_star_flag = sealed_system }
-								any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
-							}
+							limit = { NOT = { has_star_flag = sealed_system }}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_precursors_system_source
+						}
+					}
+				}
+			}
+		} else_if = {
+			limit = { 
+				OR = {
+					has_origin = origin_ev_meg_homeless_ship_strat
+					is_country_type = default_ev 
+				}
+			}
+			random_owned_fleet = {
+				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = spawn_precursors_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { NOT = { has_star_flag = sealed_system }}
 							ignore_hyperlanes = yes
 							save_event_target_as = spawn_precursors_system_source
 						}
@@ -672,6 +691,7 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 5
 				}
+				NOT = { has_star_flag = sealed_system }
 			}
 			set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }
 		}

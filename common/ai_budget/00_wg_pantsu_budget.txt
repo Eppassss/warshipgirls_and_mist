@@ -12,9 +12,9 @@ pantsu_expenditure_edicts = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
-		}	
+			has_authority = auth_warshipgirls
+		}
 	}
 	
 	fraction = {
@@ -30,9 +30,9 @@ pantsu_expenditure_planets = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
-		}	
+			has_authority = auth_warshipgirls
+		}
 	}
 	
 	fraction = {
@@ -47,9 +47,9 @@ pantsu_expenditure_ships = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
-		}	
+			has_authority = auth_warshipgirls
+		}
 	}
 	
 	fraction = {
@@ -64,9 +64,9 @@ pantsu_expenditure_upgrade = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
-		}	
+			has_authority = auth_warshipgirls
+		}
 	}
 	
 	fraction = {
@@ -84,9 +84,9 @@ pantsu_upkeep_planets = {
 	
 	potential = {
 		OR = {
-			has_authority = auth_warshipgirls
 			has_authority = auth_shenhai
-		}	
+			has_authority = auth_warshipgirls
+		}
 	}
 	
 	fraction = {

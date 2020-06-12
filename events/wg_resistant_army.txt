@@ -144,20 +144,14 @@ country_event = {
         # 普通帝国
         text = wg_crisis.22.desc.a
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
     desc = {
         # 舰娘政体 / 深海政体
         text = wg_crisis.22.desc.b
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -196,20 +190,14 @@ country_event = {
         # 普通帝国
         text = wg_crisis.23.desc.a
         trigger = {
-			NOR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = no
 		}
     }
     desc = {
         # 舰娘政体 / 深海政体
         text = wg_crisis.23.desc.b
         trigger = {
-			OR = {
-				has_authority = auth_warshipgirls
-				has_authority = auth_shenhai
-			}
+			has_wg_special_authority = yes
 		}
     }
 
@@ -417,8 +405,7 @@ country_event = {
         trigger = {
             OR = {
                 NOT = { has_modifier = buff_vs_uf }
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
+                has_wg_special_authority = yes
             }
         }
         name = wg_crisis.23.c
@@ -430,10 +417,7 @@ country_event = {
     # 不可问情报
     option = {
         trigger = {
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
             has_modifier = buff_vs_uf
         }
         name = wg_crisis.23.c
@@ -1316,10 +1300,7 @@ country_event = {
                 count_country = {
                     limit = {
 						is_default_country = yes
-                        NOR = {
-                            has_authority = auth_shenhai
-                            has_authority = auth_warshipgirls
-                        }
+                        has_wg_special_authority = no
                     }
                     count < 9
                 }
@@ -1331,10 +1312,7 @@ country_event = {
                 count_country = {
                     limit = {
                         is_default_country = yes
-                        NOR = {
-                            has_authority = auth_shenhai
-                            has_authority = auth_warshipgirls
-                        }
+                        has_wg_special_authority = no
                     }
                     count < 16
                 }
@@ -1349,10 +1327,7 @@ country_event = {
                 limit = {
                     is_default_country = yes
                     NOT = { has_country_flag = has_ra_fleet_spawn }
-                    NOR = {
-                        has_authority = auth_shenhai
-                        has_authority = auth_warshipgirls
-                    }
+                    has_wg_special_authority = no
                 }
                 set_timed_country_flag = { flag = has_ra_fleet_spawn days = 1}
                 capital_scope = {
@@ -1405,10 +1380,7 @@ country_event = {
         }
         every_playable_country = {
             limit = {
-                OR = {
-                    has_authority = auth_shenhai
-                    has_authority = auth_warshipgirls
-                }
+                has_wg_special_authority = yes
             }
             capital_scope = {
                 save_event_target_as = spawn_resistance_fleet_location
@@ -2193,10 +2165,7 @@ country_event = {
     #第一次问奖励凝聚力
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_warshipgirls
-                has_authority = auth_shenhai
-            }
+            has_wg_special_authority = yes
             NOT = { has_country_flag = asked_resistanct_army_intel1 }
         }
         name = wg_crisis.59.a
@@ -2211,10 +2180,7 @@ country_event = {
     #第一次问奖励影响力
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_warshipgirls
-                has_authority = auth_shenhai
-            }
+            has_wg_special_authority = yes
             NOT = { has_country_flag = asked_resistanct_army_intel2 }
         }
         name = wg_crisis.59.b
@@ -2228,10 +2194,7 @@ country_event = {
 
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_warshipgirls
-                has_authority = auth_shenhai
-            }
+            has_wg_special_authority = yes
             has_country_flag = asked_resistanct_army_intel1
         }
         name = wg_crisis.59.a
@@ -2241,10 +2204,7 @@ country_event = {
 
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_warshipgirls
-                has_authority = auth_shenhai
-            }
+            has_wg_special_authority = yes
             has_country_flag = asked_resistanct_army_intel2
         }
         name = wg_crisis.59.b

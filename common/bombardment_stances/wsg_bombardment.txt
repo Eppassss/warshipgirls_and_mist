@@ -72,8 +72,8 @@ wg_doom = {
 			OR = { 	
 				is_country_type = wg_crisis_country
 				is_country_type = wg_crisis_sub_gate_country
-				has_authority = auth_warshipgirls
 				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
 			}
 			AND = {
 				has_technology = tech_wg_doom
@@ -114,7 +114,7 @@ wg_doom2 = {
 		owner = {
 			OR = { 	
 				is_country_type = wg_crisis_country
-				is_country_type = wg_crisis_sub_gate_country
+				is_country_type = wg_Khan_country_type
 			}
 		}
 	}
