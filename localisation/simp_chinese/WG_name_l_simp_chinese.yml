@@ -2,6 +2,11 @@
 ###############################
  Warship_Girls:0 "战舰少女"
  warship_girls:0 "战舰少女"
+ Warship_Girls_adj:0 "战舰少女"
+ Warship_Girls_plural:0 "战舰少女"
+ warship_girls_adj:0 "战舰少女"
+ warship_girls_plural:0 "战舰少女"
+ 
  Warship_Girl:0 "战舰少女头像"
  warship_girl:0 "战舰少女"
  FLAG_CATEGORY_warshipgirls:0 "战舰少女R旗帜"
