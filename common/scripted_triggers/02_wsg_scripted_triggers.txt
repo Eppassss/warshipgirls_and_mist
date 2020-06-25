@@ -117,6 +117,18 @@ has_enough_consumer_goods = {
 	}
 }
 
+has_wg_traits = {
+	OR = {
+		has_trait = wsg_trait_warshipgirls
+		has_trait = wsg_trait_warshipgirls1
+		has_trait = wsg_trait_mist
+		has_trait = sh_trait_shenhai
+		has_trait = sh_trait_shenhai1
+		has_trait = sh_trait_shenhai3
+		has_trait = swg_trait_starshipgirls # 星战少女特质
+	}
+}
+
 is_wg_leader = {
 	# 岛风是是特殊好感度领袖，不需要检查普通好感度特性
 	NOR = { 
@@ -133,14 +145,7 @@ is_wg_leader = {
 	}
 	OR = { 
 		species = { 
-			OR = {
-				has_trait = wsg_trait_warshipgirls
-				has_trait = wsg_trait_warshipgirls1
-				has_trait = wsg_trait_mist
-				has_trait = sh_trait_shenhai
-				has_trait = sh_trait_shenhai1
-				has_trait = sh_trait_shenhai3
-			}
+			has_wg_traits = yes
 		}
 		has_leader_flag = wsg_event_leader
 		has_leader_flag = overtime_yamato #劳模

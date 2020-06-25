@@ -1,0 +1,97 @@
+wg_khan_gate_drone_power = {
+	ship_armor_mult = 2.50
+	ship_weapon_damage = 0.5
+	ship_weapon_range_mult = 0.3
+	ship_weapon_range_mult = 0.2
+	ship_shield_mult = 2.50
+	ship_speed_mult = 0.5
+}
+
+wg_khan_gate_power = {
+	ship_armor_mult = 1.50
+	ship_shield_mult = 1.50
+	ship_windup_mult = -0.5
+	ship_winddown_mult = -0.5
+	ship_speed_mult = 1.0
+}
+
+wg_khan_gate_power1 = {
+	ship_weapon_range_mult = 0.2
+	ship_fire_rate_mult = 0.1
+	ship_armor_mult = 0.1
+	ship_shield_mult = 0.1
+	ship_shield_damage_mult = 0.2
+	ship_speed_mult = 0.10
+}
+wg_khan_gate_power2 = {
+	ship_weapon_range_mult = 0.2
+	ship_fire_rate_mult = 0.1
+	ship_armor_mult = 0.1
+	ship_shield_mult = 0.2
+	ship_shield_damage_mult = 0.2
+	ship_speed_mult = 0.10
+}
+wg_khan_gate_power3 = {
+	ship_weapon_range_mult = 0.2
+	ship_fire_rate_mult = 0.1
+	ship_armor_mult = 0.2
+	ship_shield_mult = 0.2
+	ship_speed_mult = 0.10
+}
+wg_khan_gate_power4 = {
+	ship_armor_mult = 0.3
+	ship_shield_mult = 0.4
+}
+wg_khan_gate_power5 = {
+	ship_armor_mult = 0.5
+	ship_shield_mult = 0.5
+	planet_orbital_bombardment_damage = -0.6
+}
+wg_khan_gate_debuff1 = {
+	ship_weapon_damage = -0.15
+	ship_hull_mult = -0.1
+}
+wg_khan_gate_debuff2 = {
+	ship_weapon_damage = -0.15
+	ship_hull_mult = -0.3
+	ship_hull_damage_mult = -0.3
+	ship_armor_mult = -0.5
+	ship_shield_mult = -3.0
+}
+
+wg_khan_1st_debuff = {
+	ship_speed_mult = -0.5
+}
+
+wg_khan_speed_buff = {
+	ship_speed_mult = 0.6
+	ship_fire_rate_mult = 0.2
+	ship_armor_mult = 0.5
+	ship_shield_mult = 0.5
+}
+
+wg_khan_home_power = {
+	ship_weapon_damage = 0.3
+	ship_fire_rate_mult = 0.5
+	ship_armor_mult = 1.00
+	ship_hull_mult = 0.2
+	ship_shield_mult = 1.00
+	ship_speed_mult = 0.2
+}
+
+badseal_debuff_to_khan = {
+	ship_weapon_damage = -0.2
+	ship_fire_rate_mult = -0.2
+}
+
+planet_Khan_occupied = {
+	icon = "gfx/interface/icons/planet_modifiers/wg_galo.dds"
+	icon_frame = 1
+	planet_amenities_mult = -0.5
+	planet_jobs_produces_mult = -0.25
+	pop_happiness = -0.25
+}
+
+fe_damage_to_wg_khan = {
+	damage_vs_country_type_wg_Khan_country_type_mult = 0.5
+}

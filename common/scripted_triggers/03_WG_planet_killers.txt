@@ -12,6 +12,10 @@ can_destroy_planet_with_PLANET_KILLER_OVO = {
 		}
 	}
 	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
+	}
+	custom_tooltip = {
 		#success_text = "is at war with player"
 		fail_text = is_not_hostile_or_primitive
 		OR = {
@@ -63,6 +67,10 @@ can_destroy_planet_with_PLANET_KILLER_PSH = {
 			is_planet_class = pc_ringworld_shielded
 			is_planet_class = pc_habitat_shielded
 		}
+	}
+	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
 	}
 	custom_tooltip = {
 		fail_text = is_shenhai
@@ -126,6 +134,10 @@ can_destroy_planet_with_PLANET_KILLER_CM = {
 			is_planet_class = pc_ringworld_shielded
 			is_planet_class = pc_habitat_shielded
 		}
+	}
+	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
 	}
 	custom_tooltip = {
 		fail_text = is_not_hostile_or_primitive
@@ -197,6 +209,10 @@ can_destroy_planet_with_PLANET_KILLER_SK = {
 			is_planet_class = pc_habitat_shielded
 		}
 	}
+	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
+	}
 }
 can_destroy_planet_with_PLANET_KILLER_SK_UF = {
 	custom_tooltip = {
@@ -229,6 +245,10 @@ can_destroy_planet_with_PLANET_KILLER_SK_UF = {
 			is_planet_class = pc_habitat_shielded
 		}
 	}
+	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
+	}
 }
 
 can_destroy_planet_with_PLANET_KILLER_WATERB = {
@@ -243,6 +263,10 @@ can_destroy_planet_with_PLANET_KILLER_WATERB = {
 			is_planet_class = pc_ringworld_shielded
 			is_planet_class = pc_habitat_shielded
 		}
+	}
+	custom_tooltip = {
+		fail_text = is_shielded_gaia
+		NOT = {	is_planet_class = pc_shielded_gaia }
 	}
 	custom_tooltip = {
 		fail_text = is_water_planet

@@ -44,21 +44,22 @@ wsg_bungee_jumping = {
 	initial = yes
 	potential = {
 		exists = owner
-		owner = { has_authority = auth_warshipgirls }
+		owner = { has_wg_special_authority = yes }
+		solar_system = { has_star_flag = shop_system_home }
 	}
 	
 	resources = {
 		category = starbase_modules
 		cost = {
-			alloys = 50
+			alloys = 100
 		}
 		produces = {
-			energy = 7
+			energy = 20
 		}
 	}
 	station_modifier = {
 		ship_armor_mult = -0.10
-		trade_value_add = 7
+		trade_value_add = 20
 	}
 	
 	ai_build_at_chokepoint = no

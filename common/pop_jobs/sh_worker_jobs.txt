@@ -12,6 +12,7 @@ sh_clerk = {
 
 	possible = {
 		owner = { is_fallen_empire = no }
+		NOT = { has_slavery_type = { type = slavery_livestock }}
 	}
 
 	planet_modifier = {

@@ -73,7 +73,8 @@ component_set = {
 	key = "COLOSSUS_wsg_alpha_REACTOR"
 	
 	icon = "GFX_ship_part_wsg_alpha_REACTOR"
-	icon_frame = 1	
+	icon_frame = 1
+}
 	
 component_set = {
 	key = "PLATFORM_wsg_alpha_REACTOR"

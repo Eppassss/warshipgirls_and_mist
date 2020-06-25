@@ -166,11 +166,11 @@ event = {
 			}	
 			if = {
 				limit = {
-					has_modifier = wg_modifier_Epolicy
-					NOT = { has_trait = "wsg_trait_Epolicy" }
+					NOT = { has_trait = wg_modifier_alpha }
+					has_modifier = wg_modifier_alpha
 				}
-				remove_modifier =  wg_modifier_Epolicy
-			}		
+				remove_modifier = wg_modifier_alpha
+			}
 		}
 	}
 }
@@ -270,7 +270,27 @@ country_event = {
 				modifier = wg_modifier_Epolicy
 				days = -1
 			}
-		}		
+		}	
+		if = {
+			limit = {
+				has_trait = "wsg_trait_Epolicy"
+				NOT = { has_modifier = wg_modifier_Epolicy }
+			}
+			add_modifier = {
+				modifier = wg_modifier_Epolicy
+				days = -1
+			}
+		}	
+		if = {
+			limit = {
+				has_trait = wg_modifier_alpha
+				NOT = { has_modifier = wg_modifier_alpha }
+			}
+			add_modifier = {
+				modifier = wg_modifier_alpha
+				days = -1
+			}
+		}
 	}
 }
 
@@ -344,6 +364,13 @@ country_event = {
 			}
 			remove_modifier =  wg_modifier_Epolicy
 		}		
+		if = {
+			limit = {
+				NOT = { has_trait = wg_modifier_alpha }
+				has_modifier = wg_modifier_alpha
+			}
+			remove_modifier = wg_modifier_alpha
+		}
 	}
 }
 

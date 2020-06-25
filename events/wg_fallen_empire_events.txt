@@ -246,7 +246,7 @@ country_event = {
 	
 		last_created_country = {
 			save_global_event_target_as = wg_fallen_empire
-			set_graphical_culture = wsg_04
+			set_graphical_culture = fallen_empire_03
 			if = {
 				limit = { count_system = { count <= 250 }}
 				country_event = { id = wg_fe.11 }
@@ -1113,6 +1113,7 @@ country_event = {
 	immediate = {
 		set_country_type = awakened_fallen_empire
 		set_global_flag = wg_fallen_empire_awakened
+		set_country_flag = guardians_of_the_galaxy
 		set_empire_name = "烛幽 誓约"
 		if = {
 			limit = { 
@@ -1559,7 +1560,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_TITAN"
-							graphical_culture = "wsg_04"
+							graphical_culture = "fallen_empire_03"
 							upgradable = no
 						}
 					}
@@ -1568,7 +1569,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_BATTLE_CRUISE"
-							graphical_culture = "wsg_04"
+							graphical_culture = "fallen_empire_03"
 							upgradable = no
 						}
 					}
@@ -1577,7 +1578,7 @@ country_event = {
 						create_ship = {
 							name = random
 							design = "NAME_WG_FE_ESCORTE"
-							graphical_culture = "wsg_04"
+							graphical_culture = "fallen_empire_03"
 							upgradable = no
 						}
 					}
@@ -1598,17 +1599,16 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = wg_fe.100
+event = { #每年用伪随机概率判定堕落妈触发事件
+	id = wg_fe.99
 	hide_window = yes
+	is_triggered_only = yes
 
 	trigger = {
-		is_wg_fallen_empire = yes
 		exists = event_target:wg_fallen_empire
-		end_game_years_passed < 0
 		any_country = {
 			is_ai = no
-			has_communications = root
+			has_communications = event_target:wg_fallen_empire
 			OR = {
 				has_authority = auth_warshipgirls
 				has_authority = auth_shenhai
@@ -1619,18 +1619,15 @@ country_event = {
 				has_civic = civic_fanatic_purifiers
 			}
 		}
-		years_passed >= 35
-	}
-
-	mean_time_to_happen = {
-		years = 5
+		end_game_years_passed < 0
+		years_passed >= 30
 	}
 
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
-				has_communications = root
+				has_communications = event_target:wg_fallen_empire
 				OR = {
 					has_authority = auth_warshipgirls
 					has_authority = auth_shenhai
@@ -1641,123 +1638,165 @@ country_event = {
 					has_civic = civic_fanatic_purifiers
 				}
 			}
-			#random_list = {
-				#1 = {
-					random_list = {
-						5 = {
-							modifier = {
-								factor = 0
-								OR = {
-									has_country_flag = start_pantsu_event
-									has_country_flag = finish_pantsu_event
-									has_authority = auth_shenhai
-									NOT = { has_technology = tech_wsg_pantsu }
-								}
-                            }
-                            modifier = {
-                                factor = 2
-                                mid_game_years_passed > 2
-                            }
-							country_event = { id = wg_fe.121 }
-						}
-						5 = {
-							modifier = {
-								factor = 0
-								OR = {
-									years_passed < 40
-									has_country_flag = start_game_console_event
-									has_country_flag = finish_game_console_event
-								}
-                            }
-                            modifier = {
-                                factor = 2
-                                mid_game_years_passed > 2
-                            }
-							set_country_flag = start_game_console_event
-							country_event = { id = wg_fe.110 }
-						}
-						3 = {
-							modifier = {
-								factor = 0
-								has_country_flag = triggered_wows_event
-                            }
-                            modifier = {
-                                factor = 2
-                                mid_game_years_passed > 2
-                            }
-							set_country_flag = triggered_wows_event
-							country_event = { id = wg_fe.125 }
-						}
-						10 = { # 消费品换资源
-							modifier = {
-								factor = 0.5
-								OR = {
-									years_passed < 100
-								}
-							}
-							country_event = { id = wg_fe.128 }
-						}
-						6 = { #给舰队
-							modifier = {
-								factor = 0
-								OR = {
-									is_at_war = no
-									years_passed < 40
-								}
-                            }
-                            modifier = {
-                                factor = 0.2
-                                mid_game_years_passed > 20
-                            }
-							modifier = {
-								add = -2
-								check_variable = { which = "give_fe_fleet" value > 0 }
-							}
-							modifier = {
-								add = -2
-								check_variable = { which = "give_fe_fleet" value > 1 }
-							}
-							modifier = {
-								add = -2
-								check_variable = { which = "give_fe_fleet" value > 2 }
-							}
-							country_event = { id = wg_fe.132 }
-						}
-						5 = { #VV事件
-							modifier = {
-								factor = 0
-								OR = {
-									NOT = { has_country_flag = VV_fourth_chance }
-									has_country_flag = start_VV_event
-									has_country_flag = finish_VV_event
-								}
-							}
-							country_event = { id = wg_fe.134 }
-						}
-						10 = { # 大小姐改造事件
-							modifier = {
-								factor = 0
-								OR = {
-									has_country_flag = wsg_lady_mod_cd # 获得大小姐后15年不能改造
-									has_country_flag = start_wsg_lady_events
-									has_country_flag = finish_wsg_lady_events
-									NAND = { # 必须有大小姐战舰而且已触发大小姐事件
-										is_same_value = event_target:lady_contingency_owner
-										exists = event_target:lady_contingency_fleet
-									}
-								}
-                            }
-                            modifier = {
-                                factor = 3
-                                mid_game_years_passed > 0
-                            }
-							country_event = { id = wg_lady.1 }
-						}
+			random_list = {
+				1 = {
+					modifier = {
+						add = 2
+						check_variable = { which = years_not_trigger_fe_event value >= 8 }
 					}
-				#}
-				# 1 = {} #总概率1/2发生事件 (cancelled)
-			#}
+					set_variable = { which = years_not_trigger_fe_event value = 0 }
+					country_event = { id = wg_fe.100 random = 359 }
+				}
+				19 = {
+					modifier = {
+						add = -2
+						check_variable = { which = years_not_trigger_fe_event value >= 1 }
+					}
+					modifier = {
+						add = -4
+						check_variable = { which = years_not_trigger_fe_event value >= 2 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = years_not_trigger_fe_event value >= 4 }
+					}
+					modifier = {
+						add = -7
+						check_variable = { which = years_not_trigger_fe_event value >= 6 }
+					}
+					modifier = {
+						factor = 0
+						check_variable = { which = years_not_trigger_fe_event value >= 10 }
+					}
+					change_variable = { which = years_not_trigger_fe_event value = 1 }
+				}
+			}
 		}
+	}
+
+}
+country_event = {
+	id = wg_fe.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		#random_list = {
+			#1 = {
+				random_list = {
+					5 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_country_flag = start_pantsu_event
+								has_country_flag = finish_pantsu_event
+								has_authority = auth_shenhai
+								NOT = { has_technology = tech_wsg_pantsu }
+							}
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						country_event = { id = wg_fe.121 }
+					}
+					5 = {
+						modifier = {
+							factor = 0
+							OR = {
+								years_passed < 40
+								has_country_flag = start_game_console_event
+								has_country_flag = finish_game_console_event
+							}
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = start_game_console_event
+						country_event = { id = wg_fe.110 }
+					}
+					3 = {
+						modifier = {
+							factor = 0
+							has_country_flag = triggered_wows_event
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = triggered_wows_event
+						country_event = { id = wg_fe.125 }
+					}
+					10 = { # 消费品换资源
+						modifier = {
+							factor = 0.5
+							OR = {
+								years_passed < 100
+							}
+						}
+						country_event = { id = wg_fe.128 }
+					}
+					6 = { #给舰队
+						modifier = {
+							factor = 0
+							OR = {
+								is_at_war = no
+								years_passed < 40
+							}
+						}
+						modifier = {
+							factor = 0.2
+							mid_game_years_passed > 20
+						}
+						modifier = {
+							add = -2
+							check_variable = { which = "give_fe_fleet" value > 0 }
+						}
+						modifier = {
+							add = -2
+							check_variable = { which = "give_fe_fleet" value > 1 }
+						}
+						modifier = {
+							add = -2
+							check_variable = { which = "give_fe_fleet" value > 2 }
+						}
+						country_event = { id = wg_fe.132 }
+					}
+					5 = { #VV事件
+						modifier = {
+							factor = 0
+							OR = {
+								NOT = { has_country_flag = VV_fourth_chance }
+								has_country_flag = start_VV_event
+								has_country_flag = finish_VV_event
+							}
+						}
+						country_event = { id = wg_fe.134 }
+					}
+					10 = { # 大小姐改造事件
+						modifier = {
+							factor = 0
+							OR = {
+								has_country_flag = wsg_lady_mod_cd # 获得大小姐后15年不能改造
+								has_country_flag = start_wsg_lady_events
+								has_country_flag = finish_wsg_lady_events
+								NAND = { # 必须有大小姐战舰而且已触发大小姐事件
+									is_same_value = event_target:lady_contingency_owner
+									exists = event_target:lady_contingency_fleet
+								}
+							}
+						}
+						modifier = {
+							factor = 3
+							mid_game_years_passed > 0
+						}
+						country_event = { id = wg_lady.1 }
+					}
+				}
+			#}
+			# 1 = {} #总概率1/2发生事件 (cancelled)
+		#}
 	}
 
 }
@@ -2942,7 +2981,7 @@ country_event = {
 		name = wg_fe.129.i
 		add_resource = { consumer_goods = -1500 }
 		response_text = wg_fe.129.response5
-		locked_random_list = {
+		random_list = {
 			1 = { add_modifier = { modifier = game_buff1 days = 1800 }}
 			1 = { add_modifier = { modifier = game_buff2 days = 1800 }}
 			1 = { add_modifier = { modifier = game_buff3 days = 1800 }}
@@ -2992,7 +3031,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_ESCORTE"
-									graphical_culture = "wsg_04"
+									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3020,7 +3059,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_BATTLE_CRUISE"
-									graphical_culture = "wsg_04"
+									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3048,7 +3087,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_BATTLE_CRUISE"
-									graphical_culture = "wsg_04"
+									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3063,7 +3102,7 @@ country_event = {
 								create_ship = {
 									name = random
 									design = "NAME_WG_FE_ESCORTE"
-									graphical_culture = "wsg_04"
+									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
 										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3146,7 +3185,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_BATTLE_CRUISE"
-								graphical_culture = "wsg_04"
+								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3161,7 +3200,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_ESCORTE"
-								graphical_culture = "wsg_04"
+								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3194,7 +3233,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_BATTLE_CRUISE"
-								graphical_culture = "wsg_04"
+								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
@@ -3209,7 +3248,7 @@ country_event = {
 							create_ship = {
 								name = random
 								design = "NAME_WG_FE_ESCORTE"
-								graphical_culture = "wsg_04"
+								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
 									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}

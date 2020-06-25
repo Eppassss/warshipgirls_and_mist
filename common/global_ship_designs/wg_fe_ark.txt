@@ -44,7 +44,6 @@ ship_design = {
 			template = "LARGE_sh_ship_part_sh_ia"
 		}		
 	}
-	required_component= "UF_JUMP_DRIVE"
 	required_component= "SENSOR_SH"
 	required_component = "STARBASE_sh_senergy_REACTOR"
 	required_component= "DESTROYER_SHIP_THRUSTER_SH"

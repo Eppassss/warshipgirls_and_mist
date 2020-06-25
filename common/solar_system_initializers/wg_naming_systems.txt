@@ -5,7 +5,7 @@ wg_naming_ship_system = {
 	usage = misc_system_init
 
 	usage_odds = 0
-	flags = { wg_naming_ship_system }
+	flags = { wg_naming_ship_system wg_sealed_system }
 
 	prevent_anomalies = yes
 

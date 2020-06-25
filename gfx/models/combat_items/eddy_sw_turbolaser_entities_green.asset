@@ -322,7 +322,18 @@ entity = {
 	
 	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
 	
-	scale = 8
+	scale = 9
+}
+entity = {
+	name = "extra_large_turbolaser_yellow_large_entity"
+	pdxmesh = "sw_turbolaser_y_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+	
+	locator = { name = "bolt1" rotation = { 0 0 0 } position = { -1 0 0 } }
+	
+	scale = 4
 }
 #############################################################
 

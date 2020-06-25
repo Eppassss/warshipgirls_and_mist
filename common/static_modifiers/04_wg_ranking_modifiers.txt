@@ -46,9 +46,9 @@ wg_modifier_secondary_industry = {
 }
 
 wg_modifier_tertiary_industry = {
-	planet_researchers_physics_research_produces_add = 1
-	planet_researchers_society_research_produces_add = 1
-	planet_researchers_engineering_research_produces_add = 1
+	planet_researchers_physics_research_produces_add = 0.5
+	planet_researchers_society_research_produces_add = 0.5
+	planet_researchers_engineering_research_produces_add = 0.5
 	country_base_sr_pantsu_produces_add = -6
 }
 

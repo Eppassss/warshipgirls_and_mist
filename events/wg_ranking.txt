@@ -1152,6 +1152,38 @@ country_event = {
 		add_tech_progress = { tech = tech_sh_torpedo progress = 0.1 }
 		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
 	}
+	option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_sh_XACweapon
+        custom_tooltip = "tech_sh_XACweapon_desc"
+		trigger = {
+            has_authority = auth_shenhai
+			has_technology = tech_sh_Lweapon
+			NOR = { 
+                has_tech_option = tech_sh_XACweapon
+                has_technology = tech_sh_XACweapon
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 3500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2500 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_180
+				check_variable = { which = "rankpts" value > 180 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -3500
+			sr_se = -2500
+		}
+		add_research_option = tech_sh_XACweapon
+		add_tech_progress = { tech = tech_sh_XACweapon progress = 0.1 }
+		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+	}
 
     # 返回一级菜单
     option = { 
@@ -4832,6 +4864,550 @@ country_event = {
         name = OK
     }
 }
+##########################################################
+#购买大可汗的椅子
+country_event = {
+    id = wsgranking.2010
+    hide_window = yes
+    is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_relic = r_khans_throne
+		has_global_flag = pantsu_shop_created
+		has_communications = event_target:pantsu_shop_country
+		NOR = {
+            has_civic = civic_fanatic_purifiers
+            has_ascension_perk = ap_shenhai_silent
+            has_civic = civic_CM
+			has_global_flag = pantsu_shop_disabled
+		}
+	}
+
+    immediate = {
+        country_event = { id = wsgranking.20110 }
+    }
+}
+country_event = {
+	id = wsgranking.20110
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.20110.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {
+		name = wsgranking.20110.a
+		change_variable = { which = rankpts value = 1 }
+		save_global_event_target_as = Khans_throne_owner 
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = wsgranking.2011 }
+		}
+	}
+}
+#第一阶段议价
+country_event = {
+	id = wsgranking.2011
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2011.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2011.a
+		change_variable = { which = rankpts value = 2 }
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 200
+            energy = 2000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#讨价还价LV1
+		name = wsgranking.2011.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                10 = {
+                    country_event = { id = wsgranking.2012 }#还价失败
+                }
+                90 = {
+                    country_event = { id = wsgranking.2013 }#还价成功
+                }
+            }
+		}
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+#一阶段还价失败
+country_event = {
+	id = wsgranking.2012
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2012.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2012.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 200
+            energy = 2000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+#第二阶段议价
+country_event = {
+	id = wsgranking.2013
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2013.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2011.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 300
+            energy = 3000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#讨价还价LV1
+		name = wsgranking.2013.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                30 = {
+                    country_event = { id = wsgranking.2014 }#还价失败
+                }
+                70 = {
+                    country_event = { id = wsgranking.2015 }#还价成功
+                }
+            }
+		}
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+#二阶段还价失败
+country_event = {
+	id = wsgranking.2014
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2012.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2012.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 300
+            energy = 3000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+
+#第三阶段议价
+country_event = {
+	id = wsgranking.2015
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2015.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2011.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 500
+			alloys = 500
+            energy = 5000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#讨价还价LV3
+		name = wsgranking.2015.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2016 }#还价失败
+                }
+                40 = {
+                    country_event = { id = wsgranking.2017 }#还价成功
+                }
+            }
+		}
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+
+#三阶段还价失败
+country_event = {
+	id = wsgranking.2016
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2012.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2012.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 500
+			alloys = 500
+            energy = 5000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+
+#第四阶段议价
+country_event = {
+	id = wsgranking.2017
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2017.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2011.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 1000
+			alloys = 1000
+            energy = 10000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#讨价还价LV4
+		name = wsgranking.2017.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                80 = {
+                    country_event = { id = wsgranking.2018 }#还价失败
+                }
+                20 = {
+                    country_event = { id = wsgranking.2019 }#还价成功
+                }
+            }
+		}
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+
+#四阶段还价失败
+country_event = {
+	id = wsgranking.2018
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2012.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2012.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+            sr_pantsu = 1000
+			alloys = 1000
+            energy = 10000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+
+#第五阶段
+country_event = {
+	id = wsgranking.2019
+	title = pantsu_shop_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2019.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Ella_room
+	}
+	option = {#卖了
+		name = wsgranking.2011.a
+		custom_tooltip = wsgranking.2011.tooltip
+		add_resource = {
+			sr_dark_matter = 1000
+            sr_pantsu = 2000
+			alloys = 2000
+            energy = 20000
+        }
+		hidden_effect = {
+			event_target:pantsu_shop_country = {
+				steal_relic = {
+					relic = r_khans_throne
+					target = event_target:Khans_throne_owner
+				}	
+			}
+		}
+		custom_gui = "enclave_caravaneer_option"
+	}
+	option = {#不卖
+		name = wsgranking.2011.c
+		response_text = wsgranking.2011.c.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = {
+                60 = {
+                    country_event = { id = wsgranking.2020 days = 10 random = 10 }#偷椅子成功
+                }
+                40 = {
+                    country_event = { id = wsgranking.2021 days = 10 random = 10 }#偷椅子失败
+                }
+            }
+		}
+	}
+}
+#偷椅子成功
+country_event = {
+    id = wsgranking.2020
+    title = wsgranking.2020.name
+    desc = wsgranking.2020.desc
+    picture = GFX_evt_wg_ella_khans_throne
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2020.a
+		change_variable = { which = rankpts value = 2 }
+		event_target:pantsu_shop_country = {
+			steal_relic = {
+				relic = r_khans_throne
+				target = event_target:Khans_throne_owner
+			}	
+		}
+    }
+}
+#偷椅子失败
+country_event = {
+    id = wsgranking.2021
+    title = wsgranking.2021.name
+    desc = wsgranking.2021.desc
+    picture = GFX_evt_archaeology_trap
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2021.a
+		change_variable = { which = rankpts value = 5 }
+    }
+}
+###################################################
 
 #科技触发上限增长
 country_event = {

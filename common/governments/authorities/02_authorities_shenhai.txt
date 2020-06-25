@@ -25,7 +25,9 @@ auth_shenhai = {
 		}
 	}
 	random_weight = {
+		modifier = {
 			factor = 0
+		}
 	}
 	triggered_planet_modifier = {
 		potential = {

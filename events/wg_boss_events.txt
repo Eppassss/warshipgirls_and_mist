@@ -81,9 +81,11 @@ country_event = {
 							min_steps = 0
 							max_steps = 2
 						}
+						has_natural_wormhole = yes
 						has_star_flag = hostile_system
 						has_star_flag = guardian
 						has_star_flag = sealed_system
+						has_star_flag = wg_sealed_system
 					}
 				}
 				set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
@@ -2840,7 +2842,7 @@ country_event = {
 		}		
 		hidden_effect = {
 			random_country = {
-				limit = { is_country_type = sunflower_country_flag }
+				limit = { has_country_flag = sunflower_country_flag }
 				destroy_country = yes
 			}
 		}
@@ -2881,7 +2883,7 @@ country_event = {
 		}		
 		hidden_effect = {
 			random_country = {
-				limit = { has_country_flag  = sunflower_country_flag }
+				limit = { has_country_flag = sunflower_country_flag }
 				destroy_country = yes
 			}
 		}
@@ -2979,7 +2981,7 @@ country_event = {
 		}
 		hidden_effect = {
 			random_country = {
-				limit = { has_country_flag  = sunflower_country_flag }
+				limit = { has_country_flag = sunflower_country_flag }
 				destroy_country = yes
 			}
 		}		
@@ -3019,7 +3021,6 @@ event = { #生成星系
 					has_authority = auth_warshipgirls
 					is_ai = no
 				}
-				get_capital_system = yes
 				country_event = { id = wsg.4 } #sol3
 			}
 		}

@@ -1,3 +1,4 @@
+
 entity = {
 	name = "wg_ancient_battleship_hull_entity"
 	pdxmesh = "ancient_destroyer_mesh"
@@ -42,6 +43,4 @@ entity = {
 	locator = { name = "xl_gun_01" position = { 0 0 0 } }
 	scale = 1.5
 }
-
-
 

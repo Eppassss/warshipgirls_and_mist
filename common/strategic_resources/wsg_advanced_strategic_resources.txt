@@ -108,3 +108,25 @@ sr_huaji = {
 		weight = 100
 	}
 }
+sr_sh = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}
+sr_wsg = {
+	is_rare = yes
+	AI_category = strategic_resource
+	is_planet_local = no
+	is_global = yes
+	tradable = no
+			
+	ai_weight = {
+		weight = 100
+	}
+}

@@ -699,6 +699,12 @@ spriteTypes{
 }
 spriteTypes{
 	spriteType = {
+		name = "GFX_ship_part_uf_fire_control2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_uf_fire_control2.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
 		name = "GFX_UF_UAV"
 		texturefile = "gfx/interface/icons/ship_parts/UF_UAV.dds"
 	}
@@ -727,5 +733,18 @@ spriteTypes{
 	spriteType = {
 		name = "GFX_LADY_weapen_T"
 		texturefile = "gfx/interface/icons/ship_parts/LADY_weapen_T.dds"
+	}
+}
+############
+spriteTypes{
+	spriteType = {
+		name = "GFX_Khan_weapen_T"
+		texturefile = "gfx/interface/icons/ship_parts/Khan_weapen_T.dds"
+	}
+}
+spriteTypes{
+	spriteType = {
+		name = "GFX_Khan_weapen_L"
+		texturefile = "gfx/interface/icons/ship_parts/Khan_weapen_L.dds"
 	}
 }

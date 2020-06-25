@@ -70,6 +70,10 @@ wsg_vv_psi = {
 wsg_modifier_warshipgirls = {
 	planet_pop_assembly_add = 3
 }
+
+wg_modifier_alpha = {
+    num_tech_alternatives_add = 1
+}
 ######################################
 planet_lp = {
 	icon = "gfx/interface/icons/planet_modifiers/lp_resources.dds"

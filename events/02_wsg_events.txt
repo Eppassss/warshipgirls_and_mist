@@ -734,15 +734,54 @@ country_event = {
 		has_civic = civic_wgella
 	}
 	immediate = {
-		country_event = { id = wsg.3031 days = 10  }
+		country_event = { id = wsg.30311 days = 10  }
 	}
+}
+
+country_event = {
+	id = wsg.30311
+	title = wsg.30311.name
+	desc = wsg.30311.desc
+	picture = GFX_evt_wsg_Istanbul2
+	is_triggered_only = yes
+
+	immediate = {
+	    capital_scope.star = {
+			create_ambient_object = {
+				type = "space_storm_2"
+				location = this
+			}
+			last_created_ambient_object = {
+				save_event_target_as = ella_storm
+			}
+		}
+		country_event = { id = wsg.3031 days = 10  }
+		country_event = { id = wsg.30312 days = 20  }
+	}
+
+	option = {
+		name = "wsg.30311.a"
+	}
+}
+
+country_event = {
+	id = wsg.30312
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+	    event_target:ella_storm = {
+			destroy_ambient_object = this
+		}
+	}
+
 }
 country_event = {
 	id = wsg.3031
 	title = wsg.3031.name
 	desc = wsg.3031.desc
 	picture = GFX_evt_wsg_Istanbul
-	show_sound = event_wsg_lightning
+	show_sound = event_wg_lightning
 	is_triggered_only = yes
 
 	after = {
@@ -1119,6 +1158,18 @@ planet_event = {
 			if = {
 				limit = { has_special_project = "ovo_watching_study_normal" }
 				abort_special_project = { type = "ovo_watching_study_normal" location = root }
+			}
+		}
+		event_target:ovo_star_target = {
+			create_ambient_object = {
+				type = "WTFQG_object"
+				entity_offset_height = { min = -35 max = -40 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = event_target:ovo_star_target
+				}
 			}
 		}
 		if = {
@@ -3156,14 +3207,6 @@ country_event = {
 
 	immediate = {
 		set_global_flag = finish_lex_sol_III_event
-		random_country = {
-			limit = { has_country_flag = sol_III_country }
-			set_primitive_age = industrial_age
-			set_country_flag = industrial_age
-			event_target:lex_sol_III = {
-				set_planet_flag = industrial_age
-			}
-		}
 	}
 
 	after = {
@@ -3201,6 +3244,7 @@ country_event = {
 			}
 			random_country = {
 				limit = { has_country_flag = sol_III_country }
+				destroy_country = yes
 			}
 		}
 	}

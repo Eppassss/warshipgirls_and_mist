@@ -233,7 +233,7 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "UF_weapen_G"
 	size = torpedo
-	entity = "turret_torpedo_entity"
+	entity = "invisible_turret_entity"
 	
 	icon = "GFX_UF_weapen_G"
 	icon_frame = 1
@@ -412,6 +412,54 @@ weapon_component_template = {
 	key = "UF_weapen_L"
 	size = large
 	entity = "large_kinetic_gun_entity"
+	type = instant
+	hidden = yes
+	
+	icon = "GFX_UF_weapen_L"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1500 max = 2000 }
+	windup = { min = 5 max = 15 }
+	total_fire_time = 90
+	range = 160.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.5
+	power = -250
+	
+	prerequisites = { "tech_UNITEDFLEET" }
+	component_set = "UF_weapen_L"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+		}		
+		upkeep = {
+			energy = 2.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapen_L2"
+	size = large
+	entity = "invisible_turret_entity"
 	type = instant
 	hidden = yes
 	
@@ -1345,7 +1393,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "DAMAGE_CONTROL_UF"
 	size = aux
-	icon = "GFX_ship_part_uf_fire_control"
+	icon = "GFX_ship_part_uf_fire_control2"
 	icon_frame = 1
 	power = -15
 	hidden = yes
@@ -1362,7 +1410,7 @@ utility_component_template = {
 	}
 	class_restriction = { shipclass_military }
 	prerequisites = { "tech_UNITEDFLEET" }	
-	component_set = "FIRE_CONTROL_RADAR_UF"
+	component_set = "FIRE_CONTROL_RADAR_UF2"
 	
 	ai_weight = {
 		weight = 15

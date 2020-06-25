@@ -5,10 +5,9 @@
  NAME_wg_Da_Khan_gate_country:"萌纸"
  NAME_Khan_gate_Manufactory:"站点"
  NAME_Ancient_Khan_Battleship:"古代战列舰"
- NAME_wg_drone_country:"远古无人机"
- NAME_Sh_juggernaut_system:"暗星"
  
  NAME_WG_Khan_gate_country:"苏赫巴托尔大可汗精兵"
+ NAME_Khan_army_country:"狂暴GALO"
  NAME_wg_Da_Khan_home_country:"苏赫巴托尔荣耀"
  #舰船
  NAME_Salted_Fish_Glory:"咸鱼荣耀" 
@@ -18,6 +17,9 @@
  NAME_WG_Khan_battleship3:"长枪" 
  NAME_WG_Khan_battleship4:"制式军刀"
  NAME_WG_Khan_dreadnought:"雪风长"
+ NAME_WG_Khan_dreadnought2:"萌古荣耀"
+ NAME_WG_Khan_Cruiser:"七武海"
+ NAME_WG_Khan_Destroyer:"五月花"
  
  #舰队名
  NAME_WG_Khan_gate_main_Fleet:"乌兰X托管理员"
@@ -39,4 +41,8 @@
  NAME_Khan_last_Fleet:"夕立雪风舰队"
  NAME_Sukhbaatar_Fleet:"苏赫巴托尔"
  NAME_Odin_Fleet:"奥丁舰队"
- NAME_WG_wg_drone_fleet:"拆除者小队"
+
+ #陆军
+ NAME_GALO_ARMY:"豹跳GALO"
+ NAME_GALODAM_ARMY:"豹跳GALODAM"
+ NAME_OVO_BOSS_ARMY_KHAN:"豹跳OVO化身"

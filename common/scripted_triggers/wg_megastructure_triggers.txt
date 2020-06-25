@@ -111,5 +111,7 @@ is_finished_megastructure = {
 		is_megastructure_type = temporary_habitat_0 
 # first order
 		is_megastructure_type = swfo_starkillerbase_1
+# teif
+		is_megastructure_type = star_pressure_controller
 	}
 }

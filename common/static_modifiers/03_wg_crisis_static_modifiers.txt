@@ -13,6 +13,13 @@ wg_pay_for_resistant_fleet = {
 	country_base_sr_pantsu_produces_add = -12
 }
 
+swg_pay_for_resistant_fleet = {
+	country_base_alloys_produces_add = -600
+	country_base_energy_produces_add = -200
+	country_base_sr_tibanna_swgs_produces_add = -10
+	country_base_sr_kyber_swgs_produces_add = -4
+}
+
 ra_vip = {
 	country_base_alloys_produces_add = -300
 	country_base_energy_produces_add = -300
@@ -27,10 +34,25 @@ ra_vip_sh = {
 	country_base_sr_se_produces_add = -30
 }
 
+ra_vip_swg = {
+	country_base_alloys_produces_add = -300
+	country_base_energy_produces_add = -300
+	country_base_consumer_goods_produces_add = -200
+	country_base_sr_tibanna_swgs_produces_add = -30
+	country_base_sr_kyber_swgs_produces_add = -20
+}
+
 vip_pay_for_resistant_fleet = {
 	country_base_alloys_produces_add = -300
 	country_base_energy_produces_add = -100
 	country_base_sr_pantsu_produces_add = -6
+}
+
+swg_vip_pay_for_resistant_fleet = {
+	country_base_alloys_produces_add = -300
+	country_base_energy_produces_add = -100
+	country_base_sr_tibanna_swgs_produces_add = -6
+	country_base_sr_kyber_swgs_produces_add = -2
 }
 
 buff_vs_uf = {

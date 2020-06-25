@@ -1,0 +1,15 @@
+objectTypes = {
+	pdxmesh = {
+		name = "WTFQG_1_mesh"
+		file = "gfx/models/ships/ent/WTFQG_1.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "Cylinder001Shape"
+			index = 0
+			texture_diffuse = "WTFQGXF.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+		animation = { id = "idle"		type = "WTFQG_1_idle_animation" }
+	}
+}

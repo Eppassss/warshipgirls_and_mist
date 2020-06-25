@@ -17,6 +17,12 @@ component_set = {
 	icon_frame = 1	
 }
 component_set = {
+	key = "FIRE_CONTROL_RADAR_UF2"
+	
+	icon = "GFX_ship_part_uf_fire_control2"
+	icon_frame = 1	
+}
+component_set = {
 	key = "UF_UAV"
 	
 	icon = "GFX_UF_UAV"

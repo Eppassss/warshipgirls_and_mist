@@ -6,6 +6,7 @@ category = {
 	soundeffects = {
 		####### EVENTS SFX
 		event_wg_wedding
+		event_wg_wg_wedding
 		event_shimakaze_first_meet
 		event_shimakaze_contact
 		event_shimakaze_talk1

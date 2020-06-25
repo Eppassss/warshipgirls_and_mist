@@ -86,7 +86,7 @@ entity = {
 	
 	locator = { name = "root"	position = { 0 0 0 } rotation = { 0 0 0 } }
 	attach = { root = "ai_wg2_boss_orbital_station_core_entity" }	
-	
+
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		event = { time = 0 node = "engine_medium_01" particle = "ai_01_large_mid_exhaust_idle_particle" trigger_once = yes keep_particle = yes }

@@ -7,9 +7,24 @@
 		"NeoForce"
 		"Starwars"
 	}
-	possible = { 
-		authority = { 
+	possible = {
+		authority = {
 			value = auth_warshipgirls
+		}
+		civics = { NOT = { value = civic_synthetic_evolution } }
+		origin = { NOT = { value = origin_machine_world } }
+	}
+	possible_secondary = {
+		civics = {
+			NOR = {
+				value = civic_synthetic_evolution
+			}
+		}
+		origin = {
+			NOR = {
+				value = origin_mechanists
+				value = origin_the_last_of_us
+			}
 		}
 	}
 

@@ -29,6 +29,32 @@ wsg_remove_pantsu = {
 	}	
 }
 
+wsg_colony = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+	resources = {
+		category = edicts
+		cost = {
+			influence = 50
+		}
+	}
+
+	modifier = {
+		colony_start_num_pops_add = 1
+		custom_tooltip = tr_expansion_colonization_fever_desc
+	}
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+		has_authority = auth_warshipgirls
+	}
+	
+	ai_weight = {
+		weight = 10
+	}	
+}
+
+
 wsg_folding_chair = {
 	length = -1
 	icon = "GFX_edict_type_policy"
@@ -79,14 +105,7 @@ wsg_nobodyzk = {
 	}
 	
 	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = @EdictLowPrio
-			has_monthly_income = {
-				resource = consumer_goods
-				value < 0
-			}
-		}
+		weight = 10
 	}	
 }
 
@@ -609,6 +628,13 @@ wg_readjust_crisis = {
 			has_global_flag = wg_crisis_triggered 
 			has_global_flag = wg_invasion_happened
 		}
+		OR = {
+			AND = {
+				has_global_flag = wg_khan_gate_main_fleet_defeated
+				NOT = { has_global_flag = wg_khan_crisis_active }
+			}
+			NOT = { has_global_flag = wg_khan_crisis_active }
+		}	
 		is_ai = no
 	}
 
@@ -688,8 +714,10 @@ recall_wsg_lady_modification_project = {
 }
 #############
 wg_struggle_edicts = {
-	length = 7200
+	length = -1
+	edict_cap_usage = 1
 	resources = {
+		category = edicts
 		cost = {
 			influence = 100
 		}

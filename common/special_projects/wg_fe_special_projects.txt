@@ -44,20 +44,6 @@ special_project = {
 	}
 }
 
-# 触发大小姐一改特殊项目
-special_project = {
-	key = "pre_wsg_lady_to_wg_fe"
-	event_scope = planet_event
-	cost = 0
-	picture = GFX_evt_wormhole
-	days_to_research = 1
-	on_success = { 
-		owner = {
-			country_event = { id = wg_lady.7 }
-		}
-	}
-}
-
 # 将大小姐送给堕落妈
 special_project = {
 	key = wsg_lady_to_wg_fe

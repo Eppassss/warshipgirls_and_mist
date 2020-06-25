@@ -158,6 +158,7 @@ create_wg_crisis_exterminate_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -266,6 +267,7 @@ create_wg_crisis_main_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -395,6 +397,7 @@ create_wg_crisis_flagship_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -503,6 +506,7 @@ create_wg_crisis_guard_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -606,6 +610,7 @@ create_wg_crisis_greater_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -672,6 +677,7 @@ create_wg_crisis_weaker_exterminate_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -736,6 +742,7 @@ create_wg_crisis_weaker_main_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -842,6 +849,7 @@ create_wg_crisis_weaker_guard_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }
@@ -914,6 +922,7 @@ create_wg_crisis_raider_fleet = {
             can_change_composition = no
             can_disband = no
             spawn_debris = no
+            ai_ignore_strength = yes
         }
     }
 }

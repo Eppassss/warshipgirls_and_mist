@@ -1,0 +1,345 @@
+# scope: system
+# input: ID, a variable represent the id of the system
+save_system = {
+	if = {
+		limit = { NOT = { is_scope_type = galactic_object }}
+		log = "error, unknown scope"
+		break = yes
+	}
+	if = {
+		limit = { check_variable = { which = $ID$ value = 0 }}
+		log = "error, invaild ID"
+		break = yes # prevent strange variable input
+	} else = {
+		get_digits = { ARRAY = SYSTEM_ID TARGET = $ID$ }
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 1 }}
+			save_system_set_digit_2 = { INDEX = 1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 2 }}
+			save_system_set_digit_2 = { INDEX = 2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 3 }}
+			save_system_set_digit_2 = { INDEX = 3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 4 }}
+			save_system_set_digit_2 = { INDEX = 4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 5 }}
+			save_system_set_digit_2 = { INDEX = 5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 6 }}
+			save_system_set_digit_2 = { INDEX = 6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 7 }}
+			save_system_set_digit_2 = { INDEX = 7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 8 }}
+			save_system_set_digit_2 = { INDEX = 8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 9 }}
+			save_system_set_digit_2 = { INDEX = 9 }
+		}
+		
+	}
+}
+
+load_system = {
+	if = {
+		limit = { check_variable = { which = $ID$ value = 0 }}
+		log = "error, invaild ID"
+		break = yes # prevent strange variable input
+	} else = {
+		get_digits = { ARRAY = SYSTEM_ID TARGET = $ID$ }
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 1 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 2 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 3 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 4 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 5 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 6 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 7 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 8 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 9 }}
+			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 9 }
+		}
+		
+	}
+}
+
+save_system_set_digit_2 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 1 }}
+		save_system_as_global_event_target = { INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 0 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 1 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 2 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 3 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 4 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 5 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 6 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 7 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 8 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 9 }}
+			save_system_set_digit_3 = { INDEX = $INDEX$9 }
+		}
+	}
+}
+
+save_system_set_digit_3 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 2 }}
+		save_system_as_global_event_target = { INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 0 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 1 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 2 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 3 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 4 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 5 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 6 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 7 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 8 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 9 }}
+			save_system_set_digit_4 = { INDEX = $INDEX$9 }
+		}
+	}
+}
+
+save_system_set_digit_4 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 3 }}
+		save_system_as_global_event_target = { INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 0 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 1 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 2 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 3 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 4 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 5 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 6 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 7 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 8 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 9 }}
+			save_system_as_global_event_target = { INDEX = $INDEX$9 }
+		}
+	}
+}
+
+load_system_set_digit_2 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 1 }}
+		load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 0 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 1 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 2 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 3 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 4 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 5 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 6 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 7 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 8 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_2 value = 9 }}
+			load_system_set_digit_3 = { RETURN = $RETURN$ INDEX = $INDEX$9 }
+		}
+	}
+}
+
+load_system_set_digit_3 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 2 }}
+		load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 0 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 1 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 2 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 3 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 4 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 5 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 6 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 7 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 8 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_3 value = 9 }}
+			load_system_set_digit_4 = { RETURN = $RETURN$ INDEX = $INDEX$9 }
+		}
+	}
+}
+
+load_system_set_digit_4 = {
+	if = {
+		limit = { check_variable = { which = SYSTEM_ID_DIGITS value = 3 }}
+		load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 0 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 1 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 2 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 3 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 4 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 5 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 6 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 7 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 8 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = SYSTEM_ID_DIGIT_4 value = 9 }}
+			load_system_as_event_target = { RETURN = $RETURN$ INDEX = $INDEX$9 }
+		}
+	}
+}
+
+# save event target with id ( 1~9999 )
+save_system_as_global_event_target = {
+	save_global_event_target_as = SYSTEM_$INDEX$
+	set_variable = { which = SYSTEM_ID_DIGIT_1 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_2 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_3 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_4 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGITS value = 0 }
+	set_variable = { which = SYSTEM_ID_AT_DIGIT value = 0 }
+	set_variable = { which = SYSTEM_ID_TEMP_INT value = 0 }
+	set_variable = { which = SYSTEM_ID_TEMP value = 0 }
+}
+
+load_system_as_event_target = {
+	event_target:SYSTEM_$INDEX$ = {
+		save_event_target_as = $RETURN$
+	}
+	set_variable = { which = SYSTEM_ID_DIGIT_1 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_2 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_3 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGIT_4 value = 0 }
+	set_variable = { which = SYSTEM_ID_DIGITS value = 0 }
+	set_variable = { which = SYSTEM_ID_AT_DIGIT value = 0 }
+	set_variable = { which = SYSTEM_ID_TEMP_INT value = 0 }
+	set_variable = { which = SYSTEM_ID_TEMP value = 0 }
+}

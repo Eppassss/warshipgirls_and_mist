@@ -130,7 +130,7 @@ projectile_gfx_ballistic = {
 	
 	#ballistic specific
 	entity = "small_turbolaser_yellow_large_entity"
-	speed = 600.0			#preferred speed of the projectile
+	speed = 450.0			#preferred speed of the projectile
 	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
 }
 
@@ -151,7 +151,7 @@ projectile_gfx_ballistic = {
 	
 	#ballistic specific
 	entity = "medium_turbolaser_yellow_large_entity"
-	speed = 300.0			#preferred speed of the projectile
+	speed = 350.0			#preferred speed of the projectile
 	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
 }
 projectile_gfx_ballistic = {
@@ -169,7 +169,7 @@ projectile_gfx_ballistic = {
 	
 	#ballistic specific
 	entity = "heavy_turbo_yellow_large_entity"
-	speed = 200.0			#preferred speed of the projectile
+	speed = 250.0			#preferred speed of the projectile
 	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
 }
 
@@ -180,7 +180,7 @@ projectile_gfx_ballistic = {
 	color = { 1.0 	1.0 	1.0 	1.0 }
 	hit_entity = "scavenger_bot_main_weapon_hit_entity"
 	shield_hit_entity = "scavenger_bot_main_weapon_shield_hit_entity"
-	muzzle_flash_entity = "particle_lance_muzzle_entity"
+	muzzle_flash_entity = "perdition_beam_muzzle_entity"
 	
 	shield_impact = {
 		size = large
@@ -192,7 +192,24 @@ projectile_gfx_ballistic = {
 	speed = 200.0			#preferred speed of the projectile
 	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
 }
-
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "wsg_extra_large_turbolaser_l_y"
+	color = { 1.0 	1.0 	1.0 	1.0 }
+	hit_entity = "gamma_laser_large_hit_entity"
+	shield_hit_entity = "gamma_laser_large_shield_hit_entity"
+	muzzle_flash_entity = "perdition_beam_muzzle_entity"
+	
+	shield_impact = {
+		size = medium
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = "extra_large_turbolaser_yellow_large_entity"
+	speed = 300.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
 ################
 projectile_gfx_ballistic = {
 	#common for all types of projectiles

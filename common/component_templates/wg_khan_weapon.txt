@@ -1,0 +1,96 @@
+weapon_component_template = {
+	key = "Khan_weapen_T"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	hidden = yes
+	
+	icon = "GFX_Khan_weapen_T"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 10.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 20000 max = 60000 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 250
+	range = 250.0
+	accuracy = 0.70
+	shield_damage = 1.5
+	armor_damage = 1.5
+	tracking = 0.0
+	power = -1200
+	
+	component_set = "Khan_weapen_T"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 300
+		}		
+		upkeep = {
+			energy = 25
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "Khan_weapen_L"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+	hidden = yes
+	
+	icon = "GFX_Khan_weapen_L"
+	icon_frame = 1
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 250 max = 600 }
+	windup = { min = 5 max = 15 }
+	total_fire_time = 70
+	range = 100.0
+	accuracy = 0.7
+	shield_damage = 1.4
+	armor_damage = 1.2
+	hull_damage = 0.8
+	tracking = 0.2
+	power = -100
+	
+	component_set = "Khan_weapen_L"
+	projectile_gfx = "sh_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}		
+		upkeep = {
+			energy = 2.5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}

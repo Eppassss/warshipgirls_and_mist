@@ -1,0 +1,2192 @@
+namespace = wg_khan
+#入侵舰队
+country_event = {
+	id = wg_khan.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		# random_country = {
+		# 	limit = { is_country_type = global_event }
+		# 	country_event = { id = wg_khan.100 } # 初始化变量和event target
+		# }
+		set_global_flag = wg_khan_crisis_active
+		event_target:WG_Khan_gate_system_target = {
+			random_system_planet = {
+				limit = { is_star = yes }
+				save_global_event_target_as = WG_Khan_gate_star_target
+			}
+			create_country = {
+				name = "NAME_WG_Khan_gate_country"
+				type = "wg_Khan_country_type"
+				name_list = "SH"
+				flag = {
+					icon= {
+						category = "wg_event_flags"
+						file = "wge_flags_04.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "inverted_v.dds"
+					}
+					colors={
+						"red"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				name_list = "WGEVENT"
+				effect = {
+					set_graphical_culture = mammalian_01
+					save_global_event_target_as = WG_Khan_country
+					establish_communications_no_message = event_target:wg_Da_Khan_gate_country
+					every_playable_country = {
+						establish_communications_no_message = PREV
+					}
+					if = {
+						limit = { exists = event_target:wg_Da_Khan_gate_country }
+						every_playable_country = {
+							set_faction_hostility = {
+								target = event_target:wg_Da_Khan_gate_country
+								set_neutral = no
+								set_hostile = yes
+							}
+						}
+						set_faction_hostility = {
+							target = event_target:wg_Da_Khan_gate_country
+							set_friendly = yes
+							set_hostile = no
+						}
+					}
+					every_country = {
+						limit = { 
+							OR = {
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+							}
+						}
+						add_modifier = { modifier = fe_damage_to_wg_khan days = -1 } # 给堕落加buff以免打不过
+					}
+					switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
+						trigger = has_global_flag
+						wg_crisis_very_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.6 }}
+						wg_crisis_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.8 }}
+						wg_crisis_normal = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.0 }}
+						wg_crisis_hard = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.3 }}
+						wg_crisis_insane = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.5 }}
+					}
+				}
+			}
+			create_country = {
+				name = "NAME_Khan_army_country"
+				type = faction
+				auto_delete = no
+				flag = {
+					icon= {
+						category = "wg_event_flags"
+						file = "wge_flags_04.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "inverted_v.dds"
+					}
+					colors={
+						"red"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					set_country_flag = wg_Khan_army_country_flag
+					set_faction_hostility = {
+						target = event_target:WG_Khan_country
+						set_friendly = yes
+						set_hostile = no
+					}
+					if = {
+						limit = { exists = event_target:wg_Da_Khan_gate_country }
+						set_faction_hostility = {
+							target = event_target:wg_Da_Khan_gate_country
+							set_friendly = yes
+							set_hostile = no
+						}
+					}
+					every_playable_country = {
+						establish_communications_no_message = PREV
+					}
+					save_global_event_target_as = wg_Khan_army_country
+				}
+			}
+		}
+	}
+}		
+#生成乌兰巴托
+country_event = {
+	id = wg_khan.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_Khan_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_Khan_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 50
+				max_distance = 70
+				initializer = wg_Da_Khan_gate_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+	}
+}
+#中期5年触发
+event = {
+	id = wg_khan.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_crisis_active }
+		NOT = { has_global_flag = wg_khan_gate_main_fleet_defeated }
+		mid_game_years_passed >= 5
+		any_country = {
+			is_ai = no
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = wg_Da_Khan_gate_system_home }
+			save_global_event_target_as = WG_Khan_gate_system_target
+		}
+		every_playable_country = {
+			country_event = { id = wg_khan.4 }
+			country_event = { id = wg_khan.8 days = 180 }#第二波舰队
+			country_event = { id = wg_khan.9 days = 1620 }#BUFF1失效的嘲讽
+			country_event = { id = wg_khan.10 days = 2700 }#BUFF2失效的嘲讽
+			country_event = { id = wg_khan.11 days = 3780 }#BUFF3失效的嘲讽
+			country_event = { id = wg_khan.12 days = 4500 }#BUFF4失效的嘲讽+debuff
+			country_event = { id = wg_khan.13 days = 5580 }#BUFF5失效的嘲讽+debuff
+			country_event = { id = wg_khan.14 days = 7200 }#大可汗外部舰队豹毙
+		}
+		random_country = {
+			limit = {		
+				is_ai = no
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}		
+			}
+			country_event = { id = wg_khan.1 }
+			country_event = { id = wg_khan.7 days = 180 }#for test, should be 180 days
+		}
+	}
+}
+
+country_event = {
+	id = wg_khan.4
+	title = "wg_khan.4.name"
+	desc = "wg_khan.4.desc"
+	picture = GFX_evt_wg_khan
+	show_sound = event_ex_started
+	location = event_target:WG_Khan_gate_system_target
+
+	is_triggered_only = yes
+
+	after = {
+		begin_event_chain = {
+			event_chain = "wg_Khan_chain"
+			target = ROOT
+		}
+		hidden_effect = {
+			country_event = { id = wg_khan.5 }
+		}
+	}
+
+	option = {
+		name = wg_khan.4.a
+	}
+}
+
+country_event = {
+	id = wg_khan.5
+	title = "wg_khan.5.name"
+	desc = "wg_khan.5.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		establish_communications_no_message = event_target:WG_Khan_country
+	}
+
+	option = {
+		name = wg_khan.5.a
+        trigger = { 
+            has_authority = auth_shenhai
+		}
+	}
+	option = {
+		name = wg_khan.5.b
+        trigger = { 
+            has_authority = auth_warshipgirls
+		}
+	}
+	option = {
+		name = wg_khan.5.c
+        trigger = { 
+            NOR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+        }		
+	}
+}
+#与大可汗通讯
+country_event = {
+	id = wg_khan.6
+	title = "WG_Khan_name"
+
+    desc = {
+        # 普通帝国
+        text = wg_khan.6.desc_01
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+    desc = {
+        # 舰娘政体
+        text = wg_khan.6.desc_02
+        trigger = {
+			NOT = { has_country_flag = subject_to_Khan }
+			has_authority = auth_warshipgirls
+		}
+    }
+    desc = {
+        # 深海政体
+        text = wg_khan.6.desc_03
+        trigger = {
+			NOT = { has_country_flag = subject_to_Khan }
+			has_authority = auth_shenhai
+		}
+	}
+	desc = {
+        # 舰娘政体
+        text = wg_khan.6.desc_04
+        trigger = {
+			has_country_flag = subject_to_Khan
+			has_authority = auth_warshipgirls
+		}
+    }
+    desc = {
+        # 深海政体
+        text = wg_khan.6.desc_05
+        trigger = {
+			has_country_flag = subject_to_Khan
+			has_authority = auth_shenhai
+		}
+    }
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+
+	is_triggered_only = yes
+
+    trigger = {
+		FROM = {
+			is_country_type = wg_Khan_country_type
+		}
+		has_global_flag = wg_khan_crisis_active
+	}
+
+    option = {
+        # 普通帝国
+        name = wg_khan.6.a
+		is_dialog_only = yes
+        response_text = wg_khan.6.a.response
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+	option = {
+        # 普通帝国
+        name = wg_khan.6.b
+		is_dialog_only = yes
+        response_text = wg_khan.6.b.response
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+	option = {
+        # 普通帝国
+        name = wg_khan.6.c
+		is_dialog_only = yes
+        response_text = wg_khan.6.c.response
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+    }
+	option = {
+        # 普通帝国
+        name = wg_khan.6.d
+        response_text = wg_khan.6.d.response
+        trigger = {
+			NOR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+		default_hide_option = yes
+    }
+
+    option = {
+        # 舰娘
+        name = wg_khan.6.e
+        is_dialog_only = yes
+        response_text = wg_khan.6.e.response
+        trigger = {
+			has_authority = auth_warshipgirls
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 舰娘
+        name = wg_khan.6.f
+        is_dialog_only = yes
+        response_text = wg_khan.6.f.response
+        trigger = {
+			has_authority = auth_warshipgirls
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 舰娘
+        name = wg_khan.6.g
+        is_dialog_only = yes
+        response_text = wg_khan.6.g.response
+        trigger = {
+			has_authority = auth_warshipgirls
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 舰娘
+        name = wg_khan.6.h
+        response_text = wg_khan.6.h.response
+        trigger = {
+			has_authority = auth_warshipgirls
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+		default_hide_option = yes
+    }
+
+    option = {
+        # 深海
+        name = wg_khan.6.i
+        is_dialog_only = yes
+        response_text = wg_khan.6.i.response
+        trigger = {
+			has_authority = auth_shenhai
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+
+    option = {
+        # 深海
+        name = wg_khan.6.j
+        is_dialog_only = yes
+        response_text = wg_khan.6.j.response
+        trigger = {
+			has_authority = auth_shenhai
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 深海
+        name = wg_khan.6.k
+        is_dialog_only = yes
+        response_text = wg_khan.6.k.response
+        trigger = {
+			has_authority = auth_shenhai
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 深海
+        name = wg_khan.6.l
+        response_text = wg_khan.6.l.response
+        trigger = {
+			has_authority = auth_shenhai
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+		default_hide_option = yes
+	}
+	option = {
+        # 深海
+        name = wg_khan.6.m
+        trigger = {
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+			NOR = { 
+				has_country_flag = subject_to_Khan
+				has_country_flag = subject_to_Khan_once
+			}
+		}
+		country_event = { id = wg_khan.28 }
+	}
+	
+	option = {
+        # 舰娘
+		name = wg_khan.6.s.a
+		trigger = {
+			has_authority = auth_warshipgirls
+			has_country_flag = subject_to_Khan
+		}
+		response_text = wg_khan.6.s.a.response
+		is_dialog_only = yes
+	}
+	option = {
+        # 深海
+        name = wg_khan.6.s.b
+		response_text = wg_khan.6.s.b.response
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = subject_to_Khan
+		}
+		is_dialog_only = yes
+	}
+	option = {
+        # 问GALO的事情
+        name = wg_khan.6.s.c
+		response_text = wg_khan.6.s.c.response
+		trigger = {
+			has_country_flag = subject_to_Khan
+		}
+		is_dialog_only = yes
+	}
+	option = {
+        # 舰娘
+		name = wg_khan.6.s.d
+		trigger = {
+			any_owned_leader = {
+				has_leader_flag = badseal_flag
+			}
+			has_country_flag = subject_to_Khan
+		}
+		hidden_effect = {
+			set_global_flag = badseal_debuff
+			random_owned_leader = {
+				limit = { has_leader_flag = badseal_flag }
+				kill_leader = {
+					show_notification = yes
+				}
+			}
+		}
+		custom_tooltip = wg_khan.6.s.d.tooltip
+		response_text = wg_khan.6.s.d.response
+	}
+	option = {
+        # 舰娘
+		name = wg_khan.6.s.e
+		trigger = {
+			has_authority = auth_warshipgirls
+			has_country_flag = subject_to_Khan
+		}
+		response_text = wg_khan.6.s.e.response
+		hidden_effect = {
+			remove_country_flag = subject_to_Khan
+			set_faction_hostility = {
+				target = event_target:WG_Khan_country
+				set_hostile = yes
+				set_neutral = no
+			}
+			if = {
+				limit = { exists = event_target:wg_Da_Khan_gate_country }
+				set_faction_hostility = {
+					target = event_target:wg_Da_Khan_gate_country
+					set_hostile = yes
+					set_neutral = no
+				}
+			}
+		}
+	}
+	option = {
+        # 深海
+        name = wg_khan.6.s.f
+		response_text = wg_khan.6.s.f.response
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = subject_to_Khan
+		}
+		hidden_effect = {
+			remove_country_flag = subject_to_Khan
+			set_faction_hostility = {
+				target = event_target:WG_Khan_country
+				set_hostile = yes
+				set_neutral = no
+			}
+			if = {
+				limit = { exists = event_target:wg_Da_Khan_gate_country }
+				set_faction_hostility = {
+					target = event_target:wg_Da_Khan_gate_country
+					set_hostile = yes
+					set_neutral = no
+				}
+			}
+		}
+	}
+	option = {
+		name = wg_khan.6.s.g
+		response_text = wg_khan.6.s.g.response
+		trigger = {
+			has_country_flag = subject_to_Khan
+		}
+		default_hide_option = yes
+	}
+}
+#第二波舰队
+country_event = {
+	id = wg_khan.7
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = wg_khan_crisis_second_fleet_arrive
+		switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
+			trigger = has_global_flag
+				wg_crisis_very_easy = { create_wg_Khan_second_wave_fleets = { DIFF_MULT = 0.6 }}
+				wg_crisis_easy = { create_wg_Khan_second_wave_fleets = { DIFF_MULT = 0.8 }}
+				wg_crisis_normal = { create_wg_Khan_second_wave_fleets = { DIFF_MULT = 1.0 }}
+				wg_crisis_hard = { create_wg_Khan_second_wave_fleets = { DIFF_MULT = 1.3 }}
+				wg_crisis_insane = { create_wg_Khan_second_wave_fleets = { DIFF_MULT = 1.5 }}
+		}
+	}
+}
+
+country_event = {
+	id = wg_khan.8
+	title = "WG_Khan_name"
+	desc = "wg_khan.8.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_khan.8.a
+	}
+}
+
+#可汗debuff提醒
+country_event = {
+	id = wg_khan.9
+	title = "wg_khan.9.name"
+	desc = "wg_khan.9.desc"
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	option = {
+		name = wg_khan.9.a
+	}
+}
+country_event = {
+	id = wg_khan.10
+	title = "wg_khan.10.name"
+	desc = "wg_khan.10.desc"
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	option = {
+		name = wg_khan.10.a
+	}
+}
+country_event = {
+	id = wg_khan.11
+	title = "wg_khan.11.name"
+	desc = "wg_khan.11.desc"
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	option = {
+		name = wg_khan.11.a
+	}
+}
+country_event = {
+	id = wg_khan.12
+	title = "wg_khan.12.name"
+	desc = "wg_khan.12.desc"
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	option = {
+		name = wg_khan.12.a
+		every_country = {
+			limit = {
+				is_country_type = wg_Khan_country_type
+				NOT = { has_modifier = "wg_khan_gate_debuff1" }
+			}
+			add_modifier = {
+				modifier = "wg_khan_gate_debuff1" 	
+				days = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_khan.13
+	title = "wg_khan.13.name"
+	desc = "wg_khan.13.desc"
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	option = {
+		name = wg_khan.13.a
+		every_country = {
+			limit = {
+				is_country_type = wg_Khan_country_type
+				NOT = { has_modifier = "wg_khan_gate_debuff2" }
+			}
+			add_modifier = {
+				modifier = "wg_khan_gate_debuff2" 	
+				days = -1
+			}
+		}
+	}
+}
+#20年后大可汗豹毙
+country_event = {
+	id = wg_khan.14
+	title = "wg_khan.14.name"
+	desc = "wg_khan.14.desc"
+	picture = GFX_evt_exploding_ship
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
+	immediate = {
+		set_global_flag = wg_khan_gate_fleet_defeated
+		every_playable_country = {
+			country_event = { id = wg_khan.16 days = 10 }
+		}
+		every_playable_country = {
+			limit = { has_country_flag = subject_to_Khan }
+			remove_country_flag = subject_to_Khan
+		}
+		every_country = {
+			limit = {
+				has_country_flag = wg_Da_Khan_gate_drone_country_flag
+			}
+			destroy_country = yes
+		}		
+	}
+	option = {
+		name = wg_khan.14.a
+		owner = {
+			add_resource = { unity = 2000 }
+		}
+		every_country = {
+			limit = { is_country_type = wg_Khan_country_type }
+			every_owned_fleet = {
+				delete_fleet = this
+			}
+			destroy_country = yes
+		}
+	}
+}
+
+country_event = { 
+	id = wg_khan.15
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = wg_khan_crisis_second_fleet_arrive
+		event_target:WG_Khan_country = {
+            count_owned_ship = {
+                count < 1
+            }
+        }
+	}
+	immediate = {
+		every_playable_country = {
+			country_event = { id = wg_khan.16 }
+		}
+	}
+}	
+
+country_event = {
+	id = wg_khan.16
+	title = "wg_khan.16.name"
+	desc = "wg_khan.16.desc"
+	picture = GFX_evt_small_space_battle
+
+	is_triggered_only = yes
+	immediate = {
+        owner = {
+			capital_scope = {
+		    	planet_event = { id = wg_khan.17 days = 10 }
+			}	
+		}
+		every_country = {
+			limit = {
+				is_country_type = wg_Khan_country_type	
+			}
+			destroy_country = yes
+		}
+		every_country = {
+			limit = {
+				has_country_flag = wg_Da_Khan_gate_drone_country_flag
+			}
+			destroy_country = yes
+		}
+	}
+	option = {
+		name = wg_khan.16.a
+		owner = {
+			add_resource = { unity = 4000 }
+			add_resource = { influence = 200 }
+		}
+		set_global_flag = wg_khan_gate_fleet_defeated
+	}
+}
+
+######################################
+#第二阶段
+planet_event = {
+	id = wg_khan.17
+	title = "wg_khan.17.name"
+	desc = "wg_khan.17.desc"
+	picture = GFX_evt_drifting_gateway
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_khan.17.a
+		enable_special_project = {
+			name = "wg_khan_getway"
+			location = this
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = wg_khan.18
+	title = "wg_khan.18.name"
+	desc = "wg_khan.18.desc"
+	picture = GFX_evt_l-gateway
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_khan.18.a
+		set_country_flag = wg_khan_can_pass_by
+		hidden_effect = {
+			country_event = { id = wg_khan.19 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_khan.19
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_spawn_system_batch = begin
+		set_global_flag = wg_khan_home_active
+		no_scope = {
+			# makes system positions originate from galactic core
+			#set_spawn_system_batch = begin
+			# batch-processes the spawn_system effects between "begin" and "end",
+			# so caches are recalculated only once rather than for every system spawned
+			spawn_system = {
+				min_distance >= 500
+				max_distance <= 505
+				min_orientation_angle = 280
+				max_orientation_angle = 290
+				initializer = "wg_Da_Khan_system"
+				hyperlane = no
+			}
+		}
+		set_spawn_system_batch = end
+	}	
+}
+# #这个事件废弃
+# country_event = { 
+# 	id = wg_khan.20
+# 	hide_window = yes
+# 	is_triggered_only = yes
+
+# 	trigger = {
+# 		has_global_flag = wg_khan_home_active
+# 		event_target:wg_Da_Khan_home_country = {
+#             count_owned_ship = {
+#                 count < 1
+#             }
+#         }
+# 	}
+# 	immediate = {
+# 		every_playable_country = {
+# 			country_event = { id = wg_khan.21 }
+# 		}
+# 		every_playable_country = {
+# 			limit = {
+# 				has_event_chain = wg_Khan_chain
+# 			}
+# 		}
+# 		end_event_chain = wg_Khan_chain
+# 	}
+# }
+#通知所有人
+country_event = {
+	id = wg_khan.21
+	title = "wg_khan.21.name"
+	desc = "wg_khan.21.desc"
+	picture = GFX_evt_small_space_battle
+
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = wg_khan_killer }
+	}
+	option = {
+		name = wg_khan.21.a
+	}
+}
+#可汗击杀者
+country_event = {
+	id = wg_khan.22
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_khan_fleet
+		}
+	}
+	immediate = {
+		FROM = { 
+			set_country_flag = wg_khan_killer
+			save_global_event_target_as = WG_Khan_killer_country
+			country_event = { id = wg_khan.23 }
+		}
+		set_global_flag = wg_khan_main_fleet_defeated
+		random_country = {
+			limit = {
+				has_country_flag = wg_Da_Khan_home_country_flag	
+			}
+			destroy_country = yes
+		}
+	}	
+}
+#击杀者奖励
+country_event = {
+	id = wg_khan.23
+	title = "wg_khan.23.name"
+	picture = GFX_evt_space_funeral
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = wg_khan_killer
+	}
+	desc = {
+        trigger = {
+            OR = {
+                has_authority = auth_warshipgirls
+            }
+        }
+        text = wg_khan.23.desc.a
+    }
+	desc = {
+        trigger = {
+            OR = {
+                has_authority = auth_shenhai
+            }
+        }
+        text = wg_khan.23.desc.b
+    }
+	desc = {
+        trigger = {
+            NOR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+        }
+        text = wg_khan.23.desc.c
+    }
+	after = {
+		hidden_effect = {
+			every_playable_country = {
+				country_event = { id = wg_khan.21 days = 10 }
+				country_event = { id = wg_khan.120 days = 11 }
+			}
+			every_playable_country = {
+				limit = {
+					has_event_chain = wg_Khan_chain
+				}
+				end_event_chain = wg_Khan_chain
+			}
+		}	
+	}
+	option = {
+		name = wg_khan.23.a
+		end_event_chain = wg_Khan_chain
+		owner = {
+			add_resource = { 
+				influence = 200 
+				sr_pantsu = 2
+			}
+		}
+		change_variable = { which = rankpts value = 20 }
+        trigger = { 
+            has_authority = auth_warshipgirls
+		}
+	}
+	option = {
+		name = wg_khan.23.b
+		end_event_chain = wg_Khan_chain
+		owner = {
+			add_resource = { 
+				influence = 200 
+			}
+		}
+		change_variable = { which = rankpts value = 20 }
+        trigger = { 
+            has_authority = auth_shenhai
+		}
+	}
+	option = {
+		name = wg_khan.23.c
+		end_event_chain = wg_Khan_chain
+		owner = {
+			add_resource = { influence = 500 }
+		}
+        trigger = { 
+            NOR = {
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
+            }
+        }		
+	}
+}	
+
+#乌兰X托管理员舰队被击杀
+country_event = {
+	id = wg_khan.24
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_Da_Khan_gate_main_fleet
+		}
+	}
+	immediate = {
+		FROM = { 
+			country_event = { id = wg_khan.27 days = 30 }
+		}
+		set_global_flag = wg_khan_gate_main_fleet_defeated
+	}	
+}	
+
+ship_event = {
+	id = wg_khan.25
+	title = "wg_khan.25.name"
+	desc = "wg_khan.25.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station
+	fire_only_once = yes
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_Da_Khan_gate_system_home
+		}
+		NOT = { owner = { has_country_flag = triggered_wg_khan_drone_event }}
+	}
+
+	immediate = {	
+		owner = { set_country_flag = triggered_wg_khan_drone_event }
+	}
+
+	option = {
+		name = "wg_khan.25.a"		
+	}
+}
+
+ship_event = {
+	id = wg_khan.26
+	title = "WG_Khan_name"
+	desc = "wg_khan.26.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+	trigger = {
+		FROM = {
+			has_star_flag = wg_Da_Khan_system_home
+		}
+		NOT = { owner = { has_global_flag = triggered_wg_khan_home_event }}
+	}
+	immediate = {	
+		owner = { set_country_flag = triggered_wg_khan_home_event }
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_khan.26.a
+	}
+}
+#第二激活事件
+country_event = {
+	id = wg_khan.27
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = wg_khan_crisis_active }
+		has_global_flag = wg_khan_gate_main_fleet_defeated
+	}
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = wg_Da_Khan_gate_system_home }
+			save_global_event_target_as = WG_Khan_gate_system_target
+		}
+		every_playable_country = {
+			country_event = { id = wg_khan.4 }
+			country_event = { id = wg_khan.8 days = 180 }#第二波舰队
+			country_event = { id = wg_khan.9 days = 1620 }#BUFF1失效的嘲讽
+			country_event = { id = wg_khan.10 days = 2700 }#BUFF2失效的嘲讽
+			country_event = { id = wg_khan.11 days = 3780 }#BUFF3失效的嘲讽
+			country_event = { id = wg_khan.12 days = 4500 }#BUFF4失效的嘲讽+debuff
+			country_event = { id = wg_khan.13 days = 5580 }#BUFF5失效的嘲讽+debuff
+			country_event = { id = wg_khan.14 days = 7200 }#大可汗外部舰队豹毙
+		}
+		random_country = {
+			limit = {		
+				is_ai = no
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}		
+			}
+			country_event = { id = wg_khan.1 }
+			country_event = { id = wg_khan.7 days = 180 }#for test, should be 180 days
+		}
+	}
+}	
+
+country_event = {
+	id = wg_khan.28
+	title = "WG_Khan_name"
+	desc = "wg_khan.28.desc"
+	diplomatic = yes
+	force_open = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+
+	option = {
+		name = wg_khan.28.a
+		custom_tooltip = wg_khan.28.a.tooltip
+		response_text = wg_khan.28.a.response
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 3000 }
+			resource_stockpile_compare = { resource = consumer_goods value >= 2000 }
+			resource_stockpile_compare = { resource = food value >= 4000 }
+		}
+		add_resource = {
+			energy = -3000
+			consumer_goods = -2000
+			food = -4000
+		}
+		hidden_effect = {
+			set_country_flag = subject_to_Khan
+			set_country_flag = subject_to_Khan_once
+			set_faction_hostility = {
+				target = event_target:WG_Khan_country
+				set_hostile = no
+				set_neutral = yes
+			}
+			if = {
+				limit = { exists = event_target:wg_Da_Khan_gate_country }
+				set_faction_hostility = {
+					target = event_target:wg_Da_Khan_gate_country
+					set_hostile = no
+					set_neutral = yes
+				}
+			}
+			country_event = { id = wg_khan.29 days = 360 }
+		}
+	}
+
+	option = {
+		name = wg_khan.28.b
+		response_text = wg_khan.28.b.response
+		default_hide_option = yes
+	}
+
+}
+
+country_event = {
+	id = wg_khan.29
+	title = "WG_Khan_name"
+	desc = "wg_khan.29.desc"
+	diplomatic = yes
+	force_open = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_main_fleet_defeated }
+		has_country_flag = subject_to_Khan
+	}
+
+	immediate = {
+		change_variable = { which = years_be_khan_subject value = 1 }
+		get_digits = { ARRAY = YEARS TARGET = years_be_khan_subject }
+	}
+
+	after = {
+		hidden_effect = { remove_khan_variables = yes }
+	}
+
+	picture_event_data = {
+		room = "wg_Khan_room"
+	}
+
+	option = {
+		name = wg_khan.29.z
+		response_text = wg_khan.29.z.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = wg_khan.29.a
+		response_text = wg_khan.29.a.response
+		allow = {
+			NOT = { get_reqired_khan_tribute = { RESOURCE = energy BASE = 3000 SQE_COF = 0.8 MINUS_COF = 0.75 }}
+			NOT = { get_reqired_khan_tribute = { RESOURCE = food BASE = 4000 SQE_COF = 0.8 MINUS_COF = 0.75 }}
+			NOT = { get_reqired_khan_tribute = { RESOURCE = consumer_goods BASE = 2000 SQE_COF = 0.9 MINUS_COF = 0.8 }}
+		}
+		set_khan_tribute = { RESOURCE = energy BASE = 3000 SQE_COF = 0.8 MINUS_COF = 0.75 }
+		set_khan_tribute = { RESOURCE = food BASE = 4000 SQE_COF = 0.8 MINUS_COF = 0.75 }
+		set_khan_tribute = { RESOURCE = consumer_goods BASE = 2000 SQE_COF = 0.9 MINUS_COF = 0.8 }
+		hidden_effect = {
+			country_event = { id = wg_khan.29 days = 360 }
+		}
+	}
+
+	option = {
+		name = wg_khan.29.b
+		response_text = wg_khan.29.b.response
+		hidden_effect = {
+			remove_country_flag = subject_to_Khan
+			set_faction_hostility = {
+				target = event_target:WG_Khan_country
+				set_hostile = yes
+				set_neutral = no
+			}
+			if = {
+				limit = { exists = event_target:wg_Da_Khan_gate_country }
+				set_faction_hostility = {
+					target = event_target:wg_Da_Khan_gate_country
+					set_hostile = yes
+					set_neutral = no
+				}
+			}
+		}
+		default_hide_option = yes
+	}
+
+}
+###############################
+# 舰队行为
+###############################
+# country_event = {
+# 	id = wg_khan.100
+# 	hide_window = yes
+# 	is_triggered_only = yes
+
+# 	trigger = {
+# 		is_country_type = global_event
+# 	}
+
+# 	immediate = {
+# 		set_variable = { which = system_id value = 0 }
+# 		every_system = {
+# 			ROOT = { change_variable = { which = system_id value = 1 }}
+# 			set_variable = { which = system_id value = ROOT }
+# 			save_system = { ID = system_id }
+# 		}
+# 	}
+# }
+
+fleet_event = {
+	id = wg_khan.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = this
+		has_fleet_flag = Khan_attack_fleet
+		owner = { is_country_type = wg_Khan_country_type }
+		has_global_flag = wg_khan_crisis_active
+		NOT = { has_fleet_flag = orders_cooldown }
+	}
+
+	immediate = {
+		queue_actions = {
+			repeat = {
+				effect = {
+					id = wg_khan.100.e0
+					solar_system = { 
+						if = {
+							limit = { check_variable = { which = stacked_khan_fleet value > 0 }}
+							change_variable = { which = stacked_khan_fleet value = -1 }
+						}
+						remove_star_flag = target_system
+					}
+				}
+				find_closest_system = {
+					trigger = {
+						id = wg_khan.100.t1
+						OR = {
+							starbase = { has_starbase_size > starbase_outpost }
+							any_system_planet = {
+								OR = {
+									AND = {
+										exists = mining_station
+										mining_station = { exists = owner }
+									}
+									AND = {
+										exists = research_station
+										research_station = { exists = owner }
+									}
+									exists = observation_outpost_owner
+								}
+							}
+							any_system_planet = { 
+								has_owner = yes 
+								owner = { NOR = { 
+									is_country_type = primitive #不炸原始人
+									has_country_flag = subject_to_Khan
+								}}
+								check_variable = { which = wg_Khan_bombardment_stage value < 3 } 
+								NOT = { has_modifier = planet_Khan_occupied }
+							}
+						}
+						space_owner = {
+							NOR = {
+								has_country_flag = subject_to_Khan #国家已经投降
+								is_country_type = fallen_empire #不打堕落
+								is_country_type = awakened_fallen_empire
+							}
+						}
+						any_fleet_in_system = { NOT = { is_same_value = ROOT }}
+						has_access_fleet = event_target:WG_Khan_country
+						NOT = { has_star_flag = target_system }
+					}
+					found_system = {
+						effect = {
+							id = wg_khan.100.e1
+							set_timed_star_flag = { flag = target_system days = 180 }
+							change_variable = { which = stacked_khan_fleet value = 1 }
+						}
+						move_to = this
+						repeat = {
+							while = {
+								id = wg_khan.100.t2
+								any_system_planet = { 
+									has_owner = yes 
+									owner = { NOR = { 
+										is_country_type = primitive #不炸原始人
+										has_country_flag = subject_to_Khan
+									}}
+									check_variable = { which = wg_Khan_bombardment_stage value < 3 }
+									NOT = { has_modifier = planet_Khan_occupied }
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = wg_khan.100.t3
+									has_owner = yes
+									check_variable = { which = wg_Khan_bombardment_stage value < 3 }
+									owner = { NOR = { 
+										is_country_type = primitive #不炸原始人
+										has_country_flag = subject_to_Khan
+									}}
+									solar_system = { any_fleet_in_system = { 
+										is_same_value = ROOT
+									}}
+								}
+								found_planet = {
+									orbit_planet = this
+									effect = {
+										id = wg_khan.100.e2
+										ROOT = { set_fleet_flag = bombarding_planet }
+									}
+									repeat = {
+										while = {
+											id = wg_khan.100.t4
+											ROOT = { has_fleet_flag = bombarding_planet }
+										}
+										effect = {
+											id = wg_khan.100.e3
+											if = { # 星球被炸到没人或者国家已经投降，移除flag
+												limit = { 
+													OR = {
+														has_owner = no 
+														owner = { has_country_flag = subject_to_Khan }
+														has_modifier = planet_Khan_occupied
+													}
+												}
+												ROOT = { remove_fleet_flag = bombarding_planet }
+											}
+										}
+										wait = { duration = 5 }
+									}
+								}
+							}
+							repeat = {
+								while = {
+									id = wg_khan.100.t3.1
+									any_system_planet = { 
+										OR = {
+											AND = {
+												exists = mining_station
+												mining_station = { exists = owner }
+											}
+											AND = {
+												exists = research_station
+												research_station = { exists = owner }
+											}
+											exists = observation_outpost_owner
+										}
+									}
+									solar_system = { any_fleet_in_system = { 
+										is_same_value = ROOT
+									}}
+								}
+								find_closest_planet = {
+									trigger = {
+										id = wg_khan.100.t3.2
+										OR = {
+											AND = {
+												exists = mining_station
+												mining_station = { exists = owner }
+											}
+											AND = {
+												exists = research_station
+												research_station = { exists = owner }
+											}
+											exists = observation_outpost_owner
+										}
+										solar_system = { any_fleet_in_system = { 
+											is_same_value = ROOT
+										}}
+									}
+									found_planet = {
+										orbit_planet = this
+									}
+								}
+							}
+							move_to = this # move away from the planet
+							wait = { duration = 15 }
+						}
+						effect = {
+							id = wg_khan.100.e4
+							change_variable = { which = stacked_khan_fleet value = -1 }
+							ROOT = {
+								set_timed_fleet_flag = { flag = orders_cooldown days = 15 }
+							}
+						}
+					}
+					failed = {
+						find_closest_system = {
+							trigger = {
+								id = wg_khan.100.t5
+								has_access_fleet = event_target:WG_Khan_country
+								space_owner = {
+									NOR = {
+										has_country_flag = subject_to_Khan
+										is_country_type = fallen_empire
+										is_country_type = awakened_fallen_empire
+									}
+								}
+								check_variable = { which = stacked_khan_fleet value < 5 }
+							}
+							found_system = {
+								move_to = this
+								effect = {
+									id = wg_khan.100.e5
+									set_timed_star_flag = { flag = target_system days = 180 }
+									change_variable = { which = stacked_khan_fleet value = 1 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Colony Bombarded ( stage 1 )
+planet_event = {
+	id = wg_khan.101
+	title = "wg_khan.101.name"
+	picture = GFX_evt_wg_galofall
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = wg_Khan_bombardment_stage1_encountered }
+		}
+		text = "wg_khan.101.desc"
+	}
+	desc = {
+		trigger = {
+			has_country_flag = wg_Khan_bombardment_stage1_encountered
+		}
+		text = "wg_khan.101.desc.b"
+	}
+
+	trigger = {
+        planet_devastation >= 40
+		FROM = {
+			is_country_type = wg_Khan_country_type
+		}
+		check_variable = { which = wg_Khan_bombardment_stage value < 1 }
+	}
+
+	immediate = {
+		
+		change_variable = { which = wg_Khan_bombardment_stage value = 1 }
+		add_threat = { who = from amount = 1 }
+		while = { count = 10
+			create_army = {
+				name = "NAME_GALO_ARMY"
+				owner = event_target:WG_Khan_country
+				type = "galo_army"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = wg_crisis_hard
+					has_global_flag = wg_crisis_insane	
+				}
+			}
+			while = { count = 5
+				create_army = {
+					name = "NAME_GALO_ARMY"
+					owner = event_target:WG_Khan_country
+					type = "galo_army"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wg_khan.101.a
+		owner = {
+			set_country_flag = wg_Khan_bombardment_stage1_encountered
+		}
+	}
+}
+
+# Colony Bombarded ( stage 2 )
+planet_event = {
+	id = wg_khan.102
+	title = "wg_khan.101.name"
+	desc = "wg_khan.102.desc"
+	picture = GFX_evt_wg_galofall
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+
+
+	trigger = {
+        planet_devastation >= 70
+		FROM = {
+			is_country_type = wg_Khan_country_type
+		}
+		check_variable = { which = wg_Khan_bombardment_stage value = 1 }
+		NOT = { has_planet_flag = khan_invaded_succeed_flag }
+	}
+
+	immediate = {
+		change_variable = { which = wg_Khan_bombardment_stage value = 1 }
+		while = { count = 20
+			create_army = {
+				name = "NAME_GALO_ARMY"
+				owner = event_target:WG_Khan_country
+				type = "galo_army"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = wg_crisis_hard
+					has_global_flag = wg_crisis_insane	
+				}
+			}
+			while = { count = 3
+				create_army = {
+					name = "NAME_GALODAM_ARMY"
+					owner = event_target:WG_Khan_country
+					type = "Khan_galodam"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wg_khan.102.a
+	}
+}
+
+# Colony Bombarded ( stage 3 )
+planet_event = {
+	id = wg_khan.103
+	title = "wg_khan.103.name"
+	picture = GFX_evt_big_mushroom
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			owner = { NOT = { has_country_flag = wg_Khan_bombardment_stage3_encountered }}
+		}
+		text = "wg_khan.103.desc"
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = wg_Khan_bombardment_stage3_encountered }
+		}
+		text = "wg_khan.103.desc.b"
+	}
+
+	trigger = {
+		has_global_flag = wg_khan_crisis_active
+        planet_devastation >= 100
+		FROM = {
+			is_country_type = wg_Khan_country_type
+		}
+		check_variable = { which = wg_Khan_bombardment_stage value = 2 }
+		NOT = { has_planet_flag = khan_invaded_succeed_flag }
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = wg_Khan_bombardment_stage3_encountered
+		}
+		change_variable = { which = wg_Khan_bombardment_stage value = 1 }
+		every_fleet_in_orbit = {
+			limit = { has_fleet_flag = Khan_attack_fleet }
+			remove_fleet_flag = bombarding_planet
+		}
+		create_army = {
+			name = "NAME_OVO_BOSS_ARMY_KHAN"
+			owner = event_target:WG_Khan_country
+			type = "ovo_boss_army"
+		}
+		while = { count = 2
+			create_army = {
+				name = "NAME_GALODAM_ARMY"
+				owner = event_target:WG_Khan_country
+				type = "Khan_galodam"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = wg_crisis_hard
+					has_global_flag = wg_crisis_insane	
+				}
+			}
+			while = { count = 3
+				create_army = {
+					name = "NAME_GALODAM_ARMY"
+					owner = event_target:WG_Khan_country
+					type = "Khan_galodam"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wg_khan.103.a
+		owner = {
+			set_country_flag = wg_Khan_bombardment_stage3_encountered
+		}
+	}
+}
+
+# on_planet_attackers_win
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# 事件触发对象：带可汗空投陆军入侵成功 or 玩家夺回被带可汗占领的星球
+country_event = {
+	id = wg_khan.104
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = wg_khan_crisis_active
+		FROMFROM = { check_variable = { which = wg_Khan_bombardment_stage value > 0 }}
+		OR = {
+			is_country_type = wg_Khan_country_type # 可汗空投入侵玩家星球
+			FROMFROM.CONTROLLER = { 
+				has_country_flag = wg_Khan_army_country_flag #玩家入侵被可汗控制的星球
+			}
+		}
+	}
+
+	immediate = {
+		FROMFROM = { save_event_target_as = invaded_planet }
+		if = {
+			# 地面战失败
+			limit = { 
+				is_country_type = wg_Khan_country_type
+				FROMFROM = {
+					NOT = { has_modifier = planet_Khan_occupied }
+				}
+			}
+			FROM = {
+				country_event = { id = wg_khan.105 }
+				FROM = {
+					add_modifier = { modifier = "planet_Khan_occupied" days = -1}
+					planet_event = { id = wg_khan.106 days = 120 random = 180 }
+					set_timed_planet_flag = {
+						flag = khan_invaded_succeed_flag
+						days = 30
+					}		
+					every_fleet_in_orbit = {
+						limit = { has_fleet_flag = Khan_attack_fleet }
+						remove_fleet_flag = bombarding_planet
+					}
+				}
+			}
+			country_event = { id = wg_khan.109 days = 1 }
+		}
+		else = {
+			FROM = { # 地面战胜利
+				if = { # 夺回了星球
+					limit = { FROM = { has_modifier = planet_Khan_occupied }}
+					FROM = { set_variable = { which = wg_Khan_bombardment_stage value = 0 }}
+					country_event = { id = wg_khan.107 }
+				}
+			}
+		}
+	}
+}
+
+# 星球被带可汗入侵
+country_event = {
+	id = wg_khan.105
+	title = "wg_khan.105.name"
+	desc = "wg_khan.105.desc"
+	picture = GFX_evt_wg_ovo_ground_combat
+	show_sound = event_air_raid_siren
+	is_triggered_only = yes
+
+	option = {
+		name = "wsg.3040.a"
+		event_target:invaded_planet = {
+			add_planet_devastation = 100
+		}
+		tooltip = { add_modifier = { modifier = "planet_Khan_occupied" days = -1}}
+	}
+}
+
+# 每隔数个月狂暴galo造成破坏
+planet_event = {
+	id = wg_khan.106
+	title = "wg_khan.106.name"
+	desc = "wg_khan.106.desc"
+	picture = GFX_evt_wg_ovo_ground_combat
+	show_sound = event_air_raid_siren
+	is_triggered_only = yes
+
+	trigger = {
+		has_modifier = planet_Khan_occupied
+	}
+
+	immediate = {
+		if = {
+			limit = { has_owner = yes }
+			planet_event = { id = wg_khan.106 days = 120 random = 180 }
+		} else = {
+			remove_modifier = "planet_Khan_occupied"
+		}
+	}
+
+	option = {
+
+		name = UNFORTUNATE
+		add_planet_devastation = 100
+		random_list = {
+			3 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_city }
+				}
+				remove_district = district_city
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_rw_city }
+				}
+				remove_district = district_city
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_rw_sh_city }
+				}
+				remove_district = district_rw_sh_city
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_rw_wsg_city }
+				}
+				remove_district = district_rw_wsg_city
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_rw_wsg_city }
+				}
+				remove_district = district_rw_sh_alloys
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_generator }
+				}
+				remove_district = district_generator
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_generator_uncapped }
+				}
+				remove_district = district_generator_uncapped
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_mining }
+				}
+				remove_district = district_mining
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_mining_uncapped }
+				}
+				remove_district = district_mining_uncapped
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_farming }
+				}
+				remove_district = district_farming
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_farming_uncapped }
+				}
+				remove_district = district_farming_uncapped
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { has_district = district_arcology_wsg_housing }
+				}
+				remove_district = district_arcology_wsg_housing
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					count_owned_pop = {
+						count < 5
+						limit = { species = { 
+							NOR = {
+								has_trait = wsg_trait_warshipgirls
+								has_trait = wsg_trait_warshipgirls1
+								has_trait = wsg_trait_mist
+								has_trait = sh_trait_shenhai
+								has_trait = sh_trait_shenhai1
+								has_trait = sh_trait_shenhai3
+								has_trait = swg_trait_starshipgirls # 星战少女特质
+								has_trait = trait_very_strong
+							}
+						}}
+					}
+				}
+				random_owned_pop = { 
+					limit = {
+						species = { NOR = {
+							has_trait = wsg_trait_warshipgirls
+							has_trait = wsg_trait_warshipgirls1
+							has_trait = wsg_trait_mist
+							has_trait = sh_trait_shenhai
+							has_trait = sh_trait_shenhai1
+							has_trait = sh_trait_shenhai3
+							has_trait = swg_trait_starshipgirls # 星战少女特质
+							has_trait = trait_very_strong
+						}}
+					}
+					kill_pop = yes 
+				}
+				while = { count = 3
+					random_list = {
+						2 = { 
+							random_owned_pop = { 
+								limit = {
+									species = { NOR = {
+										has_trait = wsg_trait_warshipgirls
+										has_trait = wsg_trait_warshipgirls1
+										has_trait = wsg_trait_mist
+										has_trait = sh_trait_shenhai
+										has_trait = sh_trait_shenhai1
+										has_trait = sh_trait_shenhai3
+										has_trait = swg_trait_starshipgirls # 星战少女特质
+										has_trait = trait_very_strong
+									}}
+								}
+								kill_pop = yes 
+							}
+						}
+						3 = {}
+					}
+				}
+			}
+			8 = {
+				custom_tooltip = wg_khan.106.tooltip.a
+			} # nothing happened
+		}
+	}
+}
+
+# 夺回被带可汗入侵的星球
+country_event = {
+	id = wg_khan.107
+	title = "wg_khan.107.name"
+	desc = "wg_khan.107.desc"
+	picture = GFX_evt_wsg_ground_battle_victory
+	show_sound = event_ground_battle
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		event_target:invaded_planet = {
+			remove_modifier = "planet_Khan_occupied"
+		}
+	}
+}
+
+# 星球成功抵御带可汗入侵
+country_event = {
+	id = wg_khan.108
+	title = "wg_khan.108.name"
+	desc = "wg_khan.108.desc"
+	picture = GFX_evt_wsg_ground_battle_victory
+	show_sound = event_ground_battle
+	is_triggered_only = yes
+
+	option = {
+		name = wg_khan.108.a
+	}
+}
+
+# 将星球控制权移交陆军国家
+country_event = {
+	id = wg_khan.109
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_Khan_country_type
+	}
+
+	immediate = {
+		every_owned_army = {
+			limit = {
+				exists = planet
+				planet = { is_same_value = event_target:invaded_planet }
+			}
+			switch = {
+				trigger = army_type
+				galo_army = {
+					event_target:invaded_planet = {
+						create_army = {
+							name = "NAME_GALO_ARMY"
+							owner = event_target:wg_Khan_army_country
+							type = galo_army
+						}
+					}
+				}
+				Khan_galodam = {
+					event_target:invaded_planet = {
+						create_army = {
+							name = "NAME_GALODAM_ARMY"
+							owner = event_target:wg_Khan_army_country
+							type = Khan_galodam
+						}
+					}
+				}
+				ovo_boss_army = {
+					event_target:invaded_planet = {
+						create_army = {
+							name = "NAME_OVO_BOSS_ARMY_KHAN"
+							owner = event_target:wg_Khan_army_country
+							type = "ovo_boss_army"
+						}
+					}
+				}
+			}
+			remove_army = yes
+		}
+		event_target:invaded_planet = {
+			set_controller = event_target:wg_Khan_army_country # 将控制权移交给陆军国家
+		}
+	}
+}
+
+# on_planet_attackers_lose
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# 事件触发对象：星球防御带可汗陆军成功
+country_event = {
+	id = wg_khan.110
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_Khan_country_type
+		FROMFROM = {
+			check_variable = { which = wg_Khan_bombardment_stage value > 2 }
+		}
+	}
+
+	immediate = {
+		FROM = {
+			country_event = { id = wg_khan.108 }
+			FROM = { # 一年后带可汗会再次攻击这个球
+				planet_event = { id = wg_khan.111 days = 360 }
+			}
+		}
+	}
+}
+
+# 将轰炸阶段设置回初始让带可汗舰队再次攻击该星球
+planet_event = {
+	id = wg_khan.111
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { which = wg_Khan_bombardment_stage value = 0 }
+	}
+}
+
+# 旧档补刷乌兰X托
+event = {
+	id = wg_khan.1000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_Khan_created }
+		mid_game_years_passed < 4
+		any_country = {
+			is_ai = no
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+	immediate = {
+		random_system = {
+			set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
+		}
+		country_event = { id = wg_khan.2 }#大可汗
+	}
+}
+
+country_event = {
+	id = wg_khan.120
+	title = "wg_khan.120.name"
+	desc = "wg_khan.120.desc"
+	picture = GFX_evt_galo_pop
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_planet = {
+			has_modifier = planet_Khan_occupied
+		}
+	}
+
+	immediate = {
+		event_target:WG_Khan_country = {
+			every_owned_army = {
+				remove_army = yes
+			}
+		}
+	}
+	after = {
+		event_target:WG_Khan_country = {
+			destroy_country = yes
+		}
+		event_target:WG_Khan_army_country = {
+			destroy_country = yes
+		}
+	}
+
+	option = {
+		name = wg_khan.120.a
+		custom_tooltip = wg_khan.120.a.tooltip
+		hidden_effect = { 
+			every_owned_planet = {
+				limit = { has_modifier = planet_Khan_occupied }
+				remove_modifier = planet_Khan_occupied
+				ROOT = {
+					add_resource = { food = 1000 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1.5
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+	option = {
+		name = wg_khan.120.b
+		custom_tooltip = wg_khan.120.b.tooltip
+		hidden_effect = { 
+			random_owned_planet = {
+				limit = { has_modifier = planet_Khan_occupied }
+				create_species = {
+					name = "Galo"
+					class = MAM
+					portrait = wsggalo
+					traits = {
+						ideal_planet_class = "pc_ocean"
+						trait = trait_intelligent_galo
+						trait = trait_psionic
+					}
+					homeworld = this
+					effect = {
+						save_event_target_as = galo_species
+					}
+				}
+			}
+			every_owned_planet = {
+				limit = { has_modifier = planet_Khan_occupied }
+				remove_modifier = planet_Khan_occupied
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:galo_species
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1.5
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+}
+

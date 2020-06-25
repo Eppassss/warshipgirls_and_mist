@@ -111,13 +111,13 @@ fleet_event = {
 							#graphical_culture = ROOT
 						}
 						create_ship = {
-							name = "NAME_Combat_Drone3"
-							design = "NAME_Combat_Drone3"
+							name = "NAME_WG_EG_Corvette"
+							design = "NAME_WG_EG_Corvette"
 							#graphical_culture = ROOT
 						}
 						create_ship = {
-							name = "NAME_Combat_Drone3"
-							design = "NAME_Combat_Drone3"
+							name = "NAME_WG_EG_Corvette"
+							design = "NAME_WG_EG_Corvette"
 							#graphical_culture = ROOT
 						}							
 						set_location = {
@@ -260,8 +260,8 @@ fleet_event = {
 										while = {
 											count = 1
 											create_ship = {
-												name = "NAME_Combat_Drone3"
-												design = "NAME_Combat_Drone3"
+												name = "NAME_WG_EG_Corvette"
+												design = "NAME_WG_EG_Corvette"
 											}
 										}
 									}
@@ -269,8 +269,8 @@ fleet_event = {
 										while = {
 											count = 3
 											create_ship = {
-												name = "NAME_Combat_Drone3"
-												design = "NAME_Combat_Drone3"
+												name = "NAME_WG_EG_Corvette"
+												design = "NAME_WG_EG_Corvette"
 											}
 										}
 									}
@@ -316,8 +316,8 @@ fleet_event = {
 										while = {
 											count = 3
 											create_ship = {
-												name = "NAME_Combat_Drone3"
-												design = "NAME_Combat_Drone3"
+												name = "NAME_WG_EG_Corvette"
+												design = "NAME_WG_EG_Corvette"
 											}
 										}
 									}
@@ -325,8 +325,8 @@ fleet_event = {
 										while = {
 											count = 7
 											create_ship = {
-												name = "NAME_Combat_Drone3"
-												design = "NAME_Combat_Drone3"
+												name = "NAME_WG_EG_Corvette"
+												design = "NAME_WG_EG_Corvette"
 											}
 										}
 									}

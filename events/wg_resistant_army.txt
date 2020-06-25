@@ -119,12 +119,13 @@ country_event = {
                 set_friendly = yes
             }
         }
-        every_country = {
+        every_playable_country = {
             limit = { 
                 NOR = { 
                     is_country_type = wg_crisis_country
                     is_country_type = wg_resistant_army
                 }
+                is_ai = no
             }
             set_variable = { which = "reflesh_count" value = 10 } # 刷新将领次数
             establish_communications_no_message = event_target:wg_resistant_country
@@ -230,10 +231,7 @@ country_event = {
     # 普通帝国买船
     option = {
         trigger = {
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
             NOR = { 
                 check_variable = { which = "ra_fleet_cd1" value < 1 }
                 has_country_flag = fail_to_pay_fees
@@ -258,10 +256,7 @@ country_event = {
     # 舰娘/深海买船
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
             OR = {
                 check_variable = { which = "ra_fleet_cd1" value < 1 }
                 AND = {
@@ -289,10 +284,7 @@ country_event = {
     # 普通帝国买船CD
     option = {
         trigger = {
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
             check_variable = { which = "ra_fleet_cd1" value < 1 }
             NOT = { has_country_flag = fail_to_pay_fees }
             is_reach_ra_fleet_buy_limit = no
@@ -306,10 +298,7 @@ country_event = {
     # 不能买船
     option = {
         trigger = {
-            NOR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
             has_country_flag = fail_to_pay_fees
             is_reach_ra_fleet_buy_limit = no
             is_reach_ra_fleet_own_limit = no
@@ -322,10 +311,7 @@ country_event = {
     # 舰娘/深海买船CD
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
             check_variable = { which = "ra_fleet_cd1" value > 0 }
             OR = {
                 NOT = { has_country_flag = ra_vip }
@@ -343,10 +329,7 @@ country_event = {
     # 舰娘/深海买船CD2
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
             check_variable = { which = "ra_fleet_cd2" value > 0 }
             check_variable = { which = "ra_fleet_cd2" value < "ra_fleet_cd1" }
 		}
@@ -453,10 +436,7 @@ country_event = {
             is_reach_ra_leader_limit = yes
             OR = {
                 has_country_flag = ra_vip
-                NOR = {
-                    has_authority = auth_shenhai
-                    has_authority = auth_warshipgirls
-                }
+                has_wg_special_authority = no
             }
         }
         name = wg_crisis.23.d
@@ -469,10 +449,7 @@ country_event = {
         trigger = {
             is_reach_ra_leader_limit = yes
             NOT = { has_country_flag = ra_vip }
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
         }
         name = wg_crisis.23.d
         response_text = wg_crisis.23.d.response_3
@@ -486,10 +463,7 @@ country_event = {
                 has_country_flag = ra_vip
                 has_country_flag = fail_to_pay_vip
             }
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
         }
         name = wg_crisis.23.e
         hidden_effect = {
@@ -537,7 +511,30 @@ country_event = {
         }
         hidden_effect = {
             remove_country_flag = ra_vip
-            remove_modifier = ra_vip
+            remove_modifier = ra_vip_sh
+            remove_country_flag = ra_diplo_engaged
+        }
+    }
+
+    # 取消成为vip (星战舰娘)
+    option = {
+        trigger = {
+            has_country_flag = ra_vip
+            NOT = { has_country_flag = cancel_vip_cd }
+            has_authority = auth_starshipgirls
+        }
+        name = wg_crisis.23.f
+        response_text = wg_crisis.23.f.response
+        add_resource = {
+            energy = 10000
+            alloys = 10000
+            consumer_goods = 7500
+            sr_tibanna_swgs = -1500
+            sr_kyber_swgs = -500
+        }
+        hidden_effect = {
+            remove_country_flag = ra_vip
+            remove_modifier = ra_vip_swg
             remove_country_flag = ra_diplo_engaged
         }
     }
@@ -564,10 +561,7 @@ country_event = {
     # 非舰娘 普通难度
     desc = {
         trigger = {
-            NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
             has_global_flag = wg_crisis_easy
         }
         text = wg_crisis.24.desc.a.easy
@@ -575,58 +569,54 @@ country_event = {
     # 普通以上难度
     desc = {
         trigger = {
+            has_wg_special_authority = no
             NOR = {
-				has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
                 has_global_flag = wg_crisis_easy
             }
             check_variable = { which = "ra_fleet_count" value > 0 }
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.a.others
+        text = wg_crisis.24.desc.a
     }
     desc = { # 购买数0
         trigger = {
+            has_wg_special_authority = no
             NOR = {
-				has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
                 has_global_flag = wg_crisis_easy
                 check_variable = { which = "buy_ra_fleet_count" value > 0 }
             }
             check_variable = { which = "ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.a.others_buy0
+        text = wg_crisis.24.desc.a_buy0
     }
     desc = { # 持有数0
         trigger = {
+            has_wg_special_authority = no
             NOR = {
-				has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
                 has_global_flag = wg_crisis_easy
                 check_variable = { which = "ra_fleet_count" value > 0 }
             }
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.a.others_own0
+        text = wg_crisis.24.desc.a_own0
     }
     desc = { # 购买数0 持有数0
         trigger = {
+            has_wg_special_authority = no
             NOR = {
-				has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
                 has_global_flag = wg_crisis_easy
                 check_variable = { which = "ra_fleet_count" value > 0 }
                 check_variable = { which = "buy_ra_fleet_count" value > 0 }
             }
         }
-        text = wg_crisis.24.desc.a.others_buy0_own0
+        text = wg_crisis.24.desc.a_buy0_own0
     }
     # 舰娘非vip 普通难度
     desc = {
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             has_global_flag = wg_crisis_easy
         }
@@ -636,8 +626,8 @@ country_event = {
     desc = {
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -646,13 +636,13 @@ country_event = {
             check_variable = { which = "ra_fleet_count" value > 0 }
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others
+        text = wg_crisis.24.desc.b
     }
     desc = { # 购买数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -661,13 +651,13 @@ country_event = {
             }
             check_variable = { which = "ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others_buy0
+        text = wg_crisis.24.desc.b_buy0
     }
     desc = { # 持有数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -676,13 +666,13 @@ country_event = {
             }
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others_own0
+        text = wg_crisis.24.desc.b_own0
     }
     desc = { # 购买数0 持有数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -691,27 +681,27 @@ country_event = {
                 check_variable = { which = "buy_ra_fleet_count" value > 0 }
             }
         }
-        text = wg_crisis.24.desc.b.others_buy0_own0
+        text = wg_crisis.24.desc.b_buy0_own0
     }
     # vip
     desc = {
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOT = { has_global_flag = wg_crisis_easy }
             has_country_flag = ra_vip
             check_variable = { which = "ra_fleet_count" value > 0 }
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others_vip
+        text = wg_crisis.24.desc.b_vip
     }
     desc = { # 购买数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -720,13 +710,13 @@ country_event = {
             has_country_flag = ra_vip
             check_variable = { which = "ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others_vip_buy0
+        text = wg_crisis.24.desc.b_vip_buy0
     }
     desc = { # 持有数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -735,13 +725,13 @@ country_event = {
             has_country_flag = ra_vip
             check_variable = { which = "buy_ra_fleet_count" value > 0 }
         }
-        text = wg_crisis.24.desc.b.others_vip_own0
+        text = wg_crisis.24.desc.b_vip_own0
     }
     desc = { # 购买数0 持有数0
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+                has_authority = auth_warshipgirls
             }
             NOR = {
                 has_global_flag = wg_crisis_easy
@@ -750,15 +740,116 @@ country_event = {
             }
             has_country_flag = ra_vip
         }
-        text = wg_crisis.24.desc.b.others_vip_buy0_own0
+        text = wg_crisis.24.desc.b_vip_buy0_own0
+    }
+    # 星战舰娘非vip 普通难度
+    desc = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            has_global_flag = wg_crisis_easy
+        }
+        text = wg_crisis.24.desc.c.easy
+    }
+    # 星战舰娘非vip 普通以上难度
+    desc = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                has_country_flag = ra_vip 
+            }
+            check_variable = { which = "ra_fleet_count" value > 0 }
+            check_variable = { which = "buy_ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c
+    }
+    desc = { # 星战舰娘购买数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                has_country_flag = ra_vip 
+                check_variable = { which = "buy_ra_fleet_count" value > 0 }
+            }
+            check_variable = { which = "ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c_buy0
+    }
+    desc = { # 星战舰娘持有数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                has_country_flag = ra_vip 
+                check_variable = { which = "ra_fleet_count" value > 0 }
+            }
+            check_variable = { which = "buy_ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c_own0
+    }
+    desc = { # 星战舰娘购买数0 持有数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                has_country_flag = ra_vip 
+                check_variable = { which = "ra_fleet_count" value > 0 }
+                check_variable = { which = "buy_ra_fleet_count" value > 0 }
+            }
+        }
+        text = wg_crisis.24.desc.c_buy0_own0
+    }
+    # 星战舰娘vip
+    desc = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOT = { has_global_flag = wg_crisis_easy }
+            has_country_flag = ra_vip
+            check_variable = { which = "ra_fleet_count" value > 0 }
+            check_variable = { which = "buy_ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c_vip
+    }
+    desc = { # 星战舰娘购买数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                check_variable = { which = "buy_ra_fleet_count" value > 0 }
+            }
+            has_country_flag = ra_vip
+            check_variable = { which = "ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c_vip_buy0
+    }
+    desc = { # 星战舰娘持有数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                check_variable = { which = "ra_fleet_count" value > 0 }
+            }
+            has_country_flag = ra_vip
+            check_variable = { which = "buy_ra_fleet_count" value > 0 }
+        }
+        text = wg_crisis.24.desc.c_vip_own0
+    }
+    desc = { # 星战舰娘购买数0 持有数0
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOR = {
+                has_global_flag = wg_crisis_easy
+                check_variable = { which = "ra_fleet_count" value > 0 }
+                check_variable = { which = "buy_ra_fleet_count" value > 0 }
+            }
+            has_country_flag = ra_vip
+        }
+        text = wg_crisis.24.desc.c_vip_buy0_own0
     }
     # 其他帝国买船
     option = {
         trigger = {
-            NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
         }
         allow = {
             resource_stockpile_compare = { resource = alloys value >= 35000 }
@@ -867,6 +958,79 @@ country_event = {
         }
     }
 
+    # 星战舰娘买船
+    option = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            check_variable = { which = "ra_fleet_cd1" value < 1 }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = alloys value >= 30000 }
+            resource_stockpile_compare = { resource = energy value >= 10000 }
+            resource_stockpile_compare = { resource = sr_tibanna_swgs value >= 500 }
+            resource_stockpile_compare = { resource = sr_kyber_swgs value >= 200 }
+            custom_tooltip = {
+                is_reach_ra_fleet_buy_limit = no
+                fail_text = reach_ra_fleet_buy_limit
+            }
+            custom_tooltip = {
+                is_reach_ra_fleet_own_limit = no
+                fail_text = reach_ra_fleet_own_limit
+            }
+        }
+        name = wg_crisis.24.a
+        response_text = wg_crisis.24.a.response
+        add_resource = { 
+            alloys = -30000
+            energy = -10000
+            sr_tibanna_swgs = -500
+            sr_kyber_swgs = -200
+        }
+        hidden_effect = {
+            set_variable = { which = "ra_construct_cd1" value = 120 }
+            set_variable = { which = "ra_fleet_cd1" value = 1200 }
+            change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
+        }
+    }
+
+    # 星战舰娘买船(vip)
+    option = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            check_variable = { which = "ra_fleet_cd1" value > 0 }
+            check_variable = { which = "ra_fleet_cd2" value < 1 }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = alloys value >= 30000 }
+            resource_stockpile_compare = { resource = energy value >= 10000 }
+            resource_stockpile_compare = { resource = sr_tibanna_swgs value >= 500 }
+            resource_stockpile_compare = { resource = sr_kyber_swgs value >= 200 }
+            custom_tooltip = {
+                is_reach_ra_fleet_buy_limit = no
+                fail_text = reach_ra_fleet_buy_limit
+            }
+            custom_tooltip = {
+                is_reach_ra_fleet_own_limit = no
+                fail_text = reach_ra_fleet_own_limit
+            }
+        }
+        name = wg_crisis.24.a
+        response_text = wg_crisis.24.a.response
+        add_resource = { 
+            alloys = -30000
+            energy = -10000
+            sr_tibanna_swgs = -500
+            sr_kyber_swgs = -200
+        }
+        hidden_effect = {
+            set_variable = { which = "ra_construct_cd2" value = 120 }
+            set_variable = { which = "ra_fleet_cd2" value = 1200 }
+            change_variable = { which = "buy_ra_fleet_count" value = 1 }
+            remove_country_flag = ra_diplo_engaged
+        }
+    }
+
     # 分期付款买船
     option = {
         name = wg_crisis.24.b
@@ -915,10 +1079,7 @@ country_event = {
 
     desc = {
         trigger = {
-            NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+            has_wg_special_authority = no
         }
         text = wg_crisis.25.desc.a
     }
@@ -926,9 +1087,9 @@ country_event = {
     desc = {
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+                has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+            }
             NOT = { has_country_flag = ra_vip }
         }
         text = wg_crisis.25.desc.b
@@ -937,21 +1098,34 @@ country_event = {
     desc = {
         trigger = {
             OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+                has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+            }
             has_country_flag = ra_vip
         }
         text = wg_crisis.25.desc.c
     }
 
+    desc = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            NOT = { has_country_flag = ra_vip }
+        }
+        text = wg_crisis.25.desc.d
+    }
+
+    desc = {
+        trigger = {
+            has_authority = auth_starshipgirls
+            has_country_flag = ra_vip
+        }
+        text = wg_crisis.25.desc.e
+    }
+
     # 其他帝国
     option = {
         trigger = {
-            NOR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = no
         }
         allow = {
             custom_tooltip = {
@@ -977,10 +1151,7 @@ country_event = {
     # 舰娘
     option = {
         trigger = {
-            OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+            has_wg_special_authority = yes
             NOT = { has_country_flag = ra_vip }
             check_variable = { which = "ra_construct_cd1" value < 1 }
         }
@@ -996,7 +1167,12 @@ country_event = {
         }
         name = wg_crisis.25.a
         response_text = wg_crisis.25.a.response
-        add_modifier = { modifier = wg_pay_for_resistant_fleet days = 1500 }
+        if = {
+            limit = { has_authority = auth_starshipgirls } # 星战舰娘独特资源订单
+            add_modifier = { modifier = swg_pay_for_resistant_fleet days = 1500 }
+        } else = {
+            add_modifier = { modifier = wg_pay_for_resistant_fleet days = 1500 }
+        }
         hidden_effect = {
             set_variable = { which = "ra_construct_cd1" value = 720 }
             set_variable = { which = "ra_fleet_cd1" value = 1800 }
@@ -1008,10 +1184,7 @@ country_event = {
     # 舰娘(vip，订单1)
     option = {
         trigger = {
-            OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+            has_wg_special_authority = yes
             has_country_flag = ra_vip
             check_variable = { which = "ra_construct_cd1" value < 1 }
         }
@@ -1027,7 +1200,12 @@ country_event = {
         }
         name = wg_crisis.25.a
         response_text = wg_crisis.25.a.response
-        add_modifier = { modifier = vip_pay_for_resistant_fleet days = 1500 }
+        if = {
+            limit = { has_authority = auth_starshipgirls } # 星战舰娘独特资源订单
+            add_modifier = { modifier = swg_vip_pay_for_resistant_fleet days = 900 }
+        } else = {
+            add_modifier = { modifier = vip_pay_for_resistant_fleet days = 900 }
+        }
         hidden_effect = {
             set_variable = { which = "ra_construct_cd1" value = 600 }
             set_variable = { which = "ra_fleet_cd1" value = 1320 }
@@ -1039,10 +1217,7 @@ country_event = {
     # 舰娘(vip，订单2)
     option = {
         trigger = {
-            OR = {
-				has_authority = auth_shenhai
-				has_authority = auth_warshipgirls
-			}
+            has_wg_special_authority = yes
             has_country_flag = ra_vip
             check_variable = { which = "ra_construct_cd1" value > 0 }
             check_variable = { which = "ra_construct_cd2" value < 1 }
@@ -1059,7 +1234,12 @@ country_event = {
         }
         name = wg_crisis.25.a
         response_text = wg_crisis.25.a.response
-        add_modifier = { modifier = vip_pay_for_resistant_fleet days = 900 }
+        if = {
+            limit = { has_authority = auth_starshipgirls }
+            add_modifier = { modifier = swg_vip_pay_for_resistant_fleet days = 900 }
+        } else = {
+            add_modifier = { modifier = vip_pay_for_resistant_fleet days = 900 }
+        }
         hidden_effect = {
             set_variable = { which = "ra_construct_cd2" value = 600 }
             set_variable = { which = "ra_fleet_cd2" value = 1320 }
@@ -1662,6 +1842,19 @@ country_event = {
                     resource_stockpile_compare = { resource = sr_se value <= 0 }
                 }
             }
+            AND = { # 星战舰娘独特资源
+                OR = {
+                    has_modifier = swg_pay_for_resistant_fleet
+                    has_modifier = ra_vip_swg
+                }
+                OR = {
+                    resource_stockpile_compare = { resource = alloys value <= 0 }
+                    resource_stockpile_compare = { resource = energy value <= 0 }
+                    resource_stockpile_compare = { resource = consumer_goods value <= 0 }
+                    resource_stockpile_compare = { resource = sr_tibanna_swgs value <= 0 }
+                    resource_stockpile_compare = { resource = sr_kyber_swgs value <= 0 }
+                }
+            }
         }
         NOT = { has_country_flag = fail_to_pay_fees }
     }
@@ -1670,10 +1863,7 @@ country_event = {
         set_country_flag = fail_to_pay_fees
         if = {
             limit = {
-                OR = {
-                    has_authority = auth_shenhai
-                    has_authority = auth_warshipgirls
-                }
+                has_wg_special_authority = yes
             }
             remove_modifier = wg_pay_for_resistant_fleet
             if = {
@@ -1697,6 +1887,7 @@ country_event = {
                     OR = { 
                         has_modifier = ra_vip
                         has_modifier = ra_vip_sh 
+                        has_modifier = ra_vip_swg
                     }
                 }
                 remove_country_flag = ra_vip
@@ -1809,10 +2000,7 @@ country_event = {
 
     option = {
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_wg_special_authority = yes
             has_country_flag = fail_to_pay_vip
         }
         name = wg_crisis.36.c
@@ -1899,6 +2087,32 @@ country_event = {
             sr_se = 1500
         }
     }
+
+    option = { #星战舰娘欠款补偿金
+        trigger = { has_authority = auth_starshipgirls }
+        name = wg_crisis.27.a
+        response_text = wg_crisis.27.a.response
+        remove_modifier = ra_vip_swg
+        if = {
+            limit = { has_modifier = swg_vip_pay_for_resistant_fleet }
+            while = { count = 2
+                remove_modifier = swg_vip_pay_for_resistant_fleet
+            }
+        }
+        if = {
+            limit = { has_modifier = swg_pay_for_resistant_fleet }
+            while = { count = 2
+                remove_modifier = swg_pay_for_resistant_fleet
+            }
+        }
+        add_resource = {
+            energy = 15000
+            alloys = 15000
+            consumer_goods = 10000
+            sr_tibanna_swgs = 3000
+            sr_kyber_swgs = 1500
+        }
+    }
 }
 
 # 反抗军攻击传送门
@@ -1966,6 +2180,10 @@ country_event = {
         trigger = { has_authority = auth_shenhai }
         text = wg_crisis.38.desc_2
     }
+    desc = {
+        trigger = { has_authority = auth_starshipgirls }
+        text = wg_crisis.38.desc_3
+    }
 
     diplomatic = yes
 	force_open = yes
@@ -1999,6 +2217,18 @@ country_event = {
     }
 
     option = {
+        trigger = { has_authority = auth_starshipgirls }
+        name = wg_crisis.38.a
+        add_modifier = { modifier = ra_vip_swg days = -1 }
+        response_text = wg_crisis.38.a.response
+        hidden_effect = { 
+            set_country_flag = ra_vip
+            set_timed_country_flag = { flag = cancel_vip_cd days = 1440 }
+        }
+        remove_country_flag = ra_diplo_engaged
+    }
+
+    option = {
         trigger = { has_authority = auth_warshipgirls }
         name = wg_crisis.38.b
         hidden_effect = { remove_country_flag = ra_diplo_engaged }
@@ -2008,6 +2238,13 @@ country_event = {
     option = {
         trigger = { has_authority = auth_shenhai }
         name = wg_crisis.38.c
+        hidden_effect = { remove_country_flag = ra_diplo_engaged }
+        default_hide_option = yes
+    }
+
+    option = {
+        trigger = { has_authority = auth_starshipgirls }
+        name = wg_crisis.38.d
         hidden_effect = { remove_country_flag = ra_diplo_engaged }
         default_hide_option = yes
     }
@@ -2106,7 +2343,8 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = ra_vip
 			remove_modifier = ra_vip
-			remove_modifier = ra_vip_sh
+            remove_modifier = ra_vip_sh
+            remove_modifier = ra_vip_swg
 		}
 	}
     
@@ -3128,6 +3366,7 @@ country_event = {
     is_triggered_only = yes
 
     trigger = {
+        exists = FROM
         FROM = { has_leader_flag = ra_admiral }
     }
 

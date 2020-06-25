@@ -1,4 +1,6 @@
 ﻿SH = {
+	randomized = no
+    language = "l_simp_chinese"
 	ship_names = {
 		generic = {
 			深海飞船Α 深海飞船Β 深海飞船Г 深海飞船Δ 深海飞船Ε 深海飞船Ζ

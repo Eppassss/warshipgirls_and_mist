@@ -3,7 +3,11 @@ sound = {
 	file = "event/wg_wedding.wav"
 	volume = 0.5
 }
-
+sound = {
+	name = "event_wg_lightning"
+	file = "event/wg_lightning.wav"
+	volume = 0.5
+}
 sound = {
 	name = "event_shimakaze_first_meet"
 	file = "event/wg_shimakaze_meet.wav"

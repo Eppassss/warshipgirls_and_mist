@@ -22,10 +22,465 @@ wg_Da_Khan_system = {
 	}	
 	
 	planet = {
-		class = "pc_b_star"
+		class = "pc_g_star"
 		orbit_distance = 0
 		
 		init_effect = {
+			#可汗老家
+			create_country = {
+				name = "NAME_wg_Da_Khan_home_country"
+				type = faction
+				flag = {
+					icon = {
+						category = "wg_event_flags"
+						file = "wge_flags_04.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "stripes.dds"
+					}
+					colors={
+						"red"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				name_list = "WGEVENT"
+				effect = {
+					establish_communications_no_message = root.owner
+					set_country_flag = wg_Da_Khan_home_country_flag
+				}				
+			}
+			last_created_country = {
+				if = {
+					limit = {
+						NOT = {
+							has_modifier = wg_khan_home_power
+						}
+					}
+					add_modifier = {
+						modifier = wg_khan_homepower
+						days = -1
+					}
+				}
+				set_graphical_culture = pirate_01
+				save_global_event_target_as = wg_Da_Khan_home_country
+			}
+			event_target:wg_Da_Khan_home_country = {
+			create_species = {
+				name = WG_KHAN
+				plural = WG_KHAN
+				class = ART
+				portrait = art13
+				namelist = WGEVENT
+				effect = {
+					save_global_event_target_as = WG_KHAN_species
+				}
+			}
+			create_leader = {
+				class = admiral
+				species = event_target:WG_KHAN_species
+				name = "Sukhbaatar"
+				immortal = yes
+				skill = 4
+				traits = {
+					trait = leader_trait_admiral_wg_khan
+				}
+			}
+			last_created_leader = {
+				set_age = 130
+				change_leader_portrait = sh73
+				set_leader_flag = Khan_Sukhbaatar_flag
+				set_is_female = yes
+				save_event_target_as = WG_Sukhbaatar_target
+			}}
+			create_fleet = {
+				name = "NAME_Sukhbaatar_Fleet"
+				effect = {
+					set_owner = event_target:wg_Da_Khan_home_country
+					while = { count = 1
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_dreadnought2"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 5
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Salted_Fish_Glory"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 15
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 10
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 25
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 10
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 6
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship4"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 12
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship2"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 40
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Outrider"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 30
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Void_Champion"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 100
+					}
+					if = {
+						limit = { has_global_flag = badseal_debuff }
+						add_modifier = { modifier = badseal_debuff_to_khan }
+					}
+					set_fleet_flag = wg_khan_fleet
+					assign_leader = event_target:WG_Sukhbaatar_target
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+				}
+			}
+			#奥丁舰队
+			event_target:wg_Da_Khan_home_country = {
+				create_species = {
+					name = WG_KHAN2
+					plural = WG_KHAN2
+					class = ART
+					portrait = art13
+					namelist = WGEVENT
+					effect = {
+						save_global_event_target_as = WG_KHAN2_species
+					}
+				}
+				create_leader = {
+					class = admiral
+					species = event_target:WG_KHAN2_species
+					name = "Odin"
+					immortal = yes
+					skill = 2
+					traits = {
+						trait = leader_trait_admiral_wg_khan
+					}
+				}
+				last_created_leader = {
+					set_age = 125
+					change_leader_portrait = sh34
+					set_leader_flag = Khan_Odin_flag
+					set_is_female = yes
+					save_event_target_as = Odin_target
+				}
+			}
+			create_fleet = {
+				name = "NAME_Odin_Fleet"
+				effect = {
+					set_owner = event_target:wg_Da_Khan_home_country
+            		while = { count = 1
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_FE_TITAN"
+                    		graphical_culture = "fallen_empire_03"
+                   			upgradable = no
+                		}
+            		}					
+					while = { count = 3
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Salted_Fish_Glory"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 5
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 25
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 14
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 15
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 10
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship1"
+			        		prefix = no
+			        		graphical_culture = "avian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 6
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship3"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 10
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship4"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 50
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Outrider"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 35
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Void_Champion"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					set_location = {
+						target = prev
+						distance = 250
+						angle = 180
+					}
+					if = {
+						limit = { has_global_flag = badseal_debuff }
+						add_modifier = { modifier = badseal_debuff_to_khan }
+					}
+					assign_leader = event_target:Odin_target
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 350
+				}
+			}
+			#AI舰队
+			create_fleet = {
+				name = "NAME_Khan_last_Fleet"
+				effect = {
+					set_owner = event_target:wg_Da_Khan_home_country
+					while = { count = 4
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Salted_Fish_Glory"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 6
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 8
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Cruiser"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 12
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 4
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_Destroyer"
+			        		prefix = no
+			        		graphical_culture = "avian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 6
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship3"
+			        		prefix = no
+			        		graphical_culture = "reptilian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 5
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship1"
+			        		prefix = no
+			        		graphical_culture = "avian_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 7
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_WG_Khan_battleship4"
+			        		prefix = no
+			        		graphical_culture = "arthropoid_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 40
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Outrider"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					while = { count = 20
+                		create_ship = {
+                    		name = random
+                    		design = "NAME_Void_Champion"
+			        		prefix = no
+			        		graphical_culture = "pirate_01"
+                   			upgradable = no
+                		}
+            		}
+					set_location = {
+						target = prev
+						distance = 200
+						angle = 140
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+				}
+			}
+			event_target:wg_Da_Khan_home_country = {
+				every_owned_leader = {
+				if = {
+					limit = {
+						AND = {
+							has_leader_flag = Khan_Odin_flag
+						}	
+					}
+					change_leader_portrait = sh34
+					}
+				}
+				every_owned_leader = {
+				if = {
+					limit = {
+						AND = {
+							has_leader_flag = Khan_Sukhbaatar_flag
+						}	
+					}
+					change_leader_portrait = sh73
+					}
+				}
+			}	
+			#覆盖物
 			while = {
 				count = 15
 				create_ambient_object = {
@@ -230,7 +685,7 @@ wg_Da_Khan_system = {
 					distance = 160
 					angle = random
 				}
-			}			
+			}
 		}
 
 	}
@@ -241,8 +696,7 @@ wg_Da_Khan_system = {
 		count = 3
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 10 max = 180 }
-				
+		orbit_angle = { min = 10 max = 180 }	
 	}
 	planet = {
 		class = pc_barren_cold
@@ -254,6 +708,634 @@ wg_Da_Khan_system = {
 			class = pc_barren_cold		
 			count = { min = 0 max = 1 }
 			orbit_distance = 5
+		}
+	}
+	init_effect = {
+		spawn_megastructure = {
+			type = "wg_khan_outer_gate"
+			orbit_angle = 225
+			orbit_distance = 200
+			location = solar_system
+			graphical_culture = "humanoid_01"
+		}
+		spawn_megastructure = {
+			type = "wg_khan_garbage_shipyard_1"
+			orbit_angle = 50
+			orbit_distance = 30
+			location = solar_system
+		}
+	}	
+}
+
+#乌兰巴托
+wg_Da_Khan_gate_system = {
+	class = "rl_standard_stars"
+	usage = wg_Da_Khan_gate_system_init
+	name = "NAME_wg_Da_Khan_gate_system"
+	
+	max_instances = 1
+	spawn_chance = 9999
+	
+	flags = { wg_Da_Khan_gate_system_home }
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 270
+	}
+	
+	planet = {
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+
+		init_effect = {
+		    set_planet_flag = WG_Khan_gate_star
+			create_ambient_object = {
+				type = "space_storm_2"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+			create_country = {
+				name = "NAME_wg_Da_Khan_gate_country"
+				type = neutral_faction 
+				flag = {
+					icon = {
+						category = "wg_event_flags"
+						file = "wge_flags_04.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "v.dds"
+					}
+					colors={
+						"red"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				name_list = "WGEVENT"
+				effect = {
+					establish_communications_no_message = root.owner
+					set_country_flag = wg_Da_Khan_gate_drone_country_flag
+				}				
+			}
+			last_created_country = {
+				if = {
+					limit = {
+						NOT = {
+							has_modifier = wg_khan_gate_drone_power
+						}
+					}
+					add_modifier = {
+						modifier = wg_khan_gate_drone_power
+						days = -1
+					}
+				}
+				set_graphical_culture = pirate_01
+				save_global_event_target_as = wg_Da_Khan_gate_country
+				create_ship_design = { design = "NAME_Marauder_Starbase" }
+				add_ship_design = last_created_design
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 40
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 90
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 140
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 200
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 250
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 280
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 330
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 300
+						angle = 0
+					}				
+				}
+			}
+
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 0
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 60
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 120
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 180
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 240
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Khan_gate_Manufactory"
+					}
+					set_location = {
+						target = prev
+						distance = 180
+						angle = 300
+					}				
+				}
+			}
+
+		}
+	}
+
+	change_orbit = 250
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		flags = { raid_source }
+
+		init_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Khan_Battleship"
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = random
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+	
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		init_effect = {
+			set_deposit = d_minerals_8
+		}
+	}
+	
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		init_effect = {
+			set_deposit = d_minerals_8
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		init_effect = {
+			create_fleet = {
+				name = "NAME_WG_Khan_gate_main_Fleet"
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Khan_Battleship"
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Khan_Battleship"
+					}
+					while = {
+						count = 30
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Mining_Drone"
+						}
+					}
+					while = {
+						count = 20
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Combat_Drone"
+						}
+					}
+					while = {
+						count = 15
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Destroyer"
+						}
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_fleet_flag = wg_Da_Khan_gate_main_fleet
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 120
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+		init_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					while = {
+						count = 30
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Mining_Drone"
+						}
+					}
+					while = {
+						count = 15
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Combat_Drone"
+						}
+					}
+					while = {
+						count = 8
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Destroyer"
+						}
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 120
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		init_effect = {
+			set_deposit = d_minerals_8
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+
+		init_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					while = {
+						count = 30
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Mining_Drone"
+						}
+					}
+					while = {
+						count = 15
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Combat_Drone"
+						}
+					}
+					while = {
+						count = 8
+						create_ship = {
+							name = random
+							design = "NAME_Ancient_Destroyer"
+						}
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 120
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 40
+		size = 10
+		orbit_angle = 125
+
+		init_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Khan_Battleship"
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 120
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = pc_frozen
+		orbit_distance = 40
+		size = 6
+		orbit_angle = 225
+
+		init_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = event_target:wg_Da_Khan_gate_country
+					create_ship = {
+						name = random
+						design = "NAME_Ancient_Khan_Battleship"
+					}
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 120
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+		}
+	}
+	init_effect = {
+		spawn_megastructure = {
+			type = "wg_khan_outer_gate"
+			orbit_angle = 225
+			orbit_distance = 30
+			location = solar_system
+			graphical_culture = "humanoid_01"
+			init_effect = {
+				set_megastructure_flag = khan_gate_gateway
+			}
 		}
 	}	
 }

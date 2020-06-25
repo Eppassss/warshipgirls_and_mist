@@ -1,0 +1,211 @@
+﻿ WGEVENT = {
+ 	selectable = { always = no }
+	randomized = no
+	
+	### SHIPS
+
+	language = "l_simp_chinese"
+	ship_names = {
+		generic = {
+			萌古 夕立 雪风 大禹 帕里特荣耀 天下第一 神勇无双 狡猾的夸特人 狡猾的永恒人 星极 雀之魂 安娜 科目二 切片 发光人 纵欲 火星 火鸡 木木 惰麻 雪狐 路西法 潘德莫妮卡 莫迪丝 刻耳柏洛斯 玛丽娜 兹德拉达 阿撒泻勒 正义 最高执行官 撒旦 别西卜 萌纸 其翔 大E 向日葵 院长 带和 游夜 莎兰 黑猫 月 冰空 响 东尼 卡桑 弗莱彻 老维克 带嘤 排球 梦璃夜天星 非洲王 阿福 霍兰中将 天津风 红血球 灯泡 麋三 渡鸦 幻象 兔子 非酋 大淀 冰璃 L3 库特 彩澪 分身 浪本 咸鱼 小海豹 彬 给白 杰钢 咖喱 筒喵 库衣 渣 雪碧 假发 5000K 猩猩 恩多迪亚 暗夜 塔金 魅魔 海星 地联 工核星 非洲星 牛头星 水冰 绒布球 屑昆 花生 肆肆 螳螂 节操 傲寒之梅 咸鱼王 正直的拉比 熊猫人 大斧哥 库尔斯克 幽玄之月 三穆 平海 二仪 时空龙 叁色折纸 非鱼 天羽剑 卫道者 阿能 巨无霸 撒拉弗 德林 星圣 善良的海豹 冰箱 地币 雌豹 艾穆尅 布加迪 丹尼斯 412中队
+		}
+		
+		corvette = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+
+		titan = {
+		}
+
+		colossus = {
+		}
+		
+		science = {
+		}
+		
+		colonizer = {
+		}
+		
+		constructor = {
+		}
+
+		transport = {
+		}
+	
+		military_station_small = {
+		}
+
+		ion_cannon = {
+		}
+		
+	}
+
+	fleet_names = {
+		random_names = {
+			"始祖天津风舰队" "恩多迪亚永恒舰队" "虚空雪狐舰队" "惰麻鞭打者舰队" "流浪木木舰队" "天龙涅槃舰队" "地球联合国舰队" "龙王雪风舰队" "响大法师舰队" "东尼舰队" "咸鱼王舰队" "霍兰舰队" "欧根欧舰队" "StarMarshal舰队" "狡猾舰队" "善良舰队" "雪酱舰队" "港区罗马舰队" "火鸡色图工厂舰队" "莎兰菲雅莉舰队" "罗马妇幼保健院舰队" "地狱老司机舰队" "地狱掠夺者舰队"
+		}
+		sequential_name = "港区舰队 %C%"
+	}
+	
+	army_names = {
+		generic = { 
+			sequential_name = "军团 %R%"
+		}
+
+		assault_army = {
+			sequential_name = "军团 %R%"
+		}
+		
+		slave_army = {
+			sequential_name = "支援军 %R%"
+		}
+		
+		clone_army = {
+			sequential_name = "复制军 %R%"
+		}
+		
+		robotic_army = {
+			sequential_name = "机械军 %R%"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "机械边防军 %R%"
+		}
+		
+		psionic_army = { 
+			sequential_name = "灵能军团 %R%"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "猛兽支援军 %R%"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "禁卫军团 %R%"
+		}
+
+		occupation_army = {
+			sequential_name = "步兵警卫团 %R%"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "机械警卫团 %R%"
+		}
+
+		primitive_army = {
+			sequential_name = "原始军队 %C%"
+		}
+		industrial_army = {
+			sequential_name = "工业军队 %C%"
+		}
+		postatomic_army = {
+			sequential_name = "后原子军 %C%"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"新罗马" "新皮兰" "港区宿舍" "港区学院" 昆西之星 欧根之盾 维内托之傲 德梅因之巅 大藏 白雪之城 提尔比茨之家 塔菲三号 联合舰队 新卫星 伊马 法戈财团 杜立特 韭菜基地 胡斯麦 萨拉星座 企龙 昆叶 密苏堡 列克斯顿 维梅因 德内托 信浓鱼 射水凤 反击亲王 时风 北井 阿拉关岛 伊丽莎白公爵 "威廉·D·雪风" 长果春 扶城 翔瑞鹤 威斯阿华 田纳东 罗帝国 蒙古王 鸡腿堡 墨西哥卷 圣建日 皇家星球 红茶 无敌的长春之星 桐生夕张 幻梦公司 疯狂马里兰  鱼雷魂 卑尔根 科尔沁 伊斯坦布尔 乜星 前君士坦丁堡 维那莫依嫩堡 君士麋三堡 多彩舰娘 乌尔班 万熊战车 鲁卡 仓鼠动力 路灯 皮罗斯基
+			}
+		}
+		
+		pc_desert = {
+			names = {
+				
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+				
+			}
+		}
+		
+		pc_arid = {
+			names = {
+				
+			}
+		}
+		
+		pc_continental = {
+			names = {
+				
+			}
+		}
+		
+		pc_gaia = {
+			names = {
+				
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+				
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+				
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+				
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+
+		names1 = {
+			weight = 40
+			first_names_male = {
+				吴 梅 胡 俾 维 罗 纳 威尔士 提尔 阿拉 声望 反击 赤 加 列克 萨拉 欧根 昆西 昆 青 亚特 朱 海伦 狮 前卫 厌战 田纳 科罗 德 黎塞 约克 龙 普林 约翰 波特 竹 基 威廉 岛 大清花 新登 约克 北卡 罗马 埃塞 莱 德格 加纳 雷 提 风 莱彻 的摩
+			}
+			first_names_female = {
+				吴 梅 胡 俾 维 罗 纳 威尔士 提尔 阿拉 声望 反击 赤 加 列克 萨拉 欧根 昆西 昆 青 亚特 朱 海伦 狮 前卫 厌战 田纳 科罗 德 黎塞 约克 龙 普林 约翰 波特 竹 基 威廉 岛 大清花 新登 约克 北卡 罗马 埃塞 莱 德格 加纳 雷 提 风 莱彻 的摩
+			}
+			second_names = {
+				德 斯麦 内托 德尼 尔逊 亲王 比茨 斯加 关岛 扶桑 山城 金刚 雾岛 比睿 榛名 城 贺 星敦 托加 星座 黄蜂 西 叶 夕张 兰大 诺 娜 西 拉多 梅因 留 骧 斯顿 兰 洛夫 雪风 风 堡 克斯 比锡 拉斯 利亚斯 鹰 庞贝 斯科 胡腾 凤 鸣 桑 天津 弗 381 巴尔	
+			}
+			regnal_first_names_male = {
+				吴 梅 胡 俾 维 罗 纳 威尔士 提尔 阿拉 声望 反击 赤 加 列克 萨拉 欧根 昆西 昆 青 亚特 朱 海伦 狮 前卫 厌战 田纳 科罗 德 黎塞 约克 龙 普林 约翰 波特 竹 基 威廉 岛 大清花 新登 约克 北卡 罗马 埃塞 莱 德格 加纳 雷 提 风 莱彻 的摩
+			}
+			regnal_first_names_female = {
+				吴 梅 胡 俾 维 罗 纳 威尔士 提尔 阿拉 声望 反击 赤 加 列克 萨拉 欧根 昆西 昆 青 亚特 朱 海伦 狮 前卫 厌战 田纳 科罗 德 黎塞 约克 龙 普林 约翰 波特 竹 基 威廉 岛 大清花 新登 约克 北卡 罗马 埃塞 莱 德格 加纳 雷 提 风 莱彻 的摩	
+			}
+			regnal_second_names = {
+				德 斯麦 内托 德尼 尔逊 亲王 比茨 斯加 关岛 扶桑 山城 金刚 雾岛 比睿 榛名 城 贺 星敦 托加 星座 黄蜂 西 叶 夕张 兰大 诺 娜 西 拉多 梅因 留 骧 斯顿 兰 洛夫 雪风 风 堡 克斯 比锡 拉斯 利亚斯 鹰 庞贝 斯科 胡腾 凤 鸣 桑 天津 弗 381 巴尔
+			}
+		}
+		
+	}
+}

@@ -24,7 +24,7 @@ create_wg_fe_fleet = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_TITAN"
-                        graphical_culture = "wsg_04"
+                        graphical_culture = "fallen_empire_03"
                         upgradable = no
                     }
                 }
@@ -33,7 +33,7 @@ create_wg_fe_fleet = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_BATTLE_CRUISE"
-                        graphical_culture = "wsg_04"
+                        graphical_culture = "fallen_empire_03"
                         upgradable = no
                     }
                 }
@@ -42,7 +42,7 @@ create_wg_fe_fleet = {
                     create_ship = {
                         name = random
                         design = "NAME_WG_FE_ESCORTE"
-                        graphical_culture = "wsg_04"
+                        graphical_culture = "fallen_empire_03"
                         upgradable = no
                     }
                 }					
@@ -72,7 +72,7 @@ create_wg_fe_construction_ship = {
             create_ship = {
                 name = random
                 design = "NAME_WG_FE_CONSTRUCTION"
-                graphical_culture = "wsg_04"
+                graphical_culture = "fallen_empire_03"
                 upgradable = no
             }
             set_location = {
@@ -101,7 +101,7 @@ create_wg_fe_colossus = {
                 create_ship = {
                     name = random
                     design = "NAME_WG_FE_COLOSSUS"
-					graphical_culture = "wsg_04"
+					graphical_culture = "fallen_empire_03"
                     upgradable = no
                 }
             }					
@@ -133,7 +133,7 @@ create_wg_fe_fleet2 = {
                 create_ship = {
                     name = random
                     design = "NAME_WG_FE_TITAN"
-                    graphical_culture = "wsg_04"
+                    graphical_culture = "fallen_empire_03"
                     upgradable = no
                 }
             }
@@ -142,7 +142,7 @@ create_wg_fe_fleet2 = {
                 create_ship = {
                     name = random
                     design = "NAME_WG_FE_BATTLE_CRUISE"
-                    graphical_culture = "wsg_04"
+                    graphical_culture = "fallen_empire_03"
                     upgradable = no
                 }
             }
@@ -151,7 +151,7 @@ create_wg_fe_fleet2 = {
                 create_ship = {
                     name = random
                     design = "NAME_WG_FE_ESCORTE"
-                    graphical_culture = "wsg_04"
+                    graphical_culture = "fallen_empire_03"
                     upgradable = no
                 }
             }					

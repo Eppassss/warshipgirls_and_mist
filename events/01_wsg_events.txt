@@ -200,11 +200,13 @@ country_event = {
 						use_bypasses = no
 					}
 					NOR = {
+						has_natural_wormhole = yes
 						exists = space_owner
 						has_star_flag = hostile_system
 						has_star_flag = guardian
 						has_star_flag = sealed_system
 						has_star_flag = wg_Parit_system
+						has_star_flag = wg_sealed_system
 					}
 				}
 				set_timed_star_flag = { flag = can_spawn_sol_system days = 1 }

@@ -928,7 +928,10 @@ country_event = {
 			exists = planet
 			planet = { is_same_value = ROOT.FROMFROM }
 			OR = {
-				leader = { is_wg_leader = yes }
+				AND = {
+					exists = leader
+					leader = { is_wg_leader = yes }
+				}
 				is_lady_army = yes
 				AND = {
 					army_type = gray_army
@@ -1252,13 +1255,28 @@ country_event = {
 		room = wg06_room
 	}
 
-	# option = {
-	# 	name = test_only_add_ring
-	# 	change_variable = { which = wsg_rings value = 1 }
-	# 	custom_tooltip = reminder_for_test
-	# 	is_dialog_only = yes
-	# 	response_text = wg_aft.18.desc
-	# }
+	option = {
+		name = make_ring
+		trigger = {
+			has_authority = auth_starshipgirls # 星战舰娘直接造戒指
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 648 }
+			resource_stockpile_compare = { resource = minerals value >= 648 }
+			resource_stockpile_compare = { resource = sr_kyber_swgs value >= 648 } # 凯伯水晶
+			resource_stockpile_compare = { resource = sr_tibanna_swgs value >= 648 } # 提巴那瓦斯
+		}
+		add_resource = {
+			energy = -648
+			minerals = -648
+			sr_kyber_swgs = -648
+			sr_tibanna_swgs = -648
+		}
+		change_variable = { which = wsg_rings value = 1 }
+		custom_tooltip = starshipgirls_ring_tooltip
+		is_dialog_only = yes
+		response_text = wg_aft.18.desc
+	}
 	option = {
 		allow = {
 			check_variable = { which = wsg_rings value >= 1 }
@@ -2652,7 +2670,7 @@ country_event = {
 			if = { #乜提督
 				limit = { has_trait = leader_trait_admiral_NieAdmiral }
 				ROOT = { 
-					country_event = { id = wg_aft.1020 days = 5 random = 5 }
+					country_event = { id = wg_aft.1020 days = 180 random = 180 }
 					set_variable = { which = nie_affection value = affection }
 					set_variable = { which = nie_affection_level value = affection_level }
 					#统治者可以直接放逐然后set leader

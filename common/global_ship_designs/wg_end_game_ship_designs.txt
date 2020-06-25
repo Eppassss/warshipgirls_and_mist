@@ -300,7 +300,7 @@ ship_design = {
 
 		component = {
 			slot = "LARGE_GUN_01"
-			template = "UF_weapen_L"
+			template = "UF_weapen_L2"
 		}		
 		component = {
 			slot = "SMALL_GUN_01"
@@ -1128,6 +1128,48 @@ ship_design = {
 		}		
 	}
 
+
+	required_component = "UF_JUMP_DRIVE"
+	required_component = "UF_SENSOR"
+	required_component = "UF_THRUSTER"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_3"
+}
+
+ship_design = {
+	name = "NAME_WG_EG_Corvette"
+	ship_size = wg_corvette
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_CORVETTE_section"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L2"
+		}
+        component = {
+			slot = "TORPEDO_01"
+			template = "UF_weapen_G"
+		}
+		component = {
+			slot = "PD_01"
+			template = "UF_weapen_P"
+		}
+        component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "UF_weapen_IA_S"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "UF_weapen_IA_S"
+		}
+	}
 
 	required_component = "UF_JUMP_DRIVE"
 	required_component = "UF_SENSOR"

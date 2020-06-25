@@ -1,0 +1,226 @@
+﻿SH = {
+	randomized = no
+	ship_names = {
+		generic = {
+			"Abyssal ship A" "Abyssal ship Β" "Abyssal ship Г" "Abyssal ship Δ" "Abyssal ship Ε" "Abyssal ship Ζ"
+		}
+		
+		corvette = {
+			"Corvette A" "Corvette Β" "Corvette Г" "Corvette Δ" "Corvette Ε" "Corvette Ζ" "Corvette Η" "Corvette Θ" "Corvette Ι" "Corvette Κ" "Corvette Λ" "Corvette Μ" "Corvette Ν" "Corvette Ξ" "Corvette Ο" "Corvette Π" "Corvette Υ" "Corvette Φ" "Corvette Υ" "Corvette Χ" "Corvette ψ" "Corvette Ω"
+		}
+		
+		destroyer = {
+			"Destroyer A" "Destroyer Β" "Destroyer Г" "Destroyer Δ" "Destroyer Ε" "Destroyer Ζ" "Destroyer Η" "Destroyer Θ" "Destroyer Ι" "Destroyer Κ" "Destroyer Λ" "Destroyer Μ" "Destroyer Ν" "Destroyer Ξ" "Destroyer Ο" "Destroyer Π" "Destroyer Υ" "Destroyer Φ" "Destroyer Υ" "Destroyer Χ" "Destroyer ψ" "Destroyer Ω"
+		}
+		
+		cruiser = {
+			"Cruiser A" "Cruiser Β" "Cruiser Г" "Cruiser Δ" "Cruiser Ε" "Cruiser Ζ" "Cruiser Η" "Cruiser Θ" "Cruiser Ι" "Cruiser Κ" "Cruiser Λ" "Cruiser Μ" "Cruiser Ν" "Cruiser Ξ" "Cruiser Ο" "Cruiser Π" "Cruiser Υ" "Cruiser Φ" "Cruiser Υ" "Cruiser Χ" "Cruiser ψ" "Cruiser Ω"
+		}
+
+		battleship = {
+			"Battleship A" "Battleship Β" "Battleship Г" "Battleship Δ" "Battleship Ε" "Battleship Ζ" "Battleship Η" "Battleship Θ" "Battleship Ι" "Battleship Κ" "Battleship Λ" "Battleship Μ" "Battleship Ν" "Battleship Ξ" "Battleship Ο" "Battleship Π" "Battleship Υ" "Battleship Φ" "Battleship Υ" "Battleship Χ" "Battleship ψ" "Battleship Ω"
+		}
+
+		titan = {
+			"Yamato" "Musashi" Bismarck Tirpitz Friedrich "Type 13"
+		}
+
+		colossus = {
+			"Abyssal Fleet" "Delusional Fleet" "Iron Fortress" "Kudansaka"
+		}
+		juggernaut = {
+			"Shuiyue"
+		}		
+		science = {
+			"Science A" "Science Β" "Science Г" "Science Δ" "Science Ε" "Science Ζ" "Science Η" "Science Θ" "Science Ι" "Science Κ" "Science Λ" "Science Μ" "Science Ν" "Science Ξ" "Science Ο" "Science Π" "Science Υ" "Science Φ" "Science Υ" "Science Χ" "Science ψ" "Science Ω"
+		}
+		
+		colonizer = {
+			"Colonizer A" "Colonizer Β" "Colonizer Г" "Colonizer Δ" "Colonizer Ε" "Colonizer Ζ" "Colonizer Η" "Colonizer Θ" "Colonizer Ι" "Colonizer Κ" "Colonizer Λ" "Colonizer Μ" "Colonizer Ν" "Colonizer Ξ" "Colonizer Ο" "Colonizer Π" "Colonizer Υ" "Colonizer Φ" "Colonizer Υ" "Colonizer Χ" "Colonizer ψ" "Colonizer Ω"
+		}
+
+		sponsored_colonizer = {
+			"Colonizer A" "Colonizer Β" "Colonizer Г" "Colonizer Δ" "Colonizer Ε" "Colonizer Ζ" "Colonizer Η" "Colonizer Θ" "Colonizer Ι" "Colonizer Κ" "Colonizer Λ" "Colonizer Μ" "Colonizer Ν" "Colonizer Ξ" "Colonizer Ο" "Colonizer Π" "Colonizer Υ" "Colonizer Φ" "Colonizer Υ" "Colonizer Χ" "Colonizer ψ" "Colonizer Ω"
+		}
+		
+		constructor = {
+			"Constructor A" "Constructor Β" "Constructor Г" "Constructor Δ" "Constructor Ε" "Constructor Ζ" "Constructor Η" "Constructor Θ" "Constructor Ι" "Constructor Κ" "Constructor Λ" "Constructor Μ" "Constructor Ν" "Constructor Ξ" "Constructor Ο" "Constructor Π" "Constructor Υ" "Constructor Φ" "Constructor Υ" "Constructor Χ" "Constructor ψ" "Constructor Ω"
+		}
+		
+		transport = {
+			"Abyssal Commando"
+		}
+		
+		military_station_small = { 
+			"Station A" "Station Β" "Station Г" "Station Δ" "Station Ε" "Station Ζ" "Station Η" "Station Θ" "Station Ι" "Station Κ" "Station Λ" "Station Μ" "Station Ν" "Station Ξ" "Station Ο" "Station Π" "Station Υ" "Station Φ" "Station Υ" "Station Χ" "Station ψ" "Station Ω"
+		}
+
+		ion_cannon = {
+			"Leopold" "Pakiro"
+		}
+		
+	}
+
+	fleet_names = {
+		random_names = {
+			"Abyssal Main Fleet" "Abyssal Great Fleet" "Abyssal Hero Fleet" "Abyssal Defensive Fleet" "Abyssal Support Fleet" "Abyssal Space Fleet" "Abyssal Attack Fleet" "Abyssal Assault Fleet" "Abyssal Combined Fleet"
+		}
+		sequential_name = "Abyssal Fleet %C%"
+	}
+	
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Ground Shield"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% War Guild"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% War Peons"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Fighting Clones"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robotic Lancers"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "%O% Robotic Protectors"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Warlock Company"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Death Flock"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Star Knights"
+		}
+
+		occupation_army = {
+			sequential_name = "%O% Occupation Shield"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "%O% Robotic Occupiers"
+		}
+
+		primitive_army = {
+			sequential_name = "Primitive Army %C%"
+		}
+		industrial_army = {
+			sequential_name = "Industrial Army %C%"
+		}
+		postatomic_army = {
+			sequential_name = "Post-Atomic Army %C%"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"Battle of the Holy Shield" "Fantasy Fleet" "Hell Islands" "Midway Island" "Valkyrie" "Steel" "Phoenix" "Maria" "Avenger" "Magnet" "Emperor" "Mountain City"
+			}
+		}
+		
+		pc_desert = {
+			names = {
+				
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+				
+			}
+		}
+		
+		pc_arid = {
+			names = {
+				
+			}
+		}
+		
+		pc_continental = {
+			names = {
+				
+			}
+		}
+		
+		pc_gaia = {
+			names = {
+				
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+				
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+				
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+				
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+
+		names1 = {
+			weight = 40
+			first_names_male = {
+				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+			}
+			first_names_female = {
+				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+			}
+			second_names = {
+				"A" "Β" "Г" "Δ" "Ε" "Ζ" "Η" "Θ" "Ι" "Κ" "Λ" "Μ" "Ν" "Ξ" "Ο" "Π" "Υ" "Φ" "Υ" "Χ" "ψ" "Ω"
+				
+			}
+			regnal_first_names_male = {
+				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+			}
+			regnal_first_names_female = {
+				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+				
+			}
+			regnal_second_names = {
+				"A" "Β" "Г" "Δ" "Ε" "Ζ" "Η" "Θ" "Ι" "Κ" "Λ" "Μ" "Ν" "Ξ" "Ο" "Π" "Υ" "Φ" "Υ" "Χ" "ψ" "Ω"
+			}
+		}
+		
+	}
+}

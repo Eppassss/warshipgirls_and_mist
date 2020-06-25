@@ -120,8 +120,14 @@ sh_torpedo_DESC:"重型深海鱼雷。射程较近，速度较慢，但威力十
 sh_fighter:"深海高速战斗机"
 sh_fighter_DESC:"使用深海能源核心反应堆的深海战斗机。"
 
-wsg_weapon_dmm:"暗物质阿尔法水雷"
-wsg_weapon_dmm_DESC:"不管这款武器将我们的舰队导向何处，我们决定选择希望。"
+sh_autocannon:"深海疾速炮"
+sh_autocannon_DESC:"这些自动火炮可以快速发射带有深海能源辐射的高爆弹头。"
+
+sh_weapen_XAC:"SH-XAC能量机炮"
+sh_weapen_XAC_DESC:"拥有极高射速的基轴能量机炮，强化了对装甲的破坏力。"
+
+tech_sh_XACweapon:"SH-XAC能量机炮"
+tech_sh_XACweapon_desc:"拥有极高射速的基轴能量机炮，拥有比传统基轴主炮更好的射角。着重强化了对装甲的破坏力，威力巨大的爆能束可以轻松撕碎集群的脆弱目标。"
 
 SHIP_AURA_WG_NSC:0 "神秘的电子设备"
 

@@ -1,0 +1,226 @@
+﻿WGEVENT  = {
+	selectable = { always = no }
+	randomized = no
+    ship_names = {
+		generic = {
+			Oklahoma Nelson Rodney Prince of Wales Prestige Counterattack Lion Nagato Mu O War-War Avant-Garde Washington Colorado Maryland Maryland West Virginia Veneto Rome Queen Elizabeth Duke of York North Carolina Wisconsin Lexington Saratoga Constellation Soviet Union Alsace Tennessee Veneto Enthusiastic Ball Walker Blowing Snow Fireflies Z16 Acasta Avière Engels S113 Split Convers Clarkson Vampire Z1 Z3 Z21 Z22 Z31 Village Rainy Night Standing Bamboo Muyue Lafite Ignorance of Fire and Durability Changchun Early Spring Portgra Morgan Thunderbolt Fletcher Punjab Killingbrun Utopian Venus Legion Kuroshio Thatcher Siggs Bisullivanport Obannon Tashkent Engels Johnston Bavrerkhin Thunder Mahan Kiev Veneto Defender Phelps Minsk Street Vlta Dyson Convers Clarkston Vampire Z1 Z3 Z21 Z22 Z31 Raffy Kent Baltimore Canarias Moscow York San Francisco Houston New Orleans Sirius Königsberg Cologne Karlsruhe Brooklyn Kirov Emerald M Plan Edinburgh Worcester Cleveland Oakland DeGras Jeanne d'Arc Dragoons Tiger Alice Neptune Yatsen Leipzig Juno Atlanta Quincy Blücher Eugen Wichita London Wisconsin Lexington Saratoga Constellation Soviet Union Alsace Tennessee California Essex Alaska Guam South Dakota Hornet King Kong Enterprise "Abyssal ship A" "Abyssal ship Β" "Abyssal ship Г" "Abyssal ship Δ" "Abyssal ship Ε" "Abyssal ship Ζ" "Yamato" "Musashi" Bismarck Tirpitz Friedrich "Type 13"
+		}
+		
+		corvette = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+
+		battleship = {
+		}
+
+		titan = {
+		}
+
+		colossus = {
+		}
+		corvette = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+
+		titan = {
+		}
+
+		colossus = {
+		}
+		
+		science = {
+		}
+		
+		colonizer = {
+		}
+		
+		constructor = {
+		}
+
+		transport = {
+		}
+	
+		military_station_small = {
+		}
+
+		ion_cannon = {
+		}
+		
+	}
+
+	fleet_names = {
+		random_names = {
+			"Suthnar's Armada" "Ralpakin's Armada" "Hissnak's Armada" "Galathor's Armada" "Olymac's Armada" "Perek's Armada"
+		}
+		sequential_name = "Armada %C%"
+	}
+	
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Ground Shield"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% War Guild"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% War Peons"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Fighting Clones"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robotic Lancers"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "%O% Robotic Protectors"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Warlock Company"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Death Flock"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Star Knights"
+		}
+
+		occupation_army = {
+			sequential_name = "%O% Occupation Shield"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "%O% Robotic Occupiers"
+		}
+
+		primitive_army = {
+			sequential_name = "Primitive Army %C%"
+		}
+		industrial_army = {
+			sequential_name = "Industrial Army %C%"
+		}
+		postatomic_army = {
+			sequential_name = "Post-Atomic Army %C%"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"New Rome" "New Piran" "Harbor Dormitory" "Harbor College" "Pantheon" "Midway" "Fortress" "Veneto Plain" "Moscow" "Tear of Tears" "Eye of Crimson" "Des Moines" Argyre Silpium Thrinacia Tritonis Phlegra Acherusia "Colonia Aurora" "Colonia Augusta" "Colonia Pacifica" "Colonia Traiana" "Colonia Emerita" Eboracum Ascrivium Brigantium Rhegium Spalatum Patavium Antiochia
+			}
+		}
+		
+		pc_desert = {
+			names = {
+				
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+				
+			}
+		}
+		
+		pc_arid = {
+			names = {
+				
+			}
+		}
+		
+		pc_continental = {
+			names = {
+				
+			}
+		}
+		
+		pc_gaia = {
+			names = {
+				
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+				
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+				
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+				
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+
+		names1 = {
+			weight = 40
+			first_names_male = {
+				Agrippa Appius Aulus Caeso Decimus Drusus Faustus Gaius Gallus Gnaeus Hostus Lucius Mamercus Manius Marcellus Marcus Mettius Nonus Numerius Octavius Opiter Paullus Postumus Primus Proculus Publius Quintus Septimus Sertor Servius Sextus Spurius Statius Tiberius Titus Tullus Vibius Volesus Vopiscus
+			}
+			first_names_female = {
+				Appia Aula Caesula Decima Fausta Gaia Gnaea Hosta Lucia Maio Mamerca Mania Marcia Maxima Mettia Mino Nona Numeria Octavia Paulla Postuma Prima Procula Publia Quarta Quinta Secunda Septima Servia Sexta Spuria Statia Tertia Titia Tiberia Tulla Vibia Volusa Vopisca
+			}
+			second_names = {
+				Aburius Accius Accoleius Acilius Aebutius Aedinius Aelius Aemilius Albanius Albatius Allectius Amatius Annius Antistius Antius Antonius Appuleius Aquillius Armenius Arrius Arsinius Artorius Asinius Ateius Atius Atilius Atrius Attius Aufidius Aurelius Aurius Ausonius Avidius Avitus Axius Baebius Balventius Bantius Barbatius Barrius Betilienus Betucius Blandius Blossius Bruttius Bucculeius Burrienus Caecilius Caecina Caecius Caedicius Caelius Caeparius Caepasius Caerellius Caesennius Caesetius Caesius Caesonius Caesulenus Caetronius Calavius Calidius Calpurnius Calventius Calvisius Camillius Camelius Canidius Caninius Canius Cantilius Cantius Canuleius Canutius Carfulenus Carisius Carius Caristanius Carpinatius Carteius Carvilius Cassius Castricius Castrinius Catius Catienus Catilius Ceionius Centenius Cestius Cicereius Cilnius Cincius Cispius Claudius Clodius Cloelius Clovius Cluilius Cluentius Cluvius Cocceius Cominius Consentius Considius Coponius Cordius Corfidius Cornelius Cornificius Coruncanius Cosconius Cossinius Cossutius Cotius Cottius Crassitius Crepereius Critonius Cupiennius Curiatius Curius Curtilia Curtius Cuspius Decimius Decius Dellius Desticius Dexsius Didius Digitius Dillius Domitius Duccius Duilius Durmius Duronius Egilius Egnatius Egnatuleius Ennius Epidius Eppius Equitius Erucius Fabius Fabricius Fadius Faenius Falcidius Falerius Fannius Farsuleius Faucius Favonius Festinius Fidiculanius Flaminius Flavius Flavinius Flavonius Floridius Florius Floronius Fonteius Foslius Fuficius Fufidius Fufius Fulcinius Fulvius Fundanus Furius Furnia Gabinius Galerius Gallius Gargonius Gavius Geganius Gellius Geminius Genucius Gessius Granius Gratius Gratidius Haterius Heius Helvidius Helvius Herennius Herminius Hirrius Hirtius Hirtuleius Horatius Hortensius Hosidius Hostilius Iccius Icilius Insteius Julius Junius Juventius Laberius Labienus Lacerius Laelius Laenius Laetilius Laetorius Lafrenius Lamponius Laronius Lartius Latinius Lavinius Lecanius Lentidius Liburnius Licinius Ligarius Livius Lollius Longinius Loreius Lucceius Lucienus Lucilius Lucius Lucretius Lurius Luscius Lusius Lutatius Macrinius Maecilius Maecius Maelius Maenius Maevius Magius Mallius Mamilius Manilia Manlius Manilius Marcius Marius Matius Matienus Matinius Matrinius Maximius Memmius Menenius Menius Mescinius Messienus Messius Metilius Mettius Milonius Mimesius Minatius Minicius Minidius Minucius Modius Mucius Mummius Munatius Munius Murrius Mussidius Mustius Mutius Naevius Nasennius Nasidienus Nasidius Nautius Neratius Nerius Nigidius Ninnius Nipius Nonius Norbanus Novellius Novius Numerius Numicius Numisius Numitorius Nummius Numonius Nymphidius Obellius Obultronius Occius Oclatinius Oclatius Octavenus Octavius Ofanius Ofilius Ogulnius Ollius Opellius Opetreia Opimius Opiternia Oppidius Oppius Opsidius Opsilius Opsius Oranius Orbicius Orbilius Orchius Orcivius Orfidius Orfius Oscius Ostorius Otacilius Ovidius Ovinius Paccius Pacidius Pacilius Paconius Pactumeius Pacuvius Palfurius Palpellius Pantuleius Papinius Papirius Papius Pasidienus Pasidius Passienus Patulcius Pedanius Pedius Peducaeus Peltrasius Percennius Perperna Persius Pescennius Petellius Petillius Petronius Pinarius Pisentius Placidius Plautius Plinius Plotius Pollius Pompeius Pompilius Pomponius Pomptinus Pontidius Pontius Popidius Poppaeus Porcius Portius Postumius Potitius Publicius Pupius Quinctilius Quinctius Quirinius Rabirius Rufius Rufrius Rusonius Rutilius Sabucius Sallustius Salonius Salvius Scribonius Secundinius Secundius Seius Sempronius Sennius Sentius Septimius Sepunius Sergius Sertorius Servilius Sestius Sextilius Sextius Sidonius Silius Sittius Socellius Sornatius Spurius Statius Statilius Stertinius Suedius Sulpicius Tadius Tanicius Tertinius Tettidius Tettienus Tettius Titiedius Titius Titinius Trebatius Trebellius Treblanus Tremellius Tuccius Tullius Turullius Ulpius Umbrius Ummidius Urgulanius Valerius Varius Vatinius Vedius Velius Veranius Verecundius Vergilius Verginius Vesnius Veturius Vibenius Vibidius Vibius Victricius Viducius Vinicius Vipsanius Vipstanus Viridius Virius Visellius Vitellius Vitruvius Volcatius Volumnius Volusenna Volusenus Volusius Vulius
+				
+			}
+			regnal_first_names_male = {
+				Agrippa Gaius Lucius Marcus Octavius Primus Tiberius Titus
+			}
+			regnal_first_names_female = {
+				Appia Decima Fausta Lucia Numeria Octavia Procula Vopisca
+				
+			}
+			regnal_second_names = {
+				Antonius Aurelius Domitius Fabius Valerius Egnatius
+			}
+		}
+		
+	}
+}

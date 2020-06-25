@@ -8,9 +8,10 @@ spriteTypes = {
 		name = "GFX_ship_part_wsg_autocannon_127"
 		texturefile = "gfx/interface/icons/ship_parts/GFX_ship_part_wsg_autocannon_127.dds"
 	}
-
-
- 
+	spriteType = {
+		name = "GFX_sh_weapen_XAC"
+		texturefile = "gfx/interface/icons/ship_parts/sh_weapen_XAC.dds"
+	}
 	spriteType = {
 		name = "GFX_ship_part_wsg_autocannon_152"
 		texturefile = "gfx/interface/icons/ship_parts/GFX_ship_part_wsg_autocannon_152.dds"

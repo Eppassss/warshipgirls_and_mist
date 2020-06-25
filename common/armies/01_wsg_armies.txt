@@ -312,6 +312,61 @@ ovo_army = {
 	}
 }
 
+galo_army = {
+	defensive = yes
+	damage = 2
+	health = 1.5
+	has_morale = no
+	morale_damage = 1.0
+	collateral_damage = 3.00
+	time = 5
+	icon_frame = 2
+	has_species = no
+
+	resources = {
+		category = armies
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+Khan_galodam = {
+	defensive = yes
+	damage = 4.5
+	has_morale = no
+	morale_damage = 5.0
+	collateral_damage = 4.5
+	war_exhaustion = 1.00
+	health = 8.5
+	time = 600
+	icon_frame = 8
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			food = 2000
+		}
+
+		upkeep = {
+			energy = 8
+			food = 5
+		}
+	}
+
+	prerequisites = { "tech_galodam" }
+	potential = {
+		owner = { has_authority = auth_warshipgirls }
+		
+	}
+	
+}
+
 Parit_army = {
 	defensive = yes
 	damage = 10.0

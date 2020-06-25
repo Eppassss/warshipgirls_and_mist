@@ -1,0 +1,18 @@
+special_project = {
+	key = wg_khan_getway
+	cost = 5000
+	tech_department = engineering_technology
+	picture = GFX_evt_drifting_gateway
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = wg_khan.18 } }
+		}
+	}
+}
+

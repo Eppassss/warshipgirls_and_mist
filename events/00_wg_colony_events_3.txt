@@ -1,0 +1,41 @@
+namespace = colony
+planet_event = {
+	id = colony_mod.102
+	title = "colony_mod.102.name"
+	desc = "colony_mod.102.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_air_raid_siren
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_country = {
+			name = "NAME_Titanic_Life"
+			type = faction
+			effect = {
+				establish_communications_no_message = root.owner
+			}
+		}
+		create_species = {
+			name = "NAME_Titans"
+			class = MAM
+			portrait = random
+			traits = random
+		}
+		while = { count = 3
+			create_army = {
+				name = "NAME_Enraged_Guardian"
+				owner = last_created_country
+				species = last_created_species
+				type = "titanic_guardian_army"
+			}
+		}
+	}
+	
+	option = {
+		name = TERRIBLE
+		custom_tooltip = titanic_uprising_tooltip
+	}
+
+}

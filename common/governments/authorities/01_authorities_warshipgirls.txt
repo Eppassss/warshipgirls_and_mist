@@ -13,7 +13,9 @@ auth_warshipgirls = {
 	has_agendas = yes
 	
 	random_weight = {
-		factor = 0
+		modifier = {
+			factor = 0
+		}
 	}
 	possible = {
 		ethics={

@@ -133,6 +133,7 @@ country_event = {
 	}
 
 	immediate = {
+		endgame_telemetry = united_fleet
 		set_global_flag = wg_invasion_happened
 		initialize_crisis_system_select = yes
 		random_system = {
@@ -1714,7 +1715,20 @@ country_event = {
         is_dialog_only = yes
         response_text = wg_crisis.20.b.a.response
         trigger = {
-			has_wg_special_authority = yes
+			OR = {
+				has_authority = auth_shenhai
+				has_authority = auth_warshipgirls
+			}
+		}
+    }
+
+	option = {
+        # 星战舰娘解释
+        name = wg_crisis.20.b.a
+        is_dialog_only = yes
+        response_text = wg_crisis.20.b.swg.response
+        trigger = {
+			has_authority = auth_starshipgirls
 		}
     }
 
@@ -3997,7 +4011,7 @@ fleet_event = {
 					factor = 0
 					OR = {
 						check_variable = { which = num_dreadnought value <= 0 }
-						check_variable = { which = num_dreadnought_exist value >= num_carrier }
+						check_variable = { which = num_dreadnought_exist value >= num_dreadnought }
 						has_fleet_flag = counting_data
 						is_in_combat = yes
 					}
@@ -4010,9 +4024,9 @@ fleet_event = {
 				change_variable = { which = num_dreadnought_exist value = 1 }
 				switch = {
 					trigger = has_global_flag
-					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 280 }}
-					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 135 }}
-					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 90 }}
+					wg_crisis_normal = { fleet_event = { id = wg_crisis.110 days = 300 }}
+					wg_crisis_hard = { fleet_event = { id = wg_crisis.110 days = 150 }}
+					wg_crisis_insane = { fleet_event = { id = wg_crisis.110 days = 100 }}
 				}
 			}
 			10 = {
@@ -4145,7 +4159,7 @@ fleet_event = {
 						check_variable = { which = num_bc_exist value < num_bc }
 						check_variable = { which = num_titan_exist value < num_titan }
 						check_variable = { which = num_carrier_exist value < num_carrier }
-						check_variable = { which = num_dreadnought value < num_dreadnought_exist }
+						check_variable = { which = num_dreadnought_exist value < num_dreadnought }
 						check_variable = { which = num_bf_exist value < num_bf }
 						check_variable = { which = num_bf_portal_exist value < num_bf_portal }
 						check_variable = { which = num_bf_exist value < num_bf }
@@ -4216,17 +4230,18 @@ country_event = {
 					any_owned_ship = {
 						is_ship_size = uf_Juggernaut
 					}
+					NOT = { has_fleet_flag = drones }
 				}
 			}
 			switch = {
 				trigger = is_ship_size
 				wg_carrier = { fleet = { change_variable = { which = num_carrier_exist value = 1 }}}
-				uf_Juggernaut = { fleet = { change_variable = { which = num_dreadnought_exist value = 1 }}}
 				wg_titan = { fleet = { change_variable = { which = num_titan_exist value = 1 }}}
 				wg_battleship = { fleet = { change_variable = { which = num_bb_exist value = 1 }}}
 				wg_battlecrusier = { fleet = { change_variable = { which = num_bc_exist value = 1 }}}
 				wg_cruiser = { fleet = { change_variable = { which = num_ca_exist value = 1 }}}
 				wg_destroyer = { fleet = { change_variable = { which = num_dd_exist value = 1 }}}
+				wg_dreadnought = { fleet = { change_variable = { which = num_dreadnought_exist value = 1 }}}
 				uf_buffer = {
 					if = {
 						limit = { has_ship_flag = bf_portal }

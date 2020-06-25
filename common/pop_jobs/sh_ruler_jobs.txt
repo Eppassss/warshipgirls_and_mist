@@ -32,12 +32,10 @@ sh_researcher = {
 		upkeep = {
 			consumer_goods = 3
 		}		
-	}
-	country_modifier = {
-		planet_researchers_engineering_research_produces_mult = 0.01
 	}	
 	planet_modifier = {
 		planet_amenities_add = 2
+		planet_researchers_engineering_research_produces_mult = 0.01
 	}
 	
 	triggered_planet_modifier = {

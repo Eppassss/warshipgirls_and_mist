@@ -11,7 +11,7 @@
  requires_technology_tech_wsg_pantsu:0 "$TRIGGER_FAIL$需要£society£§Y$tech_wsg_pantsu$§!科技。"
 
  wsg.1001.name:0 "注意！"
- wsg.1001.desc:0 "§!§Y注意！修饰基因请使用带有§! §!§R一阶段飞升（深蓝色战舰少女特性）§! §!§Y的模板进行修改，以免二阶段飞升出现BUG§!"
+ wsg.1001.desc:0 "§!§Y注意§!请使用带有£sr_wsg£§Y$wsg_trait_warshipgirls1$§!特性的模板进行基因修饰，以免二阶段飞升出现BUG§!"
  wsg.1001.a:0 "我了解了"
  
  ap_wsg_universal_transactions:0 "外星援助计划" 
@@ -61,7 +61,7 @@
  sh.1000.a.tooltip:0 "§!§Y注意！修饰基因请使用带有§! §!§R一阶段飞升（双圈深海舰队特性）§! §!§Y的模板进行修改，以免二阶段飞升出现BUG§!"
 
  sh.1001.name:0 "注意！"
- sh.1001.desc:0 "§!§Y注意！修饰基因请使用带有§! §!§R一阶段飞升（双圈深海舰队特性）§! §!§Y的模板进行修改，以免二阶段飞升出现BUG§!"
+ sh.1001.desc:0 "§!§Y注意§!请使用带有£sr_sh£§Y$sh_trait_shenhai1$§!特性的模板进行基因修饰，以免二阶段飞升出现BUG§!"
  sh.1001.a:0 "我了解了" 
  
  mod_SHENHAI_species_trait_points_add:0 "深海舰队种族基因修饰点数"

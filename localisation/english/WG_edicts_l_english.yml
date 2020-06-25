@@ -17,6 +17,8 @@
  edict_wsg_Stuitu_desc:0 "As excercise rewards, pantsu can greatly improve our navy's morale. A strong navy is essential for the protection of our benefits."
  edict_wsg_remove_pantsu:0 "Remove Their Pantsu!"
  edict_wsg_remove_pantsu_desc:0 "Statistics indicate that 95% of the aliens will be embarrassed to death once we strip their pantsu off. We just need to deal with the rest."
+ edict_wsg_colony:0 "Colonial frenzy：More population"
+ edict_wsg_colony_desc:0 "Improve the spacecraft structure to accommodate more people."
  edict_wsg_folding_chair:0 "Foldable Chair Popularization"
  edict_wsg_folding_chair_desc:0 "These foldable chairs can greatly reduce our space requirements for spare chairs."
  edict_sh_remove_pantsu:0 "Remove Their Pantsu!"

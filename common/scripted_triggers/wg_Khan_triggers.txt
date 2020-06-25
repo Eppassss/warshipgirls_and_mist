@@ -1,0 +1,79 @@
+# parameters:
+# VAR: return value
+# formula = BASE + BASE * ( SQE_COF * years of being subject ^ 2 * ( 1 - MINUS_COF )) * ( SQE_COF - MINUS_COF )
+get_reqired_khan_tribute = {
+	if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 1 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 1 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 2 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 2 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 3 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 3 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 4 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 4 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 5 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 5 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 6 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 6 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 7 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 7 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 8 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 8 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 9 }}
+		get_reqired_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 9 }
+	}
+}
+
+get_reqired_khan_tribute_S2 = {
+	if = {
+		limit = { check_variable = { which = YEARS_DIGITS value = 1 }}
+		get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 0 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$0 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 1 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$1 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 2 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$2 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 3 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$3 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 4 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$4 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 5 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$5 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 6 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$6 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 7 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$7 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 8 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$8 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 9 }}
+			get_reqired_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$9 }
+		}
+	}
+}
+
+get_reqired_khan_tribute_final = {
+	resource_stockpile_compare = { 
+		resource = $RESOURCE$
+		value >= @\[ $BASE$ + ( $BASE$ * ( $SQE_COF$ * $YEARS$ * $YEARS$ * ( 1 - $MINUS_COF$ )) * ( $SQE_COF$ - $MINUS_COF$ ))]
+	}
+}

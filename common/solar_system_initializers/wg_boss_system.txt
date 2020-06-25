@@ -341,7 +341,7 @@ wg_machine_system = {
 			last_created_country = {
 				save_global_event_target_as = WG_Defensive
 				create_fleet = {
-					name = "NAME_Sanctuary_Core"
+					name = "NAME_SH_Sanctuary_Core"
 					settings = { spawn_debris = no }
 					effect = {
 						set_owner = event_target:WG_Defensive
@@ -751,7 +751,7 @@ wg_boss_bugvv_system = {
 	max_instances = 1
 	spawn_chance = 9999
 	
-	flags = { wg_boss_bugvv_system_home lcluster }
+	flags = { wg_boss_bugvv_system_home wg_sealed_system }
 	
 	planet = {
 		class = "pc_b_star"

@@ -1439,7 +1439,7 @@ create_ra_admiral_1001 = {
             trait = leader_trait_admiral_Lexington2
         }
         effect = {
-            change_leader_portrait = wsg29
+            change_leader_portrait = wsg9989
             set_leader_flag = lexington
             set_leader_flag = ra_admiral
         }

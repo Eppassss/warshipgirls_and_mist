@@ -10,6 +10,13 @@ component_set = {
 	icon = "GFX_sh_weapen_UX"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "sh_weapen_XAC"
+	
+	icon = "GFX_sh_weapen_XAC"
+	icon_frame = 1	
+}
 component_set = {
 	key = "sh_weapen_SML_mki"
 	
@@ -142,7 +149,8 @@ component_set = {
 	key = "COLOSSUS_sh_senergy_REACTOR"
 	
 	icon = "GFX_ship_part_sh_senergy_REACTOR"
-	icon_frame = 1	
+	icon_frame = 1
+}
 	
 component_set = {
 	key = "PLATFORM_sh_senergy_REACTOR"

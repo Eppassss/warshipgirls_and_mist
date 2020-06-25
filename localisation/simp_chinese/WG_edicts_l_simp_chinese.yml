@@ -21,6 +21,8 @@
  edict_wsg_remove_pantsu_desc:0 "在公共场合将异端的胖次脱下，95%的异端会当场羞愧的豹毙，我们只需要人工解决那5%就行了。"
  edict_wsg_folding_chair:0 "[住房优化]推广折叠椅"
  edict_wsg_folding_chair_desc:0 "这些可折叠的椅子能大大降低我们存放备用椅子的空间需求。"
+ edict_wsg_colony:0 "[殖民狂热]妖精船员居住空间调整"
+ edict_wsg_colony_desc:0 "通过拆除或压缩殖民船上妖精船员的居住空间来安置更多舰娘人口。为了我们殖民地的快速发展，我们相信妖精船员们会接受的。"
  
  #####################
  edict_sh_remove_pantsu:0 "[净化方法]异族胖次移除"

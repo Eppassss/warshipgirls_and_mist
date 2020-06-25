@@ -270,3 +270,34 @@
  
  wg_shop_celebration:"也许我该用招牌惰麻汤来庆祝……"
  wg_modifier_ultimate_project:"战利品商店最终项目"
+ #艾拉买椅子事件
+ wsgranking.20110.desc:0 "亲爱的[Root.GetName],你们好。\n首先恭喜你们战胜了大可汗，我们也从一些小道消息中了解到一些有趣的事情..."
+ wsgranking.20110.a:0 "继续说，我在听"
+
+ wsgranking.2011.desc:0 "好吧，我们明人不说暗话，你们获得了§Y可汗王座§!对吧？我们断椅族对这个神器非常感兴趣，我们愿意出一笔丰厚资金来购买它。\n\n我们愿意出2000£energy£ §Y$energy$§!和200£sr_pantsu£ §Y$sr_pantsu$§!，请问您意向如何？"
+ wsgranking.2011.a:0 "成交"
+ wsgranking.2011.b:0 "这...好像有点少啊！§G（还价）§!"
+ wsgranking.2011.c:0 "还是算了吧"
+ wsgranking.2011.c.response:0 "哼，等着，我一定会得到§Y可汗王座§!！"
+ wsgranking.2011.tooltip:0 "断椅族购买走了大可汗的王座"
+ 
+ wsgranking.2012.desc:0 "不行，只能这么多，我们不接受更高的报价。"
+ wsgranking.2012.a:0 "算了算了，成交"
+ 
+ wsgranking.2013.desc:0 "好吧，确实少了点，那么这样吧。\n\n我们将价格提高到3000£energy£ §Y$energy$§!和300£sr_pantsu£ §Y$sr_pantsu$§!，请问您意向如何？"
+ wsgranking.2013.b:0 "你看这椅子也算国宝了吧...§B（还价）§!"
+ 
+ wsgranking.2015.desc:0 "行吧行吧，你们真的是讨价还价的高手。\n\n5000£energy£ §Y$energy$§!和500£sr_pantsu£ §Y$sr_pantsu$§!，另外我们在加500£alloys£ §Y$alloys$§!这已经是我们的极限了！"
+ wsgranking.2015.b:0 "这...你看椅子真的很舒服呢§Y（还价）§!"
+ 
+ wsgranking.2017.desc:0 "算你走运！我们最近财务状况还算可以。\n\n10000£energy£ §Y$energy$§!和1000£sr_pantsu£ §Y$sr_pantsu$§!以及1000£alloys£ §Y$alloys$§!这下总愿意接受了吧！"
+ wsgranking.2017.b:0 "啊，大可汗的亲笔签名在椅子上...§R（还价）§!"
+ 
+ wsgranking.2019.desc:0 "够了！\n\n20000£energy£ §Y$energy$§! 2000£sr_pantsu£ §Y$sr_pantsu$§! 2000£alloys£ §Y$alloys$§!最后外加1000£sr_dark_matter£ §Y$sr_dark_matter$§!如果不接受，就拉倒吧！"
+ 
+ wsgranking.2020.name:0 "可汗王座失窃！"
+ wsgranking.2020.desc:0 "最近我们的国家保险库遭到了失窃！§Y可汗王座§!不翼而飞！！\n\n毫无疑问，这一定是断椅族所为，但我们不知道她们是如何突破我们保险库的层层防御并不留下任何踪迹的。鉴于我们的合作关系，且近期断椅族城邦略微上调了我们的功勋认定，这件事我们只能默默接受。"
+ wsgranking.2020.a:0 "这帮小偷！"
+ wsgranking.2021.name:0 "我们抓到了断椅族的特工！"
+ wsgranking.2021.desc:0 "最近我们的国家藏宝库遭到了入侵，但入侵者被我们的防御机关成功拦截。经过审讯，窃贼承认自己受断椅族城邦所雇佣来窃取§Y可汗王座§!，但断椅族城邦对此不予承认。鉴于我们的合作关系，且近期断椅族城邦略微上调了我们的功勋认定，这件事我们决定不予追究。"
+ wsgranking.2021.a:0 "算她们识相！"

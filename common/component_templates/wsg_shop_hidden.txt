@@ -211,6 +211,7 @@ weapon_component_template = {
 	entity = "caravaneer_turret_01_entity"
 	icon = "GFX_ship_part_perdition_beam"
 	icon_frame = 1
+	hidden = yes
 	
 	firing_arc = 60.0
 	min_range = 30.0

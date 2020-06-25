@@ -19,7 +19,9 @@ auth_wg_fe = {
 		}}
 	}
 	random_weight = {
-		factor = 0
+		modifier = {
+			factor = 0
+		}
 	}
 
 	traits = {

@@ -1,0 +1,14 @@
+entity = {
+	name = "WTFQG_entity"
+	pdxmesh = "WTFQG_1_mesh"
+	scale = 25
+	default_state = "idle"
+	state = { name = "idle"	animation = "idle" animation_blend_time = 1000.0 
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_amb_space_storm_2" } }
+	}
+}
+
+animation = {
+	name = "WTFQG_1_idle_animation"
+	file = "WTFQG_1_idle.anim"
+}

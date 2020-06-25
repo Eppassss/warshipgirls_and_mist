@@ -1204,3 +1204,42 @@ ship_section_template = {
 	medium_utility_slots = 2
 	aux_utility_slots = 2
 }
+#联合护卫舰
+ship_section_template = {
+	key = "WG_EG_CORVETTE_section"
+	ship_size = wg_corvette
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "UF_01_corvette_M1S1_entity"
+		
+	prerequisites = { "tech_UNITEDFLEET" }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "small_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_fixed"
+		
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	small_utility_slots = 2
+	aux_utility_slots = 1
+
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 15
+		}
+	}
+}

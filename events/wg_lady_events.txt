@@ -217,12 +217,52 @@ country_event = {
 		event_target:lady_contingency_fleet = {
 			set_fleet_flag = has_to_wgfe_project
 		}
-		capital_scope = { solar_system = {
+		if = {
+			limit = { exists = capital_scope }
+			capital_scope = { 
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = capital_system
+					} else = {
+						random_neighbor_system = {
+							limit = { NOT = { has_star_flag = sealed_system }}
+							ignore_hyperlanes = yes
+							save_event_target_as = capital_system
+						}
+					}
+				}
+			}
+		} else_if = {
+			limit = { 
+				OR = {
+					has_origin = origin_ev_meg_homeless_ship_strat
+					is_country_type = default_ev 
+				}
+			}
+			random_owned_fleet = {
+				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = capital_system
+					} else = {
+						random_neighbor_system = {
+							limit = { NOT = { has_star_flag = sealed_system }}
+							ignore_hyperlanes = yes
+							save_event_target_as = capital_system
+						}
+					}
+				}
+			}
+		} else = {
+			random_owned_fleet = { solar_system = {
+				save_event_target_as = capital_system
+			}}
+		}
+		event_target:capital_system = {
 			random_system_planet = {
-				limit = { NOR = {
-					is_same_value = PREVPREV
-					is_star = yes
-				}}
+				limit = { NOT = { is_star = yes }}
 				create_ambient_object = {
 					type = "horror_energy_object"
 					location = this
@@ -236,7 +276,7 @@ country_event = {
 				}
 				save_event_target_as = wg_project_planet
 			}
-		}}
+		}
 		enable_special_project = {
 			name = wsg_lady_to_wg_fe
 			location = event_target:wg_project_planet
@@ -251,6 +291,11 @@ country_event = {
 	id = wg_lady.7000
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = finish_wsg_lady_to_wg_fe_project }
+	}
 
 	immediate = {
 		if = {
@@ -271,45 +316,13 @@ country_event = {
 					}
 				}
 			}
-			event_target:lady_contingency_owner = { country_event = { id = wg_lady.9 }}
+			country_event = { id = wg_lady.9 days = 1 }
 		} else = {
 			destroy_ambient_object = event_target:wg_wormhole
 			country_event = { id = wg_lady.8 }
 		}
 	}
 }
-
-# country_event = {
-# 	id = wg_lady.7001
-# 	hide_window = yes
-# 	is_triggered_only = yes
-
-# 	trigger = {
-# 		NOT = { has_country_flag = finish_wsg_lady_to_wg_fe_project }
-# 		has_special_project = wsg_lady_to_wg_fe
-# 	}
-
-# 	immediate = {
-# 		if = {
-# 			limit = {
-# 				has_special_project = wsg_lady_to_wg_fe
-# 				NOT = { is_researching_special_project = wsg_lady_to_wg_fe }
-# 				event_target:lady_contingency_fleet = {
-# 					is_fleet_idle = yes
-# 				}
-# 			}
-# 			event_target:lady_contingency_fleet = {
-# 				fleet_action_research_special_project = {
-# 					special_project = wsg_lady_to_wg_fe
-# 					target = event_target:wg_project_planet
-# 				}
-# 			}
-# 			country_event = { id = wg_lady.7001 days = 1 }
-# 		} else = {
-# 			country_event = { id = wg_lady.7001 days = 15 }
-# 		}
-# 	}
-# }
 
 country_event = {
 	id = wg_lady.7002
@@ -345,9 +358,9 @@ country_event = {
 						}
 					}
 				}
-				event_target:lady_contingency_owner = { country_event = { id = wg_lady.9 }}
+				country_event = { id = wg_lady.9 days = 1 }
 			} else = {
-				event_target:lady_contingency_owner = { country_event = { id = wg_lady.7 }}
+				country_event = { id = wg_lady.7 }
 			}
 		} else = {
 			country_event = { id = wg_lady.7002 days = 10 }
@@ -379,7 +392,6 @@ country_event = {
 
 	immediate = {
 		abort_special_project = { type = wsg_lady_to_wg_fe }
-		# set_country_flag = modifing_wsg_lady
 		set_country_flag = finish_wsg_lady_to_wg_fe_project
 		destroy_ambient_object = event_target:wg_wormhole
 		event_target:lady_contingency_fleet = {

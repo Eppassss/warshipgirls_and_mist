@@ -785,6 +785,10 @@ country_event = {
 
 	trigger = {
 		FROM = { is_finished_megastructure = yes }
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
 		check_variable = { which = built_ms_count value < 16 }
 	}
 

@@ -59,7 +59,7 @@ can_orbital_bombard = {
 				is_country_type = gray_goo
 				is_country_type = vol
 				is_country_type = wg_crisis_country
-				is_country_type = wg_crisis_sub_gate_country
+				is_country_type = wg_Khan_country_type
 				is_country_type = kuat_fallen_empire
 				is_country_type = kuat_awakened_fallen_empire
 				is_country_type = ag_kuat_invasion_country
@@ -97,6 +97,7 @@ can_spawn_debris = {
 		NOR = { 
 			has_ascension_perk = ap_enigmatic_engineering
 			is_country_type = wg_crisis_country
+			is_country_type = wg_Khan_country_type
 		} 
 	}
 }
@@ -108,6 +109,30 @@ system_blocks_sensors = {
 		is_inside_nebula = yes
 		has_star_flag = lcluster
 		has_star_flag = sealed_system
-		has_star_flag = wg_naming_ship_system
+		has_star_flag = wg_sealed_system
+	}
+}
+
+# Root = country attempting to target system for movement
+# This = system being targeted
+can_enter_system_by_jump = {
+	custom_tooltip = {
+		success_text = "debug: can jump"
+		fail_text = cannot_jump_to_system
+
+		# Sealed system
+		OR = {
+			NOT = { has_star_flag = sealed_system }
+			AND = {
+				root = { has_country_flag = entered_sealed_system }
+				has_star_flag = sealed_system
+			}
+		}
+
+		# L-Cluster
+		NOR = { 
+			has_star_flag = lcluster 
+			has_star_flag = wg_sealed_system
+		}
 	}
 }

@@ -1124,7 +1124,58 @@ weapon_component_template = {
 	}
 }
 
+weapon_component_template = {
+	type = instant
+	
+	key = "sh_weapen_XAC"
+	size = extra_large
+	
+	
+	icon = "GFX_sh_weapen_XAC"
+	icon_frame = 1
+	
+	firing_arc = 40.0
+	min_range = 5.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 200 max = 250 }
+	windup = { min = 2 max = 4 }
+	total_fire_time = 3
+	range = 170.0
+	accuracy = 0.7
+	shield_damage = 0.5
+	armor_damage = 2.00
+	hull_damage = 1.5
+	tracking = 0.25
+	power = -370
+	
+	prerequisites = { "tech_sh_XACweapon" }
+	component_set = "sh_weapen_XAC"
+	projectile_gfx = "wsg_extra_large_turbolaser_l_y"
+	tags = { weapon_type_energy weapon_type_wsg_pantsu }	
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 150
+			sr_se = 5
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 0.6
+		}
+	}
 
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_se value <= 0 }
+		}
+	}
+}
 
 
 

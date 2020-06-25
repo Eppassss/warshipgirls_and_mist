@@ -129,3 +129,21 @@ tech_sh_torpedo = {
 		}	
 	}		
 }
+
+tech_sh_XACweapon = {
+	icon = tech_sh_XACweapon
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { particles }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
+
+	potential = {
+		OR = {
+			has_authority = auth_shenhai
+			is_wg_fallen_empire = yes
+		}	
+	}
+}

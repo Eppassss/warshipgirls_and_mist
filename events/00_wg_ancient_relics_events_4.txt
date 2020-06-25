@@ -1,0 +1,254 @@
+namespace = ancrel
+# Omnicodex Activation
+country_event = {
+	id = ancrel.6000
+	title = "ancrel.6000.name"
+	desc = "ancrel.6000.desc"
+	picture = GFX_evt_genetic_modification
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				num_owned_planets = 1
+			}
+			random_owned_planet = { save_event_target_as = planet_option_1 }
+		}
+		if = {
+			limit = {
+				num_owned_planets = 2
+			}
+			random_owned_planet = { save_event_target_as = planet_option_1 }
+			random_owned_planet = {
+				limit = {
+					NOT = { is_same_value = event_target:planet_option_1 }
+				}
+				save_event_target_as = planet_option_2
+			}
+		}
+		if = {
+			limit = {
+				num_owned_planets = 3
+			}
+			random_owned_planet = { save_event_target_as = planet_option_1 }
+			random_owned_planet = {
+				limit = {
+					NOT = { is_same_value = event_target:planet_option_1 }
+				}
+				save_event_target_as = planet_option_2
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+					}
+				}
+				save_event_target_as = planet_option_3
+			}
+		}
+		if = {
+			limit = {
+				num_owned_planets = 4
+			}
+			random_owned_planet = { save_event_target_as = planet_option_1 }
+			random_owned_planet = {
+				limit = {
+					NOT = { is_same_value = event_target:planet_option_1 }
+				}
+				save_event_target_as = planet_option_2
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+					}
+				}
+				save_event_target_as = planet_option_3
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+						is_same_value = event_target:planet_option_3
+					}
+				}
+				save_event_target_as = planet_option_4
+			}
+		}
+		if = {
+			limit = {
+				num_owned_planets >= 5
+			}
+			random_owned_planet = { save_event_target_as = planet_option_1 }
+			random_owned_planet = {
+				limit = {
+					NOT = { is_same_value = event_target:planet_option_1 }
+				}
+				save_event_target_as = planet_option_2
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+					}
+				}
+				save_event_target_as = planet_option_3
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+						is_same_value = event_target:planet_option_3
+					}
+				}
+				save_event_target_as = planet_option_4
+			}
+			random_owned_planet = {
+				limit = {
+					NOR = { 
+						is_same_value = event_target:planet_option_1
+						is_same_value = event_target:planet_option_2
+						is_same_value = event_target:planet_option_3
+						is_same_value = event_target:planet_option_4
+					}
+				}
+				save_event_target_as = planet_option_5
+			}
+		}
+	}
+	
+	option = {
+		name = ancrel.6000.a
+		hidden_effect = {
+			create_species = {
+				name = random
+				class = MAM
+				portrait = random
+				traits = random
+				effect = {
+					save_event_target_as = omnicodex_species
+				}
+			}
+			event_target:planet_option_1 = {
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:omnicodex_species
+					}					
+				}
+			}
+		}
+		custom_tooltip = ancrel.6000.a.tooltip
+	}
+	option = {
+		name = ancrel.6000.b
+		trigger = {
+			exists = event_target:planet_option_2
+		}
+		hidden_effect = {
+			create_species = {
+				name = random
+				class = MAM
+				portrait = random
+				traits = random
+				effect = {
+					save_event_target_as = omnicodex_species
+				}
+			}
+			event_target:planet_option_2 = {
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:omnicodex_species
+					}					
+				}
+			}
+		}
+		custom_tooltip = ancrel.6000.b.tooltip
+	}
+	option = {
+		name = ancrel.6000.c
+		trigger = {
+			exists = event_target:planet_option_3
+		}
+		hidden_effect = {
+			create_species = {
+				name = random
+				class = MAM
+				portrait = random
+				traits = random
+				effect = {
+					save_event_target_as = omnicodex_species
+				}
+			}
+			event_target:planet_option_3 = {
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:omnicodex_species
+					}					
+				}
+			}
+		}
+		custom_tooltip = ancrel.6000.c.tooltip
+	}
+	option = {
+		name = ancrel.6000.d
+		trigger = {
+			exists = event_target:planet_option_4
+		}
+		hidden_effect = {
+			create_species = {
+				name = random
+				class = MAM
+				portrait = random
+				traits = random
+				effect = {
+					save_event_target_as = omnicodex_species
+				}
+			}
+			event_target:planet_option_4 = {
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:omnicodex_species
+					}					
+				}
+			}
+		}
+		custom_tooltip = ancrel.6000.d.tooltip
+	}
+	option = {
+		name = ancrel.6000.e
+		trigger = {
+			exists = event_target:planet_option_5
+		}
+		hidden_effect = {
+			create_species = {
+				name = random
+				class = MAM
+				portrait = random
+				traits = random
+				effect = {
+					save_event_target_as = omnicodex_species
+				}
+			}
+			event_target:planet_option_5 = {
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:omnicodex_species
+					}					
+				}
+			}
+		}
+		custom_tooltip = ancrel.6000.e.tooltip
+	}
+}

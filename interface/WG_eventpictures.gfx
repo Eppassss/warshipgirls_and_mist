@@ -102,6 +102,12 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wsg_Istanbul2"
+		texturefile = "gfx/event_pictures/Istanbul2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_Peanut"
 		texturefile = "gfx/event_pictures/Peanut.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -614,6 +620,36 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_evt_wg_rodney_wedding"
 		texturefile = "gfx/event_pictures/wg_rodney_wedding.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_khan"
+		texturefile = "gfx/event_pictures/wg_khan.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_juggernaut_ruined"
+		texturefile = "gfx/event_pictures/wg_juggernaut_ruined.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_ella_khans_throne"
+		texturefile = "gfx/event_pictures/wg_ella_khans_throne.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_ovo_ground_combat"
+		texturefile = "gfx/event_pictures/wg_ovo_ground_combat.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_galofall"
+		texturefile = "gfx/event_pictures/wg_galofall.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}

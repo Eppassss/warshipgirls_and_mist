@@ -1,0 +1,93 @@
+# 需要先将变量years_be_khan_subject用get_digits 方法转换成可读位数才能执行此方法
+# 第一次使用此方法会生成
+# parameters:
+# VAR: return value
+# formula = BASE + BASE * ( SQE_COF * years of being subject ^ 2 * ( 1 - MINUS_COF )) * ( SQE_COF - MINUS_COF )
+set_khan_tribute = {
+	if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 1 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 1 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 2 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 2 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 3 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 3 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 4 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 4 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 5 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 5 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 6 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 6 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 7 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 7 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 8 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 8 }
+	} else_if = {
+		limit = { check_variable = { which = YEARS_DIGIT_1 value = 9 }}
+		set_khan_tribute_S2 = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = 9 }
+	}
+}
+
+set_khan_tribute_S2 = {
+	if = {
+		limit = { check_variable = { which = YEARS_DIGITS value = 1 }}
+		set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 0 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$0 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 1 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$1 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 2 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$2 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 3 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$3 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 4 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$4 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 5 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$5 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 6 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$6 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 7 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$7 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 8 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$8 }
+		} else_if = {
+			limit = { check_variable = { which = YEARS_DIGIT_2 value = 9 }}
+			set_khan_tribute_final = { RESOURCE = $RESOURCE$ BASE = $BASE$ SQE_COF = $SQE_COF$ MINUS_COF = $MINUS_COF$ YEARS = $YEARS$9 }
+		}
+	}
+}
+
+set_khan_tribute_final = {
+	add_resource = {
+		$RESOURCE$ = @\[ -1 * ( $BASE$ + ( $BASE$ * ( $SQE_COF$ * $YEARS$ * $YEARS$ * ( 1 - $MINUS_COF$ )) * ( $SQE_COF$ - $MINUS_COF$ )))]
+	}
+}
+
+remove_khan_variables = {
+	remove_array_variables = { ARRAY = YEARS }
+	remove_country_flag = set_food_data
+	remove_country_flag = set_energy_data
+	remove_country_flag = set_consumer_goods_data
+	set_variable = { which = tribute_food_required value = 0 }
+	set_variable = { which = tribute_energy_required value = 0 }
+	set_variable = { which = tribute_consumer_goods_required value = 0 }
+	remove_country_flag = has_required_food
+	remove_country_flag = has_required_energy
+	remove_country_flag = has_required_consumer_goods
+}
