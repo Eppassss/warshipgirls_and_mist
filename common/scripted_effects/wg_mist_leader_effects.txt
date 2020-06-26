@@ -181,3 +181,38 @@ level_up_shimakaze = {
 		set_skill = 10
 	}
 }
+
+create_astesia = {
+	create_species = {
+		name = Terra-NEO
+		plural = Terra-NEO
+		class = Warship_Girl
+		portrait = wsg11
+		name_list = WSG
+		effect = {
+			save_global_event_target_as = wsg_astesia_species
+		}
+	}
+	create_leader = {
+		class = scientist
+		species = event_target:wsg_astesia_species
+		name = "Name_mist_leader_astesia"
+		event_leader = yes
+		gender = female
+		immortal = yes
+		skill = 5
+		set_age = 17
+		traits = {
+			trait = leader_trait_scientist_astesia
+			trait = leader_trait_scientist_eddy
+			trait = leader_trait_scientist_mist
+		}
+		effect = {
+			change_leader_portrait = ARKS274
+			set_leader_flag = wsg_astesia_leader
+			set_leader_flag = has_gained_level_trait
+			set_leader_flag = has_gained_trait
+			save_global_event_target_as = astesia_scientist
+		}
+	}
+}

@@ -92,6 +92,9 @@ wg_boss_think_tank_system = {
 		class = pc_barren_cold
 		orbit_distance = 140
 		size = { min = 20 max = 25 }
+		flags = {
+			eddy_crash_ship
+		}
 		change_orbit = @base_moon_distance
 		
 		moon = {	

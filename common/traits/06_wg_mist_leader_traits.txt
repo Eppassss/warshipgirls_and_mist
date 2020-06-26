@@ -575,3 +575,45 @@ leader_trait_general_shimakaze_affection_lv5 = {
 	initial = no
 	randomized = no
 }
+
+#####联动事件星极特质
+#占星术
+leader_trait_scientist_astesia = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wg_Astesia.dds"
+	modifier = {
+		all_technology_research_speed = 0.25
+		ship_anomaly_research_speed_mult = 0.5
+		ship_archeaological_site_clues_add = 3
+		ship_ftl_jumpdrive_range_mult = 1
+	}
+	leader_trait = { 
+		scientist
+	}
+	leader_class = { 
+		scientist
+	}
+	initial = no
+	randomized = no
+}
+
+leader_trait_scientist_eddy = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wg_eddy.dds"
+	modifier = {
+		category_field_manipulation_research_speed_mult = 0.15
+		category_particles_research_speed_mult = 0.15
+		category_propulsion_research_speed_mult = 0.15
+		category_materials_research_speed_mult = 0.15
+	}
+	leader_trait = { 
+		scientist
+	}
+	leader_class = { 
+		scientist
+	}
+	initial = no
+	randomized = no
+}

@@ -154,6 +154,7 @@ is_wg_leader = {
 		has_trait = leader_trait_governor_santee #桑提
 		has_trait = leader_trait_general_washington_axe #花生
 		has_trait = leader_trait_ruler_lexington #太太
+		has_trait = leader_trait_scientist_astesia #星极
 	}
 }
 

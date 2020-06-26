@@ -1377,3 +1377,147 @@ country_event = {
 		}	
 	}
 }
+
+# 星极联动事件
+# Stage 1 - 科研船计算机
+fleet_event = {
+	id = wsgancrel.700
+	title = "wsgancrel.700.name"
+	desc = "wsgancrel.700.desc"
+	picture = GFX_evt_ancient_databank
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.700.a
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 2 - 破解密码
+fleet_event = {
+	id = wsgancrel.701
+	title = "wsgancrel.701.name"
+	desc = "wsgancrel.701.desc"
+	picture = GFX_evt_ancient_databank
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.701.a
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 3 - 翻译内容
+fleet_event = {
+	id = wsgancrel.702
+	title = "wsgancrel.702.name"
+	desc = "wsgancrel.702.desc"
+	picture = GFX_evt_ancient_databank
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = wsgancrel.702.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = wsgancrel.703 days = 5 }
+			}	
+		}	
+	}
+}
+
+country_event = {
+	id = wsgancrel.703
+	title = "wsgancrel.703.name"
+	desc = "wsgancrel.703.desc"
+	picture = GFX_evt_think_tank
+	is_triggered_only = yes
+
+	option = {
+		name = wsgancrel.703.a
+		hidden_effect = {
+			set_country_flag = get_astesia_from
+		}
+	}
+}
+
+country_event = {
+	id = wsgancrel.704
+	title = "wsgancrel.704.name"
+	desc = "wsgancrel.704.desc"
+	picture = GFX_evt_archaeological_dig
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet = {
+			limit = {
+				has_planet_flag = eddy_crash_ship
+			}
+			save_event_target_as = astesia_archaeological_planet
+		}
+		event_target:astesia_archaeological_planet = {
+			create_archaeological_site = site_astesia
+		}	
+	}
+
+	option = {
+		name = wsgancrel.704.a
+	}
+}
+
+country_event = {
+	id = wsgancrel.705
+	title = "wsgancrel.705.name"
+	desc = "wsgancrel.705.desc"
+	picture = GFX_evt_mist_alpha
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		AND = {
+			has_country_flag = get_astesia_from
+			has_country_flag = wsg_mist
+			has_country_flag = get_astesia
+		}
+	}
+
+	immediate = {
+		create_astesia = yes
+	}
+
+	option = {
+		name = wsgancrel.705.a
+	}
+}

@@ -55,3 +55,8 @@
 
  mod_ship_corvette_upkeep_mult: "护卫舰维护费用"
  mod_ship_destroyer_upkeep_mult: "驱逐舰维护费用"
+
+ leader_trait_scientist_astesia: "占星术"
+ leader_trait_scientist_astesia_desc: "星极的占星术在研究、考古、探索上都有极大的用处"
+ leader_trait_scientist_eddy: "恩多迪亚研究员"
+ leader_trait_scientist_eddy_desc: "星极曾是恩多迪亚帝国的武器专家，武器相关的研究可谓是得心应手"
