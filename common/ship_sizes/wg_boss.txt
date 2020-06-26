@@ -15,6 +15,8 @@ wg_think_tank = {
 	}
 	ship_modifier = {
 		ship_hyperlane_range_add = 4
+		ship_ftl_jumpdrive_range_mult = 0.5
+		ship_jumpdrive_cooldown_mult = -0.2	
 	}	
 	max_hitpoints = 200000
 	size_multiplier = 8

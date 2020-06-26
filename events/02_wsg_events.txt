@@ -1026,6 +1026,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		is_ai = no
 		NOR = {
 			any_system = { has_star_flag = ovo_system@root }
 			has_country_flag = ovo_event_triggered
@@ -1145,6 +1146,7 @@ planet_event = {
 	
 	trigger = {
 		owner = { 
+			is_ai = no
 			NOR = { 
 				has_country_flag = spawn_ovo_army
 				has_country_flag = finish_ovo_event
@@ -1237,6 +1239,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		is_ai = no
 		FROM = { NOT = { has_country_flag = finish_ovo_event }}
 		FROMFROM = { has_planet_flag = ovo_watching_flag }
 		OR = {
@@ -1295,6 +1298,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		is_ai = no
 		FROM = { NOT = { has_country_flag = finish_ovo_event }}
 		FROMFROM = { has_planet_flag = ovo_watching_flag }
 		has_country_flag = ovo_country_flag
@@ -1592,6 +1596,7 @@ country_event = {
 	trigger = {
 		has_authority = auth_warshipgirls
 		NOT = { has_country_flag = finish_ovo_event }
+		is_ai = no
 	}
 	immediate = {
 		country_event = { id = wsg.3036 days = 3600 random = 7200 } # for test, should be 3600 + random 7200 days

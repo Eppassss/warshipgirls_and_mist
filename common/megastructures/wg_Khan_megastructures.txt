@@ -92,3 +92,34 @@ wg_khan_garbage_shipyard_2 = {
 		starbase_shipyard_build_speed_mult = 1.0
 	}	
 }
+
+wg_fe_shipyard = {
+	entity = ""
+	construction_entity = ""
+	portrait = "GFX_megastructure_construction_background"
+	entity_offset = { x = 0 y = 0 }
+	show_galactic_map_icon = no
+	place_entity_on_planet_plane = yes
+	construction_blocks_others = no
+	potential = {
+		always = no
+	}
+
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 350
+			alloys = 50
+		}
+	}
+		
+	ship_modifier = {
+		ship_starting_experience_add = 500
+	}
+
+	station_modifier = {
+		starbase_shipyard_capacity_add = 30
+		starbase_shipyard_build_cost_mult = -0.05
+		starbase_shipyard_build_speed_mult = 3.0
+	}	
+}

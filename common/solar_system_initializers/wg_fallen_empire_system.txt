@@ -65,6 +65,16 @@ wg_fallen_empire_capital_system = {
 			}		
 		}			
 	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "wg_fe_shipyard"
+			orbit_angle = 0
+			orbit_distance = 45
+			entity_offset_height = -30
+			location = solar_system
+		}
+	}
 	planet = {
 		class = "pc_ringworld_tech"
 		name = "NAME_wg_fe_ring2"
@@ -83,6 +93,12 @@ wg_fallen_empire_capital_system = {
 		init_effect = {
 			trigger_megastructure_icon = yes
 			set_planet_flag = megastructure
+			spawn_megastructure = {
+				type = "wg_fe_shipyard"
+				orbit_angle = 0
+				orbit_distance = 0
+				location = planet
+			}
 		}	
 	}
 	planet = {

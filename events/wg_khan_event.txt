@@ -785,8 +785,12 @@ country_event = {
 	title = "wg_khan.16.name"
 	desc = "wg_khan.16.desc"
 	picture = GFX_evt_small_space_battle
-
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
+	}
 	immediate = {
         owner = {
 			capital_scope = {
@@ -823,8 +827,12 @@ planet_event = {
 	title = "wg_khan.17.name"
 	desc = "wg_khan.17.desc"
 	picture = GFX_evt_drifting_gateway
-
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	trigger = {
+		owner = { NOT = { has_special_project = "wg_khan_getway" }}
+	}
 
 	option = {
 		name = wg_khan.17.a
@@ -1084,10 +1092,12 @@ ship_event = {
 	desc = "wg_khan.26.desc"
 
 	diplomatic = yes
-
+	is_triggered_only = yes
+	fire_only_once = yes
 	picture_event_data = {
 		room = "wg_Khan_room"
 	}
+	
 	trigger = {
 		FROM = {
 			has_star_flag = wg_Da_Khan_system_home
@@ -1098,7 +1108,7 @@ ship_event = {
 		owner = { set_country_flag = triggered_wg_khan_home_event }
 	}
 
-	is_triggered_only = yes
+	
 
 	option = {
 		name = wg_khan.26.a

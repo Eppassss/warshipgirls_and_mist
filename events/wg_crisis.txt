@@ -119,6 +119,75 @@ country_event = {
 		}
 	}	
 }
+
+# 狡猾同盟
+country_event = {
+	id = wg_crisis.23334
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		NOR = {
+			has_global_flag = set_allied_ag_kuat
+			has_global_flag = is_enemy_ag_kuat
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { OR = {
+				has_global_flag = has_ag_kuat_invasion_country 
+				has_global_flag = kuat_spawned
+			}}
+			country_event = { id = wg_crisis.23335 }
+		} else = {
+			country_event = { id = wg_crisis.23334 days = 180 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis.23335
+	title = wg_crisis.23335.name
+	desc = wg_crisis.23335.desc
+	picture = GFX_evt_em_war_1
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = is_allied_ag_kuat
+			has_global_flag = is_enemy_ag_kuat
+		}
+	}
+
+	option = {
+		name = wg_crisis.23335.a
+		custom_tooltip = wg_crisis.23335.a.tooltip
+		hidden_effect = {
+			set_global_flag = set_allied_ag_kuat
+			set_global_flag = is_allied_ag_kuat
+		}
+	}
+	option = {
+		name = wg_crisis.23335.b
+		custom_tooltip = wg_crisis.23335.b.tooltip
+		hidden_effect = {
+			set_global_flag = is_enemy_ag_kuat
+			remove_global_flag = set_allied_ag_kuat
+			remove_global_flag = is_allied_ag_kuat
+			if = {
+				limit = { has_global_flag = has_ag_kuat_invasion_country }
+				set_faction_hostility = {
+					target = event_target:ag_kuat_invasion_country
+					set_hostile = yes
+					set_friendly = no
+				}
+			}
+		}
+	}
+}
+
 country_event = {
 	id = wg_crisis.3
 	hide_window = yes
@@ -216,6 +285,21 @@ country_event = {
 						set_country_flag = creating_small_portal
 						set_country_flag = checked_all_fleet_once
 						add_modifier = { modifier = uf_special_buff days = -1 }
+						if = {
+							limit = {
+								has_global_flag = is_allied_ag_kuat
+								has_global_flag = has_ag_kuat_invasion_country
+							}
+							set_faction_hostility = {
+								target = event_target:ag_kuat_invasion_country
+								set_hostile = no
+								set_friendly = yes
+							}
+						} else_if = {
+							limit = { NOT = { has_global_flag = is_enemy_ag_kuat }}
+							set_global_flag = is_allied_ag_kuat
+							country_event = { id = wg_crisis.23334 }
+						}
 					}
 				}
 				event_target:wg_crisis_country = {
@@ -5049,6 +5133,28 @@ event = {
 					has_global_flag = wg_crisis_insane
 				}
 			}
+			if = { # 狡猾同盟
+				limit = {
+					any_country = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+				}
+				random_country = {
+					limit = { 
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_crisis.23334 }
+				}
+			} else_if = {
+				limit = { any_country = { is_ai = no }}
+				random_country = {
+					limit = { is_ai = no }
+					country_event = { id = wg_crisis.23334 }
+				}
+			}
+			
 			random_country = {
 				limit = { is_country_type = global_event }
 				country_event = { id = wg_crisis.3 days = 3600 random = 3600 }
