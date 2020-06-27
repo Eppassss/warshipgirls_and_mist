@@ -1239,7 +1239,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_ai = no
 		FROM = { NOT = { has_country_flag = finish_ovo_event }}
 		FROMFROM = { has_planet_flag = ovo_watching_flag }
 		OR = {
@@ -1298,7 +1297,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_ai = no
 		FROM = { NOT = { has_country_flag = finish_ovo_event }}
 		FROMFROM = { has_planet_flag = ovo_watching_flag }
 		has_country_flag = ovo_country_flag
@@ -3768,5 +3766,20 @@ country_event = {
 			}	
 		}
 		country_event = { id = wsg.3106 days = 1 }
+	}
+}
+
+planet_event = {
+	id = wsg.3205
+	title = wsg.3205.name
+	desc = wsg.3205.desc
+	picture = GFX_evt_wg_ringworld
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.3205.a
 	}
 }

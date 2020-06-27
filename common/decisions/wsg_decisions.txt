@@ -567,6 +567,7 @@ decision_wsg_rw_project = {
 				entity = "ringworld_habitable_wsg"
 				graphical_culture = owner
 			}
+			planet_event = { id =  wsg.3205 }
 		}
 	}
 	
