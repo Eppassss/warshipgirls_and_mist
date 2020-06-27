@@ -3371,6 +3371,101 @@ country_event = {
 }
 
 
+country_event = {
+	id = wg_fe.138
+	title = "TRANSMISSION"
+	desc = wg_fe.138.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	trigger = {
+		is_ai = no
+		exists = event_target:wg_fallen_empire
+	}
+
+	option = {
+		name = wg_fe.138.a
+		custom_tooltip = wg_fe.138.a.tooltip
+		hidden_effect = {
+			if = {
+				limit = { has_federation = yes }
+				event_target:wg_fallen_empire = { 
+					join_alliance = { 
+						who = root 
+						override_requirements = yes 
+					}
+					federation = {
+						add_federation_experience = 10000
+					}
+				}
+			} 
+			else = {
+				join_alliance = { 
+					who = event_target:wg_fallen_empire
+					override_requirements = yes
+					name = NAME_WG_FE_FEDERATION
+				}
+				federation = {
+					set_federation_type = warship_girls_federation
+					add_federation_experience = 10000
+				}
+			}
+		}
+	}
+	option = {
+		name = wg_fe.138.b
+		hidden_effect = {
+			set_country_flag = denied_form_alliance_with_wgfe
+			if = {
+				limit = {
+					any_country = {
+						is_ai = no
+						OR = {
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						NOR = { 
+							has_country_flag = denied_form_alliance_with_wgfe
+							has_civic = civic_CM
+							has_ascension_perk = ap_shenhai_silent
+							has_civic = civic_fanatic_purifiers
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_ai = no
+						OR = {
+							has_authority = auth_warshipgirls
+							has_authority = auth_shenhai
+						}
+						NOR = { 
+							has_country_flag = denied_form_alliance_with_wgfe
+							has_civic = civic_CM
+							has_ascension_perk = ap_shenhai_silent
+							has_civic = civic_fanatic_purifiers
+						}
+					}
+					country_event = { id = wg_fe.138 }
+				}
+			}
+		}
+	}
+}
+
+
+
 # 测试条件
 country_event = {
 	id = wg_fe.12450

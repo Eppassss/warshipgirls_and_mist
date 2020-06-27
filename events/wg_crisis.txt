@@ -120,7 +120,7 @@ country_event = {
 	}	
 }
 
-# 狡猾同盟
+# 泛多维宇宙善良同盟
 country_event = {
 	id = wg_crisis.23334
 	hide_window = yes
@@ -5161,6 +5161,22 @@ event = {
 			}
 			every_playable_country = {
 				country_event = { id = wg_crisis.2 }
+			}
+			random_country = { # 堕落妈与玩家组联盟事件
+				limit = {
+					exists = event_target:wg_fallen_empire
+					is_ai = no
+					OR = {
+						has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+					}
+					NOR = { 
+						has_civic = civic_CM
+						has_ascension_perk = ap_shenhai_silent
+						has_civic = civic_fanatic_purifiers
+					}
+				}
+				country_event = { id = wg_fe.138 days = 30 }
 			}
 			if = {
 				limit = { exists = event_target:wg_fallen_empire }
