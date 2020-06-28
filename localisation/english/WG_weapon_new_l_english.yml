@@ -1,143 +1,99 @@
 ﻿l_english:
-###################################
-tech_wsg_auto57:"57CM Pulse Laser Cannon"
-tech_wsg_auto57_desc:"A weapon modified from the pulsed laser ignition device used in research laboratories-just barely reached the weapon level."
-
-tech_wsg_rockets:"X-28 Mod12 Rocket Launcher"
-tech_wsg_rockets_desc:"When we are fighting the deep sea, we often use the X-28 rocket artillery to suppress the deep sea fleet base and the air force. Today, this weapon is loaded on our ships for our interstellar conquest."
-
-tech_wsg_auto127:"127CM plasma automatic artillery"
-tech_wsg_auto127_desc:"The medium-sized plasma automatic gun from the loot shop is larger in caliber than the 57CM type, has more ammunition and more power, but covers a larger area."
-
-tech_wsg_auto152:"152DM plasma automatic artillery"
-tech_wsg_auto152_desc:"The 152DM plasma automatic gun from the loot shop. A large automatic weapon with extremely powerful power, which can quickly tear up the enemy."
-
-tech_wsg_203plasma:"203DM Bizarre Group Artillery"
-tech_wsg_203plasma_desc:"Alpha weapons from loot shops, killing enemies with strange substances."
-
-tech_wsg_f2h:"S-F2H Space Fighter"
-tech_wsg_f2h_desc:"Abandon the extra decoration and use a small pulse engine high-speed interceptor."
-
-tech_wsg_330ion:"330M Modified Ion Cannon"
-tech_wsg_330ion_desc:"Improved from the heavy ion cannon, it is especially useful for the shield system, but the penetration of the armor is not enough. You can see this weapon shows something wrong or uses the console."
-
-
-tech_wsg_356laser:"356DM shield jamming beam"
-tech_wsg_356laser_desc:"Alpha weapon from the loot shop. This interference beam perfectly matches the coherent frequency of the enemy shield. It only takes a few continuous exposures to effectively remove the enemy shield."
-
-tech_wsg_410:"410M Dark Matter Alpha Charge Cannon"
-tech_wsg_410_desc:"Completely sacrificed the penetrating power of the shield armor and turned it into an erosive force."
-
-tech_wsg_EW:"Energy Whip"
-tech_wsg_EW_desc:"This weapon can generate huge energy after being hit to consume the shield of the hit person, and can cause additional damage to the hull structure, but there is no bonus for armor."
-
-tech_wsg_rim99:"RIM-99 defense decoy"
-tech_wsg_rim99_desc:"Small decoy ammunition that can interfere with the enemy ’s point defense system cannot cause effective damage, but can consume the enemy ’s defense system ’s interception capabilities."
-
-tech_wsg_sy10:"Upstream-10 Missile"
-tech_wsg_sy10_desc:"This missile is not as slow as Alpha torpedoes, it is very easy to explode. G-slot single launcher and L-slot dual launcher are provided."
-
-tech_sh_dsy10:"D-Upstream-10 Missile"
-tech_sh_dsy10_desc:"Upstream 10 missiles picked up by the deep-sea fleet from the shipyard of the shipyard. Except for painting, there is no difference in performance from the original product."
-
-tech_wsg_dmm:"Dark Matter Alpha Mine"
-tech_wsg_dmm_desc:"Equipment that resists the joint fleet's embarrassment in an emergency and simply encapsulates dark matter and alpha crystals in a thick metal spherical shell. Just like Miss Changchun when experimenting with dark matter alpha weapons, its explosive power is enough to tear the planet a part of."
-
-tech_living_metal_bulge:"Living Metal Plese System"
-tech_living_metal_bulge_desc:"The solid armor formed by doping live metal into liquid metal and pouring into a series of cylinders will increase the protection effect as the scale increases. Due to the oversize, it is limited to medium and large ship equipment."
-
-tech_wsg_pd127:"MK38 127CM dual-purpose gun"
-tech_wsg_pd127_desc:"MK38 medium dual-purpose magnetic rail gun can fire a series of kinetic energy ammunition, which can attack incoming carrier aircraft and missiles, as well as ships."
-
-tech_sh_autocannon:"Deep Sea Blaster"
-tech_sh_autocannon_desc:"A highly advanced automatic artillery can quickly launch high-explosive warheads with deep-sea energy radiation, completely bypass the shield system, and seriously damage the armor."
-
-tech_sh_fighter:"Deep Sea High Speed ​​Fighter"
-tech_sh_fighter_desc:"A deep-sea fighter jet using a deep-sea energy core reactor. Its small rapid-fire guns and auxiliary fire control system can be used against incoming carrier aircraft and missiles."
-
-tech_sh_torpedo:"Deep Sea Heavy Torpedo"
-tech_sh_torpedo_desc:"A large number of heavy-duty missiles using deep-sea energy cores and covering deep-sea alloy carapace in the warheads are slow in movement, relatively close in range, and extremely slow in rate of fire, but the power is absolutely beyond doubt."
-
-wsg_weapon_autocannon_57:"57CM Pulse Laser Cannon"
-wsg_weapon_autocannon_57_DESC:"A weapon modified from the pulsed laser ignition device used in research laboratories-just barely reached the weapon level."
-
-wsg_weapon_rockets:"X-28 Mod12 Rocket Launcher"
-wsg_weapon_rockets_DESC:"We often use the X-28 rocket artillery to suppress the deep sea fleet base and the air force when fighting the deep sea. Today, this weapon is loaded on our ships for our interstellar conquest."
-
-wsg_weapon_autocannon_127:"127CM plasma automatic artillery"
-wsg_weapon_autocannon_127_DESC:"Medium-sized plasma automatic gun, or a combination of automatic artillery technology and plasma weapon technology."
-
-wsg_weapon_autocannon_152:"152DM plasma automatic artillery"
-wsg_weapon_autocannon_152_DESC:"Large plasma automatic gun, a powerful multi-purpose weapon, capable of melting most of the enemies."
-
-wsg_weapon_203plasma:"203DM Bizarre Artillery"
-wsg_weapon_203plasma_DESC:"The material part of the ship is destroyed at high speed by launching a strange group, but it will be easily deflected by the shield."
-
-wsg_weapon_356laser:"356DM shield jamming beam"
-wsg_weapon_356laser_DESC:"The interference beam and the frequency of the enemy shield perfectly match, but the armor does not eat this set at all."
-
-wsg_weapen_X_410:"410M Dark Matter Alpha Charge Cannon"
-wsg_weapen_X_410_DESC:"Completely sacrificed the penetrating power of the shield armor and turned it into an erosive force."
-
-wsg_weapen_X_EW:"Energy Whip"
-wsg_weapen_X_EW_DESC:"This weapon can generate huge energy after being hit to consume the shield of the hit person, and can cause additional damage to the hull structure, but there is no bonus for armor."
-
-wsg_weapon_rim99:"RIM-99 defense decoy"
-wsg_weapon_rim99_DESC:"Decoy missiles can interfere with enemy point defense systems."
-
-wsg_weapon_sy10:"Upstream-10 missile"
-wsg_weapon_sy10_DESC:"Medium-sized energy warhead missile weapon with balanced performance"
-
-wsg_weapon_sy10_dual:"Double-united upstream -10 missile"
-wsg_weapon_sy10_dual_DESC:"The dual-mounted version of the upstream missile has nearly double the power."
-
-sh_weapon_dsy10:"D-Upstream-10 Missile"
-sh_weapon_dsy10_DESC:"Upstream 10 missiles picked up by the deep-sea fleet from the shipyard of the shipyard shipyard."
-
-wsg_weapon_dpflak:"MK38 dual-purpose gun"
-wsg_weapon_dpflak_DESC:"Medium-sized magnetic rail guns fire a series of kinetic energy ammunition to attack incoming carrier aircraft and missiles, as well as ships."
-
-wsg_weapon_f2h:"S-F2H Star Fighter"
-wsg_weapon_f2h_DESC:"A fighter jet equipped with an alpha reactor and a powerful cutting beam is a nightmare for attacking enemy aircraft."
-
-MEDIUM_living_metal_bulge:"Medium Live Metal Plese System"
-LARGE_living_metal_bulge:"Heavy Living Metal Plese System"
-wsg_ship_part_living_metal_bulge:"Living Metal Plese System"
-wsg_ship_part_living_metal_bulge_desc:"Live metal plese system is limited to medium and large ship equipment."
-
-wsg_nsc_compat_aura:"Mysterious Electronic Device"
-wsg_nsc_compat_aura_DESC:"A mysterious electronic device that can weaken the penetration of enemy weapons. §! §R aura effects cannot be superimposed§!"
-
-SMALL_sh_weapon_autocannon:"Small Deep Sea Rapid Gun"
-MEDIUM_sh_weapon_autocannon:"Medium-sized Deep-sea Rapid Gun"
-LARGE_sh_weapon_autocannon:"Large Deep Sea Rapid Cannon"
-sh_autocannon:"Deep Sea Blaster"
-sh_autocannon_DESC:"These automatic guns can quickly launch high-explosive warheads with deep-sea energy radiation."
-
-sh_torpedo:"Deep Sea Heavy Torpedo"
-sh_torpedo_DESC:"Heavy deep-sea torpedo. The range is close and the speed is slow, but the power is very powerful, and several rounds are enough to destroy most heavy ships."
-
-sh_fighter:"Deep Sea High Speed ​​Fighter"
-sh_fighter_DESC:"Deep sea fighter using deep sea energy core reactor."
-
-wsg_weapon_dmm:"Dark Matter Alpha Mine"
-wsg_weapon_dmm_DESC:"No matter where this weapon directs our fleet, we decided to choose hope."
-
-SHIP_AURA_WG_NSC: 0 "Mysterious electronic device"
-
-
-## Hidden weapon
-wsg_weapon_autocannon_152_hidden:"152CM plasma automatic artillery"
-wsg_weapon_autocannon_152_hidden_DESC:"Large plasma automatic gun, powerful multi-purpose weapon."
-
-wsg_weapon_203plasma_hidden:"203DM Bizarre Group Artillery"
-wsg_weapon_203plasma_hidden_DESC:"Destroy the material part of the ship at high speed by launching a strange group, but it will be easily deflected by the shield."
-
-wsg_weapon_356laser_hidden:"356M shield jamming beam"
-wsg_weapon_356laser_hidden_DESC:"The interference beam and the frequency of the enemy shield perfectly match, but the armor does not eat this set at all."
-
-wsg_shop_fighter:"Mercenary Carrier Aircraft"
-wsg_shop_fighter_DESC:"The elite carrier-based aircraft driven by pilots of different rivers who were born and died for a few fat times"
-
-wsg_shop_ion_cannon:"Improved Ion Cannon"
-wsg_shop_ion_cannon_DESC:"An improved ion cannon, with general energy weapon characteristics, and it can barely be stuffed into the ship."
+ tech_wsg_auto57: "Small Laser Autocannon"
+ tech_wsg_auto57_desc: "A weapon developed from the impulse laser igniter using in laboratories. Its power reluctantly reaches weapons-grade."
+ tech_wsg_rockets: "Rocket Launchers"
+ tech_wsg_rockets_desc: "Converted from the rocket launcher using in land battles, this weapon is armed on our spaceships for suppressing fire."
+ tech_wsg_auto127: "Medium Plasma Autocannon"
+ tech_wsg_auto127_desc: "Medium-caliber autocannon designed by Trophy Plaza."
+ tech_wsg_auto152: "Large Plasma Autocannon"
+ tech_wsg_auto152_desc: "Large-caliber autocannon designed by Trophy Plaza, which can shatter any approaching hostile unit."
+ tech_wsg_203plasma: "Large Strangelet Gun"
+ tech_wsg_203plasma_desc: "An alpha-class weapon from the Trophy store. It harnesses the power of strange matter to damage enemy ships."
+ tech_wsg_f2h: "S-F2H Fighter"
+ tech_wsg_f2h_desc: "A compact designed interceptor using an impulse engine and laser cutting beam."
+ tech_wsg_330ion: "XLarge Shipborne Ion Cannon"
+ tech_wsg_330ion_desc: "Improved from the common ion cannon, this weapon is specially designed for dealing with shield systems."
+ tech_wsg_356laser: "Large Shield Shatter Beam"
+ tech_wsg_356laser_desc: "An alpha weapon developed by Trophy Plaza. This beam has the same energy frequency as deflector shields, which can shatter the shields effectively provided sufficient exposure time."
+ tech_wsg_rim99: "Decoy Missile Launchers"
+ tech_wsg_rim99_desc: "These are decoys interfering enemy's point defense system rather than causing real damage to ships."
+ tech_wsg_sy10: "SY-10 Missile Launcher"
+ tech_wsg_sy10_desc: "A balanced missile weapon with energy warhead. Its twin-mount version can be armed on large ships."
+ tech_sh_dsy10: "DSY-10 Missile Launcher"
+ tech_sh_dsy10_desc: "A balanced missile weapon with energy warhead. It is the copy version of SY-10 missile launcher developed by Abyssal Fleet through reverse engineering."
+ tech_wsg_dmm: "D-Alpha Sphere Launcher"
+ tech_wsg_dmm_desc: "It's an emergent design simply sealing dark matter and Alpha Crystals together into a spherical shell made by strong incarnation materials. Just like Miss Changchun's experiment, its power can tear the ground apart."
+ tech_living_metal_bulge: "Living Metal TDS"
+ tech_living_metal_bulge_desc: "A complicated torpedo defense system composed of living metal and other alloys. The living metal can fill the damaged part of armor and hull to maintain the ship's integrity."
+ tech_wsg_pd127: "Medium Dual Purpose Gun"
+ tech_wsg_pd127_desc: "A railgun firing kinetic shells to deal with strikers, missiles, and ships."
+ tech_sh_autocannon: "Abyssal Autocannon"
+ tech_sh_autocannon_desc: "This autocannon can produce a metal storm of high-explosive shells with Abyssal energy radiation. Good at shield penetration."
+ tech_sh_fighter: "Abyssal Fighter"
+ tech_sh_fighter_desc: "A high-speed fighter using an Abyssal energy core reactor."
+ tech_sh_torpedo: "Abyssal Torpedoes"
+ tech_sh_torpedo_desc: "A heavy torpedo using Abyssal energy core as a warhead. Slow-moving, but with extreme power."
+ wsg_weapon_autocannon_57: "Small Laser Autocannon"
+ wsg_weapon_autocannon_57_DESC: "A weapon developed from the impulse laser igniter using in laboratories. Its power reluctantly reaches weapons-grade."
+ wsg_weapon_rockets: "Rocket Launchers"
+ wsg_weapon_rockets_DESC: "Converted from the rocket launcher using in land battles, this weapon is armed on our spaceships for suppressing fire."
+ wsg_weapon_autocannon_127: "Medium Plasma Autocannon"
+ wsg_weapon_autocannon_127_DESC: "Medium-caliber autocannon designed by Trophy Plaza."
+ wsg_weapon_autocannon_152: "Large Plasma Autocannon"
+ wsg_weapon_autocannon_152_DESC: "Large-caliber autocannon designed by Trophy Plaza, which can shatter any approaching hostile unit."
+ wsg_weapon_203plasma: "Large Strangelet Gun"
+ wsg_weapon_203plasma_DESC: "The strangelets will shatter the material of the armor and hull, but they can easily be deflected by shields."
+ wsg_weapon_356laser: "Large Shield Shatter Beam"
+ wsg_weapon_356laser_DESC: "An alpha weapon developed by Trophy Plaza. This beam has the same energy frequency as deflector shields, which can shatter the shields effectively provided sufficient exposure time."
+ wsg_weapon_rim99: "Decoy Missile Launchers"
+ wsg_weapon_rim99_DESC: "These are decoys interfering enemy's point defense system rather than causing real damage to ships."
+ wsg_weapon_sy10: "SY-10 Missile Launcher"
+ wsg_weapon_sy10_DESC: "A balanced missile weapon with energy warhead."
+ wsg_weapon_sy10_dual: "Twin SY-10 Missile Launcher"
+ wsg_weapon_sy10_dual_DESC: "The twin-mount version of SY-10, which can be armed on large ships."
+ sh_weapon_dsy10: "DSY-10 Missile Launcher"
+ sh_weapon_dsy10_DESC: "A balanced missile weapon with energy warhead. It is the copy version of SY-10 missile launcher developed by Abyssal Fleet through reverse engineering."
+ wsg_weapon_dpflak: "Type 38 Dual Purpose Gun"
+ wsg_weapon_dpflak_DESC: "A railgun firing kinetic shells to deal with strikers, missiles, and ships."
+ wsg_weapon_f2h: "S-F2H Fighter"
+ wsg_weapon_f2h_DESC: "A compact designed interceptor using an impulse engine and laser cutting beam."
+ MEDIUM_living_metal_bulge: "Medium Living Metal TDS"
+ LARGE_living_metal_bulge: "Large Living Metal TDS"
+ wsg_ship_part_living_metal_bulge: "Living Metal TDS"
+ wsg_ship_part_living_metal_bulge_desc: "A complicated torpedo defense system composed of living metal and other alloys. The living metal can fill the damaged part of armor and hull to maintain the ship's integrity."
+ wsg_nsc_compat_aura: "Mysterious Electronic Device"
+ wsg_nsc_compat_aura_DESC: "A mysterious electronic device which can weaken the penetration efficiency of the enemy's weapon."
+ SMALL_sh_weapon_autocannon: "Small Abyssal Autocannon"
+ MEDIUM_sh_weapon_autocannon: "Medium Abyssal Autocannon"
+ LARGE_sh_weapon_autocannon: "Large Abyssal Autocannon"
+ sh_autocannon: "Abyssal Autocannon"
+ sh_autocannon_DESC: "This autocannon can produce a metal storm of high-explosive shells with Abyssal energy radiation. Good at shield penetration."
+ sh_torpedo: "Abyssal Torpedoes"
+ sh_torpedo_DESC: "A heavy torpedo using Abyssal energy core as a warhead. Slow-moving, but with extreme power."
+ sh_fighter: "Abyssal Fighter"
+ sh_fighter_DESC: "A high-speed fighter using an Abyssal energy core reactor."
+ wsg_weapon_dmm: "D-Alpha Sphere Launcher"
+ wsg_weapon_dmm_DESC: "It's an emergent design simply sealing dark matter and Alpha Crystals together into a spherical shell made by strong incarnation materials. Just like Miss Changchun's experiment, its power can tear the ground apart."
+ SHIP_AURA_WG_NSC:0 "Mysterious Electronic Device"
+ wsg_weapon_autocannon_152_hidden: "Type 152 Plasma Autocannon (Improved)"
+ wsg_weapon_autocannon_152_hidden_DESC: "Large-caliber autocannon designed by Trophy Plaza, which can shatter any approaching hostile unit."
+ wsg_weapon_203plasma_hidden: "Large Strangelet Gun (Improved)"
+ wsg_weapon_203plasma_hidden_DESC: "The strangelets will shatter the material of the armor and hull, but they can easily be deflected by shields."
+ wsg_weapon_356laser_hidden: "Large Shield Shatter Beam (Improved)"
+ wsg_weapon_356laser_hidden_DESC: "An alpha weapon developed by Trophy Plaza. This beam has the same energy frequency as deflector shields, which can shatter the shields effectively provided sufficient exposure time."
+ wsg_shop_fighter: "Mercenary Strikers"
+ wsg_shop_fighter_DESC: "Advanced carrier-borne strikers piloted by Trophy Plaza's commandos."
+ wsg_shop_ion_cannon: "Improved Ion Cannon"
+ wsg_shop_ion_cannon_DESC: "The improved version of Ion Cannon, which can be reluctantly armed on warships."
+ tech_wsg_410: "XLarge D-Alpha Charge Gun"
+ tech_wsg_410_desc: "A slow-firing massive battery aiming to the lethality to shield and armor."
+ tech_wsg_EW: "Energy Whip"
+ tech_wsg_EW_desc: "This special weapon can burst a large amount of energy to deal with extra damage to the enemy target's shield and hull."
+ wsg_weapen_X_410: "XLarge D-Alpha Charge Gun"
+ wsg_weapen_X_410_DESC: "A slow-firing massive battery aiming to the lethality to shield and armor."
+ wsg_weapen_X_EW: "Energy Whip"
+ wsg_weapen_X_EW_DESC: "This special weapon can burst a large amount of energy to deal with extra damage to the enemy target's shield and hull."
+ sh_weapen_XAC: "Abyssal Type SH-XAC Autocannon"
+ sh_weapen_XAC_DESC: "A spinal mounted rapid-fire autocannon, which can easily tear grouped targets into pieces."
+ tech_sh_XACweapon: "Abyssal Type SH-XAC Autocannon"
+ tech_sh_XACweapon_desc: "A spinal mounted rapid-fire autocannon, which can easily tear grouped targets into pieces."

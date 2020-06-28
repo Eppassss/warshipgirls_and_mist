@@ -2851,7 +2851,10 @@ tech_wsg_mine = {
 		factor = 0
 	}
 	potential = {
-		has_authority = auth_warshipgirls
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
 	}
 }
 
