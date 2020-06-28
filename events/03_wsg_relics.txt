@@ -1521,3 +1521,14 @@ country_event = {
 		name = wsgancrel.705.a
 	}
 }
+
+country_event = {
+	id = wsgancrel.706
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = get_astesia_from
+		set_country_flag = wsg_mist
+		set_country_flag = get_astesia
+	}
+}

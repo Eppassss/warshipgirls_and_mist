@@ -118,19 +118,37 @@ country_event = {
 				}
 			}
 			40 = { }
-		}		
-		random_list = { 
-			60 = {
-				random_country = {
-					limit = {
-						has_wg_special_authority = yes
-						is_ai = no
-					}
-					country_event = { id = wg_boss.2 }#星极
-				}
-			}
-			40 = { }
 		}
+		#有舟游mod必定生成星极
+		if = {
+			limit = { 
+				has_global_flag = arknights_swimming
+			}
+			random_country = {
+				limit = {
+					has_wg_special_authority = yes
+					is_ai = no
+				}
+				country_event = { id = wg_boss.2 }#星极
+			}
+			set_country_flag = ark_astesia
+		}	
+		else = {
+			set_country_flag = random_asteria
+			random_list = { 
+				60 = {
+					random_country = {
+						limit = {
+							has_wg_special_authority = yes
+							is_ai = no
+						}
+						country_event = { id = wg_boss.2 }#星极
+					}
+				}
+				40 = { }
+			}
+		}
+		
 		random_list = { 
 			30 = {
 				random_country = {
@@ -381,10 +399,35 @@ country_event = {
 				}
 				remove_modifier = "wsg_Astesia"	
 			}			
-			random_list = {
-				70 = { country_event = { id = wg_boss.11 days = 10 random = 10 } }
-				30 = { country_event = { id = wg_boss.10 days = 10 random = 90 } }
-			}			
+			if = {
+				limit = { 
+					has_global_flag = arknights_swimming
+				}
+				country_event = {
+					id = wg_boss.11
+					days = 10
+					random = 10
+				}		
+			} 
+			else = {
+				random_list = {
+					70 = { 
+						country_event = { 
+							id = wg_boss.11 
+							days = 10 
+							random = 10 
+						}
+					 }
+					30 = { 	
+						country_event = { 
+							id = wg_boss.10 
+							days = 10 		
+							random = 90 
+						} 
+					}
+				}		
+			}
+				
 		}				
 	}
 }
@@ -457,6 +500,14 @@ country_event = {
 			owner = {
 				country_event = { id = wg_boss.12 days = 1800 random = 1800 }
 			}			
+			if = {
+				limit = { 
+					has_global_flag = arknights_swimming
+				}
+				country_event = {
+					id = wsgancrel.704
+				}
+			}
 		}
 	}	
 }
@@ -3004,7 +3055,7 @@ event = { #生成星系
 					has_wg_special_authority = yes
 					is_ai = no
 				}
-				country_event = { id =  wg_boss.1 } #boss
+				country_event = { id =  wg_boss.1 days = 10 } #boss
 				random_list = {
 					50 = { country_event = { id =  wg_parit.1 }} #帕里特
 					50 = {}
