@@ -95,3 +95,28 @@ planet_Khan_occupied = {
 fe_damage_to_wg_khan = {
 	damage_vs_country_type_wg_Khan_country_type_mult = 0.5
 }
+
+khan_jammer_debuff1 = {
+	ship_shield_reduction = 0.5
+}
+khan_jammer_debuff2 = {
+	ship_fire_rate_mult = -0.3
+}
+khan_jammer_debuff3 = {
+	ship_weapon_damage = -0.3
+}
+khan_jammer_debuff4 = {
+	ship_shield_damage_mult = -0.3
+	ship_armor_damage_mult = -0.3
+	ship_hull_damage_mult = -0.3
+	ship_shield_penetration_mult = -0.3
+	ship_armor_penetration_mult = -0.3
+}
+khan_jammer_debuff5 = {
+	ship_evasion_add = -30
+	ship_evasion_mult = -0.3
+	ship_tracking_add = -30
+	ship_tracking_mult = -0.3
+	ship_accuracy_add = -30
+	ship_accuracy_mult = -0.3
+}

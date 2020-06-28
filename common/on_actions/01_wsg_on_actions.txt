@@ -227,6 +227,8 @@ on_fleet_destroyed_perp = {
 	events = {
 		wg_lady.90
 		wg_boss.68
+		wg_khan.200
+		wg_khan.213
 	}
 }
 
@@ -257,6 +259,7 @@ on_entering_battle = {
 		mwsge_drone.1
 		mwsge_drone.11
 		wg_aft.9
+		wg_khan.210
 	}
 }
 
@@ -350,6 +353,7 @@ on_fleet_disbanded = {
 on_space_battle_won = {
 	events = {
 		wg_crisis.72
+		wg_khan.212
 	}
 }
 

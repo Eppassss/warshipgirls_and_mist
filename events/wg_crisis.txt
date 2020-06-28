@@ -5171,6 +5171,7 @@ event = {
 						has_authority = auth_shenhai
 					}
 					NOR = { 
+						is_at_war_with = event_target:wg_fallen_empire
 						has_civic = civic_CM
 						has_ascension_perk = ap_shenhai_silent
 						has_civic = civic_fanatic_purifiers

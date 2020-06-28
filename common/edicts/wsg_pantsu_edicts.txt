@@ -629,10 +629,7 @@ wg_readjust_crisis = {
 			has_global_flag = wg_invasion_happened
 		}
 		OR = {
-			AND = {
-				has_global_flag = wg_khan_gate_main_fleet_defeated
-				NOT = { has_global_flag = wg_khan_crisis_active }
-			}
+			has_global_flag = wg_khan_main_fleet_defeated
 			NOT = { has_global_flag = wg_khan_crisis_active }
 		}	
 		is_ai = no
