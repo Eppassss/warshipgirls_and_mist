@@ -211,6 +211,8 @@
  bug2_object:0 "BUG" 
  bug_object_tooltip:0 "BUG"
  bug_object_desc:0 "BUG"
+ pc_wg_poke:0 "Poke球"
+ pc_wg_poke_desc:0 "制作人可能喝多了。"
  VVsphere:0 "巴格维" 
  EX_weapon_bugv:0 "王冠 Keter" 
  LARGE_weapon_bugv:0 "无限光 Ain Soph Aur" 

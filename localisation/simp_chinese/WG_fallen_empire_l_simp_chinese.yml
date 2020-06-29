@@ -4,6 +4,9 @@
 ###其他
  PRESCRIPTED_ruler_title_wg_fe:"领航者"
  NAME_awakened_wg_fallen_empire:0 "烛幽 誓约"
+ origin_wg_fallen_empire:0 "银河漫游者"
+ origin_wg_fallen_empire_desc:0 "舰娘堕落帝国的一生中大部分时间被用于银河系之间的穿梭，她们不断的逃离只为换取片刻的安息。"
+ origin_wg_fe_effect:0 "堕落妈不会对你作恶，是真正的慈母，除非你打了什么会令人浑身发光的奇怪MOD"
 ##建筑、职业""
  building_wg_fe_game_centre:0 "大型游戏中心"
  wg_fe_game_centre_desc:0 "供舰娘打发时间的地方。"
