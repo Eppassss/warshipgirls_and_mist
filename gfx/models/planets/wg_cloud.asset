@@ -15,7 +15,7 @@ entity = {
 	meshsettings = {
 	name = "clouds_geosphereShape"
 	texture_diffuse = "wg_clouds_medium_04_diff.dds"
-	texture_normal = "clouds_medium_normal.dds"
+	texture_normal = ""wg_clouds_medium_04_normal.dds""
 	texture_specular = "clouds_medium_specular.dds"
 	}
 	

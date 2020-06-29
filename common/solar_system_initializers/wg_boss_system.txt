@@ -940,9 +940,9 @@ wg_boss_bugvv_system = {
 	change_orbit = 50
 
 	planet = {
-		class = pc_broken
+		class = pc_wg_poke
 		orbit_distance = 20
-		size = { min = 15 max = 20 }
+		size = { min = 25 max = 30 }
 		change_orbit = @base_moon_distance
 		
 		moon = {	

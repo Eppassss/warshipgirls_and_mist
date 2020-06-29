@@ -148,6 +148,8 @@
  bug_object_tooltip:0 "No BUG"
  bug_object_desc:0 "Not no BUG"
  VVsphere:0 "BUG.V Sphere"
+ pc_wg_poke:0 "Poke Ball"
+ pc_wg_poke_desc:0 "The creator may drunk too much and make this thing with no sence."
  EX_weapon_bugv:0 "Keter"
  LARGE_weapon_bugv:0 "Ain Soph Aur"
  MEDIUM_weapon_bugv:0 "Ain Soph"
