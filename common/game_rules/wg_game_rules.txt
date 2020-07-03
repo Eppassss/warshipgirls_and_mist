@@ -59,7 +59,7 @@ can_orbital_bombard = {
 				is_country_type = gray_goo
 				is_country_type = vol
 				is_country_type = wg_crisis_country
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 				is_country_type = kuat_fallen_empire
 				is_country_type = kuat_awakened_fallen_empire
 				is_country_type = ag_kuat_invasion_country
@@ -97,7 +97,7 @@ can_spawn_debris = {
 		NOR = { 
 			has_ascension_perk = ap_enigmatic_engineering
 			is_country_type = wg_crisis_country
-			is_country_type = wg_Khan_country_type
+			is_khan_country_type = yes
 		} 
 	}
 }

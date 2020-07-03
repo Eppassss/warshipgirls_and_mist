@@ -94,7 +94,11 @@ country_event = {
 	diplomatic = yes
 	force_open = yes
 	trigger = {
-		from = { is_country_type = wsg_shimakaze }
+		from = { OR = {
+			is_country_type = wsg_shimakaze 
+			is_same_value = ROOT
+		}}
+
 		shimakaze_active_diplo = no
 		OR = {
 			has_country_flag = get_wsg_shimakaze
@@ -471,7 +475,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_shimakaze }
+		from = { OR = {
+			is_country_type = wsg_shimakaze 
+			is_same_value = ROOT
+		}}
 		shimakaze_active_diplo = no
 		has_country_flag = wsg_shimakaze_hurt
 		OR = {
@@ -1340,6 +1347,21 @@ country_event = {
 	}
 }
 
+# 外部通讯触发器
+country_event = {
+	id = wsg_shimakaze.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = wsg_shimakaze_hurt }
+			country_event = { id = wsg_shimakaze.5 }
+		} else = {
+			country_event = { id = wsg_shimakaze.3 }
+		}
+	}
+}
 
 #debug使用，岛风好感上升至2级
 country_event = {

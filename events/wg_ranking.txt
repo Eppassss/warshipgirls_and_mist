@@ -1,7 +1,7 @@
 namespace = wsgranking
 # 创建国家
 
-event = {
+country_event = {
     id = wsgranking.1919
     hide_window = yes
     is_triggered_only = yes
@@ -9,13 +9,10 @@ event = {
 
     # 只在有舰娘国家才执行
     trigger = {
-        any_country = { 
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
-            is_ai = no
-        }
+        any_country = {
+			has_wg_special_authority = yes
+			is_ai = no
+		}
         NOT = { has_global_flag = pantsu_shop_created }
     }
 

@@ -811,7 +811,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		wsg_lady_available = yes
 		has_wsg_lady_active_diplo = no
 		NOR = {
@@ -989,7 +992,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		wsg_lady_available = yes
 		has_wsg_lady_active_diplo = no
 		has_country_flag = wsg_lady_governor_active
@@ -1173,7 +1179,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		wsg_lady_available = yes
 		has_wsg_lady_active_diplo = no
 		has_country_flag = wsg_lady_warship_active
@@ -1395,7 +1404,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		wsg_lady_available = yes
 		has_wsg_lady_active_diplo = no
 		has_country_flag = wsg_lady_army_active
@@ -1722,7 +1734,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		wsg_lady_available = yes
 		has_wsg_lady_active_diplo = no
 		has_country_flag = wsg_lady_armed_science_active
@@ -1944,7 +1959,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		has_country_flag = gain_wsg_lady
 		has_modifier = wsg_lady_recover_cd
 		has_wsg_lady_active_diplo = no
@@ -3370,6 +3388,40 @@ country_event = {
 			country_event = { id = wg_lady.60 days = 1}
 		}
 		custom_tooltip = wg_lady.62.a.tooltip
+	}
+}
+
+# 外部通讯触发器
+country_event = {
+	id = wg_lady.998
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { OR = {
+				has_country_flag = ban_commu_with_wsg_lady
+				has_country_flag = modifing_wsg_lady
+			}}
+			country_event = { id = wg_lady.10001 }
+		} else_if = {
+			limit = { has_modifier = wsg_lady_recover_cd }
+			country_event = { id = wg_lady.29 }
+		} else_if = {
+			limit = { has_country_flag = wsg_lady_governor_active }
+			country_event = { id = wg_lady.25 }
+		} else_if = {
+			limit = { has_country_flag = wsg_lady_warship_active }
+			country_event = { id = wg_lady.26 }
+		} else_if = {
+			limit = { has_country_flag = wsg_lady_army_active }
+			country_event = { id = wg_lady.27 }
+		} else_if = {
+			limit = { has_country_flag = wsg_lady_armed_science_active }
+			country_event = { id = wg_lady.28 }
+		} else = {
+			country_event = { id = wg_lady.24 }
+		}
 	}
 }
 
@@ -5491,7 +5543,10 @@ country_event = {
 	picture = GFX_evt_wsg_no_video
 
 	trigger = {
-		from = { is_country_type = wsg_lady }
+		from = { OR = {
+			is_country_type = wsg_lady 
+			is_same_value = ROOT
+		}}
 		has_country_flag = gain_wsg_lady
 		OR = {
 			has_country_flag = ban_commu_with_wsg_lady

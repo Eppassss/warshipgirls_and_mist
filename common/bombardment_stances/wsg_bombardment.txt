@@ -3,7 +3,7 @@ Galo = {
 		owner = {
 			OR = { 	
 				is_country_type = wg_crisis_country
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 				is_wg_fallen_empire = yes
 				AND = {
 					has_authority = auth_warshipgirls
@@ -114,7 +114,7 @@ wg_doom2 = {
 		owner = {
 			OR = { 	
 				is_country_type = wg_crisis_country
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 			}
 		}
 	}

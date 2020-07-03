@@ -327,7 +327,7 @@ country_event = {
 
     trigger = {
 		FROM = {
-			is_country_type = wg_Khan_country_type
+			is_khan_country_type = yes
 		}
 		has_global_flag = wg_khan_crisis_active
 	}
@@ -596,6 +596,9 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		event_target:WG_Khan_country = {
+			set_country_type = wg_Khan_country_type_auto_delete
+		}
 		set_global_flag = wg_khan_crisis_second_fleet_arrive
 		switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
 			trigger = has_global_flag
@@ -688,7 +691,7 @@ country_event = {
 		name = wg_khan.12.a
 		every_country = {
 			limit = {
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 				NOT = { has_modifier = "wg_khan_gate_debuff1" }
 			}
 			add_modifier = {
@@ -714,7 +717,7 @@ country_event = {
 		name = wg_khan.13.a
 		every_country = {
 			limit = {
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 				NOT = { has_modifier = "wg_khan_gate_debuff2" }
 			}
 			add_modifier = {
@@ -758,7 +761,7 @@ country_event = {
 			add_resource = { unity = 2000 }
 		}
 		every_country = {
-			limit = { is_country_type = wg_Khan_country_type }
+			limit = { is_khan_country_type = yes }
 			every_owned_fleet = {
 				delete_fleet = this
 			}
@@ -774,6 +777,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		is_khan_country_type = yes
 		has_global_flag = wg_khan_crisis_second_fleet_arrive
 		NOT = { has_global_flag = wg_khan_gate_fleet_defeated }
 		OR = {
@@ -811,7 +815,7 @@ country_event = {
 		}
 		every_country = {
 			limit = {
-				is_country_type = wg_Khan_country_type	
+				is_khan_country_type = yes	
 			}
 			destroy_country = yes
 		}
@@ -1349,7 +1353,7 @@ fleet_event = {
 	trigger = {
 		exists = this
 		has_fleet_flag = Khan_attack_fleet
-		owner = { is_country_type = wg_Khan_country_type }
+		owner = { is_khan_country_type = yes }
 		has_global_flag = wg_khan_crisis_active
 		NOT = { has_fleet_flag = orders_cooldown }
 	}
@@ -1575,7 +1579,7 @@ planet_event = {
 	trigger = {
         planet_devastation >= 40
 		FROM = {
-			is_country_type = wg_Khan_country_type
+			is_khan_country_type = yes
 		}
 		check_variable = { which = wg_Khan_bombardment_stage value < 1 }
 	}
@@ -1628,7 +1632,7 @@ planet_event = {
 	trigger = {
         planet_devastation >= 70
 		FROM = {
-			is_country_type = wg_Khan_country_type
+			is_khan_country_type = yes
 		}
 		check_variable = { which = wg_Khan_bombardment_stage value = 1 }
 		NOT = { has_planet_flag = khan_invaded_succeed_flag }
@@ -1690,7 +1694,7 @@ planet_event = {
 		has_global_flag = wg_khan_crisis_active
         planet_devastation >= 100
 		FROM = {
-			is_country_type = wg_Khan_country_type
+			is_khan_country_type = yes
 		}
 		check_variable = { which = wg_Khan_bombardment_stage value = 2 }
 		NOT = { has_planet_flag = khan_invaded_succeed_flag }
@@ -1753,7 +1757,7 @@ country_event = {
 		has_global_flag = wg_khan_crisis_active
 		FROMFROM = { check_variable = { which = wg_Khan_bombardment_stage value > 0 }}
 		OR = {
-			is_country_type = wg_Khan_country_type # 可汗空投入侵玩家星球
+			is_khan_country_type = yes # 可汗空投入侵玩家星球
 			FROMFROM.CONTROLLER = { 
 				has_country_flag = wg_Khan_army_country_flag #玩家入侵被可汗控制的星球
 			}
@@ -1765,7 +1769,7 @@ country_event = {
 		if = {
 			# 地面战失败
 			limit = { 
-				is_country_type = wg_Khan_country_type
+				is_khan_country_type = yes
 				FROMFROM = {
 					NOT = { has_modifier = planet_Khan_occupied }
 				}
@@ -2029,7 +2033,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = wg_Khan_country_type
+		is_khan_country_type = yes
 	}
 
 	immediate = {
@@ -2087,7 +2091,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = wg_Khan_country_type
+		is_khan_country_type = yes
 		FROMFROM = {
 			check_variable = { which = wg_Khan_bombardment_stage value > 2 }
 		}
@@ -2245,7 +2249,7 @@ country_event = {
 			has_modifier = fe_damage_to_wg_khan 
 			has_country_flag = triggered_wg_khan_paralyzed_ship_event
 		}
-		FROM = { is_country_type = wg_Khan_country_type }
+		FROM = { is_khan_country_type = yes }
 		FROMFROMFROM = { has_fleet_flag = Khan_attack_fleet }
 		is_ai = no
 	}
@@ -2277,8 +2281,13 @@ country_event = {
 	}
 	option = {
 		name = wg_khan.200.c
+		trigger = { exists = capital_scope }
 		hidden_effect = {
 			destroy_ambient_object = event_target:wg_khan_paralyzed_ship
+			enable_special_project = {
+				name = WG_KHAN_PARALYZED_SHIP_3
+				location = capital_scope
+			}
 		}
 	}
 
@@ -2338,7 +2347,7 @@ country_event = {
 	trigger = {
 		has_modifier = fe_damage_to_wg_khan
 		is_default_country = yes
-		FROM = { is_country_type = wg_Khan_country_type }
+		FROM = { is_khan_country_type = yes }
 	}
 
 	immediate = {
@@ -2438,7 +2447,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = wg_Khan_country_type
+		is_khan_country_type = yes
 		FROMFROM = { has_fleet_flag = khan_jammer_applied }
 	}
 
@@ -2476,7 +2485,7 @@ country_event = {
 
 	trigger = {
 		has_modifier = fe_damage_to_wg_khan
-		FROM = { is_country_type = wg_Khan_country_type }
+		FROM = { is_khan_country_type = yes }
 		FROMFROM.solar_system = { check_variable = { which = jammed_khan_ships value > 0 }}
 		FROMFROMFROM = { has_fleet_flag = khan_jammer_applied }
 	}

@@ -651,7 +651,10 @@ country_event = {
 	}
 
 	trigger = {
-		from = { is_country_type = gray }
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_governor_active
@@ -732,7 +735,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = gray }
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_governor_active
 		NOR = { 
@@ -826,7 +832,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = gray }
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_warship_active
 		NOR = { 
@@ -926,7 +935,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = gray }
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		has_country_flag = gray_army_active
 		NOR = { 
 			has_country_flag = gray_reforming 
@@ -1100,7 +1112,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = gray }
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_reforming
 		NOT = { has_country_flag = ban_commu_with_gray }

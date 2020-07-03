@@ -3055,7 +3055,7 @@ event = { #生成星系
 					has_wg_special_authority = yes
 					is_ai = no
 				}
-				country_event = { id =  wg_boss.1 days = 10 } #boss
+				country_event = { id =  wg_boss.1 } #boss
 				random_list = {
 					50 = { country_event = { id =  wg_parit.1 }} #帕里特
 					50 = {}

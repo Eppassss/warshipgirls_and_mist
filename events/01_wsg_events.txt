@@ -13,7 +13,7 @@ country_event ={
 				set_country_flag = f_wsg_country
 			}
 		}
-		#用于与其他mod联动的flag
+		# ??mod??flag
 		set_global_flag = has_wsg_mod
 	}
 }

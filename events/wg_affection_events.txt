@@ -10,6 +10,7 @@ event = {
 	is_triggered_only = yes
 
 	immediate = {
+		set_global_flag = has_wsg_mod
 		every_country = {
 			limit = {
 				has_wg_special_authority = yes
@@ -1542,6 +1543,34 @@ country_event = {
 	option = {
 		name = wg_aft.30000.a
 		response_text = wg_aft.30000.response
+	}
+}
+
+# 灰风通讯外部触发器
+country_event = {
+	id = wg_aft.30001
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = ban_commu_with_gray }
+			country_event = { id = wg_lady.10000 }
+		} else_if = {
+			limit = { has_country_flag = gray_reforming }
+			country_event = { id = graygoo.504 }
+		} else_if = {
+			limit = { has_country_flag = gray_army_active }
+			country_event = { id = graygoo.503 }
+		} else_if = {
+			limit = { has_country_flag = gray_warship_active }
+			country_event = { id = graygoo.502 }
+		} else_if = {
+			limit = { has_country_flag = gray_governor_active }
+			country_event = { id = graygoo.501 }
+		} else = {
+			country_event = { id = graygoo.500 }
+		}
 	}
 }
 
