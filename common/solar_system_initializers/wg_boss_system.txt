@@ -1130,6 +1130,7 @@ wg_blue_cloud_system = {
 			prevent_anomaly = yes
 			add_deposit = d_blue_coward
 			set_planet_flag = cloud_player_planet_flag
+			save_global_event_target_as = cloud_player_location_target
 		}
 	}	
 	planet = {

@@ -1272,6 +1272,7 @@ country_event = {
 
 	after = {
 		hidden_effect = { remove_khan_variables = yes }
+		remove_array_variables = { ARRAY = YEARS }
 	}
 
 	picture_event_data = {

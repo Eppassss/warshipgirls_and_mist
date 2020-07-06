@@ -926,3 +926,73 @@ ship_design = {
 	required_component="TITAN_SHIP_THRUSTER_5"
 	required_component = "SHIP_AURA_TARGETING_GRID"
 }
+#云舰
+ship_design = {
+	name = "NAME_Cloud_player"
+	ship_size = large_ship_ed
+	is_event_design = yes
+
+	section = {
+		template = "ed_large_warship_key"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_ED_WEAPON"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = ""
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = ""
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = ""
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = ""
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = ""
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = ""
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = ""
+		}		
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = ""
+		}		
+	}
+	required_component="PSI_JUMP_DRIVE_1"
+	required_component="COMBAT_COMPUTER_LINE_DEFAULT"	
+}

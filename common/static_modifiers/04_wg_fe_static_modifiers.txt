@@ -1,11 +1,11 @@
 wg_fe_hard_buff = {
-	ship_hull_mult = 0.20
-	ship_armor_mult = 0.20
-	ship_shield_mult = 0.20
-	ship_weapon_damage = 0.20
-	ship_fire_rate_mult = 0.20
-	ship_evasion_mult = 0.20
-	ship_speed_mult = 0.20
+	ship_hull_mult = 0.15
+	ship_armor_mult = 0.15
+	ship_shield_mult = 0.15
+	ship_weapon_damage = 0.15
+	ship_fire_rate_mult = 0.15
+	ship_evasion_mult = 0.15
+	ship_speed_mult = 0.15
 }
 
 wg_fe_insane_buff = {
@@ -19,6 +19,19 @@ wg_fe_insane_buff = {
 	ship_weapon_range_mult = 0.30
 }
 
+
+wg_fe_insane_buff2 = {
+	ship_hull_mult = 1.00
+	ship_armor_mult = 1.00
+	ship_shield_mult = 1.00
+	ship_weapon_damage = 1.50
+	ship_fire_rate_mult = 1.0
+	ship_evasion_mult = 0.10
+	ship_speed_mult = 0.20
+	ship_weapon_range_mult = 0.50
+	ship_shield_penetration_mult = 0.3
+	ship_armor_penetration_mult = 0.3
+}
 wg_fe_disable_buff = {
 	ship_hull_mult = 0.50
 	ship_armor_mult = 0.50
@@ -40,7 +53,10 @@ wg_fe_cheat = {
 	ship_speed_mult = 0.20
 	ships_upkeep_mult = -0.50
 	shipclass_starbase_damage_mult = 1.50
-	shipclass_military_station_damage_mult = 2.50	
+	shipclass_military_station_damage_mult = 2.50
+	ship_hull_regen_add_perc = 1
+	ship_shield_regen_add_perc = 1
+	ship_armor_regen_add_perc = 1		
 }
 
 half_life_3 = {

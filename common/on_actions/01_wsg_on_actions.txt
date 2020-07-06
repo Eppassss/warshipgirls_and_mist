@@ -418,6 +418,7 @@ on_entering_system = {
 		sh.3043	
 		wg_khan.25
 		wg_khan.26
+		wg_boss.82
 	}
 }
 

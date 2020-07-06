@@ -96,7 +96,7 @@ country_event = {
 			country_event = { id = wsgranking.1919 }#胖次商店
 		}	
 		random_list = { 
-			4 = {
+			2 = {
 				random_country = {
 					limit = {
 						has_wg_special_authority = yes
@@ -105,7 +105,7 @@ country_event = {
 					country_event = { id = wg_boss.45 }#巴格维
 				}
 			}
-			6 = { }
+			8 = { }
 		}
 		random_list = { 
 			60 = {
@@ -160,7 +160,19 @@ country_event = {
 				}
 			}
 			70 = { }
-		}		
+		}
+		random_list = { 
+			50 = {
+				random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_boss.81 }#云
+				}
+			}
+			50 = { }
+		}
 	}
 }
 country_event = {
@@ -3037,6 +3049,159 @@ country_event = {
 			}
 		}		
 	}	
+}
+#云
+country_event = {
+	id = wg_boss.81
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_noob_blue_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_noob_blue_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
+				initializer = wg_blue_cloud_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.82
+	title = "wg_boss.82.name"
+	desc = "wg_boss.82.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+	fire_only_once = yes
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_blue_cloud_system_home
+		}
+		NOT = { has_global_flag = triggered_noob_blue_event }
+	}
+
+	immediate = {	
+		set_global_flag = triggered_noob_blue_event	
+	}
+
+	option = {
+		name = "wg_boss.82.a"
+		hidden_effect = {
+			owner = {
+				country_event = { id = wg_boss.83 }	
+			}	
+		}		
+	}
+}
+
+country_event = {
+	id = wg_boss.83
+	title = "wg_boss.83.name"
+	desc = "wg_boss.83.desc"
+	location = from.from.from
+
+	picture_event_data = {
+		portrait = exd1
+		room = "extradimensional_room"
+	}
+	diplomatic = yes
+	force_open = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = wg_boss.83.a
+		response_text = wg_boss.83.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.83.b
+		response_text = wg_boss.83.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = wg_boss.83.c
+		response_text = wg_boss.83.c.response
+		hidden_effect = {
+			country_event = { id = wg_boss.84 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.84
+	title = "wg_boss.84.name"
+	desc = "wg_boss.84.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_evil
+	fire_only_once = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_cloud_player_country"
+			type = faction
+			flag = {
+				icon= {
+					category = "special"
+					file = "extradimensional_01.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = cloud_player_country
+				every_playable_country = {
+					establish_communications_no_message = event_target:cloud_player_country
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_cloud_noob_ship"
+			settings = {
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:cloud_player_country
+				create_ship = {
+					name = random
+					design = "NAME_Cloud_player"
+					graphical_culture = "extra_dimensional_01"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:cloud_player_location_target
+					distance = 0
+					angle = random
+				}
+				add_modifier = {
+					modifier = wg_blue_noob
+					days = -1
+				}			
+			}
+		}
+	}
+	option = {
+		name = wg_boss.84.a
+	}
 }
 
 event = { #生成星系

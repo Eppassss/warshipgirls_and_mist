@@ -29,6 +29,7 @@ wg_fallen_empire_capital_system = {
 			set_controller = event_target:wg_fallen_empire
 			set_capital = yes
 			prevent_anomaly = yes
+			save_global_event_target_as = wg_fe_capital_location
 
 			add_building = building_wg_fe_ancient_palace
 			add_building = building_wg_fe_stronghold
