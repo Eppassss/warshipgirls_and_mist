@@ -2128,6 +2128,12 @@ country_event = {
 			days = -1
 		}
 		set_country_flag = lack_food_wsg
+		if = {
+			limit = {
+				has_country_flag = origin_wg_fe_child_flag
+			}
+			country_event = { id = wg_origin.4 }
+		}
 	}
 }
 

@@ -132,5 +132,6 @@ default_pantsu_shop_buff_effects = {
 		country_event = { id = wsgranking.20004 days = 3600 } 
 		country_event = { id = wsgranking.1200 days = 3601 } # 续buff
 		change_variable = { which = max_allowed_shop_buffs value = -1 }
+		remove_country_flag = engaged_with_pantsu_shop
 	}
 }

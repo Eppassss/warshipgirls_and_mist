@@ -709,6 +709,26 @@ recall_wsg_lady_modification_project = {
 		weight = 0
 	}
 }
+
+debug_pantsu_shop_interface = {
+	length = 0
+	potential = {
+		OR = {
+			AND = {
+				has_country_flag = engaged_with_pantsu_shop
+				pantsu_shop_active_diplo = no 
+			}
+			AND = {
+				NOT = { has_country_flag = engaged_with_pantsu_shop }
+				pantsu_shop_active_diplo = yes
+			}
+		}
+	}
+	effect = { remove_country_flag = engaged_with_pantsu_shop }
+	ai_weight = {
+		weight = 0
+	}
+}
 #############
 wg_struggle_edicts = {
 	length = -1

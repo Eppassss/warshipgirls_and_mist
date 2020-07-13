@@ -6,6 +6,12 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_sh_eweapon"
+		texturefile = "gfx/event_pictures/sh_eweapon.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_Bismark"
 		texturefile = "gfx/event_pictures/wg_Bismark.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -656,6 +662,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_evt_wg_ringworld"
 		texturefile = "gfx/event_pictures/wg_ringworld.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_sukhbaatar_warning"
+		texturefile = "gfx/event_pictures/wg_sukhbaatar_warning.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}

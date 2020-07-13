@@ -193,8 +193,7 @@ create_wsg_lady_warship = {
 						}
 					}}
 				}
-			}
-			owner = {
+
 				if = {
 					limit = { has_country_flag = modified_wsg_lady }
 					switch = {

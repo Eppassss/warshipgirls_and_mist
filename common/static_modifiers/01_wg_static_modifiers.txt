@@ -78,7 +78,7 @@ wg_modifier_alpha = {
 planet_lp = {
 	icon = "gfx/interface/icons/planet_modifiers/lp_resources.dds"
 	icon_frame = 1
-	pop_happiness = 0.15
+	pop_happiness = 0.10
 	planet_stability_add = 2
 }
 planet_lp2 = {

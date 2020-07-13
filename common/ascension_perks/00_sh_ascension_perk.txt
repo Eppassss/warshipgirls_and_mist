@@ -8,8 +8,8 @@ ap_shenhai_space = {
         has_authority="auth_shenhai"
 		NOT = {
 			has_ascension_perk = ap_shenhai_space
-			has_authority = "auth_machine_intelligence"
 		}
+		is_mechanical_empire = no
 	}
 	
 	ai_weight = {
@@ -70,8 +70,8 @@ ap_shenhai_mega_fleet = {
 	    has_authority="auth_shenhai"
 		NOT = {
 			has_ascension_perk = ap_shenhai_mega_fleet
-			has_authority = "auth_machine_intelligence"
 		}
+		is_mechanical_empire = no
 	}
 	
 	ai_weight = {
@@ -125,7 +125,6 @@ ap_shenhai_upgrade = {
 		has_authority="auth_shenhai"
 		NOT = {
 			has_ascension_perk = ap_shenhai_upgrade
-			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
 	}
@@ -188,10 +187,10 @@ ap_shenhai_silent = {
 	
 	potential = {
 		has_authority="auth_shenhai"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_shenhai_silent
-			has_authority = "auth_machine_intelligence"
 			has_ascension_perk = ap_shenhai_icebreaking
+			has_country_flag = origin_wg_fe_child_flag
 		}
 		is_mechanical_empire = no
 	}
@@ -252,9 +251,8 @@ ap_shenhai_icebreaking = {
 	
 	potential = {
 		has_authority="auth_shenhai"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_shenhai_silent
-			has_authority = "auth_machine_intelligence"
 			has_ascension_perk = ap_shenhai_icebreaking
 			has_civic = civic_CM
 		}

@@ -250,3 +250,18 @@ special_project = {
 		}
 	}
 }
+
+special_project = {
+	key = "sh_eweapon_project"
+	cost = 120000
+	tech_department = physics_technology
+	picture = GFX_evt_sh_eweapon
+
+	event_scope = planet_event
+	
+	on_success = {
+		owner = {
+			country_event = { id = sh.3053 }
+		}
+	}
+}

@@ -700,9 +700,13 @@ country_event = {
 		name = marry_gray
 		trigger = {
 			check_variable = { which = gray_affection_level value >= 4 }
+			NOT = { has_country_flag = married_gray }
 		}
 		allow = {
-			check_variable = { which = wsg_rings value >= 1 }
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
 		hidden_effect = { country_event = { id = wg_aft.30000 }}
@@ -797,9 +801,13 @@ country_event = {
 		name = marry_gray
 		trigger = {
 			check_variable = { which = gray_affection_level value >= 4 }
+			NOT = { has_country_flag = married_gray }
 		}
 		allow = {
-			check_variable = { which = wsg_rings value >= 1 }
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
 		hidden_effect = { country_event = { id = wg_aft.30000 }}
@@ -900,9 +908,13 @@ country_event = {
 		name = marry_gray
 		trigger = {
 			check_variable = { which = gray_affection_level value >= 4 }
+			NOT = { has_country_flag = married_gray }
 		}
 		allow = {
-			check_variable = { which = wsg_rings value >= 1 }
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
 		hidden_effect = { country_event = { id = wg_aft.30000 }}
@@ -1080,9 +1092,13 @@ country_event = {
 		name = marry_gray
 		trigger = {
 			check_variable = { which = gray_affection_level value >= 4 }
+			NOT = { has_country_flag = married_gray }
 		}
 		allow = {
-			check_variable = { which = wsg_rings value >= 1 }
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
 		hidden_effect = { country_event = { id = wg_aft.30000 }}
@@ -1125,9 +1141,13 @@ country_event = {
 		name = marry_gray
 		trigger = {
 			check_variable = { which = gray_affection_level value >= 4 }
+			NOT = { has_country_flag = married_gray }
 		}
 		allow = {
-			check_variable = { which = wsg_rings value >= 1 }
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
 		hidden_effect = { country_event = { id = wg_aft.30000 }}

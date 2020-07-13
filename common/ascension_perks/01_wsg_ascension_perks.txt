@@ -48,7 +48,6 @@ ap_project_r = {
 		has_authority="auth_warshipgirls"
 		NOT = {
 			has_ascension_perk = ap_project_r
-			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
 	}
@@ -100,8 +99,8 @@ ap_dumplings = {
 	    has_authority="auth_warshipgirls"
 		NOT = {
 			has_ascension_perk = ap_dumplings
-			has_authority = "auth_machine_intelligence"
 		}
+		is_mechanical_empire = no
 	}
 	
 	ai_weight = {
@@ -204,7 +203,6 @@ ap_mist = {
 		has_authority="auth_warshipgirls"
 		NOT = {
 			has_ascension_perk = ap_mist
-			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
 	}

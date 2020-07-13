@@ -348,28 +348,11 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = wsgranking.20003
-	is_triggered_only = yes
-	hide_window = yes
-	fire_only_once = yes
-	trigger = {
-		last_increased_tech = tech_wg_buff_2
-	}
-	immediate = {
-		change_variable = {
-			which = max_allowed_shop_buffs
-			value = 1
-		}
-	}
-}
-
 #到期恢复商店BUFF上限
 country_event = {
 	id = wsgranking.20004
 	is_triggered_only = yes
 	hide_window = yes
-	#fire_only_once = yes
 	immediate = {
 		change_variable = {
 			which = max_allowed_shop_buffs
@@ -451,6 +434,7 @@ country_event = {
         NOT = { has_country_flag = pantsu_shop_cooldown }
         OR = { 
             #防止视窗多开
+            NOT = { has_country_flag = engaged_with_pantsu_shop }
 			pantsu_shop_active_diplo = no 
 			from = { is_same_value = root } # returning from open sub-menu
 		}
@@ -476,7 +460,11 @@ country_event = {
 
 	picture_event_data = {
 		room = Ella_room
-	}
+    }
+    
+    immediate = {
+        set_country_flag = engaged_with_pantsu_shop
+    }
 
     # 询问军阶点数。
     option = { 
@@ -500,6 +488,7 @@ country_event = {
     custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 #冷却期间打开胖次商店
@@ -598,15 +587,23 @@ country_event = {
         }
         exists = event_target:pantsu_shop_country
         event_target:pantsu_shop_country = {
-            is_hostile = root
+            is_hostile = ROOT
         }
         NOT = { has_active_event = { wsgranking.1003 }}
         OR = { # prevents diplo duplication
+            NOT = { has_country_flag = engaged_with_pantsu_shop }
 			pantsu_shop_active_diplo = no 
 			from = { is_same_value = root } # returning from open sub-menu
 		}
         is_ai = no
         NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+    immediate = {
+        set_country_flag = engaged_with_pantsu_shop
+    }
+    after = {
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 预留了一下恢复和平的选项
@@ -718,7 +715,10 @@ country_event = {
         trigger = {
             has_any_pantsu_shop_contract = yes
         }
-        hidden_effect = { country_event = { id = wsgranking.1017 }}
+        hidden_effect = { 
+            country_event = { id = wsgranking.1017 }
+            remove_country_flag = engaged_with_pantsu_shop
+        }
     }
 
     # 返回主选单
@@ -734,6 +734,7 @@ country_event = {
     option = { custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -787,7 +788,8 @@ country_event = {
         }
         add_research_option = tech_wsg_rim99
         add_tech_progress = { tech = tech_wsg_rim99 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -820,7 +822,8 @@ country_event = {
         }
         add_research_option = tech_wsg_pd127
         add_tech_progress = { tech = tech_wsg_pd127 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -853,7 +856,8 @@ country_event = {
         }
         add_research_option = tech_wsg_auto127
         add_tech_progress = { tech = tech_wsg_auto127 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -887,7 +891,8 @@ country_event = {
         }
         add_research_option = tech_living_metal_bulge
         add_tech_progress = { tech = tech_living_metal_bulge progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -920,7 +925,8 @@ country_event = {
         }
         add_research_option = tech_wsg_auto152
         add_tech_progress = { tech = tech_wsg_auto152 progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -953,7 +959,8 @@ country_event = {
         }
         add_research_option = tech_wsg_203plasma
         add_tech_progress = { tech = tech_wsg_203plasma progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -986,6 +993,7 @@ country_event = {
         add_research_option = tech_wsg_356laser
         add_tech_progress = { tech = tech_wsg_356laser progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1018,6 +1026,7 @@ country_event = {
         add_research_option = tech_wsg_410
         add_tech_progress = { tech = tech_wsg_410 progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1050,6 +1059,7 @@ country_event = {
         add_research_option = tech_wsg_EW
         add_tech_progress = { tech = tech_wsg_EW progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }	
     ## 深海武器兑换
 	option = {
@@ -1083,6 +1093,7 @@ country_event = {
 		add_research_option = tech_sh_autocannon
 		add_tech_progress = { tech = tech_sh_autocannon progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -1115,6 +1126,7 @@ country_event = {
 		add_research_option = tech_sh_fighter
 		add_tech_progress = { tech = tech_sh_fighter progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -1147,7 +1159,8 @@ country_event = {
 		}
 		add_research_option = tech_sh_torpedo
 		add_tech_progress = { tech = tech_sh_torpedo progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
 	}
 	option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -1179,7 +1192,8 @@ country_event = {
 		}
 		add_research_option = tech_sh_XACweapon
 		add_tech_progress = { tech = tech_sh_XACweapon progress = 0.1 }
-		add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
 	}
 
     # 返回一级菜单
@@ -1205,6 +1219,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -1289,6 +1304,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -1409,6 +1425,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -1459,6 +1476,7 @@ country_event = {
             sr_pantsu = -200
             sr_dark_matter = 250
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1481,6 +1499,7 @@ country_event = {
             sr_pantsu = -200
             sr_zro = 250
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1503,6 +1522,7 @@ country_event = {
             sr_pantsu = -200
             sr_living_metal = 250
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1525,6 +1545,7 @@ country_event = {
             sr_pantsu = -200
             nanites = 60
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1547,6 +1568,7 @@ country_event = {
             sr_pantsu = -200
             sr_alpha = 120
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1569,6 +1591,7 @@ country_event = {
             sr_pantsu = -200
             sr_se = 120
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -1594,6 +1617,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -1644,6 +1668,7 @@ country_event = {
             sr_pantsu = -1000
             sr_dark_matter = 1350
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1666,6 +1691,7 @@ country_event = {
             sr_pantsu = -1000
             sr_zro = 1350
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1688,6 +1714,7 @@ country_event = {
             sr_pantsu = -1000
             sr_living_metal = 1350
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1710,6 +1737,7 @@ country_event = {
             sr_pantsu = -1000
             nanites = 350
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1732,6 +1760,7 @@ country_event = {
             sr_pantsu = -1000
             sr_alpha = 675
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1754,6 +1783,7 @@ country_event = {
             sr_pantsu = -1000
             sr_se = 675
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -1779,6 +1809,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -1829,6 +1860,7 @@ country_event = {
             sr_pantsu = -4000
             sr_dark_matter = 6000
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1851,6 +1883,7 @@ country_event = {
             sr_pantsu = -4000
             sr_zro = 6000
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1873,6 +1906,7 @@ country_event = {
             sr_pantsu = -4000
             sr_living_metal = 6000
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1895,6 +1929,7 @@ country_event = {
             sr_pantsu = -4000
             nanites = 1600
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1917,6 +1952,7 @@ country_event = {
             sr_pantsu = -4000
             sr_alpha = 3000
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -1939,6 +1975,7 @@ country_event = {
             sr_pantsu = -4000
             sr_se = 3000
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -1964,6 +2001,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2027,6 +2065,7 @@ country_event = {
             remove_modifier = pantsu_shop_dark_matter_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_dark_matter_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2047,6 +2086,7 @@ country_event = {
             remove_modifier = pantsu_shop_zro_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_zro_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2067,6 +2107,7 @@ country_event = {
             remove_modifier = pantsu_shop_living_metal_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_living_metal_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2087,6 +2128,7 @@ country_event = {
             remove_modifier = pantsu_shop_nanites_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_nanites_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2107,6 +2149,7 @@ country_event = {
             remove_modifier = pantsu_shop_alpha_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_alpha_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2127,6 +2170,7 @@ country_event = {
             remove_modifier = pantsu_shop_se_contract_massive
         }
         add_modifier = { modifier = pantsu_shop_se_contract days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -2152,6 +2196,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2214,6 +2259,7 @@ country_event = {
             remove_modifier = pantsu_shop_dark_matter_contract
         }
         add_modifier = { modifier = pantsu_shop_dark_matter_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2234,6 +2280,7 @@ country_event = {
             remove_modifier = pantsu_shop_zro_contract
         }
         add_modifier = { modifier = pantsu_shop_zro_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2254,6 +2301,7 @@ country_event = {
             remove_modifier = pantsu_shop_living_metal_contract
         }
         add_modifier = { modifier = pantsu_shop_living_metal_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2274,6 +2322,7 @@ country_event = {
             remove_modifier = pantsu_shop_nanites_contract
         }
         add_modifier = { modifier = pantsu_shop_nanites_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2294,6 +2343,7 @@ country_event = {
             remove_modifier = pantsu_shop_alpha_contract
         }
         add_modifier = { modifier = pantsu_shop_alpha_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
     option = { 
         custom_gui = "enclave_caravaneer_option"
@@ -2314,6 +2364,7 @@ country_event = {
             remove_modifier = pantsu_shop_se_contract
         }
         add_modifier = { modifier = pantsu_shop_se_contract_massive days = -1 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -2339,6 +2390,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2500,6 +2552,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2536,6 +2589,7 @@ country_event = {
         remove_modifier = pantsu_shop_alpha_contract_massive
         remove_modifier = pantsu_shop_se_contract
         remove_modifier = pantsu_shop_se_contract_massive
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -2561,6 +2615,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2763,6 +2818,7 @@ country_event = {
             sr_alpha = -648
             sr_pantsu = -648
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = { 
@@ -2796,6 +2852,7 @@ country_event = {
             sr_se = -648
             sr_pantsu = -648
         }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     # 返回一级菜单
@@ -2817,6 +2874,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -2996,6 +3054,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -3114,6 +3173,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -3316,6 +3376,7 @@ country_event = {
 		}
         add_modifier = { modifier = wg_modifier_combat_fleet_control2 }
         custom_tooltip = not_count_in_buff_limit
+        remove_country_flag = engaged_with_pantsu_shop
     }    
     option = {
 		custom_gui = "enclave_caravaneer_option"
@@ -3334,6 +3395,7 @@ country_event = {
         add_resource = { energy = -3000 sr_pantsu = -1000 }
         add_modifier = { modifier = wg_modifier_combat_uf }
         custom_tooltip = not_count_in_buff_limit
+        remove_country_flag = engaged_with_pantsu_shop
 	}
     
 	# 返回一级菜单
@@ -3354,6 +3416,7 @@ country_event = {
         custom_gui = "enclave_caravaneer_option"
         name = pantsu_shop_exit
         default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 
@@ -5633,6 +5696,7 @@ country_event = {
         }
         set_country_flag = implant_purchased
         country_event = { id = wsgranking.9000 days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     
@@ -5664,6 +5728,7 @@ country_event = {
         }
         set_country_flag = cic_purchased
         country_event = { id = wsgranking.9001 days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = {
@@ -5694,6 +5759,7 @@ country_event = {
         }
         set_country_flag = uf_shop_buff_purchased
         country_event = { id = wsgranking.9002 days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = {
@@ -5727,6 +5793,7 @@ country_event = {
         }
         set_country_flag = uf_shop_buff_purchased
         country_event = { id = wsgranking.9003 days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = {
@@ -5760,10 +5827,12 @@ country_event = {
         }
         set_country_flag = uf_shop_buff_purchased
         country_event = { id = wsgranking.9003 days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
     }
 
     option = {
         name = pantsu_shop_exit
+        remove_country_flag = engaged_with_pantsu_shop
     }
 }
 

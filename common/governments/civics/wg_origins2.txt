@@ -83,3 +83,32 @@ origin_sh_invaded = {
 		base = 0
 	}
 }
+
+origin_wg_fe_child = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_wg_fe_child.dds"
+	picture = GFX_origin_wg_fe_child
+	possible = {
+		authority = { 
+			OR = {
+				value = auth_shenhai
+				value = auth_warshipgirls
+			}	
+		}
+		civics = {
+			NOT = {
+				value = civic_CM
+			}
+		}		
+	}
+
+	flags = { origin_wg_fe_child_flag }
+
+	description = "origin_tooltip_wg_fe_child_effects"
+
+	advanced_start = yes
+		
+	random_weight = {
+		base = 0
+	}
+}

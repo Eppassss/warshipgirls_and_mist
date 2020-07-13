@@ -847,11 +847,11 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1043,11 +1043,11 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1213,11 +1213,11 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1445,11 +1445,11 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1768,11 +1768,11 @@ country_event = {
 			else_if = {
 				limit = { NOT = { has_country_flag = talking_to_wsg_lady }}
 				set_country_flag = wsg_lady_changing
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			else = {
 				remove_country_flag = talking_to_wsg_lady
-				clear_global_event_target = wsg_player_nickname
+				# clear_global_event_target = wsg_player_nickname
 			}
 			country_event = { id = wg_lady.36 days = 1 }
 		}
@@ -1798,9 +1798,8 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.b
-				any_owned_fleet = { 
-					has_fleet_flag = lady_armed_science
-					NOT = { has_hp_percentage < 1.0 }
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
 				}
 			}
 		}
@@ -1828,9 +1827,8 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.b
-				any_owned_fleet = { 
-					has_fleet_flag = lady_armed_science
-					NOT = { has_hp_percentage < 1.0 }
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
 				}
 			}
 		}
@@ -1858,9 +1856,8 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = wg_lady.27.allow.b
-				any_owned_fleet = { 
-					has_fleet_flag = lady_armed_science
-					NOT = { has_hp_percentage < 1.0 }
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
 				}
 			}
 		}
@@ -1980,7 +1977,7 @@ country_event = {
 	after = {
 		hidden_effect = {
 			remove_country_flag = talking_to_wsg_lady
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 
@@ -2160,7 +2157,7 @@ country_event = {
 	option = {
 		name = wg_lady.33.a
 		hidden_effect = {
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_warship_active
 			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 			country_event = { id = wg_lady.35 days = 180 }
@@ -2210,7 +2207,7 @@ country_event = {
 	option = {
 		name = wg_lady.34.a
 		hidden_effect = {
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_army_active
 			add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
 			country_event = { id = wg_lady.35 days = 180 }
@@ -2246,7 +2243,7 @@ country_event = {
 	option = {
 		name = wg_lady.35.a
 		custom_tooltip = wg_lady.35.a.tooltip
-		clear_global_event_target = wsg_player_nickname
+		# clear_global_event_target = wsg_player_nickname
 	}
 
 }
@@ -2265,7 +2262,7 @@ country_event = {
 			country_event = { id = wg_lady.36 days = 1 }
 		}
 		else = {
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 			remove_country_flag = wsg_lady_changing
 			remove_country_flag = talking_to_wsg_lady
 			remove_country_flag = wsg_lady_talking1
@@ -2804,6 +2801,7 @@ country_event = {
 	}
 }
 
+# 大小姐巨像完成改造
 country_event = {
 	id = wg_lady.49
 	title = wg_lady.49.title
@@ -2822,6 +2820,10 @@ country_event = {
 				kill_leader = no
 				destroy_template = yes
 			}
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			kill_leader = { show_notification = no }
 		}
 		create_wsg_lady_warship = yes
 	}
@@ -3130,7 +3132,7 @@ country_event = {
 	}
 }
 
-# T槽完成改造
+# 主宰完成改造
 country_event = {
 	id = wg_lady.57
 	title = wg_lady.49.title
@@ -3569,7 +3571,7 @@ country_event = {
 		name = wg_lady.103.a
 		hidden_effect = { 
 			country_event = { id = wg_lady.104 }
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 }
@@ -3655,7 +3657,7 @@ country_event = {
 		get_player_nickname = yes
 	}
 	after = {
-		hidden_effect = { clear_global_event_target = wsg_player_nickname }
+		# hidden_effect = { clear_global_event_target = wsg_player_nickname }
 	}
 
 	option = {
@@ -3890,7 +3892,7 @@ country_event = {
 		get_player_nickname = yes
 	}
 	after = {
-		clear_global_event_target = wsg_player_nickname
+		# clear_global_event_target = wsg_player_nickname
 	}
 
 	option = {
@@ -3983,7 +3985,7 @@ country_event = {
 		name = wg_lady.119.a
 		hidden_effect = { 
 			country_event = { id = wg_lady.120 }
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 }
@@ -4425,7 +4427,7 @@ country_event = {
 		get_player_nickname = yes
 	}
 	after = {
-		clear_global_event_target = wsg_player_nickname
+		# clear_global_event_target = wsg_player_nickname
 	}
 
 	option = {
@@ -4505,7 +4507,10 @@ country_event = {
 		has_country_flag = gain_wsg_lady
 		is_at_war = no
 		check_variable = { which = lady_affection_level value >= 4 }
-		mid_game_years_passed >= 0
+		OR = {
+			mid_game_years_passed >= 0
+			years_passed >= 50
+		}
 		NOR = { 
 			has_civic = civic_CM
 			has_ascension_perk = ap_shenhai_silent
@@ -4518,7 +4523,10 @@ country_event = {
 	mean_time_to_happen = {
 		years = 2
 		modifier = {
-			mid_game_years_passed >= 20
+			OR = {
+				mid_game_years_passed >= 20
+				years_passed >= 70
+			}
 			factor = 0.2
 		}
 		modifier = {
@@ -4578,7 +4586,7 @@ country_event = {
 		get_player_nickname = yes
 	}
 	after = {
-		clear_global_event_target = wsg_player_nickname
+		# clear_global_event_target = wsg_player_nickname
 	}
 
 	option = {
@@ -4779,7 +4787,7 @@ country_event = {
 			set_country_flag = can_marry_wsg_lady
 			change_variable = { which = lady_affection value = 20 }
 			reset_lady_affection_level = yes
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
 		response_text = wg_lady.147.a.response
@@ -4801,7 +4809,7 @@ country_event = {
 		name = wg_lady.148.a
 		hidden_effect = { 
 			country_event = { id = wg_lady.156 }
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 }
@@ -4846,7 +4854,7 @@ country_event = {
 		name = wg_lady.150.a
 		hidden_effect = { 
 			country_event = { id = wg_lady.151 }
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 }
@@ -4872,7 +4880,7 @@ country_event = {
 		get_player_nickname = yes
 	}
 	after = {
-		clear_global_event_target = wsg_player_nickname
+		# clear_global_event_target = wsg_player_nickname
 	}
 
 	option = {
@@ -4978,7 +4986,7 @@ country_event = {
 		name = wg_lady.155.a
 		hidden_effect = { 
 			country_event = { id = wg_lady.156 }
-			clear_global_event_target = wsg_player_nickname
+			# clear_global_event_target = wsg_player_nickname
 		}
 	}
 }

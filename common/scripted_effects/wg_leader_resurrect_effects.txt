@@ -1,0 +1,157 @@
+# scope = leader
+# input = VARIABLE
+# exile leader with a event target named with the variable name and its value
+exile_leader_with_variable = {
+	get_digits = { ARRAY = resurrect_leader VARIABLE = resurrect_leader }
+	if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 1 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 1 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 2 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 2 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 3 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 3 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 4 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 4 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 5 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 5 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 6 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 6 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 7 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 7 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 8 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 8 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 9 }}
+		exile_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 9 }
+	}
+	remove_array_variables = { ARRAY = resurrect_leader }
+}
+
+exile_leader_with_variable_S2 = {
+	if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGITS value = 1 }}
+		exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 1 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$1 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 2 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$2 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 3 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$3 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 4 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$4 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 5 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$5 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 6 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$6 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 7 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$7 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 8 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$8 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 9 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$9 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 0 }}
+			exile_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$0 }
+		}
+	}
+}
+
+exile_leader_with_variable_Final = {
+	exile_leader_as = $VARIABLE$_$VALUE$
+}
+
+# scope = fleet
+# input = VARIABLE
+# reset leader to a fleet with a event target named with the variable name and its value
+# no need to clear variables as the fleet will usually destroyed
+set_leader_with_variable = {
+	get_digits = { ARRAY = resurrect_leader VARIABLE = resurrect_leader }
+	if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 1 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 1 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 2 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 2 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 3 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 3 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 4 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 4 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 5 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 5 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 6 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 6 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 7 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 7 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 8 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 8 }
+	} else_if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 9 }}
+		set_leader_with_variable_S2 = { VARIABLE = $VARIABLE$ VALUE = 9 }
+	}
+}
+
+set_leader_with_variable_S2 = {
+	if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGITS value = 1 }}
+		set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 1 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$1 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 2 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$2 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 3 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$3 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 4 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$4 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 5 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$5 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 6 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$6 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 7 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$7 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 8 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$8 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 9 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$9 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 0 }}
+			set_leader_with_variable_Final = { VARIABLE = $VARIABLE$ VALUE = $VALUE$0 }
+		}
+	}
+}
+
+set_leader_with_variable_Final = {
+	set_leader = $VARIABLE$_$VALUE$
+}

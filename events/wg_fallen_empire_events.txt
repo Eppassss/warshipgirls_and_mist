@@ -1048,6 +1048,7 @@ country_event = {
 				modifier = {
 					factor = 0
 					has_country_flag = wg_fe_will_leave
+					NOT = { any_country = { has_origin = origin_wg_fe_child }} #妈宝起源必定留下
 				}
 				modifier = {
 					factor = 0.5
@@ -1089,6 +1090,10 @@ country_event = {
 						has_global_flag = wg_crisis_easy
 						has_global_flag = wg_crisis_normal
 					}
+				}
+				modifier = {
+					factor = 0
+					any_country = { has_origin = origin_wg_fe_child } #妈宝起源必定留下
 				}
 				event_target:wg_fallen_empire = {
 					country_event = { id = wg_fe.25 }
@@ -2422,8 +2427,11 @@ country_event = {
 			limit = { years_passed < 120 }
 			set_variable = { which = "exchange_mutliplier" value = 7 }
 		}
-		else = {
+		else_if = {
+			limit = { years_passed < 160 }
 			set_variable = { which = "exchange_mutliplier" value = 12 }
+		} else = {
+			set_variable = { which = "exchange_mutliplier" value = 26.4 }
 		}
 	}
 
@@ -2727,6 +2735,7 @@ country_event = {
 					}
 				}
 			}
+			multiply_variable = { which = "consumer_goods_cost" value = -1 }
 			country_event = { id = wg_fe.129 }
 		}
 	}
@@ -2739,26 +2748,7 @@ country_event = {
 country_event = {
 	id = wg_fe.129
 	title = "TRANSMISSION"
-
 	desc = wg_fe.129.desc
-	desc = {
-		trigger = {
-			has_country_flag = exchange_result7
-		}
-		text = wg_fe.129.desc_2
-	}
-	desc = {
-		trigger = {
-			has_country_flag = exchange_result8
-		}
-		text = wg_fe.129.desc_3
-	}
-	desc = {
-		trigger = {
-			has_country_flag = exchange_result9
-		}
-		text = wg_fe.129.desc_4
-	}
 
 	is_triggered_only = yes
 	diplomatic = yes
@@ -3621,7 +3611,8 @@ country_event = {
 
 country_event = {
     id = wg_fe.141
-    hide_window = yes
+	hide_window = yes
+	is_triggered_only = yes
     trigger = {
         is_country_type = wg_awakened_fleet_country
 		any_owned_fleet = {

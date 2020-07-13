@@ -65,3 +65,75 @@ component_set = {
 	icon = "GFX_Khan_weapen_L"
 	icon_frame = 1	
 }
+component_set = {
+	key = "Khan_weapen_X"
+	
+	icon = "GFX_Khan_weapen_X"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_ultimate_seal_cannon"
+	
+	icon = "GFX_wg_seal_cannon"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_prism_tower"
+	
+	icon = "GFX_Khan_weapen_prism_tower"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_tesla_tower"
+	
+	icon = "GFX_Khan_weapen_tesla_tower"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_M"
+	
+	icon = "GFX_Khan_weapen_M"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_G"
+	
+	icon = "GFX_Khan_weapen_G"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_weapen_waterB_flak"
+	
+	icon = "GFX_ship_part_pk_WATERB"
+	icon_frame = 1	
+}
+component_set = {
+	key = "Khan_star_destroyer_armor"
+	
+	icon = "GFX_Khan_star_destroyer_armor"
+	icon_frame = 1	
+}
+component_set = {
+	key = "KHAN_TESLA_TROOPER"
+	
+	icon = "GFX_ship_part_Khan_tesla_trooper"
+	icon_frame = 1	
+}
+component_set = {
+	key = "KHAN_IRON_CURTAIN"
+	
+	icon = "GFX_ship_part_Khan_iron_curtain"
+	icon_frame = 1	
+}
+component_set = {
+	key = "KHAN_SHIP_AURA"
+	
+	icon = "GFX_ship_part_Khan_weather_control_device"
+	icon_frame = 1	
+}
+component_set = {
+	key = "KHAN_PSYCHIC_DOMINATOR"
+	
+	icon = "GFX_ship_part_Khan_psychic_dominator"
+	icon_frame = 1	
+}

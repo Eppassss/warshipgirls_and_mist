@@ -1,16 +1,72 @@
-test_variable_modulus = {
-	set_variable = {
-		which = testA
-		value = @\[ $VALUE$ % $MODULO$ ) ]
-	}
-}
-
-# 创建一个数组
-# creates a new array
+# METHODS 函数表
+# WARNING：All the variables use in this effect must be in the same scope, 
+# or otherwise the method will not able to read the data correctly
+# 警告：所有变量必须处于同一个值域（SCOPE），否则以下脚本方法将不能读取数据
+# 
+####################################################################################
+# new_array = { ARRAY, SIZE, 0~9 }
+# 
+# creates a new array 创建一个新数组
 # input: 
 # ARRAY - name of the array # 数组名
 # SIZE - size of the array # 数组大小
 # 0 to 9 - value of the numbers in array # 数组内的数值
+####################################################################################
+# add_array = { ARRAY, VALUE }
+# 
+# 在数组最后添加一个变量
+# add a number to the end of an array
+# input: ARRAY, VALUE # 数组名及要添加的数值
+# 数组最大索引为9999
+# maximum index: 9999
+####################################################################################
+# modulo_variable = { WHICH, VALUE, OUT }
+# 
+# 取某数余数
+# get the modulo of a number divided by a dividor
+# input: 
+# WHICH - input variable, maximum value of VAR must not exceed 10000
+# 输入变量, 最大为10000
+# VALUE - divisor, integer # 除数
+# output: 
+# OUT - variable 输出变量
+# input VAR must NOT be same as output OUT
+# 输入系数 VAR 不能与 OUT 相同 
+####################################################################################
+# set_array = { ARRAY, VALUE, INDEX }
+# 
+# 更改数组内指定索引的数值
+# set the value in an array at the given index
+# input: ARRAY, VALUE, INDEX # 数组名，数值，索引
+####################################################################################
+# set_array_variable = { ARRAY, VALUE, VARIABLE }
+# 
+# 根据某一个变量的值，更改数组内指定索引的数值
+# set the value in an array at the given index, which the index is a variable in game
+# input: ARRAY, VALUE, VARIABLE # 数组名，数值，变量名
+####################################################################################
+# get_digits = { ARRAY, VARIABLE }
+# 
+# 将变量值转换成一个数列 （个位数，10位数，百位数，千位数），用于读取
+# convert variable value into readable digits in form of arrays
+# INPUT: VARIABLE # 需要转换的变量
+# OUTPUT: ARRAY, can be same as VARIABLE # 转换成的数列名，可与VARIABLE 重复
+####################################################################################
+# get_array = { ARRAY, INDEX, OUT }
+# 
+# 将数组内指定索引的值复制到指定的变量中
+# copy the value in an array at the given index to the specific variable
+# input: ARRAY 数组名, INDEX 索引（整数）
+# output: OUT(variable name)# 变量名(输出)
+
+####################################################################################
+# get_array_variable = { ARRAY, VARIABLE, OUT }
+# 
+# 将数组内指定索引（数值为一个变量）的值复制到指定的变量中
+# copy the value in an array at the given index (referred to an variable) to the specific variable
+# input: ARRAY 数组名, VARIABLE(variable name) # 变量名(输入)
+# output: OUT(variable name) # 变量名(输出)
+
 new_array = {
 	set_variable = {
 		which = $ARRAY$
@@ -31,7 +87,6 @@ new_array = {
 # 在数组最后添加一个变量
 # add a number to the end of an array
 # input: ARRAY, VALUE # 数组名及要添加的数值
-# output: variable ($name$_(max_index), $value$)
 # 数组最大索引为9999
 # maximum index: 9999
 add_array = {
@@ -39,7 +94,7 @@ add_array = {
 		limit = { check_variable = { which = $ARRAY$ value = 0 }}
 		set_array = { ARRAY = $ARRAY$ INDEX = 0 VALUE = $VALUE$ }
 	} else = {
-		get_digits = { ARRAY = $ARRAY$ TARGET = $ARRAY$ }
+		get_digits = { ARRAY = $ARRAY$ VARIABLE = $ARRAY$ }
 		if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 1 }}
 			add_array_set_digit_2 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = 1 }
@@ -79,114 +134,123 @@ add_array_set_digit_2 = {
 	} else = {
 		if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 0 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 1 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 2 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 3 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 4 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 5 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 6 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 7 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 8 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 9 }}
-			add_array_set_digit_3 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
+		} else_if = {
+			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 0 }}
+			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
 		}
 	}
 }
 
-add_array_set_digit_3 = {
-	if = {
-		limit = { check_variable = { which = $ARRAY$_DIGITS value = 2 }}
-		add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$ }
-	} else = {
-		if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 0 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 1 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 2 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 3 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 4 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 5 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 6 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 7 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 8 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 9 }}
-			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
-		}
-	}
-}
-add_array_set_digit_4 = {
-	if = {
-		limit = { check_variable = { which = $ARRAY$_DIGITS value = 3 }}
-		add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$ }
-	} else = {
-		if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 0 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 1 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 2 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 3 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 4 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 5 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 6 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 7 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 8 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
-		} else_if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 9 }}
-			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
-		}
-	}
-}
+# add_array_set_digit_3 = {
+# 	if = {
+# 		limit = { check_variable = { which = $ARRAY$_DIGITS value = 2 }}
+# 		add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$ }
+# 	} else = {
+# 		if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 0 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 1 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 2 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 3 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 4 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 5 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 6 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 7 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 8 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 9 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 0 }}
+# 			add_array_set_digit_4 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
+# 		}
+# 	}
+# }
+# add_array_set_digit_4 = {
+# 	if = {
+# 		limit = { check_variable = { which = $ARRAY$_DIGITS value = 3 }}
+# 		add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$ }
+# 	} else = {
+# 		if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 0 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 1 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$1 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 2 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$2 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 3 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$3 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 4 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$4 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 5 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$5 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 6 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$6 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 7 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$7 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 8 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$8 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 9 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$9 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 0 }}
+# 			add_array_set_variable = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = $INDEX$0 }
+# 		}
+# 	}
+# }
 
 # set the variable when the index has four digits ( 1000~9999 )
 add_array_set_variable = {
@@ -206,32 +270,32 @@ add_array_set_variable = {
 
 # formula: modulo = number - divisor * (integer of [ number / divisor ])
 # input: 
-# VAR - input variable, maximum value of VAR must not exceed 10000
-# DIVISOR - divisor, integer
+# WHICH - input variable, maximum value of VAR must not exceed 10000
+# VALUE - divisor, integer
 # output: OUT - variable 
 # input VAR must NOT be same as output OUT
 modulo_variable = {
-	set_variable = { which = quotient_$VAR$ value = $VAR$ }
+	set_variable = { which = quotient_$WHICH$ value = $WHICH$ }
 	set_variable = { which = $OUT$ value = 0 }
-	divide_variable = { which = quotient_$VAR$ value = $DIVISOR$ }
+	divide_variable = { which = quotient_$WHICH$ value = $VALUE$ }
 	if = { # in case if the number is greater than 100
-		limit = { check_variable = { which = quotient_$VAR$ value > 100 }}
-		set_variable = { which = quotient_$VAR$_divide_100 value = quotient_$VAR$ }
-		divide_variable = { which = quotient_$VAR$_divide_100 value = 100 }
+		limit = { check_variable = { which = quotient_$WHICH$ value > 100 }}
+		set_variable = { which = quotient_$WHICH$_divide_100 value = quotient_$WHICH$ }
+		divide_variable = { which = quotient_$WHICH$_divide_100 value = 100 }
 		while = {
-			count = quotient_$VAR$_divide_100
+			count = quotient_$WHICH$_divide_100
 			change_variable = { which = $OUT$ value = 100 }
-			change_variable = { which = quotient_$VAR$ value = -100 }
+			change_variable = { which = quotient_$WHICH$ value = -100 }
 		}
-		set_variable = { which = quotient_$VAR$_divide_100 value = 0 }
+		set_variable = { which = quotient_$WHICH$_divide_100 value = 0 }
 	}
 	while = { # turn the number into a integer (2.3 -> 2)
-		count = quotient_$VAR$
+		count = quotient_$WHICH$
 		change_variable = { which = $OUT$ value = 1 }
 	}
-	set_variable = { which = quotient_$VAR$ value = 0 }
-	multiply_variable = { which = $OUT$ value = $DIVISOR$ } # divisor * (integer of [ number / divisor ])
-	subtract_variable = { which = $OUT$ value = $VAR$ } # above - number, this will always be negative number or 0 
+	set_variable = { which = quotient_$WHICH$ value = 0 }
+	multiply_variable = { which = $OUT$ value = $VALUE$ } # divisor * (integer of [ number / divisor ])
+	subtract_variable = { which = $OUT$ value = $WHICH$ } # above - number, this will always be negative number or 0 
 	multiply_variable = { which = $OUT$ value = -1 } 
 }
 
@@ -259,7 +323,7 @@ set_array_variable = {
 			set_variable = { which = $ARRAY$ value = $VARIABLE$ }
 			change_variable = { which = $ARRAY$ value = 1 }
 		}
-		get_digits = { ARRAY = $ARRAY$ TARGET = $VARIABLE$ }
+		get_digits = { ARRAY = $ARRAY$ VARIABLE = $VARIABLE$ }
 		if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 1 }}
 			add_array_set_digit_2 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = 1 }
@@ -291,8 +355,11 @@ set_array_variable = {
 	}
 }
 
+# convert variable value into readable digits in form of arrays
+# INPUT: VARIABLE
+# OUTPUT: ARRAY
 get_digits = {
-	set_variable = { which = $ARRAY$_TEMP value = $TARGET$ }
+	set_variable = { which = $ARRAY$_TEMP value = $VARIABLE$ }
 	set_variable = { which = $ARRAY$_DIGITS value = 1 }
 	while = { # push the number to decimals until first digit is at the single digit (123 -> 1.23)
 		limit = { check_variable = { which = $ARRAY$_TEMP value >= 10 }}
@@ -332,14 +399,182 @@ get_digits = {
 
 # 将数组内指定索引的值复制到指定的变量中
 # copy the value in an array at the given index to the specific variable
-# input: OUT(variable name), ARRAY, INDEX # 变量名(输出)，数组名，索引
-# output: a value set in variable $OUT$
+# input: ARRAY 数组名, INDEX 索引
+# output: OUT(variable name)# 变量名(输出)
 get_array = {
 	set_variable = {
 		which = $OUT$
 		value = $ARRAY$_$INDEX$
 	}
 }
+
+# 将数组内指定索引（值为一个变量）的值复制到指定的变量中
+# copy the value in an array at the given index (referred to an variable) to the specific variable
+# input: ARRAY 数组名, VAR(variable name) # 变量名(输入)
+# output: OUT(variable name) # 变量名(输出)
+get_array_variable = {
+	if = {
+		limit = { check_variable = { which = $VARIABLE$ value = 0 }}
+		get_array = { ARRAY = $ARRAY$ INDEX = 0 OUT = $OUT$ }
+	} else = {
+		get_digits = { ARRAY = $VARIABLE$ VARIABLE = $VARIABLE$ }
+		if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 1 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 1 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 2 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 2 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 3 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 3 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 4 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 4 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 5 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 5 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 6 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 6 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 7 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 7 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 8 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 8 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_1 value = 9 }}
+			get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = 9 }
+		}
+	}
+	remove_array_variables = { ARRAY = $VARIABLE$ }
+}
+
+get_array_variable_S2 = {
+	if = {
+		limit = { check_variable = { which = $VARIABLE$_DIGITS value = 1 }}
+		get_array = { ARRAY = $ARRAY$ OUT = $OUT$ INDEX = $INDEX$ }
+	} else = {
+		if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 0 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 1 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$1 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 2 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$2 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 3 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$3 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 4 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$4 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 5 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$5 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 6 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$6 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 7 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$7 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 8 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$8 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 9 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$9 }
+		} else_if = {
+			limit = { check_variable = { which = $VARIABLE$_DIGIT_2 value = 0 }}
+			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+		}
+	}
+}
+
+# get_array_variable_S3 = {
+# 	if = {
+# 		limit = { check_variable = { which = $VARIABLE$_DIGITS value = 2 }}
+# 		get_array = { ARRAY = $ARRAY$ OUT = $OUT$ INDEX = $INDEX$ }
+# 	} else = {
+# 		if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 0 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 1 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$1 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 2 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$2 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 3 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$3 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 4 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$4 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 5 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$5 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 6 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$6 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 7 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$7 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 8 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$8 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 9 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$9 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_3 value = 0 }}
+# 			get_array_variable_S4 = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+# 		}
+# 	}
+# }
+
+# get_array_variable_S4 = {
+# 	if = {
+# 		limit = { check_variable = { which = $VARIABLE$_DIGITS value = 3 }}
+# 		get_array = { ARRAY = $ARRAY$ OUT = $OUT$ INDEX = $INDEX$ }
+# 	} else = {
+# 		if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 0 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 1 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$1 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 2 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$2 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 3 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$3 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 4 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$4 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 5 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$5 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 6 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$6 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 7 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$7 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 8 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$8 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 9 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$9 }
+# 		} else_if = {
+# 			limit = { check_variable = { which = $VARIABLE$_DIGIT_4 value = 0 }}
+# 			get_array = { ARRAY = $ARRAY$ OUT = $OUT$ VARIABLE = $VARIABLE$ INDEX = $INDEX$0 }
+# 		}
+# 	}
+# }
 
 remove_array_variables = {
 	set_variable = { which = $ARRAY$_DIGIT_1 value = 0 }

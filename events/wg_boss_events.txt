@@ -91,10 +91,35 @@ country_event = {
 				set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
 			}
 			country_event = { id = wg_boss.19 }#无人机之主
-			country_event = { id = wg_boss.35 }#雪风
 			country_event = { id = wg_khan.2 }#大可汗
 			country_event = { id = wsgranking.1919 }#胖次商店
-		}	
+		}
+		random_list = { 
+			7 = {
+				random_country = {
+					limit = {
+						OR = {
+							has_wg_special_authority = yes
+						is_ai = no
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.35 }#盖亚雪风
+				}
+			}
+			3 = {
+			    random_country = {
+					limit = {
+						OR = {
+							has_wg_special_authority = yes
+							is_ai = no
+						}
+						is_ai = no
+					}
+					country_event = { id = wg_boss.85 }#环雪风
+				}
+			}
+		}
 		random_list = { 
 			2 = {
 				random_country = {
@@ -3203,7 +3228,126 @@ country_event = {
 		name = wg_boss.84.a
 	}
 }
+###雪风龙环
+country_event = {
+	id = wg_boss.85
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_RBQ_created }
+	}	
 
+	immediate = {
+		set_global_flag = wg_boss_RBQ_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
+				initializer = wg_ring_water_world_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.86
+	title = "wg_boss.86.name"
+	desc = "wg_boss.86.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_space_dragon_blue
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_ring_water_system_home
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_boss_RBQ_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_boss_RBQ_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.86.a"		
+	}
+}
+
+country_event = {
+	id = wg_boss.87
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_RBQ_Dragon_fleet2
+		}
+	}
+	immediate = {	
+		From = {
+			country_event = { id = wg_boss.88 days = 5 }
+		}	
+	}	
+}
+
+country_event = {
+	id = wg_boss.88
+	title = "wg_boss.88.name"
+	desc = "wg_boss.88.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	
+	option = {
+		name = "wg_boss.88.a"
+		change_variable = { which = rankpts value = 10 }
+		owner = {
+			add_resource = { unity = 2000 }
+		}		
+		hidden_effect = {
+			country_event = { id = wg_boss.89 days = 5 }
+		}		
+	}	
+}
+		
+country_event = {
+	id = wg_boss.89
+	title = "wg_boss.89.name"
+	desc = "wg_boss.89.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	
+	option = {
+		name = "wg_boss.89.a"
+		hidden_effect = {
+			set_country_flag = tech_waterB_allowed_flag
+			country_event = { id = wg_boss.90 }
+		}		
+	}	
+}
+
+country_event = {
+	id = wg_boss.90
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = wg_waterB_ring
+			}
+			change_pc = pc_ringworld_habitable_water
+		}		
+	}
+}
 event = { #生成星系
 	id = wg_boss.1000
 	hide_window = yes

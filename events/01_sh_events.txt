@@ -1503,6 +1503,12 @@ country_event = {
 			days = -1
 		}
 		set_country_flag = lack_food_sh
+		if = {
+			limit = {
+				has_country_flag = origin_wg_fe_child_flag
+			}
+			country_event = { id = wg_origin.4 }
+		}
 	}
 }
 
@@ -2466,4 +2472,56 @@ country_event = {
 			days = 7200
 		}
 	}	
+}
+
+planet_event = {
+	id = sh.3052
+	title = sh.3052.name
+	desc = sh.3052.desc
+	picture = GFX_evt_sh_eweapon
+	location = from
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "sh.3052.a"
+		enable_special_project = {
+			name = "sh_eweapon_project"
+			location = this
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = sh.3053
+	title = "sh.3053.name"
+	desc = "sh.3053.desc"
+	picture = GFX_evt_sh_eweapon
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "sh.3053.a"
+		owner={
+			add_research_option = "tech_sh_Lweapon2"
+			add_research_option = "tech_sh_Xweapon2"
+			add_research_option = "tech_sh_Tweapon2"
+		}		
+	}
+}
+
+country_event = {
+	id = sh.3054
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_shenhai
+		last_increased_tech = "tech_sh_Eweapon"		
+	}
+	immediate = {
+		random_owned_planet = {
+			planet_event = { id = sh.3052 }
+		}	
+	}
 }

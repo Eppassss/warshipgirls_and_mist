@@ -9,6 +9,7 @@ is_main_ship_size = {
 		is_ship_size = large_ship_ai 
 		is_ship_size = graygoo_mothership 
 		is_ship_size = marauder_galleon 
+		is_ship_size = wg_ancient_battleship
 		# 你游
 		is_ship_size = wg_battleship
 		is_ship_size = wg_titan
@@ -45,6 +46,10 @@ is_main_ship_size = {
 		is_ship_size = erebus 
 		is_ship_size = avatar 
 		is_ship_size = ragnarok 
+		# kuat
+		is_ship_size = nebula_executor
+		is_ship_size = nebula_dominance 
+		is_ship_size = horrizone 
 	}
 }
 

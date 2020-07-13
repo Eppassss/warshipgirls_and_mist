@@ -65,3 +65,19 @@ special_project = {
 		owner = { country_event = { id = wg_khan.202 }}
 	}
 }
+
+special_project = {
+	key = WG_KHAN_INVADE_STAR_DESTROYER
+	days_to_research = 30
+	picture = GFX_evt_ship_in_orbit
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_transport = 20
+	}
+
+	on_success = {
+		owner = { country_event = { id = wg_khan.311 }}
+	}
+}
+

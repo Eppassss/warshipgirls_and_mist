@@ -1095,8 +1095,8 @@ tech_sh_Lweapon2 = {
 	tier = 5
 	category = { propulsion }
 	ai_update_type = military	
-	prerequisites = { "tech_sh_Lweapon" "tech_dark_matter_power_core" }
-	weight = @tier4weight2
+	prerequisites = { "tech_sh_Lweapon" "tech_sh_Eweapon" }
+	weight = 0
 	is_rare = yes
 	is_dangerous = yes
 	
@@ -1251,6 +1251,73 @@ tech_sh_Xweapon = {
 		}
 	}	
 }
+#深海暗物质武器前置科技
+tech_sh_Eweapon = {
+	icon = tech_sh_eweapon
+	cost = @tier5cost1
+	area = physics
+	tier = 5
+	category = { particles }
+	ai_update_type = military	
+	prerequisites = { "tech_sh_Xweapon" "tech_sh_Lweapon" "tech_sh_Tweapon" "tech_dark_matter_power_core" }
+	weight = @tier4weight1
+	is_rare = yes
+	is_dangerous = yes
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "sh_eweapon_edicts"
+			desc = "sh_eweapon_edicts"
+		}
+	}	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_shenhai
+			is_wg_fallen_empire = yes
+		}
+		NOT = {
+			has_technology = tech_sh_Xweapon2
+			has_technology = tech_sh_Lweapon2
+			has_technology = tech_sh_Tweapon2
+		}	
+	}	
+}
 tech_sh_Xweapon2 = {
 	area = engineering
 	icon = tech_sh_Xweapon2
@@ -1258,8 +1325,8 @@ tech_sh_Xweapon2 = {
 	tier = 5
 	category = { propulsion }
 	ai_update_type = military	
-	prerequisites = { "tech_sh_Xweapon" "tech_dark_matter_power_core" }
-	weight = @tier4weight2
+	prerequisites = { "tech_sh_Xweapon" "tech_sh_Eweapon" }
+	weight = 0
 	is_rare = yes
 	is_dangerous = yes
 	
@@ -1448,8 +1515,8 @@ tech_sh_Tweapon2 = {
 	tier = 5
 	category = { propulsion }
 	ai_update_type = military	
-	prerequisites = { "tech_sh_Tweapon" "tech_dark_matter_power_core" }
-	weight = @tier4weight2
+	prerequisites = { "tech_sh_Eweapon" "tech_sh_Tweapon" }
+	weight = 0
 	is_rare = yes
 	is_dangerous = yes
 	is_reverse_engineerable = no

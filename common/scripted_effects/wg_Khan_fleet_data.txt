@@ -75,7 +75,7 @@ create_wg_Khan_fleet_1 = {
 		BB3_Min = 2 BB3_Num = 4 GRAPHICS3 = "avian_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		CA_Min = 2 CA_Num = 1 GRAPHICS_DD2 = "reptilian_01"
-		DD2_Min = 2 DD2_Num = 2 GRAPHICS_CA = "molluscoid_01"
+		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
 		Outrider_Min = 6 Outrider_Num = 3 
 		Champion_Min = 6 Champion_Num = 6 
@@ -91,8 +91,8 @@ create_wg_Khan_fleet_2 = {
 		BB1_Min = 1 BB1_Num = 2 GRAPHICS1 = "reptilian_01"
 		BB4_Min = 1 BB4_Num = 2 GRAPHICS4 = "arthropoid_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
-		CA_Min = 1 CA_Num = 2 GRAPHICS_DD2 = "avian_01"
-		DD2_Min = 2 DD2_Num = 1 GRAPHICS_CA = "molluscoid_01"
+		CA_Min = 1 CA_Num = 2 GRAPHICS_CA = "avian_01"
+		DD2_Min = 2 DD2_Num = 1 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
 		Outrider_Min = 10 Outrider_Num = 10
 		Champion_Min = 5 Champion_Num = 1
@@ -275,7 +275,7 @@ create_wg_Khan_fleet_13 = {
 		SF_Min = 2 SF_Num = 2
 		BB1_Min = 2 BB1_Num = 1 GRAPHICS1 = "humanoid_01"
 		BB3_Min = 2 BB3_Num = 1 GRAPHICS3 = "arthropoid_01"
-		BB3_Min = 2 BB3_Num = 2
+		BB3E_Min = 2 BB3E_Num = 2
 		DD_Min = 2 DD_Num = 5 GRAPHICS_DD = "fungoid_01"
 		CA_Min = 3 CA_Num = 1 GRAPHICS_CA = "humanoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
@@ -318,5 +318,140 @@ create_wg_Khan_fleet_15 = {
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
 		Outrider_Min = 40 Outrider_Num = 20
+	}
+}
+
+create_wg_Khan_fleet_random_1 = { 
+	create_fleet = {
+		name = "NAME_Khan_Fleet3"
+		effect = {
+			set_owner = event_target:wg_Da_Khan_home_country
+			create_WG_Khan_CA = { CA_Min=5 CA_Num=10 GRAPHICS="reptilian_01" DIFF_MULT = 1 }
+			create_WG_Khan_CA = { CA_Min=5 CA_Num=5 GRAPHICS="plantoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="arthropoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=30 CaraDD_Num=30 DIFF_MULT = 1 }
+			set_fleet_flag = khan_fleet
+			set_location = event_target:khan_star_destroyer_fleet
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+	}
+}
+
+create_wg_Khan_fleet_random_2 = { 
+	create_fleet = {
+		name = "NAME_Khan_Fleet6"
+		effect = {
+			set_owner = event_target:wg_Da_Khan_home_country
+			create_WG_Khan_BB1 = { BB1_Min=2 BB1_Num=1 GRAPHICS="humanoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_BB3 = { BB3_Min=2 BB3_Num=1 GRAPHICS="arthropoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="mammalian_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=15 DD_Num=10 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=30 CaraDD_Num=30 DIFF_MULT = 1 }
+			create_WG_Khan_Haters_Cruiser = { Haters_CL_Min=3 Haters_CL_Num=7 DIFF_MULT = 1 }
+			create_WG_Khan_Haters_Corvette = { Haters_VE_Min=8 Haters_VE_Min=12 DIFF_MULT = 1 }
+			set_fleet_flag = khan_fleet
+			set_location = event_target:khan_star_destroyer_fleet
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+	}
+}
+
+create_wg_Khan_fleet_random_3 = { 
+	create_fleet = {
+		name = "NAME_Khan_Fleet9"
+		effect = {
+			set_owner = event_target:wg_Da_Khan_home_country
+			create_WG_Khan_BB1 = { BB1_Min=2 BB1_Num=1 GRAPHICS="mammalian_01" DIFF_MULT = 1 }
+			create_WG_Khan_BB1 = { BB1_Min=2 BB1_Num=1 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_BB2 = { BB1_Min=2 BB1_Num=2 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_BB3 = { BB3_Min=1 BB3_Num=2 GRAPHICS="arthropoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_BB4 = { BB3_Min=3 BB3_Num=2 GRAPHICS="fungoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_salted_fish = { SF_Min=1 SF_Num=1 DIFF_MULT = 1 }
+			set_fleet_flag = khan_fleet
+			set_location = event_target:khan_star_destroyer_fleet
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+	}
+}
+
+create_wg_Khan_fleet_random_4 = { 
+	create_fleet = {
+		name = "NAME_Khan_Fleet12"
+		effect = {
+			set_owner = event_target:wg_Da_Khan_home_country
+			create_WG_Khan_titan = { Titan_Min=1 Titan_Num=0 DIFF_MULT = 1 }
+			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=1 CaraDD_Num=50 DIFF_MULT = 1 }
+			set_fleet_flag = khan_fleet
+			set_location = event_target:khan_star_destroyer_fleet
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
+	}
+}
+
+create_wg_Khan_fleet_random_5 = { 
+	create_fleet = {
+		name = "NAME_Khan_Fleet15"
+		effect = {
+			set_owner = event_target:wg_Da_Khan_home_country
+			create_WG_Khan_DD = { DD_Min=10 DD_Num=20 GRAPHICS="fungoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=10 DD_Num=20 GRAPHICS="reptilian_01" DIFF_MULT = 1 }
+			create_WG_Khan_Outrider = { Outrider_Min=10 Outrider_Num=20 DIFF_MULT = 1 }
+			create_WG_Khan_Haters_Corvette = { Haters_VE_Min=10 Haters_VE_Min=40 DIFF_MULT = 1 }
+			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=10 CaraDD_Num=40 DIFF_MULT = 1 }
+			set_fleet_flag = khan_fleet
+			set_location = event_target:khan_star_destroyer_fleet
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+        }
 	}
 }

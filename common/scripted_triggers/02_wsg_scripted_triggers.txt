@@ -97,22 +97,27 @@ has_wsg_lady_active_diplo = {
 has_enough_consumer_goods = {
 	OR = {
 		AND = {
-			years_passed <= 40
-			resource_stockpile_compare = { resource = consumer_goods value > 500 }
+			years_passed < 40
+			resource_stockpile_compare = { resource = consumer_goods value >= 375 }
 		}
 		AND = {
-			years_passed > 40
-			years_passed <= 80
-			resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+			years_passed >= 40
+			years_passed < 80
+			resource_stockpile_compare = { resource = consumer_goods value >= 1500 }
 		}
 		AND = {
-			years_passed > 80
-			years_passed <= 120
-			resource_stockpile_compare = { resource = consumer_goods value > 3500 }
+			years_passed >= 80
+			years_passed < 120
+			resource_stockpile_compare = { resource = consumer_goods value >= 2625 }
 		}
 		AND = {
-			years_passed > 120
-			resource_stockpile_compare = { resource = consumer_goods value > 6000 }
+			years_passed >= 120
+			years_passed < 160
+			resource_stockpile_compare = { resource = consumer_goods value >= 4500 }
+		}
+		AND = {
+			years_passed >= 160
+			resource_stockpile_compare = { resource = consumer_goods value >= 9900 }
 		}
 	}
 }
