@@ -2548,6 +2548,7 @@ ship_event = {
 	title = "wg_khan.299.name"
 	desc = "wg_khan.299.desc"
 	picture = "GFX_evt_wg_sukhbaatar_warning"
+	show_sound = "event_wg_battle_warning"
 
 	is_triggered_only = yes
 	fire_only_once = yes

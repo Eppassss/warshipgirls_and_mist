@@ -127,146 +127,6 @@ country_event = {
 		}
 	}
 }
-event = { #每年用伪随机概率判定堕落妈触发事件
-	id = wg_origin.5
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		exists = event_target:wg_fallen_empire
-		any_country = {
-			has_country_flag = origin_wg_fe_child_flag
-		}
-		end_game_years_passed < 0
-		years_passed >= 0
-	}
-
-	immediate = {
-		every_playable_country = {
-			limit = {
-				is_ai = no
-				has_country_flag = origin_wg_fe_child_flag
-			}
-			random_list = {
-				1 = {
-					modifier = {
-						add = 2
-						check_variable = { which = years_not_trigger_fe_event value >= 8 }
-					}
-					set_variable = { which = years_not_trigger_fe_event value = 0 }
-					country_event = { id = wg_origin.6 random = 359 }
-				}
-				19 = {
-					modifier = {
-						add = -2
-						check_variable = { which = years_not_trigger_fe_event value >= 1 }
-					}
-					modifier = {
-						add = -4
-						check_variable = { which = years_not_trigger_fe_event value >= 2 }
-					}
-					modifier = {
-						add = -5
-						check_variable = { which = years_not_trigger_fe_event value >= 4 }
-					}
-					modifier = {
-						add = -7
-						check_variable = { which = years_not_trigger_fe_event value >= 6 }
-					}
-					modifier = {
-						factor = 0
-						check_variable = { which = years_not_trigger_fe_event value >= 10 }
-					}
-					change_variable = { which = years_not_trigger_fe_event value = 1 }
-				}
-			}
-		}
-	}
-
-}
-country_event = {
-	id = wg_origin.6
-	hide_window = yes
-	is_triggered_only = yes
-
-    trigger = {
-		has_country_flag = origin_wg_fe_child_flag
-	}
-	immediate = {
-		random_list = {
-			5 = {
-				modifier = {
-					factor = 0
-					NOT = {
-						has_country_flag = wg_fe_pantsu_support
-						has_authority = auth_warshipgirls
-						NOT = { has_technology = tech_wsg_pantsu }
-					}
-				}
-				modifier = {
-					factor = 0
-					NOT = {
-						has_country_flag = wg_fe_pantsu_support
-					}
-				}
-				modifier = {
-					factor = 2
-					mid_game_years_passed > 1
-				}
-				country_event = { id = wg_origin.7 }#施舍点内裤
-			}
-			15 = {
-				modifier = {
-					factor = 0
-					has_country_flag = triggered_helldivers_event
-				}
-				modifier = {
-					factor = 2
-					mid_game_years_passed > 2
-				}
-				set_country_flag = triggered_helldivers_event
-				country_event = { id = wg_origin.8 }#来玩地狱老司机2
-			}
-			10 = {
-				modifier = {
-					factor = 0
-					has_country_flag = triggered_wg_fe_programmer_event
-				}
-				modifier = {
-					factor = 2
-					mid_game_years_passed > 2
-				}
-				set_country_flag = triggered_wg_fe_programmer_event
-				country_event = { id = wg_origin.11 }#抓码农
-			}
-			10 = {
-				modifier = {
-					factor = 0
-					has_country_flag = triggered_wg_fe_vaccines_event
-				}
-				modifier = {
-					factor = 2
-					mid_game_years_passed > 2
-				}
-				set_country_flag = triggered_wg_fe_vaccines_event
-				country_event = { id = wg_origin.14 }#良性疫苗
-			}
-			10 = {
-				modifier = {
-					factor = 0
-					has_country_flag = triggered_wg_fe_game_event
-				}
-				modifier = {
-					factor = 2
-					mid_game_years_passed > 2
-				}
-				set_country_flag = triggered_wg_fe_game_event
-				country_event = { id = wg_origin.17 }#盲人争霸
-			}
-		}
-	}
-
-}
 
 country_event = {#施舍内裤
 	id = wg_origin.7
@@ -389,8 +249,6 @@ country_event = {
 		city_level = event_target:wg_fallen_empire
 		room = event_target:wg_fallen_empire.ruler
 	}
-
-	is_triggered_only = yes
 
 	option = {
 		name = wg_origin.12.a
@@ -571,11 +429,11 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = exd1
+		portrait = exd2
 		planet_background = event_target:wg_fallen_empire
 		graphical_culture = event_target:wg_fallen_empire
 		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
+		room = sc3_room
 	}
 
 	option = {
@@ -595,11 +453,11 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = exd1
+		portrait = exd2
 		planet_background = event_target:wg_fallen_empire
 		graphical_culture = event_target:wg_fallen_empire
 		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
+		room = sc3_room
 	}
 
 	option = {
@@ -649,11 +507,11 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = exd1
+		portrait = exd2
 		planet_background = event_target:wg_fallen_empire
 		graphical_culture = event_target:wg_fallen_empire
 		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
+		room = sc3_room
 	}
 
 	option = {
@@ -676,11 +534,11 @@ country_event = {
 
 	option = {
 		name = "wg_origin.22.a"
-		random_owned_planet = {
+		hidden_effect = { random_owned_planet = {
 			create_pop = {
 				species = owner_species
 			}		
-		}
+		}}
 		owner = {
 			add_resource = { 
 				energy = 3000 
@@ -700,11 +558,11 @@ country_event = {
 
 	option = {
 		name = "wg_origin.23.a"
-		random_owned_planet = {
+		hidden_effect = { random_owned_planet = {
 			create_pop = {
 				species = owner_species
 			}		
-		}
+		}}
 		owner = {
 			add_resource = { 
 				unity = 500

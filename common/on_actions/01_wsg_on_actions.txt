@@ -83,7 +83,6 @@ on_yearly_pulse = {
 		wg_fe.99
 		wg_khan.3
 		wg_khan.1000
-		wg_origin.5
 	}
 }
 on_yearly_pulse_country = {

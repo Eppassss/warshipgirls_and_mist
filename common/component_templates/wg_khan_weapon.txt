@@ -490,6 +490,10 @@ utility_component_template = {
 		ship_armor_reduction = -0.05
 	}
 	
+	hidden = yes
+	size_restriction = {
+		wg_khan_star_destroyer
+	}
 	component_set = "Khan_star_destroyer_armor"
 	resources = {
 		category = ship_components

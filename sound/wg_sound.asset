@@ -9,6 +9,11 @@ sound = {
 	volume = 0.5
 }
 sound = {
+	name = "event_wg_battle_warning"
+	file = "event/wg_battle_warning.wav"
+	volume = 0.5
+}
+sound = {
 	name = "event_shimakaze_first_meet"
 	file = "event/wg_shimakaze_meet.wav"
 }

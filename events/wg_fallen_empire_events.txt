@@ -917,31 +917,72 @@ country_event = {
 		is_dialog_only = yes
 	}
 	option = {
+		trigger = {
+			NOT = { has_origin = origin_wg_fe_child }
+		}
 		name = wg_fe.20.b
 		response_text = wg_fe.20.b.response
 		is_dialog_only = yes
 	}
 	option = {
 		trigger = {
+			has_origin = origin_wg_fe_child 
+		}
+		name = wg_fe.20.b
+		response_text = wg_fe.20.b.response2
+		is_dialog_only = yes
+	}
+	option = {
+		trigger = {
 			NOR = {
+				has_origin = origin_wg_fe_child
 				has_civic = civic_CM
 				has_ascension_perk = ap_shenhai_silent
 			}
 		}
 		name = wg_fe.20.c
 		response_text = wg_fe.20.c.response
-		event_target:wg_fallen_empire = { #增加舰娘堕落留下的几率
-			set_country_flag = add_stay_chance5
+		add_research_option = tech_dark_matter_power_core
+		add_tech_progress = {
+			tech = tech_dark_matter_power_core
+			progress = 0.2
+		}
+		add_resource = {
+			sr_dark_matter = 500
 		}
 		hidden_effect = {
-			add_research_option = tech_dark_matter_power_core
-			add_tech_progress = {
-				tech = tech_dark_matter_power_core
-				progress = 0.2
+			event_target:wg_fallen_empire = { #增加舰娘堕落留下的几率
+				set_country_flag = add_stay_chance5
 			}
-			add_resource = {
-				sr_dark_matter = 500
+		}
+	}
+	option = { # 妈宝起源直接送齐三件套
+		trigger = {
+			has_origin = origin_wg_fe_child
+			NOR = {
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
 			}
+		}
+		name = wg_fe.20.c
+		response_text = wg_fe.20.c.response2
+		add_research_option = tech_dark_matter_power_core
+		add_research_option = tech_dark_matter_deflector
+		add_research_option = tech_dark_matter_propulsion
+		add_tech_progress = {
+			tech = tech_dark_matter_power_core
+			progress = 0.2
+		}
+		add_tech_progress = {
+			tech = tech_dark_matter_deflector
+			progress = 0.2
+		}
+		add_tech_progress = {
+			tech = tech_dark_matter_propulsion
+			progress = 0.2
+		}
+		add_resource = {
+			sr_dark_matter = 1000
 		}
 	}
 	option = {
@@ -970,20 +1011,21 @@ country_event = {
 			NOR = {
 				has_civic = civic_CM
 				has_ascension_perk = ap_shenhai_silent
+				any_country = { has_origin = origin_wg_fe_child }
 			}
 		}
 		name = wg_fe.20.e
 		response_text = wg_fe.20.e.response
 		custom_tooltip = wg_fe.20.d.tooltip
+		add_research_option = tech_dark_matter_power_core
+		add_tech_progress = {
+			tech = tech_dark_matter_power_core
+			progress = 0.2
+		}
+		add_resource = {
+			sr_dark_matter = 500
+		}
 		hidden_effect = {
-			add_research_option = tech_dark_matter_power_core
-			add_tech_progress = {
-				tech = tech_dark_matter_power_core
-				progress = 0.2
-			}
-			add_resource = {
-				sr_dark_matter = 500
-			}
 			event_target:wg_fe_task_planet = {
 				random_pop = {
 					limit = {
@@ -1629,7 +1671,13 @@ event = { #每年用伪随机概率判定堕落妈触发事件
 			}
 		}
 		end_game_years_passed < 0
-		years_passed >= 30
+		OR = {
+			years_passed >= 30
+			AND = {
+				years_passed >= 20
+				has_origin = origin_wg_fe_child
+			}
+		}
 	}
 
 	immediate = {
@@ -1801,6 +1849,95 @@ country_event = {
 							mid_game_years_passed > 0
 						}
 						country_event = { id = wg_lady.1 }
+					}
+					5 = {
+						modifier = {
+							factor = 0
+							NOR = {
+								has_country_flag = wg_fe_pantsu_support
+								has_authority = auth_warshipgirls
+								NOT = { has_technology = tech_wsg_pantsu }
+							}
+						}
+						modifier = {
+							factor = 0
+							NOT = {
+								has_country_flag = wg_fe_pantsu_support
+							}
+						}
+						modifier = {
+							factor = 0
+							NOT = { has_origin = origin_wg_fe_child }
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 1
+						}
+						country_event = { id = wg_origin.7 }#施舍点内裤
+					}
+					15 = {
+						modifier = {
+							factor = 0
+							has_country_flag = triggered_helldivers_event
+						}
+						modifier = {
+							factor = 0
+							NOT = { has_origin = origin_wg_fe_child }
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = triggered_helldivers_event
+						country_event = { id = wg_origin.8 }#来玩地狱老司机2
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_country_flag = triggered_wg_fe_programmer_event
+						}
+						modifier = {
+							factor = 0
+							NOT = { has_origin = origin_wg_fe_child }
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = triggered_wg_fe_programmer_event
+						country_event = { id = wg_origin.11 }#抓码农
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_country_flag = triggered_wg_fe_vaccines_event
+						}
+						modifier = {
+							factor = 0
+							NOT = { has_origin = origin_wg_fe_child }
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = triggered_wg_fe_vaccines_event
+						country_event = { id = wg_origin.14 }#良性疫苗
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_country_flag = triggered_wg_fe_game_event
+						}
+						modifier = {
+							factor = 0
+							NOT = { has_origin = origin_wg_fe_child }
+						}
+						modifier = {
+							factor = 2
+							mid_game_years_passed > 2
+						}
+						set_country_flag = triggered_wg_fe_game_event
+						country_event = { id = wg_origin.17 }#盲人争霸
 					}
 				}
 			#}

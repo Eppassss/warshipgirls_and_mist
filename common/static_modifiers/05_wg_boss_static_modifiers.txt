@@ -62,7 +62,12 @@ early_rush = {
 	ship_weapon_damage = 0.10
 	ship_weapon_range_mult = 0.10
 }
-
+RBQ_Dragon_power2 = {
+	ship_weapon_damage = 2.50
+	ship_weapon_range_mult = 0.50
+	ship_hull_mult = 1.5
+	ship_armor_mult = 1.50
+}
 RBQ_Dragon_power = {
 	ship_weapon_damage = 1.00
 	ship_hull_mult = 0.2

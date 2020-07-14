@@ -1,0 +1,19 @@
+wg_modifier_helldivers = {
+    army_damage_mult = 0.1
+	army_collateral_damage_mult = 0.15
+}
+
+wg_modifier_helldivers2 = {
+    army_disengage_chance_mult = 0.15
+}
+
+wg_modifier_vaccines = {
+    pop_growth_speed = 0.15
+	planet_jobs_produces_mult = 0.025
+}
+
+wg_modifier_vaccines2 = {
+    pop_growth_speed = 0.30
+	planet_jobs_produces_mult = 0.05
+}
+
