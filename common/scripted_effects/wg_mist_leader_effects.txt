@@ -31,7 +31,7 @@ create_wsg_shimakaze_governor = {
 	remove_country_flag = wsg_shimakaze_admiral_active
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_governor = {
-		add_shimakaze_governor_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }
 		level_up_shimakaze = yes
 	}
 }
@@ -67,7 +67,7 @@ create_wsg_shimakaze_scientist = {
 	remove_country_flag = wsg_shimakaze_admiral_active
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_scientist = {
-		add_shimakaze_scientist_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 		level_up_shimakaze = yes
 	}
 }
@@ -103,7 +103,7 @@ create_wsg_shimakaze_admiral = {
 	remove_country_flag = wsg_shimakaze_scientist_active
 	remove_country_flag = wsg_shimakaze_general_active
 	event_target:shimakaze_admiral = {
-		add_shimakaze_admiral_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = shimakaze LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_shimakaze }
 		level_up_shimakaze = yes
 	}
 }
@@ -139,7 +139,9 @@ create_wsg_shimakaze_general = {
 	remove_country_flag = wsg_shimakaze_scientist_active
 	remove_country_flag = wsg_shimakaze_admiral_active
 	event_target:shimakaze_general = {
-		add_shimakaze_general_affection_trait = yes
+		add_special_leader_affection_trait = { 
+			LEADER= shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze 
+		}
 		level_up_shimakaze = yes
 	}
 }

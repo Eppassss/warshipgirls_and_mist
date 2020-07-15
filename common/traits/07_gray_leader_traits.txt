@@ -17,6 +17,20 @@ gray_admiral = {
 	randomized = no
 }
 
+leader_trait_admiral_gray_affection_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection1.dds"
+	modifier = {
+		ship_hull_regen_add_static = 10
+		ship_armor_regen_add_static = 10
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
 leader_trait_admiral_gray_affection_lv2 = {
 	cost = 0
 	modification = no
@@ -109,6 +123,20 @@ leader_trait_admiral_gray_affection_lv5 = {
 	initial = no
 	randomized = no
 }
+
+leader_trait_governor_gray_affection_lv1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/affection1.dds"
+	modifier = {
+		planet_stability_add = 5
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
 
 leader_trait_governor_gray_affection_lv2 = {
 	cost = 0

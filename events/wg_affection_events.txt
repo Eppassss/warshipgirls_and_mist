@@ -113,37 +113,38 @@ country_event = {
 										add = 2
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 18 }
+										check_variable = { which = "months_no_affection" value >= 15 }
 										add = 3
 									}
 									set_variable = { which = "months_no_affection" value = 0 }
 									switch = {
 										trigger = has_leader_flag
-										wsg_shimakaze_leader = { add_shimakaze_governor_affection = yes }
-										wsg_lady_leader = { add_lady_governor_affection = yes }
-										灰风领袖 = { add_gray_governor_affection = yes }
-										default = { add_governor_affection = yes }
+										wsg_shimakaze_leader = { add_special_leader_affection = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }}
+										wsg_lady_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
+										灰风领袖 = { add_special_leader_affection = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }}
+										Sharan_leader = { add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = governor MARRIED_FLAG = married_Sharan }}
+										default = { add_normal_leader_affection = { LEADER_CLASS = governor } }
 									}
 								}
 								39 = { # 伪随机
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 3 }
+										check_variable = { which = "months_no_affection" value >= 2 }
 										add = -5
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 6 }
+										check_variable = { which = "months_no_affection" value >= 5 }
 										add = -6
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 9 }
+										check_variable = { which = "months_no_affection" value >= 8 }
 										add = -6
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 12 }
+										check_variable = { which = "months_no_affection" value >= 10 }
 										add = -8
 									}
 									modifier = {
-										check_variable = { which = "months_no_affection" value >= 15 }
+										check_variable = { which = "months_no_affection" value >= 13 }
 										add = -10
 									}
 									change_variable = { which = "months_no_affection" value = 1 }
@@ -162,7 +163,9 @@ country_event = {
 							}
 							switch = {
 								trigger = has_leader_flag
-								wsg_shimakaze_leader = { add_shimakaze_scientist_affection_monthly = yes }
+								wsg_shimakaze_leader = { 
+									add_special_scientist_affection_monthly = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+								}
 								default = { add_scientist_affection_monthly = yes }
 							}
 						}
@@ -236,10 +239,10 @@ country_event = {
 			}
 			switch = {
 				trigger = leader_class
-				governor = { reset_governor_affection_level = yes }
-				scientist = { reset_scientist_affection_level = yes }
-				admiral = { reset_admiral_affection_level = yes }
-				general = { reset_general_affection_level = yes }
+				governor = { reset_normal_leader_affection_level = { LEADER_CLASS = governor } }
+				scientist = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist } }
+				admiral = { reset_normal_leader_affection_level = { LEADER_CLASS = admiral } }
+				general = { reset_normal_leader_affection_level = { LEADER_CLASS = general } }
 				ruler = { reset_ruler_affection_level = yes }
 			}
 		}
@@ -283,10 +286,10 @@ country_event = {
 		every_owned_leader = {
 			switch = {
 				trigger = leader_class
-				governor = { remove_governor_affection_trait = yes }
-				scientist = { remove_scientist_affection_trait = yes }
-				admiral = { remove_admiral_affection_trait = yes }
-				general = { remove_general_affection_trait = yes }
+				governor = { remove_normal_leader_affection_trait = { LEADER_CLASS = governor } }
+				scientist = { remove_normal_leader_affection_trait = { LEADER_CLASS = scientist } }
+				admiral = { remove_normal_leader_affection_trait = { LEADER_CLASS = admiral } }
+				general = { remove_normal_leader_affection_trait = { LEADER_CLASS = general } }
 				ruler = { remove_ruler_affection_trait = yes }
 			}
 			set_variable = { which = affection value = 0 }
@@ -368,16 +371,16 @@ ship_event = {
 					trigger = has_leader_flag
 					wsg_lady_leader = {
 						owner = { event_target:lady_survey_scientist = {
-							add_lady_survey_scientist_affection = yes
+							add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 						}}
 					}
 					wsg_shimakaze_leader = {
 						owner = { event_target:shimakaze_scientist = { 
-							add_shimakaze_scientist_affection = yes
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 						}}
 					}
 					default = {
-						add_scientist_affection = yes
+						add_normal_leader_affection = { LEADER_CLASS = scientist }
 					}
 				}
 				set_variable = { which = "planets_no_affection" value = 0 }
@@ -425,16 +428,16 @@ ship_event = {
 				trigger = has_leader_flag
 				wsg_lady_leader = {
 					owner = { event_target:lady_survey_scientist = {
-						add_lady_survey_scientist_affection = yes
+						add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 					}}
 				}
 				wsg_shimakaze_leader = {
 					owner = { event_target:shimakaze_scientist = { 
-						add_shimakaze_scientist_affection = yes
+						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 					}}
 				}
 				default = {
-					add_scientist_affection = yes
+					add_normal_leader_affection = { LEADER_CLASS = scientist }
 				}
 			}
 			random_list = {
@@ -443,16 +446,16 @@ ship_event = {
 						trigger = has_leader_flag
 						wsg_lady_leader = {
 							owner = { event_target:lady_survey_scientist = {
-								add_lady_survey_scientist_affection = yes
+								add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 							}}
-						}
+						}	
 						wsg_shimakaze_leader = {
 							owner = { event_target:shimakaze_scientist = { 
-								add_shimakaze_scientist_affection = yes
+								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 							}}
 						}
 						default = {
-							add_scientist_affection = yes
+							add_normal_leader_affection = { LEADER_CLASS = scientist }
 						}
 					}
 				}
@@ -497,9 +500,9 @@ country_event = {
 					set_variable = { which = "techs_no_affection" value = 0 }
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
-						add_shimakaze_scientist_affection = yes
+						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 					} else = {
-						add_scientist_affection = yes
+						add_normal_leader_affection = { LEADER_CLASS = scientist }
 					}
 				}
 				19 = {
@@ -551,23 +554,7 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						OR = { 
-							AND = {
-								is_wg_leader = yes
-								NOT = { has_leader_flag = affection_max }
-							}
-							AND = {
-								has_leader_flag = wsg_shimakaze_leader
-								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
-							}
-							AND = {
-								has_leader_flag = 灰风领袖
-								owner = { 
-									is_vaild_gray_owner = yes
-									NOT = { has_country_flag = gray_affection_max }
-								}
-							}
-						}
+						is_wg_or_special_affection_admiral = yes
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -594,23 +581,7 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						OR = { 
-							AND = {
-								is_wg_leader = yes
-								NOT = { has_leader_flag = affection_max }
-							}
-							AND = {
-								has_leader_flag = wsg_shimakaze_leader
-								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
-							}
-							AND = {
-								has_leader_flag = 灰风领袖
-								owner = { 
-									is_vaild_gray_owner = yes
-									NOT = { has_country_flag = gray_affection_max }
-								}
-							}
-						}
+						is_wg_or_special_affection_admiral = yes
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -664,14 +635,20 @@ fleet_event = {
 						add = 6
 					}
 					set_variable = { which = "days_combat_no_affection" value = 0 }
-					if = {
-						limit = { has_leader_flag = wsg_shimakaze_leader }
-						add_shimakaze_admiral_affection = yes
-					} else_if = {
-						limit = { has_leader_flag = 灰风领袖 }
-						add_gray_admiral_affection = { COUNTRY = owner }
-					} else = {
-						add_admiral_affection = yes
+					switch = {
+						trigger = has_leader_flag
+						wsg_shimakaze_leader = {
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+						}
+						灰风领袖 = {
+							add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+						}
+						Sharan_leader = {
+							add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
+						}
+						default = {
+							add_normal_leader_affection = { LEADER_CLASS = admiral }
+						}
 					}
 				}
 				9 = {
@@ -742,23 +719,7 @@ fleet_event = {
 					exists = leader
 					leader = { 
 						NOT = { has_leader_flag = wsg_lady_leader }
-						OR = {
-							AND = {
-								is_wg_leader = yes
-								NOT = { has_leader_flag = affection_max }
-							}
-							AND = {
-								has_leader_flag = wsg_shimakaze_leader
-								NOT = { owner = { has_country_flag = shimakaze_affection_max }}
-							}
-							AND = {
-								has_leader_flag = 灰风领袖
-								owner = { 
-									is_vaild_gray_owner = yes
-									NOT = { has_country_flag = gray_affection_max }
-								}
-							}
-						}
+						is_wg_or_special_affection_admiral = yes
 					}
 					has_fleet_flag = counting_affection
 				}
@@ -776,14 +737,20 @@ fleet_event = {
 								add = 3
 							}
 							set_variable = { which = "battles_won_no_affection" value = 0 }
-							if = {
-								limit = { has_leader_flag = wsg_shimakaze_leader }
-								add_shimakaze_admiral_affection = yes
-							} else_if = {
-								limit = { has_leader_flag = 灰风领袖 }
-								add_gray_admiral_affection = { COUNTRY=owner }
-						 	} else = {
-								add_admiral_affection = yes
+							switch = {
+								trigger = has_leader_flag
+								wsg_shimakaze_leader = {
+									add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+								}
+								灰风领袖 = {
+									add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+								}
+								Sharan_leader = {
+									add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
+								}
+								default = {
+									add_normal_leader_affection = { LEADER_CLASS = admiral }
+								}
 							}
 						}
 						4 = {
@@ -886,11 +853,11 @@ country_event = {
 					trigger = leader_class
 					admiral = {
 						change_variable = { which = affection value = 3 }
-						reset_admiral_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
 					}
 					general = {
 						change_variable = { which = affection value = 3 }
-						reset_general_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = general }
 					}
 					ruler = {
 						change_variable = { which = affection value = 3 }
@@ -913,6 +880,11 @@ country_event = {
 				limit = { is_vaild_gray_owner = yes }
 				change_variable = { which = gray_affection value = 3 }
 				reset_gray_affection_level = yes
+			}
+			if = {
+				limit = { has_country_flag = has_afk_Sharan }
+				change_variable = { which = Sharan_affection value = 3 }
+				reset_Sharan_affection_level = yes
 			}
 		}
 	}
@@ -992,9 +964,9 @@ country_event = {
 				leader = { 
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
-						add_shimakaze_general_affection = yes
+						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
 					} else = {
-						add_general_affection = yes
+						add_normal_leader_affection = { LEADER_CLASS = general }
 					}
 				}
 			}
@@ -1098,9 +1070,7 @@ country_event = {
 						is_wg_leader = yes
 						check_variable = { which = affection_level value >= 3 }
 					}
-					has_leader_flag = wsg_shimakaze_leader
-					has_leader_flag = wsg_lady_leader
-					has_leader_flag = 灰风领袖
+					is_special_affection_leader = yes
 				}
 			}
 			switch = {
@@ -1446,19 +1416,19 @@ country_event = {
 				switch = {
 					trigger = leader_class
 					governor = {
-						remove_governor_affection_trait = yes
+						remove_normal_leader_affection_trait = { LEADER_CLASS = governor }
 						add_trait = leader_trait_governor_affection_lv5
 					}
 					scientist = {
-						remove_scientist_affection_trait = yes
+						remove_normal_leader_affection_trait = { LEADER_CLASS = scientist }
 						add_trait = leader_trait_scientist_affection_lv5
 					}
 					admiral = {
-						remove_admiral_affection_trait = yes
+						remove_normal_leader_affection_trait = { LEADER_CLASS = admiral }
 						add_trait = leader_trait_admiral_affection_lv5
 					}
 					general = {
-						remove_general_affection_trait = yes
+						remove_normal_leader_affection_trait = { LEADER_CLASS = general }
 						add_trait = leader_trait_general_affection_lv5
 					}
 				}
@@ -1485,7 +1455,7 @@ country_event = {
 		event_target:married_leader = { if = {
 			limit = { has_leader_flag = affection_max }
 			set_variable = { which = affection_level value = 5 }
-			remove_admiral_affection_trait = yes
+			remove_normal_leader_affection_trait = { LEADER_CLASS = admiral }
 			add_trait = leader_trait_admiral_affection_lv5
 		}}
 	}
@@ -1597,22 +1567,22 @@ country_event = {
 				trigger = leader_class
 				governor = { 
 					set_variable = { which = affection value = @governor_affection_to_lv5 }
-					remove_governor_affection_trait = yes
+					remove_normal_leader_affection_trait = { LEADER_CLASS = governor }
 					add_trait = leader_trait_governor_affection_lv5
 				}
 				scientist = { 
 					set_variable = { which = affection value = @scientist_affection_to_lv5 }
-					remove_scientist_affection_trait = yes
+					remove_normal_leader_affection_trait = { LEADER_CLASS = scientist }
 					add_trait = leader_trait_scientist_affection_lv5 
 				}
 				admiral = { 
 					set_variable = { which = affection value = @admiral_affection_to_lv5 }
-					remove_admiral_affection_trait = yes
+					remove_normal_leader_affection_trait = { LEADER_CLASS = admiral }
 					add_trait = leader_trait_admiral_affection_lv5
 				}
 				general = { 
 					set_variable = { which = affection value = @general_affection_to_lv5 }
-					remove_general_affection_trait = yes
+					remove_normal_leader_affection_trait = { LEADER_CLASS = general }
 					add_trait = leader_trait_general_affection_lv5
 				}
 				ruler = { 
@@ -2512,7 +2482,7 @@ country_event = {
 						set_variable = { which = affection value = event_target:revive_leader_country }
 						set_variable = { which = affection_level value = event_target:revive_leader_country }
 						subtract_variable = { which = affection value = @governor_affection_to_lv2 }
-						reset_governor_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = governor }
 						save_event_target_as = revive_leader
 						exile_leader_with_variable = { VARIABLE = resurrect_leader }
 					}}
@@ -2531,7 +2501,7 @@ country_event = {
 						set_variable = { which = affection value = event_target:revive_leader_country }
 						set_variable = { which = affection_level value = event_target:revive_leader_country }
 						subtract_variable = { which = affection value = @scientist_affection_to_lv2 }
-						reset_scientist_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = scientist }
 						save_event_target_as = revive_leader
 						exile_leader_with_variable = { VARIABLE = resurrect_leader }
 					}}
@@ -2550,7 +2520,7 @@ country_event = {
 						set_variable = { which = affection value = event_target:revive_leader_country }
 						set_variable = { which = affection_level value = event_target:revive_leader_country }
 						subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
-						reset_admiral_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
 						save_event_target_as = revive_leader
 						exile_leader_with_variable = { VARIABLE = resurrect_leader }
 					}}
@@ -2569,7 +2539,7 @@ country_event = {
 						set_variable = { which = affection value = event_target:revive_leader_country }
 						set_variable = { which = affection_level value = event_target:revive_leader_country }
 						subtract_variable = { which = affection value = @general_affection_to_lv2 }
-						reset_general_affection_level = yes
+						reset_normal_leader_affection_level = { LEADER_CLASS = general }
 						save_event_target_as = revive_leader
 						exile_leader_with_variable = { VARIABLE = resurrect_leader }
 					}}
@@ -2643,7 +2613,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @governor_affection_to_lv2 }
-							reset_governor_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = governor }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						} 
 					}
@@ -2663,7 +2633,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
-							reset_admiral_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						} 
 					}
@@ -2683,7 +2653,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @governor_affection_to_lv2 }
-							reset_governor_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = governor }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						} 
 					}
@@ -2703,7 +2673,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @governor_affection_to_lv2 }
-							reset_governor_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = governor }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						} 
 					}
@@ -2723,7 +2693,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @general_affection_to_lv2 }
-							reset_general_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = general }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						} 
 					}
@@ -2763,7 +2733,7 @@ country_event = {
 							set_variable = { which = affection value = event_target:resurrect_leader_country }
 							set_variable = { which = affection_level value = event_target:resurrect_leader_country }
 							subtract_variable = { which = affection value = @admiral_affection_to_lv2 }
-							reset_admiral_affection_level = yes
+							reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
 							exile_leader_with_variable = { VARIABLE = resurrect_leader }
 						}
 					} 
@@ -3170,7 +3140,7 @@ fleet_event = {
 				wsg_lady_leader = { 
 					owner = { reset_lady_affection_level = yes }
 				}
-				default = { reset_scientist_affection_level = yes }
+				default = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist } }
 			}
 		}
 	}
@@ -3194,16 +3164,17 @@ country_event = {
 					}
 				}
 				leader = { 
-					if = {
-						limit = { has_leader_flag = wsg_lady_scientist }
-						owner = { PREV = { add_lady_scientist_affection_monthly = yes }}
-					}
-					else_if = {
-						limit = { has_leader_flag = wsg_shimakaze_leader }
-						owner = { PREV = { add_shimakaze_scientist_affection_monthly = yes }}
-					}
-					else = {
-						add_scientist_affection_monthly = yes 
+					switch = {
+						trigger = has_leader_flag
+						wsg_lady_leader = {
+							add_special_scientist_affection_monthly = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+						}
+						wsg_shimakaze_leader = {
+							add_special_scientist_affection_monthly = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+						}
+						default = {
+							add_scientist_affection_monthly = yes 
+						}
 					}
 				}
 			}
@@ -3236,10 +3207,10 @@ country_event = {
 				remove_leader_flag = abnormal_affection
 				switch = {
 					trigger = leader_class
-					governor = { reset_governor_affection_level = yes }
-					scientist = { reset_scientist_affection_level = yes }
-					admiral = { reset_admiral_affection_level = yes }
-					general = { reset_general_affection_level = yes }
+					governor = { reset_normal_leader_affection_level = { LEADER_CLASS = governor } }
+					scientist = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist } }
+					admiral = { reset_normal_leader_affection_level = { LEADER_CLASS = admiral } }
+					general = { reset_normal_leader_affection_level = { LEADER_CLASS = general } }
 					ruler = { reset_ruler_affection_level = yes }
 				}
 			}
@@ -3247,18 +3218,10 @@ country_event = {
 		if = {
 			limit = { has_country_flag = gain_wsg_lady }
 			reset_lady_affection_level = yes
-			random_owned_leader = {
-				limit = { has_leader_flag = wsg_lady_leader }
-				check_and_remove_normal_leader_affection_traits = yes
-			}
 		}
 		if = {
 			limit = { has_country_flag = get_wsg_shimakaze }
 			reset_shimakaze_affection_level = yes
-			random_owned_leader = {
-				limit = { has_leader_flag = wsg_shimakaze_leader }
-				check_and_remove_normal_leader_affection_traits = yes
-			}
 		}
 		if = {
 			limit = { is_vaild_gray_owner = yes }
@@ -3266,11 +3229,12 @@ country_event = {
 			random_owned_leader = {
 				limit = { has_leader_flag = 灰风领袖 }
 				change_leader_portrait = GrayTempest
-				if = {
-					limit = { check_variable = { which = affection_level value > 1 }}
-					check_and_remove_normal_leader_affection_traits = yes
-				}
+				check_and_remove_normal_leader_affection_traits = yes
 			}
+		}
+		if = {
+			limit = { has_country_flag = has_afk_Sharan }
+			reset_Sharan_affection_level = yes
 		}
 	}
 }
@@ -3286,14 +3250,29 @@ country_event = {
 			limit = { has_affection_trait = yes }
 			switch = {
 				trigger = leader_class
-				governor = { remove_governor_affection_trait = yes }
-				scientist = { remove_scientist_affection_trait = yes }
-				admiral = { remove_admiral_affection_trait = yes }
-				general = { remove_general_affection_trait = yes }
+				governor = { remove_normal_leader_affection_trait = { LEADER_CLASS = governor } }
+				scientist = { remove_normal_leader_affection_trait = { LEADER_CLASS = scientist } }
+				admiral = { remove_normal_leader_affection_trait = { LEADER_CLASS = admiral } }
+				general = { remove_normal_leader_affection_trait = { LEADER_CLASS = general } }
 				ruler = { remove_ruler_affection_trait = yes }
 			}
 			set_variable = { which = affection value = 0 }
 			set_variable = { which = affection_level value = 0 }
+		}
+		if = {
+			limit = { has_country_flag = gain_wsg_lady }
+			set_variable = { which = lady_affection value = 0 }
+			set_variable = { which = lady_affection_level value = 0 }
+		}
+		if = {
+			limit = { is_vaild_gray_owner = yes }
+			set_variable = { which = gray_affection value = 0 }
+			set_variable = { which = gray_affection_level value = 0 }
+		}
+		if = {
+			limit = { has_country_flag = has_afk_Sharan }
+			set_variable = { which = Sharan_affection value = 0 }
+			set_variable = { which = Sharan_affection_level value = 0 }
 		}
 	}
 }

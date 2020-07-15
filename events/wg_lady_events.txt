@@ -5010,20 +5010,20 @@ country_event = {
 					trigger = has_country_flag
 					lady_governor_active = { 
 						event_target:lady_governor = {
-							remove_lady_governor_affection_trait = yes
+							remove_special_leader_affection_trait = { LEADER_CLASS = governor LEADER = lady }
 							add_trait = leader_trait_governor_lady_affection_lv5
 						}
 					}
 					lady_warship_active = {
 						random_owned_leader = {
 							limit = { has_leader_flag = wsg_lady_admiral }
-							remove_lady_science_ship_affection_trait = yes
+							remove_special_leader_affection_trait = { LEADER_CLASS = scientist LEADER = lady }
 							add_trait = leader_trait_governor_lady_affection_lv5 
 						}
 					}
 					wsg_lady_armed_science_active = {
 						event_target:lady_survey_scientist = {
-							remove_lady_science_ship_affection_trait = yes
+							remove_special_leader_affection_trait = { LEADER_CLASS = scientist LEADER = lady }
 							add_trait = leader_trait_governor_lady_affection_lv5
 						}
 					}

@@ -86,7 +86,7 @@ create_wsg_lady_governor = {
 	remove_country_flag = wsg_lady_armed_science_active
 	random_owned_leader = {
 		limit = { has_leader_flag = wsg_lady_governor }
-		add_lady_governor_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER= lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }
 	}
 }
 
@@ -338,7 +338,7 @@ create_wsg_lady_warship = {
 	else = { 
 		random_owned_leader = {
 			limit = { has_leader_flag = wsg_lady_admiral }
-			add_lady_admiral_affection_trait = yes
+			add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_lady }
 			if = {
 				limit = { PREV = { has_country_flag = dragonslayer_wsg_lady }}
 				add_trait = leader_trait_dragonslayer
@@ -570,7 +570,7 @@ create_wsg_lady_armed_science = {
 	remove_country_flag = wsg_lady_army_active
 	random_owned_leader = {
 		limit = { has_leader_flag = wsg_lady_scientist }
-		add_lady_science_ship_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 	}
 }
 

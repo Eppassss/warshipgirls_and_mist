@@ -37,7 +37,7 @@ create_gray_governor = {
 	}
 	random_owned_leader = {
 		limit = { has_leader_flag = gray_governor }
-		add_gray_governor_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
 	}
 }
 
@@ -133,7 +133,7 @@ create_gray_warship = {
 	}
 	random_owned_leader = { 
 		limit = { has_leader_flag = gray_admiral }
-		add_gray_admiral_affection_trait = yes
+		add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 	}
 }
 #创造灰风地面单位

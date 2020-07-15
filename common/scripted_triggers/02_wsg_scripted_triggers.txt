@@ -134,13 +134,17 @@ has_wg_traits = {
 	}
 }
 
-is_wg_leader = {
-	# 岛风是是特殊好感度领袖，不需要检查普通好感度特性
-	NOR = { 
+is_special_affection_leader = {
+	OR = {
 		has_leader_flag = wsg_special_affection_leader 
 		has_leader_flag = wsg_lady_leader
 		has_leader_flag = 灰风领袖
+		has_leader_flag = Sharan_leader # 屑狐狸
 	}
+}
+
+is_wg_leader = {
+	is_special_affection_leader = no
 	# 不能是缄默深海
 	owner = {
 		NOR = {
@@ -160,6 +164,33 @@ is_wg_leader = {
 		has_trait = leader_trait_general_washington_axe #花生
 		has_trait = leader_trait_ruler_lexington #太太
 		has_trait = leader_trait_scientist_astesia #星极
+	}
+}
+
+is_wg_or_special_affection_admiral = {
+	OR = { 
+		AND = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = affection_max }
+		}
+		AND = {
+			has_leader_flag = wsg_shimakaze_leader
+			NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+		}
+		AND = {
+			has_leader_flag = 灰风领袖
+			owner = { 
+				is_vaild_gray_owner = yes
+				NOT = { has_country_flag = gray_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = Sharan_leader
+			owner = { 
+				has_country_flag = has_afk_Sharan
+				NOT = { has_country_flag = Sharan_affection_max }
+			}
+		}
 	}
 }
 

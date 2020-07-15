@@ -31,6 +31,12 @@
 @gray_affection_to_lv4 = 90
 @gray_affection_to_lv5 = 150
 @gray_affection_reduce = 30
+#涩狐狸
+@Sharan_affection_to_lv2 = 30
+@Sharan_affection_to_lv3 = 70
+@Sharan_affection_to_lv4 = 130
+@Sharan_affection_to_lv5 = 185
+@Sharan_affection_reduce = 40
 #总督
 @governor_affection_to_lv2 = 40
 @governor_affection_to_lv3 = 80

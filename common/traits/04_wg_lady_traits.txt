@@ -27,7 +27,7 @@ leader_trait_scientist_wsg_lady_science_ship_weaken = {
 	randomized = no
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv1 = {
+leader_trait_scientist_lady_affection_lv1 = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection1.dds"
@@ -39,7 +39,7 @@ leader_trait_scientist_lady_affection_science_ship_lv1 = {
 	randomized = no
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv2 = {
+leader_trait_scientist_lady_affection_lv2 = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection2.dds"
@@ -52,7 +52,7 @@ leader_trait_scientist_lady_affection_science_ship_lv2 = {
 	randomized = no
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv3 = {
+leader_trait_scientist_lady_affection_lv3 = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection3.dds"
@@ -68,7 +68,7 @@ leader_trait_scientist_lady_affection_science_ship_lv3 = {
 
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv4 = {
+leader_trait_scientist_lady_affection_lv4 = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection4.dds"
@@ -85,7 +85,7 @@ leader_trait_scientist_lady_affection_science_ship_lv4 = {
 	randomized = no
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv4_max = {
+leader_trait_scientist_lady_affection_lv4_max = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection4.dds"
@@ -102,7 +102,7 @@ leader_trait_scientist_lady_affection_science_ship_lv4_max = {
 	randomized = no
 }
 
-leader_trait_scientist_lady_affection_science_ship_lv5 = {
+leader_trait_scientist_lady_affection_lv5 = {
 	cost = 0
 	modification = no
 	icon = "gfx/interface/icons/traits/affection5.dds"

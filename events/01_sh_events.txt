@@ -110,7 +110,7 @@ country_event = {
 				set_is_female = yes
 				add_ruler_trait = leader_trait_ruler_shenhai2
 				set_variable = { which = affection value = 30 }
-				reset_governor_affection_level = yes
+				reset_normal_leader_affection_level = { LEADER_CLASS = governor }
 			}
 		}
 	}
