@@ -1,10 +1,15 @@
 room_selector = {
 	#default = "d_room"	#point to textures that end with "_room.dds" but remove the file ending
 
-	default = "ethic_authoritarian_room"	#point to textures that end with "_room.dds" but remove the file ending
+	default = "default_room"	#point to textures that end with "_room.dds" but remove the file ending
 
 	#will run with a limited country scope. species and government is set but the country does not actually exist
-	game_setup = {
+	game_setup = {	
+		
+		"str_dragon_room"							= { always = yes }
+		"str_council_room"							= { always = yes }
+		"nirvana_fallen_empire_dragon_personality_room"	= { always = yes }
+		"nirvana_fallen_empire_council_personality_room" = { always = yes }
 		"wg01_room" = { always = yes }
 		"wg02_room" = { always = yes }
 		"wg03_room" = { always = yes }
@@ -44,7 +49,7 @@ room_selector = {
 	#leader scope
 	ruler = {
 		"default_room"								= { always = no }
-		"lithoid_room"								= { exists = owner owner = { lithoids_portrait = yes NOT = { is_fallen_empire = yes } } }
+		"lithoid_room"								= { exists = owner owner = { lithoids_portrait = yes } }
 		"personality_hegemonic_imperialists_room" 	= { exists = owner owner = { has_ai_personality = hegemonic_imperialists } }
 		"personality_federation_builders_room" 		= { exists = owner owner = { has_ai_personality = federation_builders } }
 		"personality_democratic_crusaders_room" 	= { exists = owner owner = { has_ai_personality = democratic_crusaders } }
@@ -60,7 +65,7 @@ room_selector = {
 		"personality_peaceful_traders_room" 		= { exists = owner owner = { has_ai_personality = peaceful_traders } }
 		"personality_xenophobic_isolationists_room" = { exists = owner owner = { has_ai_personality = xenophobic_isolationists } }
 		"personality_ruthless_capitalists_room" 	= { exists = owner owner = { has_ai_personality = ruthless_capitalists } }
-		"personality_honorbound_warriors_room" 		= { exists = owner owner = { OR = { has_ai_personality = honorbound_warriors has_ai_personality = gestalt_exterminators } } }
+		"personality_honorbound_warriors_room" 		= { exists = owner owner = { has_ai_personality = honorbound_warriors } }
 		"personality_fanatic_befrienders_room" 		= { exists = owner owner = { has_ai_personality = fanatic_befrienders } }	
 		"personality_hive_mind_room" 				= { exists = owner owner = { has_authority = auth_hive_mind } }	
 		"machine_room"								= { exists = owner owner = { has_authority = auth_machine_intelligence is_fallen_machine_empire = no } }
@@ -92,5 +97,7 @@ room_selector = {
 		"fallen_machine_room"								= { exists = owner owner = { OR = { has_ai_personality = lost_empire_machine has_ai_personality = ascended_machine_intelligence has_ai_personality = ascended_assimilators has_ai_personality = ascended_servitors } } }
 		"fallen_machine_02_room"								= { exists = owner owner = { has_ai_personality = ascended_exterminators } }
 		"leviathans01_room" = { }
+		"nirvana_fallen_empire_dragon_personality_room"	= { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_dragon_personality } }
+		"nirvana_fallen_empire_council_personality_room" = { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_council_personality } }
 	}
 }

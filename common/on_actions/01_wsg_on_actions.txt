@@ -95,6 +95,7 @@ on_yearly_pulse_country = {
 		wg_crisis.97
 		wsg_shimakaze.30100
 		wsgranking.9005
+		wsgancrel.705
 	}
 }
 
