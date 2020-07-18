@@ -14,16 +14,16 @@
 
 #好感度
 #大小姐
-@lady_affection_to_lv2 = 30
-@lady_affection_to_lv3 = 70
-@lady_affection_to_lv4 = 125
-@lady_affection_to_lv5 = 185
+@lady_affection_to_lv2 = 20
+@lady_affection_to_lv3 = 55
+@lady_affection_to_lv4 = 105
+@lady_affection_to_lv5 = 175
 @lady_affection_reduce = 40
 #岛风
 @shimakaze_affection_to_lv2 = 30
-@shimakaze_affection_to_lv3 = 70
-@shimakaze_affection_to_lv4 = 130
-@shimakaze_affection_to_lv5 = 185
+@shimakaze_affection_to_lv3 = 65
+@shimakaze_affection_to_lv4 = 110
+@shimakaze_affection_to_lv5 = 180
 @shimakaze_affection_reduce = 40
 #灰风
 @gray_affection_to_lv2 = 25
@@ -33,10 +33,16 @@
 @gray_affection_reduce = 30
 #涩狐狸
 @Sharan_affection_to_lv2 = 30
-@Sharan_affection_to_lv3 = 70
-@Sharan_affection_to_lv4 = 130
-@Sharan_affection_to_lv5 = 185
+@Sharan_affection_to_lv3 = 65
+@Sharan_affection_to_lv4 = 110
+@Sharan_affection_to_lv5 = 180
 @Sharan_affection_reduce = 40
+#泡泡
+@bubbles_affection_to_lv2 = 30
+@bubbles_affection_to_lv3 = 65
+@bubbles_affection_to_lv4 = 105
+@bubbles_affection_to_lv5 = 160
+@bubbles_affection_reduce = 40
 #总督
 @governor_affection_to_lv2 = 40
 @governor_affection_to_lv3 = 80

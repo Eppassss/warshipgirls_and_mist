@@ -261,7 +261,7 @@ country_event = {
 			every_owned_leader = {
 				limit = {
 					OR = {
-						is_same_species = root.owner_species
+						is_same_species = event_target:wsg_species
 						is_wg_leader = yes
 					}
 					NOR = {
@@ -272,6 +272,7 @@ country_event = {
 						has_trait =	leader_trait_scientist_warshipgirls
 						has_trait =	leader_trait_ruler_warshipgirls
 					}
+					has_sh_traits = no
 				}
 				add_ruler_trait = leader_trait_ruler_warshipgirls
 				switch = {
@@ -295,7 +296,7 @@ country_event = {
 			every_pool_leader = {
 				limit = {
 					OR = {
-						is_same_species = root
+						is_same_species = event_target:wsg_species
 						has_leader_flag = wsg_event_leader
 					}
 					NOR = {
@@ -545,7 +546,7 @@ country_event = {
 			every_owned_leader = {
 				limit = {
 					OR = {
-						is_same_species = root
+						is_same_species = event_target:wsg_species
 						is_wg_leader = yes
 					}
 					NOR = {
@@ -556,6 +557,7 @@ country_event = {
 						has_trait =	leader_trait_scientist_mist
 						has_trait =	leader_trait_ruler_mist
 					}
+					has_sh_traits = no
 				}
 				add_ruler_trait = leader_trait_ruler_mist
 				switch = {
@@ -613,7 +615,7 @@ country_event = {
 			every_pool_leader = {
 				limit = {
 					OR = {
-						is_same_species = root
+						is_same_species = event_target:wsg_species
 						has_leader_flag = wsg_event_leader
 					}
 					NOR = {

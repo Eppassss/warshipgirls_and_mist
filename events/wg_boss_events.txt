@@ -144,33 +144,27 @@ country_event = {
 			}
 			40 = { }
 		}
-		#有舟游mod必定生成星极
-		if = {
-			limit = { 
-				has_global_flag = arknights_swimming
-			}
-			random_country = {
-				limit = {
-					has_wg_special_authority = yes
-					is_ai = no
-				}
-				country_event = { id = wg_boss.2 }#星极
-			}
-			set_country_flag = ark_astesia
-		}	
-		else = {
-			set_country_flag = random_asteria
-			random_list = { 
-				60 = {
-					random_country = {
-						limit = {
-							has_wg_special_authority = yes
-							is_ai = no
-						}
-						country_event = { id = wg_boss.2 }#星极
+		random_list = { 
+			60 = {
+				random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_boss.2 }#星极
+					if = {
+						limit = { has_global_flag = arknights_swimming }
+						set_country_flag = ark_astesia
+					} else = {
+						set_country_flag = random_asteria
 					}
 				}
-				40 = { }
+			}
+			40 = { 
+				modifier = { #有舟游mod必定生成星极
+					factor = 0
+					has_global_flag = arknights_swimming
+				}
 			}
 		}
 		

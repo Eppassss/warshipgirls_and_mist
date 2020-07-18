@@ -30,6 +30,26 @@ faction_wsg = {
 		needs_colony = no
 	}
 	modules = {
+		standard_event_module = {}
+		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		basic_technology_module = {}
+	}
+}
+faction_wsg_neutral = {
+	is_space_critter = yes
+	government = no
+	observable = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+	}
+	modules = {
+		standard_event_module = { }
 		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 	}

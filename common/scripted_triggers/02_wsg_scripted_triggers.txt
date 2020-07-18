@@ -85,12 +85,25 @@ wsg_lady_available = {
 
 has_wsg_lady_active_diplo = {
 	has_active_event = {
-		wg_lady.24 # 初始界面
-		wg_lady.25 # 总督
-		wg_lady.26 # 战舰
-		wg_lady.27 # 陆军
+		wg_lady.10024 # 初始界面
+		wg_lady.10025 # 总督
+		wg_lady.10026 # 战舰
+		wg_lady.10027 # 陆军
+		wg_lady.10028 # 武装科研船
+		wg_lady.10062 # 改称呼
+		wg_lady.10124 # 初始界面
+		wg_lady.10125 # 总督
+		wg_lady.10126 # 战舰
+		wg_lady.10127 # 陆军
+		wg_lady.10128 # 武装科研船
+		wg_lady.10162 # 改称呼
+		wg_lady.10224 # 初始界面
+		wg_lady.10225 # 总督
+		wg_lady.10226 # 战舰
+		wg_lady.10227 # 陆军
+		wg_lady.10228 # 武装科研船
+		wg_lady.10262 # 改称呼
 		wg_lady.29 # 大破
-		wg_lady.28 # 武装科研船
 	}
 }
 
@@ -222,6 +235,40 @@ is_wg_leader_with_affection_not_full = {
 				NOT = { has_country_flag = gray_affection_max }
 			}
 		}
+		AND = {
+			has_leader_flag = Sharan_leader
+			owner = { 
+				has_country_flag = has_afk_Sharan
+				NOT = { has_country_flag = Sharan_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = bubbles_leader
+			owner = { 
+				has_country_flag = modified_bubbles
+				NOT = { has_country_flag = bubbles_affection_max }
+			}
+		}
+	}
+}
+
+has_sh_traits = {
+	OR = {
+		has_trait = leader_trait_admiral_shenhai
+		has_trait = leader_trait_general_shenhai
+		has_trait = leader_trait_governor_shenhai
+		has_trait = leader_trait_scientist_shenhai
+		has_trait = leader_trait_ruler_shenhai
+		has_trait = leader_trait_admiral_shenhai1
+		has_trait = leader_trait_general_shenhai1
+		has_trait = leader_trait_governor_shenhai1
+		has_trait = leader_trait_scientist_shenhai1
+		has_trait = leader_trait_ruler_shenhai1
+		has_trait = leader_trait_admiral_shenhai2
+		has_trait = leader_trait_general_shenhai2
+		has_trait = leader_trait_governor_shenhai2
+		has_trait = leader_trait_scientist_shenhai2
+		has_trait = leader_trait_ruler_shenhai2
 	}
 }
 
@@ -231,7 +278,15 @@ is_vaild_gray_owner = {
 		is_same_value = event_target:gray_owner 
 		has_country_flag = gray_owner
 	}
-	has_wg_special_authority = yes
+}
+
+# scope: country
+bubbles_available = {
+	NOR = { 
+		has_country_flag = bubbles_depressed 
+		has_country_flag = ban_commu_with_bubbles
+		has_country_flag = bubbles_become_enemy
+	}
 }
 
 # scope: country
@@ -243,6 +298,56 @@ check_affection_event_active_diplo = {
 		wg_aft.2008
 		wg_aft.2009
 		wg_aft.2010
+	}
+}
+
+has_multiple_affection_traits = {
+	OR = {
+		calc_true_if = { amount = 2 
+			# 总督
+			has_trait = leader_trait_governor_affection_lv1
+			has_trait = leader_trait_governor_affection_lv2
+			has_trait = leader_trait_governor_affection_lv3
+			has_trait = leader_trait_governor_affection_lv4
+			has_trait = leader_trait_governor_affection_lv4_max
+			has_trait = leader_trait_governor_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 科学家
+			has_trait = leader_trait_scientist_affection_lv1
+			has_trait = leader_trait_scientist_affection_lv2
+			has_trait = leader_trait_scientist_affection_lv3
+			has_trait = leader_trait_scientist_affection_lv4
+			has_trait = leader_trait_scientist_affection_lv4_max
+			has_trait = leader_trait_scientist_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 海军上将
+			has_trait = leader_trait_admiral_affection_lv1
+			has_trait = leader_trait_admiral_affection_lv2
+			has_trait = leader_trait_admiral_affection_lv3
+			has_trait = leader_trait_admiral_affection_lv4
+			has_trait = leader_trait_admiral_affection_lv4_max
+			has_trait = leader_trait_admiral_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 陆军将领
+			has_trait = leader_trait_general_affection_lv1
+			has_trait = leader_trait_general_affection_lv2
+			has_trait = leader_trait_general_affection_lv3
+			has_trait = leader_trait_general_affection_lv4
+			has_trait = leader_trait_general_affection_lv4_max
+			has_trait = leader_trait_general_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 统治者
+			has_ruler_trait = leader_trait_ruler_affection_lv1
+			has_ruler_trait = leader_trait_ruler_affection_lv2
+			has_ruler_trait = leader_trait_ruler_affection_lv3
+			has_ruler_trait = leader_trait_ruler_affection_lv4
+			has_ruler_trait = leader_trait_ruler_affection_lv4_max
+			has_ruler_trait = leader_trait_ruler_affection_lv5
+		}
 	}
 }
 
@@ -277,13 +382,7 @@ has_affection_trait = {
 		has_trait = leader_trait_general_affection_lv4
 		has_trait = leader_trait_general_affection_lv4_max
 		has_trait = leader_trait_general_affection_lv5
-		# 统治者
-		has_ruler_trait = leader_trait_ruler_affection_lv1
-		has_ruler_trait = leader_trait_ruler_affection_lv2
-		has_ruler_trait = leader_trait_ruler_affection_lv3
-		has_ruler_trait = leader_trait_ruler_affection_lv4
-		has_ruler_trait = leader_trait_ruler_affection_lv4_max
-		has_ruler_trait = leader_trait_ruler_affection_lv5
+		
 
 		# #岛风总督
 		# has_trait = leader_trait_governor_shimakaze_affection_lv1

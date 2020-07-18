@@ -265,3 +265,55 @@ special_project = {
 		}
 	}
 }
+
+# 泡泡大改造
+special_project = {
+	key = "MODIFY_BUBBLES"
+	cost = 3000
+	tech_department = society_technology
+	picture = GFX_evt_genetic_modification
+
+	event_scope = planet_event
+	
+	on_success = {
+		owner = { country_event = { id = wg_bubbles.3 }}
+	}
+}
+special_project = {
+	key = "MODIFY_BUBBLES2"
+	cost = 3000
+	tech_department = society_technology
+	picture = GFX_evt_genetic_modification
+
+	event_scope = ship_event
+	
+	on_success = {
+		owner = { country_event = { id = wg_bubbles.3 }}
+	}
+}
+
+# 泡泡领袖
+special_project = {
+	key = "MODIFY_BUBBLES_SECOND"
+	cost = 8000
+	tech_department = society_technology
+	picture = GFX_evt_friendly_amoeba
+
+	event_scope = planet_event
+	
+	on_success = {
+		owner = { country_event = { id = wg_bubbles.5 }}
+	}
+}
+special_project = {
+	key = "MODIFY_BUBBLES_SECOND2"
+	cost = 8000
+	tech_department = society_technology
+	picture = GFX_evt_friendly_amoeba
+
+	event_scope = ship_event
+	
+	on_success = {
+		owner = { country_event = { id = wg_bubbles.5 }}
+	}
+}

@@ -10,3 +10,7 @@ lex_sol_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_wsg_moon
 }
+find_bubbles_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_friendly_amoeba
+}

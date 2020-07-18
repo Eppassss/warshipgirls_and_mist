@@ -1725,7 +1725,12 @@ event = { #每年用伪随机概率判定堕落妈触发事件
 						factor = 0
 						check_variable = { which = years_not_trigger_fe_event value >= 10 }
 					}
-					change_variable = { which = years_not_trigger_fe_event value = 1 }
+					if = {
+						limit = { has_origin = origin_wg_fe_child }
+						change_variable = { which = years_not_trigger_fe_event value = 1.5 }
+					} else = {
+						change_variable = { which = years_not_trigger_fe_event value = 1 }
+					}
 				}
 			}
 		}

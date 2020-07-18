@@ -449,3 +449,78 @@ nie_admiral_buff = {
 wsg_shimakaze_recovery_cd = {
 	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
 }
+
+bubbles_recovery_cd = {
+	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
+}
+
+kill_bubbles = {
+	pop_happiness = -0.2
+	pop_government_ethic_attraction = -0.3
+}
+
+bubbles_missing = {
+	pop_happiness = -0.1
+}
+
+planet_modifier_bubbles_affection_lv1 = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_bubbles_planet_buff.dds"
+	job_entertainer_per_pop = 0.1
+	job_artisan_per_pop = 0.1
+	planet_crime_add = -100
+	planet_stability_add = 5
+	pop_ethic_xenophile_attraction_mult = 0.2
+}
+
+planet_modifier_bubbles_affection_lv2 = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_bubbles_planet_buff.dds"
+	job_entertainer_per_pop = 0.1
+	job_artisan_per_pop = 0.1
+	planet_crime_add = -100
+	planet_stability_add = 5
+	pop_ethic_xenophile_attraction_mult = 0.2
+	pop_amenities_usage_mult = -0.2
+}
+
+planet_modifier_bubbles_affection_lv3 = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_bubbles_planet_buff.dds"
+	job_entertainer_per_pop = 0.1
+	job_artisan_per_pop = 0.1
+	planet_crime_add = -100
+	planet_stability_add = 15
+	pop_ethic_xenophile_attraction_mult = 0.2
+	pop_amenities_usage_mult = -0.2
+	pop_happiness = 0.2
+}
+
+planet_modifier_bubbles_affection_lv4 = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_bubbles_planet_buff.dds"
+	job_entertainer_per_pop = 0.1
+	job_artisan_per_pop = 0.1
+	planet_crime_add = -100
+	planet_stability_add = 15
+	pop_ethic_xenophile_attraction_mult = 0.2
+	pop_amenities_usage_mult = -0.2
+	pop_happiness = 0.2
+	pop_growth_from_immigration = 1.0
+}
+
+planet_modifier_bubbles_affection_lv5 = {
+	icon = "gfx/interface/icons/planet_modifiers/wsg_bubbles_planet_buff.dds"
+	job_entertainer_per_pop = 0.2
+	job_artisan_per_pop = 0.2
+	planet_crime_add = -200
+	planet_stability_add = 30
+	pop_amenities_usage_mult = -0.4
+	pop_ethic_xenophile_attraction_mult = 0.2
+	pop_happiness = 0.3
+	pop_growth_from_immigration = 1.0
+	planet_sh_clerk_produces_mult = 0.5
+	planet_wsg_moyu_produces_mult = 0.5
+	planet_wsg_mahjong_produces_mult = 0.5
+	planet_barthroom_worker_produces_mult = 0.5
+	planet_artisans_produces_mult = 0.5
+	planet_entertainers_produces_mult = 0.5
+	custom_tooltip = planet_modifier_bubbles_affection_lv5_tooltip
+	show_only_custom_tooltip = yes
+}

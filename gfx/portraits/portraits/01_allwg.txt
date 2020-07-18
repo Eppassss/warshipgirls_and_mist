@@ -652,7 +652,12 @@ portraits = {
 	wsg9998	=	{texturefile = "gfx/models/portraits/wsg9998.dds"  }
 	wsg9999	=	{texturefile = "gfx/models/portraits/wsg9999.dds"  }	
 	wsggalo	=	{texturefile = "gfx/models/portraits/wsggalo.dds"  }
-	GrayTempest	=	{texturefile = "gfx/models/portraits/GrayTempest.dds"  }		
+	GrayTempest	=	{texturefile = "gfx/models/portraits/GrayTempest.dds"  }
+	Bubbles =	{texturefile = "gfx/models/portraits/Bubbles.dds"  }
+	wsglady_affection1 =	{texturefile = "gfx/models/portraits/wsglady_affection1.dds"  }
+	wsglady_affection2 =	{texturefile = "gfx/models/portraits/wsglady_affection2.dds"  }
+	wsglady_affection3 =	{texturefile = "gfx/models/portraits/wsglady_affection3.dds"  }
+	wsglady_damage =	{texturefile = "gfx/models/portraits/wsglady_damage.dds"  }
 }	
 	
 portrait_groups = {

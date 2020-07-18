@@ -128,3 +128,88 @@ Sh_juggernaut_system = {
 		save_global_event_target_as = wg_juggernaut_system_location	
 	}
 }
+
+wg_fe_gift_system = {
+	name = "NAME_wg_fe_gift_system"
+	class = "sc_g"
+	usage = misc_system_init
+	
+	usage_odds = 0
+	
+
+	prevent_anomalies = yes
+
+	planet = {
+		count = 1
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+		init_effect = {
+		}			
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		class = pc_gaia
+		name = "NAME_wg_fe_gift_system"
+		orbit_distance = 30
+		modifiers = none
+		size = { min = 15 max = 25 }		
+		init_effect = {
+			clear_deposits = yes
+			add_modifier =  { modifier = natural_beauty days = -1 }
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_black_soil
+			add_deposit = d_black_soil
+			add_deposit = d_fungal_caves
+			add_deposit = d_geothermal_vent
+			add_deposit = d_rushing_waterfalls
+			add_deposit = d_hot_springs
+			add_deposit = d_hot_springs
+			add_deposit = d_alien_pets_deposit			
+			prevent_anomaly = yes			
+        }
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 1 }
+			orbit_angle = { min = 40 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		count = { min = 1 max = 4 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 3 }
+			orbit_angle = { min = 20 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}

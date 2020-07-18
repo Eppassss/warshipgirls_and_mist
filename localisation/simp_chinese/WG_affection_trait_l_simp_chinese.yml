@@ -10,8 +10,10 @@
  require_engagement_lady:0 "你需要§H与大小姐进行誓约仪式§!以解锁下一等级的好感度。"
  max_affection_shimakaze: "岛风好感度已满。"
  require_engagement_shimakaze: "你需要§H与岛风进行誓约仪式§!以解锁下一等级的好感度。"
- max_affection_gray: "$NAME_Gray$好感度已满。"
- require_engagement_gray: "你需要§H与$NAME_Gray$进行誓约仪式§!以解锁下一等级的好感度。"
+ max_affection_gray: "灰风好感度已满。"
+ require_engagement_gray: "你需要§H与灰风进行誓约仪式§!以解锁下一等级的好感度。"
+ max_affection_bubbles: "泡泡好感度已满。"
+ require_engagement_bubbles: "你需要§H与泡泡进行誓约仪式§!以解锁下一等级的好感度。"
  affection_lv1: "好感度：低下"
  affection_lv2: "好感度：较低"
  affection_lv3: "好感度：中等"
@@ -63,6 +65,20 @@
  leader_trait_governor_gray_affection_lv4_desc: "$leader_trait_governor_gray_affection_lv1_desc$"
  leader_trait_governor_gray_affection_lv4_max_desc: "$max_affection_gray$$require_engagement_gray$"
  leader_trait_governor_gray_affection_lv5_desc: "$max_affection_gray$"
+
+# 泡泡
+ leader_trait_governor_bubbles_affection_lv1: "$affection_lv1$"
+ leader_trait_governor_bubbles_affection_lv2: "$affection_lv2$"
+ leader_trait_governor_bubbles_affection_lv3: "$affection_lv3$"
+ leader_trait_governor_bubbles_affection_lv4: "$affection_lv4$"
+ leader_trait_governor_bubbles_affection_lv4_max: "$affection_lv4_max$"
+ leader_trait_governor_bubbles_affection_lv5: "$affection_lv5$"
+ leader_trait_governor_bubbles_affection_lv1_desc: "好感度可以通过§Y派遣泡泡到星区工作§!提升。"
+ leader_trait_governor_bubbles_affection_lv2_desc: "$leader_trait_governor_bubbles_affection_lv1_desc$"
+ leader_trait_governor_bubbles_affection_lv3_desc: "$leader_trait_governor_bubbles_affection_lv1_desc$"
+ leader_trait_governor_bubbles_affection_lv4_desc: "$leader_trait_governor_bubbles_affection_lv1_desc$"
+ leader_trait_governor_bubbles_affection_lv4_max_desc: "$max_affection_bubbles$$require_engagement_bubbles$"
+ leader_trait_governor_bubbles_affection_lv5_desc: "$max_affection_bubbles$"
 
 # 其他领袖
  leader_trait_governor_affection_lv1:0 "$affection_lv1$"
@@ -167,6 +183,20 @@
  leader_trait_admiral_shimakaze_affection_lv4_desc:0 "$leader_trait_admiral_shimakaze_affection_lv1_desc$"
  leader_trait_admiral_shimakaze_affection_lv4_max_desc:0 "$max_affection_shimakaze$$require_engagement_shimakaze$"
  leader_trait_admiral_shimakaze_affection_lv5_desc:0 "$max_affection_shimakaze$"
+
+#泡泡
+ leader_trait_admiral_bubbles_affection_lv1:0 "$affection_lv1$"
+ leader_trait_admiral_bubbles_affection_lv2:0 "$affection_lv2$"
+ leader_trait_admiral_bubbles_affection_lv3:0 "$affection_lv3$"
+ leader_trait_admiral_bubbles_affection_lv4:0 "$affection_lv4$"
+ leader_trait_admiral_bubbles_affection_lv4_max:0 "$affection_lv4_max$"
+ leader_trait_admiral_bubbles_affection_lv5:0 "$affection_lv5$"
+ leader_trait_admiral_bubbles_affection_lv1_desc:0 "泡泡的好感度只要存活便会自然增长。§Y派遣泡泡参与战斗§!亦可提升好感度。此外，泡泡每§Y胜出一场战斗§!将有较高几率提升好感度。"
+ leader_trait_admiral_bubbles_affection_lv2_desc:0 "$leader_trait_admiral_bubbles_affection_lv1_desc$"
+ leader_trait_admiral_bubbles_affection_lv3_desc:0 "$leader_trait_admiral_bubbles_affection_lv1_desc$"
+ leader_trait_admiral_bubbles_affection_lv4_desc:0 "$leader_trait_admiral_bubbles_affection_lv1_desc$"
+ leader_trait_admiral_bubbles_affection_lv4_max_desc:0 "$max_affection_bubbles$$require_engagement_bubbles$"
+ leader_trait_admiral_bubbles_affection_lv5_desc:0 "$max_affection_bubbles$"
 
 # 其他领袖
  leader_trait_admiral_affection_lv1:0 "$affection_lv1$"

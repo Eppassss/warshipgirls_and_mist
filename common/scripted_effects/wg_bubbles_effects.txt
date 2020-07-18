@@ -1,0 +1,242 @@
+create_bubbles_governor = {
+	remove_bubbles_leader = yes
+	set_country_flag = bubbles_governor_active
+	every_owned_planet = {
+		remove_all_bubbles_planet_modifiers = yes
+	}
+	create_leader = {
+		class = governor
+		species = event_target:bubbles_species
+		name = "NAME_Bubbles"
+		event_leader = yes
+		gender = female
+		immortal = yes
+		skill = 1
+		set_age = 14
+		traits = {
+			trait = leader_trait_governor_bubbles
+		}
+		effect = {
+			change_leader_portrait = Bubbles
+			set_leader_flag = bubbles_leader
+			set_leader_flag = bubbles_governor
+			set_leader_flag = has_gained_level_trait
+			set_leader_flag = has_gained_trait
+			save_event_target_as = bubbles_governor
+		}
+	}
+	remove_country_flag = bubbles_warship_active
+	random_owned_fleet = {
+		limit = { 
+			OR = {
+				has_fleet_flag = lost_amoeba_fleet@prev
+				has_fleet_flag = lost_amoeba_adult_fleet@prev
+				has_fleet_flag = lost_amoeba_centenarian_fleet@prev
+			}
+		}
+		delete_fleet = this
+	}
+	event_target:bubbles_governor = {
+		add_special_leader_affection_trait = { LEADER = bubbles LEADER_CLASS = governor MARRIED_FLAG = married_bubbles }
+		level_up_bubbles = yes
+		if = {
+			limit = { PREV = { has_country_flag = bubbles_depressed }}
+			add_trait = leader_trait_arrested_development
+			add_trait = leader_trait_governor_bubbles_depressed
+		}
+	}
+}
+
+create_bubbles_warship = {
+	remove_bubbles_leader = yes
+	set_country_flag = bubbles_warship_active
+	create_bubbles_admiral = yes
+	create_fleet = {
+		name = "NAME_Bubbles"
+		effect = {
+			set_owner = prev
+			set_location = {
+				target = prev.capital_scope
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = passive
+			if = {
+				limit = { owner = { has_country_flag = bubbles_centenarian }}
+				create_ship = {
+					name = event_target:lost_amoeba_adult_fleet
+					design = "NAME_Adopted_Amoeba_Centenarian"
+					prefix = no
+					upgradable = no
+				}
+				add_modifier = { modifier = "amoeba_speed_boost" days = -1 }
+				add_modifier = { modifier = "evolved_weapon_boost_2" days = -1 }
+				add_modifier = { modifier = "evolved_firing_rate" days = -1 }
+				add_modifier = { modifier = "evolved_evasion" days = -1 }
+				set_fleet_flag = lost_amoeba_centenarian_fleet@prev
+			} else_if = {
+				limit = { owner = { has_country_flag = bubbles_adult }}
+				create_ship = {
+					name = "NAME_Adopted_Amoeba"
+					design = "NAME_Large_Space_Organism_Teal"
+					prefix = no
+					upgradable = no
+				}
+				add_modifier = { modifier = "amoeba_speed_boost" days = -1 }
+				add_modifier = { modifier = "evolved_weapon_boost" days = -1 }
+				add_modifier = { modifier = "evolved_firing_rate" days = -1 }
+				add_modifier = { modifier = "evolved_evasion" days = -1 }
+				set_fleet_flag = lost_amoeba_adult_fleet@prev
+			} else = {
+				create_ship = {
+					name = "NAME_Lost_Amoeba"
+					design = "NAME_Small_Space_Organism_Teal"
+					prefix = no
+					upgradable = no
+				}
+				set_fleet_flag = lost_amoeba_fleet@prev
+			}
+			save_event_target_as = bubbles_fleet
+			assign_leader = event_target:bubbles_admiral
+		}
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = yes
+		}
+	}
+	event_target:bubbles_fleet = {
+		check_bubbles_planet_modifiers = yes
+	}
+	remove_country_flag = bubbles_governor_active
+}
+
+create_bubbles_admiral = {
+	create_leader = {
+		class = admiral
+		species = event_target:bubbles_species
+		name = "NAME_Bubbles"
+		immortal = yes
+		gender = female
+		skill = 1
+		set_age = 14
+		traits = {
+			trait = leader_trait_admiral_bubbles
+		}
+		event_leader = yes	# prevents this leader from leading factions and winning elections
+		effect = {
+			change_leader_portrait = Bubbles
+			set_leader_flag = has_gained_level_trait
+			set_leader_flag = has_gained_trait
+			set_leader_flag = bubbles_leader
+			set_leader_flag = bubbles_admiral
+			save_event_target_as = bubbles_admiral
+		}
+	}
+	event_target:bubbles_admiral = {
+		add_special_leader_affection_trait = { LEADER = bubbles LEADER_CLASS = admiral MARRIED_FLAG = married_bubbles }
+		level_up_bubbles = yes
+		if = {
+			limit = { PREV = { has_country_flag = bubbles_depressed }}
+			add_trait = leader_trait_arrested_development
+			add_trait = leader_trait_admiral_bubbles_depressed
+		}
+	}
+}
+
+remove_bubbles_leader = {
+	every_owned_leader = {
+		limit = { has_leader_flag = bubbles_leader }
+		kill_leader = { show_notification = no }
+	}
+}
+
+level_up_bubbles = {
+	if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 2 }}}
+		set_skill = 2
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 3 }}}
+		set_skill = 3
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 4 }}}
+		set_skill = 4
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 5 }}}
+		set_skill = 5
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 6 }}}
+		set_skill = 6
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 7 }}}
+		set_skill = 7
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 8 }}}
+		set_skill = 8
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 9 }}}
+		set_skill = 9
+	} else_if = {
+		limit = { owner = { check_variable = { which = bubbles_level value = 10 }}}
+		set_skill = 10
+	}
+}
+
+# scope: fleet
+check_bubbles_planet_modifiers = {
+	solar_system = { 
+		every_system_planet = {
+			limit = { 
+				has_owner = yes 
+				owner = { is_same_value = PREVPREVPREV.owner }
+			}
+			if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 1 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv1 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv1 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 2 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv2 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv2 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 3 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv3 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv3 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 4 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv4 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv4 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 5 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv5 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv5 }
+				}
+			}
+		}
+	}
+}
+
+remove_all_bubbles_planet_modifiers = {
+	remove_modifier = planet_modifier_bubbles_affection_lv1
+	remove_modifier = planet_modifier_bubbles_affection_lv2
+	remove_modifier = planet_modifier_bubbles_affection_lv3
+	remove_modifier = planet_modifier_bubbles_affection_lv4
+	remove_modifier = planet_modifier_bubbles_affection_lv5
+}

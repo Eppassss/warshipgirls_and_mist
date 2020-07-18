@@ -11,6 +11,10 @@ event = {
 
 	immediate = {
 		set_global_flag = has_wsg_mod
+		every_country = { # 泡泡事件
+			limit = { is_ai = no }
+			country_event = { id = wg_aft.200 }
+		}
 		every_country = {
 			limit = {
 				has_wg_special_authority = yes
@@ -123,6 +127,12 @@ country_event = {
 										wsg_lady_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
 										灰风领袖 = { add_special_leader_affection = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }}
 										Sharan_leader = { add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = governor MARRIED_FLAG = married_Sharan }}
+										bubbles_leader = { 
+											if = {
+												limit = { NOT = { has_country_flag = bubbles_depressed }}
+												add_special_leader_affection = { LEADER = bubbles LEADER_CLASS = governor MARRIED_FLAG = married_bubbles }
+											}
+										}
 										default = { add_normal_leader_affection = { LEADER_CLASS = governor } }
 									}
 								}
@@ -273,6 +283,36 @@ country_event = {
 			80 = {}
 		}
 		reset_shimakaze_affection_level = yes
+	}
+}
+
+country_event = {
+	id = wg_aft.10004
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_country_flag = can_communicate_bubbles
+			has_country_flag = modified_bubbles
+		}
+		FROM = { 
+			has_leader_flag = bubbles_leader
+		}
+	}
+
+	immediate = {
+		change_variable = { which = bubbles_level value = 1 }
+		change_variable = { which = bubbles_affection value = 2 }
+		random_list = {
+			40 = { change_variable = { which = bubbles_affection value = 1 }}
+			60 = {}
+		}
+		random_list = {
+			20 = { change_variable = { which = bubbles_affection value = 1 }}
+			80 = {}
+		}
+		reset_bubbles_affection_level = yes
 	}
 }
 
@@ -574,6 +614,18 @@ country_event = {
 				set_variable = { which = "days_combat_no_affection" value = 0 }
 				fleet_event = { id = wg_aft.1003 }
 			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_fleet_flag = lost_amoeba_fleet@owner
+						has_fleet_flag = lost_amoeba_adult_fleet@owner
+						has_fleet_flag = lost_amoeba_centenarian_fleet@owner
+					}
+				}
+				set_fleet_flag = counting_affection
+				set_variable = { which = "days_combat_no_affection" value = 0 }
+				fleet_event = { id = wg_aft.201 }
+			}
 		}
 
 		FROMFROMFROM = {
@@ -600,6 +652,18 @@ country_event = {
 				set_fleet_flag = counting_affection
 				set_variable = { which = "days_combat_no_affection" value = 0 }
 				fleet_event = { id = wg_aft.1003 }
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_fleet_flag = lost_amoeba_fleet@owner
+						has_fleet_flag = lost_amoeba_adult_fleet@owner
+						has_fleet_flag = lost_amoeba_centenarian_fleet@owner
+					}
+				}
+				set_fleet_flag = counting_affection
+				set_variable = { which = "days_combat_no_affection" value = 0 }
+				fleet_event = { id = wg_aft.201 }
 			}
 		}
 	}
@@ -3199,6 +3263,12 @@ country_event = {
 				limit = { check_variable = { which = "affection_to_level_up" value < 1 }}
 				set_leader_flag = abnormal_affection
 			}
+			if = {
+				limit = {
+					has_multiple_affection_traits = yes
+				}
+				set_leader_flag = abnormal_affection
+			}
 		}
 		while = {
 			limit = { any_owned_leader = { has_leader_flag = abnormal_affection }}
@@ -3235,6 +3305,13 @@ country_event = {
 		if = {
 			limit = { has_country_flag = has_afk_Sharan }
 			reset_Sharan_affection_level = yes
+		}
+		if = {
+			limit = { OR = {
+				has_country_flag = can_communicate_bubbles
+				has_country_flag = modified_bubbles 
+			}}
+			reset_bubbles_affection_level = yes
 		}
 	}
 }
@@ -3274,6 +3351,257 @@ country_event = {
 			set_variable = { which = Sharan_affection value = 0 }
 			set_variable = { which = Sharan_affection_level value = 0 }
 		}
+		if = {
+			limit = { has_country_flag = modified_bubbles }
+			set_variable = { which = bubbles_affection value = 0 }
+			set_variable = { which = bubbles_affection_level value = 0 }
+		}
+	}
+}
+
+# 每月检测有没有捡起了泡泡，并增加好感度
+country_event = {
+	id = wg_aft.200
+	hide_window = yes
+	trigger = {
+		has_country_flag = amoeba_befriended
+		any_owned_fleet = {
+			OR = {
+				has_fleet_flag = lost_amoeba_fleet@ROOT
+				has_fleet_flag = lost_amoeba_adult_fleet@ROOT
+				has_fleet_flag = lost_amoeba_centenarian_fleet@ROOT
+			}
+		}
+		bubbles_available = yes
+	}
+	is_triggered_only = yes
+	immediate = {
+		random_owned_fleet = {
+			limit = { 
+				OR = {
+					has_fleet_flag = lost_amoeba_fleet@ROOT
+					has_fleet_flag = lost_amoeba_adult_fleet@ROOT
+					has_fleet_flag = lost_amoeba_centenarian_fleet@ROOT
+				}
+			}
+			random_list = {
+				1 = {
+					set_variable = { which = months_no_affection value = 0 }
+					if = {
+						limit = { exists = leader }
+						add_special_leader_affection = {
+							LEADER = bubbles LEADER_CLASS = admiral MARRIED_FLAG = married_bubbles
+						}
+					} else = {
+						owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
+					}
+					check_bubbles_planet_modifiers = yes
+				}
+				24 = {
+					modifier = {
+						check_variable = { which = months_no_affection value >= 2 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = months_no_affection value >= 4 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = months_no_affection value >= 6 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = months_no_affection value >= 8 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = months_no_affection value >= 10 }
+						add = -4
+					}
+					modifier = {
+						check_variable = { which = months_no_affection value >= 12 }
+						factor = 0
+					}
+					change_variable = { which = months_no_affection value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_country_flag = bubbles_centenarian }
+				any_owned_fleet = {
+					has_fleet_flag = lost_amoeba_centenarian_fleet@root
+				}
+			}
+			set_country_flag = bubbles_centenarian
+		} else_if = {
+			limit = { NOT = { has_country_flag = bubbles_adult }}
+			set_country_flag = bubbles_adult
+		}
+		if = {
+			limit = {
+				NOR = { 
+					has_country_flag = modified_bubbles 
+					has_country_flag = give_up_modify_bubbles 
+				}
+				any_owned_fleet = { OR = {
+					has_fleet_flag = lost_amoeba_adult_fleet@root
+					has_fleet_flag = lost_amoeba_centenarian_fleet@root
+				}}
+			}
+			if = {
+				limit = { 
+					OR = {
+						has_technology = tech_wsg_genetic_resequencing 
+						has_technology = tech_genetic_resequencing 
+					}
+					NOR = { 
+						has_special_project = MODIFY_BUBBLES
+						has_special_project = MODIFY_BUBBLES2
+						has_country_flag = modified_bubbles 
+					}
+				}
+				country_event = { id = wg_bubbles.1 }
+			} else_if = {
+				limit = {
+					has_technology = tech_morphogenetic_field_mastery
+					NOR = { 
+						has_special_project = MODIFY_BUBBLES
+						has_special_project = MODIFY_BUBBLES2
+						has_special_project = MODIFY_BUBBLES_SECOND
+						has_special_project = MODIFY_BUBBLES_SECOND2
+						has_country_flag = modified_bubbles 
+						has_country_flag = can_communicate_bubbles
+					}
+				}
+				country_event = { id = wg_bubbles.2 }
+			}
+		}
+	}
+}
+
+# 泡泡战斗中增加好感
+# 什么？你居然拉泡泡去打仗？鲨了（）
+fleet_event = {
+	id = wg_aft.201
+	hide_window = yes
+	trigger = {
+		has_fleet_flag = counting_affection
+		OR = {
+			has_fleet_flag = lost_amoeba_fleet@owner
+			has_fleet_flag = lost_amoeba_adult_fleet@owner
+			has_fleet_flag = lost_amoeba_centenarian_fleet@owner
+		}
+		owner = { bubbles_available = yes }
+	}
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { is_in_combat = yes }
+			random_list = {
+				1 = {
+					set_variable = { which = "days_combat_no_affection" value = 0 }
+					if = {
+						limit = { exists = leader }
+						add_special_leader_affection = {
+							LEADER = bubbles LEADER_CLASS = admiral MARRIED_FLAG = married_bubbles
+						}
+					} else = {
+						owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
+						check_bubbles_planet_modifiers = yes
+					}
+				}
+				24 = {
+					modifier = {
+						check_variable = { which = "days_combat_no_affection" value >= 4 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "days_combat_no_affection" value >= 8 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "days_combat_no_affection" value >= 12 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "days_combat_no_affection" value >= 18 }
+						add = -5
+					}
+					modifier = {
+						check_variable = { which = "days_combat_no_affection" value >= 30 }
+						factor = 0
+					}
+					change_variable = { which = "days_combat_no_affection" value = 1 }
+				}
+			}
+			fleet_event = { id = wg_aft.201 days = 1 }
+		}
+		else = {
+			remove_fleet_flag = counting_affection
+			set_variable = { which = "days_combat_no_affection" value = 0 }
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_aft.202
+	hide_window = yes
+	trigger = {
+		owner = { bubbles_available = yes }
+		OR = {
+			has_fleet_flag = lost_amoeba_fleet@owner
+			has_fleet_flag = lost_amoeba_adult_fleet@owner
+			has_fleet_flag = lost_amoeba_centenarian_fleet@owner
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		owner = { every_owned_planet = {
+			remove_all_bubbles_planet_modifiers = yes
+		}}
+		FROM = { every_system_planet = {
+			limit = { 
+				has_owner = yes 
+				owner = { is_same_value = ROOT.owner }
+			}
+			if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 1 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv1 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv1 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 2 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv2 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv2 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 3 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv3 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv3 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 4 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv4 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv4 }
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = bubbles_level value = 5 }}}
+				if = {
+					limit = { NOT = { has_modifier = planet_modifier_bubbles_affection_lv5 }}
+					remove_all_bubbles_planet_modifiers = yes
+					add_modifier = { modifier = planet_modifier_bubbles_affection_lv5 }
+				}
+			}
+		}}
 	}
 }
 
