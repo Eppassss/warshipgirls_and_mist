@@ -51,7 +51,7 @@ create_wsg_lady_governor = {
 				trait = leader_trait_governor_wsg_lady_weaken
 			}
 			effect = {
-				change_leader_portrait = wsg57
+				set_lady_portrait = yes
 				set_leader_flag = wsg_lady_leader
 				set_leader_flag = wsg_lady_governor
 				set_leader_flag = has_gained_level_trait
@@ -73,7 +73,7 @@ create_wsg_lady_governor = {
 			trait = leader_trait_governor_wsg_lady
 		}
 		effect = {
-			change_leader_portrait = wsg57
+			set_lady_portrait = yes
 			set_leader_flag = wsg_lady_leader
 			set_leader_flag = wsg_lady_governor
 			set_leader_flag = has_gained_level_trait
@@ -164,7 +164,7 @@ create_wsg_lady_warship = {
 								trait = leader_trait_admiral_wsg_lady_weaken
 							}
 							effect = {
-								change_leader_portrait = wsg57
+								set_lady_portrait = yes
 								set_leader_flag = wsg_lady_leader
 								set_leader_flag = wsg_lady_admiral
 								set_leader_flag = has_gained_level_trait
@@ -185,7 +185,7 @@ create_wsg_lady_warship = {
 							trait = leader_trait_admiral_wsg_lady
 						}
 						effect = {
-							change_leader_portrait = wsg57
+							set_lady_portrait = yes
 							set_leader_flag = wsg_lady_leader
 							set_leader_flag = wsg_lady_admiral
 							set_leader_flag = has_gained_level_trait
@@ -498,7 +498,7 @@ create_wsg_lady_armed_science = {
 							trait = leader_trait_scientist_wsg_lady_science_ship_weaken
 						}
 						effect = {
-							change_leader_portrait = wsg57
+							set_lady_portrait = yes
 							set_leader_flag = wsg_lady_leader
 							set_leader_flag = wsg_lady_scientist
 							set_leader_flag = has_gained_level_trait
@@ -521,7 +521,7 @@ create_wsg_lady_armed_science = {
 						trait = leader_trait_scientist_wsg_lady_science_ship
 					}
 					effect = {
-						change_leader_portrait = wsg57
+						set_lady_portrait = yes
 						set_leader_flag = wsg_lady_leader
 						set_leader_flag = wsg_lady_scientist
 						set_leader_flag = has_gained_level_trait
@@ -768,5 +768,18 @@ remove_lady_army = {
 			}
 			remove_army = yes
 		}
+	}
+}
+
+# scope: leader
+set_lady_portrait = {
+	if = { 
+		limit = { owner = { check_variable = { which = lady_affection value >= 5 }}}
+		change_leader_portrait = wsglady_affection3
+	} else_if = {
+		limit = { owner = { check_variable = { which = lady_affection value >= 3 }}}
+		change_leader_portrait = wsglady_affection2
+	} else = {
+		change_leader_portrait = wsglady_affection1
 	}
 }

@@ -334,3 +334,34 @@ site_nieAdmiral = {
 		}
 	}
 }
+
+# 三小姐
+site_canarias = {
+	desc = "site_canarias_intro"
+	picture = GFX_evt_underwater_ruins
+	stages = 2
+	weight = 0
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_D3
+		event = wsg.3207
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D4
+		event = wsg.3208
+	}
+	
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

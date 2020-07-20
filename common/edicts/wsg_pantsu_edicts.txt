@@ -815,6 +815,7 @@ change_bubbles_form = {
 			has_country_flag = ban_commu_with_bubbles
 			has_country_flag = bubbles_become_enemy
 			has_modifier = bubbles_recovery_cd
+			has_active_event = { wg_bubbles.6 }
 		}
 	}
 

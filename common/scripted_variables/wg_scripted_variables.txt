@@ -44,30 +44,30 @@
 @bubbles_affection_to_lv5 = 160
 @bubbles_affection_reduce = 40
 #总督
-@governor_affection_to_lv2 = 40
-@governor_affection_to_lv3 = 80
-@governor_affection_to_lv4 = 120
-@governor_affection_to_lv5 = 160
+@governor_affection_to_lv2 = 35
+@governor_affection_to_lv3 = 70
+@governor_affection_to_lv4 = 105
+@governor_affection_to_lv5 = 140
 #科学家
 @scientist_affection_to_lv2 = 55
 @scientist_affection_to_lv3 = 110
 @scientist_affection_to_lv4 = 165
 @scientist_affection_to_lv5 = 220
 #海军上将
-@admiral_affection_to_lv2 = 30
-@admiral_affection_to_lv3 = 60
-@admiral_affection_to_lv4 = 90
-@admiral_affection_to_lv5 = 120
+@admiral_affection_to_lv2 = 25
+@admiral_affection_to_lv3 = 50
+@admiral_affection_to_lv4 = 75
+@admiral_affection_to_lv5 = 100
 #陆军将军
 @general_affection_to_lv2 = 15
 @general_affection_to_lv3 = 30
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 35
-@ruler_affection_to_lv3 = 70
-@ruler_affection_to_lv4 = 105
-@ruler_affection_to_lv5 = 140
+@ruler_affection_to_lv2 = 30
+@ruler_affection_to_lv3 = 60
+@ruler_affection_to_lv4 = 95
+@ruler_affection_to_lv5 = 130
 
 ######################################
 #反抗军舰队持有上限

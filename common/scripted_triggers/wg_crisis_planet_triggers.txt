@@ -42,6 +42,13 @@ UF_target_planet = {
 		is_planet_class = pc_gigaorbital_ring
 		is_planet_class = pc_interstellar_habitat
 		is_planet_class = pc_interstellar_ringworld_habitable
+		is_planet_class = pc_virtual_reality 
+		is_planet_class = pc_virtual_industry 
+		is_planet_class = pc_virtual_stellar_industry 
+		is_planet_class = pc_alderson_slice_gaia 
+		is_planet_class = pc_alderson_slice_pc 
+		is_planet_class = pc_alderson_slice_ecu 
+		is_planet_class = pc_ll_torrid
 #Planetary Diversity
 		is_planet_class = pc_cascadian
 		is_planet_class = pc_desertislands
@@ -157,6 +164,9 @@ UF_target_planet = {
 			has_global_flag = has_ancient_empire_mod
 			is_planet_class = pc_ag_ringworld_machine
 		}
+# 星舰少女
+		is_planet_class = pc_swgs_engineer
+		is_planet_class = pc_swgs_engineer_ringworld_habitable
 	}
 }
 
@@ -230,6 +240,8 @@ is_ringworld_wg = {
 			has_global_flag = has_ancient_empire_mod
 			is_planet_class = pc_ag_ringworld_machine
 		}
+# 星舰少女
+		is_planet_class = pc_swgs_engineer_ringworld_habitable
 	}
 }
 

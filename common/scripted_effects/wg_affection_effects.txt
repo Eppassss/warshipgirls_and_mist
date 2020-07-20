@@ -1,14 +1,15 @@
+#好感度
 #大小姐
-@lady_affection_to_lv2 = 30
-@lady_affection_to_lv3 = 70
-@lady_affection_to_lv4 = 125
-@lady_affection_to_lv5 = 185
+@lady_affection_to_lv2 = 20
+@lady_affection_to_lv3 = 55
+@lady_affection_to_lv4 = 105
+@lady_affection_to_lv5 = 175
 @lady_affection_reduce = 40
 #岛风
 @shimakaze_affection_to_lv2 = 30
-@shimakaze_affection_to_lv3 = 70
-@shimakaze_affection_to_lv4 = 130
-@shimakaze_affection_to_lv5 = 185
+@shimakaze_affection_to_lv3 = 65
+@shimakaze_affection_to_lv4 = 110
+@shimakaze_affection_to_lv5 = 180
 @shimakaze_affection_reduce = 40
 #灰风
 @gray_affection_to_lv2 = 25
@@ -18,41 +19,41 @@
 @gray_affection_reduce = 30
 #涩狐狸
 @Sharan_affection_to_lv2 = 30
-@Sharan_affection_to_lv3 = 70
-@Sharan_affection_to_lv4 = 130
-@Sharan_affection_to_lv5 = 185
+@Sharan_affection_to_lv3 = 65
+@Sharan_affection_to_lv4 = 110
+@Sharan_affection_to_lv5 = 180
 @Sharan_affection_reduce = 40
 #泡泡
 @bubbles_affection_to_lv2 = 30
-@bubbles_affection_to_lv3 = 60
-@bubbles_affection_to_lv4 = 95
-@bubbles_affection_to_lv5 = 130
-@bubbles_affection_reduce = 50
+@bubbles_affection_to_lv3 = 65
+@bubbles_affection_to_lv4 = 105
+@bubbles_affection_to_lv5 = 160
+@bubbles_affection_reduce = 40
 #总督
-@governor_affection_to_lv2 = 40
-@governor_affection_to_lv3 = 80
-@governor_affection_to_lv4 = 120
-@governor_affection_to_lv5 = 160
+@governor_affection_to_lv2 = 35
+@governor_affection_to_lv3 = 70
+@governor_affection_to_lv4 = 105
+@governor_affection_to_lv5 = 140
 #科学家
 @scientist_affection_to_lv2 = 55
 @scientist_affection_to_lv3 = 110
 @scientist_affection_to_lv4 = 165
 @scientist_affection_to_lv5 = 220
 #海军上将
-@admiral_affection_to_lv2 = 30
-@admiral_affection_to_lv3 = 60
-@admiral_affection_to_lv4 = 90
-@admiral_affection_to_lv5 = 120
+@admiral_affection_to_lv2 = 25
+@admiral_affection_to_lv3 = 50
+@admiral_affection_to_lv4 = 75
+@admiral_affection_to_lv5 = 100
 #陆军将军
 @general_affection_to_lv2 = 15
 @general_affection_to_lv3 = 30
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 35
-@ruler_affection_to_lv3 = 70
-@ruler_affection_to_lv4 = 105
-@ruler_affection_to_lv5 = 140
+@ruler_affection_to_lv2 = 30
+@ruler_affection_to_lv3 = 60
+@ruler_affection_to_lv4 = 95
+@ruler_affection_to_lv5 = 130
 
 # 添加自定义特殊好感特质领袖 的注意事项：
 # 1. 需要写好该领袖特殊好感度特质
@@ -88,7 +89,7 @@
 # scope: leader
 # PREV: country
 # 输入值：LEADER，LEADER_CLASS，MARRIED_FLAG；同上
-# 效果：（每月使用）随机增加特殊好感度领袖（类别为科学家）一点好感度
+# 效果：（每月使用）概率增加特殊好感度领袖（类别为科学家）一点好感度
 # 注：该函数使用了伪随机算法
 
 # remove_special_leader_affection_trait
@@ -118,11 +119,11 @@
 # 效果：增加领袖一点好感
 
 # remove_normal_leader_affection_trait
-# 输入值：LEADER_CLASS；同上
+# 输入值：LEADER_CLASS；领袖类别
 # 效果：删除指定领袖的指定领袖类别的所有好感度特质
 
 # reset_normal_leader_affection_level
-# 输入值：LEADER_CLASS；同上
+# 输入值：LEADER_CLASS；领袖类别
 # 效果：重设该领袖的好感度等级和好感度特质
 
 # scope: leader
@@ -946,12 +947,14 @@ reset_lady_affection_level = {
 				event_target:lady_governor = {
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = governor }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }
+					set_lady_portrait = yes
 				}
 			} else = {
 				random_owned_leader = {
 					limit = { has_leader_flag = wsg_lady_governor }
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = governor }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }
+					set_lady_portrait = yes
 				}
 			}
 		}
@@ -975,6 +978,7 @@ reset_lady_affection_level = {
 				limit = { has_leader_flag = wsg_lady_admiral }
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_lady }
+					set_lady_portrait = yes
 				}
 			}
 		}
@@ -984,12 +988,14 @@ reset_lady_affection_level = {
 				event_target:lady_survey_scientist = {
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+					set_lady_portrait = yes
 				}
 			} else = {
 				random_owned_leader = {
 					limit = { has_leader_flag = wsg_lady_scientist }
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+					set_lady_portrait = yes
 				}
 			}
 		}
@@ -1167,6 +1173,35 @@ calculate_affection_to_level_up = {
 	subtract_variable = { which = affection_to_level_up value = affection }
 	if = {
 		limit = { check_variable = { which = affection_to_level_up value < 0 }}
+		set_variable = { which = affection_to_level_up value = 0 }
+	}
+}
+
+# scope: country
+calculate_special_leader_affection_to_level_up = {
+	if = {
+		limit = { check_variable = { which = $LEADER$_affection_level value < 2 }}
+		set_variable = { which = $LEADER$_affection_to_level_up value = @$LEADER$_affection_to_lv2 }
+	}
+	else_if = {
+		limit = { check_variable = { which = $LEADER$_affection_level value = 2 }}
+		set_variable = { which = $LEADER$_affection_to_level_up value = @$LEADER$_affection_to_lv3 }
+	}
+	else_if = {
+		limit = { check_variable = { which = $LEADER$_affection_level value = 3 }}
+		set_variable = { which = $LEADER$_affection_to_level_up value = @$LEADER$_affection_to_lv4 }
+	}
+	else_if = {
+		limit = { check_variable = { which = $LEADER$_affection_level value = 4 }}
+		if = {
+			limit = { has_country_flag = $LEADER$_affection_max }
+			set_variable = { which = $LEADER$_affection_to_level_up value = 0 }
+		}
+		else = { set_variable = { which = $LEADER$_affection_to_level_up value = @$LEADER$_affection_to_lv5 }}
+	}
+	subtract_variable = { which = $LEADER$_affection_to_level_up value = $LEADER$_affection }
+	if = {
+		limit = { check_variable = { which = $LEADER$_affection_to_level_up value < 0 }}
 		set_variable = { which = affection_to_level_up value = 0 }
 	}
 }

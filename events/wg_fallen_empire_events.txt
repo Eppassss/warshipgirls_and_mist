@@ -123,10 +123,13 @@ country_event = {
 		any_country = {
 			NOT = { has_country_flag = wg_fallen_empire }
 		}
-		NOR = { 
-			num_fallen_empires < 1 
-			any_system = { has_star_flag = wg_fallen_empire_capital_system }
-			has_global_flag = created_wg_fallen_empire
+		OR = {
+			any_country = { has_origin = origin_wg_fe_child }
+			NOR = { 
+				num_fallen_empires < 1 
+				any_system = { has_star_flag = wg_fallen_empire_capital_system }
+				has_global_flag = created_wg_fallen_empire
+			}
 		}
 	}
 

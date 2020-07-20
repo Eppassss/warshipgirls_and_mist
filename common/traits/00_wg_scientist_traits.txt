@@ -123,6 +123,35 @@ leader_trait_scientist_shenhai2 = {
 	}
 }
 
+
+leader_trait_scientist_canarias = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/canarias.dds"
+	modifier = {
+		ship_archeaological_site_clues_add = 4
+		ship_archaeological_site_excavation_speed_mult = 0.5
+		ship_anomaly_generation_chance_mult = 0.3
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+leader_trait_scientist_canarias2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/canarias2.dds"
+	modifier = {
+		all_technology_research_speed = 0.1
+		category_statecraft_research_speed_mult = 0.2
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
 ##########################################
 # 好感度特性
 ##########################################

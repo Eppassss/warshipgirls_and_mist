@@ -26,7 +26,12 @@ ship_event = {
 		solar_system = {
 			set_star_flag = bubbles_found_system
 		}
-		leader = { set_leader_flag = amoeba_finding_scientist }
+		leader = { 
+			if = {
+				limit = { is_special_affection_leader = no }
+				set_leader_flag = amoeba_finding_scientist 
+			}
+		}
 		create_country = {
 			name = "NAME_Lost_Amoeba"
 			type = neutral_faction
@@ -105,8 +110,11 @@ ship_event = {
 		}
 		hidden_effect = {
 			leader = {
-				save_global_event_target_as = amoeba_finding_scientist
-				add_trait = leader_trait_scientist_bubbles_saver
+				if = {
+					limit = { is_special_affection_leader = no }
+					save_global_event_target_as = amoeba_finding_scientist
+					add_trait = leader_trait_scientist_bubbles_saver
+				}
 			}
 			owner = {
 				set_country_flag = amoeba_befriended # Achievement flag
@@ -336,6 +344,8 @@ country_event = { #Upgrade if Amoeba survives 100 years
 
 	immediate = {
 		set_country_flag = bubbles_centenarian
+		remove_country_flag = bubbles_adult
+		set_country_flag = bubbles_changing
 		if = {
 			limit = {
 				any_owned_fleet = { #Since each empire can have one, we don't want a GET
@@ -343,50 +353,16 @@ country_event = { #Upgrade if Amoeba survives 100 years
 				}
 			}
 			random_owned_fleet = {
-				limit = {
-					has_fleet_flag = lost_amoeba_adult_fleet@root
-				}
-				save_event_target_as = lost_amoeba_adult_fleet
-			}
-			create_fleet = {
-				name = event_target:lost_amoeba_adult_fleet
-				effect = {
-					set_owner = root
-					create_ship = {
-						name = event_target:lost_amoeba_adult_fleet
-						design = "NAME_Adopted_Amoeba_Centenarian"
-						prefix = no
-						upgradable = no
-					}
-					set_location = {
-						target = event_target:lost_amoeba_adult_fleet
-					}
-					set_fleet_stance = passive
-	
-					add_modifier = { modifier = "amoeba_speed_boost" days = -1 }
-					add_modifier = { modifier = "evolved_weapon_boost_2" days = -1 }
-					add_modifier = { modifier = "evolved_firing_rate" days = -1 }
-					add_modifier = { modifier = "evolved_evasion" days = -1 }
-	
-					set_fleet_flag = lost_amoeba_centenarian_fleet@root
-					save_event_target_as = lost_amoeba_centenarian_fleet
-				}
-				settings = {
-					can_upgrade = no
-					can_disband = no
-					can_change_composition = no
-					can_change_leader = no
-					uses_naval_capacity = no
-				}
-			}
-			event_target:lost_amoeba_adult_fleet = {
+				limit = { has_fleet_flag = lost_amoeba_adult_fleet@root }
 				delete_fleet = this
 			}
+			create_bubbles_warship = yes
 		}
 	}
 
 	option = {
 		name = ASTOUNDING
 		custom_tooltip = "distar.304.a.tooltip"
+		hidden_effect = { remove_country_flag = bubbles_changing }
 	}
 }

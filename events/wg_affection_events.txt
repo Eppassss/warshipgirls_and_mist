@@ -2078,6 +2078,7 @@ country_event = {
 	option = { #查看统治者的好感度
 		name = wg_aft.2005.e
 		hidden_effect = {
+			set_variable = { which = selected_check_affection_leader value = 1 }
 			country_event = { id = wg_aft.2007 }
 		}
 	}
@@ -2087,56 +2088,18 @@ country_event = {
 			has_country_flag = gain_wsg_lady
 		}
 		hidden_effect = {
-			if = {
-				limit = { check_variable = { which = lady_affection_level value < 2 }}
-				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv2 }
-			}
-			else_if = {
-				limit = { check_variable = { which = lady_affection_level value = 2 }}
-				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv3 }
-			}
-			else_if = {
-				limit = { check_variable = { which = lady_affection_level value = 3 }}
-				set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv4 }
-			}
-			else_if = {
-				limit = { check_variable = { which = lady_affection_level value = 4 }}
-				if = {
-					limit = { has_country_flag = lady_affection_max }
-					set_variable = { which = lady_affection_to_level_up value = 0 }
-				}
-				else = { set_variable = { which = lady_affection_to_level_up value = @lady_affection_to_lv5 }}
-			}
-			subtract_variable = { which = lady_affection_to_level_up value = lady_affection }
-			country_event = { id = wg_aft.2008 }
+			calculate_special_leader_affection_to_level_up = { LEADER = lady }
+			set_variable = { which = selected_check_affection_leader value = 2 }
+			country_event = { id = wg_aft.2007 }
 		}
 	}
 	option = { #查看岛风的好感度
 		name = wg_aft.2005.h
 		trigger = { has_country_flag = get_wsg_shimakaze }
 		hidden_effect = {
-			if = {
-				limit = { check_variable = { which = shimakaze_affection_level value < 2 }}
-				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv2 }
-			}
-			else_if = {
-				limit = { check_variable = { which = shimakaze_affection_level value = 2 }}
-				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv3 }
-			}
-			else_if = {
-				limit = { check_variable = { which = shimakaze_affection_level value = 3 }}
-				set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv4 }
-			}
-			else_if = {
-				limit = { check_variable = { which = shimakaze_affection_level value = 4 }}
-				if = {
-					limit = { has_country_flag = shimakaze_affection_max }
-					set_variable = { which = shimakaze_affection_to_level_up value = 0 }
-				}
-				else = { set_variable = { which = shimakaze_affection_to_level_up value = @shimakaze_affection_to_lv5 }}
-			}
-			subtract_variable = { which = shimakaze_affection_to_level_up value = shimakaze_affection }
-			country_event = { id = wg_aft.2009 }
+			calculate_special_leader_affection_to_level_up = { LEADER = shimakaze }
+			set_variable = { which = selected_check_affection_leader value = 3 }
+			country_event = { id = wg_aft.2007 }
 		}
 	}
 	option = { #查看灰风的好感度
@@ -2145,28 +2108,31 @@ country_event = {
 			is_vaild_gray_owner = yes
 		}
 		hidden_effect = {
-			if = {
-				limit = { check_variable = { which = gray_affection_level value < 2 }}
-				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv2 }
-			}
-			else_if = {
-				limit = { check_variable = { which = gray_affection_level value = 2 }}
-				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv3 }
-			}
-			else_if = {
-				limit = { check_variable = { which = gray_affection_level value = 3 }}
-				set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv4 }
-			}
-			else_if = {
-				limit = { check_variable = { which = gray_affection_level value = 4 }}
-				if = {
-					limit = { has_country_flag = gray_affection_max }
-					set_variable = { which = gray_affection_to_level_up value = 0 }
-				}
-				else = { set_variable = { which = gray_affection_to_level_up value = @gray_affection_to_lv5 }}
-			}
-			subtract_variable = { which = gray_affection_to_level_up value = gray_affection }
-			country_event = { id = wg_aft.2010 }
+			calculate_special_leader_affection_to_level_up = { LEADER = gray }
+			set_variable = { which = selected_check_affection_leader value = 4 }
+			country_event = { id = wg_aft.2007 }
+		}
+	}
+	option = { #查看泡泡的好感度
+		name = wg_aft.2005.j
+		trigger = {
+			bubbles_available = yes
+		}
+		hidden_effect = {
+			calculate_special_leader_affection_to_level_up = { LEADER = bubbles }
+			set_variable = { which = selected_check_affection_leader value = 5 }
+			country_event = { id = wg_aft.2007 }
+		}
+	}
+	option = { #查看屑狐狸的好感度
+		name = wg_aft.2005.k
+		trigger = {
+			has_country_flag = has_afk_Sharan
+		}
+		hidden_effect = {
+			calculate_special_leader_affection_to_level_up = { LEADER = Sharan }
+			set_variable = { which = selected_check_affection_leader value = 6 }
+			country_event = { id = wg_aft.2007 }
 		}
 	}
 	option = { #退出
@@ -2405,6 +2371,7 @@ country_event = {
 	}
 }
 
+# 查看特殊领袖好感
 country_event = {
 	id = wg_aft.2007
 	title = wg_aft.2007.name
@@ -2412,93 +2379,22 @@ country_event = {
 	is_triggered_only = yes
 
 	desc = {
-		trigger = { ruler = { NOT = { has_leader_flag = married }}}
-		text = wg_aft.2007.desc.a
-	}
-	desc = {
-		trigger = { ruler = { has_leader_flag = married }}
-		text = wg_aft.2007.desc.b
-	}
-
-	option = { #返回主菜单
-		name = wg_aft.2006.a
-		hidden_effect = {
-			country_event = { id = wg_aft.2005 }
+		trigger = { 
+			hidden_trigger = { has_married_selected_leader = no }
+			text = wg_aft.2007.desc.a
 		}
 	}
-	option = { #退出
-		name = wg_aft.2005.g
-		default_hide_option = yes
-	}
-}
-
-country_event = {
-	id = wg_aft.2008
-	title = wg_aft.2008.name
-	picture = GFX_evt_wsg_no_video
-	is_triggered_only = yes
-
 	desc = {
-		trigger = { NOT = { has_country_flag = married_wsg_lady }}
-		text = wg_aft.2008.desc.a
-	}
-	desc = {
-		trigger = { has_country_flag = married_wsg_lady }
-		text = wg_aft.2008.desc.b
-	}
-
-	option = { #返回主菜单
-		name = wg_aft.2006.a
-		hidden_effect = {
-			country_event = { id = wg_aft.2005 }
+		trigger = { 
+			hidden_trigger = { has_married_selected_leader = yes }
+			text = wg_aft.2007.desc.b
 		}
 	}
-	option = { #退出
-		name = wg_aft.2005.g
-		default_hide_option = yes
-	}
-}
 
-country_event = {
-	id = wg_aft.2009
-	title = wg_aft.2009.name
-	picture = GFX_evt_wsg_no_video
-	is_triggered_only = yes
-
-	desc = {
-		trigger = { NOT = { has_country_flag = married_wsg_shimakaze }}
-		text = wg_aft.2009.desc.a
-	}
-	desc = {
-		trigger = { has_country_flag = married_wsg_shimakaze }
-		text = wg_aft.2009.desc.b
-	}
-
-	option = { #返回主菜单
-		name = wg_aft.2006.a
+	after = { 
 		hidden_effect = {
-			country_event = { id = wg_aft.2005 }
+			set_variable = { which = selected_check_affection_leader value = 0 }
 		}
-	}
-	option = { #退出
-		name = wg_aft.2005.g
-		default_hide_option = yes
-	}
-}
-
-country_event = {
-	id = wg_aft.2010
-	title = wg_aft.2010.name
-	picture = GFX_evt_wsg_no_video
-	is_triggered_only = yes
-
-	desc = {
-		trigger = { NOT = { has_country_flag = married_gray }}
-		text = wg_aft.2010.desc.a
-	}
-	desc = {
-		trigger = { has_country_flag = married_gray }
-		text = wg_aft.2010.desc.b
 	}
 
 	option = { #返回主菜单

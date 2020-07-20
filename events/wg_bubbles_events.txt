@@ -442,7 +442,8 @@ country_event = {
 				has_leader_flag = amoeba_finding_scientist
 			}
 			NOT = { has_leader_flag = can_revive }
-		}
+			is_special_affection_leader = no
+		} 
 	}	
 
 	immediate = {
@@ -544,6 +545,14 @@ country_event = {
 					auto_move_to_planet = {
 						target = event_target:bubbles_destination
 						clear_auto_move_on_arrival = yes
+					}
+				}
+				every_country = {
+					set_faction_hostility = {
+						target = PREV
+						set_hostile = no
+						set_neutral = yes
+						set_friendly = no
 					}
 				}
 				save_event_target_as = bubbles_country
@@ -888,7 +897,10 @@ country_event = {
 				has_fleet_flag = lost_amoeba_centenarian_fleet@ROOT
 			}
 		}
-		NOT = { has_country_flag = engaged_with_bubbles }
+		NOR = { 
+			has_country_flag = engaged_with_bubbles 
+			has_country_flag = bubbles_changing
+		}
 	}
 
 	option = {
@@ -933,7 +945,10 @@ country_event = {
 
 	trigger = {
 		FROM = { has_leader_flag = bubbles_governor }
-		NOT = { has_country_flag = engaged_with_bubbles }
+		NOR = { 
+			has_country_flag = engaged_with_bubbles 
+			has_country_flag = bubbles_changing
+		}
 	}
 
 	option = {

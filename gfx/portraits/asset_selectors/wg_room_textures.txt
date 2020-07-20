@@ -80,6 +80,8 @@ room_selector = {
 		"personality_fallen_empire_wg_room" = { exists = owner owner = { OR = { has_ai_personality = wg_fallen_empire has_ai_personality = awakened_wg_fallen_empire } } }		
 		"str_dragon_room"							= { exists = owner owner = { is_nirvana_empire_dragon = yes } }
 		"str_council_room"							= { exists = owner owner = { is_nirvana_empire_council = yes } }
+		"personality_dragon_room"	= { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_dragon_personality } }	
+		"personality_council_room" = { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_council_personality } }
 		"personality_original_empire_room" = { exists = owner owner = { has_ai_personality = original_empire_ascended_personality } }
 		"fallen_spiritualist_room"								= { exists = owner owner = { OR = { has_ai_personality = lost_empire_spiritualist has_ai_personality = ascended_empire_spiritualist } } }
 		"fallen_materialist_room"								= { exists = owner owner = { OR = { has_ai_personality = lost_empire_materialist has_ai_personality = ascended_empire_materialist } } }
@@ -97,7 +99,5 @@ room_selector = {
 		"fallen_machine_room"								= { exists = owner owner = { OR = { has_ai_personality = lost_empire_machine has_ai_personality = ascended_machine_intelligence has_ai_personality = ascended_assimilators has_ai_personality = ascended_servitors } } }
 		"fallen_machine_02_room"								= { exists = owner owner = { has_ai_personality = ascended_exterminators } }
 		"leviathans01_room" = { }
-		"nirvana_fallen_empire_dragon_personality_room"	= { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_dragon_personality } }
-		"nirvana_fallen_empire_council_personality_room" = { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_council_personality } }
 	}
 }

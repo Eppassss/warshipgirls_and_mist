@@ -3627,7 +3627,7 @@ planet_event = {
 	fire_only_once = yes
 
 	trigger = {
-		NOT = { has_global_flag = obtained_nie_admiral }
+		NOR = { has_global_flag = obtained_nie_admiral }
 		is_same_value = event_target:lex_sol_III
 		FROM = {
 			is_ai = no
@@ -3638,7 +3638,13 @@ planet_event = {
 	immediate = {
 		set_global_flag = obtained_nie_admiral
 		FROM = {
-			country_event = { id = wsg.3201 days = 30 random = 30 }
+			random_list = {
+				# 乜提督
+				1 = { country_event = { id = wsg.3201 days = 30 random = 30 }}
+				# 三小姐
+				1 = { country_event = { id = wsg.3206 days = 30 random = 30 }}
+			}
+			
 		}
 	}
 }
@@ -3771,7 +3777,7 @@ country_event = {
 				add_ruler_trait = leader_trait_ruler_mist
 			}	
 		}
-		country_event = { id = wsg.3106 days = 1 }
+		country_event = { id = wsg.3106 }
 	}
 }
 
@@ -3787,5 +3793,132 @@ planet_event = {
 
 	option = {
 		name = wsg.3205.a
+	}
+}
+
+country_event = {
+	id = wsg.3206
+	title = wsg.3206.name
+	desc = wsg.3206.desc
+	picture = GFX_evt_underwater_ruins
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.3206.a
+		event_target:lex_sol_III = {
+			create_archaeological_site = site_canarias
+		}
+	}
+}
+
+# Stage 2 - 冷冻仓库
+fleet_event = {
+	id = wsg.3207
+	title = "wsg.3207.name"
+	desc = "wsg.3207.desc"
+	picture = GFX_evt_generator_powerup
+	show_sound = event_big_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = AMAZING
+		large_artifact_reward = yes
+		owner = { if = {
+			limit = { NOT = { has_technology = tech_zero_point_power }}
+			add_research_option = tech_zero_point_power
+		}}
+	}
+}
+
+# Stage 3 - 三小姐
+fleet_event = {
+	id = wsg.3208
+	title = "wsg.3208.name"
+	desc = "wsg.3208.desc"
+	picture = GFX_evt_ancient_databank
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = EXCELLENT
+		medium_artifact_reward = yes
+		custom_tooltip = wsg.3208.tooltip
+		hidden_effect = {
+			owner = { country_event = { id = wsg.3209 }}
+		}
+	}
+}
+
+country_event = {
+	id = wsg.3209
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = canarias_owner
+		create_species = {
+			name = MIST_LEADER
+			plural = MIST_LEADER
+			class = ART
+			portrait = art13
+			namelist = ART1
+			effect = {
+				save_global_event_target_as = canarias_species
+			}
+		}		
+		create_leader = {
+			class = scientist
+			species = event_target:canarias_species
+			name = "Canarias"
+			skill = 5
+			immortal = yes
+			set_age = 17
+			gender = female
+			traits = {
+				trait = leader_trait_scientist_canarias
+				trait = leader_trait_scientist_canarias2
+				trait = leader_trait_admiral_mist
+			}
+			event_leader = yes	# prevents this leader from leading factions and winning elections
+			effect = {
+				change_leader_portrait = wsg9988
+				set_leader_flag = wsg_event_leader
+				set_leader_flag = Canarias
+				set_leader_flag = has_gained_level_trait
+				set_leader_flag = has_gained_trait
+			}
+		}
+		last_created_leader = {
+			change_leader_portrait = wsg9988
+			if = {
+				limit = { owner = { has_country_flag = wsg_project_r }}
+				add_trait = leader_trait_admiral_warshipgirls
+				add_ruler_trait = leader_trait_ruler_warshipgirls
+			}
+			add_ruler_trait = leader_trait_ruler_mist
+		}
 	}
 }
