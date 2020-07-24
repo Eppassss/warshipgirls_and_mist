@@ -1,7 +1,7 @@
 ﻿l_english:
  wg_aft.18.name:0 "Wedding Ceremony"
- test_only_add_ring:0 "Buy an Engagement Ring."
- reminder_for_test:0 "§RTest Option§!"
+ make_ring:0 "Make an Engagement Ring."
+ starshipgirls_ring_tooltip:0 "§YPut these materials together and crumple them into a sphere with the Force... Done! £sr_huaji£§!"
  wg_aft.18.desc:0 "Please select a leader for the Wedding Ceremony.\n\n§YThe selected leader will gain a strong positive trait and unlock §HLv.Max§! affection level.§!\n§HSpecial leaders' (e.g. Gray, Lady Contingency, and Shimakaze) Wedding Ceremony option lies in their §YContact§! §Hinterface.§!"
  wg_aft.18.leader1:0 "[leader_tobe_view_1.GetName]"
  wg_aft.18.leader2:0 "[leader_tobe_view_2.GetName]"
@@ -101,6 +101,9 @@
 
  leader_title_checking_affection_6:0 "Sharan"
  leader_affection_details_6:0 "§HSharan§!: Aff. Lv.§Y[This.Sharan_affection_level]§!\nCurrent Aff. is §Y[This.Sharan_affection]§!, §B[This.Sharan_affection_to_level_up] §! to next level."
+
+ leader_title_checking_affection_7:0 "Yuudaichi"
+ leader_affection_details_7:0 "§HYuudaichi§!: Aff. Lv.§Y[This.yuudaichi_affection_level]§!\nCurrent Aff. is §Y[This.yuudaichi_affection]§!, §B[This.yuudaichi_affection_to_level_up] §! to next level."
  GRAY_SPECIES: "Gray"
  marry_gray:0 "Gray, I have a surprise for you."
  wg_aft.30000.name:0 "Wedding Ceremony with Gray"

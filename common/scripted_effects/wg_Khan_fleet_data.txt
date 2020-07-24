@@ -69,16 +69,16 @@ create_wg_Khan_fleet_1 = {
 		DIFF_MULT = $DIFF_MULT|1$ 
 		Titan_Min = 1 
 		SF_Min = 1 SF_Num = 1 
-		BB1_Min = 1 BB1_Num = 2
-		BB1E_Min = 1 BB1E_Num = 3 GRAPHICS1E = "reptilian_01"
+		BB1_Min = 1 BB1_Num = 1
+		BB1E_Min = 1 BB1E_Num = 1 GRAPHICS1E = "reptilian_01"
 		BB2_Num = 3
 		BB3_Min = 2 BB3_Num = 4 GRAPHICS3 = "avian_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		CA_Min = 2 CA_Num = 1 GRAPHICS_DD2 = "reptilian_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 6 Outrider_Num = 3 
-		Champion_Min = 6 Champion_Num = 6 
+		Outrider_Min = 2 Outrider_Num = 3 
+		Champion_Min = 6 Champion_Num = 2
 		NomadCL_Min = 3 NomadCL_Num = 2 
 	}
 }
@@ -88,16 +88,16 @@ create_wg_Khan_fleet_2 = {
 		NAME = "NAME_Khan_Fleet2"
 		DIFF_MULT = $DIFF_MULT|1$
 		SF_Min = 1 SF_Num = 1
-		BB1_Min = 1 BB1_Num = 2 GRAPHICS1 = "reptilian_01"
-		BB4_Min = 1 BB4_Num = 2 GRAPHICS4 = "arthropoid_01"
+		BB1_Min = 1 BB1_Num = 1 GRAPHICS1 = "reptilian_01"
+		BB4_Min = 1 BB4_Num = 1 GRAPHICS4 = "arthropoid_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		CA_Min = 1 CA_Num = 2 GRAPHICS_CA = "avian_01"
 		DD2_Min = 2 DD2_Num = 1 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 10 Outrider_Num = 10
+		Outrider_Min = 10 Outrider_Num = 5
 		Champion_Min = 5 Champion_Num = 1
 		CaraDD_Min = 4 CaraDD_Num = 4
-		Haters_CL_Min = 8 Haters_CL_Num = 10
+		Haters_CL_Min = 8 Haters_CL_Num = 5
 		Haters_VE_Min = 10 Haters_VE_Num = 10
 	}
 }
@@ -106,10 +106,10 @@ create_wg_Khan_fleet_3 = {
 	create_wg_Khan_fleet = { 
 		NAME = "NAME_Khan_Fleet3" 
 		DIFF_MULT = $DIFF_MULT|1$
-		SF_Min = 1 SF_Num = 2
+		SF_Min = 1 SF_Num = 1
 		BB1_Min = 1 BB1_Num = 1 GRAPHICS1 = "reptilian_01"
 		BB3_Min = 1 BB3_Num = 1 GRAPHICS3 = "avian_01"
-		BB4_Min = 2 BB4_Num = 1 GRAPHICS4 = "avian_01"
+		BB4_Min = 1 BB4_Num = 1 GRAPHICS4 = "avian_01"
 		Outrider_Min = 15 Outrider_Num = 5
 		Champion_Min = 10 Champion_Num = 5
 		Haters_CL_Min = 4 Haters_CL_Num = 4
@@ -121,15 +121,15 @@ create_wg_Khan_fleet_4 = {
 	create_wg_Khan_fleet = { 
 		NAME = "NAME_Khan_Fleet4" 
 		DIFF_MULT = $DIFF_MULT|1$
-		SF_Min = 2 SF_Num = 2
+		SF_Min = 2 SF_Num = 1
 		BB1_Min = 2 BB1_Num = 2 GRAPHICS1 = "reptilian_01"
-		BB3_Min = 3 BB3_Num = 2 GRAPHICS3 = "avian_01"
+		BB3_Min = 2 BB3_Num = 1 GRAPHICS3 = "avian_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		DD2_Min = 4 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "plantoid_01"
 		Outrider_Min = 10 Outrider_Num = 10
 		Champion_Min = 15 Champion_Num = 5
-		Haters_CL_Min = 2 Haters_CL_Num = 8
+		Haters_CL_Min = 2 Haters_CL_Num = 5
 		Haters_VE_Min = 5 Haters_VE_Num = 5
 	}
 }
@@ -141,8 +141,8 @@ create_wg_Khan_fleet_5 = {
 		SF_Min = 1 SF_Num = 1
 		BB1_Min = 1 GRAPHICS1 = "reptilian_01"
 		BB4_Min = 1 GRAPHICS4 = "avian_01"
-		DD_Min = 2 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
-		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
+		DD_Min = 2 DD_Num = 1 GRAPHICS_DD = "arthropoid_01"
+		DD2_Min = 2 DD2_Num = 1 GRAPHICS_DD2 = "molluscoid_01"
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "plantoid_01"
 		Outrider_Min = 25 Outrider_Num = 10
 		Champion_Min = 20 Champion_Num = 5
@@ -157,15 +157,15 @@ create_wg_Khan_fleet_6 = {
 		NAME = "NAME_Khan_Fleet6"
 		DIFF_MULT = $DIFF_MULT|1$
 		Dreadnought_Min = 1 
-		BB1_Min = 2 BB1_Num = 2 GRAPHICS1 = "reptilian_01"
-		BB3_Min = 1 BB3_Num = 2 GRAPHICS3 = "molluscoid_01"
+		BB1_Min = 2 BB1_Num = 1 GRAPHICS1 = "reptilian_01"
+		BB3_Min = 1 BB3_Num = 1 GRAPHICS3 = "molluscoid_01"
 		BB4_Min = 1 BB4_Num = 1 GRAPHICS4 = "fungoid_01"
 		DD_Min = 1 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 15 Outrider_Num = 10
-		Champion_Min = 15 Champion_Num = 10
+		Outrider_Min = 15 Outrider_Num = 5
+		Champion_Min = 15 Champion_Num = 5
 		CaraDD_Min = 8 CaraDD_Num = 10
 		Haters_CL_Min = 6 Haters_CL_Num = 10
 		Haters_VE_Min = 2 Haters_VE_Num = 8
@@ -179,13 +179,13 @@ create_wg_Khan_fleet_7 = {
 		SF_Min = 1 SF_Num = 2
 		BB1_Min = 2 BB1_Num = 1 GRAPHICS1 = "reptilian_01"
 		BB3_Min = 1 BB3_Num = 1 GRAPHICS3 = "plantoid_01"
-		BB3_Min = 1 BB3_Num = 2
+		BB3_Min = 1 BB3_Num = 1
 		DD_Min = 1 DD_Num = 2
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
 		Outrider_Min = 10 Outrider_Num = 5
-		Champion_Min = 20 Champion_Num = 10
+		Champion_Min = 10 Champion_Num = 5
 		CaraDD_Min = 2 CaraDD_Num = 2
 		Haters_CL_Min = 5 Haters_CL_Num = 5
 		Haters_VE_Min = 5 Haters_VE_Num = 5
@@ -199,12 +199,12 @@ create_wg_Khan_fleet_8 = {
 		Titan_Min = 1 
 		SF_Min = 1 SF_Num = 1
 		BB1_Min = 2 BB1_Num = 1 GRAPHICS1 = "reptilian_01"
-		DD_Min = 5 DD_Num = 2
+		DD_Min = 3 DD_Num = 2
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
-		DD2_Min = 8 DD2_Num = 5 GRAPHICS_DD2 = "molluscoid_01"
+		DD2_Min = 8 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 
-		Outrider_Min = 25 Outrider_Num = 10
-		Champion_Min = 10 Champion_Num = 10
+		Outrider_Min = 20 Outrider_Num = 10
+		Champion_Min = 10 Champion_Num = 5
 		CaraDD_Min = 5 CaraDD_Num = 1
 		Haters_CL_Min = 5 Haters_CL_Num = 5
 		Haters_VE_Min = 5 Haters_VE_Num = 5
@@ -216,12 +216,12 @@ create_wg_Khan_fleet_9 = {
 		NAME = "NAME_Khan_Fleet9" 
 		DIFF_MULT = $DIFF_MULT|1$
 		BB1_Min = 1 BB1_Num = 1 GRAPHICS1 = "humanoid_01"
-		BB4_Min = 3 BB4_Num = 5
+		BB4_Min = 3 BB4_Num = 3
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD_Min = 2 DD_Num = 2 GRAPHICS_DD = "molluscoid_01"
 		Outrider_Min = 15 Outrider_Num = 5
 		Champion_Min = 10 Champion_Num = 5
-		Haters_CL_Min = 4 Haters_CL_Num = 4
+		Haters_CL_Min = 4 Haters_CL_Num = 3
 		Haters_VE_Min = 5 Haters_VE_Num = 5
 	}
 }
@@ -231,12 +231,12 @@ create_wg_Khan_fleet_10 = {
 		NAME = "NAME_Khan_Fleet10" 
 		DIFF_MULT = $DIFF_MULT|1$
 		Dreadnought_Min = 1 
-		BB4_Min = 6 BB4_Num = 3
+		BB4_Min = 4 BB4_Num = 3
 		DD_Min = 2 DD_Num = 5 GRAPHICS_DD = "fungoid_01"
 		CA_Min = 3 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 10 Outrider_Num = 10
+		Outrider_Min = 10 Outrider_Num = 5
 		Champion_Min = 10 Champion_Num = 10
 	}
 }
@@ -248,7 +248,7 @@ create_wg_Khan_fleet_11 = {
 		SF_Min = 1 SF_Num = 1
 		DD_Min = 4 DD_Num = 5 GRAPHICS_DD = "molluscoid_01"
 		CA_Min = 1 CA_Num = 3 GRAPHICS_CA = "plantoid_01"
-		Outrider_Min = 60 Outrider_Num = 10
+		Outrider_Min = 50 Outrider_Num = 10
 		Haters_CL_Min = 15 Haters_CL_Num = 5
 		Haters_VE_Min = 10 Haters_VE_Num = 10	
 	}
@@ -262,7 +262,7 @@ create_wg_Khan_fleet_12 = {
 		BB1_Min = 1 BB1_Num = 2 GRAPHICS1 = "humanoid_01"
 		BB3_Min = 3 BB3_Num = 1 GRAPHICS3 = "arthropoid_01"
 		BB3_Min = 2 BB3_Num = 2
-		Outrider_Min = 10 Outrider_Num = 10
+		Outrider_Min = 10 Outrider_Num = 5
 		CaraDD_Min = 2 CaraDD_Num = 2
 		Haters_CL_Min = 5 Haters_CL_Num = 5
 	}
@@ -317,7 +317,7 @@ create_wg_Khan_fleet_15 = {
 		CA_Min = 3 CA_Num = 3 GRAPHICS_CA = "humanoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 40 Outrider_Num = 20
+		Outrider_Min = 40 Outrider_Num = 10
 	}
 }
 

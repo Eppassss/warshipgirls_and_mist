@@ -1,10 +1,11 @@
-# 特殊好感度领袖变量：
+# 特殊好感度领袖编号：
 # 1 = 领导者
 # 2 = 大小姐
 # 3 = 岛风
 # 4 = 灰风
 # 5 = 泡泡
 # 6 = 莎兰（屑狐狸）
+# 7 = 夕立
 
 
 defined_text = {
@@ -33,6 +34,10 @@ defined_text = {
 		trigger = { check_variable = { which = selected_check_affection_leader value = 6 }}
 		localization_key = leader_affection_details_6
 	}
+	text = {
+		trigger = { check_variable = { which = selected_check_affection_leader value = 7 }}
+		localization_key = leader_affection_details_7
+	}
 }
 
 defined_text = {
@@ -60,5 +65,9 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { which = selected_check_affection_leader value = 6 }}
 		localization_key = leader_title_checking_affection_6
+	}
+	text = {
+		trigger = { check_variable = { which = selected_check_affection_leader value = 7 }}
+		localization_key = leader_title_checking_affection_7
 	}
 }

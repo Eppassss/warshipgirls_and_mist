@@ -1,6 +1,6 @@
 ﻿l_english:
  Parit_age:0 "Parit Shipgirl Civilization"
- Parit_age_desc:0 "This warship girl's civilization has incredibly high-tech, with some buildings that almost rival the fallen empire. Advanced civilian facilities cater to all the needs of the inhabitants of the planet, but they seem to be so addicted to virtual entertainment that they don't care about heaven."
+ Parit_age_desc:0 "This warship girl's civilization has incredibly high-tech, with some buildings that almost rival the Fallen Empire. Advanced civilian facilities cater to all the needs of the inhabitants of the planet, but they seem to be so addicted to virtual entertainment that they don't care about heaven."
  Parit_army:0 "Parit Automated Troop"
  building_primitive_capital_Parit:0 "Parit Nexus"
  building_primitive_capital_Parit_desc:0 "The central building on Parit, but all administration has been replaced by automatic machines."
@@ -61,7 +61,7 @@
  wg_parit.10.a:0 "??????"
  wg_parit.10.b:0 "......"
  wg_parit.11.name:0 "Parit, §!§HFallen Empire§!"
- wg_parit.11.desc:0 "Neat database inside and messy outside are completely two worlds. From the historical data of the main database, we can learn about Parit's lost and impressive history.\n\nParit is not the real name of this civilization. Their mother civilization called themselves §!§HThe Empire of Endordia§!. The Empire of Endordia was once an ancient fallen empire, which was defeated in the war with younger civilizations and the whole empire was completely occupied. Fortunately, the battleship Endordia of the §H<Parit Agreement>§! brought the remaining survivors to this planet in secret. The designers of the agreement want to help the shipgirls of Endordia rise again and restore the former glory of the empire through the advanced technology and materials on Parit.\n\nBut it is clear that the shipgirls in Endordia has become accustomed to a happy life and has no interest in national revival. After generations, they have even forgotten their own origins.\n\nThe database also records the location of the Homeworld of Endordia, maybe we should check it out?"
+ wg_parit.11.desc:0 "Neat database inside and messy outside are completely two worlds. From the historical data of the main database, we can learn about Parit's lost and impressive history.\n\nParit is not the real name of this civilization. Their mother civilization called themselves §!§HThe Empire of Endordia§!. The Empire of Endordia was once an ancient Fallen Empire, which was defeated in the war with younger civilizations and the whole empire was completely occupied. Fortunately, the battleship Endordia of the §H<Parit Agreement>§! brought the remaining survivors to this planet in secret. The designers of the agreement want to help the shipgirls of Endordia rise again and restore the former glory of the empire through the advanced technology and materials on Parit.\n\nBut it is clear that the shipgirls in Endordia has become accustomed to a happy life and has no interest in national revival. After generations, they have even forgotten their own origins.\n\nThe database also records the location of the Homeworld of Endordia, maybe we should check it out?"
  wg_parit.11.a:0 "Endordia? ! I know this Name! We must go! !"
  wg_parit.11.b:0 "Let's go and find Endordia."
  wg_parit.11.c:0 "We have no interest in these old things."

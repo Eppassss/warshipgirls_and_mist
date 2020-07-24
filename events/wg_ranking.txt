@@ -3313,6 +3313,25 @@ country_event = {
 		add_modifier = { modifier = wg_modifier_combat_elite_pilot days = 3600 }
     }
     
+    option = {#恒星基地模块
+		custom_gui = "enclave_caravaneer_option"
+		custom_tooltip = not_count_in_buff_limit
+        name = tech_wg_spaceport_module_assembly
+        trigger = { NOT = { has_technology = tech_wg_spaceport_module_assembly }}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 60 }
+                fail_text = too_low_rank_fail_60
+			}
+            resource_stockpile_compare = { resource = energy value >= 5000 }
+			resource_stockpile_compare = { resource = sr_pantsu value >= 500 }
+		}
+        add_resource = { energy = -5000 }
+		add_resource = { sr_pantsu = -500 }
+		add_research_option = tech_wg_spaceport_module_assembly
+        add_tech_progress = { tech = tech_wg_spaceport_module_assembly progress = 0.1 }
+        remove_country_flag = engaged_with_pantsu_shop
+    }
     option = {
 		custom_gui = "enclave_caravaneer_option"
         name = wg_modifier_combat_hull_algorithm
@@ -3333,7 +3352,6 @@ country_event = {
         add_resource = { energy = -2000 }
 		add_modifier = { modifier = wg_modifier_combat_hull_algorithm days = 3600 }
     }
-    
     option = {
 		custom_gui = "enclave_caravaneer_option"
         name = wg_modifier_combat_shipcraft
@@ -4264,7 +4282,7 @@ country_event = {
             resource_stockpile_compare = { resource = energy value >= 10000 }
         }
         change_variable = { which = rankpts value = 4 }
-        add_modifier = { modifier = wg_shop_loan_5k days = 3600 }
+        add_modifier = { modifier = wg_shop_loan_10k days = 3600 }
         hidden_effect = { add_resource = { energy = -10000 }}
     }
 #20年期30000投资，每月375
@@ -4275,7 +4293,7 @@ country_event = {
             resource_stockpile_compare = { resource = energy value >= 20000 }
         }
         change_variable = { which = rankpts value = 8 }
-        add_modifier = { modifier = wg_shop_loan_5k days = 7200 }
+        add_modifier = { modifier = wg_shop_loan_30k days = 7200 }
         hidden_effect = { add_resource = { energy = -30000 }}
     }
 

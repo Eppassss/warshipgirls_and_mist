@@ -37,6 +37,18 @@
 @Sharan_affection_to_lv4 = 110
 @Sharan_affection_to_lv5 = 180
 @Sharan_affection_reduce = 40
+#夕立#sSWGS#
+@yuudaichi_affection_to_lv2 = 25
+@yuudaichi_affection_to_lv3 = 45
+@yuudaichi_affection_to_lv4 = 100
+@yuudaichi_affection_to_lv5 = 150
+@yuudaichi_affection_reduce = 40
+#佩雷恩#sSWGS#
+@Pellaeon_affection_to_lv2 = 25
+@Pellaeon_affection_to_lv3 = 45
+@Pellaeon_affection_to_lv4 = 100
+@Pellaeon_affection_to_lv5 = 150
+@Pellaeon_affection_reduce = 40
 #泡泡
 @bubbles_affection_to_lv2 = 30
 @bubbles_affection_to_lv3 = 65

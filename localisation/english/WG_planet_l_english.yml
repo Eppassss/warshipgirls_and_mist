@@ -64,7 +64,7 @@
  d_sh_monument:0 "Journey Monument"
  d_sh_monument_desc:0 "Passing through so much sorrow and tribulation, the cruel journey of migration has taken too many things from us. But from now on, we will stand up and regain everything we lost."
  d_sh_db:0 "Advanced Abyssal Environment Reformer"
- d_sh_db_desc:0 "Wandering in the void isn't without any results. We found this advanced environment modification facility on an abandoned planet. Although it was scrapped after startup, we can still copy some functions through reverse engineering."
+ d_sh_db_desc:0 "Wandering in the void isn't without any gains. We found this advanced environment modification facility on an abandoned planet. Although it was scrapped after startup, we can still copy some functions through reverse engineering."
  d_sr_se:0 "Automatic AEC Production Machine"
  d_sr_se_desc:0 "This powerful Abyssal energy core production machine can operate properly."
  d_sr_se2:0 "Broken AEC Production Machine"

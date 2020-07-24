@@ -127,6 +127,7 @@ country_event = {
 										wsg_lady_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
 										灰风领袖 = { add_special_leader_affection = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }}
 										Sharan_leader = { add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = governor MARRIED_FLAG = married_Sharan }}
+										yuudaichi_leader = { add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_yuudaichi }}
 										bubbles_leader = { 
 											if = {
 												limit = { NOT = { has_country_flag = bubbles_depressed }}
@@ -175,6 +176,9 @@ country_event = {
 								trigger = has_leader_flag
 								wsg_shimakaze_leader = { 
 									add_special_scientist_affection_monthly = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+								}
+								yuudaichi_leader = { 
+									add_special_scientist_affection_monthly = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
 								}
 								default = { add_scientist_affection_monthly = yes }
 							}
@@ -259,6 +263,7 @@ country_event = {
 	}
 }
 
+# 岛风升级加好感
 country_event = {
 	id = wg_aft.10003
 	hide_window = yes
@@ -286,6 +291,7 @@ country_event = {
 	}
 }
 
+# 升级加好感
 country_event = {
 	id = wg_aft.10004
 	hide_window = yes
@@ -419,6 +425,11 @@ ship_event = {
 							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 						}}
 					}
+					yuudaichi_leader = {
+						owner = { event_target:yuudaichi_scientist = { 
+							add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+						}}
+					}
 					default = {
 						add_normal_leader_affection = { LEADER_CLASS = scientist }
 					}
@@ -476,6 +487,11 @@ ship_event = {
 						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 					}}
 				}
+				yuudaichi_leader = {
+					owner = { event_target:yuudaichi_scientist = { 
+						add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+					}}
+				}
 				default = {
 					add_normal_leader_affection = { LEADER_CLASS = scientist }
 				}
@@ -492,6 +508,11 @@ ship_event = {
 						wsg_shimakaze_leader = {
 							owner = { event_target:shimakaze_scientist = { 
 								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+							}}
+						}
+						yuudaichi_leader = {
+							owner = { event_target:yuudaichi_scientist = { 
+								add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
 							}}
 						}
 						default = {
@@ -529,6 +550,10 @@ country_event = {
 						has_leader_flag = wsg_shimakaze_leader
 						NOT = { ROOT = { has_country_flag = shimakaze_affection_max }}
 					}
+					AND = {
+						has_leader_flag = yuudaichi_leader
+						NOT = { ROOT = { has_country_flag = yuudaichi_affection_max }}
+					}
 				}
 			}
 			random_list = {
@@ -541,7 +566,11 @@ country_event = {
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
 						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
-					} else = {
+					} else_if = {
+						limit = { has_leader_flag = yuudaichi_leader }
+						add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+					} 
+					else = {
 						add_normal_leader_affection = { LEADER_CLASS = scientist }
 					}
 				}
@@ -594,7 +623,7 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						is_wg_or_special_affection_admiral = yes
+						is_wg_leader_with_affection_not_full = yes
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -633,7 +662,7 @@ country_event = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
-						is_wg_or_special_affection_admiral = yes
+						is_wg_leader_with_affection_not_full = yes
 					}
 					NOT = { has_fleet_flag = counting_affection }
 				}
@@ -710,6 +739,12 @@ fleet_event = {
 						Sharan_leader = {
 							add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
 						}
+						yuudaichi_leader = {
+							add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = admiral MARRIED_FLAG = married_yuudaichi }
+						}
+						Pellaeon_leader = {
+							add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = admiral MARRIED_FLAG = married_Pellaeon }
+						}
 						default = {
 							add_normal_leader_affection = { LEADER_CLASS = admiral }
 						}
@@ -783,7 +818,7 @@ fleet_event = {
 					exists = leader
 					leader = { 
 						NOT = { has_leader_flag = wsg_lady_leader }
-						is_wg_or_special_affection_admiral = yes
+						is_wg_leader_with_affection_not_full = yes
 					}
 					has_fleet_flag = counting_affection
 				}
@@ -811,6 +846,12 @@ fleet_event = {
 								}
 								Sharan_leader = {
 									add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
+								}
+								yuudaichi_leader = {
+									add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = general MARRIED_FLAG = married_yuudaichi }
+								}
+								Pellaeon_leader = {
+									add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = general MARRIED_FLAG = married_Pellaeon }
 								}
 								default = {
 									add_normal_leader_affection = { LEADER_CLASS = admiral }
@@ -950,6 +991,16 @@ country_event = {
 				change_variable = { which = Sharan_affection value = 3 }
 				reset_Sharan_affection_level = yes
 			}
+			if = {
+				limit = { has_country_flag = has_kc_yuudaichi }
+				change_variable = { which = yuudaichi_affection value = 3 }
+				reset_yuudaichi_affection_level = yes
+			}
+			if = {
+				limit = { has_country_flag = has_kc_Pellaeon }
+				change_variable = { which = Pellaeon_affection value = 3 }
+				reset_Pellaeon_affection_level = yes
+			}
 		}
 	}
 }
@@ -1029,7 +1080,14 @@ country_event = {
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
 						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
-					} else = {
+					} else_if = {
+						limit = { has_leader_flag = yuudaichi_leader }
+						add_special_leader_affection = { LEADER = yuudaichi LEADER = general MARRIED_FLAG = married_yuudaichi }
+					} else_if = {
+						limit = { has_leader_flag = Pellaeon_leader }
+						add_special_leader_affection = { LEADER = Pellaeon LEADER = general MARRIED_FLAG = married_Pellaeon }
+					}
+					 else = {
 						add_normal_leader_affection = { LEADER_CLASS = general }
 					}
 				}
@@ -1662,7 +1720,7 @@ country_event = {
 	}
 }
 
-# 战斗中每日计算好感
+# 大小姐战斗中每日计算好感
 fleet_event = {
 	id = wg_aft.1003
 	hide_window = yes
@@ -1719,6 +1777,7 @@ fleet_event = {
 	}
 }
 
+# 预备事件——查看好感度
 country_event = {
 	id = wg_aft.2000
 	hide_window = yes
@@ -1731,7 +1790,6 @@ country_event = {
 		set_variable = { which = num_general value = 0 }
 		every_owned_leader = {
 			limit = {
-				NOT = { has_leader_flag = wsg_lady_leader }
 				is_wg_leader = yes
 			}
 			calculate_affection_to_level_up = yes
@@ -2132,6 +2190,17 @@ country_event = {
 		hidden_effect = {
 			calculate_special_leader_affection_to_level_up = { LEADER = Sharan }
 			set_variable = { which = selected_check_affection_leader value = 6 }
+			country_event = { id = wg_aft.2007 }
+		}
+	}
+	option = { #查看屑夕立的好感度
+		name = wg_aft.2005.l
+		trigger = {
+			has_country_flag = has_kc_yuudaichi
+		}
+		hidden_effect = {
+			calculate_special_leader_affection_to_level_up = { LEADER = yuudaichi }
+			set_variable = { which = selected_check_affection_leader value = 7 }
 			country_event = { id = wg_aft.2007 }
 		}
 	}
@@ -3100,6 +3169,9 @@ fleet_event = {
 				wsg_lady_leader = { 
 					owner = { reset_lady_affection_level = yes }
 				}
+				yuudaichi_leader = { 
+					owner = { reset_yuudaichi_affection_level = yes }
+				}
 				default = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist } }
 			}
 		}
@@ -3131,6 +3203,9 @@ country_event = {
 						}
 						wsg_shimakaze_leader = {
 							add_special_scientist_affection_monthly = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+						}
+						yuudaichi_leader = {
+							add_special_scientist_affection_monthly = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
 						}
 						default = {
 							add_scientist_affection_monthly = yes 
@@ -3203,6 +3278,14 @@ country_event = {
 			reset_Sharan_affection_level = yes
 		}
 		if = {
+			limit = { has_country_flag = has_kc_yuudaichi }
+			reset_yuudaichi_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = has_afk_Pellaeon }
+			reset_Pellaeon_affection_level = yes
+		}
+		if = {
 			limit = { OR = {
 				has_country_flag = can_communicate_bubbles
 				has_country_flag = modified_bubbles 
@@ -3246,6 +3329,16 @@ country_event = {
 			limit = { has_country_flag = has_afk_Sharan }
 			set_variable = { which = Sharan_affection value = 0 }
 			set_variable = { which = Sharan_affection_level value = 0 }
+		}
+		if = {
+			limit = { has_country_flag = has_kc_yuudaichi }
+			set_variable = { which = yuudaichi_affection value = 0 }
+			set_variable = { which = yuudaichi_affection_level value = 0 }
+		}
+		if = {
+			limit = { has_country_flag = has_afk_Pellaeon }
+			set_variable = { which = Pellaeon_affection value = 0 }
+			set_variable = { which = Pellaeon_affection_level value = 0 }
 		}
 		if = {
 			limit = { has_country_flag = modified_bubbles }

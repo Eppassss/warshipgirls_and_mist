@@ -31,4 +31,8 @@ spriteTypes = {
 		name = "GFX_spaceport_wsg_bungee_jumping"
 		texturefile = "gfx/interface/icons/modules/spaceport_wsg_bungee_jumping.dds"
 	}
+	spriteType = {
+		name = "GFX_spaceport_module_wg_assembly"
+		texturefile = "gfx/interface/icons/modules/spaceport_wg_assembly.dds"
+	}
 }

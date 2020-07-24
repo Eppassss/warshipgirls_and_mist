@@ -12,6 +12,9 @@ tech_wsg_trading_2_desc:"断椅族的贸易手法令人震惊。再一次，降�
 tech_wsg_trading_branch:"断椅族分布式贸易机构构建"
 tech_wsg_trading_branch_desc:"断椅族依靠雇佣当地雇员并给予其充分信任的方法，在银河中构建了千千万万的贸易分部，创造了很多工作岗位。学习她们的这一经验对我们建立企业分部很有益处。"
 
+tech_wg_spaceport_module_assembly:"恒星基地人口组装模块"
+tech_wg_spaceport_module_assembly_desc:"在有殖民星的星系的恒星基地上安装一个机械工厂，可以加速殖民地人口组装效率。"
+
 mod_trade_routes_produces_mult:"£trade_value£ §Y贸易额§!通过£job_merchant£§Y贸易路线§!转化得来的资源"
 mod_planet_branch_offices_influence_cost_mult:"开设分部的£influence£影响力花费"
 mod_planet_branch_offices_energy_cost_mult:"开设分部的£energy£能量币花费"
@@ -21,6 +24,9 @@ mod_planet_branch_offices_energy_cost_mult:"开设分部的£energy£能量币�
  tech_wg_buff_2:0 "战利品商店派员协议（二期）"
  tech_wg_buff_2_desc:0 "比起深海，舰娘具有更高的亲和力和更强大的商贸天赋，所以我们可以再额外派驻一组人员，再次增加战利品商店的服务能力。"
  wsg_shop_buff_plus:0 "可同时持有的战利品商店增益:§G+1§"
+ 
+ sm_wg_assembly:0 "人口组装模块"
+ sm_wg_assembly_desc:0 "一个用于辅助殖民地机械工厂的设施，可以加速殖民地人口组装效率。"
 
 wg_modifier_storage_habitat:"清空的居住站货舱"
 d_smuggling_bay:"走私码头"

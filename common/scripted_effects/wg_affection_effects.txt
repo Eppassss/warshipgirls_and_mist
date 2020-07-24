@@ -17,12 +17,24 @@
 @gray_affection_to_lv4 = 90
 @gray_affection_to_lv5 = 150
 @gray_affection_reduce = 30
-#涩狐狸
+#涩狐狸#sSWGS#
 @Sharan_affection_to_lv2 = 30
 @Sharan_affection_to_lv3 = 65
 @Sharan_affection_to_lv4 = 110
 @Sharan_affection_to_lv5 = 180
 @Sharan_affection_reduce = 40
+#夕立#sSWGS#
+@yuudaichi_affection_to_lv2 = 25
+@yuudaichi_affection_to_lv3 = 45
+@yuudaichi_affection_to_lv4 = 100
+@yuudaichi_affection_to_lv5 = 150
+@yuudaichi_affection_reduce = 40
+#佩雷恩#sSWGS#
+@Pellaeon_affection_to_lv2 = 25
+@Pellaeon_affection_to_lv3 = 45
+@Pellaeon_affection_to_lv4 = 100
+@Pellaeon_affection_to_lv5 = 150
+@Pellaeon_affection_reduce = 40
 #泡泡
 @bubbles_affection_to_lv2 = 30
 @bubbles_affection_to_lv3 = 65
@@ -55,17 +67,44 @@
 @ruler_affection_to_lv4 = 95
 @ruler_affection_to_lv5 = 130
 
-# 添加自定义特殊好感特质领袖 的注意事项：
+###################################################
+# 添加自定义特殊好感特质领袖的注意事项：
+###################################################
+
 # 1. 需要写好该领袖特殊好感度特质
 # 格式为leader_trait_(领袖类别)_(领袖名)_affection_trait_lv1~5
 # 成品参考岛风和大小姐特质名
+
 # 2. 需要写该领袖升2~5级好感度等级数值的全局变量
 # 格式为@(领袖名)_affection_to_lv2~5
 # 在scripted_variables文件夹里的文件也要写，数值以此文件为准
+
 # 3. 需要写reset_(领袖名)_affection_level 函数
 # 用于重设领袖好感度特质
+
 # 4. 按情况可能要写add_(领袖名)_affection 函数
 # 用于在通用情况增加领袖好感度
+
+# 5. 在wg_affection_event 中增加好感的事件填写自定义领袖增加好感
+# 总督为wg_aft.2；科学家为wg_aft.2,6,7,8,35
+# 提督为wg_aft.10，11；陆军上将为wg_aft.13；通用：wg_aft.12
+# 其他见事件顶部注释
+
+# 6. 条件（scripted_triggers）：
+# is_special_affection_leader
+# is_wg_leader_with_affection_not_full
+
+# 7. 本地化：
+# leader_title_checking_affection_x
+# leader_affection_details_x
+# 注意：上述本地化词条中，x为自定义领袖的编号，不能与现有领袖编号重叠
+# 另外需要编写scripted_loc中引用本地化的触发
+# 请顺便填写英文本地化词条（不会可以留下找东尼姐补充）
+
+#######################################################################
+# 请确保自定义领袖名大小写拼写正确（不建议有大写字母，以免拼写错误）
+# 确认以上事项皆已填写完毕，自定义领袖即可使用
+#######################################################################
 
 # 特殊好感度领袖通用函数：
 
@@ -106,7 +145,7 @@
 # add_affection_only_special_leader
 # scope: country
 # 输入值：LEADER，MARRIED_FLAG；同上
-# 效果：增加特殊领袖一点好感度，不自动改变领袖特质
+# 效果：增加特殊领袖一点好感度，不自动改变领袖特质或检查好感度等级
 # 请配合自定义add_(领袖名)_affection 函数使用
 
 ####################################################
@@ -1355,7 +1394,109 @@ reset_Sharan_affection_level = {
 			}
 		}
 	}
-	reset_special_leader_affection_level = { LEADER = bubbles MARRIED_FLAG = married_bubbles }
+	reset_special_leader_affection_level = { LEADER = Sharan MARRIED_FLAG = married_swgs_Sharan }
+}
+
+#####################################################################
+#  夕立好感度
+#####################################################################
+
+# scope:country
+# 效果：增加夕立一点好感度
+add_yuudaichi_affection = {
+	switch = {
+		trigger = has_country_flag
+		swgs_yuudaichi_governor_active = {
+			add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_swgs_yuudaichi }
+		}
+		swgs_yuudaichi_scientist_active = {
+			add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_swgs_yuudaichi }
+		}
+		swgs_yuudaichi_admiral_active = {
+			add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = admiral MARRIED_FLAG = married_swgs_yuudaichi }
+		}
+		swgs_yuudaichi_general_active = {
+			add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = general MARRIED_FLAG = married_swgs_yuudaichi }
+		}
+		default = {
+			add_affection_only_special_leader = { LEADER = yuudaichi MARRIED_FLAG = married_swgs_yuudaichi }
+		}
+	}
+}
+
+# scope: country
+# 效果：重置夕立好感度等级
+reset_yuudaichi_affection_level = {
+	switch = {
+		trigger = has_country_flag
+		swgs_yuudaichi_governor_active = { 
+			event_target:yuudaichi_governor = {
+				remove_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = governor }
+				add_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_swgs_yuudaichi }
+			}
+		}
+		swgs_yuudaichi_scientist_active = { 
+			event_target:yuudaichi_scientist = {
+				remove_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = scientist }
+				add_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_swgs_yuudaichi }
+			}
+		}
+		swgs_yuudaichi_admiral_active = { 
+			event_target:yuudaichi_admiral = {
+				remove_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = admiral }
+				add_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = admiral MARRIED_FLAG = married_swgs_yuudaichi }
+			}
+		}
+		swgs_yuudaichi_general_active = { 
+			event_target:yuudaichi_general = {
+				remove_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = general }
+				add_special_leader_affection_trait = { LEADER = yuudaichi LEADER_CLASS = general MARRIED_FLAG = married_swgs_yuudaichi }
+			}
+		}
+	}
+	reset_special_leader_affection_level = { LEADER = yuudaichi MARRIED_FLAG = married_swgs_yuudaichi }
+}
+
+#####################################################################
+#  佩雷恩好感度
+#####################################################################
+
+# scope:country
+# 效果：增加佩雷恩一点好感度
+add_Pellaeon_affection = {
+	switch = {
+		trigger = has_country_flag
+		swgs_Pellaeon_admiral_active = {
+			add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = admiral MARRIED_FLAG = married_swgs_Pellaeon }
+		}
+		swgs_Pellaeon_general_active = {
+			add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = general MARRIED_FLAG = married_swgs_Pellaeon }
+		}
+		default = {
+			add_affection_only_special_leader = { LEADER = Pellaeon MARRIED_FLAG = married_swgs_Pellaeon }
+		}
+	}
+}
+
+# scope: country
+# 效果：重置佩雷恩好感度等级
+reset_Pellaeon_affection_level = {
+	switch = {
+		trigger = has_country_flag
+		swgs_Pellaeon_admiral_active = { 
+			event_target:Pellaeon_admiral = {
+				remove_special_leader_affection_trait = { LEADER = Pellaeon LEADER_CLASS = admiral }
+				add_special_leader_affection_trait = { LEADER = Pellaeon LEADER_CLASS = admiral MARRIED_FLAG = married_swgs_Pellaeon }
+			}
+		}
+		swgs_Pellaeon_general_active = { 
+			event_target:Pellaeon_general = {
+				remove_special_leader_affection_trait = { LEADER = Pellaeon LEADER_CLASS = general }
+				add_special_leader_affection_trait = { LEADER = Pellaeon LEADER_CLASS = general MARRIED_FLAG = married_swgs_yPellaeon }
+			}
+		}
+	}
+	reset_special_leader_affection_level = { LEADER = Pellaeon MARRIED_FLAG = married_swgs_Pellaeon }
 }
 
 # scope: country

@@ -130,6 +130,9 @@
  wsgranking.5002.b:"投资10000£energy£（每月获得150£energy£，持续10年）"
  wsgranking.5002.c:"投资25000£energy£（每月获得250£energy£，持续20年）"
  wsgranking.5002.d:"我们不会把珍贵的能量币浪费在这种事情上。"
+ wg_shop_loan_5k:"战利品商店贷款（5年）"
+ wg_shop_loan_10k:"战利品商店贷款（10年）"
+ wg_shop_loan_30k:"战利品商店贷款（20年）"
 
  wsgranking.5003.desc:"[Root.GetName]，这里是战利品商店。我们注意到在您帝国的一颗星球，[pantsu_shop_franchising_planet.GetName]上有许多勤劳工作的[Root.GetSpeciesNamePlural]。让我们开门见山吧：我们想在此处建立一个特许经营分部，保证对当地的经济有益，保证创造大量的就业机会。您只需要给我们一点点政策优待就好了。另外，我们也会提高您的§Y军阶点数§!。"
  wsgranking.5003.a:"我们允许你们在[pantsu_shop_franchising_planet.GetName]上进行经营。"

@@ -273,3 +273,22 @@ tech_wg_buff_2 = {
 		}
 	}
 }
+
+#人口组装模块
+tech_wg_spaceport_module_assembly = {
+	icon = tech_wg_spaceport_module_assembly
+	cost = @tier4cost1
+	area = engineering	
+	tier = 3
+	weight = 0
+	category = { propulsion }
+	prerequisites = { "tech_starbase_2" }
+	is_reverse_engineerable = no
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+		}
+	}	
+}

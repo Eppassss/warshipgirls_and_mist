@@ -1,177 +1,4 @@
 ﻿l_english:
- wg_fe.142.e:0 ""
- wg_fe.143.desc:0 "
- wg_fe.143.a:0 ""
- wg_fe.143.b:0 ""
- wg_fe.143.b.tooltip:0 ""
- wg_fe.1440.name:0 ""
- wg_fe.1440.desc:0 ""
- 
- wg_fe.145.name:0 ""
- wg_fe.145.desc:0 ""
- wg_fe.145.a:0 ""
- wg_fe.146.name:0 ""
- wg_fe.146.desc:0 ""
- wg_fe.147.desc:0 ""
- wg_fe.147.a:0 ""
- wg_fe.147.a.response:0 ""
- wg_fe.147.b:0 ""
- wg_fe.147.b.response:0 ""
- wg_fe.147.c:0 ""
- wg_fe.147.c.response:0 ""
- wg_fe.147.d:0 ""
- wg_fe.148.desc:0 ""
- wg_fe.148.a:0 ""
- wg_fe.149.desc:0 ""
- wg_fe.149.a:0 ""
- wg_fe.150.name:0 ""
- wg_fe.150.desc:0 ""
- wg_fe.150.a:0 ""
- wg_fe.151.desc:0 ""
- wg_fe.151.a:0 ""
- wg_fe.151.b:0 ""
- wg_fe.152.name:0 ""
- wg_fe.152.desc:0 ""
- wg_fe.152.a:0 ""
- wg_fe.152.b:0 ""
- wg_fe.153.name:0 ""
- wg_fe.153.desc:0 ""
- wg_fe.153.a:0 
- wg_fe.154.desc:0 
- wg_fe.154.a:0 
- wg_fe.155.name:0 
- wg_fe.155.desc:0 ""
- wg_fe.155.a:0 
- wg_fe.156.desc:0 
- wg_fe.156.a:0 
- wg_fe.157.name:0 
- wg_fe.157.desc:0 
- wg_fe.157.a:0 
- wg_fe.158.desc:0 
- wg_fe.158.a:0 
- wg_fe.158.b:0 
- wg_fe.158.response:0 
- wg_fe.159.desc:0 
- wg_fe.159.a:0
- wg_fe.159.a.tooltip:0
- wg_fe.180.title:0 "Lady Contingency Upgrade Program"
- wg_fe.180.desc:0 "Through the research on nanotechnology, we can make a further upgrade of Lady Contingency. But still, her structure is a bit complicated to us, so our engineers offer 3 upgrade plans.\n\n§RPlan A:§! Add a §YColossus-class (W-slot) weapon§! on her Warship Form.\n\n§GPlan B:§! Add two §YTitan-class (T-slot) weapons§! on her Warship Form.\n\n§BPlan C:§! Rearrange her weapon system, so that we can arm §Ycustomized weapons§! on her Warship Form. No extra weapon slot.\n\nWhich plan do we choose?\n\n§YNote: §!\n§HLady Contingency will be unavailable during the Upgrade Program!§!"
- wg_fe.180.a:0 "§RPlan A§!"
- wg_fe.180.b:0 "§GPlan B§!"
- wg_fe.180.a.tooltip:0 "You need to pay §Y8 £nanites£ $nanites$ and 40 £alloys£ $alloys$ per month§! until the program finished."
- wg_fe.180.c:0 "§BPlan C§!"
- wg_fe.180.c.tooltip:0 "You need to pay §Y15 £nanites£ $nanites$ per month§! until the program finished.\n§HYou can modify Lady Contingency's ship design after the program finished.§!"
- wg_fe.180.d:0 "We'll talk about it later."
- wg_fe.180.d.tooltip:0 "You can restart this program at any time through §Y'Restart Lady Contingency Upgrade Program'§! Edict."
- wg_fe.180.e:0 "Abandon the program."
- wg_fe.180.e.tooltip:0 "§RLady Contingency Upgrade Program will be canceled completely!§!"
- wg_fe.187.desc:0 "Which weapon set do you want to install into Lady Contingency's Warship Form?\n\n§RPlan A:§! Add a §YColossus-class (W-slot) weapon§! on her Warship Form.\n\n§GPlan B:§! Add two §YTitan-class (T-slot) weapons§! on her Warship Form.\n\n§BPlan C:§! Rearrange her weapon system, so that we can arm §Ycustomized weapons§! on her Warship Form. No extra weapon slot."
- 
- 
- wg_fe.1810.name:0 "Unable to Start Special Project"
- wg_fe.1810.desc:0 "You need to find Lady Contingency in §YContacts§! menu, and transform her into §YWarship Form§! for the special project."
- 
- wg_fe.182.title:0 "Select Colossus-class Weapon"
- wg_fe.182.desc:0 "We are in the final stages of the upgrade program. Now we need to decide which §YColossus-class weapon§! to install on Lady Contingency's Warship Form.\n\n§HYou can only choose one §YW-slot weapon§!, which can not be changed later on!§!"
- wg_fe.182.a:0 "$PLANET_KILLER_CRACKER$"
- wg_fe.182.b:0 "$PLANET_KILLER_SHIELDER$"
- wg_fe.182.c:0 "$PLANET_KILLER_NEUTRON$"
- wg_fe.182.d:0 "$PLANET_KILLER_GODRAY$"
- wg_fe.182.e:0 "$PLANET_KILLER_NANOBOTS$"
- wg_fe.182.f:0 "$PLANET_KILLER_OVO$"
- wg_fe.182.g:0 "$PLANET_KILLER_PSH$"
- wg_fe.182.h:0 "$PLANET_KILLER_SK$"
- wg_fe.183.title:0 "Insufficient Funds"
- wg_fe.183.desc:0 "We do not have enough resources in stock to continue with Lady Contingency Upgrade Program! The whole project has been terminated!"
- wg_fe.184.title:0 "Upgrade Complete"
- wg_fe.184.desc:0 "The Investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency can use §YColossus-class weapons§! in Warship Form!"
- wg_fe.192.desc:0 "The Investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency can use §YTitan-class weapons§! in Warship Form!"
- wg_fe.193.desc:0 "The investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency can use all the weapons we have in Warship Form!\n\n§HNote:§!\nLady Contingency is transformed into Governor Form. Please create a new design for Lady Contingency in §YShip Design§! menu §Rbefore you re-transform her into Warship Form§!. Otherwise, there may be some bugs."
- 
- 
- wg_fe.160.name:0 "Lady Contingency"
- wg_fe.160.desc.a:0 ""
- wg_fe.160.desc.b:0 ""
- wg_fe.160.desc.c:0 ""
- wg_fe.160.desc.d:0 ""
- 
- wg_fe.160.d:0 ""
- wg_fe.160.e:0 ""
- wg_fe.160.f:0 ""
- wg_fe.160.a.response:0 ""
- wg_fe.160.b.response:0 ""
- wg_fe.160.c.response:0 
- wg_fe.160.g.response:0 
- wg_fe.160.d.response:0 
- wg_fe.160.e.response:0 
- wg_fe.160.f.response:0 
- wg_fe.161.desc.a:0 
- wg_fe.161.desc.b:0 
- wg_fe.161.desc.c:0 
- wg_fe.161.desc.d:0 
- wg_fe.161.c:0 
- wg_fe.161.d:0 
- wg_fe.161.e:0 
- wg_fe.161.a.response:0 
- wg_fe.161.b.response:0 
- wg_fe.161.f.response:0 
- wg_fe.161.d.response:0 
- wg_fe.161.e.response:0 
- wg_fe.162.desc.a:0 "Take that, Meeeeeega Proton Lance! ....Whoa! Organic? You...(Blush) Delete that memory! Immediately! Instantly! Right now!"
- wg_fe.162.desc.b:0 
- wg_fe.162.desc.c:0 
- wg_fe.162.desc.d:0 
- wg_fe.162.c:0 
- wg_fe.162.d:0 
- wg_fe.162.e:0 
- wg_fe.162.a.response:0 "Organic is really useless. Just finished the boss here, domestic issues broke out there... F-I-N-E, let your Lady help you a bit."
- wg_fe.162.b.response:0 
- wg_fe.162.f.response:0 
- wg_fe.162.c.response:0 
- wg_fe.162.d.response:0 
- wg_fe.162.e.response:0 
- wg_fe.163.allow.a:0 
- wg_fe.163.allow.b:0 "Lady Contingency must not take any damage!"
- wg_fe.163.desc.a:0 
- wg_fe.163.desc.b:0 
- wg_fe.163.desc.c:0 
- wg_fe.163.desc.d:0 "I'm surrounded? T-There's nothing to be afraid of! L-Lady Contingency never needs Organic's rescue! Kyaaah! Boohoo... You this apathetic Organic..."
- wg_fe.163.c:0 
- wg_fe.163.d:0 
- wg_fe.163.e:0 
- wg_fe.163.b.response:0 
- wg_fe.163.f.response:0 
- wg_fe.163.c.response:0 
- wg_fe.163.d.response:0 
- wg_fe.163.e.response:0 
- wg_fe.178.desc.a:0 
- wg_fe.178.desc.c:0 
- wg_fe.178.desc.d:0 
- wg_fe.178.desc.e:0 
- wg_fe.178.b.response:0 
- wg_fe.178.c.response:0 
- wg_fe.178.d:0 
- wg_fe.178.e:0 
- wg_fe.178.f:0 
- wg_fe.178.d.response:0 
- wg_fe.178.e.response:0 
- wg_fe.178.f.response:0 
- wg_fe.164.desc.a:0 "Stupid Organic! Next time your Lady will not talk to you!"
- wg_fe.164.desc.b:0 
- wg_fe.164.desc.c:0 
- wg_fe.164.a:0 
- wg_fe.164.tooltip:0 
- wg_fe.166.desc:0 
- wg_fe.166.a:0 
- wg_fe.167.desc:0 
- wg_fe.168.desc:0 
- wg_fe.168.a:0 
- wg_fe.169.desc:0 
- wg_fe.169.a:0 
- wg_fe.170.desc.a:0 
- wg_fe.170.desc.b:0 
- wg_fe.170.desc.c:0 
- wg_fe.170.a:0 "Welcome back."
  wg_lady.1.name:0 "Galaxy PVC Figure Exhibition"
  wg_lady.1.desc:0 "[wg_fallen_empire.GetName] is going to host a large-scale exhibition for the whole galaxy, and they invited us to be a special guest."
  wg_lady.1.a:0 "It's an opportunity to see the technology of Fallen Mama."
@@ -186,7 +13,7 @@
  wg_lady.3.a:0 "Okay, thank you very much."
  wg_lady.4.name:0 "Nano Robot Figure"
  wg_lady.4.desc:0 "Some of our observers in the envoy noticed that there were 1/1 robot figures made up with nanomachines in the hall, which can transform the shape of their appearance. They seemed not to be installed with sapient AI programs, so they could only make simple responses."
- wg_lady.4.a:0 "It seems the fallen empire has a deep understanding of nanomachine."
+ wg_lady.4.a:0 "It seems the Fallen Empire has a deep understanding of nanomachine."
  wg_lady.4.b:0 "This trip is as rewarding as we expected."
  wg_lady.5.desc:0 "Are you interested in this robot? You have a good smell!"
  wg_lady.5.a:0 "Anything special with this robot?"
@@ -281,20 +108,19 @@
  wg_lady.52.desc:0 "Which weapon set do you want to install into Lady Contingency's Warship Form?\n\n§RPlan A:§! Add a §YColossus-class (W-slot) weapon§! on her Warship Form.\n\n§GPlan B:§! Transform her Warship Form into a §YJuggernaut-class warship§!.\n\n§BPlan C:§! Rearrange her weapon system, so that we can arm §Ycustomized weapons§! on her Warship Form. No extra weapon slot."
 
  require_finish_colossus_project:0 "§HMust have §Y'Colossus Project'§! §HAscension Perk and complete §YColossus Project§! special project.§!"
- require_titan_tech:0 "§HMust have £engineering£ §Y$tech_titans$§! Technology."
+ require_juggernaut_tech:0 "§HMust have £engineering£ §Y$tech_juggernaut$§! Technology."
  edict_wsg_lady_modification_project:0 "Restart Lady Contingency Upgrade Program"
  edict_wsg_lady_modification_project_desc:0 "Restart Lady Contingency Upgrade Program and choose a weapon set for Lady Contingency's Warship Form."
- require_juggernaut_tech:0 "§HMust have £engineering£ §Y$tech_juggernaut$§! Technology."
- edict_recall_wsg_lady_modification_project:0 "Cancel Lady Contingency Upgrade Program"
- edict_recall_wsg_lady_modification_project_desc:0 "Cancel Lady Contingency Upgrade Program."
+ edict_recall_wsg_lady_modification_project:0 "Halt Lady Contingency Upgrade Program"
+ edict_recall_wsg_lady_modification_project_desc:0 "Halt Lady Contingency Upgrade Program."
  WSG_LADY_MODIFICATION:0 "Lady Contingency Upgrade Program"
- WSG_LADY_MODIFICATION_DESC:0 "§HNote: §!\n\n§GThis is a confirmation of the weapon selection for Lady Contingency. You can select §Y'Halt Lady Contingency Upgrade Program'§! then select §Y'Restart Lady Contingency Upgrade Program'§! in §YEdicts§! menu to change the weapon.\n\nAs soon as this special project finished, Lady Contingency will go to §Yyour homeworld§! for the upgrade. §RPlease transform Lady Contingency into §YWarship Form§! §Rbefore starting this special project§!!"
+ WSG_LADY_MODIFICATION_DESC:0 "§HNote: §!\n\n§GThis is a confirmation of the weapon selection for Lady Contingency. You can select §Y'Halt Lady Contingency Upgrade Program'§! then select §Y'Restart Lady Contingency Upgrade Program'§! in §YEdicts§! menu to change the weapon.\n\nAs soon as this special project finished, Lady Contingency will go to §Yyour homeworld§! for the upgrade. §RPlease transform Lady Contingency into §YWarship Form§! §Rbefore commencing this special project§!!"
  WSG_LADY_MODIFICATION1:0 "Lady Contingency Upgrade Program"
  WSG_LADY_MODIFICATION1_DESC:0 "We will launch a program to install a §YColossus-class weapon§! on Lady Contingency. We need to pay §Y3 £nanites£ $nanites$ and 50 £alloys£ $alloys$ per month.§!\n\n§HNote: §!\n\nOnly Lady Contingency in Warship Form is allowed to start this special project.\n\nLady Contingency will be unavailable during the process of this special project.\n\n§RCanceling this special project will not return spent resources!\n\nIf you have insufficient £nanites£ $nanites$ or £alloys£ $alloys$ during the process of this special project, it will fail and you cannot restart it in the next 15 years!§!"
  WSG_LADY_MODIFICATION2:0 "$WSG_LADY_MODIFICATION$"
- WSG_LADY_MODIFICATION2_DESC:0 "We will launch a program to install two §YTitan-class weapon§! on Lady Contingency. We need to pay §Y2 £nanites£ $nanites$ and 100 £alloys£ $alloys$ per month.§!\n\n§HNote: §!\n\nOnly Lady Contingency in Warship Form is allowed to start this special project.\n\nLady Contingency will be unavailable during the process of this special project.\n\n§RCanceling this special project will not return spent resources!\n\nIf you have insufficient £nanites£ $nanites$ or £alloys£ $alloys$ during the process of this special project, it will fail and you cannot restart it in the next 15 years!§!"
+ WSG_LADY_MODIFICATION2_DESC:0 "We will launch a program to transform Lady Contingency's Warship Form into a §YJuggernaut-class warship§!. We need to pay §Y2 £nanites£ $nanites$, 100 £alloys£ $alloys$ and 100 £minerals£ $minerals$ per month.§!\n\n§HNote: §!\n\nOnly Lady Contingency in Warship Form is allowed to start this special project.\n\nLady Contingency will be unavailable during the process of this special project.\n\n§RCanceling this special project will not return spent resources!\n\nIf you have insufficient £nanites£ $nanites$ or £alloys£ $alloys$ during the process of this special project, it will fail and you cannot restart it in the next 15 years!§!"
  WSG_LADY_MODIFICATION3:0 "$WSG_LADY_MODIFICATION$"
- WSG_LADY_MODIFICATION3_DESC:0 "We will launch a program to rearrange Lady Contingency's weapon system so that we can arm §Ycustomized weapons§! on her Warship Form. We need to pay §Y4 £nanites£ $nanites$ per month.§!\n§HNote: §!\n§HYou can change Lady Contingency's ship design after this special project finished§!\nOnly Lady Contingency in Warship Form is allowed to start this special project.\nLady Contingency will be unavailable during the process of this special project.\n§PCanceling this special project will not return spent resources!\n§RIf you have insufficient £nanites£ $nanites$ or £alloys£ $alloys$ during the process of this special project, it will fail and you cannot restart it in the next 15 years!§!"
+ WSG_LADY_MODIFICATION3_DESC:0 "We will launch a program to rearrange Lady Contingency's weapon system so that we can arm §Ycustomized weapons§! on her Warship Form. We need to pay §Y4 £nanites£ $nanites$ per month.§!\n\n§HNote: §!\n\n§HYou can change Lady Contingency's ship design after this special project finished§!\n\nOnly Lady Contingency in Warship Form is allowed to start this special project.\n\nLady Contingency will be unavailable during the process of this special project.\n\n§PCanceling this special project will not return spent resources!\n\n§RIf you have insufficient £nanites£ $nanites$ or £alloys£ $alloys$ during the process of this special project, it will fail and you cannot restart it in the next 15 years!§!"
 
  wg_lady.46.name:0 "Unable to Start Special Project"
  wg_lady.46.desc:0 "You need to find Lady Contingency in §YContacts§! menu, and transform her into §YWarship Form§! for the special project."
@@ -302,7 +128,7 @@
  wsg_lady_modify_consume2:0 "Lady Contingency Upgrade Program"
  wsg_lady_modify_consume3:0 "Lady Contingency Upgrade Program"
  retry_modify_wsg_lady_cd:0 "Upgrade Program Failed"
- retry_modify_wsg_lady_cd_desc:0 "Our resources couldn't keep up with Lady Contingency Upgrade Program, so it couldn't go on anymore. We must gather enough resources again before we restart our plan."
+ retry_modify_wsg_lady_cd_desc:0 "Our resources couldn't keep up with the Lady Contingency Upgrade Program, so it couldn't go on anymore. We must gather enough resources again before we restart the plan."
  wg_lady.47.title:0 "Select Colossus-class Weapon"
  wg_lady.47.desc:0 "We are in the final stages of the upgrade program. Now we need to decide which §YColossus-class weapon§! to install on Lady Contingency's Warship Form.\n\n§HYou can only choose one §YW-slot weapon§!, which can not be changed later on!§!"
  wg_lady.47.a:0 "$PLANET_KILLER_CRACKER$"
@@ -318,48 +144,48 @@
  wg_lady.48.desc:0 "We do not have enough resources in stock to continue with Lady Contingency Upgrade Program! The whole project has been terminated!"
  wg_lady.49.title:0 "Upgrade Complete"
  wg_lady.49.desc:0 "The Investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency can use §YColossus-class weapons§! in Warship Form!"
- wg_lady.57.desc:0 "After investing a lot of resources and tackling the key problems of national engineering and scientific research personnel, we have successfully transformed Missy’s warship into a §R-dominated§!-class battleship! \n\n§RImportant message: §H cannot move to the previous position after Missy becomes the master! §R and will §H fixed brush on the edge of your home galaxy! §!\NThis is because the stupid donkey sets the ruler as the base of the star. Masters generated with triggers cannot use trigger moves!"
+ wg_lady.57.desc:0 "The Investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency §Ybecomes a Juggernaut§! in Warship Form!\n\n§HNotes:§!\nJuggernaut Lady Contingency will always teleport to your homeworld system when you transform her into Warship Form."
  wg_lady.58.desc:0 "The investment of massive resources and the engineering researchers' effort has paid off, Lady Contingency can use all the weapons we have in Warship Form!\n\n§HNote:§!\nLady Contingency is transformed into Governor Form. Please create a new design for Lady Contingency in §YShip Designer§! menu §Rbefore you re-transform her into Warship Form§!. Otherwise, there may be some bugs."
  wg_lady_affection_up:0 "§YLady Contingency's affection goes up.§!"
  wg_lady_affection_up_less:0 "§YLady Contingency's affection goes up a little.§!"
  wg_lady_affection_up_greatly:0 "§YLady Contingency's affection goes up greatly.§!"
- can_marry_wsg_lady:0 "A上去吧少年！大小姐可能会接受你的求婚了！"
- can_marry_and_affection_up_greatly:0 "§Y大小姐的好感度大幅提升了，而且她很有可能会接受你的求婚！§!"
- wg_lady.101.name:0 "娇羞的大小姐"
- wg_lady.101.desc:0 "大小姐经过[wg_fallen_empire.GetName]的魔改造之后加入我们已经有一段时间了，虽然她依旧努力保持着威严满满，但在一次又一次的接触中，她其实早已放下了最初的架子。我看她的行为......甚至可以说有些可爱？\n大小姐应该察觉到了我的心思，她在刻意的回避我，但是有些笨拙，时常被我发现她的身影，可爱的大小姐并不善于隐藏自己的狐狸尾巴，这让她显得愈发可爱。"
- wg_lady.101.a:0 "§B那去找她聊聊吧（笑）§!"
- wg_lady.101.b:0 "§B让她继续这样吧§!"
- wg_lady.102.desc:0 "§P喂，找本小姐有什么事吗？看你那么着急（嫌弃）！你不是还有其他事吗？§!"
- wg_lady.102.a:0 "§B只是想问问，你在我们这里生活得怎么样？§!"
- wg_lady.102.b:0 "§B你觉得我是个什么样的人啊？§!"
- wg_lady.103.desc:0 "§P嘛，也就那样吧，§!§H[wsg_player_nickname.GetName]§!§P你提供的住宿环境还勉强符合本小姐的胃口。不过也只是刚过及格线而已。§!"
- wg_lady.103.a:0 "§B是这样阿...§!"
- wg_lady.104.desc:0 "§P其实...还是挺满意的，在新的家的感觉...还不赖。§!"
- wg_lady.104.a:0 "§B有什么困难的话就说出来吧，就怕你不说。§!"
- wg_lady.104.a.response:0 "§P是是是…本小姐知道啦。§!"
- wg_lady.104.b:0 "§B嗯…那其他姑娘呢？她们有没有对你说什么？§!"
- wg_lady.106.name:0 "似有若无"
- wg_lady.106.desc:0 "大小姐显然对你的过分关心显得不太在乎，但在离去之际，你恍惚间好像听见大小姐的某些自言自语？"
- wg_lady.106.a:0 "£sr_wg_up£ §B算了算了，还是别逗她了§!"
+ can_marry_wsg_lady:0 "Just do it! Lady Contingency may accept your proposal now!"
+ can_marry_and_affection_up_greatly:0 "§YLady Contingency's affection goes up greatly. And she is stand a good chance to accept your proposal!§!"
+ wg_lady.101.name:0 "Coquettish Lady Contingency"
+ wg_lady.101.desc:0 "It's been a while since Lady Contingency join us after her modification by [wg_fallen_empire.GetName]. Even though in the form of a shipgirl, she still pretends to keep her so-called elegance and charisma, but anyone with a decerning eye can see that she has already become one of us.\n\nRecently, I feel like my Lady has been pulled away from me. Does she have worries hard to tell? To be honest, she is really not good at concealing her feeling, but that's one of the traits making her more lovely."
+ wg_lady.101.a:0 "§B(Go to have a talk with her.)§!"
+ wg_lady.101.b:0 "§B(Let her go.)§!"
+ wg_lady.102.desc:0 "§PHSo, what's the matter? Anything trivial you've got to trouble your Lady?§!"
+ wg_lady.102.a:0 "§BWhat do you think of the life here?§!"
+ wg_lady.102.b:0 "§BWhat do you think of me myself?§!"
+ wg_lady.103.desc:0 "§PWell just so so,§!§H[wsg_player_nickname.GetName]§!§P The accommodation environment you provide is barely in line with my hobby, just barely though.§!"
+ wg_lady.103.a:0 "§BI see...§!"
+ wg_lady.104.desc:0 "§P actually ..I am still satisfied. It feels good to live in the new house. §!"
+ wg_lady.104.a:0 "§BIf you have any difficulty, just say so.§!"
+ wg_lady.104.a.response:0 "§PYeah, yeah. Lady Contingency knows that.§!"
+ wg_lady.104.b:0 "§B So how about the other girls? Did they say anything to you?§!"
+ wg_lady.106.name:0 "If not"
+ wg_lady.106.desc:0 "Our talk ended hastily, and Lady Contingency seemed not to care much about what I've said. However, I felt like she was murmuring something at her leaving."
+ wg_lady.106.a:0 "£sr_wg_up£ §BMaybe I should wait for the next time.§!"
  wg_lady.107.desc:0 "§P你说其他[ROOT.GetSpeciesName]吗？没有阿？话说，§!§H[wsg_player_nickname.GetName]§!§P你从刚才开始就一直在唠叨这唠叨那的？是不是发生什么了阿？§!"
- wg_lady.107.a:0 "§B没有阿…只是担心你而已。§!"
- wg_lady.107.b:0 "§B因为大小姐你最近都在躲着我。§!"
- wg_lady.108.desc.a:0 "§P啊..嗯嗯..这..这样阿？§!\n大小姐的脸刷的一下就红了起来。"
- wg_lady.108.desc.b:0 "§P诶..诶诶？啊？才，才没有？§!\n大小姐的脸刷的一下就红了起来。"
- wg_lady.108.a:0 "（把脸凑过去看看）§B是不是不舒服了？脸有点红哦？§!"
- wg_lady.108.b:0 "§B嗯…有什么困难的话就说出来吧。§!"
- wg_lady.109.desc:0 "§P嘿咦？？？§!\n大小姐在察觉到你靠近的时候突然发出惊慌失措的声音\n§P什什什什什什怎怎怎？？？有有有机体你你你...§!"
- wg_lady.109.a:0 "§B我…怎么了吗？§!"
+ wg_lady.107.a:0 "§BNo, I'm just... a little worried about you.§!"
+ wg_lady.107.b:0 "§BBecause I notice you are hiding from me recently.§!"
+ wg_lady.108.desc.a:0 "§PEh...? Oh, t-thank you...§!\n\nA blush quickly mounts on my Lady's face."
+ wg_lady.108.desc.b:0 "§PEh...? T-that's not! It's not like I'm...§!\n\nA blush quickly mounts on my Lady's face."
+ wg_lady.108.a:0 "§BAre you alright? Your face is going red.§!"
+ wg_lady.108.b:0 "§BIf you have any difficulty, just say so.§!"
+ wg_lady.109.desc:0 "I put my forehead close to hers, checking if she had a temperature. But my Lady suddenly bursts into cries.\n\n§PW-w-w-w-what are you doing??? You, you, you this...§!"
+ wg_lady.109.a:0 "§BEh? What's wrong...§!"
  wg_lady.110.name:0 "踩到猫尾巴了"
- wg_lady.110.desc:0 "§P八嘎hentai无路赛！§!"
- wg_lady.110.a:0 "£sr_wg_up£ ？？？"
- wg_lady.111.desc:0 "§P我..本小姐知..道了。§!\n虽然大小姐回答了你，但她依然畏畏缩缩地不敢与你对视"
- wg_lady.111.a:0 "§B嗯？怎么了吗？我的脸上有蟑螂吗？§!"
- wg_lady.112.desc:0 "§P噗嗤...§!（偷笑）§P没有啦。真是的，本小姐又不怕蟑螂。§!"
- wg_lady.112.a:0 "§B嗯，看来是没事了。去喝一杯§!（咖啡）§B吗？§!"
- wg_lady.112.a.response:0 "§P嗯。§!"
+ wg_lady.110.desc:0 "§PIdiot! Pervert! Shut up!§!"
+ wg_lady.110.a:0 "£sr_wg_up£???"
+ wg_lady.111.desc:0 "§PI... I knew that...§!\n\nLady Contingency mumbles, but she is still not willing to look straight into my eyes."
+ wg_lady.111.a:0 "§BIs my face so horrifying that you are afraid to see?§!"
+ wg_lady.112.desc:0 "§POh so you really think of that?§!\n\nLady Contingency utters a snorting laugh, and then stares me with a teasing smile.\n\n§PI will be pleased if you rein your lustful eyes in a little.§!"
+ wg_lady.112.a:0 "§BI'll keep it in mind, my Lady. Wanna have coffee with me?§!"
+ wg_lady.112.a.response:0 "§PSure, but it's on you.§!"
  wg_lady.114.name:0 "计划通？"
- wg_lady.114.desc:0 "之后，你跟大小姐在去咖啡馆的一路上有说有笑，原先尴尬的气氛也随之烟消云散了"
+ wg_lady.114.desc:0 "We have a good time in the cafeteria. It seems that Lady Contingency still doesn't want to tell me what she worries about. But at least I may make her feel better. We still have a long time to settle down the problem, step by step."
  wg_lady.114.a:0 "£sr_wg_up£（事情都在向着好的方向前进呢）"
  wg_lady.115.desc:0 "（警觉）§P你问这个干什么？§!"
  wg_lady.115.a:0 "§B只是问一下，我怕我无法给你最好的环境。§!"
