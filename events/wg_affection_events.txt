@@ -130,7 +130,7 @@ country_event = {
 										yuudaichi_leader = { add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_yuudaichi }}
 										bubbles_leader = { 
 											if = {
-												limit = { NOT = { has_country_flag = bubbles_depressed }}
+												limit = { owner = { NOT = { has_country_flag = bubbles_depressed }}}
 												add_special_leader_affection = { LEADER = bubbles LEADER_CLASS = governor MARRIED_FLAG = married_bubbles }
 											}
 										}
