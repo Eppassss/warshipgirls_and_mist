@@ -123,8 +123,8 @@ country_event = {
 									set_variable = { which = "months_no_affection" value = 0 }
 									switch = {
 										trigger = has_leader_flag
-										wsg_shimakaze_leader = { add_special_leader_affection = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }}
-										wsg_lady_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
+										wsg_shimakaze_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }}
+										wsg_lady_leader = { add_special_leader_affection = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
 										灰风领袖 = { add_special_leader_affection = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }}
 										Sharan_leader = { add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = governor MARRIED_FLAG = married_Sharan }}
 										yuudaichi_leader = { add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_yuudaichi }}
