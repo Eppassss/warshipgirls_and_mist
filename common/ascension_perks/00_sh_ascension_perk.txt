@@ -140,7 +140,9 @@ ap_shenhai_silent = {
 		hidden_effect = {
 			country_event = { id = sh.2000 }
 			country_event = { id = sh.3039 }
+			country_event = { id = sh_fe.17 days = 10 }
 			set_country_flag = sh_shenhai_flag_silent
+			set_global_flag = exists_sh_slient_country
 		}
 		add_research_option = tech_sh_genetic_resequencing	
 	}

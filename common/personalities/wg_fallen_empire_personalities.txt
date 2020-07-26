@@ -90,3 +90,39 @@ awakened_wg_fallen_empire = {
 		weight = 999999
 	}
 }
+
+sh_fallen_empire = {
+	aggressiveness = 0.1
+	trade_willingness = 0.00
+	bravery = 0.1
+	combat_bravery = 0.25
+
+	threat_modifier = 0.0
+	threat_others_modifier = 0.25
+	friction_modifier = 0.0
+
+	behaviour = {
+		conqueror = no
+		subjugator = no
+		liberator = yes
+		opportunist = no
+		slaver = no
+		uplifter = no
+		purger = no
+		dominator = no
+		infiltrator = no
+		robot_exploiter = no
+		robot_liberator = no
+		propagator = no
+		multispecies = yes
+	}
+
+	allow = {
+		is_country_type = fallen_empire
+		has_authority = "auth_sh_fe"
+	}
+
+	weight_modifier = {
+		weight = 999999
+	}
+}

@@ -144,6 +144,7 @@ fleet_event = {
 						OR = {
 							is_country_type = fallen_empire
 							is_country_type = awakened_fallen_empire
+							is_sh_fallen_empire = yes
 						}
 						NOT = { has_communications = root.owner }
 					}
@@ -154,6 +155,7 @@ fleet_event = {
 						OR = {
 							is_country_type = fallen_empire
 							is_country_type = awakened_fallen_empire
+							is_sh_fallen_empire = yes
 						}
 						NOT = { has_communications = root.owner }
 					}
@@ -171,6 +173,7 @@ fleet_event = {
 						OR = {
 							is_country_type = fallen_empire
 							is_country_type = awakened_fallen_empire
+							is_sh_fallen_empire = yes
 						}
 						NOT = { has_communications = root.owner }
 					}
@@ -187,6 +190,7 @@ fleet_event = {
 							OR = {
 								is_country_type = fallen_empire
 								is_country_type = awakened_fallen_empire
+								is_sh_fallen_empire = yes
 							}
 							NOT = { has_communications = root.owner }
 						}
@@ -213,8 +217,18 @@ fleet_event = {
 					event_target:contact_empire = { is_wg_fallen_empire = yes }
 				}
 				country_event = { id = wg_fe.2 }
-			}
-			else = {
+			} 
+			else_if = {
+				limit = {
+					OR = {
+						has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+					}
+					is_ai = no
+					event_target:contact_empire = { is_sh_fallen_empire = yes }
+				}
+				country_event = { id = sh_fe.2 }
+			} else = {
 				country_event = { id = action.1 }
 			}
 		}

@@ -59,8 +59,20 @@ district_rw_sh_city = {
 		potential = {
 			exists = owner
 			owner = { 
+				is_sh_fallen_empire = yes
+			}
+		}
+		modifier = {
+			job_sh_clerk_add = -20
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
 				is_regular_empire = yes
 				is_fallen_empire = no
+				is_sh_fallen_empire = no
 			}
 		}
 		modifier = {

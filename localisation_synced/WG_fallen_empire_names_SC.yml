@@ -6,6 +6,7 @@
  NAME_wg_fallen_empire_gift:"充话费送的舰队"
  NAME_wg_fallen_empire_gift2:"危险的学生作业"
  NAME_wg_fe_gift_system:"血之华"
+ NAME_wg_fe_gift_systema:"月"
 
  NAME_wg_fallen_empire_capital:"奥德赛"
  NAME_wg_fe_star:"奥德赛"
@@ -42,3 +43,41 @@
  NAME_WG_FE_ARK:"火种" 
  NAME_WG_FE_ARK_FLEET:"方舟飞船" 
  NAME_WG_FE_COLOSSUS:"美梦" 
+ 
+ 
+ ##深海妈
+ #这些名字都是我拍脑袋想出来的，别猜含义了
+ NAME_SH_FE_species_SH:"深海沉默者"
+ NAME_SH_FE_species_WSG:"舰娘无念者" 
+ NAME_SH_fallen_empire:"沉默舰队"
+ NAME_awakened_wg_fallen_empire:"缄默舰队"
+ 
+ NAME_sh_fallen_empire_capital:"奇点"
+ NAME_sh_fe_star:"奇点星"
+ NAME_sh_fe_ring1:"母世界"
+ NAME_sh_fe_ring4:"子世界A"
+ NAME_sh_fe_ring7:"子世界B"
+ NAME_sh_fe_ring10:"子世界Г"
+
+ NAME_sh_fallen_empire_colony_1:"双子"
+ NAME_sh_fallen_empire_star_A:"双子A"
+ NAME_sh_fallen_empire_star_B:"双子B"
+ NAME_sh_fe_colony1:"子世界Δ"
+ NAME_sh_fallen_empire_colony_2:"摇篮"
+ NAME_sh_fe_colony2:"子世界Ε"
+ NAME_sh_fe_colony3:"子世界Ζ"
+ NAME_sh_fallen_empire_colony_3:"闭目"
+ NAME_sh_fallen_empire_colony_4:"宝藏"
+ PRESCRIPTED_ruler_title_sh_fe:"沉默者"
+ PRESCRIPTED_ruler_name_sh_fe:"轻巡M"
+ NAME_SH_FE_LARGE_PLATFORM:"堡垒B"
+ 
+ NAME_SH_FE_ESCORTE:"护航Z"
+ NAME_SH_FE_BATTLE_CRUISE:"战巡Δ"
+ NAME_SH_FE_TITAN:"泰坦M"
+ NAME_SH_FE_CONSTRUCTION:"工程O"
+ NAME_SH_FE_PLATFORM:"要塞Ξ"
+ NAME_SH_FE_COLOSSUS:"巨像Φ"
+ 
+ NAME_SH_FE_CAPITAL_FLEET:"沉默者舰队"
+ NAME_SH_FE_COLONY_FLEET:"寡言者舰队"

@@ -25,6 +25,7 @@ civic_yaosai={
 			OR = {
 				value = auth_shenhai
 				value = auth_wg_fe
+				value = auth_sh_fe
 			}
 		}		
 	}
@@ -166,5 +167,29 @@ civic_fanatic_purifiers = {
 		army_damage_mult = 0.33
 		starbase_shipyard_build_cost_mult = -0.15
 		country_naval_cap_mult = 0.33
+	}
+}
+
+###################
+#fallen empire
+
+civic_sh_fe={
+	icon="gfx/interface/icons/governments/civics/sh_fe.dds"
+	potential={
+		country_type = { value = fallen_empire }
+		authority = { value = auth_sh_fe}
+	}
+	possible={}
+	
+	modifier={
+		ship_weapon_range_mult = 0.10
+		ship_weapon_damage = 0.2
+		ships_upkeep_mult = -0.20
+		armies_upkeep_mult= -0.50
+		country_war_exhaustion_mult = 0.5
+		pop_growth_speed_reduction = 1.0
+	}
+	random_weight = {
+		base = 999999
 	}
 }

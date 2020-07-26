@@ -80,7 +80,7 @@ wg_Da_Khan_system = {
 						limit = { years_passed >= 150 }
 						add_modifier = { modifier = khan_buff_after_150_years }
 					}
-					country_event = { id = wg_khan.321 }
+					country_event = { id = wg_khan.321 days = 10800 }
 				}				
 			}
 			last_created_country = {

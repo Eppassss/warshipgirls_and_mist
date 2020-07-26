@@ -444,9 +444,12 @@ country_event = {
 			NOT = { has_leader_flag = can_revive }
 			is_special_affection_leader = no
 		} 
+		NOT = { has_country_flag = lost_bubbles_scientist_event_triggered }
+		has_country_flag = modified_bubbles
 	}	
 
 	immediate = {
+		set_country_flag = lost_bubbles_scientist_event_triggered
 		FROM = { save_event_target_as = save_bubbles_scientist }
 		country_event = { id = wg_bubbles.9 days = 7 }
 	}
@@ -746,6 +749,7 @@ country_event = {
 			has_country_flag = triggered_bubbles_mourning_event 
 			has_country_flag = give_up_tracking_bubbles
 			has_country_flag = bubbles_become_enemy
+			has_point_of_interest = { poi = find_bubbles_poi.1 }
 		}
 	}
 
@@ -772,7 +776,13 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { has_star_flag = bubbles_mourning_system@ROOT.owner }
+		FROM = { 
+			has_star_flag = bubbles_mourning_system@ROOT.owner 
+			any_fleet_in_system = {
+				has_fleet_flag = bubbles_escape_fleet
+			}
+		}
+		owner = { has_point_of_interest = { poi = find_bubbles_poi.1 }}
 	}
 	immediate = {
 		FROM = {
@@ -865,6 +875,7 @@ country_event = {
 		event_target:bubbles_fleet = {
 			set_owner = ROOT
 			hidden_effect = { check_bubbles_planet_modifiers = yes }
+			remove_fleet_flag = bubbles_escape_fleet
 		}
 	}
 

@@ -485,7 +485,7 @@ country_event = {
 		default_hide_option = yes
 	}
 	option = {
-        # 深海
+        # 投降
         name = wg_khan.6.m
         trigger = {
 			OR = {
@@ -501,7 +501,7 @@ country_event = {
 	}
 	
 	option = {
-        # 舰娘
+        # 舰娘（投降后）
 		name = wg_khan.6.s.a
 		trigger = {
 			has_authority = auth_warshipgirls
@@ -511,7 +511,7 @@ country_event = {
 		is_dialog_only = yes
 	}
 	option = {
-        # 深海
+        # 深海（投降后）
         name = wg_khan.6.s.b
 		response_text = wg_khan.6.s.b.response
 		trigger = {
@@ -530,7 +530,7 @@ country_event = {
 		is_dialog_only = yes
 	}
 	option = {
-        # 舰娘
+        # 舰娘（投降后）
 		name = wg_khan.6.s.d
 		trigger = {
 			any_owned_leader = {
@@ -551,7 +551,7 @@ country_event = {
 		response_text = wg_khan.6.s.d.response
 	}
 	option = {
-        # 舰娘
+        # 舰娘（造反）
 		name = wg_khan.6.s.e
 		trigger = {
 			has_authority = auth_warshipgirls
@@ -576,7 +576,7 @@ country_event = {
 		}
 	}
 	option = {
-        # 深海
+        # 深海（造反）
         name = wg_khan.6.s.f
 		response_text = wg_khan.6.s.f.response
 		trigger = {
@@ -1241,14 +1241,14 @@ country_event = {
 		custom_tooltip = wg_khan.28.a.tooltip
 		response_text = wg_khan.28.a.response
 		allow = {
-			resource_stockpile_compare = { resource = energy value >= 3000 }
-			resource_stockpile_compare = { resource = consumer_goods value >= 2000 }
-			resource_stockpile_compare = { resource = food value >= 4000 }
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+			resource_stockpile_compare = { resource = consumer_goods value >= 1350 }
+			resource_stockpile_compare = { resource = food value >= 2750 }
 		}
 		add_resource = {
-			energy = -3000
-			consumer_goods = -2000
-			food = -4000
+			energy = -2000
+			consumer_goods = -1350
+			food = -2750
 		}
 		hidden_effect = {
 			set_country_flag = subject_to_Khan
@@ -1293,12 +1293,7 @@ country_event = {
 
 	immediate = {
 		change_variable = { which = years_be_khan_subject value = 1 }
-		get_digits = { ARRAY = YEARS TARGET = years_be_khan_subject }
-	}
-
-	after = {
-		hidden_effect = { remove_khan_variables = yes }
-		remove_array_variables = { ARRAY = YEARS }
+		get_digits = { ARRAY = YEARS VARIABLE = years_be_khan_subject }
 	}
 
 	picture_event_data = {
@@ -1315,15 +1310,16 @@ country_event = {
 		name = wg_khan.29.a
 		response_text = wg_khan.29.a.response
 		allow = {
-			NOT = { get_reqired_khan_tribute = { RESOURCE = energy BASE = 3000 SQE_COF = 0.8 MINUS_COF = 0.75 }}
-			NOT = { get_reqired_khan_tribute = { RESOURCE = food BASE = 4000 SQE_COF = 0.8 MINUS_COF = 0.75 }}
-			NOT = { get_reqired_khan_tribute = { RESOURCE = consumer_goods BASE = 2000 SQE_COF = 0.9 MINUS_COF = 0.8 }}
+			NOT = { get_reqired_khan_tribute = { RESOURCE = energy BASE = 2000 SQE_COF = 0.8 MINUS_COF = 0.75 }}
+			NOT = { get_reqired_khan_tribute = { RESOURCE = food BASE = 2750 SQE_COF = 0.8 MINUS_COF = 0.75 }}
+			NOT = { get_reqired_khan_tribute = { RESOURCE = consumer_goods BASE = 1350 SQE_COF = 0.9 MINUS_COF = 0.8 }}
 		}
-		set_khan_tribute = { RESOURCE = energy BASE = 3000 SQE_COF = 0.8 MINUS_COF = 0.75 }
-		set_khan_tribute = { RESOURCE = food BASE = 4000 SQE_COF = 0.8 MINUS_COF = 0.75 }
-		set_khan_tribute = { RESOURCE = consumer_goods BASE = 2000 SQE_COF = 0.9 MINUS_COF = 0.8 }
+		set_khan_tribute = { RESOURCE = energy BASE = 2000 SQE_COF = 0.8 MINUS_COF = 0.75 }
+		set_khan_tribute = { RESOURCE = food BASE = 2750 SQE_COF = 0.8 MINUS_COF = 0.75 }
+		set_khan_tribute = { RESOURCE = consumer_goods BASE = 1350 SQE_COF = 0.9 MINUS_COF = 0.8 }
 		hidden_effect = {
 			country_event = { id = wg_khan.29 days = 360 }
+			country_event = { id = wg_khan.30 days = 1 }
 		}
 	}
 
@@ -1348,7 +1344,16 @@ country_event = {
 		}
 		default_hide_option = yes
 	}
+}
 
+country_event = {
+	id = wg_khan.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		remove_khan_variables = yes
+	}
 }
 ###############################
 # 舰队行为
@@ -3784,7 +3789,7 @@ country_event = {
 }
 
 ship_event = {
-	id = wg_khan.321
+	id = wg_khan.322
 	title = "wg_khan.321.name"
 	desc = "wg_khan.321.desc"
 	picture = GFX_evt_star_yellow

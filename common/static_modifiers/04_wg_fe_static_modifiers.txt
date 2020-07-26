@@ -58,7 +58,23 @@ wg_fe_cheat = {
 	ship_shield_regen_add_perc = 1
 	ship_armor_regen_add_perc = 1		
 }
-
+sh_fe_cheat = {
+	ship_hull_mult = 0.25
+	ship_armor_mult = 0.25
+	ship_shield_mult = 0.25
+	ship_weapon_damage = 0.25
+	ship_fire_rate_mult = 0.25
+	ship_weapon_range_mult = 0.25
+	ship_evasion_mult = 0.20
+	ship_speed_mult = 0.25
+	ships_upkeep_mult = -0.50
+	shipclass_starbase_damage_mult = 2.50
+	shipclass_military_station_damage_mult = 3.00
+	ship_hull_regen_add_perc = 1.5
+	ship_shield_regen_add_perc = 1.5
+	ship_armor_regen_add_perc = 1.5
+	shipclass_starbase_hull_mult = 10.0
+}
 half_life_3 = {
 	country_influence_produces_mult = 0.1
 	pop_amenities_usage_mult = -0.2
@@ -96,4 +112,8 @@ VV_buff_fe = {
 gifted_fleet_early_debuff = {
 	ship_weapon_damage = -0.5
 	ship_fire_rate_mult = -0.5
+}
+
+sh_modifier_fe_research = {
+	all_technology_research_speed = 0.2
 }

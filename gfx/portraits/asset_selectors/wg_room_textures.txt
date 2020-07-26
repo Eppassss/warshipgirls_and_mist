@@ -77,7 +77,8 @@ room_selector = {
 		"personality_fallen_empire_yellow_room" = { exists = owner owner = { OR = { has_ai_personality = fallen_empire_xenophile has_ai_personality = awakened_fallen_empire_xenophile has_ai_personality = awakened_fallen_empire_xenophile_crisis_fighter has_ai_personality = awakened_fallen_empire_xenophile_normal } } }
 		"personality_fallen_empire_white_room" = { exists = owner owner = { OR = { has_ai_personality = teif_fallen_empire_authoritarian has_ai_personality = awakened_teif_fallen_empire_authoritarian has_ai_personality = awakened_teif_fallen_empire_authoritarian_crisis_fighter has_ai_personality = awakened_teif_fallen_empire_authoritarian_normal } } }
 		"personality_fallen_empire_teal_room" = { NOT = { has_global_flag = stability_MOD_installed } exists = owner owner = { OR = { has_ai_personality = fallen_empire_spiritualist has_ai_personality = awakened_fallen_empire_spiritualist } } }
-		"personality_fallen_empire_wg_room" = { exists = owner owner = { OR = { has_ai_personality = wg_fallen_empire has_ai_personality = awakened_wg_fallen_empire } } }		
+		"personality_fallen_empire_wg_room" = { exists = owner owner = { OR = { has_ai_personality = wg_fallen_empire has_ai_personality = awakened_wg_fallen_empire } } }	
+		"personality_fallen_empire_sh_room" = { exists = owner owner = { OR = { has_ai_personality = sh_fallen_empire has_ai_personality = awakened_sh_fallen_empire } } }	
 		"str_dragon_room"							= { exists = owner owner = { is_nirvana_empire_dragon = yes } }
 		"str_council_room"							= { exists = owner owner = { is_nirvana_empire_council = yes } }
 		"personality_dragon_room"	= { exists = owner owner = { has_ai_personality = nirvana_fallen_empire_dragon_personality } }	

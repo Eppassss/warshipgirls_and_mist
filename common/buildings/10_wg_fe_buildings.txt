@@ -7,7 +7,12 @@ building_wg_fe_ancient_palace = {
 	
 	potential = {
 		exists = owner
-		owner = { is_fallen_empire = yes }
+		owner = { 
+			OR = {
+				is_fallen_empire = yes
+				is_sh_fallen_empire = yes
+			}	
+		}
 	}	
 	planet_modifier = {
 		planet_jobs_produces_mult = 0.10
@@ -23,7 +28,17 @@ building_wg_fe_ancient_palace = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_fallen_empire_spiritualist = no }
+			owner = { is_sh_fallen_empire = yes }
+		}
+		modifier = {
+			job_sh_fe_leader_add = 5
+			job_sh_fe_factorer_add = 30
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_sh_fallen_empire = no }
 		}
 		modifier = {
 			job_fe_overseer_add = 5
@@ -91,6 +106,7 @@ building_wg_memory_data_base = {
 	can_build = no
 	can_demolish = yes
 	icon = building_wg_memory_data_base
+	add_to_first_building_slot = yes
 	
 	potential = {
 		owner = { is_wg_fallen_empire = yes }
@@ -165,7 +181,12 @@ building_wg_fe_senergy = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_fallen_empire = yes }
+			owner = { 
+				OR = {
+					is_fallen_empire = yes
+					is_sh_fallen_empire = yes
+				}	
+			}
 		}
 	}
 
@@ -189,13 +210,24 @@ building_wg_fe_energy = {
 	icon = building_wg_fe_energy
 	
 	potential = {
-		owner = { is_wg_fallen_empire = yes }
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
+		custom_tooltip = {
 			exists = owner
-			owner = { is_fallen_empire = yes }
+			OR = {
+				owner = { is_fallen_empire = yes }
+				owner = {
+					check_variable = { which = building_wg_fe_energy_count value >= 1 }
+				}
+			}
+		}
+	}
+	on_queued = {
+		owner = {
+			subtract_variable = { which = building_wg_fe_energy_count value = 1 }
+		}
+	}
+	on_unqueued = {
+		owner = {
+			change_variable = { which = building_wg_fe_energy_count value = 1 }
 		}
 	}
 
@@ -243,7 +275,7 @@ building_wg_fe_food = {
 building_wg_fe_stronghold = {
 	can_build = no
 	icon = building_sh_fortress
-	
+	planetary_ftl_inhibitor = yes
 	potential = {
 		exists = owner
 		owner = { is_fallen_empire = yes }
@@ -252,19 +284,31 @@ building_wg_fe_stronghold = {
 		potential = {
 			exists = owner
 			owner = { 
-				is_fallen_empire = no				
+				OR = {
+					is_fallen_empire = no
+				}	
 			}					
 		}
 		modifier = {
 			job_soldier_add = 25
 		}
-	}	
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_sh_fallen_empire = yes	
+			}					
+		}
+		modifier = {
+			job_soldier_add = 25
+		}
+	}
 	convert_to = {
 		building_wg_fe_stronghold
 	}
 	
 	planet_modifier = {
-		job_fe_protector_add = 20
 		army_damage_mult = 0.25
 		planet_orbital_bombardment_damage = -0.3
 	}
@@ -273,6 +317,29 @@ building_wg_fe_stronghold = {
 		upkeep = {
 			energy = 15
 			sr_se = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_fallen_empire = yes
+				is_sh_fallen_empire = no
+			}
+		}
+		modifier = {
+			job_fe_protector_add = 20
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_sh_fallen_empire = yes
+			}
+		}
+		modifier = {
+			job_sh_fe_protector_add = 10
 		}
 	}
 }
@@ -287,6 +354,7 @@ building_wg_fe_dimensional_fabricator = {
 			exists = owner
 			OR = {
 				owner = { is_fallen_empire = yes }
+				owner = { is_sh_fallen_empire = yes }
 			}
 			fail_text = "ancrel.10004.failtext"
 		}
@@ -309,7 +377,10 @@ building_wg_fe_dimensional_fabricator = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { is_fallen_empire = yes }
+				OR = {
+					owner = { is_fallen_empire = yes }
+					owner = { is_sh_fallen_empire = yes }
+				}
 			}
 			sr_dark_matter = 3
 			sr_living_metal = 3

@@ -8,3 +8,14 @@ gov_wg_fe = {
 		base = 9999
 	}
 }
+
+gov_sh_fe = {
+	ruler_title = PRESCRIPTED_ruler_title_wg_sh
+	ruler_title_female = PRESCRIPTED_ruler_title_wg_sh
+	possible = {
+		has_authority = auth_sh_fe
+	}
+	weight = {
+		base = 9999
+	}
+}

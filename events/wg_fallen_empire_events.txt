@@ -118,7 +118,10 @@ country_event = {
 				has_authority = auth_warshipgirls
 				has_authority = auth_shenhai
 			}
-			is_ai = no
+			OR = {
+				is_ai = no
+				has_origin = origin_wg_fe_child
+			}
 		}
 		any_country = {
 			NOT = { has_country_flag = wg_fallen_empire }
@@ -269,13 +272,7 @@ country_event = {
 			else = {
 				country_event = { id = wg_fe.15 }
 			}
-			if = {
-				limit = { years_passed >= 25 } # 旧存档适配，已经过了25年
-				country_event = { id = wg_fe.1 days = 10 random = 10 }
-			}
-			else = {
-				country_event = { id = wg_fe.1 days = 7200 random = 3600 } # for test, should be 7200 days + 3600 random
-			}
+			country_event = { id = wg_fe.1 days = 7200 random = 3600 } # for test, should be 7200 days + 3600 random
 		}
 		
 	}
@@ -886,6 +883,8 @@ country_event = {
 		NOR = { 
 			has_technology = tech_dark_matter_power_core
 			has_country_flag = given_dark_matter_tech
+			has_civic = civic_CM
+			has_ascension_perk = ap_shenhai_silent
 		}
 		is_ai = no
 	}
@@ -986,27 +985,6 @@ country_event = {
 		}
 		add_resource = {
 			sr_dark_matter = 1000
-		}
-	}
-	option = {
-		trigger = {
-			has_authority = auth_shenhai
-			OR = { 
-				has_civic = civic_CM
-				has_ascension_perk = ap_shenhai_silent
-			}
-		}
-		name = wg_fe.20.d
-		response_text = wg_fe.20.d.response
-		hidden_effect = {
-			add_research_option = tech_dark_matter_power_core
-			add_tech_progress = {
-				tech = tech_dark_matter_power_core
-				progress = 0.2
-			}
-			add_resource = {
-				sr_dark_matter = 500
-			}
 		}
 	}
 	option = {

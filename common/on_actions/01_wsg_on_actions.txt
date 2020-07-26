@@ -24,6 +24,7 @@ on_game_start_country = {
 		sh.3038
 		wsg.3111
 		wg_origin.3
+		sh_fe.4
 	}
 }
 

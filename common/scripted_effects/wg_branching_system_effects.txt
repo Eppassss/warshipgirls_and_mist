@@ -11,7 +11,7 @@ save_system = {
 		log = "error, invaild ID"
 		break = yes # prevent strange variable input
 	} else = {
-		get_digits = { ARRAY = SYSTEM_ID TARGET = $ID$ }
+		get_digits = { ARRAY = SYSTEM_ID VARIABLE = $ID$ }
 		if = {
 			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 1 }}
 			save_system_set_digit_2 = { INDEX = 1 }
@@ -50,7 +50,7 @@ load_system = {
 		log = "error, invaild ID"
 		break = yes # prevent strange variable input
 	} else = {
-		get_digits = { ARRAY = SYSTEM_ID TARGET = $ID$ }
+		get_digits = { ARRAY = SYSTEM_ID VARIBALE = $ID$ }
 		if = {
 			limit = { check_variable = { which = SYSTEM_ID_DIGIT_1 value = 1 }}
 			load_system_set_digit_2 = { RETURN = $RETURN$ INDEX = 1 }

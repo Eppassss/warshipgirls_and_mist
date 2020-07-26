@@ -721,6 +721,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = wg_crisis.7 days = 30 }
 			country_event = { id = wg_fe.139 days = 30 }#堕落妈出击舰队成立
+			country_event = { id = sh_fe.22 days = 60 }#深海妈出击舰队成立
 		}
 	}
 }
