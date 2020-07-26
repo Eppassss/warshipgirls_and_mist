@@ -529,6 +529,7 @@ country_event = {
 		}
 		hidden_effect = {
 			owner = {
+				set_country_flag = get_astesia
 				country_event = { id = wg_boss.12 days = 1800 random = 1800 }
 			}			
 			if = {
