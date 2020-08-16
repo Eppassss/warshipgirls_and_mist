@@ -449,12 +449,11 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 		stack_info = {
-			id = UF_AURA_1
-			priority = 200
+			id = aura_ag_weapon_hull_damage_debuff
+			priority = 110
 		}
 		modifier = {
-			ship_shield_penetration_mult = -0.45
-			ship_armor_penetration_mult = -0.45
+			ship_hull_damage_mult = -0.10
 			ship_weapon_damage = -0.05
 			ship_fire_rate_mult = -0.05
 		}

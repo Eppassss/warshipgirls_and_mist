@@ -44,4 +44,3 @@ get_capital_system = {
 		}}
 	}
 }
-

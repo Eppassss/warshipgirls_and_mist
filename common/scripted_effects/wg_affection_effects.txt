@@ -626,7 +626,7 @@ add_lady_affection = {
 			} else = {
 				random_owned_leader = {
 					limit = { has_leader_flag = wsg_lady_admiral }
-					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_lady }
+					add_special_leader_affection = { LEADER = lady LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_lady }
 				}
 			}
 		}
@@ -637,12 +637,12 @@ add_lady_affection = {
 			if = {
 				limit = { exists = event_target:lady_survey_scientist }
 				event_target:lady_survey_scientist = {
-					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+					add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 				}
 			} else = {
 				random_owned_leader = {
 					limit = { has_leader_flag = wsg_lady_scientist }
-					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+					add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 				}
 			}
 		}
@@ -699,8 +699,17 @@ add_scientist_affection_monthly = {
 				check_variable = { which = months_no_affection value >= 10 }
 				add = 4
 			}
+			modifier = { # buff加成的额外几率
+				owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+				factor = 2
+			}
 			set_variable = { which = months_no_affection value = 0 }
 			add_normal_leader_affection = { LEADER_CLASS = scientist }
+			# buff加成的额外好感度
+			if = {
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				add_normal_leader_affection = { LEADER_CLASS = scientist }
+			}
 		}
 		14 = {
 			modifier = {
@@ -735,12 +744,12 @@ add_scientist_affection_arch = {
 				trigger = has_leader_flag
 				wsg_lady_leader = {
 					owner = { event_target:lady_survey_scientist = {
-						add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+						add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
 					}}
 				}
 				wsg_shimakaze_leader = {
 					owner = { event_target:shimakaze_scientist = { 
-						add_special_leader_affection_trait = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
 					}}
 				}
 				default = {
@@ -784,8 +793,17 @@ add_special_scientist_affection_monthly = {
 				check_variable = { which = months_no_affection value >= 10 }
 				add = 4
 			}
+			modifier = { # buff加成的额外几率
+				ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+				factor = 2
+			}
 			set_variable = { which = months_no_affection value = 0 }
 			add_special_leader_affection = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ MARRIED_FLAG = $MARRIED_FLAG$ }
+			# buff加成的额外好感度
+			if = {
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				add_special_leader_affection = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ MARRIED_FLAG = $MARRIED_FLAG$ }
+			}
 		}
 		14 = {
 			modifier = {
@@ -812,8 +830,16 @@ add_special_scientist_affection_monthly = {
 add_ruler_affection_monthly = {
 	random_list = {
 		1 = {
+			modifier = { # buff加成的额外几率
+				owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+				factor = 2
+			}
 			set_variable = { which = months_no_affection value = 0 }
 			add_ruler_affection = yes
+			if = {
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				add_ruler_affection = yes
+			}
 		}
 		24 = {
 			modifier = {
@@ -1253,6 +1279,7 @@ add_scientist_affection_no_check = {
 		trigger = has_leader_flag
 		wsg_shimakaze_scientist = { owner = { change_variable = { which = shimakaze_affection value = 1 }}}
 		wsg_lady_leader = { owner = { change_variable = { which = lady_affection value = 1 }}}
+		yuudaichi_leader = { owner = { change_variable = { which = yuudaichi_affection value = 1 }}}
 		default = { change_variable = { which = affection value = 1 }}
 	}
 }

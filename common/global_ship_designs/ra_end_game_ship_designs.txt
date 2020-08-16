@@ -155,7 +155,7 @@ ship_design = {
 		}
 	}
 	
-	required_component = "SH_JUMP_DRIVE"
+	required_component = "UF_JUMP_DRIVE"
 	required_component = "SENSOR_SH"
 	required_component = "BATTLESHIP_SHIP_THRUSTER_SH"
 	required_component = "STARBASE_sh_senergy_REACTOR"
@@ -276,7 +276,7 @@ ship_design = {
 		}
 	}
 	
-	required_component = "SH_JUMP_DRIVE"
+	required_component = "UF_JUMP_DRIVE"
 	required_component = "SENSOR_SH"
 	required_component = "BATTLESHIP_SHIP_THRUSTER_SH"
 	required_component = "STARBASE_sh_senergy_REACTOR"
@@ -340,7 +340,7 @@ ship_design = {
 		}
 	}
 
-	required_component = "SH_JUMP_DRIVE"
+	required_component = "UF_JUMP_DRIVE"
 	required_component = "SENSOR_SH"
 	required_component = "DESTROYER_SHIP_THRUSTER_SH"
 	required_component = "STARBASE_sh_senergy_REACTOR"

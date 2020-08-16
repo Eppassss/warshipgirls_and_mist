@@ -157,8 +157,82 @@ country_event = {
 
 	immediate = {
 		set_global_flag = wg_Khan_created
+		if = {
+			limit = { exists = capital_scope }
+			capital_scope = { 
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = spawn_khan_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { NOR = { 
+								has_star_flag = sealed_system 
+								has_star_flag = wg_sealed_system
+							}}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_khan_system_source
+						}
+					}
+				}
+			}
+		} else_if = {
+			limit = { 
+				OR = {
+					has_origin = origin_ev_meg_homeless_ship_strat
+					is_country_type = default_ev 
+				}
+			}
+			random_owned_fleet = {
+				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+				solar_system = { 
+					if = {
+						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
+						save_event_target_as = spawn_khan_system_source
+					} else = {
+						random_neighbor_system = {
+							limit = { NOR = { 
+								has_star_flag = sealed_system 
+								has_star_flag = wg_sealed_system
+							}}
+							ignore_hyperlanes = yes
+							save_event_target_as = spawn_khan_system_source
+						}
+					}
+				}
+			}
+		} else = {
+			random_owned_fleet = { solar_system = {
+				save_event_target_as = spawn_khan_system_source
+			}}
+		}
+		every_system = {
+			limit = { 
+				distance = { 
+					source = event_target:spawn_khan_system_source
+					min_jumps = 7
+					max_jumps = 12
+					type = hyperlane 
+					use_bypasses = no
+				}
+				NOR = { 
+					closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 2
+					}
+					has_natural_wormhole = yes
+					has_star_flag = hostile_system
+					has_star_flag = guardian
+					has_star_flag = sealed_system
+					has_star_flag = wg_sealed_system
+					has_presence = no
+				}
+			}
+			set_timed_star_flag = { flag = can_spawn_khan_system days = 1 }
+		}
 		random_system = {
-			limit = { has_star_flag = can_spawn_boss_system }
+			limit = { has_star_flag = can_spawn_khan_system }
 			spawn_system = {
 				hyperlane = yes
 				is_discovered = no
@@ -166,7 +240,7 @@ country_event = {
 				max_distance = 70
 				initializer = wg_Da_Khan_gate_system
 			}
-			remove_star_flag = can_spawn_boss_system
+			remove_star_flag = can_spawn_khan_system
 		}
 	}
 }

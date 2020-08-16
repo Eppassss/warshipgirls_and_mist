@@ -19,8 +19,12 @@ country_event = {
 		}
 		OR = {
 			last_increased_tech = tech_wsg_genetic_resequencing
+			last_increased_tech = tech_sh_genetic_resequencing
+			last_increased_tech = tech_sh_genetic_resequencing2
 			last_increased_tech = tech_genetic_resequencing
 			has_technology = tech_wsg_genetic_resequencing 
+			has_technology = tech_sh_genetic_resequencing 
+			has_technology = tech_sh_genetic_resequencing2
 			has_technology = tech_genetic_resequencing 
 		}
 		NOR = {
@@ -286,7 +290,8 @@ country_event = {
 	desc = "wg_bubbles.6.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Communicate_with_Bubbles"
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	trigger = {
 		bubbles_available = yes
@@ -294,11 +299,6 @@ country_event = {
 			has_country_flag = engaged_with_bubbles
 			has_active_event = { wg_bubbles.6 }
 		}
-	}
-
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
 	}
 
 	immediate = {
@@ -372,7 +372,6 @@ country_event = {
 		name = "marry_bubbles"
 		trigger = {
 			check_variable = { which = bubbles_affection_level value >= 4 }
-			exists = event_target:amoeba_finding_scientist
 			NOT = { has_country_flag = married_bubbles }
 		}
 		allow = {
@@ -382,6 +381,7 @@ country_event = {
 			}
 		}
 		subtract_variable = { which = wsg_rings value = 1 }
+		country_event = { id = wg_bubbles.7 }
 	}
 
 	option = {
@@ -397,12 +397,8 @@ country_event = {
 	desc = "wg_bubbles.7.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Communicate_with_Bubbles"
-
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 	
 	option = {
 		name = wg_bubbles.7.a
@@ -424,7 +420,6 @@ country_event = {
 			}
 		}
 	}
-
 }
 
 # 寻觅到泡泡的科学家死掉
@@ -805,11 +800,8 @@ country_event = {
 	desc = "wg_bubbles.15.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	option = {
 		name = wg_bubbles.15.a
@@ -828,11 +820,8 @@ country_event = {
 	desc = "wg_bubbles.16.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	option = {
 		name = wg_bubbles.16.a
@@ -846,11 +835,8 @@ country_event = {
 	desc = "wg_bubbles.17.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	option = {
 		name = wg_bubbles.17.a
@@ -894,11 +880,8 @@ country_event = {
 	desc = "wg_bubbles.20.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	trigger = {
 		FROMFROM = {
@@ -927,11 +910,8 @@ country_event = {
 	desc = "wg_bubbles.21.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	option = {
 		name = wg_bubbles.21.a
@@ -948,11 +928,8 @@ country_event = {
 	desc = "wg_bubbles.20.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-	diplomatic_title = "Name_Bubbles"
-	picture_event_data = {
-		room = shroud_room
-		portrait = Bubbles
-	}
+	custom_gui = wg_bubbles_commu_window
+	custom_gui_option = wg_leader_commu_option_green
 
 	trigger = {
 		FROM = { has_leader_flag = bubbles_governor }

@@ -17,6 +17,13 @@ decision_planet_sh_to_wsg = {
 				has_authority = auth_warshipgirls
 			}
 		}
+		any_owned_pop = {
+			OR = {
+				has_trait = sh_trait_shenhai
+				has_trait = sh_trait_shenhai1
+				has_trait = sh_trait_shenhai2	
+			}		
+		}
 	}
 	allow = {
 		any_owned_pop = {
@@ -67,13 +74,20 @@ decision_planet_wsg_to_sh = {
 				has_ascension_perk = ap_shenhai_icebreaking
 			}			
 		}
+		any_owned_pop = {
+			OR = {
+				has_trait = wsg_trait_warshipgirls
+				has_trait = wsg_trait_warshipgirls1		
+				has_trait = wsg_trait_mist
+			}					
+		}
 	}
 	allow = {
 		any_owned_pop = {
 			OR = {
 				has_trait = wsg_trait_warshipgirls
 				has_trait = wsg_trait_warshipgirls1		
-			has_trait = wsg_trait_mist
+				has_trait = wsg_trait_mist
 			}					
 		}
 	}	

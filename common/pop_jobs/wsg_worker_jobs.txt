@@ -14,6 +14,7 @@ wsg_moyu = {
 	possible = {
 		complex_worker_job_check_trigger = yes
 		owner = { is_fallen_empire = no }
+		z_pop_job_trigger = yes
 	}
 
 	planet_modifier = {

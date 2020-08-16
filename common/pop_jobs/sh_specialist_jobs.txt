@@ -20,8 +20,14 @@ sh_pantsu_maker = {
 			minerals = 3
 			food = 1
 		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_wg_pantsu }
+			}
+			minerals = -1
+		}
 	}
-	
 	weight = {
 		weight = 15		
 	}
@@ -43,6 +49,7 @@ sh_foundry = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -84,6 +91,7 @@ sh_foundry_shpc = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -117,6 +125,7 @@ category = specialist
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -127,6 +136,13 @@ category = specialist
 		upkeep = {
 			energy = 8
 			sr_pantsu = 1
+		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_sh_srse }
+			}
+			energy = -1
 		}
 	}	
 	
@@ -182,6 +198,24 @@ sh_soldier = {
 			country_admin_cap_add = 10
 		}
 	}
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = { has_designation = col_sh_ring_soldier }
+		}
+		modifier = {
+			country_admin_cap_add = 2
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = { has_designation = col_bureau }
+		}
+		modifier = {
+			country_admin_cap_add = 2
+		}
+	}
 	pop_modifier = {
 		pop_defense_armies_add = 1
 	}	
@@ -215,6 +249,7 @@ sh_soldier = {
 	possible = {
 		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
+		z_pop_job_trigger = yes
 	}
 	
 	weight = {

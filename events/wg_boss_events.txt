@@ -86,12 +86,12 @@ country_event = {
 						has_star_flag = guardian
 						has_star_flag = sealed_system
 						has_star_flag = wg_sealed_system
+						has_presence = no
 					}
 				}
 				set_timed_star_flag = { flag = can_spawn_boss_system days = 1 }
 			}
 			country_event = { id = wg_boss.19 }#无人机之主
-			country_event = { id = wg_khan.2 }#大可汗
 			country_event = { id = wsgranking.1919 }#胖次商店
 		}
 		random_list = { 
@@ -106,6 +106,8 @@ country_event = {
 					}
 					country_event = { id = wg_boss.35 }#盖亚雪风
 				}
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号下方必定生成
 			}
 			3 = {
 			    random_country = {
@@ -118,6 +120,8 @@ country_event = {
 					}
 					country_event = { id = wg_boss.85 }#环雪风
 				}
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号上方必定生成
 			}
 		}
 		random_list = { 
@@ -130,7 +134,10 @@ country_event = {
 					country_event = { id = wg_boss.45 }#巴格维
 				}
 			}
-			8 = { }
+			8 = {
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号必定生成
+			}
 		}
 		random_list = { 
 			60 = {
@@ -142,7 +149,10 @@ country_event = {
 					country_event = { id = wg_boss.26 }#GARS
 				}
 			}
-			40 = { }
+			40 = {
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号下方必定生成
+			}
 		}
 		random_list = { 
 			60 = {
@@ -165,6 +175,8 @@ country_event = {
 					factor = 0
 					has_global_flag = arknights_swimming
 				}
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号必定生成
 			}
 		}
 		
@@ -178,7 +190,10 @@ country_event = {
 					country_event = { id = wg_boss.72 }#向日葵
 				}
 			}
-			70 = { }
+			70 = {
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号必定生成
+			}
 		}
 		random_list = { 
 			50 = {
@@ -190,7 +205,10 @@ country_event = {
 					country_event = { id = wg_boss.81 }#云
 				}
 			}
-			50 = { }
+			50 = {
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号必定生成
+			}
 		}
 	}
 }
@@ -1810,7 +1828,7 @@ ship_event = {
 	}
 
 	immediate = {	
-		FROMFROM = {
+		owner = {
 			set_country_flag = triggered_wg_boss_bugv_event
 			country_event = { id = wg_boss.49 days = 30 }
 		}		
@@ -1845,43 +1863,74 @@ ship_event = {
 	}	
 }
 
-country_event = {
+event = {
 	id = wg_boss.47
 	hide_window = yes
-	fire_only_once = yes
-
-	mean_time_to_happen = {
-		years = 40
-	}
+	is_triggered_only = yes
 
 	trigger = {
 		has_global_flag = wg_boss_bugv_created
 		NOT = { has_global_flag = bugv_wormhole_created } 
-		has_wg_special_authority = yes
-		is_ai = no
+		any_country = {
+			has_wg_special_authority = yes
+			is_ai = no
+		}
+		years_passed >= 30
 	}
 
 	immediate = {
-		set_global_flag = bugv_wormhole_created 
-		random_system = {
-			limit = { has_star_flag = wg_boss_bugvv_system_home }
-			save_global_event_target_as = bugvv_system
-			spawn_natural_wormhole = {
-				bypass_type = wormhole
-				random_pos = yes
-				orbit_angle = 360
+		random_list = {
+			1 = {
+				modifier = {
+					add = 2
+					years_passed >= 50
+				}
+				set_global_flag = bugv_wormhole_created 
+				random_system = {
+					limit = { has_star_flag = wg_boss_bugvv_system_home }
+					save_global_event_target_as = bugvv_system
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+				}	
+				random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					random_system_within_border = {
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						link_wormholes = event_target:bugvv_system
+						save_event_target_as = wg_wormhole_system
+					}
+					country_event = { id = wg_boss.48 } #提示事件
+				}	
 			}
-		}		
-		random_system_within_border = {
-			spawn_natural_wormhole = {
-				bypass_type = wormhole
-				random_pos = yes
-				orbit_angle = 360
+			4 = {
+				modifier = {
+					add = -1
+					years_passed >= 35
+				}
+				modifier = {
+					add = -1
+					years_passed >= 40
+				}
+				modifier = {
+					add = -1
+					years_passed >= 45
+				}
+				modifier = {
+					factor = 0
+					years_passed >= 60
+				}
 			}
-			link_wormholes = event_target:bugvv_system
-			save_event_target_as = wg_wormhole_system
 		}
-		country_event = { id = wg_boss.48 } #提示事件
 	}
 }
 
@@ -1956,6 +2005,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = wg_boss.50 }
 		}
+		default_hide_option = yes
 	}
 }
 
@@ -3360,9 +3410,13 @@ event = { #生成星系
 					is_ai = no
 				}
 				country_event = { id =  wg_boss.1 } #boss
+				country_event = { id = wg_khan.2 } #大可汗
 				random_list = {
 					50 = { country_event = { id =  wg_parit.1 }} #帕里特
-					50 = {}
+					50 = {
+						# modifier = { factor = 0 always = yes } 
+						# 删除上方井号必定生成
+					}
 				}
 			}
 		}

@@ -39,12 +39,12 @@ wg_khan_gate_power3 = {
 	ship_speed_mult = 0.10
 }
 wg_khan_gate_power4 = {
-	ship_armor_mult = 0.3
-	ship_shield_mult = 0.4
+	ship_armor_mult = 0.2
+	ship_shield_mult = 0.3
 }
 wg_khan_gate_power5 = {
-	ship_armor_mult = 0.5
-	ship_shield_mult = 0.5
+	ship_armor_mult = 0.4
+	ship_shield_mult = 0.4
 	planet_orbital_bombardment_damage = -0.6
 }
 wg_khan_gate_debuff1 = {
@@ -108,9 +108,7 @@ khan_jammer_debuff3 = {
 khan_jammer_debuff4 = {
 	ship_shield_damage_mult = -0.3
 	ship_armor_damage_mult = -0.3
-	ship_hull_damage_mult = -0.3
-	ship_shield_penetration_mult = -0.3
-	ship_armor_penetration_mult = -0.3
+	ship_hull_damage_mult = -0.40
 }
 khan_jammer_debuff5 = {
 	ship_evasion_add = -30
@@ -133,8 +131,7 @@ khan_lighting_storm_debuff = {
 	ship_shield_mult = -1.00
 	ship_shield_reduction = 1.00
 	ship_fire_rate_mult = -0.2
-	ship_shield_penetration_mult = -0.50
-	ship_armor_penetration_mult = -0.50
+	ship_hull_damage_mult = -0.10
 }
 khan_buff_after_50_years = {
 	ship_hull_mult = 1.0

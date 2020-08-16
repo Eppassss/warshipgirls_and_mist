@@ -10,6 +10,7 @@
  uf_buffer: "UF ECM Jammer"
  uf_Juggernaut: "UF Juggernaut"
  NAME_uf_buffer: "Tracker"
+ NAME_uf_buffer2: "Chaser"
  NAME_uf_buffer_portal: "Prosecutor"
  NAME_WG_Portal_small: "United Fleet Small Portal"
  wg_dimensional_small_portal: "Side Window"

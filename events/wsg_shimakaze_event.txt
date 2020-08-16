@@ -71,13 +71,8 @@ country_event = {
 	show_sound = event_shimakaze_first_meet
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	option = {
 		name = wsg_shimakaze.2.a
@@ -92,14 +87,18 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_contact
 	diplomatic = yes
-	force_open = yes
+	
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 	trigger = {
 		from = { OR = {
 			is_country_type = wsg_shimakaze 
 			is_same_value = ROOT
 		}}
-
-		shimakaze_active_diplo = no
+		OR = {
+			shimakaze_active_diplo = no
+			NOT = { has_country_flag = wsg_shimakaze_engaged }
+		}
 		OR = {
 			has_country_flag = get_wsg_shimakaze
 			is_same_value = event_target:wsg_shimakaze_own_country
@@ -119,12 +118,6 @@ country_event = {
 		}
 	}
 
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
-
 	option = {
 		name = wsg_shimakaze.3.a
 		trigger = {
@@ -181,65 +174,43 @@ country_event = {
 		name = wsg_shimakaze.3.e
 		hidden_effect = {
 			random_list = {
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30001
+				1 = { country_event = { id = wsg_shimakaze.30001 }}
+				1 = { country_event = { id = wsg_shimakaze.30002 }}
+				1 = { country_event = { id = wsg_shimakaze.30003 }}
+				0 = {
+					modifier = {
+						has_country_flag = married_wsg_shimakaze
+						add = 2
 					}
-				}
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30002
-					}
-				}
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30003
-					}
+					country_event = { id = wsg_shimakaze.30004 }
 				}
 				0 = {
 					modifier = {
 						has_country_flag = married_wsg_shimakaze
 						add = 2
 					}
-					country_event = {
-						id = wsg_shimakaze.30004
-					}
+					country_event = { id = wsg_shimakaze.30005 }
 				}
 				0 = {
 					modifier = {
 						has_country_flag = married_wsg_shimakaze
 						add = 2
 					}
-					country_event = {
-						id = wsg_shimakaze.30005
-					}
+					country_event = { id = wsg_shimakaze.30006 }
 				}
 				0 = {
 					modifier = {
 						has_country_flag = married_wsg_shimakaze
 						add = 2
 					}
-					country_event = {
-						id = wsg_shimakaze.30006
-					}
+					country_event = { id = wsg_shimakaze.30007 }
 				}
 				0 = {
 					modifier = {
 						has_country_flag = married_wsg_shimakaze
 						add = 2
 					}
-					country_event = {
-						id = wsg_shimakaze.30007
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 2
-					}
-					country_event = {
-						id = wsg_shimakaze.30008
-					}
+					country_event = { id = wsg_shimakaze.30008 }
 				}
 			}
 		}
@@ -266,189 +237,7 @@ country_event = {
 				which = wsg_rings
 				value = -1
 			}
-			country_event = {
-				id = wsg_shimakaze.30102
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze_talk_exit
-		hidden_effect = {
-			remove_country_flag = wsg_shimakaze_engaged
-		}
-		default_hide_option = yes
-	}
-}
-
-#返回界面
-country_event = {
-	id = wsg_shimakaze.4
-	title = wsg_shimakaze
-	desc = wsg_shimakaze.3.desc
-	is_triggered_only = yes
-	show_sound = event_shimakaze_contact
-	diplomatic = yes
-	force_open = yes
-	immediate = {
-		set_country_flag = wsg_shimakaze_engaged
-	}
-	
-	after = {
-		hidden_effect = { 
-			remove_country_flag = wsg_shimakaze_engaged 
-		}
-	}
-
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
-
-	option = {
-		name = wsg_shimakaze.3.a
-		trigger = {
-			NOT = {
-				has_country_flag = wsg_shimakaze_governor_active
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wsg_shimakaze.30010
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze.3.b
-		trigger = {
-			NOT = {
-				has_country_flag = wsg_shimakaze_scientist_active
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wsg_shimakaze.30011
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze.3.c
-		trigger = {
-			NOT = {
-				has_country_flag = wsg_shimakaze_admiral_active
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wsg_shimakaze.30012
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze.3.d
-		trigger = {
-			NOT = {
-				has_country_flag = wsg_shimakaze_general_active
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wsg_shimakaze.30013
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze.3.e
-		hidden_effect = {
-			random_list = {
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30001
-					}
-				}
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30002
-					}
-				}
-				1 = {
-					country_event = {
-						id = wsg_shimakaze.30003
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 3
-					}
-					country_event = {
-						id = wsg_shimakaze.30004
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 3
-					}
-					country_event = {
-						id = wsg_shimakaze.30005
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 3
-					}
-					country_event = {
-						id = wsg_shimakaze.30006
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 3
-					}
-					country_event = {
-						id = wsg_shimakaze.30007
-					}
-				}
-				0 = {
-					modifier = {
-						has_country_flag = married_wsg_shimakaze
-						add = 3
-					}
-					country_event = {
-						id = wsg_shimakaze.30008
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = wsg_shimakaze.3.f
-		trigger = {
-			has_country_flag = can_marry_wsg_shimakaze
-			NOT = {
-				has_country_flag = married_wsg_shimakaze
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				check_variable = {
-					which = wsg_rings
-					value >= 1 
-				}
-				fail_text = not_enough_engagement_rings
-			}
-		}
-		hidden_effect = {
-			change_variable = {
-				which = wsg_rings
-				value = -1
-			}
-			country_event = {
-				id = wsg_shimakaze.30102
-			}
+			country_event = { id = wsg_shimakaze.30102 }
 		}
 	}
 	option = {
@@ -466,13 +255,9 @@ country_event = {
 	desc = wsg_shimakaze.5.desc
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 	show_sound = event_shimakaze_contact_hurt
-	picture_event_data = {
-		portrait = wsg9992
-		graphical_culture = wsg_02
-		room = bathhouse_room
-	}
 
 	trigger = {
 		from = { OR = {
@@ -508,11 +293,12 @@ country_event = {
 
 #大破界面返回
 country_event = {
-	id = wsg_shimakaze.6
+	id = wsg_shimakaze.5
 	desc = wsg_shimakaze.5.desc
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
@@ -521,12 +307,6 @@ country_event = {
 		hidden_effect = { 
 			remove_country_flag = wsg_shimakaze_engaged 
 		}
-	}
-
-	picture_event_data = {
-		portrait = wsg9992
-		graphical_culture = wsg_02
-		room = bathhouse_room
 	}
 
 	option = {
@@ -546,22 +326,14 @@ country_event = {
 	show_sound = event_shimakaze_talk1
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			country_event = {
-				id = wsg_shimakaze.4
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -580,23 +352,15 @@ country_event = {
 	show_sound = event_shimakaze_talk2
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			country_event = {
-				id = wsg_shimakaze.4
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -615,13 +379,8 @@ country_event = {
 	show_sound = event_shimakaze_talk3
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
-
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
@@ -629,7 +388,7 @@ country_event = {
 		name = wsg_shimakaze_talk_return
 		hidden_effect = { 
 			country_event = {
-				id = wsg_shimakaze.4
+				id = wsg_shimakaze.3
 			}
 		}
 	}
@@ -650,33 +409,15 @@ country_event = {
 	show_sound = event_shimakaze_marry_talk1
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			if = {
-				limit = { 
-					has_country_flag = wsg_shimakaze_hurt
-				}
-				country_event = {
-					id = wsg_shimakaze.6
-				}
-			}
-			else = {
-				country_event = {
-					id = wsg_shimakaze.4
-				}
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -695,33 +436,15 @@ country_event = {
 	show_sound = event_shimakaze_marry_talk2
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			if = {
-				limit = { 
-					has_country_flag = wsg_shimakaze_hurt
-				}
-				country_event = {
-					id = wsg_shimakaze.6
-				}
-			}
-			else = {
-				country_event = {
-					id = wsg_shimakaze.4
-				}
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -740,33 +463,15 @@ country_event = {
 	show_sound = event_shimakaze_marry_talk3
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			if = {
-				limit = { 
-					has_country_flag = wsg_shimakaze_hurt
-				}
-				country_event = {
-					id = wsg_shimakaze.6
-				}
-			}
-			else = {
-				country_event = {
-					id = wsg_shimakaze.4
-				}
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -785,33 +490,15 @@ country_event = {
 	show_sound = event_shimakaze_marry_talk4
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			if = {
-				limit = { 
-					has_country_flag = wsg_shimakaze_hurt
-				}
-				country_event = {
-					id = wsg_shimakaze.6
-				}
-			}
-			else = {
-				country_event = {
-					id = wsg_shimakaze.4
-				}
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -830,33 +517,15 @@ country_event = {
 	show_sound = event_shimakaze_marry_talk5
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
 	option = {
 		name = wsg_shimakaze_talk_return
-		hidden_effect = { 
-			if = {
-				limit = { 
-					has_country_flag = wsg_shimakaze_hurt
-				}
-				country_event = {
-					id = wsg_shimakaze.6
-				}
-			}
-			else = {
-				country_event = {
-					id = wsg_shimakaze.4
-				}
-			}
-		}
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
 	}
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -875,12 +544,8 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_governor
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -904,12 +569,8 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_scientist
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -933,12 +594,8 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_admiral
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -962,12 +619,8 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_general
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -1008,14 +661,10 @@ country_event = {
 	desc = wsg_shimakaze.30101.desc
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
 	fire_only_once = yes
 	show_sound = event_shimakaze_affection_max
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		set_country_flag = can_marry_wsg_shimakaze
@@ -1037,13 +686,9 @@ country_event = {
 	is_triggered_only = yes 
 	fire_only_once = yes
 	diplomatic = yes
-	force_open = yes
 	show_sound = event_shimakaze_marry
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		play_sound = event_wg_wedding
@@ -1062,28 +707,39 @@ country_event = {
 }
 
 #二级好感度事件触发器
-country_event = {
+event = {
 	id = wsg_shimakaze.30200
 	hide_window = yes
-	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
-		OR = {
+		exists = event_target:wsg_shimakaze_own_country
+		event_target:wsg_shimakaze_own_country = {
 			has_country_flag = get_wsg_shimakaze
-			is_same_value = event_target:wsg_shimakaze_own_country
+			check_variable = {
+				which = shimakaze_affection_level
+				value >= 2
+			}
 		}
-		check_variable = {
-			which = shimakaze_affection_level
-			value >= 2 
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 20
 	}
 	
 	immediate = {
-		country_event = {
-			id = wsg_shimakaze.30201
+		random_list = {
+			1 = {
+				event_target:wsg_shimakaze_own_country = {
+					country_event = { id = wsg_shimakaze.30201 random = 29 }
+				}
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					event_target:wsg_shimakaze_own_country = {
+						check_variable = {
+							which = shimakaze_affection_level
+							value >= 3
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1096,13 +752,8 @@ country_event = {
 	fire_only_once = yes
 	show_sound = event_shimakaze_affection_level_2
 	diplomatic = yes
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	option = {
 		name = wsg_shimakaze.30201.a
@@ -1118,28 +769,39 @@ country_event = {
 }
 
 #三级好感触发器
-country_event = {
+event = {
 	id = wsg_shimakaze.30202
 	hide_window = yes
-	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
-		OR = {
+		exists = event_target:wsg_shimakaze_own_country
+		event_target:wsg_shimakaze_own_country = {
 			has_country_flag = get_wsg_shimakaze
-			is_same_value = event_target:wsg_shimakaze_own_country
+			check_variable = {
+				which = shimakaze_affection_level
+				value >= 3
+			}
 		}
-		check_variable = {
-			which = shimakaze_affection_level
-			value >= 3 
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 20
 	}
 	
 	immediate = {
-		country_event = {
-			id = wsg_shimakaze.30203
+		random_list = {
+			1 = {
+				event_target:wsg_shimakaze_own_country = {
+					country_event = { id = wsg_shimakaze.30203 random = 29 }
+				}
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					event_target:wsg_shimakaze_own_country = {
+						check_variable = {
+							which = shimakaze_affection_level
+							value >= 4
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1151,14 +813,10 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	show_sound = event_shimakaze_affection_level_3
-	diplomatic = yes
 	force_open = yes
 
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -1174,28 +832,36 @@ country_event = {
 }
 
 #四级好感触发器
-country_event = {
+event = {
 	id = wsg_shimakaze.30204
 	hide_window = yes
-	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
-		OR = {
+		exists = event_target:wsg_shimakaze_own_country
+		event_target:wsg_shimakaze_own_country = {
 			has_country_flag = get_wsg_shimakaze
-			is_same_value = event_target:wsg_shimakaze_own_country
+			check_variable = {
+				which = shimakaze_affection_level
+				value >= 4 
+			}
 		}
-		check_variable = {
-			which = shimakaze_affection_level
-			value >= 4 
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 20
 	}
 	
 	immediate = {
-		country_event = {
-			id = wsg_shimakaze.30205
+		random_list = {
+			1 = {
+				event_target:wsg_shimakaze_own_country = {
+					country_event = { id = wsg_shimakaze.30205 random = 29 }
+				}
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					event_target:wsg_shimakaze_own_country = {
+						has_country_flag = shimakaze_affection_max
+					}
+				}
+			}
 		}
 	}
 }
@@ -1207,13 +873,9 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	diplomatic = yes
-	force_open = yes
 	show_sound = event_shimakaze_affection_level_4
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -1290,12 +952,8 @@ country_event = {
 	is_triggered_only = yes
 	show_sound = event_shimakaze_hurt
 	diplomatic = yes
-	force_open = yes
-	picture_event_data = {
-		portrait = wsg9992
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		subtract_variable = {
@@ -1325,13 +983,9 @@ country_event = {
 	desc = wsg_shimakaze.9.desc
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
 	show_sound = event_shimakaze_recovered
-	picture_event_data = {
-		portrait = wsg267_1
-		graphical_culture = wsg_02
-		room = wg01_room
-	}
+	custom_gui = wg_shimakaze_commu_window
+	custom_gui_option = wg_leader_commu_option_pink
 
 	immediate = {
 		remove_country_flag = wsg_shimakaze_hurt

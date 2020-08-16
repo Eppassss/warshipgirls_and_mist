@@ -640,6 +640,8 @@ portraits = {
 	wsg436	=	{texturefile = "gfx/models/portraits/wsg436.dds"  }
 	wsg439	=	{texturefile = "gfx/models/portraits/wsg439.dds"  }
 	wsg440	=	{texturefile = "gfx/models/portraits/wsg440.dds"  }
+	wsg9986	=	{texturefile = "gfx/models/portraits/wsg9986.dds"  }
+	wsg9987	=	{texturefile = "gfx/models/portraits/wsg9987.dds"  }
 	wsg9988	=	{texturefile = "gfx/models/portraits/wsg9988.dds"  }
 	wsg9989	=	{texturefile = "gfx/models/portraits/wsg9989.dds"  }
 	wsg9990	=	{texturefile = "gfx/models/portraits/wsg9990.dds"  }

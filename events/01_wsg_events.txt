@@ -33,7 +33,7 @@ planet_event = {
   
   immediate = {
   	owner = {
-		give_technology = { tech = tech_powered_exoskeletons message = no } #Íâ¹Ç÷À¶¯Á¦
+		give_technology = { tech = tech_powered_exoskeletons message = no } #å¤–éª¨éª¼åŠ¨åŠ›
 		#wsg_init_tech =yes
     	save_event_target_as = WG_country
   	}   	
@@ -390,7 +390,7 @@ country_event = {
 	}
 }
 
-#NEOÎïÖÊ»ñÈ¡
+#NEOç‰©è´¨è·å–
 country_event ={
 	id = wsg.1100
 	title = "wsg.1100.name"
@@ -400,9 +400,10 @@ country_event ={
 	
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_antimatter_power"
+		has_technology = tech_antimatter_power
+		NOT = { has_country_flag = researched_antimatter_power }
 	}
-	
+	immediate = { set_country_flag = researched_antimatter_power }
 	option = {
 		name = "wsg.1100.a"
 		hidden_effect = {
@@ -487,7 +488,7 @@ country_event = {
 }
 
 
-#²ÔÇà»ÃÓ°·ÉÉıÊÂ¼şÁ´
+#è‹é’å¹»å½±é£å‡äº‹ä»¶é“¾
 country_event = {
 	id = wsg.2000
 	title = "wsg.2000.name"

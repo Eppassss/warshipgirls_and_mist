@@ -26,10 +26,14 @@ initialize_crisis_system_select = {
 	every_system = {
 		limit = {
 			NOT = { has_star_flag = forbit_spawn_system }
-			closest_system = {
-				max_steps = 3
-				limit = {
-					has_star_flag = forbit_spawn_system
+			OR = { #狡猾人老家
+				has_star_flag = Kuat_system
+				has_star_flag = Kuat_system_1
+				has_star_flag = Kuat_system_2
+				has_star_flag = Kuat_system_3
+				closest_system = {
+					max_steps = 3
+					limit = { has_star_flag = forbit_spawn_system }
 				}
 			}
 		}

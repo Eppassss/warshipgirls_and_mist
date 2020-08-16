@@ -464,6 +464,14 @@ country_event = {
     
     immediate = {
         set_country_flag = engaged_with_pantsu_shop
+		random_list = {
+           40 = {
+               country_event = { id = wsgranking.2030 days = 2 }#打开食堂
+           }
+           60 = {#不举办
+		       set_timed_country_flag = { flag = engaged_with_canteen days = 180 }
+           }
+        }
     }
 
     # 询问军阶点数。
@@ -2657,48 +2665,6 @@ country_event = {
 }
 
 country_event = {
-    id = wsgranking.1998
-    hide_window = yes
-
-    trigger = {
-        is_country_type = pantsu_shop
-    }
-
-    mean_time_to_happen = {
-        years = 10
-        modifier = {
-            factor = 0.5
-            check_variable = { which = rings_stock value < 3 }
-        }
-        modifier = {
-            factor = 0.5
-            check_variable = { which = rings_stock value < 2 }
-        }
-        modifier = {
-            factor = 0.2
-            check_variable = { which = rings_stock value < 1 }
-        }
-    }
-
-    immediate = {
-        if = {
-            limit = { check_variable = { which = rings_stock value < 3 }}
-            random_list = {
-                1 = {
-                    change_variable = { which = rings_stock value = 1 }
-                }
-                2 = {
-                    modifier = {
-                        add = -1
-                        check_variable = { which = rings_stock value < 1 }
-                    }
-                }
-            }
-        }
-    }
-}
-
-country_event = {
     id = wsgranking.1999
     hide_window = yes
 
@@ -2798,12 +2764,6 @@ country_event = {
             resource_stockpile_compare = { resource = rare_crystals value >= 648 }
             resource_stockpile_compare = { resource = sr_alpha value >= 648 }
             resource_stockpile_compare = { resource = sr_pantsu value >= 648 }
-            custom_tooltip = {
-                fail_text = not_enough_rings
-                event_target:pantsu_shop_country = { 
-                    check_variable = { which = rings_stock value > 0 }
-                }
-            }
         }
         hidden_effect = { 
             change_variable = { which = "wsg_rings" value = 1 }
@@ -2834,12 +2794,6 @@ country_event = {
             resource_stockpile_compare = { resource = rare_crystals value > 648 }
             resource_stockpile_compare = { resource = sr_se value > 648 }
             resource_stockpile_compare = { resource = sr_pantsu value > 648 }
-            custom_tooltip = {
-                fail_text = not_enough_rings
-                event_target:pantsu_shop_country = { 
-                    check_variable = { which = rings_stock value > 0 }
-                }
-            }
         }
         change_variable = { which = "wsg_rings" value = 1 }
         event_target:pantsu_shop_country = { 
@@ -4804,6 +4758,9 @@ country_event = {
 			minerals = 4000
             #sr_pantsu = 200
 		}
+		hidden_effect = {
+			country_event = { id = wsgranking.2022 days = 10 random = 10 }
+		}
 	}
 
     # 击破者为舰娘的选项
@@ -4817,7 +4774,10 @@ country_event = {
 		add_resource = {
 			energy = 8000
 			minerals = 8000
-            sr_pantsu = 4000
+            sr_pantsu = 40000
+		}
+		hidden_effect = {
+			country_event = { id = wsgranking.2022 days = 10 random = 10 }
 		}
 	}
 }
@@ -5011,6 +4971,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5069,6 +5030,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5113,6 +5075,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5171,6 +5134,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5217,6 +5181,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5277,6 +5242,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5323,6 +5289,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5383,6 +5350,7 @@ country_event = {
 					target = event_target:Khans_throne_owner
 				}	
 			}
+			set_global_flag = goooooooooood_chair
 		}
 		custom_gui = "enclave_caravaneer_option"
 	}
@@ -5462,6 +5430,8 @@ country_event = {
     option = {
         name = wsgranking.2020.a
 		change_variable = { which = rankpts value = 2 }
+		set_global_flag = goooooooooood_chair
+		set_country_flag = chair_victim
 		event_target:pantsu_shop_country = {
 			steal_relic = {
 				relic = r_khans_throne
@@ -5483,6 +5453,551 @@ country_event = {
     option = {
         name = wsgranking.2021.a
 		change_variable = { which = rankpts value = 5 }
+    }
+}
+#重新找回椅子
+country_event = {
+    id = wsgranking.2022
+    title = wsgranking.2022.name
+    picture = GFX_evt_space_walk
+	desc = {
+        text = wsgranking.2022.desc_01
+        trigger = {
+			NOT = {
+				has_country_flag = chair_victim
+			}
+		}
+    }
+	desc = {
+        text = wsgranking.2022.desc_02
+        trigger = {
+			has_country_flag = chair_victim
+		}
+    }
+    is_triggered_only = yes
+    trigger = {
+		has_global_flag = goooooooooood_chair
+	}
+
+    option = {
+		name = wsgranking.2022.a
+		owner = { add_relic = "r_eila_throne" }
+	}
+}
+#########################################食堂
+country_event = {
+	id = wsgranking.2030
+	title = pantsu_shop_canteen_name
+	custom_gui = "enclave_caravaneer_window"
+	desc = wsgranking.2030.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = Canteen_room
+	}
+	trigger = {
+		NOT = { has_country_flag = engaged_with_canteen }
+	}
+	immediate = {
+        set_timed_country_flag = { flag = engaged_with_canteen days = 180 }
+    }
+	option = {#吃
+		name = wsgranking.2030.a
+		custom_tooltip = wsgranking.2030.tooltip
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			random_list = { 
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen1
+					}
+					country_event = { id = wsgranking.2031 days = 1 }
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen2
+					}
+					country_event = { id = wsgranking.2032 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen3
+					}
+					country_event = { id = wsgranking.2033 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen4
+					}
+					country_event = { id = wsgranking.2034 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen5
+					}
+					country_event = { id = wsgranking.2035 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen6
+					}
+					country_event = { id = wsgranking.2036 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen7
+					}
+					country_event = { id = wsgranking.2037 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen8
+					}
+					country_event = { id = wsgranking.2038 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen9
+					}
+					country_event = { id = wsgranking.2039 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen10
+					}
+					country_event = { id = wsgranking.2040 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen11
+					}
+					country_event = { id = wsgranking.2041 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen12
+					}
+					country_event = { id = wsgranking.2042 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen13
+					}
+					modifier = {
+						factor = 0
+						NOT = { has_global_flag = wg_boss_bugv_created }
+					}
+					country_event = { id = wsgranking.2043 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen14
+					}
+					country_event = { id = wsgranking.2044 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen15
+					}
+					country_event = { id = wsgranking.2045 days = 1 } 
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						has_country_flag = wg_canteen16
+					}
+					modifier = {
+						factor = 0
+						resource_stockpile_compare = { resource = energy value < 500 }
+					}
+					country_event = { id = wsgranking.2046 days = 5 } 
+                }
+                10 = {
+					modifier = {
+						factor = 0
+						has_modifier = wg_modifier_canteen_affectionUp1
+					}
+					country_event = { id = wsgranking.2047 days = 1 } 
+                }
+                10 = { #要是有人这么欧连抽两次中两个buff当我倒霉
+					modifier = {
+						factor = 0
+						has_modifier = wg_modifier_canteen_affectionUp2
+					}
+					country_event = { id = wsgranking.2048 days = 1 } 
+				}
+			}	
+		}
+	}
+	option = {#吃啥
+		name = wsgranking.2030.b
+		custom_gui = "enclave_caravaneer_option"
+		response_text = wsgranking.2030.b.response
+		is_dialog_only = yes
+	}
+	option = {#不吃了
+		name = wsgranking.2030.c
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+    id = wsgranking.2031
+    title = wsgranking.2031.name
+    desc = wsgranking.2031.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2031.a
+		set_timed_country_flag = { flag = wg_canteen1 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen1
+			days = 1800
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2032
+    title = wsgranking.2032.name
+    desc = wsgranking.2032.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2032.a
+		set_timed_country_flag = { flag = wg_canteen2 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen2
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2033
+    title = wsgranking.2033.name
+    desc = wsgranking.2033.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2033.a
+		set_timed_country_flag = { flag = wg_canteen3 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen3
+			days = 1800
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2034
+    title = wsgranking.2034.name
+    desc = wsgranking.2034.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2034.a
+		set_timed_country_flag = { flag = wg_canteen4 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen4
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2035
+    title = wsgranking.2035.name
+    desc = wsgranking.2035.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2035.a
+		set_timed_country_flag = { flag = wg_canteen5 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen5
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2036
+    title = wsgranking.2036.name
+    desc = wsgranking.2036.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2036.a
+		set_timed_country_flag = { flag = wg_canteen6 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen6
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2037
+    title = wsgranking.2037.name
+    desc = wsgranking.2037.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2037.a
+		set_timed_country_flag = { flag = wg_canteen7 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen7
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2038
+    title = wsgranking.2038.name
+    desc = wsgranking.2038.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2038.a
+		set_timed_country_flag = { flag = wg_canteen8 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen8
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2039
+    title = wsgranking.2039.name
+    desc = wsgranking.2039.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+	immediate = {
+		random_owned_leader = {
+			limit = { 
+				leader_class = scientist 
+				NOR = { 
+					has_leader_flag = wsg_shimakaze_scientist
+					has_trait = leader_trait_spark_of_genius
+				}
+			}
+			save_global_event_target_as = wg_canteen_scientist
+		}
+	}
+
+
+    option = {
+        name = wsgranking.2039.a
+		set_country_flag = wg_canteen9
+		event_target:wg_canteen_scientist = {
+			add_experience = 1000
+			add_trait = leader_trait_spark_of_genius
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2040
+    title = wsgranking.2040.name
+    desc = wsgranking.2040.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2040.a
+		set_timed_country_flag = { flag = wg_canteen10 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen10
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2041
+    title = wsgranking.2041.name
+    desc = wsgranking.2041.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2041.a
+		set_timed_country_flag = { flag = wg_canteen11 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen11
+			days = 1800
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2042
+    title = wsgranking.2042.name
+    desc = wsgranking.2042.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2041.a
+		set_timed_country_flag = { flag = wg_canteen12 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen12
+			days = 1800
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2043
+    title = wsgranking.2043.name
+    desc = wsgranking.2043.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2043.a
+		set_timed_country_flag = { flag = wg_canteen13 days = 1200 }
+		add_modifier = {
+			modifier = wg_modifier_canteen13
+			days = 1200
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2044
+    title = wsgranking.2044.name
+    desc = wsgranking.2044.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2044.a
+		set_timed_country_flag = { flag = wg_canteen14 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen14
+			days = 1800
+		}
+    }
+}
+country_event = {
+    id = wsgranking.2045
+    title = wsgranking.2045.name
+    desc = wsgranking.2045.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2045.a
+		set_timed_country_flag = { flag = wg_canteen15 days = 1800 }
+		add_modifier = {
+			modifier = wg_modifier_canteen15
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2046
+    title = wsgranking.2046.name
+    desc = wsgranking.2046.desc
+    picture = GFX_evt_wg_Britishfood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2046.a
+		set_country_flag = wg_canteen16
+		add_resource = { energy = -500 }
+    }
+}
+
+country_event = {
+    id = wsgranking.2047
+    title = wsgranking.2047.name
+    desc = wsgranking.2047.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2047.a
+        custom_tooltip = wsgranking.2047.a.tooltip
+		add_modifier = {
+			modifier = wg_modifier_canteen_affectionUp1
+			days = 1800
+		}
+    }
+}
+
+country_event = {
+    id = wsgranking.2048
+    title = wsgranking.2048.name
+    desc = wsgranking.2048.desc
+    picture = GFX_evt_wg_Chinesefood
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = wsgranking.2048.a
+        custom_tooltip = wsgranking.2048.a.tooltip
+		add_modifier = {
+			modifier = wg_modifier_canteen_affectionUp2
+			days = 1800
+		}
     }
 }
 ###################################################

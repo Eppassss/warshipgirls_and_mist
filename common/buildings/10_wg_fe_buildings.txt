@@ -205,7 +205,6 @@ building_wg_fe_senergy = {
 }
 building_wg_fe_energy = {
 	base_buildtime = 480
-	can_build = no
 	can_demolish = yes
 	icon = building_wg_fe_energy
 	

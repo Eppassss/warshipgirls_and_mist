@@ -59,9 +59,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_battleships"
+		has_technology = tech_battleships
+		NOT = { has_country_flag = researched_tech_battleships }
 	}
 	immediate = {
+		set_country_flag = researched_tech_battleships
 		country_event = { id = wsg.3011 days = 60  }
 	}
 }
@@ -963,7 +965,7 @@ country_event = {
 		}
 		hidden_effect = {
 			owner = {
-				country_event = { id = wsg.30350 days = 3600 }
+				country_event = { id = wsg.30350 days = 2520 }
 			}			
 		}
 	}
@@ -991,7 +993,7 @@ country_event = {
 		}
 		hidden_effect = {
 			owner = {
-				country_event = { id = wsg.30350 days = 3600 }
+				country_event = { id = wsg.30350 days = 2520 }
 			}			
 		}
 	}	
@@ -1872,9 +1874,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_cloning"
+		has_technology = tech_cloning
+		NOT = { has_country_flag = researched_tech_cloning }
 	}
 	immediate = {
+		set_country_flag = researched_tech_cloning
 		country_event = { id = wsg.3051 days = 360 random = 720 }
 	}
 }
@@ -2725,7 +2729,7 @@ country_event = {
 				spawn_debris = no 
 			}
 		}
-		set_timed_country_flag = { flag = wsg_lady_mod_cd days = 2700 }
+		set_timed_country_flag = { flag = wsg_lady_mod_cd days = 1800 }
 	}
 }
 
@@ -3605,8 +3609,12 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_akx_worm_1"
-	}	
+		has_technology = tech_akx_worm_1
+		NOT = { has_country_flag = researched_tech_akx_worm_1 }
+	}
+	immediate = {
+		set_country_flag = researched_tech_akx_worm_1
+	}
 	option = {
 		name = "wsg.3118.a"
 		owner = {
@@ -3922,3 +3930,37 @@ country_event = {
 		}
 	}
 }
+
+#温泉星球通知
+country_event = {
+	id = wsg.3210
+	title = wsg.3210.name
+	desc = wsg.3210.desc
+	picture = GFX_evt_wg_water
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = wsg.3210.a
+	}
+}
+
+planet_event = {
+	id = wsg.3211
+	title = wsg.3211.name
+	desc = wsg.3211.desc
+	picture = GFX_evt_wg_water
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = wsg.3211.a
+	}
+}
+

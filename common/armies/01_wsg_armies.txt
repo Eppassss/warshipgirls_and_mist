@@ -341,7 +341,6 @@ Khan_galodam = {
 	has_morale = no
 	morale_damage = 5.0
 	collateral_damage = 4.5
-	war_exhaustion = 1.00
 	health = 8.5
 	time = 600
 	icon_frame = 8
@@ -358,13 +357,6 @@ Khan_galodam = {
 			food = 5
 		}
 	}
-
-	prerequisites = { "tech_galodam" }
-	potential = {
-		owner = { has_authority = auth_warshipgirls }
-		
-	}
-	
 }
 
 Parit_army = {

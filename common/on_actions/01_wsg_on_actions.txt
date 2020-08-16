@@ -80,10 +80,14 @@ on_yearly_pulse = {
 		sh_traits.2
 		sh.3016	
 		wsgancrel.100
-		wg_lady.122
 		wg_fe.99
 		wg_khan.3
 		wg_khan.1000
+		wg_lady.100
+		wg_lady.122
+		wg_lady.139
+		wg_crisis.10021
+		wg_boss.47
 	}
 }
 on_yearly_pulse_country = {
@@ -97,6 +101,7 @@ on_yearly_pulse_country = {
 		wsg_shimakaze.30100
 		wsgranking.9005
 		wsgancrel.705
+		
 	}
 }
 
@@ -106,6 +111,9 @@ on_monthly_pulse = {
 		wg_crisis.302
 		wg_crisis.98
 		wg_aft.1
+		wsg_shimakaze.30200
+		wsg_shimakaze.30202
+		wsg_shimakaze.30204
 	}
 }
 
@@ -284,8 +292,8 @@ on_custom_diplomacy = {
 		wg_lady.25
 		wg_lady.26
 		wg_lady.27
-		wg_lady.29
 		wg_lady.28
+		wg_lady.29
 		wg_lady.1000
 		wg_lady.1001
 		wg_lady.10000

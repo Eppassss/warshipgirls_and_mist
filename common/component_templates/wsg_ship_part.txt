@@ -599,13 +599,12 @@ utility_component_template = {
 		apply_on = ships
 		
 		stack_info = {			
-			id = UF_AURA_1
+			id = aura_ag_weapon_hull_damage_debuff
 			priority = 200
 		}
 		
 		modifier = {
-			ship_shield_penetration_mult = -0.25
-			ship_armor_penetration_mult = -0.25		
+			ship_hull_damage_mult = -0.15	
 			ship_weapon_damage = -0.20
 			ship_fire_rate_mult = -0.10
 		}
@@ -691,14 +690,13 @@ utility_component_template = {
 		apply_on = ships
 		
 		stack_info = {			
-			id = UF_AURA_1
-			priority = 200
+			id = aura_ag_weapon_hull_damage_debuff
+			priority = 110
 		}
 		
 		modifier = {
-			ship_shield_penetration_mult = -0.35
-			ship_armor_penetration_mult = -0.35
-			ship_weapon_damage = -0.05
+			ship_hull_damage_mult = -0.05
+			ship_weapon_damage = -0.10
 		}
 		
 		graphics = {

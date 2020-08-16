@@ -355,6 +355,7 @@ decision_port_project = {
 		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_wsg_port
+			is_planet_class = pc_swim
 			is_planet_class = pc_ringworld_habitable_sh
 			is_planet_class = pc_ringworld_habitable_wsg
 			is_planet_class = pc_ringworld_habitable			
@@ -583,5 +584,55 @@ decision_wsg_rw_project = {
 	
 	ai_weight = {
 		weight = 0
+	}
+}
+
+decision_water_project_1 = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resort_colony
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 30
+		}
+	}
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes
+			has_technology = tech_wg_waterB2
+		}		
+		NOR = {
+			has_modifier = planet_growth_discouraged
+			has_modifier = planet_population_control
+		}
+		is_planet_class = pc_swim
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = swim_project_requirements
+			owner = {
+				NOT = { has_country_flag = timed_swim_project_flag }
+			}	
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "wg_swim_planet_colony" days = 4800 }
+		owner = {
+			set_timed_country_flag = { flag = timed_swim_project_flag days = 4800 }
+		}	
+	}
+	
+	ai_weight = {
+		weight = 5
+
+		modifier = {
+			factor = 0
+			free_housing < 1
+		}
 	}
 }

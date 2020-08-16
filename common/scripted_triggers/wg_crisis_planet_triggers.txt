@@ -17,6 +17,7 @@ UF_target_planet = {
 		is_planet_class = pc_ringworld_habitable
 		is_planet_class = pc_ringworld_habitable_sh
 		is_planet_class = pc_ringworld_habitable_wsg
+		is_planet_class = pc_swim
 		is_planet_class = pc_habitat
 		is_planet_class = pc_nuked
 		is_planet_class = pc_hive

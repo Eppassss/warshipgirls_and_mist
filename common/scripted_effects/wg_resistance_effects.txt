@@ -64,7 +64,7 @@ create_wg_resistance_flagfleet = {
         effect = {
             set_owner = PREV
             while = {
-                count = 10
+                count = 15
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_TITAN"
@@ -73,7 +73,7 @@ create_wg_resistance_flagfleet = {
                 }
             }
             while = {
-                count = 50
+                count = 60
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_BB"
@@ -82,7 +82,7 @@ create_wg_resistance_flagfleet = {
                 }
             }
             while = {
-                count = 70
+                count = 80
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_DD"  
@@ -120,7 +120,7 @@ create_wg_resistance_fleet = {
         effect = {
             set_owner = PREV
             while = {
-                count = 3
+                count = 5
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_TITAN"
@@ -129,7 +129,7 @@ create_wg_resistance_fleet = {
                 }
             }
             while = {
-                count = 25
+                count = 45
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_BB"
@@ -138,14 +138,21 @@ create_wg_resistance_fleet = {
                 }
             }
             while = {
-                count = 50
+                count = 70
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_DD"  
                     graphical_culture = "wsg_03"
 					upgradable = no
                 }
-            }								
+            }
+			while = {
+                count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"  
+                }
+            }
             set_location = {
                 target = event_target:spawn_resistance_fleet_location
                 distance = 5
@@ -283,7 +290,7 @@ create_wg_resistance_weaker_flagfleet = {
         effect = {
             set_owner = PREV
             while = {
-                count = 3
+                count = 5
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_TITAN"
@@ -292,7 +299,7 @@ create_wg_resistance_weaker_flagfleet = {
                 }
             }
             while = {
-                count = 20
+                count = 30
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_BB"
@@ -301,7 +308,7 @@ create_wg_resistance_weaker_flagfleet = {
                 }
             }
             while = {
-                count = 40
+                count = 50
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_DD"  
@@ -332,7 +339,7 @@ create_wg_resistance_weaker_fleet = {
         effect = {
             set_owner = PREV
             while = {
-                count = 2
+                count = 4
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_TITAN"
@@ -341,7 +348,7 @@ create_wg_resistance_weaker_fleet = {
                 }
             }
             while = {
-                count = 20
+                count = 25
                 create_ship = {
                     name = random
                     design = "NAME_WG_RA_BB"

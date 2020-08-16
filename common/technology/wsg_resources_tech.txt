@@ -1085,7 +1085,7 @@ tech_wsg_s_460 = {
 	cost = @tier5cost3
 	tier = 5
 	category = { particles }
-	prerequisites = { "tech_wsg_533" }
+	prerequisites = { "tech_wsg_s_460" }
 	weight = @tier4weight3
 	is_rare = yes
 	is_dangerous = yes
@@ -1131,7 +1131,8 @@ tech_wsg_s_460 = {
 		}
 	}
 	potential = {
-		has_authority = auth_warshipgirls	
+		has_authority = auth_warshipgirls
+		has_authority = auth_shenhai
 	}	
 }
 ###############################################################
@@ -1895,7 +1896,7 @@ tech_wsg_s_406 = {
 	cost = @tier5cost2
 	tier = 5
 	category = { particles }
-	prerequisites = { "tech_wsg_406" }
+	prerequisites = { "tech_wsg_s_406" }
 	weight = @tier4cost3
 	is_rare = yes
 	is_dangerous = yes
@@ -1940,7 +1941,8 @@ tech_wsg_s_406 = {
 		}
 	}
 	potential = {
-		has_authority = auth_warshipgirls	
+		has_authority = auth_warshipgirls
+		has_authority = auth_shenhai
 	}	
 }
 tech_wsg_alpha_propulsion = {

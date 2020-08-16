@@ -1,0 +1,355 @@
+wg_lady_portrait_1 = {
+	potential = {
+		check_variable = { which = lady_affection_level value <= 1 }
+		wsg_lady_available = yes
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_portrait_2 = {
+	potential = {
+		check_variable = { which = lady_affection_level value > 1 }
+		check_variable = { which = lady_affection_level value <= 3 }
+		wsg_lady_available = yes
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_portrait_3 = {
+	potential = {
+		check_variable = { which = lady_affection_level value >= 4 }
+		wsg_lady_available = yes
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_portrait_broken = {
+	potential = {
+		has_modifier = wsg_lady_recover_cd
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_diplo_button_1_effect = {
+	potential = { always = yes }
+	allow = { 
+		custom_tooltip = {
+			fail_text = wsg_lady_is_governor
+			NOT = { has_country_flag = wsg_lady_governor_active }
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_unavailable
+			wsg_lady_available = yes
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_changing
+			NOT = { has_country_flag = wsg_lady_changing }
+		}
+		if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_warship_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					NOT = { has_hp_percentage < 0.7 }
+				}
+			}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_army_active }}
+			hidden_trigger = {  # To prevent exploit
+				any_owned_army = {
+					is_lady_army = yes
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_army = {
+					is_lady_army = yes
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_armed_science_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_armed_science
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip =  wg_lady_diplo_button_1_tooltip
+		hidden_effect = {
+			set_timed_country_flag = { flag = wsg_lady_changing days = 1 }
+			create_wsg_lady_governor = yes
+			set_variable = { which = wsg_lady_prev_type value = wsg_lady_next_type }
+			set_variable = { which = wsg_lady_next_type value = 1 }
+			set_country_flag = wsg_lady_changed
+		}
+	}
+}
+wg_lady_diplo_button_2_effect = {
+	potential = { always = yes }
+	allow = { 
+		custom_tooltip = {
+			fail_text = wsg_lady_is_warship
+			NOT = { has_country_flag = wsg_lady_warship_active }
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_unavailable
+			wsg_lady_available = yes
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_changing
+			NOT = { has_country_flag = wsg_lady_changing }
+		}
+		if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_governor_active }}
+			hidden_trigger = { any_owned_leader = { has_leader_flag = wsg_lady_governor }}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_army_active }}
+			hidden_trigger = {  # To prevent exploit
+				any_owned_army = {
+					is_lady_army = yes
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_army = {
+					is_lady_army = yes
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_armed_science_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_armed_science
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip =  wg_lady_diplo_button_2_tooltip
+		hidden_effect = {
+			set_timed_country_flag = { flag = wsg_lady_changing days = 1 }
+			create_wsg_lady_warship = yes
+			set_variable = { which = wsg_lady_prev_type value = wsg_lady_next_type }
+			set_variable = { which = wsg_lady_next_type value = 2 }
+			set_country_flag = wsg_lady_changed
+		}
+	}
+}
+wg_lady_diplo_button_3_effect = {
+	potential = { always = yes }
+	allow = { 
+		custom_tooltip = {
+			fail_text = wsg_lady_is_army
+			NOT = { has_country_flag = wsg_lady_army_active }
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_unavailable
+			wsg_lady_available = yes
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_changing
+			NOT = { has_country_flag = wsg_lady_changing }
+		}
+		if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_governor_active }}
+			hidden_trigger = { any_owned_leader = { has_leader_flag = wsg_lady_governor }}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_warship_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					NOT = { has_hp_percentage < 0.7 }
+				}
+			}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_army_active }}
+			hidden_trigger = {  # To prevent exploit
+				any_owned_army = {
+					is_lady_army = yes
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_army = {
+					is_lady_army = yes
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip =  wg_lady_diplo_button_4_tooltip
+		hidden_effect = {
+			set_timed_country_flag = { flag = wsg_lady_changing days = 1 }
+			create_wsg_lady_armed_science = yes
+			set_variable = { which = wsg_lady_prev_type value = wsg_lady_next_type }
+			set_variable = { which = wsg_lady_next_type value = 4 }
+			set_country_flag = wsg_lady_changed
+		}
+	}
+}
+
+wg_lady_diplo_button_4_effect = {
+	potential = { always = yes }
+	allow = { 
+		custom_tooltip = {
+			fail_text = wsg_lady_is_science_ship
+			NOT = { has_country_flag = wsg_lady_armed_science_active }
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_unavailable
+			wsg_lady_available = yes
+		}
+		custom_tooltip = {
+			fail_text = wsg_lady_changing
+			NOT = { has_country_flag = wsg_lady_changing }
+		}
+		if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_governor_active }}
+			hidden_trigger = { any_owned_leader = { has_leader_flag = wsg_lady_governor }}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_warship_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				any_owned_fleet = { 
+					has_fleet_flag = lady_fleet2
+					NOT = { has_hp_percentage < 0.7 }
+				}
+			}
+		} else_if = {
+			limit = { hidden_trigger = { has_country_flag = wsg_lady_armed_science_active }}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.a
+				any_owned_fleet = { 
+					has_fleet_flag = lady_armed_science
+					is_in_combat = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = wg_lady.27.allow.b
+				event_target:lady_science_ship = {
+					has_hp_percentage > 0.8
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip =  wg_lady_diplo_button_3_tooltip
+		hidden_effect = {
+			set_timed_country_flag = { flag = wsg_lady_changing days = 1 }
+			create_wsg_lady_army = yes
+			set_variable = { which = wsg_lady_prev_type value = wsg_lady_next_type }
+			set_variable = { which = wsg_lady_next_type value = 3 }
+			set_country_flag = wsg_lady_changed
+		}
+	}
+}
+
+wg_lady_link_button_effect = {
+	potential = { 
+		OR = {
+			has_country_flag = gain_wsg_lady 
+			is_same_value = event_target:wsg_lady_own_country
+		}
+		NOR = { 
+			has_country_flag = ban_commu_with_wsg_lady 
+			has_country_flag = modifing_wsg_lady
+			has_country_flag = wsg_lady_changing
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = already_has_wsg_lady_diplo
+			OR = {
+				has_wsg_lady_active_diplo = no
+				NOT = { has_country_flag = talking_to_wsg_lady }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = { country_event = { id = wg_lady.998 }}
+	}
+}
+
+# wg_lady_new_message_0_1_effect = {
+# 	potential = { 
+# 		has_country_flag = wsg_lady_changed
+# 		check_variable = { which = wsg_lady_prev_type value = 0 }
+# 		check_variable = { which = wsg_lady_next_type value = 1 }
+# 	}
+# 	allow = { always = yes }
+# 	effect = {}
+# }

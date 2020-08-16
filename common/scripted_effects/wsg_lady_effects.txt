@@ -783,3 +783,61 @@ set_lady_portrait = {
 		change_leader_portrait = wsglady_affection1
 	}
 }
+
+quit_lady_commu_effects = {
+	hidden_effect = {
+		set_country_flag = finish_lady_talking
+		
+	}
+}
+talk_to_lady_option_effects = {
+	hidden_effect = {
+		set_country_flag = talked_to_wsg_lady
+		country_event = { id = wg_lady.998 }
+	}
+}
+lady_changing_effects = {
+	hidden_effect = {
+		set_country_flag = wsg_lady_changing
+		remove_country_flag = talking_to_wsg_lady
+		remove_country_flag = talked_to_wsg_lady
+	}
+}
+lady_diplo_immediate_effects = {
+	get_player_nickname = yes
+	remove_country_flag = wsg_lady_talking1
+	remove_country_flag = wsg_lady_talking2
+	remove_country_flag = wsg_lady_talking3
+	random_list = {
+		1 = { set_country_flag = wsg_lady_talking1 }
+		1 = { set_country_flag = wsg_lady_talking2 }
+		1 = { set_country_flag = wsg_lady_talking3 }
+	}
+	set_country_flag = talking_to_wsg_lady
+}
+lady_diplo_after_effects = {
+	hidden_effect = {
+		if = {
+			limit = { NOT = { has_country_flag = talked_to_wsg_lady }}
+			remove_country_flag = wsg_lady_talking1
+			remove_country_flag = wsg_lady_talking2
+			remove_country_flag = wsg_lady_talking3
+		}
+		if = {
+			limit = { has_country_flag = finish_lady_talking }
+			remove_country_flag = talking_to_wsg_lady
+			remove_country_flag = talked_to_wsg_lady
+			remove_country_flag = wsg_lady_changed
+			remove_country_flag = finish_lady_talking
+			break = yes
+		}
+		if = {
+			limit = { has_country_flag = wsg_lady_changing }
+			remove_country_flag = wsg_lady_changing
+		}
+		if = {
+			limit = { has_country_flag = talking_to_wsg_lady }
+			remove_country_flag = talking_to_wsg_lady
+		}
+	}
+}

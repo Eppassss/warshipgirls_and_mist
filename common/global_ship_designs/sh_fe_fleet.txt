@@ -99,7 +99,7 @@ ship_design = {
 	is_special_buildable = yes
 	
 	section = {
-		template = "fallen_empire_large_warship_key"
+		template = "sh_fallen_empire_large_warship_key"
 		slot = "mid"
 	
 		component = {
@@ -113,6 +113,10 @@ ship_design = {
 		component = {
 			slot = "EXTRA_LARGE_01"
 			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_XAC"
 		}
 		component = {
 			slot = "LARGE_GUN_01"

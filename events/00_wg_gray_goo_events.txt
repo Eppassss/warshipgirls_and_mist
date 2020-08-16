@@ -627,20 +627,10 @@ country_event = {
 	desc = "graygoo.500.d.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root.capital_scope
-		room = root
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_country_flag = gray_diplomacy_engaged }
-	}
 	
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
@@ -727,14 +717,8 @@ country_event = {
 	desc = "graygoo.501.d.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		planet_background = event_target:gray_governor_planet
-		graphical_culture = root
-		city_level = event_target:gray_governor_planet
-		room = root
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
 
@@ -828,14 +812,8 @@ country_event = {
 	desc = "graygoo.502.d.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root.capital_scope
-		room = root
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
 
@@ -935,14 +913,8 @@ country_event = {
 	desc = "graygoo.503.d.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root.capital_scope
-		room = root
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
 
@@ -1116,14 +1088,8 @@ country_event = {
 	desc = "graygoo.504.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root.capital_scope
-		room = root
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
 
@@ -1168,11 +1134,8 @@ country_event = {
 	desc = "graygoo.512.c.desc"
 
 	diplomatic = yes
-
-	picture_event_data = {
-		portrait = GrayTempest
-		room = no_video_feed_room
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	is_triggered_only = yes
 

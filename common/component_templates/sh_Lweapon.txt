@@ -58,10 +58,7 @@ weapon_component_template = {
 	range = 130.0
 	accuracy = 0.75
 	shield_penetration = 1.0
-	armor_penetration = 1.0
-	shield_damage = 1.35
-	armor_damage = 1.35
-	hull_damage = 1.25		
+	armor_penetration = 1.0		
 	tracking = 0.35
 	power = -160
 	

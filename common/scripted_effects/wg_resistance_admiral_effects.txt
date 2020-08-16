@@ -1460,7 +1460,7 @@ create_ra_admiral_1002 = {
             trait = leader_trait_admiral_Missouri
         }
         effect = {
-            change_leader_portrait = wsg209
+            change_leader_portrait = wsg9987
             set_leader_flag = missouri
             set_leader_flag = ra_admiral
         }

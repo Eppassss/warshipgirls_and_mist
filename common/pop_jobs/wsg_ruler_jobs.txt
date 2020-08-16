@@ -13,6 +13,7 @@ wsg_administrator = {
 
 	possible = {
 		ruler_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 
 	resources = {
@@ -69,6 +70,7 @@ wsg_merchant = {
 		#is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		z_pop_job_trigger = yes
 	}
 
 	possible = {

@@ -153,12 +153,14 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_shenhai
-		last_increased_tech = "tech_sh_social"
+		has_technology = tech_sh_social
+		NOT = { has_country_flag = researched_tech_sh_social }
 		NOT = {
 			has_civic = civic_CM
 		}		
 	}
 	immediate = {
+		set_country_flag = researched_tech_sh_social
 		country_event = { id = sh.7 days = 30  }
 	}
 }
@@ -255,6 +257,7 @@ country_event = {
 			modify_species = {
 				species = prev
 				add_trait = sh_trait_shenhai1
+				remove_trait = sh_trait_shenhai
 			}
 			species = { save_event_target_as = sh_species }
 		}
@@ -714,10 +717,6 @@ country_event = {
 						add_trait = leader_trait_scientist_shenhai2
 						remove_trait = leader_trait_scientist_shenhai
 					}
-					ruler = {
-						add_trait = leader_trait_ruler_shenhai2
-						remove_trait = leader_trait_scientist_shenhai
-					}
 				}
 			}
 			every_pool_leader = {
@@ -752,10 +751,6 @@ country_event = {
 					}
 					scientist = {
 						add_trait = leader_trait_scientist_shenhai2
-						remove_trait = leader_trait_scientist_shenhai
-					}
-					ruler = {
-						add_trait = leader_trait_ruler_shenhai2
 						remove_trait = leader_trait_scientist_shenhai
 					}
 				}
@@ -1676,9 +1671,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_shenhai
-		last_increased_tech = "tech_battleships"
+		has_technology = tech_battleships
+		NOT = { has_country_flag = researched_tech_battleships }
 	}
 	immediate = {
+		set_country_flag = researched_tech_battleships
 		country_event = { id = sh.3028 days = 720  }
 	}
 }
@@ -1713,13 +1710,13 @@ country_event = {
 				set_owner = event_target:sh_buffer_owner
 				create_ship = {
 					name = random
-					design = "NAME_uf_buffer"
+					design = "NAME_uf_buffer2"
 					graphical_culture = "npf_01"
 					upgradable = no
 				}
 				create_ship = {
 					name = random
-					design = "NAME_uf_buffer"
+					design = "NAME_uf_buffer2"
 					graphical_culture = "npf_02"
 					upgradable = no
 				}
@@ -1750,7 +1747,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_shenhai
-		last_increased_tech = "tech_sh_executioner"		
+		has_technology = tech_sh_executioner
+		NOT = { has_country_flag = researched_tech_sh_executioner }	
+	}
+	immediate = {
+		set_country_flag = researched_tech_sh_executioner
 	}
 	option = {
 		name = "sh.3029.a"
@@ -2524,9 +2525,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_shenhai
-		last_increased_tech = "tech_sh_Eweapon"		
+		has_technology = tech_sh_Eweapon
+		NOT = { has_country_flag = researched_tech_sh_Eweapon }		
 	}
 	immediate = {
+		set_country_flag = researched_tech_sh_Eweapon
 		random_owned_planet = {
 			planet_event = { id = sh.3052 }
 		}	

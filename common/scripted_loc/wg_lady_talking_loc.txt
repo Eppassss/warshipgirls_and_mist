@@ -1,0 +1,63 @@
+defined_text = {
+	name = GetLadyReply
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 1 }}
+		localization_key = wg_lady.24.d.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 2 }}
+		localization_key = wg_lady.24.e.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 3 }}
+		localization_key = wg_lady.24.f.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 11 }}
+		localization_key = wg_lady.25.c.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 12 }}
+		localization_key = wg_lady.25.d.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 12 }}
+		localization_key = wg_lady.25.e.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 21 }}
+		localization_key = wg_lady.26.c.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 22 }}
+		localization_key = wg_lady.26.d.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 23 }}
+		localization_key = wg_lady.26.e.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 31 }}
+		localization_key = wg_lady.27.c.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 32 }}
+		localization_key = wg_lady.27.d.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 33 }}
+		localization_key = wg_lady.27.e.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 41 }}
+		localization_key = wg_lady.28.d.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 42 }}
+		localization_key = wg_lady.28.e.response
+	}
+	text = {
+		trigger = { check_variable = { which = talk_to_wsg_lady_option value = 43 }}
+		localization_key = wg_lady.28.f.response
+	}
+}

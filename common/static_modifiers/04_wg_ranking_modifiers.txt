@@ -223,6 +223,11 @@ wg_modifier_combat_enhancement = {
 	weapon_type_wsg_pantsu_damage_mult = 0.30
 }
 
+drums_of_war2 = {
+	ship_weapon_damage = 0.10
+	pop_ethic_militarist_attraction_mult = 0.15
+}
+
 #wg_modifier_combat_kinetic_preference= {
 #	weapon_type_energy_weapon_damage_mult = -0.15
 #	weapon_type_kinetic_weapon_damage_mult = 0.35
@@ -234,3 +239,63 @@ wg_modifier_combat_enhancement = {
 #	weapon_type_kinetic_weapon_damage_mult = -0.15
 #	weapon_type_explosive_weapon_damage_mult = 0.35
 #}
+
+wg_modifier_canteen1 = {
+	species_leader_exp_gain = 0.50
+}
+
+wg_modifier_canteen2 = {
+	ships_energy_upkeep_mult = -0.10
+}
+
+wg_modifier_canteen3 = {
+	country_base_influence_produces_add = 1
+}
+
+wg_modifier_canteen4 = {
+	army_damage_mult = 0.25
+}
+wg_modifier_canteen5 = {
+	ship_speed_mult = 0.20
+}
+wg_modifier_canteen6 = {
+	weapon_type_point_defense_weapon_damage_mult = 0.1
+	weapon_type_point_defense_weapon_fire_rate_mult = 0.1
+}
+wg_modifier_canteen7 = {
+	armies_upkeep_mult = -0.2
+}
+wg_modifier_canteen8 = {
+	pop_happiness = 0.05
+}
+
+wg_modifier_canteen9 = {
+	pop_happiness = 0.05
+}
+wg_modifier_canteen10 = {
+	planet_amenities_mult = -0.05
+}
+wg_modifier_canteen11 = {
+	science_ship_survey_speed = -0.10
+}
+wg_modifier_canteen12 = {
+	ship_weapon_damage = 0.05
+	ship_disengage_chance_mult = -0.1
+}
+wg_modifier_canteen13 = {
+	ship_tracking_add = -5
+}
+wg_modifier_canteen14 = {
+	starbase_shipyard_build_speed_mult = -0.15
+}
+wg_modifier_canteen15 = {
+	country_unity_produces_mult = -0.10
+}
+wg_modifier_canteen_affectionUp1 = {
+	icon = "gfx/interface/icons/resources/sr_wg_up.dds"
+	custom_tooltip = wg_modifier_canteen_affectionUp1_tooltip
+}
+wg_modifier_canteen_affectionUp2 = {
+	icon = "gfx/interface/icons/resources/sr_wg_up.dds"
+	custom_tooltip = wg_modifier_canteen_affectionUp2_tooltip
+}

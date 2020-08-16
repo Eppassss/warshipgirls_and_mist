@@ -3779,6 +3779,227 @@ country_event = {
     }
 }
 
+#堕落妈自动化舰队回防
+country_event = {
+    id = wg_fe.142
+    hide_window = yes
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        has_global_flag = wg_invasion_happened
+		has_global_flag = triggered_wgfe_crisis_event2
+		NOR = { 
+            has_global_flag = all_portal_destroyed
+			has_global_flag = wg_crisis_very_easy
+			has_global_flag = wg_crisis_easy
+        }
+    }
+    
+    immediate = {
+        create_country = {
+            name = "NAME_WG_fallen_empire"
+            type = "wg_awakened_fleet_country"
+            species = event_target:fe_species_wsg
+            name_list = "WSG"
+            flag = {
+				icon = {
+					category = "warshipgirls"
+					file = "wg_flags_09.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "diagonal.dds"
+				}
+				colors = {
+					"blue"
+					"purple"
+					"null"
+					"null"
+				}
+			}
+            effect = {
+                save_global_event_target_as = wg_awakened_fleet_country_targer
+				establish_communications_no_message = root
+				country_event = { id = wg_fe.143 }
+                set_graphical_culture = fallen_empire_03
+                add_modifier = { modifier = wg_fe_cheat days = -1 }
+                if = {
+                    limit = { 
+                        OR = {
+                            has_global_flag = wg_crisis_hard
+							has_global_flag = wg_crisis_insane
+                        }
+                    }
+                    add_modifier = { modifier = wg_fe_hard_buff days = -1 }
+                }
+                if = {
+                    limit = { 
+                        OR = {
+                            has_global_flag = wg_crisis_insane
+                        }
+                    }
+                    add_modifier = { modifier = wg_fe_insane_buff2 days = -1 }
+                }
+			}	
+		}
+    }
+}
+#攻击传送门
+country_event = {
+    id = wg_fe.143
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { 
+        is_country_type = wg_awakened_fleet_country
+        NOR = { 
+            has_global_flag = all_portal_destroyed
+        }
+    }
+
+    immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_authority = auth_warshipgirls
+					has_authority = auth_shenhai
+				}
+				is_ai = no
+			}
+			country_event = { id = wg_fe.145 }
+		}
+        if = {
+            limit = { NOT = { has_global_flag = first_portal_destroyed }}
+            event_target:first_portal_system = {
+                save_event_target_as = portal_system_fe
+            }
+        }
+        else_if = {
+            limit = { NOT = { has_global_flag = second_portal_destroyed }}
+            event_target:second_portal_system = {
+                save_event_target_as = portal_system_fe
+            }
+        }
+        else_if = {
+            limit = { NOT = { has_global_flag = third_portal_destroyed }}
+            event_target:third_portal_system = {
+                save_event_target_as = portal_system_fe
+            }
+        }
+
+        event_target:wg_awakened_fleet_country_targer = {
+            if = {
+                limit = { has_global_flag = wg_crisis_easy }
+                create_wg_back_fe_fleet = yes
+                last_created_fleet = {
+                    set_fleet_flag = wg_awakened_fe_attack_fleet
+                }
+                create_wg_back_fe_fleet2 = yes
+                last_created_fleet = {
+                    set_fleet_flag = wg_awakened_fe_attack_fleet
+                }
+            }
+            else = {
+                create_wg_back_fe_fleet = yes
+                last_created_fleet = {
+                    set_fleet_flag = wg_awakened_fe_attack_fleet
+                }
+                while = {
+                    count = 6
+                    create_wg_back_fe_fleet2 = yes
+                    last_created_fleet = {
+                        set_fleet_flag = wg_awakened_fe_attack_fleet
+                    }
+                }
+                if = {
+                    limit = {
+                        has_global_flag = wg_crisis_hard
+                        has_global_flag = wg_crisis_insane
+                    }
+                    create_wg_back_fe_fleet = yes
+                    last_created_fleet = {
+                        set_fleet_flag = wg_awakened_fe_attack_fleet
+                    }
+                    while = {
+                        count = 8
+                        create_wg_back_fe_fleet2 = yes
+                        last_created_fleet = {
+                            set_fleet_flag = wg_awakened_fe_attack_fleet
+                        }
+                    }
+                }
+				country_event = { id = wg_fe.144 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wg_fe.144
+	hide_window = yes
+	is_triggered_only = yes
+    trigger = {
+        is_country_type = wg_awakened_fleet_country
+		any_owned_fleet = {
+			has_fleet_flag = wg_awakened_fe_attack_fleet
+			is_fleet_idle = yes
+		}
+    }
+
+
+    immediate = {
+        if = {
+            limit = { NOT = { has_global_flag = first_portal_destroyed }}
+            event_target:first_portal_system = {
+                save_event_target_as = portal_system_fe
+            }
+        }
+        else_if = {
+            limit = { has_global_flag = wg_crisis_insane }
+            if = {
+                limit = { NOT = { has_global_flag = second_portal_destroyed }}
+                event_target:second_portal_system = {
+                    save_event_target_as = portal_system_fe
+                }
+            }
+            else_if = {
+                limit = { NOT = { has_global_flag = third_portal_destroyed }}
+                event_target:third_portal_system = {
+                    save_event_target_as = portal_system_fe
+                }
+            }
+        }
+        every_owned_fleet = {
+			limit = {
+				has_fleet_flag = wg_awakened_fe_attack_fleet
+				is_fleet_idle = yes
+			}
+			queue_actions = {
+                move_to = event_target:portal_system_fe
+			}
+		}
+    }
+}
+
+country_event = {
+	id = wg_fe.145
+	title = "TRANSMISSION"
+	desc = "wg_fe.145.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = wsg1
+		room = ethic_spaceship_room
+	}
+
+	option = {
+		name = "wg_fe.145.a"
+	}
+}
+
+
 # 测试条件
 country_event = {
 	id = wg_fe.12450

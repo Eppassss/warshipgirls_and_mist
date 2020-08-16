@@ -42,12 +42,6 @@ building_wsg_yamato_monument = {
 		"tech_building_wsg_yamato_monument"
 	}	
 	
-
-	show_tech_unlock_if = {
-		is_gestalt = no
-		is_spiritualist = no
-		is_megacorp = no
-	}
 	
 	triggered_desc = {
 		text = job_culture_worker_effect_desc
@@ -116,12 +110,6 @@ building_wsg_autochthon_monument = {
 		"tech_building_wsg_autochthon_monument"
 	}	
 	
-
-	show_tech_unlock_if = {
-		is_gestalt = no
-		is_spiritualist = no
-		is_megacorp = no
-	}
 	
 	triggered_desc = {
 		text = job_culture_worker_effect_desc
@@ -188,12 +176,6 @@ building_wsg_moyu = {
 		"tech_wsg_moyu"
 	}	
 	
-
-	show_tech_unlock_if = {
-		is_gestalt = no
-		is_spiritualist = no
-		is_megacorp = no
-	}
 	
 	triggered_desc = {
 		text = job_wsg_moyu_effect_desc

@@ -120,6 +120,10 @@ country_event = {
 										check_variable = { which = "months_no_affection" value >= 15 }
 										add = 3
 									}
+									modifier = { # buff加成的额外几率
+										ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+										factor = 2
+									}
 									set_variable = { which = "months_no_affection" value = 0 }
 									switch = {
 										trigger = has_leader_flag
@@ -135,6 +139,25 @@ country_event = {
 											}
 										}
 										default = { add_normal_leader_affection = { LEADER_CLASS = governor } }
+									}
+									# buff加成的额外好感度
+									if = {
+										limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+										switch = {
+											trigger = has_leader_flag
+											wsg_shimakaze_leader = { add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = governor MARRIED_FLAG = married_wsg_lady }}
+											wsg_lady_leader = { add_special_leader_affection = { LEADER = lady LEADER_CLASS = governor MARRIED_FLAG = married_wsg_shimakaze }}
+											灰风领袖 = { add_special_leader_affection = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }}
+											Sharan_leader = { add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = governor MARRIED_FLAG = married_Sharan }}
+											yuudaichi_leader = { add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = governor MARRIED_FLAG = married_yuudaichi }}
+											bubbles_leader = { 
+												if = {
+													limit = { owner = { NOT = { has_country_flag = bubbles_depressed }}}
+													add_special_leader_affection = { LEADER = bubbles LEADER_CLASS = governor MARRIED_FLAG = married_bubbles }
+												}
+											}
+											default = { add_normal_leader_affection = { LEADER_CLASS = governor } }
+										}
 									}
 								}
 								39 = { # 伪随机
@@ -217,8 +240,22 @@ country_event = {
 	immediate = {
 		FROM = { 
 			change_variable = { which = affection value = 2 }
+			if = { # buff加成的额外好感度
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				change_variable = { which = affection value = 2 }
+			}
 			random_list = {
-				25 = { change_variable = { which = affection value = 1 }}
+				25 = { 
+					modifier = { # buff加成的额外几率
+						ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
+					change_variable = { which = affection value = 1 }
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						change_variable = { which = affection value = 1 }
+					}
+				}
 				75 = {
 					modifier = {
 						factor = 1.4
@@ -239,7 +276,17 @@ country_event = {
 				}
 			}
 			random_list = {
-				15 = { change_variable = { which = affection value = 1 }}
+				15 = { 
+					modifier = { # buff加成的额外几率
+						ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
+					change_variable = { which = affection value = 1 }
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						change_variable = { which = affection value = 1 }
+					}
+				}
 				85 = {
 					modifier = {
 						factor = 0.75
@@ -279,12 +326,36 @@ country_event = {
 	immediate = {
 		change_variable = { which = shimakaze_level value = 1 }
 		change_variable = { which = shimakaze_affection value = 2 }
+		if = { # buff加成的额外好感度
+			limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+			change_variable = { which = shimakaze_affection value = 2 }
+		}
 		random_list = {
-			40 = { change_variable = { which = shimakaze_affection value = 1 }}
+			40 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = shimakaze_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = shimakaze_affection value = 1 }
+				}
+			}
 			60 = {}
 		}
 		random_list = {
-			20 = { change_variable = { which = shimakaze_affection value = 1 }}
+			20 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = shimakaze_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = shimakaze_affection value = 1 }
+				}
+			}
 			80 = {}
 		}
 		reset_shimakaze_affection_level = yes
@@ -310,12 +381,36 @@ country_event = {
 	immediate = {
 		change_variable = { which = bubbles_level value = 1 }
 		change_variable = { which = bubbles_affection value = 2 }
+		if = { # buff加成的额外好感度
+			limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+			change_variable = { which = bubbles_affection value = 2 }
+		}
 		random_list = {
-			40 = { change_variable = { which = bubbles_affection value = 1 }}
+			40 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = bubbles_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = bubbles_affection value = 1 }
+				}
+			}
 			60 = {}
 		}
 		random_list = {
-			20 = { change_variable = { which = bubbles_affection value = 1 }}
+			20 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = bubbles_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = bubbles_affection value = 1 }
+				}
+			}
 			80 = {}
 		}
 		reset_bubbles_affection_level = yes
@@ -413,6 +508,10 @@ ship_event = {
 					check_variable = { which = "planets_no_affection" value >= 9 }
 					add = 2
 				}
+				modifier = { # buff加成的额外几率
+					owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
 				switch = {
 					trigger = has_leader_flag
 					wsg_lady_leader = {
@@ -432,6 +531,30 @@ ship_event = {
 					}
 					default = {
 						add_normal_leader_affection = { LEADER_CLASS = scientist }
+					}
+				}
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					switch = {
+						trigger = has_leader_flag
+						wsg_lady_leader = {
+							owner = { event_target:lady_survey_scientist = {
+								add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+							}}
+						}
+						wsg_shimakaze_leader = {
+							owner = { event_target:shimakaze_scientist = { 
+								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+							}}
+						}
+						yuudaichi_leader = {
+							owner = { event_target:yuudaichi_scientist = { 
+								add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+							}}
+						}
+						default = {
+							add_normal_leader_affection = { LEADER_CLASS = scientist }
+						}
 					}
 				}
 				set_variable = { which = "planets_no_affection" value = 0 }
@@ -496,8 +619,36 @@ ship_event = {
 					add_normal_leader_affection = { LEADER_CLASS = scientist }
 				}
 			}
+			if = { # buff加成的额外好感度
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				switch = {
+					trigger = has_leader_flag
+					wsg_lady_leader = {
+						owner = { event_target:lady_survey_scientist = {
+							add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+						}}
+					}
+					wsg_shimakaze_leader = {
+						owner = { event_target:shimakaze_scientist = { 
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+						}}
+					}
+					yuudaichi_leader = {
+						owner = { event_target:yuudaichi_scientist = { 
+							add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+						}}
+					}
+					default = {
+						add_normal_leader_affection = { LEADER_CLASS = scientist }
+					}
+				}
+			}
 			random_list = {
 				30 = {
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					switch = {
 						trigger = has_leader_flag
 						wsg_lady_leader = {
@@ -517,6 +668,30 @@ ship_event = {
 						}
 						default = {
 							add_normal_leader_affection = { LEADER_CLASS = scientist }
+						}
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						switch = {
+							trigger = has_leader_flag
+							wsg_lady_leader = {
+								owner = { event_target:lady_survey_scientist = {
+									add_special_leader_affection = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+								}}
+							}	
+							wsg_shimakaze_leader = {
+								owner = { event_target:shimakaze_scientist = { 
+									add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+								}}
+							}
+							yuudaichi_leader = {
+								owner = { event_target:yuudaichi_scientist = { 
+									add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+								}}
+							}
+							default = {
+								add_normal_leader_affection = { LEADER_CLASS = scientist }
+							}
 						}
 					}
 				}
@@ -562,6 +737,10 @@ country_event = {
 						check_variable = { which = "techs_no_affection" value >= 5 }
 						add = 1
 					}
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					set_variable = { which = "techs_no_affection" value = 0 }
 					if = {
 						limit = { has_leader_flag = wsg_shimakaze_leader }
@@ -572,6 +751,19 @@ country_event = {
 					} 
 					else = {
 						add_normal_leader_affection = { LEADER_CLASS = scientist }
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						if = {
+							limit = { has_leader_flag = wsg_shimakaze_leader }
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+						} else_if = {
+							limit = { has_leader_flag = yuudaichi_leader }
+							add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+						} 
+						else = {
+							add_normal_leader_affection = { LEADER_CLASS = scientist }
+						}
 					}
 				}
 				19 = {
@@ -727,6 +919,10 @@ fleet_event = {
 						check_variable = { which = "days_combat_no_affection" value >= 16 }
 						add = 6
 					}
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					set_variable = { which = "days_combat_no_affection" value = 0 }
 					switch = {
 						trigger = has_leader_flag
@@ -747,6 +943,30 @@ fleet_event = {
 						}
 						default = {
 							add_normal_leader_affection = { LEADER_CLASS = admiral }
+						}
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						switch = {
+							trigger = has_leader_flag
+							wsg_shimakaze_leader = {
+								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+							}
+							灰风领袖 = {
+								add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+							}
+							Sharan_leader = {
+								add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
+							}
+							yuudaichi_leader = {
+								add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = admiral MARRIED_FLAG = married_yuudaichi }
+							}
+							Pellaeon_leader = {
+								add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = admiral MARRIED_FLAG = married_Pellaeon }
+							}
+							default = {
+								add_normal_leader_affection = { LEADER_CLASS = admiral }
+							}
 						}
 					}
 				}
@@ -835,6 +1055,10 @@ fleet_event = {
 								check_variable = { which = "battles_won_no_affection" value >= 3 }
 								add = 3
 							}
+							modifier = { # buff加成的额外几率
+								owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+								factor = 2
+							}
 							set_variable = { which = "battles_won_no_affection" value = 0 }
 							switch = {
 								trigger = has_leader_flag
@@ -855,6 +1079,30 @@ fleet_event = {
 								}
 								default = {
 									add_normal_leader_affection = { LEADER_CLASS = admiral }
+								}
+							}
+							if = { # buff加成的额外好感度
+								limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+								switch = {
+									trigger = has_leader_flag
+									wsg_shimakaze_leader = {
+										add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+									}
+									灰风领袖 = {
+										add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+									}
+									Sharan_leader = {
+										add_special_leader_affection = { LEADER = Sharan LEADER_CLASS = admiral MARRIED_FLAG = married_Sharan }
+									}
+									yuudaichi_leader = {
+										add_special_leader_affection = { LEADER = yuudaichi LEADER_CLASS = general MARRIED_FLAG = married_yuudaichi }
+									}
+									Pellaeon_leader = {
+										add_special_leader_affection = { LEADER = Pellaeon LEADER_CLASS = general MARRIED_FLAG = married_Pellaeon }
+									}
+									default = {
+										add_normal_leader_affection = { LEADER_CLASS = admiral }
+									}
 								}
 							}
 						}
@@ -897,8 +1145,16 @@ fleet_event = {
 								check_variable = { which = "battles_won_no_affection_lady" value >= 3 }
 								add = 3
 							}
+							modifier = { # buff加成的额外几率
+								has_modifier = wg_modifier_canteen_affectionUp1
+								factor = 2
+							}
 							set_variable = { which = "battles_won_no_affection_lady" value = 0 }
 							add_lady_affection = yes
+							if = { # buff加成的额外好感度
+								limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+								add_lady_affection = yes
+							}
 						}
 						4 = {
 							modifier = {
@@ -1001,6 +1257,64 @@ country_event = {
 				change_variable = { which = Pellaeon_affection value = 3 }
 				reset_Pellaeon_affection_level = yes
 			}
+			if = { # buff加成的额外好感度
+				limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+				every_owned_leader = {
+					limit = { 
+						is_wg_leader = yes
+						NOR = {
+							has_leader_flag = wsg_lady_leader
+							has_leader_flag = affection_max
+						}
+					}
+					switch = {
+						trigger = leader_class
+						admiral = {
+							change_variable = { which = affection value = 3 }
+							reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
+						}
+						general = {
+							change_variable = { which = affection value = 3 }
+							reset_normal_leader_affection_level = { LEADER_CLASS = general }
+						}
+						ruler = {
+							change_variable = { which = affection value = 3 }
+							reset_ruler_affection_level = yes
+						}
+						default = {}
+					}
+				}
+				if = {
+					limit = { has_country_flag = gain_wsg_lady }
+					change_variable = { which = lady_affection value = 3 }
+					reset_lady_affection_level = yes
+				}
+				if = {
+					limit = { has_country_flag = get_wsg_shimakaze }
+					change_variable = { which = shimakaze_affection value = 3 }
+					reset_shimakaze_affection_level = yes
+				}
+				if = {
+					limit = { is_vaild_gray_owner = yes }
+					change_variable = { which = gray_affection value = 3 }
+					reset_gray_affection_level = yes
+				}
+				if = {
+					limit = { has_country_flag = has_afk_Sharan }
+					change_variable = { which = Sharan_affection value = 3 }
+					reset_Sharan_affection_level = yes
+				}
+				if = {
+					limit = { has_country_flag = has_kc_yuudaichi }
+					change_variable = { which = yuudaichi_affection value = 3 }
+					reset_yuudaichi_affection_level = yes
+				}
+				if = {
+					limit = { has_country_flag = has_kc_Pellaeon }
+					change_variable = { which = Pellaeon_affection value = 3 }
+					reset_Pellaeon_affection_level = yes
+				}
+			}
 		}
 	}
 }
@@ -1040,6 +1354,10 @@ country_event = {
 				}
 			}
 			add_lady_army_affection = yes
+			if = { # buff加成的额外好感度
+				limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+				add_lady_army_affection = yes
+			}
 		}
 		if = {
 			limit = { #灰风
@@ -1050,6 +1368,10 @@ country_event = {
 				}
 			}
 			change_variable = { which = gray_affection value = 1 }
+			if = { # buff加成的额外好感度
+				limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+				change_variable = { which = gray_affection value = 1 }
+			}
 			reset_gray_affection_level = yes
 		}
 		if = { # 其他陆军陆军
@@ -1077,18 +1399,38 @@ country_event = {
 					}
 				}
 				leader = { 
-					if = {
-						limit = { has_leader_flag = wsg_shimakaze_leader }
-						add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
-					} else_if = {
-						limit = { has_leader_flag = yuudaichi_leader }
-						add_special_leader_affection = { LEADER = yuudaichi LEADER = general MARRIED_FLAG = married_yuudaichi }
-					} else_if = {
-						limit = { has_leader_flag = Pellaeon_leader }
-						add_special_leader_affection = { LEADER = Pellaeon LEADER = general MARRIED_FLAG = married_Pellaeon }
+					switch = {
+						trigger = has_leader_flag
+						wsg_shimakaze_leader = {
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+						}
+						yuudaichi_leader = {
+							add_special_leader_affection = { LEADER = yuudaichi LEADER = general MARRIED_FLAG = married_yuudaichi }
+						}
+						Pellaeon_leader = {
+							add_special_leader_affection = { LEADER = Pellaeon LEADER = general MARRIED_FLAG = married_Pellaeon }
+						}
+						default = {
+							add_normal_leader_affection = { LEADER_CLASS = general }
+						}
 					}
-					 else = {
-						add_normal_leader_affection = { LEADER_CLASS = general }
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						switch = {
+							trigger = has_leader_flag
+							wsg_shimakaze_leader = {
+								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+							}
+							yuudaichi_leader = {
+								add_special_leader_affection = { LEADER = yuudaichi LEADER = general MARRIED_FLAG = married_yuudaichi }
+							}
+							Pellaeon_leader = {
+								add_special_leader_affection = { LEADER = Pellaeon LEADER = general MARRIED_FLAG = married_Pellaeon }
+							}
+							default = {
+								add_normal_leader_affection = { LEADER_CLASS = general }
+							}
+						}
 					}
 				}
 			}
@@ -1172,8 +1514,10 @@ country_event = {
 	}
 
 	immediate = {
-		ruler = {
-			add_ruler_affection = yes
+		ruler = { add_ruler_affection = yes }
+		if = { # buff加成的额外好感度
+			limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+			ruler = { add_ruler_affection = yes }
 		}
 	}
 }
@@ -1620,12 +1964,8 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	show_sound = event_wg_wedding
-
-
-	picture_event_data = {
-		room = wg06_room
-		portrait = GrayTempest
-	}
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_leader_commu_option_gray
 
 	immediate = {
 		set_country_flag = married_gray
@@ -1740,8 +2080,16 @@ fleet_event = {
 			owner = { 
 				random_list = {
 					1 = {
+						modifier = { # buff加成的额外几率
+							has_modifier = wg_modifier_canteen_affectionUp1
+							factor = 2
+						}
 						set_variable = { which = "days_combat_no_affection_lady" value = 0 }
 						add_lady_affection = yes
+						if = { # buff加成的额外好感度
+							limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+							add_lady_affection = yes
+						}
 					}
 					24 = {
 						modifier = {
@@ -3114,7 +3462,7 @@ country_event = {
 	}
 }
 
-#考古完成一个坟加5~12好感
+#考古完成一个坟加3~8好感
 fleet_event = {
 	id = wg_aft.34
 	hide_window = yes
@@ -3130,12 +3478,24 @@ fleet_event = {
 
 	immediate = {
 		leader = {
-			while = { count = 5
+			while = { count = 3
 				add_scientist_affection_no_check = yes
+			}
+			if = { # buff加成的额外好感度
+				limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+				while = { count = 3
+					add_scientist_affection_no_check = yes
+				}
 			}
 			random_list = {
 				65 = { 
-					while = { count = 2
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
+					add_scientist_affection_no_check = yes 
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
 						add_scientist_affection_no_check = yes 
 					}
 				}
@@ -3143,22 +3503,52 @@ fleet_event = {
 			}
 			random_list = {
 				45 = { 
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					while = { count = 2
 						add_scientist_affection_no_check = yes 
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						while = { count = 2
+							add_scientist_affection_no_check = yes 
+						}
 					}
 				}
 				55 = {}
 			}
 			random_list = {
 				35 = { 
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					while = { count = 2
 						add_scientist_affection_no_check = yes 
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						while = { count = 2
+							add_scientist_affection_no_check = yes 
+						}
 					}
 				}
 				65 = {}
 			}
 			random_list = {
-				15 = { add_scientist_affection_no_check = yes }
+				15 = { 
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
+					add_scientist_affection_no_check = yes 
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						add_scientist_affection_no_check = yes 
+					}
+				}
 				85 = {}
 			}
 			switch = {
@@ -3172,7 +3562,7 @@ fleet_event = {
 				yuudaichi_leader = { 
 					owner = { reset_yuudaichi_affection_level = yes }
 				}
-				default = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist } }
+				default = { reset_normal_leader_affection_level = { LEADER_CLASS = scientist }}
 			}
 		}
 	}
@@ -3209,6 +3599,24 @@ country_event = {
 						}
 						default = {
 							add_scientist_affection_monthly = yes 
+						}
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						switch = {
+							trigger = has_leader_flag
+							wsg_lady_leader = {
+								add_special_scientist_affection_monthly = { LEADER = lady LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_lady }
+							}
+							wsg_shimakaze_leader = {
+								add_special_scientist_affection_monthly = { LEADER = shimakaze LEADER_CLASS = scientist MARRIED_FLAG = married_wsg_shimakaze }
+							}
+							yuudaichi_leader = {
+								add_special_scientist_affection_monthly = { LEADER = yuudaichi LEADER_CLASS = scientist MARRIED_FLAG = married_yuudaichi }
+							}
+							default = {
+								add_scientist_affection_monthly = yes 
+							}
 						}
 					}
 				}
@@ -3375,6 +3783,10 @@ country_event = {
 			}
 			random_list = {
 				1 = {
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					set_variable = { which = months_no_affection value = 0 }
 					if = {
 						limit = { exists = leader }
@@ -3383,6 +3795,17 @@ country_event = {
 						}
 					} else = {
 						owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						if = {
+							limit = { exists = leader }
+							add_special_leader_affection = {
+								LEADER = bubbles LEADER_CLASS = admiral MARRIED_FLAG = married_bubbles
+							}
+						} else = {
+							owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
+						}
 					}
 					check_bubbles_planet_modifiers = yes
 				}
@@ -3442,6 +3865,8 @@ country_event = {
 				limit = { 
 					OR = {
 						has_technology = tech_wsg_genetic_resequencing 
+						has_technology = tech_sh_genetic_resequencing 
+						has_technology = tech_sh_genetic_resequencing2
 						has_technology = tech_genetic_resequencing 
 					}
 					NOR = { 
@@ -3489,6 +3914,10 @@ fleet_event = {
 			limit = { is_in_combat = yes }
 			random_list = {
 				1 = {
+					modifier = { # buff加成的额外几率
+						owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
+						factor = 2
+					}
 					set_variable = { which = "days_combat_no_affection" value = 0 }
 					if = {
 						limit = { exists = leader }
@@ -3498,6 +3927,18 @@ fleet_event = {
 					} else = {
 						owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
 						check_bubbles_planet_modifiers = yes
+					}
+					if = { # buff加成的额外好感度
+						limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+						if = {
+							limit = { exists = leader }
+							add_special_leader_affection = {
+								LEADER = bubbles LEADER_CLASS = admiral MARRIED_FLAG = married_bubbles
+							}
+						} else = {
+							owner = { add_affection_only_special_leader = { LEADER = bubbles MARRIED_FLAG = married_bubbles }}
+							check_bubbles_planet_modifiers = yes
+						}
 					}
 				}
 				24 = {

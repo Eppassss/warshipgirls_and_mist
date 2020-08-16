@@ -43,6 +43,27 @@ tech_wg_waterB = {
 		has_wg_special_authority = yes
 	}
 }
+tech_wg_waterB2 = {
+    icon = tech_wg_waterB
+	cost = @tier2cost3
+	area = society
+	tier = 3
+	category = { new_worlds }
+	weight = 40
+	is_rare = yes
+	is_dangerous = yes
+	prereqfor_desc = {
+		diplo_action = {
+			title = "water_edicts"
+			desc = "water_edicts_desc"
+		}
+	}
+
+	potential = {
+		has_country_flag = tech_waterB_allowed_flag	
+		has_wg_special_authority = yes
+	}
+}
 
 
 tech_UNITEDFLEET2 = {

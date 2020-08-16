@@ -279,3 +279,6 @@
  leader_trait_scientist_sh_nursing_desc:0 "这位总督使用一套更合理的管理方式来提升舒适度，但为此需要更多的维护费来维持这一状态。" 
  leader_trait_scientist_sh_experienced:0 "经验丰富"
  leader_trait_scientist_sh_experienced_desc:0 "这位陆军将领是军队中的传奇人物，她所在的军队都是战无不胜攻无不克的。" 
+ 
+ 
+ mod_planet_pops_food_upkeep_mult:0 "人口食物维护费"

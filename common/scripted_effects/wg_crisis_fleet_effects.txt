@@ -823,11 +823,12 @@ create_wg_crisis_weaker_guard_fleet = {
 					upgradable = no
                 }
             }
-            while = {
-                count = 2
+            while = { 
+				count = 1
                 create_ship = {
                     name = random
-                    design = "NAME_uf_buffer_portal"  
+                    design = "NAME_uf_buffer"
+                    upgradable = no
                 }
             }								
             set_location = {
@@ -868,6 +869,15 @@ create_wg_crisis_raider_fleet = {
                     upgradable = no
                 }
             }
+			while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_WG_EG_BC"
+                    graphical_culture = "wsg_01"
+                    upgradable = no
+                }
+            }
             while = {
                 count = 10
                 create_ship = {
@@ -885,7 +895,15 @@ create_wg_crisis_raider_fleet = {
                     graphical_culture = "wsg_01"
 					upgradable = no
                 }
-            }			
+            }
+			while = { 
+				count = 1
+                create_ship = {
+                    name = random
+                    design = "NAME_uf_buffer"
+                    upgradable = no
+                }
+            }
             set_location = {
                 target = PREV
                 distance = 60
@@ -977,4 +995,17 @@ spawn_fleets_insane = {
         }
     }
     fleet_event = { id = wg_crisis.102 days = 9000 } #循环刷辅助守家舰队
+}
+
+create_wg_crisis_platform = {
+	if = {
+		limit = {
+			owner = { is_country_type = wg_crisis_country }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_WG_EG_ION_CANNON"
+			graphical_culture = "wsg_01"
+		}						
+	}					
 }

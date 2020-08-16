@@ -114,8 +114,8 @@ weapon_component_template = {
 	total_fire_time = 175
 	range = 125.0
 	accuracy = 1.00
-	shield_penetration = 3.0
-	armor_penetration = 3.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
 	tracking = 1.0
 	power = -250
 	

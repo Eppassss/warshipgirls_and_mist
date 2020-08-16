@@ -563,6 +563,13 @@ country_event = {
 				create_starbase = {
 					size = wg_crisis_starbase
 					owner = event_target:wg_crisis_country
+					effect = {
+						while = {
+							count = 5
+							create_wg_crisis_platform = yes
+							graphical_culture = "wsg_01"
+						}
+					}
 				}
 			}
 		}
@@ -722,6 +729,7 @@ country_event = {
 			country_event = { id = wg_crisis.7 days = 30 }
 			country_event = { id = wg_fe.139 days = 30 }#堕落妈出击舰队成立
 			country_event = { id = sh_fe.22 days = 60 }#深海妈出击舰队成立
+			country_event = { id = wg_fe.142 days = 3600 }#堕落妈舰队回防
 		}
 	}
 }
@@ -1595,7 +1603,14 @@ country_event = {
 			}
             create_starbase = {
                 size = wg_crisis_starbase
-                owner = event_target:wg_crisis_country	
+                owner = event_target:wg_crisis_country
+				effect = {
+					while = {
+						count = 5
+						create_wg_crisis_platform = yes
+						graphical_culture = "wsg_01"
+					}
+				}
             }
 		}
 		every_playable_country = {
@@ -1686,7 +1701,14 @@ country_event = {
 			}
             create_starbase = {
                 size = wg_crisis_starbase
-                owner = event_target:wg_crisis_country		
+                owner = event_target:wg_crisis_country
+				effect = {
+					while = {
+						count = 5
+						create_wg_crisis_platform = yes
+						graphical_culture = "wsg_01"
+					}
+				}
             }
 		}
 		every_playable_country = {
@@ -3488,6 +3510,13 @@ country_event = {
 					create_starbase = {
 						size = wg_crisis_starbase
 						owner = event_target:wg_crisis_country
+						effect = {
+							while = {
+								count = 5
+								create_wg_crisis_platform = yes
+								graphical_culture = "wsg_01"
+							}
+						}
 					}
 				}
 			}

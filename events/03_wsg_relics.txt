@@ -91,13 +91,15 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_wsg_reform"
+		has_technology = tech_wsg_reform
 		is_ai = no
 		capital_scope = {
 			has_planet_flag = port_home
 		}
+		NOT = { has_country_flag = researched_tech_wsg_reform }
 	}
 	immediate = {
+		set_country_flag = researched_tech_wsg_reform
 		country_event = { id = wsgancrel.21 days = 180  }
 	}
 }
@@ -642,20 +644,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = { exists = capital_scope }
-			capital_scope = { 
-				solar_system = { 
-					if = {
-						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
-						save_event_target_as = spawn_precursors_system_source
-					} else = {
-						random_neighbor_system = {
-							limit = { NOT = { has_star_flag = sealed_system }}
-							ignore_hyperlanes = yes
-							save_event_target_as = spawn_precursors_system_source
-						}
-					}
-				}
-			}
+			capital_scope = { solar_system = { save_event_target_as = spawn_precursors_system_source }}
 		} else_if = {
 			limit = { 
 				OR = {
@@ -665,52 +654,57 @@ country_event = {
 			}
 			random_owned_fleet = {
 				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
-				solar_system = { 
-					if = {
-						limit = { any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }}
-						save_event_target_as = spawn_precursors_system_source
-					} else = {
-						random_neighbor_system = {
-							limit = { NOT = { has_star_flag = sealed_system }}
-							ignore_hyperlanes = yes
-							save_event_target_as = spawn_precursors_system_source
-						}
-					}
-				}
+				solar_system = { save_event_target_as = spawn_precursors_system_source }
 			}
 		} else = {
 			random_owned_fleet = { solar_system = {
 				save_event_target_as = spawn_precursors_system_source
 			}}
 		}
-		every_system_within_border = {
-			limit = {
-				distance = {
-					source = event_target:spawn_precursors_system_source
-					use_bypasses = no
-					min_jumps = 1
-					max_jumps = 5
+		if = { #检查是否有邻近星系
+			limit = { event_target:spawn_precursors_system_source = {
+				any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
+			}}
+			every_system_within_border = {
+				limit = {
+					distance = {
+						source = event_target:spawn_precursors_system_source
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 5
+					}
+					NOT = { has_star_flag = sealed_system }
 				}
-				NOT = { has_star_flag = sealed_system }
+				set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }
 			}
-			set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }
-		}
-		random_system = {
-			limit = { has_star_flag = can_spawn_precursors_system }
-			spawn_system = {
-				min_distance = 10
-				max_distance = 30
-				hyperlane = yes
-				is_discovered = no
-				initializer = wg_relic_system
+			random_system = {
+				limit = { has_star_flag = can_spawn_precursors_system }
+				spawn_system = {
+					min_distance = 10
+					max_distance = 30
+					hyperlane = yes
+					is_discovered = no
+					initializer = wg_relic_system
+				}
+				remove_star_flag = can_spawn_precursors_system
 			}
-			remove_star_flag = can_spawn_precursors_system
+			random_system = {
+				limit = { has_star_flag = can_spawn_precursors_system }
+				set_star_flag = fifth_precursors_system
+				remove_star_flag = can_spawn_precursors_system
+			}
+		} else = {
+			event_target:spawn_precursors_system_source = {
+				spawn_system = {
+					min_distance = 10
+					max_distance = 30
+					hyperlane = yes
+					is_discovered = no
+					initializer = wg_relic_system
+				}
+				set_star_flag = fifth_precursors_system
+			}
 		}
-		random_system = {
-			limit = { has_star_flag = can_spawn_precursors_system }
-			set_star_flag = fifth_precursors_system
-			remove_star_flag = can_spawn_precursors_system
-		}	
 	}
 
 	option = {
@@ -1093,10 +1087,12 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_warshipgirls
-		last_increased_tech = "tech_terrestrial_sculpting"
+		has_technology = tech_terrestrial_sculpting
+		NOT = { has_country_flag = researched_tech_terrestrial_sculpting }
 		has_country_flag = clovertheater_planet_flag
 	}
 	immediate = {	
+		set_country_flag = researched_tech_terrestrial_sculpting
 		country_event = { id = wsgancrel.121 days = 10 }		
 	}
 }

@@ -60,6 +60,7 @@ country_event = {
 		country_event = { id = wg_origin.25 days = 360 random = 360 }#送无人机玩具
 		country_event = { id = wg_origin.27 days = 3600 random = 720 }#科研BUFF
 		country_event = { id = wg_origin.26 days = 5400 random = 3600 }#送盖亚
+		country_event = { id = wg_origin.28 days = 10800 random = 7200 }#送等级5的奇点
 	}
 
 	picture_event_data = {
@@ -231,6 +232,7 @@ country_event = {#抓阿三码农
 				leader_class = scientist 
 				NOR = { 
 					has_leader_flag = wsg_shimakaze_scientist
+					has_leader_flag = wsg_lady_scientist
 					has_trait = leader_trait_expertise_computing				
 				}
 			}
@@ -723,3 +725,37 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wg_origin.28
+	title = "TRANSMISSION"
+	desc = "wg_origin.28.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	option = {
+		name = "wg_origin.28.a"
+		custom_tooltip = sh_fe.20.a.tooltip
+		hidden_effect = {
+			owner = {						
+				change_variable = { which = building_wg_fe_energy_count value = 1 }
+			}
+		}
+	}
+	option = {
+		name = "wg_origin.28.b"
+		owner = {
+			add_resource = { 
+				influence = 100
+			}
+		}
+	}
+}

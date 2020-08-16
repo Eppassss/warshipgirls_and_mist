@@ -29,7 +29,7 @@ create_sh_fe_fleet = {
                     }
                 }
                 while = {
-                    count = 40
+                    count = 25
                     create_ship = {
                         name = random
                         design = "NAME_SH_FE_BATTLE_CRUISE"
@@ -38,7 +38,7 @@ create_sh_fe_fleet = {
                     }
                 }
                 while = {
-                    count = 25
+                    count = 30
                     create_ship = {
                         name = random
                         design = "NAME_SH_FE_ESCORTE"
@@ -138,7 +138,7 @@ create_sh_fe_fleet2 = {
                 }
             }
             while = {
-                count = 30
+                count = 20
                 create_ship = {
                     name = random
                     design = "NAME_SH_FE_BATTLE_CRUISE"
@@ -147,7 +147,7 @@ create_sh_fe_fleet2 = {
                 }
             }
             while = {
-                count = 30
+                count = 35
                 create_ship = {
                     name = random
                     design = "NAME_SH_FE_ESCORTE"

@@ -71,8 +71,7 @@ uf_very_easy_debuff = {
 	ship_fire_rate_mult = -0.20
 	ship_evasion_mult = -0.20
 	ship_speed_mult = -0.20
-	ship_shield_penetration_mult = -0.2
-	ship_armor_penetration_mult = -0.2
+	ship_hull_damage_mult = -0.05
 }
 
 uf_easy_debuff = {
@@ -83,8 +82,7 @@ uf_easy_debuff = {
 	ship_fire_rate_mult = -0.30
 	ship_evasion_mult = -0.30
 	ship_speed_mult = -0.30
-	ship_shield_penetration_mult = -0.3
-	ship_armor_penetration_mult = -0.3
+	ship_hull_damage_mult = -0.10
 	ship_weapon_range_mult = -0.50
 }
 
@@ -96,6 +94,7 @@ uf_hard_buff = {
 	ship_speed_mult = 0.10	
 	ship_shield_reduction = -0.3
 	ship_armor_reduction = -0.3
+	ship_hull_damage_mult = 0.10
 }
 
 uf_raider_buff = {
@@ -109,6 +108,7 @@ uf_raider_buff = {
 }
 
 uf_special_buff = {
+	damage_vs_country_type_afk_crisis_country_mult = 3
 	damage_vs_country_type_swarm_mult = 3
 	damage_vs_country_type_extradimensional_mult = 3
 	damage_vs_country_type_extradimensional_2_mult = 3
@@ -170,8 +170,7 @@ Junyo_buff_to_drones = {
 chongqing_debuff_to_enemy = {
 	weapon_type_strike_craft_weapon_damage_mult = -0.8
 	weapon_type_strike_craft_weapon_fire_rate_mult = -0.8
-	ship_shield_penetration_mult = -0.1
-	ship_armor_penetration_mult = -0.1
+	ship_hull_damage_mult = -0.05
 }
 chongqing_debuff_to_drones = {
 	ship_weapon_damage = -0.80
@@ -193,8 +192,7 @@ essex_debuff_to_drones = {
 
 #6 内华达
 nevada_debuff_to_enemy = {
-	ship_shield_penetration_mult = -0.3
-	ship_armor_penetration_mult = -0.3
+	ship_hull_damage_mult = -0.15
 }
 
 #7 女儿
@@ -262,8 +260,7 @@ yamato_buff_to_main_ships = {
 johnston_buff = {
 	ship_evasion_mult = 0.8
 	ship_accuracy_mult = 0.5
-	ship_shield_penetration_mult = 0.3
-	ship_armor_penetration_mult = 0.3
+	ship_hull_damage_mult = 0.05
 }
 
 #107 理解
@@ -271,8 +268,7 @@ richelieu_buff = {
 	ship_weapon_damage = 0.3
 }
 richelieu_buff2 = {
-	ship_shield_penetration_mult = 0.3
-	ship_armor_penetration_mult = 0.3
+	ship_hull_damage_mult = -0.15
 }
 
 #108 皇方
@@ -318,8 +314,7 @@ hood_buff_to_all = {
 #1001 太太
 lexington_buff_to_all = {
 	ship_weapon_damage = 0.2
-	ship_shield_penetration_mult = 0.15
-	ship_armor_penetration_mult = 0.15
+	ship_hull_damage_mult = -0.10
 	weapon_type_strike_craft_weapon_damage_mult = 1.0
 	weapon_type_strike_craft_weapon_fire_rate_mult = 1.0
 }
@@ -334,8 +329,7 @@ taiho_sh_buff_to_all = {
 	weapon_type_strike_craft_weapon_fire_rate_mult = 1.0
 }
 taiho_sh_debuff_to_enemy = {
-	ship_shield_penetration_mult = -0.3
-	ship_armor_penetration_mult = -0.3
+	ship_hull_damage_mult = -0.20
 	weapon_type_strike_craft_weapon_damage_mult = -1.0
 	weapon_type_strike_craft_weapon_fire_rate_mult = -1.0
 }

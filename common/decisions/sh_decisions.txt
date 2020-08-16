@@ -16,6 +16,7 @@ decision_planet_kt = {
 		}		
 		NOR = {
 			has_modifier = planet_kt
+			is_planet_class = pc_swim
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_ringworld_habitable_sh
 			is_planet_class = pc_ringworld_habitable_wsg
@@ -123,6 +124,7 @@ decision_shenhai_project = {
 		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_wsg_port
+			is_planet_class = pc_swim
 			is_planet_class = pc_ringworld_habitable_sh
 			is_planet_class = pc_shenhai
 			is_planet_class = pc_relic

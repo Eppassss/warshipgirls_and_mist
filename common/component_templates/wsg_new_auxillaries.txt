@@ -18,13 +18,12 @@ utility_component_template = {
 		apply_on = ships
 		
 		stack_info = {			
-			id = UF_AURA_1
+			id = aura_ag_weapon_hull_damage_debuff
 			priority = 200
 		}
 		
 		modifier = {
-			ship_shield_penetration_mult = -0.4
-			ship_armor_penetration_mult = -0.4		
+			ship_weapon_damage = -0.30		
 			ship_fire_rate_mult = -0.10
 		}
 		

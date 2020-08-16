@@ -20,6 +20,13 @@ wsg_pantsu_maker = {
 			minerals = 3
 			food = 0.5
 		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_wg_pantsu }
+			}
+			minerals = -1
+		}
 	}
 	
 	weight = {
@@ -48,6 +55,13 @@ wsg_neo_producer = {
 		upkeep = {
 			minerals = 8
 		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_wg_neo_alpha }
+			}
+			minerals = -1
+		}
 	}
 	
 	weight = {
@@ -70,6 +84,7 @@ barthroom_worker = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	planet_modifier = {
@@ -129,6 +144,7 @@ wsg_instructor = {
 
 	possible = {
 		battle_thrall_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -194,6 +210,7 @@ wsg_gas_refiner = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -226,6 +243,7 @@ wsg_chemist = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -258,6 +276,7 @@ category = specialist
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -290,6 +309,7 @@ wsg_foundry = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -336,6 +356,7 @@ wsg_alpha = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -346,6 +367,13 @@ wsg_alpha = {
 		upkeep = {
 			rare_crystals = 3
 			sr_neo = 1.5
+		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_wg_neo_alpha }
+			}
+			rare_crystals = -0.5
 		}
 	}	
 	
@@ -369,6 +397,7 @@ wsg_researcher = {
 
 	possible = {
 		complex_specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -443,6 +472,24 @@ wsg_soldier = {
 			country_admin_cap_add = 10
 		}
 	}
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = { has_designation = col_wsg_port_military }
+		}
+		modifier = {
+			country_admin_cap_add = 2
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = { has_designation = col_bureau }
+		}
+		modifier = {
+			country_admin_cap_add = 2
+		}
+	}
 	pop_modifier = {
 		pop_defense_armies_add = 1
 	}	
@@ -476,6 +523,7 @@ wsg_soldier = {
 	possible = {
 		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
+		z_pop_job_trigger = yes
 	}
 	
 	weight = {
@@ -498,6 +546,7 @@ wsg_mahjong = {
 
 	possible = {
 		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	planet_modifier = {
 		planet_amenities_add = 2
@@ -552,6 +601,7 @@ wsg_historical_researcher = {
 
 	possible = {
 		complex_specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
 	}
 	
 	resources = {
@@ -573,5 +623,44 @@ wsg_historical_researcher = {
 	
 	weight = {
 		weight = 50		
+	}
+}
+
+
+wg_tourism = {	
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_wsg_bathhouse
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	planet_modifier = {
+		planet_amenities_add = 3
+		trade_value_add = 4
+	}
+
+	possible = {
+		specialist_job_check_trigger = yes
+		z_pop_job_trigger = yes
+	}
+	
+	resources = {
+		category = planet_doctors
+		produces = {
+			unity = 10
+		}	
+		category = planet_doctors
+		upkeep = {
+			consumer_goods = 2
+		}	
+	}	
+		
+	weight = {
+		weight = 500
 	}
 }

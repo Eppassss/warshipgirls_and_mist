@@ -54,7 +54,8 @@
  wg_corvette:0 "联合护卫舰" 
  wg_dreadnought:0 "联合无畏舰" 
  UF_Flagship:0 "联合旗舰" 
- uf_buffer:0 "联合电子战战舰" 
+ uf_buffer:0 "联合电子战战舰"
+ wg_ion_cannon:0 "联合聚能炮"  
  wg_dimensional_small_portal: "侧窗"
  wg_dimensional_small_portal_plural: "侧窗" 
  

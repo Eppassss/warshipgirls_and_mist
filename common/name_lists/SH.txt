@@ -2,49 +2,49 @@
 	randomized = no
 	ship_names = {
 		generic = {
-			"Abyssal ship A" "Abyssal ship Β" "Abyssal ship Г" "Abyssal ship Δ" "Abyssal ship Ε" "Abyssal ship Ζ"
+			"Abyssal Alpha" "Abyssal Beta" "Abyssal Gamma" "Abyssal Delta" "Abyssal Epsilon" "Abyssal Zeta"
 		}
 		
 		corvette = {
-			"Corvette A" "Corvette Β" "Corvette Г" "Corvette Δ" "Corvette Ε" "Corvette Ζ" "Corvette Η" "Corvette Θ" "Corvette Ι" "Corvette Κ" "Corvette Λ" "Corvette Μ" "Corvette Ν" "Corvette Ξ" "Corvette Ο" "Corvette Π" "Corvette Υ" "Corvette Φ" "Corvette Υ" "Corvette Χ" "Corvette ψ" "Corvette Ω"
+			"Corvette Alpha" "Corvette Beta" "Corvette Gamma" "Corvette Delta" "Corvette Epsilon" "Corvette Zeta" "Corvette Eta" "Corvette Theta" "Corvette Iota" "Corvette Kappa" "Corvette Lambda" "Corvette Mu" "Corvette Nu" "Corvette Xi" "Corvette Omicron" "Corvette Pi" "Corvette Upsilon" "Corvette Phi" "Corvette Chi" "Corvette Tau" "Corvette Psi" "Corvette Omega"
 		}
 		
 		destroyer = {
-			"Destroyer A" "Destroyer Β" "Destroyer Г" "Destroyer Δ" "Destroyer Ε" "Destroyer Ζ" "Destroyer Η" "Destroyer Θ" "Destroyer Ι" "Destroyer Κ" "Destroyer Λ" "Destroyer Μ" "Destroyer Ν" "Destroyer Ξ" "Destroyer Ο" "Destroyer Π" "Destroyer Υ" "Destroyer Φ" "Destroyer Υ" "Destroyer Χ" "Destroyer ψ" "Destroyer Ω"
+			"Destroyer Alpha" "Destroyer Beta" "Destroyer Gamma" "Destroyer Delta" "Destroyer Epsilon" "Destroyer Zeta" "Destroyer Eta" "Destroyer Theta" "Destroyer Iota" "Destroyer Kappa" "Destroyer Lambda" "Destroyer Mu" "Destroyer Nu" "Destroyer Xi" "Destroyer Omicron" "Destroyer Pi" "Destroyer Upsilon" "Destroyer Chi" "Destroyer Upsilon" "Destroyer Tau" "Destroyer Psi" "Destroyer Omega"
 		}
 		
 		cruiser = {
-			"Cruiser A" "Cruiser Β" "Cruiser Г" "Cruiser Δ" "Cruiser Ε" "Cruiser Ζ" "Cruiser Η" "Cruiser Θ" "Cruiser Ι" "Cruiser Κ" "Cruiser Λ" "Cruiser Μ" "Cruiser Ν" "Cruiser Ξ" "Cruiser Ο" "Cruiser Π" "Cruiser Υ" "Cruiser Φ" "Cruiser Υ" "Cruiser Χ" "Cruiser ψ" "Cruiser Ω"
+			"Cruiser Alpha" "Cruiser Beta" "Cruiser Gamma" "Cruiser Delta" "Cruiser Epsilon" "Cruiser Zeta" "Cruiser Eta" "Cruiser Theta" "Cruiser Iota" "Cruiser Kappa" "Cruiser Lambda" "Cruiser Mu" "Cruiser Nu" "Cruiser Xi" "Cruiser Omicron" "Cruiser Pi" "Cruiser Upsilon" "Cruiser Phi" "Cruiser Chi" "Cruiser Tau" "Cruiser Psi" "Cruiser Omega"
 		}
 
 		battleship = {
-			"Battleship A" "Battleship Β" "Battleship Г" "Battleship Δ" "Battleship Ε" "Battleship Ζ" "Battleship Η" "Battleship Θ" "Battleship Ι" "Battleship Κ" "Battleship Λ" "Battleship Μ" "Battleship Ν" "Battleship Ξ" "Battleship Ο" "Battleship Π" "Battleship Υ" "Battleship Φ" "Battleship Υ" "Battleship Χ" "Battleship ψ" "Battleship Ω"
+			"Battleship Alpha" "Battleship Beta" "Battleship Gamma" "Battleship Delta" "Battleship Epsilon" "Battleship Zeta" "Battleship Eta" "Battleship Theta" "Battleship Iota" "Battleship Kappa" "Battleship Lambda" "Battleship Mu" "Battleship Nu" "Battleship Xi" "Battleship Omicron" "Battleship Pi" "Battleship Upsilon" "Battleship Phi" "Battleship Chi" "Battleship Tau" "Battleship Psi" "Battleship Omega"
 		}
 
 		titan = {
-			"Yamato" "Musashi" Bismarck Tirpitz Friedrich "Type 13"
+			"Bismarck" "Tirpitz" "Hindenburg" "Friedrich der Grosse" "Musashi" "Virginia" "South Dakota" "Cyou-yamato"
 		}
 
 		colossus = {
-			"Abyssal Fleet" "Delusional Fleet" "Iron Fortress" "Kudansaka"
+			"Abyss"
 		}
 		juggernaut = {
-			"Shuiyue"
+			"Ella"
 		}		
 		science = {
-			"Science A" "Science Β" "Science Г" "Science Δ" "Science Ε" "Science Ζ" "Science Η" "Science Θ" "Science Ι" "Science Κ" "Science Λ" "Science Μ" "Science Ν" "Science Ξ" "Science Ο" "Science Π" "Science Υ" "Science Φ" "Science Υ" "Science Χ" "Science ψ" "Science Ω"
+			"Science Alpha" "Science Beta" "Science Gamma" "Science Delta" "Science Epsilon" "Science Zeta" "Science Eta" "Science Theta" "Science Iota" "Science Kappa" "Science Lambda" "Science Mu" "Science Nu" "Science Xi" "Science Omicron" "Science Pi" "Science Upsilon" "Science Phi" "Science Chi" "Science Tau" "Science Psi" "Science Omega"
 		}
 		
 		colonizer = {
-			"Colonizer A" "Colonizer Β" "Colonizer Г" "Colonizer Δ" "Colonizer Ε" "Colonizer Ζ" "Colonizer Η" "Colonizer Θ" "Colonizer Ι" "Colonizer Κ" "Colonizer Λ" "Colonizer Μ" "Colonizer Ν" "Colonizer Ξ" "Colonizer Ο" "Colonizer Π" "Colonizer Υ" "Colonizer Φ" "Colonizer Υ" "Colonizer Χ" "Colonizer ψ" "Colonizer Ω"
+			"Colonizer Alpha" "Colonizer Beta" "Colonizer Gamma" "Colonizer Delta" "Colonizer Epsilon" "Colonizer Zeta" "Colonizer Eta" "Colonizer Theta" "Colonizer Iota" "Colonizer Kappa" "Colonizer Lambda" "Colonizer Mu" "Colonizer Nu" "Colonizer Xi" "Colonizer Omicron" "Colonizer Pi" "Colonizer Upsilon" "Colonizer Phi" "Colonizer Chi" "Colonizer Tau" "Colonizer Psi" "Colonizer Omega"
 		}
 
 		sponsored_colonizer = {
-			"Colonizer A" "Colonizer Β" "Colonizer Г" "Colonizer Δ" "Colonizer Ε" "Colonizer Ζ" "Colonizer Η" "Colonizer Θ" "Colonizer Ι" "Colonizer Κ" "Colonizer Λ" "Colonizer Μ" "Colonizer Ν" "Colonizer Ξ" "Colonizer Ο" "Colonizer Π" "Colonizer Υ" "Colonizer Φ" "Colonizer Υ" "Colonizer Χ" "Colonizer ψ" "Colonizer Ω"
+			"Colonizer Alpha" "Colonizer Beta" "Colonizer Gamma" "Colonizer Delta" "Colonizer Epsilon" "Colonizer Zeta" "Colonizer Eta" "Colonizer Theta" "Colonizer Iota" "Colonizer Kappa" "Colonizer Lambda" "Colonizer Mu" "Colonizer Nu" "Colonizer Xi" "Colonizer Omicron" "Colonizer Pi" "Colonizer Upsilon" "Colonizer Phi" "Colonizer Chi" "Colonizer Tau" "Colonizer Psi" "Colonizer Omega"
 		}
 		
 		constructor = {
-			"Constructor A" "Constructor Β" "Constructor Г" "Constructor Δ" "Constructor Ε" "Constructor Ζ" "Constructor Η" "Constructor Θ" "Constructor Ι" "Constructor Κ" "Constructor Λ" "Constructor Μ" "Constructor Ν" "Constructor Ξ" "Constructor Ο" "Constructor Π" "Constructor Υ" "Constructor Φ" "Constructor Υ" "Constructor Χ" "Constructor ψ" "Constructor Ω"
+			"Constructor Alpha" "Constructor Beta" "Constructor Gamma" "Constructor Delta" "Constructor Epsilon" "Constructor Zeta" "Constructor Eta" "Constructor Theta" "Constructor Iota" "Constructor Kappa" "Constructor Lambda" "Constructor Mu" "Constructor Nu" "Constructor Xi" "Constructor Omicron" "Constructor Pi" "Constructor Upsilon" "Constructor Phi" "Constructor Chi" "Constructor Tau" "Constructor Psi" "Constructor Omega"
 		}
 		
 		transport = {
@@ -52,20 +52,20 @@
 		}
 		
 		military_station_small = { 
-			"Station A" "Station Β" "Station Г" "Station Δ" "Station Ε" "Station Ζ" "Station Η" "Station Θ" "Station Ι" "Station Κ" "Station Λ" "Station Μ" "Station Ν" "Station Ξ" "Station Ο" "Station Π" "Station Υ" "Station Φ" "Station Υ" "Station Χ" "Station ψ" "Station Ω"
+			"Station Alpha" "Station Beta" "Station Gamma" "Station Delta" "Station Epsilon" "Station Zeta" "Station Eta" "Station Theta" "Station Iota" "Station Kappa" "Station Lambda" "Station Mu" "Station Nu" "Station Xi" "Station Omicron" "Station Pi" "Station Upsilon" "Station Phi" "Station Upsilon" "Station Tau" "Station Psi" "Station Omega"
 		}
 
 		ion_cannon = {
-			"Leopold" "Pakiro"
+			"Pachina" "Kamikaze" "Leopold" "Savoy" "X. Fliegerkorps" "Erika"
 		}
 		
 	}
 
 	fleet_names = {
 		random_names = {
-			"Abyssal Main Fleet" "Abyssal Great Fleet" "Abyssal Hero Fleet" "Abyssal Defensive Fleet" "Abyssal Support Fleet" "Abyssal Space Fleet" "Abyssal Attack Fleet" "Abyssal Assault Fleet" "Abyssal Combined Fleet"
+			"Abyssal Strike Division" "Abyssal Escort Division" "Abyssal Main Division" "Abyssal Defense Division" "Abyssal Support Division" "Abyssal Backup Division" "Abyssal Quick Reaction Division" "Abyssal Main Division" "Abyssal Combined Division" "Abyssal Assault Division" "Abyssal Decisive Division" "Abyssal Logistic Division" "Abyssal Picket Division" "Abyssal Raid Division" "Abyssal Screening Division" "Abyssal Mobile Division" "Abyssal Guard Division" "Abyssal Star Ring Division" "Abyssal Patrol Division" "Abyssal Star Guard Division"
 		}
-		sequential_name = "Abyssal Fleet %C%"
+		sequential_name = "%O% Abyssal Division"
 	}
 	
 	army_names = {
@@ -130,7 +130,7 @@
 
 		generic = {
 			names = {
-				"Battle of the Holy Shield" "Fantasy Fleet" "Hell Islands" "Midway Island" "Valkyrie" "Steel" "Phoenix" "Maria" "Avenger" "Magnet" "Emperor" "Mountain City"
+				"Aegis" "Snowslide" "Orient Express" "Iron Bay" "Sea of Dreadnought" "Fire Bulge" "Valkyrie" "Midpoint" "Pasta Fortress" "Hell Islands" "Singa Strait" "Revelation of Steel" "Tungsten" "Red Akula" "Phoenix over the Waves" "Dark Night Fireworks" "God's Right Eye" "Concerto of Wars" "Battle Royal in Furnace" "Tranquillitatis" "Boiling Oceans" "Moths to Flames"
 			}
 		}
 		
@@ -201,24 +201,24 @@
 		names1 = {
 			weight = 40
 			first_names_male = {
-				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+				"Shokaku" "Zuikaku" "Taiho" "Peter Strasser" "Shinano" "Ryujo" "Bismarck" "Tirpitz" "Hindenburg" "Friedrich der Grosse" "Musashi" "Virginia" "South Dakota" "Cyou-yamato" "Battleship M" "Kraken" "X.401" "Barbarossa" "Derfflinger" "No.13 super Battleship" "Schleswig-Holstein" "Monitor" "Zumwalt" "Hunley"
 			}
 			first_names_female = {
-				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+				"Shokaku" "Zuikaku" "Taiho" "Peter Strasser" "Shinano" "Ryujo" "Bismarck" "Tirpitz" "Hindenburg" "Friedrich der Grosse" "Musashi" "Virginia" "South Dakota" "Cyou-yamato" "Battleship M" "Kraken" "X.401" "Barbarossa" "Derfflinger" "No.13 super Battleship" "Schleswig-Holstein" "Monitor" "Zumwalt" "Hunley"
 			}
 			second_names = {
-				"A" "Β" "Г" "Δ" "Ε" "Ζ" "Η" "Θ" "Ι" "Κ" "Λ" "Μ" "Ν" "Ξ" "Ο" "Π" "Υ" "Φ" "Υ" "Χ" "ψ" "Ω"
+				"Alpha" "Beta" "Gamma" "Delta" "Epsilon" "Zeta" "Eta" "Theta" "Iota" "Kappa" "Lambda" "Mu" "Nu" "Xi" "Omicron" "Pi" "Upsilon" "Phi" "Upsilon" "Tau" "Psi" "Omega"
 				
 			}
 			regnal_first_names_male = {
-				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+				"Shokaku" "Zuikaku" "Taiho" "Peter Strasser" "Shinano" "Ryujo" "Bismarck" "Tirpitz" "Hindenburg" "Friedrich der Grosse" "Musashi" "Virginia" "South Dakota" "Cyou-yamato" "Battleship M" "Kraken" "X.401" "Barbarossa" "Derfflinger" "No.13 super Battleship" "Schleswig-Holstein" "Monitor" "Zumwalt" "Hunley"
 			}
 			regnal_first_names_female = {
-				"Pakiro Point" "Leopold" "Savonia" "Yamato" "Musashi" "Odin" "Kaga" "Akagi" "Big boss" "Sukhbaatar" "Frederick" "Tirbitz" "Bismarck" "Strasser" "Dragon Term" "Cracken" "Zumwalt" "Monite" "Holstein"
+				"Shokaku" "Zuikaku" "Taiho" "Peter Strasser" "Shinano" "Ryujo" "Bismarck" "Tirpitz" "Hindenburg" "Friedrich der Grosse" "Musashi" "Virginia" "South Dakota" "Cyou-yamato" "Battleship M" "Kraken" "X.401" "Barbarossa" "Derfflinger" "No.13 super Battleship" "Schleswig-Holstein" "Monitor" "Zumwalt" "Hunley"
 				
 			}
 			regnal_second_names = {
-				"A" "Β" "Г" "Δ" "Ε" "Ζ" "Η" "Θ" "Ι" "Κ" "Λ" "Μ" "Ν" "Ξ" "Ο" "Π" "Υ" "Φ" "Υ" "Χ" "ψ" "Ω"
+				"Alpha" "Beta" "Gamma" "Delta" "Epsilon" "Zeta" "Eta" "Theta" "Iota" "Kappa" "Lambda" "Mu" "Nu" "Xi" "Omicron" "Pi" "Upsilon" "Phi" "Upsilon" "Tau" "Psi" "Omega"
 			}
 		}
 		

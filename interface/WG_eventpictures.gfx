@@ -6,6 +6,24 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wg_Britishfood"
+		texturefile = "gfx/event_pictures/wg_Britishfood.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_Chinesefood"
+		texturefile = "gfx/event_pictures/wg_Chinesefood.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_water"
+		texturefile = "gfx/event_pictures/wg_swim.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_sh_eweapon"
 		texturefile = "gfx/event_pictures/sh_eweapon.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"

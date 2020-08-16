@@ -93,8 +93,7 @@ leader_trait_super_sukhbaatar = {
 		ship_armor_mult = 50.0 
 		ship_fire_rate_mult = 1.00
 		ship_weapon_damage = 1.00
-		ship_shield_penetration_mult = 5.00
-		ship_armor_penetration_mult = 5.00
+		ship_hull_damage_mult = 0.10
 		ship_evasion_add = 100
 		ship_evasion_mult = 10.0
 		ship_tracking_add = 100
@@ -105,3 +104,4 @@ leader_trait_super_sukhbaatar = {
 	initial = no
 	randomized = no
 }
+

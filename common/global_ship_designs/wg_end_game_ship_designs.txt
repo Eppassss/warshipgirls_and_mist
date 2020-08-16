@@ -1177,3 +1177,80 @@ ship_design = {
 	required_component = "UF_REACTOR"
 	required_component = "UF_COMPUTER_3"
 }
+
+
+ship_design = {
+	name = "NAME_WG_EG_ION_CANNON"
+	ship_size = wg_ion_cannon
+	is_event_design = yes
+
+	section = {
+		template = "WG_EG_ION_CANNON_CORE"
+		slot = "ship"
+	
+		component = {
+			slot = "TITANIC_GUN_01"
+			template = "UF_weapen_T"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "UF_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "UF_weapen_L2"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "UF_weapen_IA"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_UF"
+		}		
+	}
+	required_component = "UF_SENSOR"
+	required_component = "UF_REACTOR"
+	required_component = "UF_COMPUTER_1"
+}

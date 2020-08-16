@@ -1,4 +1,5 @@
 wg_modifier_Nelson = {
+    icon = "gfx/interface/icons/modifiers/mod_planet_sensor_range_mult.dds"
     ship_archeaological_site_clues_add = 2
 	science_ship_survey_speed = 0.15
 	ship_anomaly_generation_chance_mult = 0.10
@@ -374,6 +375,7 @@ wg_ai_base = {
 	planet_amenities_mult = 0.20
 }
 sh_base = {
+	icon = "gfx/interface/icons/planet_modifiers/pantsuhd_resources.dds"
 	country_base_sr_pantsu_produces_add = 2
 }
 planet_clovertheater = {
@@ -436,7 +438,9 @@ uf_hidden_buff = {
 	ship_evasion_mult = 10.0
 	ship_hull_regen_add_perc = 50
 	ship_shield_regen_add_perc = 50
-	ship_armor_regen_add_perc = 50	
+	ship_armor_regen_add_perc = 50
+	ship_shield_penetration_mult = 2.0
+	ship_armor_penetration_mult = 2.0
 }
 
 nie_admiral_buff = {
@@ -523,4 +527,25 @@ planet_modifier_bubbles_affection_lv5 = {
 	planet_entertainers_produces_mult = 0.5
 	custom_tooltip = planet_modifier_bubbles_affection_lv5_tooltip
 	show_only_custom_tooltip = yes
+}
+
+wg_swim_planet_colony = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_water_planet.dds"
+	icon_frame = 1
+	planet_stability_add = 10
+	planet_barthroom_worker_produces_mult = 0.2
+	trade_value_mult = 0.25
+	planet_amenities_mult = 0.25
+	planet_immigration_pull_mult = 0.33
+	custom_tooltip = swim_planet_empire_effects
+	show_only_custom_tooltip = no
+	# This only works on timed planet modifiers!
+	apply_modifier_to_other_planets = wg_swim_planet_colony_other_planets
+}
+
+wg_swim_planet_colony_other_planets = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_water_planet.dds"
+	icon_frame = 1
+	planet_amenities_mult = 0.15
+	planet_stability_add = 5
 }

@@ -1,0 +1,14 @@
+﻿l_simp_chinese:
+###################################
+# 大小姐
+ wsg_lady_unavailable:0 "大小姐目前不可转换形态"
+ wsg_lady_reply:0 "[Root.GetLadyReply]"
+ quit_wg_lady_commu:0 "退出对话"
+ wg_lady_diplo_button_1_tooltip:0 "大小姐将变为总督"
+ wg_lady_diplo_button_2_tooltip:0 "大小姐将变为战舰"
+ wg_lady_diplo_button_3_tooltip:0 "大小姐将变为武装科研船"
+ wg_lady_diplo_button_4_tooltip:0 "大小姐将变为陆军"
+ already_has_wsg_lady_diplo:0 "已开启与大小姐的对话窗口"
+ already_has_wsg_gray_diplo:0 "已开启与灰风的对话窗口"
+ already_has_wsg_shimakaze_diplo:0 "已开启与岛风的对话窗口"
+ already_has_wsg_bubbles_diplo:0 "已开启与泡泡的对话窗口"

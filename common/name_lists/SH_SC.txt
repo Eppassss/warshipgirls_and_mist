@@ -1,4 +1,4 @@
-﻿SH = {
+﻿ SH = {
 	randomized = no
     language = "l_simp_chinese"
 	ship_names = {

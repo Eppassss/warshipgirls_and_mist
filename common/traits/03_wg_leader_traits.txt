@@ -177,8 +177,7 @@ leader_trait_admiral_sh_weapon_master = {
 	modification = no
 	icon = "gfx/interface/icons/traits/leader_trait_admiral_sh_weapon_master.dds"
 	modifier = {
-		ship_shield_penetration_mult = 0.1
-		ship_armor_penetration_mult = 0.1
+		ship_hull_damage_mult = 0.05
 		ships_upkeep_mult = 0.05
 	}
 	leader_trait = { admiral }

@@ -1,0 +1,42 @@
+wg_shimakaze_portrait_1 = {
+	potential = { 
+		OR = {
+			has_country_flag = get_wsg_shimakaze
+			is_same_value = event_target:wsg_shimakaze_own_country
+		}
+		NOT = { has_country_flag = wsg_shimakaze_hurt }
+	}
+	allow = { always = yes }
+	effect = { } #no need
+}
+
+wg_shimakaze_portrait_1_broken = {
+	potential = { 
+		OR = {
+			has_country_flag = get_wsg_shimakaze
+			is_same_value = event_target:wsg_shimakaze_own_country
+		}
+		has_country_flag = wsg_shimakaze_hurt 
+	}
+	allow = { always = yes }
+	effect = { } #no need
+}
+
+wg_shimakaze_link_button_effect = {
+	potential = { OR = {
+		has_country_flag = get_wsg_shimakaze
+		is_same_value = event_target:wsg_shimakaze_own_country
+	}}
+	allow = {
+		custom_tooltip = {
+			fail_text = already_has_wsg_shimakaze_diplo
+			OR = {
+				shimakaze_active_diplo = no
+				NOT = { has_country_flag = wsg_shimakaze_engaged }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = { country_event = { id = wsg_shimakaze.10 }}
+	}
+}
