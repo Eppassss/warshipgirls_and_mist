@@ -62,6 +62,7 @@ can_species_be_assembled = {
 					has_policy_flag = no_robot_machine_pop		#_teif
 					has_wg_special_authority = yes				#_wsg/swg
 					has_authority = auth_commonwealth			#_gsf
+					has_authority = auth_kan				#_kc
 					AND = {#_fq
 						has_global_flag = complex_hive
 						is_hive_empire = yes
@@ -137,6 +138,15 @@ can_species_be_assembled = {
 				has_trait = trait_machine_unit
 				has_trait = trait_mechanical				
 			}
+		}
+		#_kc
+		AND = {
+			OR={
+				has_trait = trait_kanmusu
+				has_trait = trait_gaosujianzao
+			}
+			
+			ROOT = { owner = { has_authority = auth_kan } }
 		}
 	}
 }
@@ -414,6 +424,8 @@ pop_generates_crime = {
 				has_trait = trait_intelligent_galo
 				#_swg
 				has_trait = swg_trait_starshipgirls
+				#_kc
+				has_trait = trait_kanmusu
 			}
 		}
 		AND = {#_teif
