@@ -108,7 +108,7 @@ uf_raider_buff = {
 }
 
 uf_special_buff = {
-	damage_vs_country_type_afk_crisis_country_mult = 3
+	damage_vs_country_type_afk_crisis_country_mult = 7
 	damage_vs_country_type_swarm_mult = 3
 	damage_vs_country_type_extradimensional_mult = 3
 	damage_vs_country_type_extradimensional_2_mult = 3

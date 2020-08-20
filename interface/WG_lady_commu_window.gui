@@ -12,7 +12,6 @@ guiTypes = {
 			quadTextureSprite = "GFX_wg_button_571_46_red" 
 			position = { x=0 y=0 }
 			font = "malgun_goth_24"
-			text_color_code = "L"
 			text = "OPTION_TEXT"
 		}
 
@@ -59,7 +58,6 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "alien_message"
 			font = "malgun_goth_24"
-			text_color_code = "L"
 			position = { x = 670 y = 20 }
 			maxWidth = 630
 			maxHeight = 314
@@ -73,7 +71,6 @@ guiTypes = {
 			position = { x = 1100 y = 650 }
 			Orientation = "UPPER_LEFT"
 			font = "malgun_goth_24"
-			text_color_code = "L"
 			text = "MESSAGE_OK"
 			clicksound = "confirmation"
 		}

@@ -22,7 +22,7 @@ ship_design = {
 
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "UAV_THRUSTER_SH"
+	required_component = "UAV_SHIP_THRUSTER_SH"
 	required_component = "COMBAT_COMPUTER_PICKET_WSG"
 }
 
@@ -54,7 +54,7 @@ ship_design = {
 
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "UAV_THRUSTER_SH"
+	required_component = "UAV_SHIP_THRUSTER_SH"
 	required_component = "COMBAT_COMPUTER_PICKET_WSG"
 }
 
@@ -114,7 +114,7 @@ ship_design = {
 
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "UAV_THRUSTER_SH"
+	required_component = "UAV_SHIP_THRUSTER_SH"
 	required_component = "COMBAT_COMPUTER_PICKET_WSG"
 }
 
@@ -150,7 +150,7 @@ ship_design = {
 
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "UAV_THRUSTER_SH"
+	required_component = "UAV_SHIP_THRUSTER_SH"
 	required_component = "COMBAT_COMPUTER_PICKET_WSG"
 }
 
@@ -163,8 +163,8 @@ ship_design = {
 		slot = "mid"
 
 		component = {
-			slot = "TORPEDO_01"
-			template = "RA_weapen_G"
+			slot = "LARGE_GUN_01"
+			template = "RA_weapen_L"
 		}
         	component = {
 			slot = "TORPEDO_02"
@@ -176,13 +176,13 @@ ship_design = {
 		}
 		component = {
 			slot = "SMALL_UTILITY_1"
-			template = "UF_weapen_IA_S"
+			template = "RA_weapen_IA_S"
 		}
 	}
 
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "UAV_THRUSTER_SH"
+	required_component = "UAV_SHIP_THRUSTER_SH"
 	required_component = "COMBAT_COMPUTER_PICKET_WSG"
 }
 

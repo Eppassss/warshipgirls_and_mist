@@ -110,3 +110,17 @@ ship_behavior = {
 	desc = "UF_CV_BEHAVIOR_DESC"
 }
 
+ship_behavior = {
+	name = "WGcarrier2"
+	preferred_attack_range = max
+	formation_distance = 300
+	return_to_formation_distance = 290
+	
+	collision_awareness = 1
+	collision_radius = 20
+	collision_strafe = 10
+	attack_move_pattern = follow #stationary
+	passive_move_pattern = stay_at_range #follow #charge
+	
+	desc = "WG_CV_BEHAVIOR_DESC"
+}

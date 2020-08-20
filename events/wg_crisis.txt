@@ -5028,11 +5028,8 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-	force_open = yes
-
-	picture_event_data = {
-		room = wg_start_room
-	}
+	custom_gui = "wg_intro_window"
+	custom_gui_option = "wg_intro_window_option"
 
 	trigger = {
 		NOR = {
@@ -5051,7 +5048,6 @@ country_event = {
 		custom_tooltip =  wg_crisis.10000.a.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_very_easy
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
@@ -5061,7 +5057,6 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.b.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_easy
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
@@ -5071,7 +5066,6 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.c.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_normal
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
@@ -5081,7 +5075,6 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.d.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_hard
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
@@ -5091,7 +5084,6 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.e.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_insane
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
 	}
@@ -5101,20 +5093,9 @@ country_event = {
 		custom_tooltip = wg_crisis.10000.f.tooltip
 		hidden_effect = {
 			set_global_flag = wg_crisis_disabled
-			set_country_flag = set_difficulty
 			country_event = { id = wg_crisis.1 days = 3 }
 		}
-	}
-
-	option = {
-		name = wg_crisis.10000.g
-		trigger = {
-			NOT = { has_country_flag = set_difficulty }
-		}
-		custom_tooltip = wg_crisis.10000.g.tooltip
-		hidden_effect = {
-			country_event = { id = wg_crisis.10005 }
-		}
+		default_hide_option = yes
 	}
 }
 #已废弃
@@ -5284,22 +5265,13 @@ country_event = {
 	id = wg_crisis.10005
 	title = "wsg.3047.name"
 	desc = "wsg.3047.desc"
-	
 	is_triggered_only = yes
-	diplomatic = yes
-	force_open = yes
+	picture = GFX_evt_wsg_no_video
 
 	trigger = {
 		NOT = { has_country_flag = set_difficulty }
 	}
 
-	picture_event_data = {
-		room = wg_start_room
-	}
-	after = {
-		country_event = { id = wg_crisis.10000 }
-	}
-	
 	option = {
 		name = "wsg.3047.a"
 		hidden_effect = { 
@@ -5361,6 +5333,23 @@ country_event = {
 			days = -1
 		}
 	}
+}
+
+country_event = {
+	id = wg_crisis.10010
+	title = "???"
+	desc = "wg_hidden_window"
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_no_video
+
+	option = {
+		name = "wg_crisis.10010.a"
+		country_event = { id = wg_crisis.10005 }
+	}
+	option = {
+		name = "OVOOVOOVO"
+	}
+
 }
 
 planet_event = {

@@ -1175,7 +1175,35 @@ weapon_component_template = {
 	}
 }
 
-
+utility_component_template = {
+	key = "WG_COMPUTER_CARRIER"
+	size = small
+	icon = "GFX_WG_COMPUTER_CARRIER"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { cruiser battleship titan }
+	component_set = "combat_computers"
+	ship_behavior = "WGcarrier2"
+	prerequisites = { "tech_wg_carrier_computer" }
+	
+	modifier = {
+		ship_speed_mult = 0.10
+	}
+	ship_modifier = {
+		ship_engagement_range_mult = 1.5
+	}
+	
+	ai_weight = {
+		weight = 4
+	}
+}
 
 
 

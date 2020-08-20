@@ -179,3 +179,36 @@ ship_section_template = {
 	large_utility_slots = 3
 	aux_utility_slots = 1
 }
+
+ship_section_template = {
+	key = "pantsu_shop_science_ship_section"
+	ship_size = pantsu_shop_science_ship
+	fits_on_slot = mid
+	entity = "eventship_06_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "root"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "root"
+	}
+	medium_utility_slots = 2
+	small_utility_slots = 2
+}

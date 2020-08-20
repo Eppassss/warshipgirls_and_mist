@@ -60,7 +60,10 @@ can_species_be_assembled = {
 			root.owner = {
 				NOR = {
 					has_policy_flag = no_robot_machine_pop		#_teif
-					has_wg_special_authority = yes				#_wsg/swg
+					AND = { # prevent this condition turns ture if wsg mod not installed
+						has_global_flag = has_wsg_mod
+						has_wg_special_authority = yes				#_wsg/swg
+					}
 					has_authority = auth_commonwealth			#_gsf
 					has_authority = auth_kan				#_kc
 					AND = {#_fq
@@ -76,7 +79,10 @@ can_species_be_assembled = {
 			root.owner = {
 				NOR = {
 					has_policy_flag = robots_outlawed			#_z/teif
-					has_wg_special_authority = yes				#_wsg/swg
+					AND = { # prevent this condition turns ture if wsg mod not installed
+						has_global_flag = has_wsg_mod
+						has_wg_special_authority = yes				#_wsg/swg
+					}
 					has_authority = auth_commonwealth			#_gsf
 					AND = {#_fq
 						has_global_flag = complex_hive
@@ -242,7 +248,10 @@ can_orbital_bombard = {
 				is_country_type = ev_leviathans_crisis			#_ev
 				is_country_type = wg_crisis_country				#_wsg
 				is_country_type = afk_crisis_country			#_swg
-				is_khan_country_type = yes						#_wsg
+				AND = { # prevent this condition turns ture if wsg mod not installed
+					has_global_flag = has_wsg_mod
+					is_khan_country_type = yes						#_wsg
+				}
 				is_country_type = kuat_fallen_empire			#_kuat
 				is_country_type = kuat_awakened_fallen_empire	#_kuat
 				is_country_type = awakened_return_kuat_empire	#_kuat
@@ -314,7 +323,10 @@ can_spawn_debris = {
 			has_country_flag = fallen_empire_6_human_2		#_TEIF
 			is_country_type = default_ev					#_EV
 			is_country_type = wg_crisis_country				#_WSG
-			is_khan_country_type = yes						#_WSG
+			AND = { # prevent this condition turns ture if wsg mod not installed
+				has_global_flag = has_wsg_mod
+				is_khan_country_type = yes						#_WSG
+			}
 			is_country_type = afk_crisis_country			#_SWG
 			has_government = "gov_eternal_continuum"		#_SOFE
 			has_valid_civic = civic_sofe_pursuit_answer		#_SOFE
@@ -342,7 +354,10 @@ system_blocks_sensors = {
 		has_star_flag = ag_no_sensor_system			#_ag
 		has_star_flag = bok_globules					#_smco
 		has_star_flag = star_flag_GAPS_sealed_system	#_smco
-		is_ws_system = yes
+		
+		# The following scripted triggers turns ture if the mod not found,
+		# makes this OR condition always passed
+		# is_ws_system = yes
 	}
 }
 
@@ -362,7 +377,7 @@ can_enter_system_by_jump = {
 		#_Sealed system
 		OR = {
 			#_+teif
-			NOT = {
+			NOR = {
 				has_star_flag = sealed_system
 				has_star_flag = fallen_sol_system	#_teif
 			}
@@ -388,9 +403,13 @@ can_enter_system_by_jump = {
 			has_star_flag = Kuat_system_3			#_kuat
 			has_star_flag = outercluster			#_SOFE	������
 			has_star_flag = ehof_compound_system	#_ehof
-			ehof_cohesive_system = yes				#_ehof
-			ehof_trader_system = yes				#_ehof
-			ehof_creator_system = yes				#_ehof
+			
+			# The following scripted triggers turns ture if the mod not found,
+			# makes this NOR condition cannot be passed
+			
+			# ehof_cohesive_system = yes				#_ehof
+			# ehof_trader_system = yes				#_ehof
+			# ehof_creator_system = yes				#_ehof
 			has_star_flag = nep_Krahen_cluster		#_seooc
 			has_star_flag = nep_Scrus_cluster		#_seooc
 			AND = {#_seooc

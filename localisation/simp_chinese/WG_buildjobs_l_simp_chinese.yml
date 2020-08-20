@@ -301,7 +301,7 @@
  job_wsg_blueprinting_dog_plural:0 "画图狗职业"
  job_wsg_blueprinting_dog_desc:0 "图纸总有改改改改改改改改改改改完的时候……"
  
- job_wsg_people_scientist_effect_desc:0 "£job_wsg_people_scientist $job_wsg_people_scientist$生产更少的£physics £society £engineering §Y研究点数§!，但产生£unity §Y$unity$§!和£mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!。"
+ job_wsg_people_scientist_effect_desc:0 "£job_wsg_people_scientist $job_wsg_people_scientist$生产更少的£physics £society £engineering §Y研究点数§!，但产生£unity §Y$unity$§!"
  job_wsg_people_scientist:0 "人民科学家"
  mod_job_wsg_people_scientist_per_pop:0 "每$VALUE$个人口§G+1§!个$job_wsg_people_scientist$职业"
  mod_job_wsg_people_scientist_per_pop_short:0 "每$VALUE$个人口§G+1§!个$job_wsg_people_scientist$职业" 

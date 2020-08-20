@@ -464,13 +464,16 @@ country_event = {
     
     immediate = {
         set_country_flag = engaged_with_pantsu_shop
-		random_list = {
-           40 = {
-               country_event = { id = wsgranking.2030 days = 2 }#打开食堂
-           }
-           60 = {#不举办
-		       set_timed_country_flag = { flag = engaged_with_canteen days = 180 }
-           }
+        if = {
+            limit = { NOT = { has_country_flag = engaged_with_canteen }}
+            random_list = {
+                40 = {
+                    country_event = { id = wsgranking.2030 days = 2 }#打开食堂
+                }
+                60 = {#不举办
+                    set_timed_country_flag = { flag = engaged_with_canteen days = 180 }
+                }
+            }
         }
     }
 
@@ -970,6 +973,39 @@ country_event = {
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
         remove_country_flag = engaged_with_pantsu_shop
     }
+	option = {#审判 
+		custom_gui = "enclave_caravaneer_option"
+		custom_tooltip = tech_wg_doom_desc
+        name = tech_wg_doom
+        trigger = { NOT = { has_technology = tech_wg_doom }}
+		allow = {
+			custom_tooltip = {
+				check_variable = { which = "rankpts" value > 120 }
+				owner = {
+					NOR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophobe
+					}	
+				}
+				fail_text = too_low_rank_fail_120
+			}
+			custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+			has_technology = tech_missiles_3
+            resource_stockpile_compare = { resource = energy value >= 6000 }
+			resource_stockpile_compare = { resource = sr_pantsu value >= 1000 }
+		}
+        add_resource = { energy = -6000 }
+		add_resource = { sr_pantsu = -1000 }
+		add_research_option = tech_wg_doom
+        add_tech_progress = { tech = tech_wg_doom progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
+    }
     option = { 
         custom_gui = "enclave_caravaneer_option"
         name = tech_wsg_356laser
@@ -1200,6 +1236,70 @@ country_event = {
 		}
 		add_research_option = tech_sh_XACweapon
 		add_tech_progress = { tech = tech_sh_XACweapon progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
+	}
+	option = {#大波波科研船
+		custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_science_ship2
+        trigger = { NOT = { has_country_flag = for_Polanian }}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 500 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_10
+				check_variable = { which = "rankpts" value > 10 }
+            }
+		}
+        custom_tooltip = "pantsu_shop_science_ship_desc"
+		create_fleet = {
+			name = "NAME_pantsu_shop_science_ship"
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					design = "NAME_pantsu_shop_science_ship"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:capital
+					distance = 30
+					angle = random
+				}
+			}
+		}
+		add_resource = { energy = -500 }
+        remove_country_flag = engaged_with_pantsu_shop
+		set_country_flag = for_Polanian
+	}
+	option = {#航母计算机
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_wg_carrier_computer
+        custom_tooltip = "tech_wg_carrier_computer_desc"
+		trigger = {
+			has_technology = tech_battleships
+			NOR = { 
+                has_tech_option = tech_wg_carrier_computer
+                has_technology = tech_wg_carrier_computer
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 6000 }
+			resource_stockpile_compare = { resource = sr_pantsu value >= 1500 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_90
+				check_variable = { which = "rankpts" value > 90 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -1500
+			energy = -6000
+		}
+		add_research_option = tech_wg_carrier_computer
+		add_tech_progress = { tech = tech_wg_carrier_computer progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
         remove_country_flag = engaged_with_pantsu_shop
 	}

@@ -3,6 +3,10 @@ spriteTypes = {
 		name = "GFX_ship_part_wsg_autocannon_57"
 		texturefile = "gfx/interface/icons/ship_parts/GFX_ship_part_wsg_autocannon_57.dds"
 	}
+	spriteType = {
+		name = "GFX_WG_COMPUTER_CARRIER"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_computer_french.dds"
+	}
  
 	spriteType = {
 		name = "GFX_ship_part_wsg_autocannon_127"

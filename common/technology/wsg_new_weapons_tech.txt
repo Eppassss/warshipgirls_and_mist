@@ -370,7 +370,30 @@ tech_wsg_330ion = {
 		has_authority = auth_warshipgirls 
 	}
 }
+tech_wg_carrier_computer = {
+	icon = tech_wg_carrier_computer
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_mass_drivers_1" }
+	weight = 0
+	is_rare = yes
 
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = 100
+			has_authority = auth_warshipgirls 
+		}
+	}
+	potential = {
+ 		OR = {
+ 			has_authority = auth_warshipgirls 
+ 			has_authority = auth_shenhai	
+ 	 	}	
+	}
+}
 #tech_wsg_uavtorp = {
 #
 #}

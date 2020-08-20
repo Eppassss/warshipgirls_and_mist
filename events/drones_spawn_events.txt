@@ -227,7 +227,7 @@ fleet_event = {
 			}
 			# 深海大凤技能
 			if = {
-				limit = { fleet = { NOT { has_fleet_flag = stop_spawning_drowns }}}
+				limit = { fleet = { NOT = { has_fleet_flag = stop_spawning_drowns }}}
 				# 阻止开幕
 			
 				OWNER = { every_owned_ship = {
@@ -460,18 +460,9 @@ fleet_event = {
 					value < 1
 				}
 			}
-
-			set_variable = {
-				which = "drone_tcount"
-				value < 1
-			}
+			set_variable = { which = "drone_tcount" value = 1 }
 		}
-
-		change_variable = {
-			which = "drone_tcount"
-			value = 1
-		}
-
+		change_variable = { which = "drone_tcount" value = 1 }
 		if = {
 			limit = {
 				is_in_combat = yes
@@ -482,11 +473,8 @@ fleet_event = {
 			}
 			# 深海大凤技能
 			if = {
-				limit = {  has_fleet_flag = stop_spawning_drowns }
+				limit = { NOT = { has_fleet_flag = stop_spawning_drowns }}
 				# 阻止开幕
-				remove_fleet_flag = stop_spawning_drowns
-			}
-			else = {
 				create_fleet = {
 					name = "NAME_Drone_Squadron_LEX"
 					settings = { 
@@ -502,21 +490,24 @@ fleet_event = {
 							create_ship = {
 								name = "NAME_Combat_Drone4"
 								design = "NAME_Combat_Drone4"
-								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
+								upgradable = no
+								effect = { ship_event = { id = mwsge_drone.5 days = 39 }}
 							}
 						}
 						while = { count = 25
 							create_ship = {
 								name = "NAME_Combat_Drone5"
 								design = "NAME_Combat_Drone5"
-								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
+								upgradable = no
+								effect = { ship_event = { id = mwsge_drone.5 days = 39 }}
 							}
 						}
 						while = { count = 15
 							create_ship = {
 								name = "NAME_Combat_Drone6"
 								design = "NAME_Combat_Drone6"
-								effect = { ship_event = { id = mwsge_drone.5 days = 31 }}
+								upgradable = no
+								effect = { ship_event = { id = mwsge_drone.5 days = 39 }}
 							}	
 						}					
 						set_location = {
@@ -528,7 +519,7 @@ fleet_event = {
 						set_aggro_range_measure_from = self
 						set_aggro_range = 500
 						# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
-						fleet_event = { id = mwsge_drone.24 days = 30 }
+						fleet_event = { id = mwsge_drone.24 days = 40 }
 						#set_event_locked = yes
 					}
 				}

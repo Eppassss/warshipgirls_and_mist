@@ -1,0 +1,177 @@
+guiTypes = {
+	### ENCLAVE CARAVANEER EVENT OPTION ###
+
+	containerWindowType = {
+		name = "wg_intro_window_option"
+		position = { x=0 y=0 }
+		size = { width = 354 height = 55 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_wg_intro_button_354_45" 
+			position = { x=0 y=0 }
+			font = "malgun_goth_24"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x=65 y= 28 }
+		}
+	}
+
+	### ENCLAVE CARAVANEER EVENT WINDOW ###
+
+	containerWindowType = {
+		name = "wg_intro_window"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 1468 height = 833 }
+		
+		background = {
+			name = "background"
+			spriteType = "GFX_wg_intro_large_bg" 
+			orientation = center
+			position = { x = 0 y = 0 }
+		}
+
+		iconType = {
+			name = "wg_intro_main_background"
+			spriteType = "GFX_wg_intro_main_bg" 
+			Orientation = "UPPER_LEFT"
+			position = { x = 0 y = 0 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "wg_intro_decoration"
+			spriteType = "GFX_wg_intro_deco" 
+			Orientation = "UPPER_LEFT"
+			position = { x = 0 y = 0 }
+			alwaysTransparent = yes
+		}
+		
+		buttonType = {
+			name = "alien_message_background"
+			size = { x = 675 y = 274 }
+			Orientation = "UPPER_LEFT"
+			position = { x = 780 y = 550 }
+			quadTextureSprite = "GFX_wg_intro_desc_bg"
+			alwaysTransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "alien_message"
+			font = "malgun_goth_24"
+			position = { x = 785 y = 555 }
+			maxWidth = 665
+			maxHeight = 264
+			format = left
+			scrollbartype = "standardtext_slider"
+		}
+
+		buttonType = {
+			name = "confirm_button"
+			quadTextureSprite = "GFX_wg_intro_button_354_45"
+			position = { x = 1100 y = 700 }
+			Orientation = "UPPER_LEFT"
+			font = "cg_16b"
+			text = "MESSAGE_OK"
+			clicksound = "confirmation"
+		}
+
+		buttonType = { 
+			name = "wg_update_content" 
+			quadTextureSprite = "GFX_wg_update_content" 
+			position = { x = 100 y = 550 } 
+			web_link = "https://steamuserimages-a.akamaihd.net/ugc/1479949766318203938/29625F59CE5218155756AC6ECACF0CDC13C51203/"
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_wg_intro_button_close"
+			position = { x= -45 y = 10 }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+
+		effectButtonType = {
+			name = "WG_intro_button_A"
+			spriteType = "GFX_wg_intro_button_A"
+			Orientation = "LOWER_RIGHT"
+			position = { x = -35 y = -400 }
+			effect = "WG_intro_button_A_effect"
+		}
+		effectButtonType = {
+			name = "WG_intro_button_B"
+			spriteType = "GFX_wg_intro_button_B"
+			Orientation = "LOWER_RIGHT"
+			position = { x = -35 y = -350 }
+			effect = "WG_intro_button_B_effect"
+		}
+
+		### EVENT DIPLO ###
+		
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 400 y = 550 }
+			size = { width=355 height=275 }
+			moveable = no
+			
+			instantTextBoxType={ name = "action_title" font = "malgun_goth_24" position = { x = -1453 y = -12450 } } # hidden
+			instantTextBoxType={ name = "action_desc" font = "malgun_goth_24" position = { x = -1453 y = -12450 } } # hidden
+			
+			listboxType = {
+				name = "option_list"
+				position = { x = 0 y = 0 }
+				backGround=""
+				size = { x = 355 y = 275 }
+				spacing = 20
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}
+		}
+		############################################
+		### ALL OF THIS IS HIDDEN OR DISPLACED ! ###
+		############################################
+		iconType = { name = "empire_header_line" quadTextureSprite = "GFX_line_long_caravaneer" position = { x = -1453 y = -12450 } }
+		instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1453 y = -12450 } }
+		buttonType = { name = "focus_button" position = { x = -1453 y = -12450 } spriteType = "GFX_fleetview_focus" }
+		containerWindowType = {
+			name = "portrait"
+			position = { x = -1453 y = -12450 }
+			size = { width = 0 height = 0 } # hide portrait window
+			iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask"  } # hidden
+			iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
+			iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
+			iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+		}
+		iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+		instantTextBoxType={ name = "empire_name" font = "malgun_goth_24" } # hidden 
+		instantTextBoxType={ name = "empire_government_type" font = "cg_16b" } # hidden
+		instantTextBoxType={ name = "empire_personality_type" font = "cg_16b" } # hidden
+		OverlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1453 y = -12450 } } # hidden
+		iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1453 y = -12450 } } # hidden
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = -1453 y = -12450 }
+			containerWindowType = { name = "empire_traits_box" } # hidden
+			instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
+			overlappingElementsBoxType = { name = "leader_traits" } # hidden
+			instantTextBoxType = { name = "leader_name" font = "cg_16b" } # hidden
+			instantTextBoxType = { name = "leader_species" font = "cg_16b" } # hidden
+		}
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = -1453 y = -12450 }
+			size = { width = 94 height = 30 }
+			iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
+			instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+		}	
+	}
+}

@@ -28,6 +28,9 @@ tech_wsg_356laser_desc:"来自战利品商店的阿尔法武器。这种干扰�
 tech_wsg_410:"410M暗物质阿尔法聚能炮"
 tech_wsg_410_desc:"通过特殊的工艺使其拥有爆破的性质。"
 
+tech_wg_carrier_computer:"航母战术计算机"
+tech_wg_carrier_computer_desc:"以往的作战计算机会让舰队向前冲锋，而这款作战计算机会让舰船在交战后掉头后撤，适合航母使用。\n§Y请不要在装备有轴基武器的飞船上使用§!"
+
 tech_wsg_EW:"能量长鞭"
 tech_wsg_EW_desc:"该武器在命中后能产生巨大的能量来消耗被击中者的护盾，同时对船体结构能造成额外的伤害，但对于装甲并没有什么加成。"
 
@@ -78,6 +81,9 @@ wsg_weapon_356laser_DESC:"干扰束与敌方护盾的相干频率完美匹配，
 
 wsg_weapen_X_410:"410M暗物质阿尔法聚能炮"
 wsg_weapen_X_410_DESC:"通过特殊的工艺使其拥有爆破的性质。"
+
+WG_COMPUTER_CARRIER:"航母战术计算机"
+WG_COMPUTER_CARRIER_DESC:"该作战计算机会让飞船在交战后尝试后撤\n§Y请不要在装备有基轴武器的飞船上使用§!"
 
 wsg_weapen_X_EW:"能量长鞭"
 wsg_weapen_X_EW_DESC:"该武器在命中后能产生巨大的能量来消耗被击中者的护盾，同时对船体结构能造成额外的伤害，但对于装甲并没有什么加成。"
@@ -134,6 +140,9 @@ tech_sh_XACweapon_desc:"拥有极高射速的基轴能量机炮，拥有比传�
 
 SHIP_AURA_WG_NSC:0 "神秘的电子设备"
 
+pantsu_shop_science_ship:0 "波兰尼亚"
+pantsu_shop_science_ship2:0 "新手村级科研船波兰尼亚号"
+pantsu_shop_science_ship_desc:0 "一艘先进的科研船，比普通科研船拥有§Y更快的扫描速度§!和§Y异常现象发现和研究速度§!，而且它还搭配了少量武装，可以自行处理低烈度的星际战斗而不是落荒而逃，可谓是居家旅行帝国扩张必备神器！"
 
 ## Hidden weapon
 wsg_weapon_autocannon_152_hidden:"152CM等离子自动火炮"
