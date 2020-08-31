@@ -241,116 +241,23 @@ fleet_event = {
 						solar_system = { change_variable = { which = "system_drones_count" value = 1 }}
 						# 饺子技能
 						if = { limit = { fleet = { has_fleet_flag = essex_debuff }}
-							create_fleet = {
-								name = "Drone_Squadron_WEAKEN"
-								settings = { 
-									spawn_debris = no 
-									can_upgrade = no 
-									can_change_composition = no 
-									can_change_leader = no 
-								}
-								effect = {
-									set_owner = PREVPREV
-									set_fleet_flag = drones
-									set_fleet_flag = normal_drones
-									set_fleet_flag = essex_debuff
-									add_modifier = { modifier = essex_debuff_to_drones days = -1 }
-									if = {
-										limit = { has_global_flag = wg_crisis_easy }
-										while = {
-											count = 1
-											create_ship = {
-												name = "NAME_WG_EG_Corvette"
-												design = "NAME_WG_EG_Corvette"
-											}
-										}
-									}
-									else = {
-										while = {
-											count = 3
-											create_ship = {
-												name = "NAME_WG_EG_Corvette"
-												design = "NAME_WG_EG_Corvette"
-											}
-										}
-									}
-									
-									set_location = {
-										target = PREV
-										distance = 1
-										angle = random
-									}
-								
-									set_fleet_stance = aggressive
-									set_aggro_range_measure_from = self
-									set_aggro_range = 500
-									#last_created_ship = { ship_event = { id = mwsge_drone.5 days = 90} }
-									# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
-									if = {
-										limit = { has_global_flag = wg_crisis_easy }
-										fleet_event = { id = mwsge_drone.4 days = 20}
-									}
-									else = {
-										fleet_event = { id = mwsge_drone.4 days = 40}
-									}
-									#set_event_locked = yes
-								}
+							# 联合领袖技能 穿梭轰炸
+							if = { limit = { fleet = { has_fleet_flag = uf_leader_trait_n4 }}
+								create_uf_drones = { NAME = "Drone_Squadron_WEAKEN" NUM = 5 EZ_NUM = 2 }
+							} else = {
+								create_uf_drones = { NAME = "Drone_Squadron_WEAKEN" NUM = 3 EZ_NUM = 1 }
+							}
+							last_created_fleet = {
+								set_fleet_flag = essex_debuff
+								add_modifier = { modifier = essex_debuff_to_drones }
 							}
 						}
 						# 正常
 						else = {
-							create_fleet = {
-								name = "Drone_Squadron"
-								settings = { 
-									spawn_debris = no 
-									can_upgrade = no 
-									can_change_composition = no 
-									can_change_leader = no 
-								}
-								effect = {
-									set_owner = PREVPREV
-									set_fleet_flag = drones
-									set_fleet_flag = normal_drones
-									if = {
-										limit = { has_global_flag = wg_crisis_easy }
-										while = {
-											count = 3
-											create_ship = {
-												name = "NAME_WG_EG_Corvette"
-												design = "NAME_WG_EG_Corvette"
-											}
-										}
-									}
-									else = {
-										while = {
-											count = 7
-											create_ship = {
-												name = "NAME_WG_EG_Corvette"
-												design = "NAME_WG_EG_Corvette"
-											}
-										}
-									}
-									
-									set_location = {
-										target = PREV
-										distance = 1
-										angle = random
-									}
-								
-									set_fleet_stance = aggressive
-									set_aggro_range_measure_from = self
-									set_aggro_range = 500
-									#last_created_ship = { ship_event = { id = mwsge_drone.5 days = 90} }
-									# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
-									if = {
-										limit = { has_global_flag = wg_crisis_easy }
-										fleet_event = { id = mwsge_drone.4 days = 20}
-									}
-									else = {
-										fleet_event = { id = mwsge_drone.4 days = 40}
-									}
-									#set_event_locked = yes
-								}
+							if = { limit = { fleet = { has_fleet_flag = uf_leader_trait_n4 }}
+								create_uf_drones = { NAME = "Drone_Squadron" NUM = 10 EZ_NUM = 5 }
+							} else = {
+								create_uf_drones = { NAME = "Drone_Squadron" NUM = 7 EZ_NUM = 3 }
 							}
 						}
 					
@@ -675,6 +582,10 @@ fleet_event = {
 	id = mwsge_drone.24
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		exists = this
+	}
 
 	immediate = {
 		delete_fleet = {

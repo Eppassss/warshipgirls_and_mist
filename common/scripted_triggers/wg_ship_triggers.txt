@@ -78,6 +78,7 @@ is_convoy_ship_size = {
 		is_ship_size = uf_buffer 
 		is_ship_size = wg_destroyer 
 		is_ship_size = wg_cruiser 
+		is_ship_size = wg_corvette
 		# sofe
 		is_ship_size = sofe_ancient_cruiser 
 		is_ship_size = sofe_ancient_escort 
@@ -96,6 +97,7 @@ is_ship_size_small = {
 		is_ship_size = corvette
 		is_ship_size = destroyer
 		is_ship_size = scout_UAV
+		is_ship_size = wg_corvette
 		is_ship_size = wg_destroyer
 		is_ship_size = erebus_drone
 	}
@@ -125,6 +127,7 @@ is_drones_or_corvette = {
 		is_ship_size = corvette
 		is_ship_size = scout_UAV
 		is_ship_size = erebus_drone
+		is_ship_size = wg_corvette
 	}
 }
 

@@ -357,6 +357,9 @@ Khan_galodam = {
 			food = 5
 		}
 	}
+	potential = {
+		always = no
+	}
 }
 
 Parit_army = {

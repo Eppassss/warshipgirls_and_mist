@@ -567,7 +567,6 @@ country_event = {
 						while = {
 							count = 5
 							create_wg_crisis_platform = yes
-							graphical_culture = "wsg_01"
 						}
 					}
 				}
@@ -1608,7 +1607,6 @@ country_event = {
 					while = {
 						count = 5
 						create_wg_crisis_platform = yes
-						graphical_culture = "wsg_01"
 					}
 				}
             }
@@ -1706,7 +1704,6 @@ country_event = {
 					while = {
 						count = 5
 						create_wg_crisis_platform = yes
-						graphical_culture = "wsg_01"
 					}
 				}
             }
@@ -3514,7 +3511,6 @@ country_event = {
 							while = {
 								count = 5
 								create_wg_crisis_platform = yes
-								graphical_culture = "wsg_01"
 							}
 						}
 					}
@@ -4049,6 +4045,10 @@ fleet_event = {
 		any_owned_ship = {
 			is_ship_size = uf_Juggernaut
 		}
+		NOR = { 
+			has_fleet_flag = drones 
+			has_fleet_flag = uf_clone_fleet
+		}
 	}
 
 	immediate = {
@@ -4320,33 +4320,56 @@ country_event = {
 	immediate = {
 		every_owned_fleet = {
 			limit = { 
-				NOT = { has_fleet_flag = drones }
+				NOR = { 
+					has_fleet_flag = drones 
+					has_fleet_flag = uf_clone_fleet
+				}
 				is_in_combat = no
+				any_owned_ship = {
+					is_ship_size = uf_Juggernaut
+				}
 			}
 			set_fleet_flag = counting_data
-			set_variable = { which = num_carrier_exist value = 0 }
-			set_variable = { which = num_dreadnought_exist value = 0 }
-			set_variable = { which = num_titan_exist value = 0 }
-			set_variable = { which = num_bb_exist value = 0 }
-			set_variable = { which = num_bc_exist value = 0 }
-			set_variable = { which = num_ca_exist value = 0 }
-			set_variable = { which = num_dd_exist value = 0 }
-			set_variable = { which = num_bf_portal_exist value = 0 }
-			set_variable = { which = num_bf_exist value = 0 }
+			fleet_event = { id = wg_crisis.112 }
 		}
+	}
+}
+
+# 数船
+fleet_event = {
+	id = wg_crisis.112
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { which = num_carrier_exist value = 0 }
+		set_variable = { which = num_titan_exist value = 0 }
+		set_variable = { which = num_bb_exist value = 0 }
+		set_variable = { which = num_bc_exist value = 0 }
+		set_variable = { which = num_ca_exist value = 0 }
+		set_variable = { which = num_dd_exist value = 0 }
+		set_variable = { which = num_dreadnought_exist value = 0 }
+		set_variable = { which = num_bf_portal_exist value = 0 }
+		set_variable = { which = num_bf_exist value = 0 }
+		set_variable = { which = num_juggernaut_exist value = 0 }
+		set_variable = { which = num_flagship_exist value = 0 }
 		every_owned_ship = {
 			limit = { 
-				NOR = { 
-					is_ship_size = uf_Juggernaut 
-					is_ship_size = UF_Flagship 
+				NOR = {  
 					is_ship_size = scout_UAV
+					is_ship_size = wg_corvette
 				}
-				fleet = {
-					any_owned_ship = {
-						is_ship_size = uf_Juggernaut
+				OR = {
+					AND = {
+						fleet = { has_fleet_flag = counting_data }
+						NOR = {
+							is_ship_size = uf_Juggernaut 
+							is_ship_size = UF_Flagship
+						}
 					}
-					NOT = { has_fleet_flag = drones }
+					NOT = { fleet = { has_fleet_flag = counting_data }}
 				}
+				fleet = { NOT = { has_fleet_flag = drones }}
 			}
 			switch = {
 				trigger = is_ship_size
@@ -4366,12 +4389,12 @@ country_event = {
 						fleet = { change_variable = { which = num_bf_exist value = 1 }}
 					}
 				}
+				# 补船触发不会数以下类型的船
+				uf_Juggernaut = { fleet = { change_variable = { which = num_juggernaut_exist value = 1 }}}
+				UF_Flagship = { fleet = { change_variable = { which = num_flagship_exist value = 1 }}}
 			}
 		}
-		every_owned_fleet = {
-			limit = { NOT = { has_fleet_flag = drones }}
-			remove_fleet_flag = counting_data
-		}
+		remove_fleet_flag = counting_data
 	}
 }
 
@@ -5338,7 +5361,7 @@ country_event = {
 country_event = {
 	id = wg_crisis.10010
 	title = "???"
-	desc = "wg_hidden_window"
+	desc = wg_hidden_window
 	is_triggered_only = yes
 	picture = GFX_evt_wsg_no_video
 
@@ -5347,7 +5370,7 @@ country_event = {
 		country_event = { id = wg_crisis.10005 }
 	}
 	option = {
-		name = "OVOOVOOVO"
+		name = "§BOVOOVOOVO"
 	}
 
 }
@@ -5362,5 +5385,427 @@ planet_event = {
 	}
 	option = {
 		name = OK
+	}
+}
+
+# 联合领袖技能总触发器
+country_event = {
+    id = wg_crisis.1100
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { 
+        OR = {
+            FROMFROM = { 
+                exists = leader
+                NOT = { has_fleet_flag = drones }
+            }
+            FROMFROMFROM = { 
+                exists = leader
+                NOT = { has_fleet_flag = drones }
+            }
+        }
+	}
+
+	immediate = {
+        FROMFROM = {
+			if = { 
+				# 联合技能 联合迴路遮断器
+				limit = { 
+					leader = { has_leader_flag = uf_leader_trait_s1 }
+					NOT = { solar_system = { has_star_flag = uf_leader_trait_s1_triggered }}
+					count_combatant_fleet = { 
+						count > 1 
+						limit = {
+							NOR = {
+								any_owned_ship = { OR = {
+									is_ship_class = shipclass_constructor
+									is_ship_class = shipclass_science_ship
+									is_ship_class = shipclass_mining_station
+									is_ship_class = shipclass_transport
+									is_ship_class = shipclass_observation_station
+									is_ship_class = shipclass_research_station
+									is_ship_class = shipclass_starbase
+									is_ship_class = shipclass_military_station
+								}}
+								has_fleet_flag = drones
+							}
+						}
+					}
+					any_combatant_fleet = { fleet_size > 15 }
+				}
+				solar_system = { set_star_flag = uf_leader_trait_s1_triggered }
+				fleet_event = { id = wg_crisis.2010 }
+			}
+			else_if = {
+				limit = { 
+					leader = { has_leader_flag = uf_leader_trait_s2 }
+					NOT = { has_fleet_flag = uf_leader_trait_s2_triggered }
+				}
+				set_fleet_flag = uf_leader_trait_s2_triggered
+				fleet_event = { id = wg_crisis.112 }
+				fleet_event = { id = wg_crisis.2020 days = 1 }
+			}
+		}
+	}
+}
+
+# Fleet finish combat
+country_event = {
+    id = wg_crisis.1101
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { 
+        FROMFROM = { 
+			exists = leader
+			NOT = { has_fleet_flag = drones }
+		}
+	}
+
+	immediate = {
+		FROMFROMFROM = {
+			every_combatant_fleet = {
+				fleet_event = { id = wg_crisis.1102 days = 1 }
+				set_variable = { which = "not_in_combat_days" value = 1 }
+			}
+		}
+	}
+}
+
+fleet_event = {
+    id = wg_crisis.1102
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { 
+        exists = this
+        check_variable = { which = "not_in_combat_days" value < 5 }
+	}
+	
+	immediate = {
+		if = {
+            limit = { is_in_combat = no }
+			set_variable = { which = "not_in_combat_days" value = 0 }
+			if = {
+				limit = { leader = { has_leader_flag = uf_leader_trait_s1 }}
+				solar_system = { remove_star_flag = uf_leader_trait_s1_triggered }
+			}
+			if = {
+				limit = { has_fleet_flag = uf_leader_trait_s2_triggered }
+				remove_fleet_flag = uf_leader_trait_s2_triggered
+			}
+			if = {
+				limit = { has_fleet_flag = uf_mirrored_fleet }
+				delete_fleet = {
+					target = this
+					kill_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { is_in_combat = yes }
+            fleet_event = { id = wg_crisis.1102 days = 1 }
+            change_variable = { which = "not_in_combat_days" value = 1 }
+        }
+	}
+}
+
+# on_fleet_combat_joined_attacker
+fleet_event = {
+	id = wg_crisis.1103
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { 
+        exists = leader
+        NAND = { 
+            has_fleet_flag = drones
+            FROM = { has_fleet_flag = drones }
+            FROMFROM = { has_fleet_flag = drones }
+        }
+	}
+	
+	immediate = {
+		every_combatant_fleet = {
+			limit = { exists = leader }
+			# 敌方舰队加入战斗，检查是否满足触发联合技能-联合迴路遮断器触发条件
+            if = {
+				limit = { 
+					NOT = { solar_system = { has_star_flag = uf_leader_trait_s1_triggered }}
+					leader = { has_leader_flag = uf_leader_trait_s1 }
+					any_combatant_fleet = { fleet_size > 200 }	
+				}
+				fleet_event = { id = wg_crisis.2010 }
+				solar_system = { set_star_flag = uf_leader_trait_s1_triggered }
+			}
+		}
+	}
+}
+
+# 联合技能 联合迴路遮断器
+fleet_event = {
+	id = wg_crisis.2010
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_in_combat = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				count_combatant_fleet = {
+					count > 1
+					limit = { 
+						NOR = {
+							any_owned_ship = { OR = {
+								is_ship_class = shipclass_constructor
+								is_ship_class = shipclass_science_ship
+								is_ship_class = shipclass_mining_station
+								is_ship_class = shipclass_transport
+								is_ship_class = shipclass_observation_station
+								is_ship_class = shipclass_research_station
+								is_ship_class = shipclass_starbase
+								is_ship_class = shipclass_military_station
+							}}
+							has_fleet_flag = drones
+						}
+						fleet_size > 15
+					}
+				}
+			}
+			random_combatant_fleet = {
+				limit = { 
+					NOR = {
+						any_owned_ship = { OR = {
+							is_ship_class = shipclass_constructor
+							is_ship_class = shipclass_science_ship
+							is_ship_class = shipclass_mining_station
+							is_ship_class = shipclass_transport
+							is_ship_class = shipclass_observation_station
+							is_ship_class = shipclass_research_station
+							is_ship_class = shipclass_starbase
+							is_ship_class = shipclass_military_station
+						}}
+						has_fleet_flag = drones
+					}
+					fleet_size > 15
+				}
+				every_owned_ship = {
+					set_disabled = yes
+				}
+				set_event_locked = yes
+				set_timed_fleet_flag = { flag = uf_leader_trait_s1 days = 30 }
+				fleet_event = { id = wg_crisis.2011 days = 1 }
+				fleet_event = { id = wg_crisis.2012 days = 30 }
+			}
+			fleet_event = { id = wg_crisis.2010 days = 45 }
+		} else = {
+			solar_system = { remove_star_flag = uf_leader_trait_s1_triggered }
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_crisis.2011
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_ship = {
+			set_disabled = no
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_crisis.2012
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_event_locked = no
+	}
+}
+
+country_event = {
+	id = wg_crisis.2013
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		FROMFROM = { has_fleet_flag = uf_leader_trait_s2 }
+	}
+
+	immediate = {
+		FROMFROM = { 
+			solar_system = { 
+				every_fleet_in_system = {
+					limit = { 
+						has_fleet_flag = uf_mirrored_fleet 
+						check_variable = { which = fleet_id value = PREVPREV }
+					}
+					delete_fleet = {
+						target = this
+						kill_leader = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = wg_crisis.2020
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		leader = { save_event_target_as = uf_clone_leader }
+		owner = {
+			while = { count = 3
+				clone_leader = {
+					target = event_target:uf_clone_leader
+					class = admiral
+					effect = {
+						save_event_target_as = uf_mirrored_leader
+						remove_leader_flag = uf_leader_trait_s2
+						remove_trait = leader_trait_admiral_uf_s2
+						add_trait = leader_trait_admiral_uf_mirrored_fleet
+					}
+				}
+				create_fleet = {
+					name = "NAME_UF_mirrored_fleet"
+					effect = {
+						set_owner = root.owner
+						set_variable = { which = num_carrier_exist value = root }
+						set_variable = { which = num_titan_exist value = root }
+						set_variable = { which = num_bb_exist value = root }
+						set_variable = { which = num_bc_exist value = root }
+						set_variable = { which = num_ca_exist value = root }
+						set_variable = { which = num_dd_exist value = root }
+						set_variable = { which = num_dreadnought_exist value = root }
+						set_variable = { which = num_bf_portal_exist value = root }
+						set_variable = { which = num_bf_exist value = root }
+						set_variable = { which = num_juggernaut_exist value = root }
+						set_variable = { which = num_flagship_exist value = root }
+						create_uf_carrier = { NUM = num_carrier_exist }
+						create_uf_titan = { NUM = num_titan_exist }
+						create_uf_bb = { NUM = num_bb_exist }
+						create_uf_bc = { NUM = num_bc_exist }
+						create_uf_ca = { NUM = num_ca_exist }
+						create_uf_dd = { NUM = num_dd_exist }
+						create_uf_dreadnought = { NUM = num_dreadnought_exist }
+						create_uf_buffer = { NUM = num_bf_exist }
+						create_uf_buffer_portal = { NUM = num_bf_portal_exist }
+						create_uf_juggernaut = { NUM = num_juggernaut_exist }
+						create_uf_flagship = { NUM = num_flagship_exist }
+						set_location = {
+							target = ROOT
+							distance = 30
+							angle = random
+							direction = in_system
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						assign_leader = event_target:uf_mirrored_leader
+						set_fleet_flag = uf_mirrored_fleet
+						if = {
+							limit = { ROOT = { has_fleet_flag = raider_fleet }}
+							add_modifier = { modifier = uf_raider_buff days = -1 }
+						}
+						set_variable = { which = "fleet_id" value = ROOT }
+					}
+					settings = { 
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_leader = no
+						can_change_composition = no
+						can_disband = no
+						spawn_debris = no
+						ai_ignore_strength = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# 补充触发：旗舰舰队被摧毁后调整数据
+country_event = {
+	id = wg_crisis.113
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = wg_crisis_country
+		FROMFROM = { has_fleet_flag = flagship_fleet }
+	}
+
+	immediate = {
+		change_variable = { which = "flagship_count" value = -1 }
+	}
+}
+
+# 归递溢出，使用事件增加特性
+# add_random_uf_admiral_trait
+fleet_event = {
+	id = wg_crisis.120
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		add_random_uf_admiral_trait = yes
+	}
+}
+
+# add_random_uf_admiral_trait_S_only
+fleet_event = {
+	id = wg_crisis.121
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		add_random_uf_admiral_trait_S_only = yes
+	}
+}
+
+# add_random_uf_admiral_trait_N_only
+fleet_event = {
+	id = wg_crisis.122
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		add_random_uf_admiral_trait_N_only = yes
+	}
+}
+
+fleet_event = {
+	id = wg_crisis.123
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		always = no
+	}
+	immediate = {
+		leader = { 
+			add_trait = leader_trait_admiral_uf_s1 
+			set_leader_flag = uf_leader_trait_s1
+		}
+	}
+}
+fleet_event = {
+	id = wg_crisis.124
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		always = no
+	}
+	immediate = {
+		leader = { 
+			add_trait = leader_trait_admiral_uf_s2 
+			set_leader_flag = uf_leader_trait_s2
+		}
+		set_fleet_flag = uf_leader_trait_s2
 	}
 }

@@ -26,3 +26,7 @@
  d_cleared_strange_storage_desc: "The cargo has been cleaned up, which is capable of resource storage."
  d_space_scavange_walking: "Space Refuse Port"
  d_space_scavange_walking_desc: "Freighter wreckage is scattering around the habitat. This port is a base for the recovery of useful resources."
+ tech_wg_spaceport_module_assembly: "Shipgirl Construction Module"
+ tech_wg_spaceport_module_assembly_desc: "This machine factory can accelerate the assembly efficiency of the colonies in the system."
+ sm_wg_assembly:0 "Shipgirl Construction Module"
+ sm_wg_assembly_desc:0 "A Facilities used to help the colony’s factory,can speed up the assembly efficiency of the colonies ."

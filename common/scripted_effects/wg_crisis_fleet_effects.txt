@@ -69,75 +69,68 @@ create_wg_crisis_fleet_and_admiral = {
     }
 }
 
-create_wg_crisis_exterminate_fleet = {
+# 参数：（所有选项皆可选填）
+# NAME：舰队名字
+# NUM_flagship：联合旗舰数量
+# NUM_juggernaut：联合主宰数量
+# NUM_carrier：联合无人机航母数量
+# NUM_titan：联合泰坦数量
+# NUM_bb：联合战列数量
+# NUM_bc：联合战巡数量
+# NUM_ca：联合重巡数量
+# NUM_dd：联合驱逐数量
+# NUM_uf_buffer：联合电子战数量
+# NUM_uf_buffer_portal：联合守门电子战数量
+# DISTANCE：距生成点的距离
+# IS_BOSS：标识是否为boss，不填则为否
+# ADD_TRAIT_EFFECT：额外事件id
+###########################################
+#       以下参数只能三选一，或者不填        #
+###########################################
+# GUARD_FLEET：执行守门舰队相关效果
+# ATTACK_FLEET：执行进攻舰队相关效果
+# RAIDER_FLEET：执行掠夺舰队相关效果
+create_uf_fleet = {
     create_fleet = {
-        name = "NAME_Exterminate_Fleet"
+        [[NAME] name = $NAME$]
         effect = {
             set_owner = event_target:wg_crisis_country
-            while = { count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_CARRIER"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }			
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }					
-            while = { count = 35
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer"
-                    upgradable = no
-                }
-            }
+            [[NUM_flagship] set_variable = { which = num_flagship value = $NUM_flagship$ }]
+            [[NUM_flagship] set_variable = { which = num_flagship_exist value = $NUM_flagship$ }]
+            [[NUM_flagship] create_uf_flagship = { NUM = $NUM_flagship$ }]
+            [[NUM_juggernaut] set_variable = { which = num_juggernaut value = $NUM_juggernaut$ }]
+            [[NUM_juggernaut] set_variable = { which = num_juggernaut_exist value = $NUM_juggernaut$ }]
+            [[NUM_juggernaut] create_uf_juggernaut = { NUM = $NUM_juggernaut$ }]
+            [[NUM_carrier] set_variable = { which = num_carrier value = $NUM_carrier$ }]
+            [[NUM_carrier] set_variable = { which = num_carrier_exist value = $NUM_carrier$ }]
+            [[NUM_carrier] create_uf_carrier = { NUM = $NUM_carrier$ }]
+            [[NUM_titan] set_variable = { which = num_titan value = $NUM_titan$ }]
+            [[NUM_titan] set_variable = { which = num_titan_exist value = $NUM_titan$ }]
+            [[NUM_titan] create_uf_titan = { NUM = $NUM_titan$ }]
+            [[NUM_dreadnought] set_variable = { which = num_dreadnought value = $NUM_dreadnought$ }]
+            [[NUM_dreadnought] set_variable = { which = num_dreadnought_exist value = $NUM_dreadnought$ }]
+            [[NUM_dreadnought] create_uf_dreadnought = { NUM = $NUM_dreadnought$ }]
+            [[NUM_bb] set_variable = { which = num_bb value = $NUM_bb$ }]
+            [[NUM_bb] set_variable = { which = num_bb_exist value = $NUM_bb$ }]
+            [[NUM_bb] create_uf_bb = { NUM = $NUM_bb$ }]
+            [[NUM_bc] set_variable = { which = num_bc value = $NUM_bc$ }]
+            [[NUM_bc] set_variable = { which = num_bc_exist value = $NUM_bc$ }]
+            [[NUM_bc] create_uf_bc = { NUM = $NUM_bc$ }]
+            [[NUM_ca] set_variable = { which = num_ca value = $NUM_ca$ }]
+            [[NUM_ca] set_variable = { which = num_ca_exist value = $NUM_ca$ }]
+            [[NUM_ca] create_uf_ca = { NUM = $NUM_ca$ }]
+            [[NUM_dd] set_variable = { which = num_dd value = $NUM_dd$ }]
+            [[NUM_dd] set_variable = { which = num_dd_exist value = $NUM_dd$ }]
+            [[NUM_dd] create_uf_dd = { NUM = $NUM_dd$ }]
+            [[NUM_uf_buffer] set_variable = { which = num_bf value = $NUM_uf_buffer$ }]
+            [[NUM_uf_buffer] set_variable = { which = num_bf_exist value = $NUM_uf_buffer$ }]
+            [[NUM_uf_buffer] create_uf_buffer = { NUM = $NUM_uf_buffer$ }]
+            [[NUM_uf_buffer_portal] set_variable = { which = num_bf_portal value = $NUM_uf_buffer_portal$ }]
+            [[NUM_uf_buffer_portal] set_variable = { which = num_bf_portal_exist value = $NUM_uf_buffer_portal$ }]
+            [[NUM_uf_buffer_portal] create_uf_buffer_portal = { NUM = $NUM_uf_buffer_portal$ }]
             set_location = {
                 target = PREV
-                distance = 5
+                distance = $DISTANCE|5$
                 angle = random
             }
             set_fleet_stance = aggressive
@@ -145,13 +138,22 @@ create_wg_crisis_exterminate_fleet = {
             set_aggro_range_measure_from = self
             set_aggro_range = 500
             assign_leader = last_created_leader
-            set_fleet_flag = attack_fleet
-            fleet_event = { id = wg_crisis.40 }
-            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
-            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
-            fleet_event = { id = wg_crisis.42 days = 60}
+            fleet_event = { id = wg_crisis.110 days = 60 } # 补船
+            
+            [[GUARD_FLEET] set_fleet_flag = defence_fleet ]
+
+            [[ATTACK_FLEET] set_fleet_flag = attack_fleet ]
+            [[ATTACK_FLEET] fleet_event = { id = wg_crisis.40 }]
+            [[ATTACK_FLEET] event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}]
+            [[ATTACK_FLEET] set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }]
+            [[ATTACK_FLEET] fleet_event = { id = wg_crisis.42 days = 60 }]
+
+            [[RAIDER_FLEET] set_fleet_flag = raider_fleet ]
+            [[RAIDER_FLEET] fleet_event = { id = wg_crisis.96 }]
+            [[RAIDER_FLEET] add_modifier = { modifier = uf_raider_buff days = -1 }]
         }
-        settings = { 
+        settings = {
+            [[IS_BOSS] is_boss = yes ]
             can_upgrade = no 
             uses_naval_capacity = no
             can_change_leader = no
@@ -160,590 +162,119 @@ create_wg_crisis_exterminate_fleet = {
             spawn_debris = no
             ai_ignore_strength = yes
         }
+    }
+    # must be a fleet event id
+    [[ADD_TRAIT_EVENT] last_created_fleet = { fleet_event = { id = $ADD_TRAIT_EVENT$ }}]
+}
+
+create_wg_crisis_exterminate_fleet = {
+    create_uf_fleet = {
+        NAME = "NAME_Exterminate_Fleet"
+        NUM_titan = 2
+        NUM_dreadnought = 1
+        NUM_bb = 10
+        NUM_bc = 10
+        NUM_ca = 10
+        NUM_dd = 35
+        NUM_uf_buffer = 1
+        ATTACK_FLEET = yes
+        ADD_TRAIT_EVENT = wg_crisis.120 # must be a fleet event id
     }
 }
 
 create_wg_crisis_main_fleet = {
-    create_fleet = {
-        name = "NAME_Main_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            set_variable = { which = num_carrier value = 10 }
-            set_variable = { which = num_carrier_exist value = 10 }
-            while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_CARRIER"
-                    graphical_culture = "wsg_01"
-                }
-            }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }			
-            set_variable = { which = num_titan value = 5 }
-            set_variable = { which = num_titan_exist value = 5 }
-            while = {
-                count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_bb value = 35 }
-            set_variable = { which = num_bb_exist value = 35 }
-            while = {
-                count = 30
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_bc value = 15 }
-            set_variable = { which = num_bc_exist value = 15 }
-            while = { count = 15
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_dreadnought value = 1 }
-            set_variable = { which = num_dreadnought_exist value = 1 }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            set_variable = { which = num_bf value = 1 }
-            set_variable = { which = num_bf_exist value = 1 }
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer"
-                }
-            }
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_Juggernaut"
-                    graphical_culture = "wsg_01"
-                }
-            }					
-            set_location = {
-                target = PREV
-                distance = 5
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = attack_fleet
-            fleet_event = { id = wg_crisis.40 }
-            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
-            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
-            fleet_event = { id = wg_crisis.42 days = 60 }
-            fleet_event = { id = wg_crisis.110 days = 60 } # 补船
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Main_Fleet"
+        NUM_juggernaut = 1
+        NUM_dreadnought = 1
+        NUM_titan = 5
+        NUM_carrier = 10
+        NUM_bb = 30
+        NUM_bc = 15
+        NUM_ca = 10
+        NUM_uf_buffer = 1
+        ATTACK_FLEET = yes
+        ADD_TRAIT_EVENT = wg_crisis.120 # must be a fleet event id
     }
 }
 
 create_wg_crisis_flagship_fleet = {
-    create_fleet = {
-        name = "NAME_flagship_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_UF_Flagship"
-                    graphical_culture = "wsg_01"
-                }
-            }			
-            while = {
-                count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_Juggernaut"
-                    graphical_culture = "wsg_01"
-                }
-            }
-            set_variable = { which = num_carrier value = 10 }
-            set_variable = { which = num_carrier_exist value = 10 }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_CARRIER"
-                    graphical_culture = "wsg_01"
-                }
-            }
-            set_variable = { which = num_titan value = 10 }
-            set_variable = { which = num_titan_exist value = 10 }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_bb value = 40 }
-            set_variable = { which = num_bb_exist value = 40 }
-            while = { count = 40
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_bc value = 20 }
-            set_variable = { which = num_bc_exist value = 20 }
-            while = { count = 20
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_dreadnought value = 2 }
-            set_variable = { which = num_dreadnought_exist value = 2 }
-            while = { count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            set_variable = { which = num_ca value = 20 }
-            set_variable = { which = num_ca_exist value = 20 }
-            while = { count = 20
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }			
-            set_variable = { which = num_dd value = 30 }
-            set_variable = { which = num_dd_exist value = 30 }
-            while = { count = 30
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_bf_portal value = 2 }
-            set_variable = { which = num_bf_portal_exist value = 2 }
-            while = { count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer_portal"  
-                    effect = { set_ship_flag = bf_portal }
-                }
-            }								
-            set_location = {
-                target = PREV
-                distance = 25
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = attack_fleet
-            fleet_event = { id = wg_crisis.40 }
-            event_target:wg_crisis_country = { 
-                change_variable = { which = "fleet_id" value = 1 }
-                change_variable = { which = "flagship_count" value = 1 }
-            }
-            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
-            fleet_event = { id = wg_crisis.42 days = 60}
-            fleet_event = { id = wg_crisis.110 days = 60 } # 补船
-        }
-        settings = { 
-            is_boss = yes
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_flagship_Fleet"
+        NUM_flagship = 1
+        NUM_juggernaut = 2
+        NUM_dreadnought = 2
+        NUM_titan = 10
+        NUM_carrier = 10
+        NUM_bb = 40
+        NUM_bc = 20
+        NUM_ca = 20
+        NUM_dd = 30
+        NUM_uf_buffer_portal = 2
+        IS_BOSS = yes
+        ATTACK_FLEET = yes
+        ADD_TRAIT_EVENT = wg_crisis.121 # must be a fleet event id
     }
+    last_created_fleet = { set_fleet_flag = flagship_fleet }
+    event_target:wg_crisis_country = { change_variable = { which = "flagship_count" value = 1 }}
 }
 
 create_wg_crisis_guard_fleet = {
-    create_fleet = {
-        name = "NAME_Portal_Guard_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            create_ship = {
-                name = random
-                design = "NAME_UF_Flagship"
-                graphical_culture = "wsg_01"
-            }
-            while = { count = 3
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_Juggernaut"
-                    graphical_culture = "wsg_01"
-                }
-            }
-            set_variable = { which = num_bc value = 20 }
-            set_variable = { which = num_bc_exist value = 20 }
-            while = { count = 20
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_dreadnought value = 2 }
-            set_variable = { which = num_dreadnought_exist value = 2 }
-            while = { count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            set_variable = { which = num_titan value = 10 }
-            set_variable = { which = num_titan_exist value = 10 }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_bb value = 40 }
-            set_variable = { which = num_bb_exist value = 40 }
-            while = { count = 40
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_ca value = 20 }
-            set_variable = { which = num_ca_exist value = 20 }
-            while = { count = 20
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }			
-            set_variable = { which = num_dd value = 50 }
-            set_variable = { which = num_dd_exist value = 50 }
-            while = { count = 50
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            set_variable = { which = num_bf_portal value = 2 }
-            set_variable = { which = num_bf_portal_exist value = 2 }
-            while = { count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer_portal"
-                    effect = { set_ship_flag = bf_portal }  
-                }
-            }								
-            set_location = {
-                target = PREV
-                distance = 25
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = defence_fleet
-            fleet_event = { id = wg_crisis.110 days = 60 } # 补船
-        }
-        settings = { 
-            is_boss = yes
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Portal_Guard_Fleet"
+        NUM_flagship = 1
+        NUM_juggernaut = 3
+        NUM_dreadnought = 2
+        NUM_titan = 10
+        NUM_carrier = 10
+        NUM_bb = 40
+        NUM_bc = 20
+        NUM_ca = 20
+        NUM_dd = 50
+        NUM_uf_buffer_portal = 2
+        DISTANCE = 30
+        IS_BOSS = yes
+        GUARD_FLEET = yes
+        ADD_TRAIT_EVENT = wg_crisis.122 # must be a fleet event id
     }
 }
 
 create_wg_crisis_greater_fleet = {
-    create_fleet = {
-        name = "NAME_Main_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            set_variable = { which = num_carrier value = 5 }
-            set_variable = { which = num_carrier_exist value = 5 }
-            while = {
-                count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_CARRIER"
-                    graphical_culture = "wsg_01"
-                }
-            }
-            while = { count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }			
-            set_variable = { which = num_titan value = 8 }
-            set_variable = { which = num_titan_exist value = 8 }
-            while = {
-                count = 8
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_bb value = 35 }
-            set_variable = { which = num_bb_exist value = 35 }
-            while = {
-                count = 35
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_bc value = 10 }
-            set_variable = { which = num_bc_exist value = 10 }
-            while = { count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            set_variable = { which = num_dreadnought value = 1 }
-            set_variable = { which = num_dreadnought_exist value = 1 }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            set_variable = { which = num_bf value = 1 }
-            set_variable = { which = num_bf_exist value = 1 }
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer"
-                }
-            }
-            while = {
-                count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_Juggernaut"
-                    graphical_culture = "wsg_01"
-                }
-            }			
-            set_location = {
-                target = PREV
-                distance = 60
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            fleet_event = { id = wg_crisis.110 days = 60 } # 补船
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Main_Fleet"
+        NUM_juggernaut = 1
+        NUM_dreadnought = 1
+        NUM_titan = 8
+        NUM_carrier = 5
+        NUM_bb = 35
+        NUM_bc = 10
+        NUM_ca = 20
+        NUM_dd = 50
+        NUM_uf_buffer = 1
+        DISTANCE = 60
+        ADD_TRAIT_EVENT = wg_crisis.122 # must be a fleet event id
     }
 }
 
 create_wg_crisis_weaker_exterminate_fleet = {
-    create_fleet = {
-        name = "NAME_Exterminate_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"  
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }			
-            while = {
-                count = 35
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            set_location = {
-                target = PREV
-                distance = 5
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = attack_fleet
-            fleet_event = { id = wg_crisis.40 }
-            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
-            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
-            fleet_event = { id = wg_crisis.42 days = 60}
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Exterminate_Fleet"
+        NUM_bb = 10
+        NUM_bc = 5
+        NUM_ca = 10
+        NUM_dd = 35
+        ATTACK_FLEET = yes
     }
 }
 
 create_wg_crisis_weaker_main_fleet = {
-    create_fleet = {
-        name = "NAME_Main_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            while = {
-                count = 2
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = { count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            while = {
-                count = 20
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }					
-            set_location = {
-                target = PREV
-                distance = 5
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = attack_fleet
-            fleet_event = { id = wg_crisis.40 }
-            event_target:wg_crisis_country = { change_variable = { which = "fleet_id" value = 1 }}
-            set_variable = { which = "fleet_id" value = event_target:wg_crisis_country }
-            fleet_event = { id = wg_crisis.42 days = 60}
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Main_Fleet"
+        NUM_titan = 2
+        NUM_dreadnought = 1
+        NUM_bb = 20
+        NUM_bc = 5
+        ATTACK_FLEET = yes
     }
 }
 
@@ -769,179 +300,31 @@ create_wg_crisis_weaker_fleet_and_admiral = {
 }
 
 create_wg_crisis_weaker_guard_fleet = {
-    create_fleet = {
-        name = "NAME_Portal_Guard_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            while = {
-                count = 3
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_TITAN"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            while = { count = 15
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    upgradable = no
-                }
-            }
-            while = { count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DREADNOUGHT"
-                    upgradable = no
-                }
-            }			
-            while = {
-                count = 25
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }						
-            while = {
-                count = 50
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-            while = { 
-				count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer"
-                    upgradable = no
-                }
-            }								
-            set_location = {
-                target = PREV
-                distance = 25
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = defence_fleet
-        }
-        settings = { 
-            is_boss = yes
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Portal_Guard_Fleet"
+        NUM_titan = 3
+        NUM_dreadnought = 1
+        NUM_bb = 25
+        NUM_bc = 15
+        NUM_ca = 10
+        NUM_dd = 50
+        NUM_uf_buffer = 1
+        DISTANCE = 30
+        GUARD_FLEET = yes
+        IS_BOSS = yes
     }
 }
 
 create_wg_crisis_raider_fleet = {
-    create_fleet = {
-        name = "NAME_Raider_Fleet"
-        effect = {
-            set_owner = event_target:wg_crisis_country
-            while = {
-                count = 5
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BB"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-			while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_BC"
-                    graphical_culture = "wsg_01"
-                    upgradable = no
-                }
-            }
-            while = {
-                count = 10
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_CA"
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }						
-            while = {
-                count = 25
-                create_ship = {
-                    name = random
-                    design = "NAME_WG_EG_DD"  
-                    graphical_culture = "wsg_01"
-					upgradable = no
-                }
-            }
-			while = { 
-				count = 1
-                create_ship = {
-                    name = random
-                    design = "NAME_uf_buffer"
-                    upgradable = no
-                }
-            }
-            set_location = {
-                target = PREV
-                distance = 60
-                angle = random
-            }
-            set_fleet_stance = aggressive
-            set_fleet_bombardment_stance = wg_doom2
-            set_aggro_range_measure_from = self
-            set_aggro_range = 500
-            assign_leader = last_created_leader
-            set_fleet_flag = raider_fleet
-            fleet_event = { id = wg_crisis.96 } 
-            add_modifier = { modifier = uf_raider_buff days = -1}
-            # if = {
-            #     limit = { has_global_flag = wg_crisis_normal }
-            #     add_modifier = {
-            #         modifier = uf_easy_debuff days = -1
-            #     }
-            #     add_modifier = {
-            #         modifier = uf_very_easy_debuff days = -1
-            #     }
-            # }
-            # if = {
-            #     limit = { has_global_flag = wg_crisis_hard }
-            #     add_modifier = {
-            #         modifier = uf_hard_buff days = -1
-            #     }
-            # }
-        }
-        settings = { 
-            can_upgrade = no 
-            uses_naval_capacity = no
-            can_change_leader = no
-            can_change_composition = no
-            can_disband = no
-            spawn_debris = no
-            ai_ignore_strength = yes
-        }
+    create_uf_fleet = {
+        NAME = "NAME_Raider_Fleet"
+        NUM_bb = 5
+        NUM_bc = 10
+        NUM_ca = 10
+        NUM_dd = 25
+        NUM_uf_buffer = 1
+        RAIDER_FLEET = yes
+        ADD_TRAIT_EVENT = wg_crisis.122 # must be a fleet event id
     }
 }
 
@@ -1008,4 +391,165 @@ create_wg_crisis_platform = {
 			graphical_culture = "wsg_01"
 		}						
 	}					
+}
+
+# 创建一队联合无人机（护卫舰）（无人机航母用）
+# $NUM$:正常数量
+# $EZ_NUM$:简单难度数量
+create_uf_drones = {
+    create_fleet = {
+        [[NAME] name = $NAME$ ]
+        settings = { 
+            spawn_debris = no 
+            can_upgrade = no 
+            can_change_composition = no 
+            can_change_leader = no 
+        }
+        effect = {
+            set_owner = PREVPREV
+            set_fleet_flag = drones
+            set_fleet_flag = normal_drones
+            if = {
+                limit = { OR = {
+                    has_global_flag = wg_crisis_easy 
+                    has_global_flag = wg_crisis_very_easy
+                }}
+                while = {
+                    count = $EZ_NUM$
+                    create_ship = {
+                        name = "NAME_WG_EG_Corvette"
+                        design = "NAME_WG_EG_Corvette"
+                    }
+                }
+            }
+            else = {
+                while = {
+                    count = $NUM$
+                    create_ship = {
+                        name = "NAME_WG_EG_Corvette"
+                        design = "NAME_WG_EG_Corvette"
+                    }
+                }
+            }
+            set_location = {
+                target = PREV
+                distance = 1
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            if = {
+                limit = { has_global_flag = wg_crisis_easy }
+                fleet_event = { id = mwsge_drone.4 days = 20}
+            }
+            else = {
+                fleet_event = { id = mwsge_drone.4 days = 40}
+            }
+        }
+    }
+}
+
+create_uf_carrier = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_CARRIER"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_titan = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_TITAN"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_bb = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_BB"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_bc = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_BC"
+            upgradable = no
+        }
+    }
+}
+create_uf_ca = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_CA"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_dd = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_DD"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_dreadnought = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_WG_EG_DREADNOUGHT"
+            graphical_culture = "wsg_01"
+        }
+    }
+}
+create_uf_buffer_portal = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_uf_buffer_portal"  
+            effect = { set_ship_flag = bf_portal }
+        }
+    }
+}
+create_uf_buffer = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_uf_buffer"
+        }
+    }
+}
+create_uf_juggernaut = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_uf_Juggernaut"
+            graphical_culture = "wsg_01"
+        }
+    }
+}
+create_uf_flagship = {
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random
+            design = "NAME_UF_Flagship"
+            graphical_culture = "wsg_01"
+        }
+    }
 }

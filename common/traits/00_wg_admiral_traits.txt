@@ -214,6 +214,93 @@ leader_trait_admiral_united_fleet4 = {
 	initial = no
 	randomized = no
 }
+leader_trait_admiral_uf_n1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_n1.dds"
+	modifier = {
+		ship_shield_reduction = 0.2
+		ship_speed_mult = 0.5
+		ship_evasion_mult = 0.2
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_n2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_n2.dds"
+	modifier = {
+		ship_armor_reduction = 0.4
+		ship_fire_rate_mult = 0.4
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_n3 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_n3.dds"
+	modifier = {
+		ship_armor_reduction = 0.4
+		ship_accuracy_mult = -0.4
+		ship_weapon_damage = 0.4
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_n4 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_n4.dds"
+	modifier = {
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_s1 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_s1.dds"
+	modifier = {
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_s2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_s2.dds"
+	modifier = {
+		ship_weapon_damage = -0.4
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+leader_trait_admiral_uf_mirrored_fleet = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_trait_admiral_uf_s2.dds"
+	modifier = {
+		ship_weapon_damage = -0.9
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
 leader_trait_admiral_resistant_fleet = {
 	cost = 0
 	modification = no

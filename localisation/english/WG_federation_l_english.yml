@@ -39,5 +39,5 @@
  wsg_lv5_3:0 "Key Technology Breakthrough"
  wsg_lv5_3_desc:0 "The federal research groups will turn crisis into opportunity and make every effort to achieve technological breakthroughs."
  crisis_wg_produces_effect:0 "$mod_megastructures_produces_mult$: §G+10%§!\n$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$: §G+25%§!\nResources from £job£ §Y+15%§! during the Endgame Crisis period."
- crisis_wg_military_effect:0 "The amount that members contribute towards §Ythe Federation Naval Capacity§! counts for §G+25%§! more.\nShip Building Speed §Y+50%§! during the Endgame Crisis period."
+ crisis_wg_military_effect:0 "The amount that members contribute towards §Ythe Federation Naval Capacity§! counts for §G+25%§! more.\nShip Build Speed §Y+50%§! during the Endgame Crisis period."
  crisis_wg_research_effect:0 "$mod_planet_jobs_engineering_research_produces_mult$: §G+25%§! \n$mod_planet_jobs_physics_research_produces_mult$: §G+25%§! \n$mod_planet_jobs_society_research_produces_mult: §G+25%§! \nResearch Speed §Y+15%§! during the Endgame Crisis period."
