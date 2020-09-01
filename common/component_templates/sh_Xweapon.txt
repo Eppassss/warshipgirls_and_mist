@@ -138,12 +138,12 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 250
+			alloys = 280
 			sr_se = 10
-			sr_dark_matter = 6.5
+			sr_dark_matter = 7
 		}		
 		upkeep = {
-			energy = 2.2
+			energy = 2.5
 			alloys = 1.5
 		}
 	}

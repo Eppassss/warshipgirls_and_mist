@@ -25,6 +25,7 @@ on_game_start_country = {
 		wsg.3111
 		wg_origin.3
 		sh_fe.4
+		wg_boss.91
 	}
 }
 
@@ -579,6 +580,7 @@ on_ship_disabled = {
 	events = {
 		wg_boss.77
 		wg_khan.309
+		wg_boss.96
 	}
 }
 
@@ -610,5 +612,15 @@ on_megastructure_built = {
 	events = {
 		wsg.3025
 		wsg.3028
+	}
+}
+
+# A fleet executes a move order to exit borders
+# Scope = Fleet
+# From = Origin System
+# FromFrom = Destination System
+on_crossing_border = {
+	events = {
+		wg_boss.92
 	}
 }

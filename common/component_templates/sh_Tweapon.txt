@@ -33,10 +33,10 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			sr_se = 25
-			alloys = 450
+			alloys = 500
 		}		
 		upkeep = {
-			energy = 15
+			energy = 18
 			sr_se = 1.5
 		}
 	}
@@ -73,7 +73,7 @@ weapon_component_template = {
 	shield_penetration = 1.0
 	armor_penetration = 1.0
 	tracking = 0.0
-	power = -1100
+	power = -1300
 	
 	prerequisites = { "tech_sh_Tweapon2" }
 	component_set = "sh_weapen_T2"
@@ -86,11 +86,11 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			sr_se = 25
-			alloys = 500
+			alloys = 600
 			sr_dark_matter = 10
 		}		
 		upkeep = {
-			energy = 18
+			energy = 25
 			sr_se = 2.5
 		}
 	}

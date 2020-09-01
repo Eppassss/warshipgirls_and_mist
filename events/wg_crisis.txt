@@ -5370,6 +5370,20 @@ country_event = {
 		country_event = { id = wg_crisis.10005 }
 	}
 	option = {
+		name = "enable_wg_cheat_all_bosses"
+		trigger = { NOT = { has_global_flag = wg_cheat_all_bosses }}
+		set_global_flag = wg_cheat_all_bosses
+		custom_tooltip = only_available_game_start
+		country_event = { id = wg_crisis.10010 }
+		country_event = { id = wg_boss.1 }
+	}
+	option = {
+		name = "disable_wg_cheat_all_bosses"
+		trigger = { has_global_flag = wg_cheat_all_bosses }
+		remove_global_flag = wg_cheat_all_bosses
+		country_event = { id = wg_crisis.10010 }
+	}
+	option = {
 		name = "§BOVOOVOOVO"
 	}
 

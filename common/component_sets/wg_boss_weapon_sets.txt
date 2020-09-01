@@ -52,6 +52,19 @@ component_set = {
 	icon = "GFX_RA_weapen_T"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "WSG_FD_weapen"
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1	
+}
+component_set = {
+	key = "WSG_FD_weapen2"
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1	
+}
 ##大可汗武器
 component_set = {
 	key = "Khan_weapen_T"

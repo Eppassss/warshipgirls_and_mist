@@ -1377,10 +1377,10 @@ utility_component_template = {
 			priority = 200
 		}
 		
-		modifier = {
-			ship_hull_damage_mult = -0.25		
-			ship_weapon_range_mult = -0.30
+		modifier = {		
+			ship_weapon_range_mult = -0.15
 			ship_weapon_damage = -0.20
+			ship_hull_damage_mult = -0.25
 		}
 		
 		graphics = {

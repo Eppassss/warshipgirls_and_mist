@@ -31,3 +31,11 @@ ambient_object = {
 	show_name = yes
 	description = "wg_juggernaut_object_desc"
 }
+
+ambient_object = {
+	name = "wg_fairy_dragon_object"
+	entity = "Seal_flagship_hull_section_entity2"
+	selectable = yes
+	show_name = yes
+	description = "wg_fairy_dragon_object_desc"
+}

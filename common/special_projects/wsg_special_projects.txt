@@ -317,3 +317,37 @@ special_project = {
 		owner = { country_event = { id = wg_bubbles.5 }}
 	}
 }
+#登陆仙女龙
+special_project = {
+	key = "WG_FD_PROJECT"
+	cost = 0
+	days_to_research = 60
+	tech_department = engineering_technology
+	picture = GFX_evt_wg_fairy_dragon
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 3
+	}
+	on_progress_25 = {
+		owner = {
+			country_event = { id = wg_boss.99 }
+		}
+	}
+	on_progress_50 = {
+		owner = {
+			country_event = { id = wg_boss.100 }
+		}
+	}	
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.101 }
+		}	
+	}
+	
+	on_fail = {
+	}
+}

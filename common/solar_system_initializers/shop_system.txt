@@ -360,6 +360,7 @@ shop_system = {
 		
 		init_effect = {
 			add_deposit = d_zro_deposit_2
+			save_global_event_target_as = fairy_dragon_location
 		}
 
 		moon = {	

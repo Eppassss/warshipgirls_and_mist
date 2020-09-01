@@ -84,3 +84,35 @@ tech_UNITEDFLEET2 = {
 		}
 	}	
 }
+
+tech_wsg_FD = {
+    area = physics
+    icon = tech_wsg_FD
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		has_authority = auth_warshipgirls	
+	}	
+}
+
+tech_sh_FD2 = {
+    area = physics
+    icon = tech_wsg_FD
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		has_authority = auth_shenhai
+	}	
+}

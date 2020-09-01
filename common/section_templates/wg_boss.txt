@@ -792,3 +792,105 @@ ship_section_template = {
 	}
 	aux_utility_slots = 4	
 }
+
+
+#仙女龙
+ship_section_template = {
+	key = "wg_fairy_dragon_key"
+	ship_size = wg_fairy_dragon
+	fits_on_slot = mid
+	entity = "Seal_flagship_hull_section_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_turret_1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_turret_2"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_turret_3"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		locatorname = "large_turret_4"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		locatorname = "large_turret_5"
+	}
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		locatorname = "large_turret_6"
+	}
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		locatorname = "large_turret_7"
+	}
+	component_slot = {
+		name = "LARGE_GUN_08"
+		template = "large_turret"
+		locatorname = "large_turret_8"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_turret_1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_turret_2"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_turret_1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_turret_2"
+	}
+
+	aux_utility_slots = 4	
+}
+
+ship_section_template = {
+	key = "wg_dragon_corvette_section"
+	ship_size = wg_dragon_corvette
+	fits_on_slot = mid
+	icon = "GFX_ship_part_core_mid"
+	entity = "UF_01_corvette_M1S1_entity"
+		
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 15
+		}
+	}
+}

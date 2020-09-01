@@ -110,6 +110,20 @@ component_set = {
 	icon = "GFX_wsg_weapen_T_BFG"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "wsg_weapen_T_FD"
+	
+	icon = "GFX_wsg_weapen_T_FD"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wsg_weapen_T_FD2"
+	
+	icon = "GFX_wsg_weapen_T_FD"
+	icon_frame = 1	
+}
 component_set = {
 	key = "wsg_weapen_B25"
 	

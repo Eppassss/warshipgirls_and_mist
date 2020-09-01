@@ -803,3 +803,277 @@ weapon_component_template = {
 		}
 	}
 }
+#################################仙女龙
+weapon_component_template = {
+	key = "POINT_weapon_fairy_dragon"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = point_defence
+	
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 300 max = 500 }
+	windup = { min = 5 max = 10 }
+	total_fire_time = 5
+	range = 100.0
+	accuracy = 0.9
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.5
+	power = -8
+	
+	hidden = yes
+	component_set = "WSG_FD_weapen2"
+	projectile_gfx = "wsg_small_turbolaser_l_w"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+}
+weapon_component_template = {
+	key = "SMALL_weapon_fairy_dragon"
+	size = small
+	entity = "Seal_flagship_small_turret_entity"
+	type = instant
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1500 max = 1500 }
+	windup = { min = 5 max = 15 }
+	total_fire_time = 10
+	range = 100.0
+	accuracy = 0.9
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.2
+	power = -8
+	
+	hidden = yes
+	component_set = "WSG_FD_weapen"
+	projectile_gfx = "wsg_small_turbolaser_l_w"
+	size_restriction = { wg_fairy_dragon }
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}		
+		upkeep = {
+			energy = 0.5
+			alloys = 0.1
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_weapon_fairy_dragon"
+	size = medium
+	entity = "Seal_flagship_medium_turret_entity"
+	type = instant
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1500 max = 3000 }
+	windup = { min = 5 max = 15 }
+	total_fire_time = 10
+	range = 160.0
+	accuracy = 0.9
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.1
+	power = -15
+	
+	hidden = yes
+	component_set = "WSG_FD_weapen"
+	size_restriction = { wg_fairy_dragon }
+	projectile_gfx = "wsg_medium_turbolaser_l_w"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 30
+		}		
+		upkeep = {
+			energy = 0.6
+			alloys = 0.1
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "LARGE_weapon_fairy_dragon"
+	size = large
+	entity = "Seal_flagship_large_turret_entity"
+	type = instant
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1500 max = 3000 }
+	windup = { min = 5 max = 15 }
+	total_fire_time = 10
+	range = 250.0
+	accuracy = 0.9
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.1
+	power = -30
+	
+	hidden = yes
+	component_set = "WSG_FD_weapen"
+	size_restriction = { wg_fairy_dragon }
+	projectile_gfx = "wsg_heavy_turbo_l_w"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 55
+		}		
+		upkeep = {
+			energy = 0.8
+			alloys = 0.2
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_T_FD"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_T_FD"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 35.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 10000 max = 50000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 270
+	range = 300.0
+	accuracy = 0.80
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.0
+	power = -1800
+
+	prerequisites = { "tech_wsg_FD" }
+	component_set = "wsg_weapen_T_FD"
+	projectile_gfx = "bugv_lance"
+	tags = { weapon_type_energy weapon_type_explosive }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_neo = 100
+			sr_alpha = 50
+			alloys = 800
+		}		
+		upkeep = {
+			energy = 30
+			sr_neo = 2.5
+			sr_alpha = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_T_FD2"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapen_T_FD"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 35.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 10000 max = 50000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 270
+	range = 300.0
+	accuracy = 0.80
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.0
+	power = -1800
+
+	prerequisites = { "tech_sh_FD2" }
+	component_set = "wsg_weapen_T_FD2"
+	projectile_gfx = "bugv_lance"
+	tags = { weapon_type_energy weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 35
+			alloys = 700
+		}		
+		upkeep = {
+			energy = 30
+			sr_se = 4
+
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+	}
+}
+

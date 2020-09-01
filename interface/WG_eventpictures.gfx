@@ -6,6 +6,12 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wg_fairy_dragon"
+		texturefile = "gfx/event_pictures/wg_fairy_dragon.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_wg_Britishfood"
 		texturefile = "gfx/event_pictures/wg_Britishfood.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
