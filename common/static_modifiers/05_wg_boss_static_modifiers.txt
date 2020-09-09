@@ -146,3 +146,7 @@ wg_blue_noob = {
 wg_one_cat_storm = {
 	ship_speed_reduction = 0.8
 }
+
+wsg_fairy_dragon = {
+    megastructure_build_speed_mult = 0.30
+}
