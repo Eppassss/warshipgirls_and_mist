@@ -7,14 +7,6 @@ country_event = {
 	id = wg_boss.1
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		any_country = {
-			has_wg_special_authority = yes
-			is_ai = no
-		}
-	}	
 
 	immediate = {
 		random_country = {
@@ -31,8 +23,8 @@ country_event = {
 							save_event_target_as = spawn_boss_system_source
 						} else = {
 							random_neighbor_system = {
-								limit = { NOT = { has_star_flag = sealed_system }}
 								ignore_hyperlanes = yes
+								limit = { NOT = { has_star_flag = sealed_system }}
 								save_event_target_as = spawn_boss_system_source
 							}
 						}
@@ -92,6 +84,7 @@ country_event = {
 			}
 			country_event = { id = wg_boss.19 }#无人机之主
 			country_event = { id = wsgranking.1919 }#胖次商店
+			country_event = { id = wg_boss.103 }#阿喵
 		}
 		random_list = { 
 			7 = {
@@ -3834,6 +3827,100 @@ country_event = {
 		}
 	}	
 }
+#######
+country_event = {
+	id = wg_boss.103
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_one_cat_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_one_cat_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 8
+				max_distance = 16
+				initializer = wg_one_cat_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+		random_system = {
+			limit = { has_star_flag = wg_one_cat_system_flag }
+			add_modifier = { modifier = wg_one_cat_storm }
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.104
+	title = "wg_boss.104.name"
+	desc = "wg_boss.104.desc"
+
+	is_triggered_only = yes
+	picture = GFX_evt_wg_one_cat
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_one_cat_system_flag
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_one_cat_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_one_cat_event
+			establish_communications_no_message = event_target:wg_one_cat_country
+		}
+	}
+
+	option = {
+		name = "wg_boss.104.a"
+
+	}
+}
+
+country_event = {
+	id = wg_boss.105
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_one_cat_fleet
+		}
+	}
+	immediate = {	
+		From = {
+			country_event = { id = wg_boss.106 days = 5 }
+		}	
+	}	
+}
+
+country_event = {
+	id = wg_boss.106
+	title = "wg_boss.106.name"
+	desc = "wg_boss.106.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_one_cat
+	
+	option = {
+		name = "wg_boss.106.a"
+		change_variable = { which = rankpts value = 10 }
+		owner={
+			give_technology = { tech = tech_wsg_CAT }
+		}				
+	}	
+}
+
 ###########################################
 event = { #生成星系
 	id = wg_boss.1000

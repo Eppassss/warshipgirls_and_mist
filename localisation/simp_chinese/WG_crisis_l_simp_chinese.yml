@@ -43,7 +43,7 @@
  wg_crisis.20.b.e:0 "难道没有别的方法破除轮回吗？"
  wg_crisis.20.b.e.response:0 "抱歉，我们见识过无数，也尝试过无数，也没能找到能解脱所有时间线上的我们所有姐妹的方法。"
  wg_crisis.20.b.f:0 "停止屠杀吧，来自另一次元的姐妹们，我们肯定能找到其他方法的。"
- wg_crisis.20.b.f.response:0 "伟大的计划已经开始了，我们没有任何回头的可能。但请放心，我们会保留你们的文明信息，就同之前72751023294102个舰娘文明一样。在最后，祝你们好运，我高贵的姐妹们。\n\n哦，请不要阻止我们，§R因为你们在这条道路的最后，也只会发现与我们一样的真实，并走上我们的道路。§!"
+ wg_crisis.20.b.f.response:0 "伟大的计划已经开始了，我们没有任何回头的可能。但请放心，我们会保留你们的文明信息，就同之前3294102个舰娘文明一样。在最后，祝你们好运，我高贵的姐妹们。\n\n哦，请不要阻止我们，§R因为你们在这条道路的最后，也只会发现与我们一样的真实，并走上我们的道路。§!"
 
  #天灾被消灭
  wg_crisis.51.name:0 "击退入侵"
@@ -464,3 +464,5 @@
  wg_hidden_window:0 "§BOVO OVO OVO OVO OVO OVO OVO OVO\nOVO§!你似乎打开了不应该打开的窗口§BOVO\nOVO OVO OVO OVO OVO OVO OVO OVO§!"
  wg_crisis.10010.a:0 "（旧）难度调节"
  OVOOVOOVO:0 "§BOVO OVO OVO OVO OVO OVO§!"
+ enable_wg_cheat_all_bosses:0 "生成所有舰Rmod中的利维坦"
+ only_available_game_start:0 "仅开局有效（大概）"

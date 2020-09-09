@@ -144,6 +144,7 @@ country_event = {
 	}
 
 	immediate = {
+		set_global_flag = wg_solIII_created
 		random_country = {
 			limit = {
 				has_authority = auth_warshipgirls
@@ -223,7 +224,6 @@ country_event = {
 				is_discovered = no
 				initializer = "lex_sol_system"
 			}
-			set_global_flag = wg_solIII_created
 			remove_star_flag = can_spawn_sol_system
 		}
 	}

@@ -1104,3 +1104,128 @@ ship_design = {
 	required_component="TITAN_SHIP_THRUSTER_5"
 	required_component = "SHIP_AURA_TARGETING_GRID"
 }
+
+
+ship_design = {
+	name = "NAME_ONE_CAT_HANGAR"
+	ship_size = wg_one_cat_hangar
+	is_event_design = yes
+
+	section = {
+		template = "wg_one_cat_hangar_key"
+		slot = "mid"
+		component = {
+			slot = "TITAN_01"
+			template = "GG_BEAM"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_weapon_fairy_dragon"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_weapon_fairy_dragon"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "WSG_CAT_H2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "WSG_CAT_H2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "WSG_CAT_H2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "WSG_CAT_H2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_16"
+			template = "WSG_CAT_H"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_weapon_fairy_dragon"
+		}
+		component = {
+			slot = "PD_02"
+			template = "POINT_weapon_fairy_dragon"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}	
+
+	}
+	required_component="SENSOR_2"
+	required_component = "TITAN_ANTIMATTER_REACTOR"
+	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
+	required_component = "WSG_CAT_H_AURA"
+}

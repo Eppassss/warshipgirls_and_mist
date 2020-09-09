@@ -65,6 +65,15 @@ component_set = {
 	icon = "GFX_RA_weapen_T"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "WSG_CAT_H"
+	
+	icon = "GFX_RA_weapen_T"
+	icon_frame = 1	
+}
+
+
 ##大可汗武器
 component_set = {
 	key = "Khan_weapen_T"
@@ -148,5 +157,12 @@ component_set = {
 	key = "KHAN_PSYCHIC_DOMINATOR"
 	
 	icon = "GFX_ship_part_Khan_psychic_dominator"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wsg_weapen_H_CAT"
+	
+	icon = "GFX_wsg_weapen_H_CAT"
 	icon_frame = 1	
 }

@@ -794,7 +794,7 @@ add_special_scientist_affection_monthly = {
 				add = 4
 			}
 			modifier = { # buff加成的额外几率
-				ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+				owner = { has_modifier = wg_modifier_canteen_affectionUp1 }
 				factor = 2
 			}
 			set_variable = { which = months_no_affection value = 0 }

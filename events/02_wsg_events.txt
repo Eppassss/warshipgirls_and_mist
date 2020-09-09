@@ -1,3 +1,4 @@
+namespace = wsg
 #母港补给舰事件
 planet_event = {
 	id = wsg.3000
@@ -3282,6 +3283,7 @@ country_event = {
 				name = NAME_lexington
 				skill = 1
 				immortal = yes
+				event_leader = yes
 				traits = {
 					trait = leader_trait_ruler_lexington
 					trait = leader_trait_ruler_lexington2

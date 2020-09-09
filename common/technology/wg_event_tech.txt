@@ -116,3 +116,13 @@ tech_sh_FD2 = {
 		has_authority = auth_shenhai
 	}	
 }
+
+tech_wsg_CAT = {
+    icon = tech_wsg_CAT
+	cost = @tier1cost1
+	area = society
+	tier = 1
+	category = { new_worlds }
+	weight = 0
+	is_reverse_engineerable = no
+}

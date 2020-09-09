@@ -1077,3 +1077,187 @@ weapon_component_template = {
 	}
 }
 
+strike_craft_component_template = {
+	key = "WSG_CAT_H"
+	size = LARGE
+	entity = "bomber_entity"
+	power = -100
+	hidden = yes
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	count = 5
+	regeneration_per_day = 0.3
+	launch_time = 2.0
+	
+	damage = { min = 80 max = 150 }
+	cooldown = 2
+	range = 15
+	accuracy = 1.0
+	tracking = 1.0
+	
+	health = 10
+	armor = 50
+	shield = 100
+	evasion = 0.6
+	
+	speed = 1600
+	rotation_speed = 0.25
+	acceleration = 0.8
+	
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 2.5
+	
+	ship_behavior = "bombers_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	
+	component_set = "WSG_CAT_H"
+	
+	icon = "GFX_UF_weapen_H"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+	ai_tags = { weapon_role_anti_shield }
+}
+
+strike_craft_component_template = {
+	key = "WSG_CAT_H2"
+	size = LARGE
+	entity = "fighter_entity"
+	power = -35
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+		}
+		upkeep = {
+			energy = 0.2
+		}
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.10
+	}
+	count = 1
+	#regeneration_per_day = 0.2
+	regeneration_per_day = 0.90
+	launch_time = 1.0
+	
+	
+	damage = { min = 50 max = 100 }
+	cooldown = 1.5
+	range = 15
+	accuracy = 1.0
+	tracking = 1.0
+	
+	health = 15
+	armor = 10
+	shield = 40
+	evasion = 0.9
+	
+	speed = 900
+	rotation_speed = 0.8
+	acceleration = 1
+	
+	shield_penetration = 1.0
+	
+	ship_behavior = "fighters_behavior"
+	
+	weapon_type = point_defence
+	#weapon_type = strike_craft
+	projectile_gfx = "white_laser_pd"
+	
+	component_set = "WSG_CAT_H"
+	
+	hidden = yes
+	
+	icon = "GFX_UF_weapen_H2"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_point_defence }
+}
+
+utility_component_template = {
+	key = "WSG_CAT_H_AURA"
+	size = medium
+	icon = "GFX_UF_AURA_1"
+	icon_frame = 1
+	power = 0
+	hidden = yes
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "one_cat"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {			
+			id = aura_wsg_one_cat_debuff
+			priority = 300
+		}
+		
+		modifier = {		
+			ship_weapon_range_mult = -0.80
+			weapon_type_point_defense_weapon_damage_mult = 0.25
+			weapon_type_point_defense_weapon_fire_rate_mult = 0.25
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}
+
+utility_component_template = {
+	key = "wsg_weapen_H_CAT"
+	size = aux
+	icon = "GFX_wsg_weapen_H_CAT"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	modifier = {
+		ships_upkeep_mult = -0.02
+	}
+
+	prerequisites = { "tech_wsg_CAT" }
+	component_set = "wsg_weapen_H_CAT"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3.0
+			is_preferred_weapons = weapon_type_kinetic
+		}		
+	}
+}

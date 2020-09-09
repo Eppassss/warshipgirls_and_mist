@@ -5378,12 +5378,6 @@ country_event = {
 		country_event = { id = wg_boss.1 }
 	}
 	option = {
-		name = "disable_wg_cheat_all_bosses"
-		trigger = { has_global_flag = wg_cheat_all_bosses }
-		remove_global_flag = wg_cheat_all_bosses
-		country_event = { id = wg_crisis.10010 }
-	}
-	option = {
 		name = "§BOVOOVOOVO"
 	}
 

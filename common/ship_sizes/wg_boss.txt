@@ -331,3 +331,37 @@ wg_dragon_corvette = {
 	class = shipclass_military
 	is_designable = no
 }
+#诺星渊机库
+wg_one_cat_hangar = {
+	graphical_culture = no
+	entity = gatebuilder_01_space_station_entity
+	max_speed = 0.0
+	acceleration = 0.0
+	rotation_speed = 0.0
+	modifier = {
+		ship_evasion_mult = -1
+		ship_armor_add = 200000
+		ship_shield_add = 200000
+		ships_upkeep_mult = -1
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1
+	}
+	ship_modifier = {
+		ship_engagement_range_mult = 3.00
+	}
+	max_hitpoints = 600000
+	size_multiplier = 32
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = yes
+	build_block_radius = @build_block_radius_civilian
+	
+	class = shipclass_military_station
+	is_designable = no
+	
+	required_component_set = "combat_computers"
+	required_component_set = "sensor_components"
+	required_component_set = "ship_aura_components"
+}

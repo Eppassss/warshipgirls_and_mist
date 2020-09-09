@@ -1,5 +1,139 @@
 namespace = action
+country_event = {
+	id = action.10
+	title = action.10.name
+	picture = GFX_evt_star_chart
+	location = fromfromfrom
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = me_wsg.9999.desc
+		trigger = { 
+			from = { has_authority = auth_shenhai }
+			has_authority = auth_warshipgirls
+			has_global_flag = mwsge_activate
+			ROOT = { NOT = { has_country_flag = abyss_found }}
+		}
+	}
+	desc = {
+		text = action.15.desc
+		trigger = { 
+			OR = {
+				is_ai = yes
+				NOT = { from = { has_authority = auth_shenhai }}
+				ROOT = { has_country_flag = abyss_found }
+			}
+		}
+	}
+	
+	trigger = {
+		is_country_type = default
+		exists = capital_scope
+		NOT = { has_country_flag = day_0 }
+		from = { NOT = { has_country_flag = day_0 } }
+		from = {
+			OR = {
+				is_country_type = default
+				#is_country_type = nomad
+			}
+		}
+		NOT = { has_country_flag = has_communications@from }
+	}
 
+	immediate = {
+		if = {
+			limit = { 
+				OR = { 
+					is_ai = yes
+					NOT = { has_relation_flag = {
+						who = from
+						flag = me_wsg_mainstory_country
+					}}
+					has_country_flag = mwsge_deactivate
+					has_country_flag = abyss_found
+				}
+			}
+			capital_scope = { save_event_target_as = pc_home }
+			from = {
+				enable_special_project = {
+					name = ESTABLISH_COMMUNICATIONS
+					location = event_target:pc_home
+					owner = ROOT
+				}
+			}
+		}
+		
+		if = {
+			limit = { 
+				has_relation_flag = {
+					who = from
+					flag = me_wsg_mainstory_country
+				}
+				is_ai = no
+				has_global_flag = mwsge_activate
+				NOT = { has_country_flag = abyss_found }
+			}
+			begin_event_chain = {
+				event_chain = mwsge_abyss_chains
+				target = ROOT
+			}
+			country_event = { id = me_wsg.1 days = 3 }
+			from = { 
+				save_global_event_target_as = shenhai
+			}
+		}
+	}
+
+	option = {
+		name = action.10.a
+		trigger = {
+			OR = {
+				has_country_flag = mwsge_deactivate	
+				has_country_flag = abyss_found
+				NAND = {
+					has_authority = auth_shenhai
+					is_ai = yes
+					from = { has_authority = auth_warshipgirls }
+				}
+			}
+		}
+		tooltip = {
+			enable_special_project = {
+				name = ESTABLISH_COMMUNICATIONS
+				location = event_target:pc_home
+				owner = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = me_wsg.9999.a
+		trigger = {
+			has_authority = auth_warshipgirls
+			has_global_flag = mwsge_activate
+			has_relation_flag = {
+				who = from
+				flag = me_wsg_mainstory_country
+			}
+			is_ai = no
+		}
+	}
+	
+	option = {
+		name = me_wsg.9999.b
+		trigger = {
+			has_authority = auth_warshipgirls
+			has_global_flag = mwsge_activate
+			has_relation_flag = {
+				who = from
+				flag = me_wsg_mainstory_country
+			}
+			is_ai = no
+		}
+	}
+}
 
 # Primitive planet surveyed
 ship_event = {
@@ -230,6 +364,69 @@ fleet_event = {
 				country_event = { id = sh_fe.2 }
 			} else = {
 				country_event = { id = action.1 }
+			}
+		}
+	}
+}
+
+# Star Charts have been traded
+planet_event = {
+	id = action.46
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_owner = yes
+		NOT = { exists = fromfrom }
+		owner = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = primitive
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_established_contact = from }
+					OR = {
+						has_country_flag = mwsge_deactivate
+						has_country_flag = abyss_found
+						is_ai = yes
+					}
+					NOT = { has_relation_flag = {
+						who = ROOT.from
+						flag = me_wsg_mainstory_country
+					}}
+				}
+								
+			}
+			owner = {
+				from = {
+					establish_contact = { who = prev location = prevprev }
+				}
+			}			
+		}
+		if = {
+			limit = {
+				owner = {
+					has_global_flag = mwsge_activate
+					has_relation_flag = {
+						who = ROOT.from
+						flag = me_wsg_mainstory_country
+					}
+					is_ai = no
+				}
+			}
+			owner = {
+				set_country_flag = abyss_found
+				country_event = { id = me_wsg.9999 }
+			}
+			from = {
+				save_global_event_target_as = shenhai
 			}
 		}
 	}
