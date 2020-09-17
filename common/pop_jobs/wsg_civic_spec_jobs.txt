@@ -14,7 +14,10 @@ wsg_people_scientist = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_people_scientist
+			z_pop_job_trigger = yes
+		}
 	}
 
 	resources = {
@@ -60,7 +63,10 @@ wsg_blueprinting_dog = {
 
 	possible = {
 		battle_thrall_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_blueprinting_dog
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {

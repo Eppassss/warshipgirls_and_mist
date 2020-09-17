@@ -13,7 +13,10 @@ sh_clerk = {
 	possible = {
 		owner = { is_fallen_empire = no }
 		NOT = { has_slavery_type = { type = slavery_livestock }}
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_clerk
+			z_pop_job_trigger = yes
+		}
 	}
 
 	planet_modifier = {

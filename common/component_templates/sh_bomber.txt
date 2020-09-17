@@ -5,7 +5,7 @@ strike_craft_component_template = {
 	power = -20
 
 	resources = {
-		category = kineticip_components
+		category = ship_components
 		cost = {
 			alloys = 40
 		}
@@ -46,6 +46,7 @@ strike_craft_component_template = {
 	
 	component_set = "sh_weapen_H"
 	prerequisites = { "tech_sh_Hweapon" }
+	upgrades_to = "sh_weapen_EH"
 	
 	icon = "GFX_sh_weapen_H"
 	icon_frame = 1
@@ -60,7 +61,7 @@ strike_craft_component_template = {
 	power = -100
 
 	resources = {
-		category = kineticip_components
+		category = ship_components
 		cost = {
 			alloys = 80
 			sr_se = 2

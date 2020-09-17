@@ -143,10 +143,10 @@ wg_blue_noob = {
 	ship_shield_mult = -0.100
 }
 
-wg_one_cat_storm = {
-	ship_speed_reduction = 0.8
-}
-
 wsg_fairy_dragon = {
     megastructure_build_speed_mult = 0.30
+}
+
+wg_one_cat_storm = {
+	ship_speed_reduction = 0.8
 }

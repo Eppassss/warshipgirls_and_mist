@@ -13,7 +13,10 @@ sh_researcher = {
 
 	possible = {
 		ruler_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_researcher
+			z_pop_job_trigger = yes
+		}
 	}
 
 	resources = {

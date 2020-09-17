@@ -134,8 +134,11 @@ opinion_shkh2 = {
 opinion_sh_to_wsg = {
 	trigger = {
 		has_authority = auth_shenhai
-		NOT = { has_ascension_perk = ap_shenhai_icebreaking }			
-			}				
+		NOR = { 
+			has_ascension_perk = ap_shenhai_icebreaking
+			has_global_flag = mwsge_change_opinion
+		}			
+	}				
 	opinion = {
 		modifier = {
 			add = -100	
@@ -146,7 +149,8 @@ opinion_sh_to_wsg = {
 
 opinion_wsg_to_sh = {
 	trigger = {
-		has_authority = auth_warshipgirls		
+		has_authority = auth_warshipgirls
+		NOT = { has_global_flag = mwsge_change_opinion }		
 	}				
 	opinion = {
 		modifier = {

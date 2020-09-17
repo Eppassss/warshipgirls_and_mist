@@ -49,7 +49,10 @@ sh_foundry = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_foundry
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -91,7 +94,10 @@ sh_foundry_shpc = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_foundry_shpc
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -125,7 +131,10 @@ category = specialist
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_senergy
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -249,7 +258,10 @@ sh_soldier = {
 	possible = {
 		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = sh_soldier
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	weight = {

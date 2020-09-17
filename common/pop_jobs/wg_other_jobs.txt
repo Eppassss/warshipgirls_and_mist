@@ -154,7 +154,6 @@ energy_Parit = {
 				is_regular_empire = yes
 			}
 		}
-		z_pop_job_trigger = yes
 	}
 
 

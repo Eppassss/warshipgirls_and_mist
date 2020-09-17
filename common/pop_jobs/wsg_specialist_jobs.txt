@@ -84,7 +84,10 @@ barthroom_worker = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = barthroom_worker
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	planet_modifier = {
@@ -144,7 +147,10 @@ wsg_instructor = {
 
 	possible = {
 		battle_thrall_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_instructor
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -210,7 +216,10 @@ wsg_gas_refiner = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_gas_refiner
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -243,7 +252,10 @@ wsg_chemist = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_chemist
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -276,7 +288,10 @@ category = specialist
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_translucer
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -309,7 +324,10 @@ wsg_foundry = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_foundry
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -356,7 +374,10 @@ wsg_alpha = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_alpha
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -397,7 +418,10 @@ wsg_researcher = {
 
 	possible = {
 		complex_specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_researcher
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -523,7 +547,10 @@ wsg_soldier = {
 	possible = {
 		worker_job_check_trigger = yes
 		owner = { is_gestalt = no }
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_soldier
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	weight = {
@@ -546,7 +573,10 @@ wsg_mahjong = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_mahjong
+			z_pop_job_trigger = yes
+		}
 	}
 	planet_modifier = {
 		planet_amenities_add = 2
@@ -601,7 +631,10 @@ wsg_historical_researcher = {
 
 	possible = {
 		complex_specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wsg_historical_researcher
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
@@ -646,7 +679,10 @@ wg_tourism = {
 
 	possible = {
 		specialist_job_check_trigger = yes
-		z_pop_job_trigger = yes
+		OR = {
+			has_job = wg_tourism
+			z_pop_job_trigger = yes
+		}
 	}
 	
 	resources = {
