@@ -90,6 +90,14 @@ country_event = {
 						}
 						add_modifier = { modifier = fe_damage_to_wg_khan days = -1 } # 给堕落加buff以免打不过
 					}
+					random_country = {
+						limit = { is_country_type = pantsu_shop }
+						set_faction_hostility = {
+							target = PREV
+							set_neutral = yes
+							set_hostile = no
+						}
+					}
 					switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
 						trigger = has_global_flag
 						wg_crisis_very_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.6 }}
@@ -693,6 +701,14 @@ country_event = {
 	immediate = {
 		event_target:WG_Khan_country = {
 			set_country_type = wg_Khan_country_type_auto_delete
+			random_country = {
+				limit = { is_country_type = pantsu_shop }
+				set_faction_hostility = {
+					target = PREV
+					set_neutral = yes
+					set_hostile = no
+				}
+			}
 		}
 		set_global_flag = wg_khan_crisis_second_fleet_arrive
 		switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
@@ -1510,6 +1526,7 @@ fleet_event = {
 								has_country_flag = subject_to_Khan #国家已经投降
 								is_country_type = fallen_empire #不打堕落
 								is_country_type = awakened_fallen_empire
+								is_country_type = pantsu_shop #不打胖次商店
 							}
 						}
 						any_fleet_in_system = { NOT = { is_same_value = ROOT }}
@@ -1593,9 +1610,14 @@ fleet_event = {
 											exists = observation_outpost_owner
 										}
 									}
-									solar_system = { any_fleet_in_system = { 
-										is_same_value = ROOT
-									}}
+									solar_system = { 
+										any_fleet_in_system = { 
+											is_same_value = ROOT
+										}
+										space_owner = {
+											NOT = { has_country_flag = subject_to_Khan }
+										}
+									}
 								}
 								find_closest_planet = {
 									trigger = {
@@ -1611,9 +1633,14 @@ fleet_event = {
 											}
 											exists = observation_outpost_owner
 										}
-										solar_system = { any_fleet_in_system = { 
-											is_same_value = ROOT
-										}}
+										solar_system = { 
+											any_fleet_in_system = { 
+												is_same_value = ROOT
+											}
+											space_owner = {
+												NOT = { has_country_flag = subject_to_Khan }
+											}
+										}
 									}
 									found_planet = {
 										orbit_planet = this
@@ -1641,6 +1668,7 @@ fleet_event = {
 										has_country_flag = subject_to_Khan
 										is_country_type = fallen_empire
 										is_country_type = awakened_fallen_empire
+										is_country_type = pantsu_shop
 									}
 								}
 								check_variable = { which = stacked_khan_fleet value < 5 }
@@ -2094,7 +2122,7 @@ planet_event = {
 					}
 				}
 			}
-			8 = {
+			15 = {
 				custom_tooltip = wg_khan.106.tooltip.a
 			} # nothing happened
 		}

@@ -840,6 +840,16 @@ tech_sh_weapon = {
 	prerequisites = { "tech_starbase_2" }
 	tier = 0
 	is_reverse_engineerable = no
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
+	}
 	
 	potential = {
 		OR = {
@@ -847,7 +857,6 @@ tech_sh_weapon = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -863,6 +872,16 @@ tech_sh_weapon2 = {
 	prerequisites = { "tech_sh_weapon" "tech_starbase_2" }
 	tier = 0
 	is_reverse_engineerable = no
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
+	}
 	
 	potential = {
 		OR = {
@@ -870,7 +889,6 @@ tech_sh_weapon2 = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -905,6 +923,13 @@ tech_sh_mkii = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}	
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -930,8 +955,7 @@ tech_sh_mkii = {
 			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
-				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
+				has_origin = origin_me_wsg_mainstory				
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -966,6 +990,13 @@ tech_sh_flak2 = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}	
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -992,7 +1023,6 @@ tech_sh_flak2 = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1026,6 +1056,13 @@ tech_sh_weapon_shell = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}	
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1052,7 +1089,6 @@ tech_sh_weapon_shell = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1085,6 +1121,19 @@ tech_sh_Lweapon = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1107,14 +1156,10 @@ tech_sh_Lweapon = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1149,6 +1194,19 @@ tech_sh_Lweapon2 = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1175,7 +1233,6 @@ tech_sh_Lweapon2 = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1208,6 +1265,19 @@ tech_sh_senergy_uav = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1234,7 +1304,6 @@ tech_sh_senergy_uav = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1267,6 +1336,19 @@ tech_sh_Xweapon = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1289,14 +1371,10 @@ tech_sh_Xweapon = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_technology = tech_sh_senergy
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1337,6 +1415,19 @@ tech_sh_Eweapon = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1360,6 +1451,10 @@ tech_sh_Eweapon = {
 	potential = {
 		OR = {
 			has_authority = auth_shenhai
+			# AND = {
+			# 	has_authority = auth_warshipgirls
+			# 	has_origin = origin_me_wsg_mainstory
+			# }
 			is_wg_fallen_empire = yes
 		}
 		NOT = {
@@ -1395,6 +1490,19 @@ tech_sh_Xweapon2 = {
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
 			}
 		}
 	}
@@ -1444,6 +1552,13 @@ tech_sh_Hweapon = {
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1461,7 +1576,6 @@ tech_sh_Hweapon = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1489,6 +1603,19 @@ tech_sh_EHweapon = {
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1502,14 +1629,10 @@ tech_sh_EHweapon = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1545,6 +1668,13 @@ tech_sh_Tweapon = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1571,7 +1701,6 @@ tech_sh_Tweapon = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1607,6 +1736,13 @@ tech_sh_Tweapon2 = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1633,7 +1769,6 @@ tech_sh_Tweapon2 = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1667,6 +1802,19 @@ tech_sh_ia = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1689,14 +1837,10 @@ tech_sh_ia = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1731,6 +1875,19 @@ tech_sh_Gweapon = {
 				has_trait = "leader_trait_expertise_propulsion"
 			}
 		}	
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -1753,14 +1910,10 @@ tech_sh_Gweapon = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}	
@@ -1789,6 +1942,19 @@ tech_sh_propulsion = {
 			factor = 2
 			has_technology = tech_battleships
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	prereqfor_desc = {
@@ -1811,14 +1977,10 @@ tech_sh_propulsion = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}	
@@ -1847,6 +2009,13 @@ tech_sensors_SH = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
 	}	
 	
 	ai_weight = {
@@ -1872,7 +2041,6 @@ tech_sensors_SH = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1890,7 +2058,21 @@ tech_sh_senergy_reactor = {
 	prerequisites = { "tech_zero_point_power" }
 	is_reverse_engineerable = no
 	
-
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
+	}
 	ai_weight = {
 		modifier = {
 			factor = 100
@@ -1899,14 +2081,10 @@ tech_sh_senergy_reactor = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -1995,6 +2173,19 @@ tech_sh_computer = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -2017,14 +2208,10 @@ tech_sh_computer = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}	
@@ -2042,6 +2229,16 @@ tech_sh_aura = {
 	prerequisites = { "tech_titans" }	
 	is_reverse_engineerable = no
 
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
+	}
+
 	ai_weight = {
 		modifier = {
 			factor = 100
@@ -2054,7 +2251,6 @@ tech_sh_aura = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -2072,6 +2268,16 @@ tech_sh_aura2 = {
 	prerequisites = { "tech_sh_aura" }	
 	is_reverse_engineerable = no
 
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NAND = {
+				has_authority = auth_warshipgirls
+				has_technology = tech_sh_senergy_mod
+			}
+		}
+	}
+
 	ai_weight = {
 		modifier = {
 			factor = 100
@@ -2084,7 +2290,6 @@ tech_sh_aura2 = {
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}
@@ -2102,6 +2307,21 @@ tech_sh_jump_drive = {
 	prerequisites = { "tech_jump_drive_1" }	
 	is_reverse_engineerable = no
 
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				AND = {
+					has_authority = auth_warshipgirls
+					has_technology = tech_sh_senergy_mod
+				}
+				AND = {
+					has_authority = auth_shenhai
+					has_technology = tech_sh_senergy
+				}
+			}
+		}
+	}
 	ai_weight = {
 		modifier = {
 			factor = 100
@@ -2110,14 +2330,10 @@ tech_sh_jump_drive = {
 	}
 	potential = {
 		OR = {
-			AND = {
-				has_authority = auth_shenhai
-				has_technology = tech_sh_senergy
-			}
+			has_authority = auth_shenhai
 			AND = {
 				has_authority = auth_warshipgirls
 				has_origin = origin_me_wsg_mainstory
-				has_access_to_sh_weapon_tech = yes
 			}
 			is_wg_fallen_empire = yes
 		}

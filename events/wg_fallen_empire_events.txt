@@ -188,6 +188,7 @@ country_event = {
 			effect = {
 				save_global_event_target_as = wg_fallen_empire
 				set_country_flag = wg_fallen_empire
+				set_country_flag = z_cm_flg_cntr_wih_awk_ignore #天灾之主
 				add_modifier = { modifier = wg_fe_cheat days = -1 }
 				add_resource = {
 					minerals = 50000
