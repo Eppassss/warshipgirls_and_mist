@@ -22,4 +22,17 @@ objectTypes = {
 			shader = "PdxMeshShip"
 		}
 	}
+
+	pdxmesh = {
+		name = "wsg_psi_dreadnought_mesh"
+		file = "gfx/models/ships/lexT_DR/lexT_dr.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			shader = "PdxMeshShip"
+			index = 0
+			shader = "PdxMeshExtraDimensionalShip"
+			texture_diffuse = "ship_mask.dds"
+		}
+	}
 }

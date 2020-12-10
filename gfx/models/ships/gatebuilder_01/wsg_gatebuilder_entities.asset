@@ -1,3 +1,51 @@
+entity = {
+	name = "gatebuilder_wsg_bombers_strikecraft_entity"
+	
+	locator = { name = "root"	position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root2"	position = { 3 0 3 } rotation = { 0 0 0 } }
+	attach = { root2 = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root3"	position = { -3 0 3 } rotation = { 0 0 0 } }
+	attach = { root3 = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root4"	position = { 6 0 6 } rotation = { 0 0 0 } }
+	attach = { root4 = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root5"	position = { -6 0 6 } rotation = { 0 0 0 } }
+	attach = { root5 = "gatebuilder_01_strikecraft_entity" }
+}
+
+entity = {
+	name = "gatebuilder_wsg_fighters_strikecraft_entity"
+	
+	locator = { name = "root"	position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root2"	position = { 3 0 3 } rotation = { 0 0 0 } }
+	attach = { root2 = "gatebuilder_01_strikecraft_entity" }
+	locator = { name = "root3"	position = { -3 0 3 } rotation = { 0 0 0 } }
+	attach = { root3 = "gatebuilder_01_strikecraft_entity" }
+}
+
+entity = {
+	name = "gatebuilder_wsg_strikecraft_entity"
+	pdxmesh = "wsg_gatebuilder_01_strikecraft_mesh"
+	scale = 1.5
+	locator = { name = "large_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 0 0 } }
+}
+
+entity = {
+	name = "gatebuilder_wg_boss_strikecraft_entity"
+	pdxmesh = "wsg_gatebuilder_01_strikecraft_mesh"
+	scale = 5
+	locator = { name = "large_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 0 0 } }
+}
+
 
 entity = {
 	name = "gatebuilder_wsg_01_space_station_section_entity"

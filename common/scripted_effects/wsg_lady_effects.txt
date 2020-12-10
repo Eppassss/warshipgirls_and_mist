@@ -587,7 +587,6 @@ reset_lady_affection_variables = {
 # 调用函数后可在本地化文件中引用wsg_player_nickname的event target
 # 即直接加上[wsg_player_nickname.GetName]
 # 为避免bug，event target使用的是全局变量
-# 使用完成后一定要clear_global_event_target = wsg_player_nickname !!!
 get_player_nickname = {
 	if = {
 		limit = { has_country_flag = has_nickname }
@@ -599,14 +598,23 @@ get_player_nickname = {
 		}
 		if = { #找不到储存命名的船，调用预设名字的船作为昵称
 			limit = { NOT = { exists = event_target:wsg_player_nickname }}
-			event_target:wsg_player_default_nickname = {
-				save_global_event_target_as = wsg_player_nickname
+			random_system = {
+				limit = { has_star_flag = wg_naming_ship_system }
+				random_fleet_in_system = {
+					limit = { has_fleet_flag = wsg_player_default_nickname }
+					save_global_event_target_as = wsg_player_nickname
+				}
 			}
 		}
 	}
-	else = { #该国家并没有设定大小姐用的昵称，调用预设名字作为昵称
-		event_target:wsg_player_default_nickname = {
-			save_global_event_target_as = wsg_player_nickname
+	else_if = { #该国家并没有设定大小姐用的昵称，调用预设名字作为昵称
+		limit = { NOT = { has_country_flag = has_nickname }}
+		random_system = {
+			limit = { has_star_flag = wg_naming_ship_system }
+			random_fleet_in_system = {
+				limit = { has_fleet_flag = wsg_player_default_nickname }
+				save_global_event_target_as = wsg_player_nickname
+			}
 		}
 	}
 }
@@ -773,27 +781,132 @@ remove_lady_army = {
 
 # scope: leader
 set_lady_portrait = {
-	if = { 
-		limit = { owner = { check_variable = { which = lady_affection value >= 5 }}}
-		change_leader_portrait = wsglady_affection3
+	if = {
+		limit = { owner = { 
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+			check_variable = { which = wsg_lady_cloth value = 1 }
+		}}
+		change_leader_portrait = wsglady01
 	} else_if = {
-		limit = { owner = { check_variable = { which = lady_affection value >= 3 }}}
-		change_leader_portrait = wsglady_affection2
-	} else = {
-		change_leader_portrait = wsglady_affection1
+		limit = { owner = { 
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+			check_variable = { which = wsg_lady_cloth value = 2 }
+		}}
+		change_leader_portrait = wsglady02
+	} else_if = {
+		limit = { owner = { check_variable = { which = wsg_lady_cloth value = 0 }}}
+		if = { 
+			limit = { owner = { check_variable = { which = lady_affection value >= 5 }}}
+			change_leader_portrait = wsglady_affection3
+		} else_if = {
+			limit = { owner = { check_variable = { which = lady_affection value >= 3 }}}
+			change_leader_portrait = wsglady_affection2
+		} else_if = {
+			limit = { owner = { check_variable = { which = lady_affection value < 3 }}}
+			change_leader_portrait = wsglady_affection1
+		}
 	}
 }
 
 quit_lady_commu_effects = {
 	hidden_effect = {
 		set_country_flag = finish_lady_talking
-		
+		reset_lady_cloth = yes
 	}
 }
 talk_to_lady_option_effects = {
 	hidden_effect = {
 		set_country_flag = talked_to_wsg_lady
+		reset_lady_cloth = yes
+		set_lady_reply = yes
 		country_event = { id = wg_lady.998 }
+	}
+}
+set_lady_reply = {
+	if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 11 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 101 }
+	} else_if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 12 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 102 }
+	} else_if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 13 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 103 }
+	} else_if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 21 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 201 }
+	} else_if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 22 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 202 }
+	} else_if = {
+		limit = { check_variable = { which = wsg_lady_talking value = 23 }}
+		set_variable = { which = talk_to_wsg_lady_option value = 203 }
+	} else_if = {
+		limit = { has_country_flag = wsg_lady_governor_active }
+		if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 1 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 11 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 2 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 12 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 3 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 13 }
+		}
+	} else_if = {
+		limit = { has_country_flag = wsg_lady_warship_active }
+		if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 1 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 21 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 2 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 22 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 3 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 23 }
+		}
+	} else_if = {
+		limit = { has_country_flag = wsg_lady_army_active }
+		if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 1 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 31 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 2 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 32 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 3 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 33 }
+		}
+	} else_if = {
+		limit = { has_country_flag = wsg_lady_armed_science_active }
+		if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 1 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 41 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 2 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 42 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 3 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 43 }
+		}
+	} else_if = {
+		limit = { wsg_lady_available = yes }
+		if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 1 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 1 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 2 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 2 }
+		} else_if = {
+			limit = { check_variable = { which = wsg_lady_talking value = 3 }}
+			set_variable = { which = talk_to_wsg_lady_option value = 3 }
+		}
 	}
 }
 lady_changing_effects = {
@@ -801,17 +914,93 @@ lady_changing_effects = {
 		set_country_flag = wsg_lady_changing
 		remove_country_flag = talking_to_wsg_lady
 		remove_country_flag = talked_to_wsg_lady
+		reset_lady_cloth = yes
 	}
 }
 lady_diplo_immediate_effects = {
-	get_player_nickname = yes
-	remove_country_flag = wsg_lady_talking1
-	remove_country_flag = wsg_lady_talking2
-	remove_country_flag = wsg_lady_talking3
+	# get_player_nickname = yes
 	random_list = {
-		1 = { set_country_flag = wsg_lady_talking1 }
-		1 = { set_country_flag = wsg_lady_talking2 }
-		1 = { set_country_flag = wsg_lady_talking3 }
+		1 = { set_variable = { which = wsg_lady_talking value = 1 }}
+		1 = { set_variable = { which = wsg_lady_talking value = 2 }}
+		1 = { set_variable = { which = wsg_lady_talking value = 3 }}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 1 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_01_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 11 }
+		}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 1 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_01_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 12 }
+		}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 1 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_01_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 13 }
+		}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 2 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_02_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 21 }
+		}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 2 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_02_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 22 }
+		}
+		1 = { 
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { check_variable = { which = wsg_lady_cloth value = 2 }}
+					NOR = { 
+						has_country_flag = wsg_lady_cloth_02_unlock 
+						has_global_flag = wg_cheat_all_clothes
+					}
+				}
+			}
+			set_variable = { which = wsg_lady_talking value = 23 }
+		}
 	}
 	set_country_flag = talking_to_wsg_lady
 }
@@ -819,9 +1008,7 @@ lady_diplo_after_effects = {
 	hidden_effect = {
 		if = {
 			limit = { NOT = { has_country_flag = talked_to_wsg_lady }}
-			remove_country_flag = wsg_lady_talking1
-			remove_country_flag = wsg_lady_talking2
-			remove_country_flag = wsg_lady_talking3
+			set_variable = { which = wsg_lady_talking value = 0 }
 		}
 		if = {
 			limit = { has_country_flag = finish_lady_talking }
@@ -839,5 +1026,27 @@ lady_diplo_after_effects = {
 			limit = { has_country_flag = talking_to_wsg_lady }
 			remove_country_flag = talking_to_wsg_lady
 		}
+	}
+}
+
+reset_lady_cloth = {
+	if = {
+		limit = { 
+			NOR = { 
+				has_country_flag = wsg_lady_cloth_01_unlock 
+				has_global_flag = wg_cheat_all_clothes
+			}
+			check_variable = { which = wsg_lady_cloth value = 1 }
+		}
+		set_variable = { which = wsg_lady_cloth value = 0 }
+	} else_if = {
+		limit = {
+			NOR = { 
+				has_country_flag = wsg_lady_cloth_02_unlock 
+				has_global_flag = wg_cheat_all_clothes
+			}
+			check_variable = { which = wsg_lady_cloth value = 2 }
+		}
+		set_variable = { which = wsg_lady_cloth value = 0 }
 	}
 }

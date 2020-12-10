@@ -292,10 +292,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}			
 		}
 	}
@@ -310,11 +308,9 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
-			}				
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
+			}			
 		}
 	}
 	03_WG_FE_PATRONIZING_SH = {
@@ -328,10 +324,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}
@@ -346,10 +340,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}									
 		}
 	}
@@ -364,10 +356,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}									
 		}
 	}
@@ -382,10 +372,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}									
 		}
 	}	
@@ -400,10 +388,8 @@ greetings = {
 				is_patronizing_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}									
 		}
 	}	
@@ -418,10 +404,8 @@ greetings = {
 				is_dismissive_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}
@@ -436,10 +420,8 @@ greetings = {
 				is_dismissive_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}
@@ -454,10 +436,8 @@ greetings = {
 				is_angry_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}
@@ -472,10 +452,8 @@ greetings = {
 				is_angry_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}
@@ -490,10 +468,8 @@ greetings = {
 				is_angry_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}	
@@ -508,10 +484,8 @@ greetings = {
 				is_angry_to = FROM
 				}
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}				
 		}
 	}	
@@ -523,10 +497,8 @@ greetings = {
 			has_authority = auth_wg_fe
 			is_at_war_with = FROM 	
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}					
 		}
 	}
@@ -538,10 +510,8 @@ greetings = {
 			has_authority = auth_wg_fe
 			is_at_war_with = FROM	
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}	
 		}
 	}
@@ -553,13 +523,209 @@ greetings = {
 			has_authority = auth_wg_fe
 			is_at_war_with = FROM	
 			from = {
-				OR = {
-					
-					has_authority = auth_shenhai
-				}	
+				NOT = { has_country_flag = custom_start_parit }
+				has_authority = auth_shenhai	
 			}					
 		}
 	}
+}
+
+greetings = {
+	01_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}			
+		}
+	}
+	02_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	03_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	04_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}									
+		}
+	}
+	05_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}								
+		}
+	}
+	06_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}									
+		}
+	}	
+	07_WG_FE_PATRONIZING_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_patronizing_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}									
+		}
+	}	
+	01_WG_FE_DISMISSIVE_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_dismissive_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	02_WG_FE_DISMISSIVE_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_dismissive_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	01_WG_FE_ANGRY_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_angry_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	02_WG_FE_ANGRY_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_angry_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}
+	03_WG_FE_ANGRY_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_angry_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}	
+	04_WG_FE_ANGRY_SH_SPE = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_wg_fe
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_angry_to = FROM
+				}
+			from = {
+				has_country_flag = custom_start_parit
+			}				
+		}
+	}	
 }
 ####觉醒
 greetings = {

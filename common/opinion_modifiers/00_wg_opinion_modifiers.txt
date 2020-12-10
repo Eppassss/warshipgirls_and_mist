@@ -130,13 +130,14 @@ opinion_shkh2 = {
 		}			
 	}
 }
-
 opinion_sh_to_wsg = {
 	trigger = {
 		has_authority = auth_shenhai
 		NOR = { 
 			has_ascension_perk = ap_shenhai_icebreaking
 			has_global_flag = mwsge_change_opinion
+			has_country_flag = custom_start_parit
+			
 		}			
 	}				
 	opinion = {
@@ -157,7 +158,10 @@ opinion_wsg_to_sh = {
 			add = -100	
 			FROM = { 
 				has_authority = auth_shenhai	
-				NOT = { has_ascension_perk = ap_shenhai_icebreaking }	
+				NOR = { 
+					has_ascension_perk = ap_shenhai_icebreaking
+					has_country_flag = custom_start_parit
+				}	
 			}			
 		}		
 	}
@@ -392,7 +396,10 @@ opinion_wsg_diplomacy2 = {
 opinion_sh_to_wsg_diplomacy = {
 	trigger = {
 		has_authority = auth_shenhai
-		NOT = { has_ascension_perk = ap_shenhai_icebreaking }			
+		NOR = { 
+			has_ascension_perk = ap_shenhai_icebreaking
+			has_country_flag = custom_start_parit
+		}	
 	}				
 	opinion = {
 		modifier = {
@@ -484,6 +491,29 @@ opinion_silent_to_shfe = {
 		modifier = {
 			add = 300
 			has_ascension_perk = ap_shenhai_silent
+		}	
+	}
+}
+
+opinion_wg_save_our_species = {
+	trigger = {
+		always = no
+	}
+
+	opinion = {
+		modifier = {
+			add = 10000
+		}	
+	}
+}
+opinion_help_reform_country = {
+	trigger = {
+		always = no
+	}
+
+	opinion = {
+		modifier = {
+			add = 100
 		}	
 	}
 }

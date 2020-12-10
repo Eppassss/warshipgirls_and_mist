@@ -9,6 +9,7 @@ country_event = {
 	}
 
 	immediate = {
+		ruler = { change_leader_portrait = wsg1 }
 		every_playable_country = {
 			limit = {
 				OR = {
@@ -143,8 +144,9 @@ country_event = {
 			class = "Warship_Girls"
 			portrait = "Warship_girls"
 			traits = {
-				trait = wsg_trait_warshipgirls1
+				trait = wsg_trait_warshipgirls2
 				trait = wsg_trait_mind_control
+				trait = wsg_trait_knowledgeable2
 				trait = wsg_trait_game
 				trait = wsg_trait_gugu
 			}
@@ -293,8 +295,8 @@ country_event = {
 			# batch-processes the spawn_system effects between "begin" and "end",
 			# so caches are recalculated only once rather than for every system spawned
 			spawn_system = {
-				min_distance >= 215
-				max_distance <= 230
+				min_distance >= 200
+				max_distance <= 210
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -373,6 +375,7 @@ country_event = {
 		set_spawn_system_batch = end
 	}	
 }
+
 
 country_event = {
 	id = wg_fe.12
@@ -384,8 +387,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 340
-				max_distance <= 360
+				min_distance >= 320
+				max_distance <= 330
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -465,6 +468,7 @@ country_event = {
 	}	
 }
 
+
 country_event = {
 	id = wg_fe.13
 	hide_window = yes
@@ -475,8 +479,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 445
-				max_distance <= 460
+				min_distance >= 410
+				max_distance <= 415
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -566,8 +570,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 465
-				max_distance <= 480
+				min_distance >= 450
+				max_distance <= 460
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -657,8 +661,8 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 550
-				max_distance <= 560
+				min_distance >= 460
+				max_distance <= 460
 				min_orientation_angle = 100
 				max_orientation_angle = 102
 				initializer = "wg_fallen_empire_colony_1_system"
@@ -1675,6 +1679,7 @@ event = { #每年用伪随机概率判定堕落妈触发事件
 					has_civic = civic_CM
 					has_ascension_perk = ap_shenhai_silent
 					has_civic = civic_fanatic_purifiers
+					is_hostile = event_target:wg_fallen_empire # 哪有被孝子打还送东西的憨憨妈的
 				}
 			}
 			random_list = {
@@ -1723,6 +1728,15 @@ country_event = {
 	id = wg_fe.100
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		NOR = { 
+			is_hostile = event_target:wg_fallen_empire # 哪有被孝子打还送东西的憨憨妈的
+			has_civic = civic_CM
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_fanatic_purifiers
+		}
+	}
 
 	immediate = {
 		#random_list = {

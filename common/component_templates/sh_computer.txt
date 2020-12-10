@@ -44,7 +44,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { corvette destroyer cruiser wsg_lady_warship }
+	size_restriction = { corvette destroyer cruiser wsg_lady_warship parit_carrier }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { "tech_sh_computer" }
@@ -74,7 +74,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { destroyer cruiser battleship wsg_lady_warship }
+	size_restriction = { destroyer cruiser battleship wsg_lady_warship parit_battlecrusier }
 	component_set = "combat_computers"
 	ship_behavior = "SHline"
 	prerequisites = { "tech_sh_computer" }
@@ -104,7 +104,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { destroyer cruiser battleship titan wsg_lady_warship juggernaut }
+	size_restriction = { destroyer cruiser battleship titan wsg_lady_warship juggernaut parit_battlecrusier parit_dreadnought parit_dreadnought parit_carrier }
 	component_set = "combat_computers"
 	ship_behavior = "SHartillery"
 	prerequisites = { "tech_sh_computer" }
@@ -134,10 +134,38 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { battleship juggernaut titan }
+	size_restriction = { battleship juggernaut titan parit_battlecrusier parit_dreadnought }
 	component_set = "combat_computers"
 	ship_behavior = "WGcarrier"
 	prerequisites = { "tech_sh_computer" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_engagement_range_mult = 1.5
+	}
+	
+	ai_weight = {
+		weight = 4
+	}	
+}
+
+#航母
+utility_component_template = {
+	key = "COMBAT_COMPUTER_CARRIER_SH2"
+	size = small
+	icon = "GFX_ship_part_computer_sh"
+	icon_frame = 1
+	power = -35
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}
+	}
+	class_restriction = { shipclass_military shipclass_starbase }
+	size_restriction = { parit_carrier }
+	component_set = "combat_computers"
+	ship_behavior = "WGcarrier"
 
 	ship_modifier = {
 		ship_fire_rate_mult = 0.10

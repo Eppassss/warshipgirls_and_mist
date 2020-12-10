@@ -273,6 +273,10 @@
  
  wg_shop_celebration:"也许我该用招牌惰麻汤来庆祝……"
  wg_modifier_ultimate_project:"战利品商店最终项目"
+ ############
+ wsgranking.2002.name:0 "跑路"
+ wsgranking.2002.desc:0 "战利品商店已经不复存在，全部的商店高层像是蒸发了一般，但最近我们收到了一条面向全银河系的广播：\n§Y    这个银河系充满了狡猾人，在您妈的见！§!\n§Y     全体断椅族§!"
+ wsgranking.2002.a:0 "在您妈的见"
  #艾拉买椅子事件
  wsgranking.20110.desc:0 "亲爱的[Root.GetName],你们好。\n首先恭喜你们战胜了大可汗，我们也从一些小道消息中了解到一些有趣的事情..."
  wsgranking.20110.a:0 "继续说，我在听"

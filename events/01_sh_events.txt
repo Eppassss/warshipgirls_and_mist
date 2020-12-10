@@ -1,20 +1,22 @@
 namespace = sh
 
-#深海地块
+#深海开局
 country_event = {
 	id = sh.1
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		has_authority = auth_shenhai
+		NOT = { has_country_flag = custom_start_parit }
 	}
 	immediate = {
 		random_owned_planet = {
-				limit = {
-					is_capital = yes
+			limit = {
+				is_capital = yes
 			}
 			add_deposit = r_sh_freezer
 			add_deposit = d_sh_db
+			add_building = building_sh_assembly_plant
 		}
 		add_modifier = {
 			modifier = sh_base
@@ -53,6 +55,8 @@ country_event = {
 			modifier = wg_ai_base
 			days = -1
 		}
+		set_country_flag = no_machine_uprising
+		set_country_flag = synth_detector
 	}
 }
 #大和之嫁
@@ -65,6 +69,12 @@ country_event = {
 	}
 	immediate = {
 		country_event = { id = sh.5 days = 60  }
+		if = {
+			limit = {
+				has_modifier = planet_Parit5
+			}
+			remove_modifier = planet_Parit5
+		}
 	}
 }
 country_event = {
@@ -154,14 +164,15 @@ country_event = {
 	trigger = {
 		has_authority = auth_shenhai
 		has_technology = tech_sh_social
-		NOT = { has_country_flag = researched_tech_sh_social }
-		NOT = {
+		NOR = {
 			has_civic = civic_CM
+			has_country_flag = custom_start_parit
+			has_country_flag = researched_tech_sh_social
 		}		
 	}
 	immediate = {
 		set_country_flag = researched_tech_sh_social
-		country_event = { id = sh.7 days = 30  }
+		country_event = { id = sh.7 days = 30 }
 	}
 }
 
@@ -667,6 +678,13 @@ country_event = {
 				modify_species = {
 					species = this
 					remove_trait = sh_trait_shenhai
+				}
+			}
+			if = {
+				limit = { has_trait = sh_trait_pairt }
+				modify_species = {
+					species = this
+					remove_trait = sh_trait_pairt
 				}
 			}
 			modify_species = {
@@ -1304,6 +1322,7 @@ country_event = {
 	trigger = {
 		has_authority = auth_shenhai
 		is_ai = no
+		NOT = { has_country_flag = custom_start_parit }
 	}
 	immediate = {
 		country_event = { id = sh.3018 days = 720  }
@@ -1910,8 +1929,8 @@ country_event = {
 			save_event_target_as = sh_juggernaut_owner
 		}
 		random_owned_planet = {
-				limit = {
-					is_capital = yes
+			limit = {
+				is_capital = yes
 			}
 			save_event_target_as = sh_juggernaut
 		}
@@ -1929,7 +1948,12 @@ country_event = {
 				add_modifier = {
 					modifier = sh_juggernaut
 					days = -1
-				}				
+				}
+				set_location = {
+					target = event_target:sh_juggernaut
+					distance = 20
+					angle = 10
+				}
 			}
 			settings = {
 				spawn_debris = no
@@ -2025,12 +2049,18 @@ country_event = {
 				NOT = { has_planet_flag = wg_ring_world_start_planet }
 			}
 			add_district = district_generator
+		}
+		random_owned_planet = {
+			limit = {
+				is_capital = yes
+				NOT = { has_planet_flag = wg_ring_world_start_planet }
+			}
+			add_building = building_urban_dwellings_sh
 		}	
 		random_owned_planet = {
 			limit = {
 				is_capital = yes
 			}			
-			add_building = building_urban_dwellings_sh
 			add_deposit = d_bomb_crater
 			add_deposit = d_bomb_crater
 			remove_deposit = d_decrepit_dwellings

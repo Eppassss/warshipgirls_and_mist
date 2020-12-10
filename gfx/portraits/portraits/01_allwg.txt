@@ -640,6 +640,8 @@ portraits = {
 	wsg436	=	{texturefile = "gfx/models/portraits/wsg436.dds"  }
 	wsg439	=	{texturefile = "gfx/models/portraits/wsg439.dds"  }
 	wsg440	=	{texturefile = "gfx/models/portraits/wsg440.dds"  }
+	wsg461	=	{texturefile = "gfx/models/portraits/wsg461.dds"  }
+	wsg9985	=	{texturefile = "gfx/models/portraits/wsg9985.dds"  }
 	wsg9986	=	{texturefile = "gfx/models/portraits/wsg9986.dds"  }
 	wsg9987	=	{texturefile = "gfx/models/portraits/wsg9987.dds"  }
 	wsg9988	=	{texturefile = "gfx/models/portraits/wsg9988.dds"  }
@@ -661,6 +663,10 @@ portraits = {
 	wsglady_affection2 =	{texturefile = "gfx/models/portraits/wsglady_affection2.dds"  }
 	wsglady_affection3 =	{texturefile = "gfx/models/portraits/wsglady_affection3.dds"  }
 	wsglady_damage =	{texturefile = "gfx/models/portraits/wsglady_damage.dds"  }
+	wsglady01 =	{texturefile = "gfx/models/portraits/wsglady01.dds"  }
+	wsglady02 =	{texturefile = "gfx/models/portraits/wsglady02.dds"  }
+	wsglady02_1 =	{texturefile = "gfx/models/portraits/wsglady02_1.dds"  }
+	wsglady02_2 =	{texturefile = "gfx/models/portraits/wsglady02_2.dds"  }
 }	
 	
 portrait_groups = {
@@ -1310,6 +1316,7 @@ portrait_groups = {
 					wsg436
 					wsg439
 					wsg440
+					wsg461
 					wsg9996
 				}
 			}
@@ -1958,6 +1965,7 @@ portrait_groups = {
 					wsg436
 					wsg439
 					wsg440
+					wsg461
 				}
 			}
 
@@ -2606,6 +2614,7 @@ portrait_groups = {
 					wsg436
 					wsg439
 					wsg440
+					wsg461
 				}
 			}
 
@@ -3253,6 +3262,7 @@ portrait_groups = {
 					wsg436
 					wsg439
 					wsg440
+					wsg461
 				}
 			}
 
@@ -3900,6 +3910,7 @@ portrait_groups = {
 					wsg436
 					wsg439
 					wsg440
+					wsg461
 				}
 			}
 		}

@@ -31,10 +31,9 @@ guiTypes = {
 		moveable = yes
 		size = { width = 1404 height = 779 }
 		
-		background = {
+		iconType = {
 			name = "background"
 			spriteType = "GFX_wg_leader_diplo_bg_red" 
-			orientation = center
 			position = { x = 0 y = 0 }
 		}
 			
@@ -75,12 +74,17 @@ guiTypes = {
 			clicksound = "confirmation"
 		}
 
-		# 立绘
+
+		#########################################
+		#               立绘                    #
+		#########################################
+		@portrait_x = 35
+		@portrait_y = 0
 		effectButtonType = {
 			name = "wg_lady_portrait_1"
 			quadTextureSprite = "GFX_wg_lady_portrait_1"
 			orientation = "UPPER_LEFT"
-			position = { x= 35 y = 0 }
+			position = { x= @portrait_x y = @portrait_y }
 			alwaysTransparent = yes
 			effect = "wg_lady_portrait_1"
 		}
@@ -88,7 +92,7 @@ guiTypes = {
 			name = "wg_lady_portrait_2"
 			quadTextureSprite = "GFX_wg_lady_portrait_2"
 			orientation = "UPPER_LEFT"
-			position = { x= 35 y = 0 }
+			position = { x= @portrait_x y = @portrait_y }
 			alwaysTransparent = yes
 			effect = "wg_lady_portrait_2"
 		}
@@ -96,7 +100,7 @@ guiTypes = {
 			name = "wg_lady_portrait_3"
 			quadTextureSprite = "GFX_wg_lady_portrait_3"
 			orientation = "UPPER_LEFT"
-			position = { x= 35 y = 0 }
+			position = { x= @portrait_x y = @portrait_y }
 			alwaysTransparent = yes
 			effect = "wg_lady_portrait_3"
 		}
@@ -104,9 +108,61 @@ guiTypes = {
 			name = "wg_lady_portrait_broken"
 			quadTextureSprite = "GFX_wg_lady_portrait_broken"
 			orientation = "UPPER_LEFT"
-			position = { x= 35 y = 0 }
+			position = { x= @portrait_x y = @portrait_y }
 			alwaysTransparent = yes
 			effect = "wg_lady_portrait_broken"
+		}
+		effectButtonType = {
+			name = "wg_lady_01_portrait"
+			quadTextureSprite = "GFX_wg_lady_01_portrait"
+			orientation = "UPPER_LEFT"
+			position = { x= @portrait_x y = @portrait_y }
+			alwaysTransparent = yes
+			effect = "wg_lady_01_portrait"
+		}
+		effectButtonType = {
+			name = "wg_lady_01_portrait_locked"
+			quadTextureSprite = "GFX_wg_lady_01_portrait_locked"
+			text = "portrait_locked"
+			text_color_code = "R"
+			font = "malgun_goth_24"
+			pdx_tooltip = "wsglady_cloth_01_unlock_tooltip"
+			orientation = "UPPER_LEFT"
+			position = { x= @portrait_x y = @portrait_y }
+			effect = "wg_lady_01_portrait_locked"
+		}
+		effectButtonType = {
+			name = "wg_lady_02_portrait"
+			quadTextureSprite = "GFX_wg_lady_02_portrait"
+			orientation = "UPPER_LEFT"
+			alwaysTransparent = yes
+			position = { x= @portrait_x y = @portrait_y }
+			effect = "wg_lady_02_portrait"
+		}
+		effectButtonType = {
+			name = "wg_lady_02_portrait_locked"
+			quadTextureSprite = "GFX_wg_lady_02_portrait_locked"
+			text = "portrait_locked"
+			text_color_code = "R"
+			font = "malgun_goth_24"
+			pdx_tooltip = "wsglady_cloth_02_unlock_tooltip"
+			orientation = "UPPER_LEFT"
+			position = { x= @portrait_x y = @portrait_y }
+			effect = "wg_lady_02_portrait_locked"
+		}
+		effectButtonType = {
+			name = "wg_cloth_button_prev"
+			quadTextureSprite = "GFX_wg_cloth_button_prev"
+			orientation = "UPPER_LEFT"
+			position = { x= 120 y = 700 }
+			effect = "wg_cloth_button_prev"
+		}
+		effectButtonType = {
+			name = "wg_cloth_button_next"
+			quadTextureSprite = "GFX_wg_cloth_button_next"
+			orientation = "UPPER_LEFT"
+			position = { x= 530 y = 700 }
+			effect = "wg_cloth_button_next"
 		}
 
 		@wg_leader_diplo_button_x_1 = 640
@@ -149,6 +205,10 @@ guiTypes = {
 		# 	effect = "wg_lady_diplo_button_4_effect"
 		# }
 
+		#########################################
+		#              侧边快捷栏                #
+		#########################################
+
 		@wg_leader_commu_button_x = 1290
 		@wg_leader_commu_button_y_1 = 300
 		@wg_leader_commu_button_y_2 = 394 # +94
@@ -179,8 +239,8 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "EVENT_DIPLO"
-			position = { x = 0 y = 0 }
-			size = { width=571 height=406 }
+			position = { x = 700 y = 338 }
+			size = { width = 571 height = 406 }
 			moveable = no
 			
 			instantTextBoxType={ name = "action_title" font = "malgun_goth_24" position = { x = -1453 y = -12450 } } # hidden
@@ -188,7 +248,7 @@ guiTypes = {
 			
 			listboxType = {
 				name = "option_list"
-				position = { x = 700 y = 338 }
+				position = { x = 0 y = 0 }
 				backGround=""
 				size = { x = 571 y = 406 }
 				spacing = 10
@@ -196,6 +256,7 @@ guiTypes = {
 				borderSize = { x = 0 y = 0 }
 				Orientation = "UPPER_LEFT"
 			}
+
 		}
 		############################################
 		### ALL OF THIS IS HIDDEN OR DISPLACED ! ###

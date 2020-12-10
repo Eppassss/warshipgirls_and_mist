@@ -5,6 +5,11 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 	spriteType = {
+		name = "GFX_origins_wg_parit"
+		texturefile = "gfx/event_pictures/origins/origins_wg_parit.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
 		name = "GFX_origin_wsg_ice_breaking"
 		texturefile = "gfx/event_pictures/origins/origin_wsg_ice_breaking.dds"
 		alwaystransparent = yes

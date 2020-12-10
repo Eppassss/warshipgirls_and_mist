@@ -91,3 +91,6 @@
  wg_origin.27.desc:0 "My children, we have noticed that you seem to have difficulties in science research. This database may help you settle some scientific problems."
  wg_origin.27.a:0 "Thank you very much."
  wg_modifier_fe_research:0 "Shipgirl OvO Database"
+ wg_origin.28.desc:0 "We had a §YClass-5 Singularity§! repaired recently. We took out the core component for maintenance, but when we were sending it back, we found that another repair group had already put a spare part on it. As a result, we now have an extra core and we have no idea where to use it.\n\nDo you want one of these buildings? It can produce large amounts of energy. We will deliver it to your empire if you want one."
+ wg_origin.28.a:0 "Nice. The more energy is always better."
+ wg_origin.28.b:0 "We don't have enough place for it."

@@ -55,7 +55,7 @@ can_species_be_assembled = {
 		has_trait = trait_plentiful_traditions_cocoon	#_ptep
 	}
 	OR = {
-		#_+teif/wsg/swg/gsf/fq
+		#_+teif/wsg/swg/adf/gsf/fq
 		AND = {
 			root.owner = {
 				NOR = {
@@ -64,6 +64,7 @@ can_species_be_assembled = {
 						has_global_flag = has_wsg_mod
 						has_wg_special_authority = yes				#_wsg/swg
 					}
+					has_authority = auth_asharmdolls		#_adf
 					has_authority = auth_commonwealth			#_gsf
 					has_authority = auth_kan				#_kc
 					AND = {#_fq
@@ -74,7 +75,7 @@ can_species_be_assembled = {
 			}
 			has_trait = trait_machine_unit
 		}
-		#_+z/wsg/swg/gsf/fq
+		#_+z/wsg/swg/adf/gsf/fq
 		AND = {
 			root.owner = {
 				NOR = {
@@ -83,6 +84,7 @@ can_species_be_assembled = {
 						has_global_flag = has_wsg_mod
 						has_wg_special_authority = yes				#_wsg/swg
 					}
+					has_authority = auth_asharmdolls		#_adf
 					has_authority = auth_commonwealth			#_gsf
 					AND = {#_fq
 						has_global_flag = complex_hive
@@ -114,6 +116,11 @@ can_species_be_assembled = {
 		AND = {
 			has_trait = swg_trait_starshipgirls
 			root.owner = { has_authority = auth_starshipgirls }
+		}
+		#_adf	Nou ani anquietas.Hic qua videum.
+		AND = {
+			has_trait = adf_trait_dolls
+			root.owner = { has_authority = auth_asharmdolls }
 		}
 		#_gsf	��������
 		AND = {
@@ -148,8 +155,9 @@ can_species_be_assembled = {
 		#_kc
 		AND = {
 			OR={
-				has_trait = trait_kanmusu
-				has_trait = trait_gaosujianzao
+				has_trait = kancolle_trait_kanmusu
+				has_trait = kancolle_trait_kanmusu1
+				has_trait = kancolle_trait_kanmusu2
 			}
 			
 			ROOT = { owner = { has_authority = auth_kan } }
@@ -349,6 +357,7 @@ system_blocks_sensors = {
 		has_star_flag = lcluster
 		has_star_flag = sealed_system
 		has_star_flag = wg_sealed_system			#_wsg
+		has_star_flag = wg_psionic_systems
 		has_star_flag = fallen_sol_system			#_teif
 		root = { is_country_type = teif_primitive }	#_teif
 		has_star_flag = ag_no_sensor_system			#_ag
@@ -396,6 +405,7 @@ can_enter_system_by_jump = {
 		NOR = {
 			has_star_flag = lcluster
 			has_star_flag = wg_sealed_system		#_wsg
+			has_star_flag = wg_psionic_systems
 			has_star_flag = ag_no_jump_in_system	#_ag
 			has_star_flag = Kuat_system				#_kuat
 			has_star_flag = Kuat_system_1			#_kuat
@@ -443,8 +453,12 @@ pop_generates_crime = {
 				has_trait = trait_intelligent_galo
 				#_swg
 				has_trait = swg_trait_starshipgirls
+				#_adf
+				has_trait = adf_trait_dolls
 				#_kc
-				has_trait = trait_kanmusu
+				has_trait = kancolle_trait_kanmusu
+				has_trait = kancolle_trait_kanmusu1
+				has_trait = kancolle_trait_kanmusu2
 			}
 		}
 		AND = {#_teif

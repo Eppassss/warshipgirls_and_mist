@@ -12,6 +12,22 @@ leader_trait_governor_warshipgirls = {
 	randomized = no
 }
 
+leader_trait_governor_warshipgirls2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits3.dds"
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.2
+		planet_jobs_minerals_produces_mult = 0.2
+		planet_jobs_alloys_produces_mult = 0.1
+		planet_jobs_consumer_goods_produces_mult = 0.1
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
 leader_trait_governor_mist = {
 	cost = 0
 	modification = no

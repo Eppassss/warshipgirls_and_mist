@@ -1,0 +1,77 @@
+wg_psi_planet_category = {
+	desc = wg_psi_planet_category_desc
+	max_once_global = yes
+	max_once = yes
+	picture = GFX_evt_shrouded
+	level = 8
+
+	null_spawn_chance = 0
+
+	spawn_chance = {
+		modifier = {
+			add = 999999999999
+			has_planet_flag = wg_shrouded_planet
+			FROM.owner = { has_country_flag = wg_psi_event_country }
+			# FROM.leader = { OR = {
+			# 	has_trait = leader_trait_scientist_wsg_curiosity
+			# 	has_trait = leader_trait_scientist_canarias
+			# 	has_trait = leader_trait_scientist_wsg_lady_science_ship
+			# 	has_trait = leader_trait_scientist_wsg_lady_science_ship_weaken
+			# 	has_trait = leader_trait_roamer
+			# 	has_trait = leader_trait_expertise_field_manipulation
+			# 	has_trait = leader_trait_expertise_psionics
+			# 	has_trait = leader_trait_curator
+			# }}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = spawned_wg_psi_anomaly_cat
+				FROM.owner = { OR = {
+					has_country_flag = accept_psi_country_request 
+					has_country_flag = reject_psi_country_request
+				}}
+			}
+		}
+	}
+
+	on_spawn = {
+		set_global_flag = spawned_wg_psi_anomaly_cat
+		event_target:wg_psi_1_system = {
+			random_system_planet = {
+				limit = { 
+					has_planet_flag = wg_shrouded_planet_1 
+					NOT = { is_same_value = ROOT }
+				}
+				prevent_anomaly = yes
+			}
+		}
+		event_target:wg_psi_2_system = {
+			random_system_planet = {
+				limit = { 
+					has_planet_flag = wg_shrouded_planet_2 
+					NOT = { is_same_value = ROOT }
+				}
+				prevent_anomaly = yes
+			}
+			random_system_planet = {
+				limit = { 
+					has_planet_flag = wg_shrouded_planet_3 
+					NOT = { is_same_value = ROOT }
+				}
+				prevent_anomaly = yes
+			}
+		}
+		event_target:wg_psi_3_system = {
+			random_system_planet = {
+				limit = { 
+					has_planet_flag = wg_shrouded_planet_4 
+					NOT = { is_same_value = ROOT }
+				}
+				prevent_anomaly = yes
+			}
+		}
+	}
+
+	on_success = wg_boss.137
+}

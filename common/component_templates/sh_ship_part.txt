@@ -1,3 +1,112 @@
+########帕里特
+utility_component_template = {
+	key = "PARIT_BC_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 1200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+		}
+		upkeep = {
+			energy = 0.8
+			alloys = 0.05
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { parit_battlecrusier parit_carrier }
+	upgrades_to = "UAV_DARK_MATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "PARIT_BC_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 1600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 140
+			sr_dark_matter = 4
+		}
+		upkeep = {
+			energy = 1.2
+			alloys = 0.1
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { parit_battlecrusier parit_carrier }
+	
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "PARIT_BC_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -150
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+		}
+	}
+	modifier = {
+		ship_speed_mult = 0.75
+		ship_evasion_add = 7
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { parit_battlecrusier parit_carrier }
+	upgrades_to = "UAV_THRUSTER_5"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+utility_component_template = {
+	key = "PARIT_BC_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = -180
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5
+		}
+	}
+	modifier = {
+		ship_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { parit_battlecrusier parit_carrier }
+	
+	ai_weight = {
+		weight = 4
+	}
+}	
+##############
+
+
 utility_component_template = {
 	key = "CORVETTE_sh_senergy_REACTOR"
 	size = small
@@ -82,6 +191,8 @@ utility_component_template = {
 	size_restriction = {
 		cruiser
 		StrikeCruiser
+		parit_battlecrusier
+		parit_carrier
 	}
 	ai_weight = {
 		weight = 5
@@ -134,7 +245,7 @@ utility_component_template = {
 		"tech_sh_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = { titan Dreadnought Carrier }
+	size_restriction = { titan Dreadnought Carrier parit_dreadnought }
 	ai_weight = {
 		weight = 5
 	}
@@ -279,7 +390,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_sh_aura"
 	}
-	size_restriction = { titan wsg_lady_warship Flagship }
+	size_restriction = { titan wsg_lady_warship Flagship parit_dreadnought }
 	component_set = "ship_aura_components"
 	hostile_aura = {
 		name = "aura_shield_dampener"
@@ -322,7 +433,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_sh_aura"
 	}
-	size_restriction = { titan wsg_lady_warship Flagship }
+	size_restriction = { titan wsg_lady_warship Flagship parit_dreadnought }
 	component_set = "ship_aura_components"
 	hostile_aura = {
 		name = "aura_shield_dampener"
@@ -365,7 +476,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_sh_aura"
 	}
-	size_restriction = { titan wsg_lady_warship Flagship }
+	size_restriction = { titan wsg_lady_warship Flagship parit_dreadnought }
 	component_set = "ship_aura_components"
 	friendly_aura = {
 		name = "aura_inspiring_presence"
@@ -404,7 +515,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_sh_aura"
 	}
-	size_restriction = { titan wsg_lady_warship Flagship }
+	size_restriction = { titan wsg_lady_warship Flagship parit_dreadnought }
 	component_set = "ship_aura_components"
 	friendly_aura = {
 		name = "aura_inspiring_presence"
@@ -442,7 +553,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_sh_aura2"
 	}
-	size_restriction = { titan Flagship wsg_lady_warship }
+	size_restriction = { titan Flagship wsg_lady_warship parit_dreadnought }
 	component_set = "ship_aura_components"
 	hostile_aura = {
 		name = "aura_shield_dampener"
@@ -615,6 +726,8 @@ utility_component_template = {
 	component_set = "thruster_components"
 	size_restriction = {
 		battleship
+		parit_battlecrusier
+		parit_carrier
 	}
 	ai_weight = {
 		weight = 5
@@ -651,6 +764,7 @@ utility_component_template = {
 	component_set = "thruster_components"
 	size_restriction = {
 		titan
+		parit_dreadnought
 	}
 	ai_weight = {
 		weight = 5

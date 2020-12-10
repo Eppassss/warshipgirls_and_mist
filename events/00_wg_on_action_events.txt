@@ -8,24 +8,31 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	desc = {
-		text = me_wsg.9999.desc
-		trigger = { 
-			from = { has_authority = auth_shenhai }
-			has_authority = auth_warshipgirls
-			has_global_flag = mwsge_activate
-			ROOT = { NOT = { has_country_flag = abyss_found }}
-		}
-	}
+	# desc = {
+	# 	text = me_wsg.9999.desc
+	# 	trigger = { 
+	# 		has_relation_flag = {
+	# 			who = from
+	# 			flag = me_wsg_mainstory_country
+	# 		}
+	# 		has_authority = auth_warshipgirls
+	# 		has_global_flag = mwsge_activate
+	# 		ROOT = { NOT = { has_country_flag = abyss_found }}
+	# 	}
+	# }
 	desc = {
 		text = action.15.desc
-		trigger = { 
-			OR = {
-				is_ai = yes
-				NOT = { from = { has_authority = auth_shenhai }}
-				ROOT = { has_country_flag = abyss_found }
-			}
-		}
+		# trigger = { 
+		# 	OR = {
+		# 		NOT = { has_global_flag = mwsge_activate }
+		# 		is_ai = yes
+		# 		NOT = { has_relation_flag = {
+		# 			who = from
+		# 			flag = me_wsg_mainstory_country
+		# 		}}
+		# 		ROOT = { has_country_flag = abyss_found }
+		# 	}
+		# }
 	}
 	
 	trigger = {
@@ -43,18 +50,18 @@ country_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = { 
-				OR = { 
-					is_ai = yes
-					NOT = { has_relation_flag = {
-						who = from
-						flag = me_wsg_mainstory_country
-					}}
-					has_country_flag = mwsge_deactivate
-					has_country_flag = abyss_found
-				}
-			}
+		# if = {
+		# 	limit = { 
+		# 		OR = { 
+		# 			is_ai = yes
+		# 			NOT = { has_relation_flag = {
+		# 				who = from
+		# 				flag = me_wsg_mainstory_country
+		# 			}}
+		# 			has_country_flag = mwsge_deactivate
+		# 			has_country_flag = abyss_found
+		# 		}
+		# 	}
 			capital_scope = { save_event_target_as = pc_home }
 			from = {
 				enable_special_project = {
@@ -63,27 +70,27 @@ country_event = {
 					owner = ROOT
 				}
 			}
-		}
+		# }
 		
-		if = {
-			limit = { 
-				has_relation_flag = {
-					who = from
-					flag = me_wsg_mainstory_country
-				}
-				is_ai = no
-				has_global_flag = mwsge_activate
-				NOT = { has_country_flag = abyss_found }
-			}
-			begin_event_chain = {
-				event_chain = mwsge_abyss_chains
-				target = ROOT
-			}
-			country_event = { id = me_wsg.1 days = 3 }
-			from = { 
-				save_global_event_target_as = shenhai
-			}
-		}
+		# if = {
+		# 	limit = { 
+		# 		has_relation_flag = {
+		# 			who = from
+		# 			flag = me_wsg_mainstory_country
+		# 		}
+		# 		is_ai = no
+		# 		has_global_flag = mwsge_activate
+		# 		NOT = { has_country_flag = abyss_found }
+		# 	}
+		# 	begin_event_chain = {
+		# 		event_chain = mwsge_abyss_chains
+		# 		target = ROOT
+		# 	}
+		# 	country_event = { id = me_wsg.1 days = 3 }
+		# 	from = { 
+		# 		save_global_event_target_as = shenhai
+		# 	}
+		# }
 	}
 
 	option = {
@@ -108,31 +115,31 @@ country_event = {
 		}
 	}
 	
-	option = {
-		name = me_wsg.9999.a
-		trigger = {
-			has_authority = auth_warshipgirls
-			has_global_flag = mwsge_activate
-			has_relation_flag = {
-				who = from
-				flag = me_wsg_mainstory_country
-			}
-			is_ai = no
-		}
-	}
+	# option = {
+	# 	name = me_wsg.9999.a
+	# 	trigger = {
+	# 		has_authority = auth_warshipgirls
+	# 		has_global_flag = mwsge_activate
+	# 		has_relation_flag = {
+	# 			who = from
+	# 			flag = me_wsg_mainstory_country
+	# 		}
+	# 		is_ai = no
+	# 	}
+	# }
 	
-	option = {
-		name = me_wsg.9999.b
-		trigger = {
-			has_authority = auth_warshipgirls
-			has_global_flag = mwsge_activate
-			has_relation_flag = {
-				who = from
-				flag = me_wsg_mainstory_country
-			}
-			is_ai = no
-		}
-	}
+	# option = {
+	# 	name = me_wsg.9999.b
+	# 	trigger = {
+	# 		has_authority = auth_warshipgirls
+	# 		has_global_flag = mwsge_activate
+	# 		has_relation_flag = {
+	# 			who = from
+	# 			flag = me_wsg_mainstory_country
+	# 		}
+	# 		is_ai = no
+	# 	}
+	# }
 }
 
 # Primitive planet surveyed

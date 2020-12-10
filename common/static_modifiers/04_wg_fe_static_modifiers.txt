@@ -1,7 +1,4 @@
 wg_fe_hard_buff = {
-	ship_hull_mult = 0.15
-	ship_armor_mult = 0.15
-	ship_shield_mult = 0.15
 	ship_weapon_damage = 0.15
 	ship_fire_rate_mult = 0.15
 	ship_evasion_mult = 0.15
@@ -68,11 +65,11 @@ sh_fe_cheat = {
 	ship_speed_mult = 0.15
 	ships_upkeep_mult = -0.30
 	shipclass_starbase_damage_mult = 3.00
-	shipclass_military_station_damage_mult = 5.00
+	shipclass_military_station_damage_mult = 6.00
 	ship_hull_regen_add_perc = 1.5
 	ship_shield_regen_add_perc = 1.5
 	ship_armor_regen_add_perc = 1.5
-	shipclass_starbase_hull_mult = 15.0
+	shipclass_starbase_hull_mult = 20.0
 }
 half_life_3 = {
 	country_influence_produces_mult = 0.1

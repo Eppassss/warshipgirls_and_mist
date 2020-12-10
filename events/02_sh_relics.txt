@@ -13,6 +13,7 @@ country_event = {
 	}
 	trigger = {
 		has_authority = auth_shenhai
+		NOT = { has_country_flag = custom_start_parit }
 		is_ai = no
 	}
 	option = {

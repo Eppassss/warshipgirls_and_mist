@@ -9,6 +9,7 @@ site_shenhaiBoss = {
 		leader = { leader_class = scientist }
 	}
 	visible = {
+		has_country_flag = owner_site_shenhaiBoss
 		default_site_visible_trigger = yes
 	}
 	stage = {
@@ -39,6 +40,7 @@ site_ck2 = {
 		leader = { leader_class = scientist }
 	}
 	visible = {
+		has_country_flag = owner_site_ck2
 		default_site_visible_trigger = yes
 	}
 	stage = {
@@ -74,6 +76,7 @@ site_shenhai_fleet = {
 		leader = { leader_class = scientist }
 	}
 	visible = {
+		has_country_flag = owner_site_shenhai_fleet
 		default_site_visible_trigger = yes
 	}
 	stage = {
@@ -114,6 +117,7 @@ site_first_precursors = {
 		leader = { leader_class = scientist }
 	}
 	visible = {
+		has_country_flag = owner_site_wg_precursors
 		default_site_visible_trigger = yes
 	}
 	stage = {
@@ -145,6 +149,7 @@ site_second_precursors = {
 	}
 	visible = {
 		default_site_visible_trigger = yes
+		has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 2
@@ -174,6 +179,7 @@ site_third_precursors = {
 	}
 	visible = {
 		default_site_visible_trigger = yes
+		has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 3
@@ -208,6 +214,7 @@ site_fourth_precursors = {
 	}
 	visible = {
 		default_site_visible_trigger = yes
+		has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 3
@@ -242,6 +249,7 @@ site_fifth_precursors = {
 	}
 	visible = {
 		default_site_visible_trigger = yes
+		has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 4

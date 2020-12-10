@@ -41,14 +41,7 @@ wsg_station = {
 				}
 			}	
 		}
-		custom_tooltip = { 
-			fail_text = "requires_colonizeable_planet" 
-			AND = { 
-				any_system_planet = {
-					colonizeable_planet = yes
-				}
-			}
-		}
+
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
@@ -80,13 +73,8 @@ wsg_station = {
 				NOR = {
 					has_planet_flag = megastructure
 					has_planet_flag = has_megastructure
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_ringworld_habitable_sh
-					is_planet_class = pc_ringworld_tech
-					is_planet_class = pc_ringworld_seam
-					is_planet_class = pc_ringworld_habitable_damaged
-					is_planet_class = pc_ringworld_tech_damaged
-					is_planet_class = pc_ringworld_seam_damaged
+					is_ringworld_wg = yes
+					is_habitat_wg = yes
 					solar_system = {
 						has_star_flag = ring_world_built
 					}
@@ -97,6 +85,7 @@ wsg_station = {
 			}	
 			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
 			custom_tooltip = {
+				fail_text = "requires_colonizeable_planet" 
 				AND = {
 					exists = owner
 				}

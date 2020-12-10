@@ -1,6 +1,6 @@
 #深海建造器
 building_sh_assembly_plant = {
-	base_buildtime = 180
+	base_buildtime = 240
 	base_cap_amount = 1
 
 	category = pop_assembly
@@ -14,9 +14,7 @@ building_sh_assembly_plant = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_shenhai	
-			NOT = { has_policy_flag = robots_outlawed }
 		}
-		NOT = { has_modifier = slave_colony }
 	}
 	
 	convert_to = {
@@ -54,7 +52,7 @@ building_sh_assembly_plant = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 200
+			minerals = 250
 		}
 		upkeep = {
 			minerals = 2
@@ -91,9 +89,7 @@ building_sh_assembly_plantU = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_shenhai	
-			NOT = { has_policy_flag = robots_outlawed }
 		}
-		NOT = { has_modifier = slave_colony }
 	}
 	allow = {
 		num_pops >= 10
@@ -137,8 +133,8 @@ building_sh_assembly_plantU = {
 			minerals = 500
 		}
 		upkeep = {
-			minerals = 6
-			energy = 6
+			minerals = 10
+			energy = 10
 			sr_pantsu = 1
 		}
 	}	

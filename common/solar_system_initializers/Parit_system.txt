@@ -1,6 +1,6 @@
 Parit_system = {
 	name = "NAME_Parit_system"
-	class = rl_standard_stars
+	class = "sc_g"
 	usage = misc_system_init
 	
 	usage_odds = 0
@@ -21,13 +21,6 @@ Parit_system = {
 				type = "executor_ship_object"
 				location = this
 			}
-			last_created_ambient_object = {
-				set_location = {
-					target = prev
-					distance = 20
-					angle = random
-				}
-			}
 		}			
 	}
 	
@@ -42,7 +35,7 @@ Parit_system = {
 		change_orbit = @base_moon_distance
 		
 		moon = {
-			count = { min = 0 max = 1 }
+			count = 1
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 5
 		}
@@ -236,6 +229,13 @@ Parit_system = {
         }
 	}
 	planet = {
+		class = pc_gas_giant
+		orbit_distance = 20
+		size = { min = 30 max = 35 }
+		change_orbit = @base_moon_distance
+		
+	}
+	planet = {
 		count = { min = 1 max = 4 }
 		class = rl_unhabitable_planets
 		orbit_distance = 20
@@ -252,4 +252,138 @@ Parit_system = {
 	init_effect = {
 		save_global_event_target_as = wg_Parit_system
 	}
+}
+
+
+Parit_origin_system = {
+	name = "NAME_Parit_system"
+	class = "sc_g"
+	usage = origin
+	
+	usage_odds = 0
+	
+	flags = { empire_home_system }
+
+	prevent_anomalies = yes
+
+	planet = {
+		count = 1
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+		init_effect = {
+			create_ambient_object = {
+				type = "executor_ship_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				save_global_event_target_as = executor_ship_object_target
+				set_location = {
+					target = prev
+					distance = 20
+					angle = 20
+				}
+			}
+			create_ambient_object = {
+				type = "ancient_battlefield_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				save_global_event_target_as = parit_battlefield_target
+				set_location = {
+					target = prev
+					distance = 90
+					angle = 80
+				}
+			}
+		}			
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = 1
+			class = pc_barren_cold
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			init_effect = {
+				save_global_event_target_as = parit_unknownworld_target
+			}
+		}
+	}
+
+	planet = {
+		class = ideal_planet_class
+		name = "NAME_Parit"
+		orbit_distance = 30
+		home_planet = yes
+		modifiers = none
+		size = { min = 20 max = 25 }
+		add_modifier =  { modifier = planet_Parit2 days = -1 }
+		init_effect = {			
+			prevent_anomaly = yes
+			set_planet_flag = Parit_home_planet
+			save_global_event_target_as = Parit_home_target
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -15 max = -15 }
+				location = this
+			}
+			last_created_ambient_object = {
+				save_global_event_target_as = parit_debris_object
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+        }
+	}
+	planet = {
+		class = pc_gas_giant
+		orbit_distance = 20
+		size = { min = 30 max = 35 }
+		
+		init_effect = {
+			save_global_event_target_as = parit_gas_target
+		}
+	}
+	planet = {
+		count = { min = 1 max = 4 }
+		class = rl_unhabitable_planets
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 3 }
+			class = rl_unhabitable_planets
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = wg_Parit_origin_system
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1_first_colony"
+	}	
 }

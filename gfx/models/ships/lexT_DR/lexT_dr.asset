@@ -8,3 +8,19 @@ entity = {
 	locator = { name = "medium_gun_02" position = { 0 0 0 } }
 	locator = { name = "xl_gun_01" position = { 0 0 0 } }
 }
+
+entity = {
+	name = "wsg_psi_dreadnought_entity"
+	pdxmesh = "wsg_psi_dreadnought_mesh"
+	scale = 2.0
+	locator = { name = "large_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 0 0 } }
+}
+
+
+entity = {
+	name = "wsg_psi_non_entity"
+}

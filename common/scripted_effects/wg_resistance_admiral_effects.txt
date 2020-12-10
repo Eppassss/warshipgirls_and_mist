@@ -1481,7 +1481,7 @@ create_ra_admiral_1003 = {
             trait = leader_trait_admiral_Taiho_sh
         }
         effect = {
-            change_leader_portrait = sh46
+            change_leader_portrait = wsg9985
             set_leader_flag = taiho_sh
             set_leader_flag = ra_admiral
         }

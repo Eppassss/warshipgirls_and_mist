@@ -200,3 +200,30 @@ energy_Parit = {
 		}		
 	}
 }
+
+#胖次收集者
+wsg_shop_pantsu_collector = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_wsg_pantsu
+	clothes_texture_index = 3
+	icon = wsg_pantsu_maker
+
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			sr_pantsu = 0.5
+		}
+	}
+	
+	weight = {
+		weight = 16		
+	}
+}

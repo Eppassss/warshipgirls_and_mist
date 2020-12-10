@@ -11,6 +11,22 @@ leader_trait_ruler_warshipgirls = {
 	randomized = no
 }
 
+leader_trait_ruler_warshipgirls2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits3.dds"
+	modifier = {
+	    planet_jobs_upkeep_mult = -0.05
+		planet_jobs_produces_mult = 0.10
+		planet_decision_enact_speed_mult = 0.15
+		country_base_influence_produces_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
 leader_trait_ruler_mist = {
 	cost = 0
 	modification = no

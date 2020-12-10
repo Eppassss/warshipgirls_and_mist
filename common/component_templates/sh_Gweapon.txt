@@ -1,7 +1,7 @@
 weapon_component_template = {
 	key = "sh_weapen_G"
 	size = torpedo
-	entity = "turret_torpedo_entity"
+	#entity = "turret_torpedo_entity"
 	
 	icon = "GFX_sh_weapen_G"
 	icon_frame = 1

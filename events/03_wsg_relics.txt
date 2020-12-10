@@ -29,6 +29,7 @@ planet_event ={
 	}
 	option = {
 		name = "wsgancrel.4.a"
+		owner = { set_country_flag = owner_site_shenhaiBoss }
 		create_archaeological_site = site_shenhaiBoss
 	}	
 }
@@ -100,6 +101,7 @@ country_event = {
 	}
 	immediate = {
 		set_country_flag = researched_tech_wsg_reform
+		set_country_flag = owner_site_ck2
 		country_event = { id = wsgancrel.21 days = 180  }
 	}
 }
@@ -232,6 +234,7 @@ country_event = {
 			}
 			save_event_target_as = fleet_planet
 		}
+		set_country_flag = owner_site_shenhai_fleet
 	}
 
 	option = {
@@ -481,6 +484,7 @@ country_event = {
 	
 	option = {
 		name = "wsgancrel.101.a"
+		set_country_flag = owner_site_wg_precursors
 		begin_event_chain = {
 			event_chain = "wg_precursors"
 			target = this.owner

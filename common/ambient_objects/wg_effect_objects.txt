@@ -11,3 +11,24 @@ ambient_object = {
 	selectable = no
 	show_name = no
 }
+
+
+ambient_object = {
+	name = "WTFQG_3_object"
+	entity = "WTFQG_3_entity"
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {
+	name = "wg_advertisement_1_object"
+	entity = "wg_advertisement_1_entity"
+	selectable = no
+	show_name = no	
+}
+ambient_object = {
+	name = "wg_advertisement_2_object"
+	entity = "wg_advertisement_2_entity"
+	selectable = no
+	show_name = no	
+}

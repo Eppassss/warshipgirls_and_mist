@@ -245,6 +245,41 @@ tech_warshipgirl_assembly_plantF = {
 		has_authority = auth_warshipgirls
 	}
 }
+
+tech_warshipgirl_senergy_assembly_plantF = {
+    icon = tech_warshipgirl_assembly_plantF
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_wsg_senergy" "tech_warshipgirl_assembly_plantU" }
+	weight = @tier5weight1
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}			
+		}
+	}
+	
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+}
+
 #舰娘二级实验室
 tech_building_wsg_research2 = {
 	icon = tech_building_wsg_research
@@ -3276,5 +3311,185 @@ tech_wsg_moyu = {
 	}
 	potential = {
 		has_authority = auth_warshipgirls
+	}
+}
+
+tech_colonization_wsg = {
+    icon = tech_colonization_wsg
+	cost = @tier1cost1
+	area = engineering
+	tier = 1
+	category = { materials }
+	prerequisites = { "tech_basic_science_lab_1" }
+	weight = @tier1weight1
+		
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}			
+		}		
+	}
+	
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 100
+			OR = {
+				has_authority = auth_warshipgirls
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+		}
+	}
+}
+
+tech_wsg_senergy = {
+    icon = tech_sh_senergy
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { field_manipulation }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	prerequisites = { "" }
+	
+	prereqfor_desc = {
+		# diplo_action = {
+		# 	title = "sh_se_edicts"
+		# 	desc = "sh_se_edicts_desc"
+		# }
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 100
+			has_authority = auth_warshipgirls
+		}
+	}
+	potential = {
+		has_country_flag = allow_wsg_senergy
+		OR = {
+			has_authority = auth_warshipgirls
+			is_wg_fallen_empire = yes
+		}
+	}
+}
+
+tech_wsg_senergy2 = {
+    icon = tech_sh_senergy
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+	prerequisites = { "tech_wsg_senergy" }
+	
+	prereqfor_desc = {
+		# diplo_action = {
+		# 	title = "sh_se_edicts"
+		# 	desc = "sh_se_edicts_desc"
+		# }
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = allow_wsg_senergy }
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 100
+			has_authority = auth_warshipgirls
+		}
+	}
+	potential = {
+		has_country_flag = allow_wsg_senergy2
+		OR = {
+			has_authority = auth_warshipgirls
+			is_wg_fallen_empire = yes
+		}
+	}
+}
+
+tech_wsg_senergy_implantation = {
+	icon = tech_sh_senergy
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = 0
+	is_rare = yes
+	is_dangerous = yes
+	
+	prereqfor_desc = {
+		# diplo_action = {
+		# 	title = "wsg_alpha_edicts"
+		# 	desc = "wsg_alpha_edicts_desc"
+		# }
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 100
+			has_authority = auth_warshipgirls
+		}
+	}
+	potential = {
+		has_authority = auth_warshipgirls
+	}
+}
+
+tech_wsg_P127 = {
+	area = physics
+	cost = @tier3cost3
+	tier = 1
+	category = { particles }
+	ai_update_type = military
+	weight = 0
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+			has_authority = auth_wg_fe
+			has_authority = auth_sh_fe
+		}
+	}
+}
+
+tech_wsg_P330 = {
+	area = physics
+	cost = @tier4cost3
+	tier = 1
+	category = { particles }
+	ai_update_type = military
+	weight = 0
+	is_reverse_engineerable = no
+	
+	gateway = energy_weapons
+	
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls	
+			has_authority = auth_shenhai
+			has_authority = auth_wg_fe
+			has_authority = auth_sh_fe
+		}
 	}
 }

@@ -59,6 +59,12 @@ component_set = {
 	icon_frame = 1	
 }
 component_set = {
+	key = "UF_weapen_T2"
+	
+	icon = "GFX_UF_weapen_T2"
+	icon_frame = 1	
+}
+component_set = {
 	key = "UF_weapen_L"
 	
 	icon = "GFX_UF_weapen_L"

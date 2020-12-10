@@ -337,11 +337,11 @@ galo_army = {
 
 Khan_galodam = {
 	defensive = yes
-	damage = 4.5
+	damage = 5
 	has_morale = no
 	morale_damage = 5.0
 	collateral_damage = 4.5
-	health = 8.5
+	health = 9
 	time = 600
 	icon_frame = 8
 	has_species = no

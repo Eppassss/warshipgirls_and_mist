@@ -1,7 +1,7 @@
 pc_wg_water = {
 	entity = "wg_water_planet"
 	entity_scale = @planet_standard_scale
-	icon_frame = 6
+	icon_frame = 93
 	picture = pc_wg_water
 	tile_set = pc_wg_water
 	
@@ -61,7 +61,7 @@ pc_ringworld_habitable_water = {
 pc_wg_cloud = {
 	entity = "wg_cloud_planet"		#DONE
 	entity_scale = @planet_standard_scale
-	icon_frame = 13
+	icon_frame = 96
 	picture = pc_wg_cloud
 	tile_set = pc_wg_cloud	
 	
@@ -87,7 +87,7 @@ pc_wg_cloud = {
 pc_wg_poke = {
 	entity = "wsg_poke_planet"		#DONE
 	entity_scale = @planet_standard_scale
-	icon_frame = 14
+	icon_frame = 95
 	picture = pc_wg_poke
 	tile_set = pc_wg_poke	
 	

@@ -12,6 +12,20 @@ leader_trait_admiral_warshipgirls = {
 	randomized = no
 }
 
+leader_trait_admiral_warshipgirls2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits3.dds"
+	modifier = {
+		ship_weapon_damage = 0.2
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
 leader_trait_admiral_mist = {
 	cost = 0
 	modification = no
@@ -386,7 +400,6 @@ leader_trait_admiral_affection_lv2 = {
 	modifier = {
 		ship_evasion_add = 5
 		ship_accuracy_add = 5
-		ship_tracking_add = 5
 		ship_sensor_range_add = 1
 	}
 	leader_trait = { admiral }
@@ -399,9 +412,9 @@ leader_trait_admiral_affection_lv3 = {
 	modification = no
 	icon = "gfx/interface/icons/traits/affection3.dds"
 	modifier = {
-		ship_evasion_add = 10
-		ship_accuracy_add = 10
-		ship_tracking_add = 10
+		ship_evasion_add = 5
+		ship_accuracy_add = 5
+		ship_tracking_add = 5
 		ship_sensor_range_add = 2
 		ship_disengage_chance_mult = 0.1
 	}
@@ -415,11 +428,11 @@ leader_trait_admiral_affection_lv4 = {
 	modification = no
 	icon = "gfx/interface/icons/traits/affection4.dds"
 	modifier = {
-		ship_evasion_add = 15
-		ship_accuracy_add = 15
-		ship_tracking_add = 15
-		ship_sensor_range_add = 3
-		ship_disengage_chance_mult = 0.2
+		ship_evasion_add = 10
+		ship_accuracy_add = 10
+		ship_tracking_add = 5
+		ship_sensor_range_add = 2
+		ship_disengage_chance_mult = 0.1
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
@@ -432,9 +445,9 @@ leader_trait_admiral_affection_lv4_max = {
 	icon = "gfx/interface/icons/traits/affection4.dds"
 	modifier = {
 		ship_evasion_add = 15
-		ship_accuracy_add = 15
-		ship_tracking_add = 15
-		ship_sensor_range_add = 3
+		ship_accuracy_add = 10
+		ship_tracking_add = 10
+		ship_sensor_range_add = 2
 		ship_disengage_chance_mult = 0.2
 	}
 	leader_trait = { admiral }
@@ -447,9 +460,9 @@ leader_trait_admiral_affection_lv5 = {
 	modification = no
 	icon = "gfx/interface/icons/traits/affection5.dds"
 	modifier = {
-		ship_evasion_add = 30
-		ship_accuracy_add = 30
-		ship_tracking_add = 30
+		ship_evasion_add = 15
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
 		ship_sensor_range_add = 3
 		ship_weapon_damage = 0.20
 		ship_disengage_chance_mult = 0.3

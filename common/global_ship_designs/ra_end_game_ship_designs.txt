@@ -219,14 +219,6 @@ ship_design = {
 			slot = "LARGE_GUN_02"
 			template = "RA_weapen_L"
 		}
-		component = {
-			slot = "LARGE_GUN_03"
-			template = "RA_weapen_L"
-		}
-		component = {
-			slot = "LARGE_GUN_04"
-			template = "RA_weapen_L"
-		}
 
 		component = {
 			slot = "LARGE_UTILITY_1"
@@ -247,16 +239,16 @@ ship_design = {
 	}
 
 	section = {
-		template = "WG_EG_BB_STERN"
+		template = "WG_EG_BB_STERN2"
 		slot = "stern"
 		
 		component = {
-			slot = "PD_01"
-			template = "RA_weapen_P"
+			slot = "LARGE_GUN_01"
+			template = "RA_weapen_L"
 		}
 		component = {
-			slot = "PD_02"
-			template = "RA_weapen_P"
+			slot = "LARGE_GUN_02"
+			template = "RA_weapen_L"
 		}
 		component = {
 			slot = "SMALL_GUN_01"
@@ -265,6 +257,14 @@ ship_design = {
 		component = {
 			slot = "SMALL_GUN_02"
 			template = "RA_weapen_S"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RA_weapen_P"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RA_weapen_P"
 		}		
 		component = {
 			slot = "AUX_UTILITY_1"

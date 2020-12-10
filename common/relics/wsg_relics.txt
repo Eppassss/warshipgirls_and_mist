@@ -156,7 +156,7 @@ r_eila_throne = {
 ##########
 r_united_fleet = {
 	activation_duration = @triumph_duration
-	portrait = "GFX_relic_united_fleet"
+	portrait = "GFX_relic_uf"
 	sound = "relic_activation_ether_drake_trophy"
 
 	resources = {
@@ -203,7 +203,7 @@ r_united_fleet = {
 
 r_uf = {
 	activation_duration = @triumph_duration
-	portrait = "GFX_relic_uf"
+	portrait = "GFX_relic_united_fleet"
 	sound = "relic_activation_ether_drake_trophy"
 
 	resources = {
@@ -245,4 +245,46 @@ r_uf = {
 			has_global_flag = wg_invasion_happened
 		}		
 	}	
+}
+
+
+r_wg_god = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_god"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			influence = 100
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = relic_r_wg_god
+		hidden_effect = {
+			country_event = { id = wg_crisis.3 }	
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_uf_invasion_happened"
+			NOT = { has_global_flag = wg_invasion_happened }
+		}
+	}
 }

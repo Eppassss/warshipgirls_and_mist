@@ -5,6 +5,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_friendly_to = FROM
@@ -22,6 +23,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_friendly_to = FROM
@@ -39,6 +41,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_friendly_to = FROM
@@ -56,6 +59,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_friendly_to = FROM
@@ -73,6 +77,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_neutral_to = FROM
@@ -89,6 +94,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_neutral_to = FROM
@@ -105,6 +111,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -122,6 +129,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -139,6 +147,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -156,6 +165,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -173,6 +183,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -190,6 +201,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -207,6 +219,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -224,6 +237,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -241,6 +255,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -258,6 +273,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
@@ -275,6 +291,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			is_at_war_with = FROM 	
 			from = {
 				has_authority = auth_warshipgirls
@@ -287,6 +304,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			is_at_war_with = FROM	
 			from = {
 				has_authority = auth_warshipgirls
@@ -299,6 +317,7 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			is_at_war_with = FROM	
 			from = {
 				has_authority = auth_warshipgirls		
@@ -311,6 +330,349 @@ greetings = {
 		}	
 		trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls		
+				}					
+		}
+	}
+		
+}
+
+greetings = {
+	01_SH_SPE_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls
+			}			
+		}
+	}
+	02_SH_SPE_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls							
+			}				
+		}
+	}
+	03_SH_SPE_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	04_SH_SPE_FRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls	
+			}									
+		}
+	}	
+	01_SH_SPE_NEUTRAL_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	02_SH_SPE_NEUTRAL_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	01_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls						
+			}				
+		}
+	}
+	02_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls					
+			}				
+		}
+	}
+	03_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}	
+	04_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}	
+	05_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	06_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	07_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	08_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	09_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	10_SH_SPE_UNFRIENDLY_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				}
+			from = {
+				has_authority = auth_warshipgirls				
+			}				
+		}
+	}
+	01_SH_SPE_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			is_at_war_with = FROM 	
+			from = {
+				has_authority = auth_warshipgirls
+				}					
+		}
+	}
+	02_SH_SPE_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls
+				}	
+		}
+	}
+	03_SH_SPE_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			is_at_war_with = FROM	
+			from = {
+				has_authority = auth_warshipgirls		
+				}					
+		}
+	}
+	04_SH_SPE_WAR_GREETING = {
+		weight = {
+			weight = 1000
+		}	
+		trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
 			is_at_war_with = FROM	
 			from = {
 				has_authority = auth_warshipgirls		

@@ -13,7 +13,7 @@ country_event = {
 			limit = {
 				has_wg_special_authority = yes
 				is_ai = no
-			}		
+			}
 			if = {
 				limit = { exists = capital_scope }
 				capital_scope = { 
@@ -61,7 +61,7 @@ country_event = {
 				limit = { 
 					distance = { 
 						source = event_target:spawn_boss_system_source
-						min_jumps = 4
+						min_jumps = 3
 						max_jumps = 9
 						type = hyperlane 
 						use_bypasses = no
@@ -70,10 +70,9 @@ country_event = {
 						closest_system = {
 							exists = space_owner
 							min_steps = 0
-							max_steps = 2
+							max_steps = 1
 						}
 						has_natural_wormhole = yes
-						has_star_flag = hostile_system
 						has_star_flag = guardian
 						has_star_flag = sealed_system
 						has_star_flag = wg_sealed_system
@@ -84,16 +83,12 @@ country_event = {
 			}
 			country_event = { id = wg_boss.19 }#无人机之主
 			country_event = { id = wsgranking.1919 }#胖次商店
-			country_event = { id = wg_boss.103 }#阿喵
 		}
 		random_list = { 
-			7 = {
+			6 = {
 				random_country = {
 					limit = {
-						OR = {
-							has_wg_special_authority = yes
-						is_ai = no
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
 					country_event = { id = wg_boss.35 }#盖亚雪风
@@ -104,13 +99,21 @@ country_event = {
 			3 = {
 			    random_country = {
 					limit = {
-						OR = {
-							has_wg_special_authority = yes
-							is_ai = no
-						}
+						has_wg_special_authority = yes
 						is_ai = no
 					}
 					country_event = { id = wg_boss.85 }#环雪风
+				}
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号上方必定生成
+			}
+			1 = {
+			    random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_boss.107 }#恒星雪峰
 				}
 				# modifier = { factor = 0 always = yes } 
 				# 删除上方井号上方必定生成
@@ -145,7 +148,7 @@ country_event = {
 			}
 		}
 		random_list = { 
-			60 = {
+			80 = {
 				random_country = {
 					limit = {
 						has_wg_special_authority = yes
@@ -160,12 +163,14 @@ country_event = {
 					}
 				}
 			}
-			40 = { 
+			20 = { 
 				modifier = { #有舟游mod必定生成星极
 					factor = 0
-					has_global_flag = arknights_swimming
+					OR = {
+						has_global_flag = arknights_swimming
+						has_global_flag = wg_cheat_all_bosses
+					}
 				}
-				modifier = { factor = 0 has_global_flag = wg_cheat_all_bosses }
 			}
 		}
 		
@@ -197,6 +202,21 @@ country_event = {
 				modifier = { factor = 0 has_global_flag = wg_cheat_all_bosses }
 			}
 		}
+		random_list = { 
+			50 = {
+				random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_boss.103 }#阿喵
+				}
+			}
+			50 = {
+				modifier = { factor = 0 has_global_flag = wg_cheat_all_bosses }
+			}
+		}
+		country_event = { id = wg_boss.1001 days = 10 } #检查boss星系是否正确生成
 	}
 }
 country_event = {
@@ -308,8 +328,16 @@ ship_event = {
 					limit = { 
 						has_wg_special_authority = yes
 						is_ai = no
+						NOT = { has_country_flag = custom_start_parit }
 					}
 					country_event = { id = wg_boss.15 days = 1080 random = 1080 }
+				}
+				else = {
+					limit = { 
+						has_country_flag = custom_start_parit
+						is_ai = no
+					}
+					country_event = { id = wg_parit.46 days = 30 }
 				}
 			}			
 		}		
@@ -436,8 +464,11 @@ country_event = {
 				remove_modifier = "wsg_Astesia"	
 			}			
 			if = {
-				limit = { 
-					has_global_flag = arknights_swimming
+				limit = {
+				    OR = {
+						has_global_flag = arknights_swimming
+						has_global_flag = astesia_parit_helper
+					}	
 				}
 				country_event = {
 					id = wg_boss.11
@@ -3920,7 +3951,2840 @@ country_event = {
 		}				
 	}	
 }
+#熄灭恒星
+country_event = {
+	id = wg_boss.107
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_RBQ_created }
+	}	
 
+	immediate = {
+		set_global_flag = wg_boss_RBQ_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
+				initializer = wg_boss_water_star_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.108
+	title = "wg_boss.108.name"
+	desc = "wg_boss.108.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_space_dragon_blue
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_water_star_system_home
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_boss_RBQ_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_boss_RBQ_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.108.a"		
+	}
+}
+
+country_event = {
+	id = wg_boss.109
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_RBQ_Dragon_fleet3
+		}
+	}
+	immediate = {	
+		From = {
+			country_event = { id = wg_boss.110 days = 5 }
+		}	
+	}	
+}
+
+country_event = {
+	id = wg_boss.110
+	title = "wg_boss.110.name"
+	desc = "wg_boss.110.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	
+	option = {
+		name = "wg_boss.110.a"
+		change_variable = { which = rankpts value = 6 }
+		owner = {
+			add_resource = { unity = 2000 }
+		}		
+		hidden_effect = {
+			country_event = { id = wg_boss.111 days = 5 }
+		}		
+	}	
+}
+		
+country_event = {
+	id = wg_boss.111
+	title = "wg_boss.111.name"
+	desc = "wg_boss.111.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	immediate = {
+		country_event = { id = wg_boss.112 }
+		set_country_flag = tech_waterB_allowed_flag
+	}
+	option = {
+		name = "wg_boss.111.a"
+		add_modifier = {
+			modifier = "wg_modifier_rbq_dragon" 	
+			days = 3600
+		}
+	}	
+}
+country_event = {
+	id = wg_boss.112
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = water_star
+			}
+			change_pc = "pc_t_star"
+			random_list = {
+				50 = { change_planet_size = -5 }
+				50 = { change_planet_size = -3 }
+			}
+		}		
+	}
+}
+
+# 灵能憨憨舰娘
+country_event = {
+	id = wg_boss.113
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			last_increased_tech = tech_psionic_theory
+			last_increased_tech = tech_wsg_P381
+		}
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_global_flag = triggered_psionic_wsgs_event }
+	}
+	immediate = {
+		set_global_flag = triggered_psionic_wsgs_event
+		# if = {
+		# 	limit = {
+		# 		last_increased_tech = tech_psionic_theory
+		# 	}
+		# 	random_list = {
+		# 		1 = { country_event = { id = wg_boss.114 days = 60 random = 360 }}
+		# 		1 = {}
+		# 	}
+		# } else = {
+			country_event = { id = wg_boss.114 days = 60 random = 360 }
+		# }
+		
+	}
+}
+
+country_event = {
+	id = wg_boss.114
+	title = wg_boss.114.name
+	desc = wg_boss.114.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+
+	option = {
+		name = wg_boss.114.a
+		enable_special_project = {
+			name = ANALISE_WG_PHIONIC_SIGNAL
+			location = capital_scope
+		}
+	}
+	option = {
+		name = wg_boss.114.b
+	}
+}
+
+country_event = {
+	id = wg_boss.115
+	title = wg_boss.115.name
+	desc = wg_boss.115.desc
+	picture = GFX_evt_shrouded
+	is_triggered_only = yes
+
+	after = { hidden_effect = {
+		set_country_flag = obtain_clues_for_wg_psionic_system
+	}}
+
+	option = {
+		name = wg_boss.115.a
+		add_resource = {
+			influence = 50
+		}
+	}
+	option = {
+		name = INTERESTING
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = 10
+		}
+	}
+	option = {
+		name = wg_boss.115.b
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_xenophile
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 5
+		}
+	}
+}
+
+# 堕落妈来了解事件
+country_event = {
+	id = wg_boss.116
+	title = TRANSMISSION
+	desc = wg_boss.116.desc
+	fire_only_once = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.01
+			mid_game_years_passed >= 0
+		}
+	}
+
+	trigger = {
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}
+		exists = event_target:wg_fallen_empire
+		has_communications = event_target:wg_fallen_empire
+		NOR = { 
+			is_hostile = event_target:wg_fallen_empire 
+			has_civic = civic_CM
+			has_ascension_perk = ap_shenhai_silent
+		}
+		has_country_flag = obtain_clues_for_wg_psionic_system
+	}
+
+	immediate = {
+		remove_country_flag = obtain_clues_for_wg_psionic_system
+	}
+
+	option = {
+		name = wg_boss.116.a
+		hidden_effect = { country_event = { id = wg_boss.117 }}
+	}
+}
+country_event = {
+	id = wg_boss.117
+	title = TRANSMISSION
+	desc = wg_boss.117.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	option = {
+		name = wg_boss.117.a
+		response_text = wg_boss.117.a.response
+		hidden_effect = { country_event = { id = wg_boss.118 days = 30 random = 60 }}
+	}
+
+	option = {
+		name = wg_boss.117.b
+		response_text = wg_boss.117.b.response
+	}
+}
+country_event = {
+	id = wg_boss.118
+	title = TRANSMISSION
+	desc = wg_boss.118.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	after = { hidden_effect = {
+		country_event = { id = wg_boss.119 }
+	}}
+
+	option = {
+		trigger = { has_authority = auth_warshipgirls }
+		name = wg_boss.118.a
+	}
+	option = {
+		trigger = { has_authority = auth_shenhai }
+		name = wg_boss.118.b
+	}
+}
+country_event = {
+	id = wg_boss.119
+	title = TRANSMISSION
+	desc = wg_boss.119.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+	after = { hidden_effect = {
+		country_event = { id = wg_boss.120 }
+	}}
+	option = {
+		trigger = { has_authority = auth_warshipgirls }
+		name = wg_boss.119.a
+	}
+	option = {
+		trigger = { has_authority = auth_shenhai }
+		name = wg_boss.119.b
+	}
+}
+country_event = {
+	id = wg_boss.120
+	title = TRANSMISSION
+	desc = wg_boss.120.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	immediate = {
+		country_event = { id = wg_boss.125 } # 生成星系
+	}
+	option = {
+		name = wg_boss.120.a
+		hidden_effect = { country_event = { id = wg_boss.121 }}
+	}
+}
+country_event = {
+	id = wg_boss.121
+	title = TRANSMISSION
+	desc = wg_boss.121.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:wg_fallen_empire
+		planet_background = event_target:wg_fallen_empire
+		graphical_culture = event_target:wg_fallen_empire
+		city_level = event_target:wg_fallen_empire
+		room = event_target:wg_fallen_empire.ruler
+	}
+
+	option = {
+		name = wg_boss.121.a
+		enable_special_project = {
+			name = RESEARCH_PSIONIC_WORMHOLE
+			location = event_target:wg_psionic_wormhole_target
+		}
+		enable_special_project = {
+			name = RESEARCH_PSIONIC_WORMHOLE_FROM_HOME
+			location = capital_scope
+		}
+	}
+}
+
+# 深海爸来了解事件
+country_event = {
+	id = wg_boss.122
+	title = TRANSMISSION
+	desc = wg_boss.122.desc
+	fire_only_once = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:sh_fallen_empire
+		planet_background = event_target:sh_fallen_empire
+		graphical_culture = event_target:sh_fallen_empire
+		city_level = event_target:sh_fallen_empire
+		room = event_target:sh_fallen_empire.ruler
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.01
+			mid_game_years_passed >= 0
+		}
+	}
+
+	trigger = {
+		has_authority = auth_shenhai
+		exists = event_target:sh_fallen_empire
+		has_communications = event_target:sh_fallen_empire
+		NOR = { 
+			is_hostile = event_target:sh_fallen_empire 
+		}
+		OR = {
+			has_civic = civic_CM
+			has_ascension_perk = ap_shenhai_silent
+		}
+		has_country_flag = obtain_clues_for_wg_psionic_system
+	}
+
+	immediate = {
+		remove_country_flag = obtain_clues_for_wg_psionic_system
+	}
+
+	option = {
+		name = wg_boss.122.a
+		hidden_effect = { country_event = { id = wg_boss.123 days = 90 }}
+	}
+	option = {
+		name = wg_boss.122.b
+	}
+}
+
+country_event = {
+	id = wg_boss.123
+	title = TRANSMISSION
+	desc = wg_boss.123.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:sh_fallen_empire
+		planet_background = event_target:sh_fallen_empire
+		graphical_culture = event_target:sh_fallen_empire
+		city_level = event_target:sh_fallen_empire
+		room = event_target:sh_fallen_empire.ruler
+	}
+
+	immediate = {
+		country_event = { id = wg_boss.125 } # 生成星系
+	}
+
+	option = {
+		name = wg_boss.123.a
+		hidden_effect = { country_event = { id = wg_boss.124 }}
+	}
+}
+country_event = {
+	id = wg_boss.124
+	title = TRANSMISSION
+	desc = wg_boss.124.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:sh_fallen_empire
+		planet_background = event_target:sh_fallen_empire
+		graphical_culture = event_target:sh_fallen_empire
+		city_level = event_target:sh_fallen_empire
+		room = event_target:sh_fallen_empire.ruler
+	}
+
+	option = {
+		name = wg_boss.124.a
+		response_text = wg_boss.124.a.response
+		enable_special_project = {
+			name = RESEARCH_PSIONIC_WORMHOLE
+			location = event_target:wg_psionic_wormhole_target
+		}
+		enable_special_project = {
+			name = RESEARCH_PSIONIC_WORMHOLE_FROM_HOME
+			location = capital_scope
+		}
+	}
+}
+
+# 生成星系
+country_event = {
+	id = wg_boss.125
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = spawn_psi_systems }
+	}
+
+	immediate = {
+		set_global_flag = spawn_psi_systems
+		if = { # 生成在5跳外的星系
+			limit = {
+				any_system = {
+					space_owner = { is_same_value = ROOT }
+					distance = {
+						source = ROOT.capital_scope
+						type = hyperlane
+						use_bypasses = no
+						min_jumps = 5
+					}
+					any_system_planet = {
+						has_owner = no
+					}
+				}
+			}
+			random_system_within_border = {
+				limit = {
+					distance = {
+						source = ROOT.capital_scope
+						type = hyperlane
+						use_bypasses = no
+						min_jumps = 5
+					}
+					any_system_planet = {
+						has_owner = no
+					}
+				}
+				save_global_event_target_as = wg_psionic_system_home
+			}
+		} else_if = { # 备用方案（找不到5跳之外的星系）
+			limit = { any_system = {
+				space_owner = { is_same_value = ROOT }
+			}}
+			random_system_within_border = {
+				save_global_event_target_as = wg_psionic_system_home
+			}
+		} else_if = { # 太虚
+			limit = { always = yes }
+			random_owned_fleet = {
+				solar_system = {
+					save_global_event_target_as = wg_psionic_system_home
+				}
+			}
+		}
+
+		event_target:wg_psionic_system_home = {
+			set_star_flag = wg_psionic_system_home
+			spawn_megastructure = {
+				type = wg_psionic_wormhole
+				orbit_distance = 250
+				orbit_angle = 0
+				init_effect = {
+					create_ambient_object = {
+						type = "wg_psi_object"
+						location = this
+					}
+					last_created_ambient_object = { 
+						save_global_event_target_as = wg_psionic_wormhole_target
+						set_ambient_object_flag = wsg_psi_object_flag
+						set_location = prev
+					}
+				}	
+			}
+		}
+		set_spawn_system_batch = begin
+		no_scope = {
+			spawn_system = {
+				min_distance >= 602
+				max_distance <= 606
+				min_orientation_angle = 224
+				max_orientation_angle = 226
+				initializer = "wg_psi_1_system"
+				is_discovered = no
+				hyperlane = no
+			}
+			event_target:wg_psi_1_system = {
+				spawn_system = {
+					min_distance >= 20
+					max_distance >= 30
+					min_orientation_angle = 200
+					max_orientation_angle = 206
+					initializer = "wg_psi_2_system"
+					hyperlane = no
+					is_discovered = no
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance >= 30
+					min_orientation_angle = -50
+					max_orientation_angle = -45
+					initializer = "wg_psi_3_system"
+					hyperlane = no
+					is_discovered = no
+				}
+			}
+		}
+		set_spawn_system_batch = end
+		event_target:wg_psi_1_system = {
+			every_fleet_in_system = {
+				fleet_event = { id = wg_boss.134 }
+			}
+		}
+		event_target:wg_psi_2_system = {
+			every_fleet_in_system = {
+				fleet_event = { id = wg_boss.134 }
+			}
+		}
+		event_target:wg_psi_3_system = {
+			every_fleet_in_system = {
+				fleet_event = { id = wg_boss.134 }
+			}
+		}
+		country_event = { id = wg_boss.136 days = 5 }
+	}
+}
+
+country_event = {
+	id = wg_boss.126
+	title = wg_boss.126.name
+	desc = wg_boss.126.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wormhole
+	show_sound = event_air_raid_siren
+
+	immediate = {
+		# every_megastructure = {
+		# 	limit = { is_megastructure_type = wg_psionic_wormhole }
+		# 	activate_gateway = this
+		# }
+		hidden_effect = { country_event = { id = wg_boss.127 days = 5 }}
+		random_ambient_object = {
+			limit = { has_ambient_object_flag = wsg_psi_object_flag }
+			destroy_ambient_object = this
+		}
+	}
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
+# 刷灵能舰队
+country_event = {
+	id = wg_boss.127
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_country_flag = wg_psi_event_country
+		event_target:wg_psionic_system_home = {
+			random_system_megastructure = {
+				limit = { is_megastructure_type = wg_psionic_wormhole }
+				create_fleet = {
+					name = "NAME_WG_corrupted_DREADNOUGHT"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}				
+					effect = {					
+						set_owner = event_target:wg_shroud_country
+						create_ship = {
+							name = "NAME_WSG_PSI_DREADNOUGHT"
+							design = "NAME_wsg_psi_dreadnought"
+						}
+						set_fleet_flag = wsg_psi_dreadnought
+						set_location = prev
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 3000
+					}
+				}
+			}
+		}
+	}
+}
+
+# 无畏舰被瘫痪
+country_event = {
+	id = wg_boss.128
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROMFROMFROM = {
+			has_fleet_flag = wsg_psi_dreadnought
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { NOR = {
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_silent
+			}}
+			FROMFROMFROM = { 
+				create_fleet = {
+					name = "NAME_WG_corrupted_DREADNOUGHT"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}				
+					effect = {					
+						set_owner = event_target:wg_shroud_country
+						create_ship = {
+							name = "NAME_WSG_PSI_DREADNOUGHT"
+							design = "NAME_wsg_psi_dreadnought"
+							effect = {
+								set_disabled = yes
+							}
+						}
+						set_event_locked = yes
+						set_fleet_flag = wsg_psi_dreadnought_disabled
+						set_location = prev
+					}
+				}
+			}
+			random_country = { # 防止其他国家击杀影响事件
+				limit = { has_country_flag = wg_psi_event_country }
+				country_event = { id = wg_boss.129 }
+			}
+		} else = {
+			every_megastructure = {
+				limit = { is_megastructure_type = wg_psionic_wormhole }
+				activate_gateway = this
+			}
+			random_country = { # 防止其他国家击杀影响事件
+				limit = { has_country_flag = wg_psi_event_country }
+				country_event = { id = wg_boss.168 }
+			}
+			event_target:wg_psi_1_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_1 }
+					prevent_anomaly = no
+				}
+			}
+			event_target:wg_psi_2_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_2 }
+					prevent_anomaly = no
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_3 }
+					prevent_anomaly = no
+				}
+			}
+			event_target:wg_psi_3_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_4 }
+					prevent_anomaly = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.168
+	title = wg_boss.168.name
+	desc = wg_boss.168.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_dreadnought
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = wg_boss.129
+	title = wg_boss.129.name
+	desc = wg_boss.129.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_dreadnought
+
+	immediate = {
+		event_target:wg_shroud_country = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = wsg_psi_dreadnought_disabled }
+				save_event_target_as = wsg_psi_dreadnought
+			}
+		}
+	}
+
+	option = {
+		name = wg_boss.129.a
+		enable_special_project = {
+			name = ONBOARD_PSI_DREADOUGHT
+			location = event_target:wsg_psi_dreadnought
+		}
+	}
+	option = {
+		name = wg_boss.129.b
+		hidden_effect = { 
+			every_megastructure = {
+				limit = { is_megastructure_type = wg_psionic_wormhole }
+				activate_gateway = this
+			}
+			delete_fleet = event_target:wsg_psi_dreadnought
+			event_target:wg_psi_1_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_1 }
+					prevent_anomaly = no
+				}
+			}
+			event_target:wg_psi_2_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_2 }
+					prevent_anomaly = no
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_3 }
+					prevent_anomaly = no
+				}
+			}
+			event_target:wg_psi_3_system = {
+				random_system_planet = {
+					limit = { has_planet_flag = wg_shrouded_planet_4 }
+					prevent_anomaly = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.130
+	title = wg_boss.130.name
+	desc = wg_boss.130.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_dreadnought
+
+	immediate = {
+		event_target:wg_shroud_country = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = wsg_psi_dreadnought_disabled }
+				delete_fleet = this
+			}
+		}
+	}
+
+	option = {
+		name = ONSCREEN
+		hidden_effect = { country_event = { id = wg_boss.169 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.169
+	title = wg_psi_survivor
+	desc = wg_boss.169.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		room = Invincible_room
+	}
+
+	option = {
+		name = wg_boss.169.a
+		hidden_effect = { country_event = { id = wg_boss.170 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.170
+	title = wg_boss.170.name
+	desc = wg_boss.170.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_dreadnought
+
+	immediate = {
+		event_target:wg_shroud_country = {
+			random_owned_fleet = {
+				limit = { has_fleet_flag = wsg_psi_dreadnought_disabled }
+				delete_fleet = this
+			}
+		}
+	}
+
+	option = {
+		name = UNFORTUNATE
+		hidden_effect = { country_event = { id = wg_boss.131 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.131
+	title = wg_invincible
+	desc = {
+		trigger = { has_authority = auth_warshipgirls }
+		text = wg_boss.131.desc
+	}
+	desc = {
+		trigger = { has_authority = auth_shenhai }
+		text = wg_boss.131.desc.b
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg461
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+
+	option = {
+		name = wg_boss.131.a
+		trigger = {
+			has_authority = auth_warshipgirls
+		}
+		is_dialog_only = yes
+		response_text = wg_boss.131.a.response
+	}
+	option = {
+		name = wg_boss.131.b
+		trigger = {
+			has_authority = auth_shenhai
+		}
+		is_dialog_only = yes
+		response_text = wg_boss.131.b.response
+	}
+
+	option = {
+		name = wg_boss.131.c
+		hidden_effect = { country_event = { id = wg_boss.132 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.132
+	title = wg_invincible
+	desc = {
+		trigger = { has_authority = auth_warshipgirls }
+		text = wg_boss.132.desc
+	}
+	desc = {
+		trigger = { has_authority = auth_shenhai }
+		text = wg_boss.132.desc.b
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg461
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+
+	option = {
+		name = wg_boss.132.a
+		is_dialog_only = yes
+		response_text = wg_boss.132.a.response
+	}
+	option = {
+		name = wg_boss.132.b
+		is_dialog_only = yes
+		response_text = wg_boss.132.b.response
+	}
+
+	option = {
+		name = wg_boss.132.c
+		response_text = wg_boss.132.c.response
+		hidden_effect = { every_megastructure = {
+			limit = { is_megastructure_type = wg_psionic_wormhole }
+			activate_gateway = this
+		}}
+		set_country_flag = accept_psi_country_request
+		begin_event_chain = {
+			event_chain = wg_psi_chain
+		}
+		event_target:wg_psi_1_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_1 }
+				ROOT = { create_point_of_interest = {
+					id = wg_psi_planet_poi.1
+					name = wg_psi_planet_poi
+					desc = wg_psi_planet_poi_desc
+					event_chain = wg_psi_chain
+					location = PREV
+				}}
+			}
+		}
+		event_target:wg_psi_2_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_2 }
+				ROOT = { create_point_of_interest = {
+					id = wg_psi_planet_poi.2
+					name = wg_psi_planet_poi
+					desc = wg_psi_planet_poi_desc
+					event_chain = wg_psi_chain
+					location = PREV
+				}}
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_3 }
+				ROOT = { create_point_of_interest = {
+					id = wg_psi_planet_poi.3
+					name = wg_psi_planet_poi
+					desc = wg_psi_planet_poi_desc
+					event_chain = wg_psi_chain
+					location = PREV
+				}}
+			}
+		}
+		event_target:wg_psi_3_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_4 }
+				ROOT = { create_point_of_interest = {
+					id = wg_psi_planet_poi.4
+					name = wg_psi_planet_poi
+					desc = wg_psi_planet_poi_desc
+					event_chain = wg_psi_chain
+					location = PREV
+				}}
+			}
+		}
+	}
+
+	option = {
+		name = wg_boss.132.d
+		response_text = wg_boss.132.d.response
+		custom_tooltip = wg_boss.132.d.tooltip
+		hidden_effect = { 
+			set_country_flag = reject_psi_country_request
+			create_leader = {
+				name = "NAME_wsg_psi_dreadnought_admiral"
+				class = admiral
+				species = event_target:wg_psi_species
+				gender = female
+				traits = {
+					trait = leader_trait_admiral_warshipgirls2
+					trait = leader_trait_admiral_psionic
+					trait = leader_trait_admiral_wsg_careful
+				}
+				skill = 5
+				immortal = yes
+				event_leader = yes
+				effect = {
+					change_leader_portrait = wsg461
+				}
+			}
+			every_megastructure = {
+				limit = { is_megastructure_type = wg_psionic_wormhole }
+				activate_gateway = this
+			}
+		}
+	}
+}
+
+# 进入任一灵能憨憨舰娘星系
+ship_event = {
+	id = wg_boss.133
+	title = wg_boss.133.title
+	desc = wg_boss.133.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded
+
+	trigger = {
+		FROM = { has_star_flag = wg_psionic_systems }
+		owner = {
+			is_ai = no
+			NOT = { has_country_flag = entered_wg_psi_system }
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = entered_wg_psi_system }
+	}
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
+# 无敌10天防止乱杀
+fleet_event = {
+	id = wg_boss.134
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_ship = {
+			set_timed_ship_flag = { flag = invincible days = 5 }
+			#临时加生命避免一击秒杀
+			add_many_hp = { DAYS = 5 }
+			ship_event = { id = raa_skill.2021 }
+		}
+	}
+}
+
+# 灵能舰队巡逻
+fleet_event = {
+	id = wg_boss.135
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			1 = { set_variable = { which = psi_fleet_target value = 1 }}
+			1 = { set_variable = { which = psi_fleet_target value = 2 }}
+			1 = { set_variable = { which = psi_fleet_target value = 3 }}
+			1 = { set_variable = { which = psi_fleet_target value = 4 }}
+			1 = { set_variable = { which = psi_fleet_target value = 5 }}
+		}
+		queue_actions = {
+			repeat = {
+				find_closest_planet = {
+					trigger = {
+						id = wg_psi_fleet.1
+						OR = {
+							AND = {
+								has_planet_flag = psi_fleet_target_1
+								ROOT = { check_variable = { which = psi_fleet_target value = 1 }}
+							}
+							AND = {
+								has_planet_flag = psi_fleet_target_2
+								ROOT = { check_variable = { which = psi_fleet_target value = 2 }}
+							}
+							AND = {
+								has_planet_flag = psi_fleet_target_3
+								ROOT = { check_variable = { which = psi_fleet_target value = 3 }}
+							}
+							AND = {
+								has_planet_flag = psi_fleet_target_4
+								ROOT = { check_variable = { which = psi_fleet_target value = 4 }}
+							}
+							AND = {
+								has_planet_flag = psi_fleet_target_5
+								ROOT = { check_variable = { which = psi_fleet_target value = 5 }}
+							}
+						}
+					}
+					found_planet = {
+						move_to = this
+						effect = {
+							id = wg_psi_fleet.2
+							root = { 
+								random_list = {
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value > 4 }}
+										change_variable = { which = psi_fleet_target value = 1 }
+									}
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value > 3 }}
+										change_variable = { which = psi_fleet_target value = 2 }
+									}
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value > 2 }}
+										change_variable = { which = psi_fleet_target value = 3 }
+									}
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value < 2 }}
+										change_variable = { which = psi_fleet_target value = -1 }
+									}
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value < 3 }}
+										change_variable = { which = psi_fleet_target value = -2 }
+									}
+									1 = { 
+										modifier = { factor = 0 check_variable = { which = psi_fleet_target value < 4 }}
+										change_variable = { which = psi_fleet_target value = -3 }
+									}
+								}
+							}
+						}
+						wait = { duration = 10 random = 20 }
+					}
+				}
+			}
+		}
+	}
+}
+# 延后触发舰队巡逻的事件
+country_event = {
+	id = wg_boss.136
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:wg_psi_country_wicked = {
+			every_owned_fleet = {
+				fleet_event = { id = wg_boss.135 }
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.137
+	title = wg_boss.137.title
+	desc = wg_boss.137.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded
+	location = FROM
+
+	option = {
+		name = wg_boss.137.a
+		enable_special_project = {
+			name = RESEARCH_WG_SHROUDED_PLANET
+			location = FROM
+		}
+	}
+	option = {
+		name = NOTIME
+		owner = { add_resource = {
+			influence = 100
+		}}
+	}
+}
+
+ship_event = {
+	id = wg_boss.138
+	title = wg_boss.138.title
+	desc = wg_boss.138.desc
+	is_triggered_only = yes
+	picture = GFX_evt_zro_3
+
+	immediate = {
+		FROM = { save_event_target_as = investigated_shrouded_planet }
+	}
+
+	option = {
+		name = wg_boss.138.a
+		leader = { add_experience = 200 }
+		begin_event_chain = { event_chain = wg_psi_chain target = owner }
+		event_target:wg_psi_1_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_1 }
+				if = { 
+					limit = { OR = {
+						is_same_value = event_target:investigated_shrouded_planet
+						is_surveyed = { who = ROOT.owner status = yes }
+					}}
+					enable_special_project = {
+						name = INSTALL_SPACETIME_ANCHOR
+						location = this
+						owner = ROOT.owner
+					}
+				} else = {
+					ROOT.owner = { create_point_of_interest = {
+						id = wg_psi_planet_poi.1
+						name = wg_psi_planet_poi
+						desc = wg_psi_planet_poi_desc
+						event_chain = wg_psi_chain
+						location = PREV
+					}}
+				}
+			}
+		}
+		event_target:wg_psi_2_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_2 }
+				if = { 
+					limit = { OR = {
+						is_same_value = event_target:investigated_shrouded_planet
+						is_surveyed = { who = ROOT.owner status = yes }
+					}}
+					enable_special_project = {
+						name = INSTALL_SPACETIME_ANCHOR
+						location = this
+						owner = ROOT.owner
+					}
+				} else = {
+					ROOT.owner = { create_point_of_interest = {
+						id = wg_psi_planet_poi.2
+						name = wg_psi_planet_poi
+						desc = wg_psi_planet_poi_desc
+						event_chain = wg_psi_chain
+						location = PREV
+					}}
+				}
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_3 }
+				if = { 
+					limit = { OR = {
+						is_same_value = event_target:investigated_shrouded_planet
+						is_surveyed = { who = ROOT.owner status = yes }
+					}}
+					enable_special_project = {
+						name = INSTALL_SPACETIME_ANCHOR
+						location = this
+						owner = ROOT.owner
+					}
+				} else = {
+					ROOT.owner = { create_point_of_interest = {
+						id = wg_psi_planet_poi.3
+						name = wg_psi_planet_poi
+						desc = wg_psi_planet_poi_desc
+						event_chain = wg_psi_chain
+						location = PREV
+					}}
+				}
+			}
+		}
+		event_target:wg_psi_3_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_4 }
+				if = { 
+					limit = { OR = {
+						is_same_value = event_target:investigated_shrouded_planet
+						is_surveyed = { who = ROOT.owner status = yes }
+					}}
+					enable_special_project = {
+						name = INSTALL_SPACETIME_ANCHOR
+						location = this
+						owner = ROOT.owner
+					}
+				} else = {
+					ROOT.owner = { create_point_of_interest = {
+						id = wg_psi_planet_poi.4
+						name = wg_psi_planet_poi
+						desc = wg_psi_planet_poi_desc
+						event_chain = wg_psi_chain
+						location = PREV
+					}}
+				}
+			}
+		}
+	}
+	option = {
+		name = wg_boss.138.b
+		leader = { add_experience = 200 }
+		owner = { add_resource = {
+			influence = 100
+		}}
+	}
+}
+
+ship_event = {
+	id = wg_boss.139
+	title = wg_boss.139.title
+	desc = wg_boss.139.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_anchor
+	show_sound = event_construction
+	location = from
+	trackable = yes
+
+	immediate = {
+		owner = { 
+			add_event_chain_counter = {
+				event_chain = wg_psi_chain
+				counter = wg_shrouded_planet_counter
+				amount = 1
+			}
+			change_variable = {
+				which = installed_spacetime_anchor
+				value = 1
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		hidden_effect = { owner = { if = {
+			limit = { check_variable = { which = installed_spacetime_anchor value >= 4 }}
+			country_event = { id = wg_boss.140 }
+		}}}
+	}
+}
+
+country_event = {
+	id = wg_boss.140
+	title = wg_boss.140.title
+	desc = wg_boss.140.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_anchor
+
+	option = {
+		name = EXCELLENT
+		enable_special_project = {
+			name = ACTIVATE_PSYCHIC_ENTITY_HYPERSIPHON
+			location = capital_scope
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.141
+	title = wg_boss.141.title
+	desc = wg_boss.141.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded
+	location = from
+
+	trigger = {
+		FROM = { has_planet_flag = wg_shrouded_planet }
+		owner = { OR = {
+			has_country_flag = accept_psi_country_request 
+			has_event_chain = wg_psi_chain
+		}}
+	}
+
+	immediate = {
+		if = {
+			limit = { from = { has_planet_flag = wg_shrouded_planet_1 }}
+			owner = { remove_point_of_interest = wg_psi_planet_poi.1 }
+		} else_if = {
+			limit = { from = { has_planet_flag = wg_shrouded_planet_2 }}
+			owner = { remove_point_of_interest = wg_psi_planet_poi.2 }
+		} else_if = {
+			limit = { from = { has_planet_flag = wg_shrouded_planet_3 }}
+			owner = { remove_point_of_interest = wg_psi_planet_poi.3 }
+		} else_if = {
+			limit = { from = { has_planet_flag = wg_shrouded_planet_4 }}
+			owner = { remove_point_of_interest = wg_psi_planet_poi.4 }
+		}
+	}
+
+	option = {
+		name = OK
+		enable_special_project = {
+			name = INSTALL_SPACETIME_ANCHOR
+			location = FROM
+		}
+	}
+}
+
+ship_event = {
+	id = wg_boss.171
+	title = wg_boss.171.title
+	desc = wg_boss.171.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded
+	location = from
+
+	trigger = {
+		NOT = { has_global_flag = spawned_wg_psi_anomaly_cat }
+		owner = { 
+			is_ai = no 
+			has_country_flag = wg_psi_event_country
+			NOR = {
+				has_country_flag = accept_psi_country_request 
+				has_country_flag = reject_psi_country_request
+				has_event_chain = wg_psi_chain
+				has_special_project = RESEARCH_WG_SHROUDED_PLANET
+			}
+		}
+		FROM = { 
+			has_planet_flag = wg_shrouded_planet 
+			has_anomaly = no
+		}
+	}
+
+	option = {
+		name = OK
+		hidden_effect = { set_global_flag = spawned_wg_psi_anomaly_cat }
+		FROM = {
+			add_anomaly = {
+				category = wg_psi_planet_category
+				target = ROOT.owner
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.142
+	title = wg_boss.142.title
+	desc = wg_boss.142.desc
+	is_triggered_only = yes
+	picture = GFX_evt_wsg_psi_anchor
+
+	after = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 10
+		}
+		add_resource = {
+			influence = 100
+		}
+		change_variable = {
+			which = rankpts
+			value = 8
+		}
+		hidden_effect = {
+			country_event = { id = wg_aft.99 } # 全体领袖好感度+1
+			country_event = { id = wg_boss.149 } # 创建国家
+			if = {
+				limit = { has_authority = auth_warshipgirls }
+				country_event = { id = wg_boss.143 days = 3 }
+			}
+			else_if = {
+				limit = { has_authority = auth_shenhai }
+				country_event = { id = wg_boss.145 days = 3 }
+			}
+		}
+	}
+	option = {
+		trigger = {
+			has_authority = auth_warshipgirls
+		}
+		name = wg_boss.142.a
+		
+		owner = {
+			end_event_chain = "wg_psi_chain"
+		}
+	}
+	option = {
+		trigger = {
+			has_authority = auth_shenhai
+			NOR = {
+				has_ascension_perk = ap_shenhai_silent
+				has_civic = civic_CM
+			}
+		}
+		name = wg_boss.142.b
+		
+		owner = {
+			end_event_chain = "wg_psi_chain"
+		}
+	}
+	option = {
+		trigger = {
+			has_authority = auth_shenhai
+			OR = {
+				has_ascension_perk = ap_shenhai_silent
+				has_civic = civic_CM
+			}
+		}
+		name = wg_boss.142.c
+		
+		owner = {
+			end_event_chain = "wg_psi_chain"
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.143
+	title = wg_boss.143.name
+	desc = wg_boss.143.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.143.a
+		is_dialog_only = yes
+		response_text = wg_boss.143.a.response
+	}
+	option = {
+		name = wg_boss.143.b
+		hidden_effect = { country_event = { id = wg_boss.144 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.144
+	title = wg_boss.143.name
+	desc = wg_boss.144.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.144.a
+		is_dialog_only = yes
+		response_text = wg_boss.144.a.response
+	}
+	option = {
+		name = wg_boss.144.b
+		is_dialog_only = yes
+		response_text = wg_boss.144.b.response
+	}
+	option = {
+		name = wg_boss.144.c
+		custom_tooltip = wg_boss.144.c.tooltip
+		hidden_effect = { 
+			country_event = { id = wg_boss.155 days = 10 }
+			# country_event = { id = wg_boss.164 days = 3 }
+		}
+	}
+	option = {
+		name = wg_boss.144.d
+		custom_tooltip = wg_boss.144.d.tooltip
+		hidden_effect = { 
+			country_event = { id = wg_boss.156 days = 10 }
+			# country_event = { id = wg_boss.165 days = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.145
+	title = wg_boss.143.name
+	desc = wg_boss.145.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.145.a
+		trigger = {
+			NOR = {
+				has_ascension_perk = ap_shenhai_silent
+				has_civic = civic_CM
+				has_ascension_perk = ap_shenhai_icebreaking
+			}
+		}
+		hidden_effect = { country_event = { id = wg_boss.146 }}
+	}
+	option = {
+		name = wg_boss.145.b
+		trigger = {
+			has_ascension_perk = ap_shenhai_icebreaking
+		}
+		hidden_effect = { country_event = { id = wg_boss.148 }}
+	}
+	option = {
+		name = wg_boss.145.c
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_shenhai_silent
+				has_civic = civic_CM
+			}
+		}
+		hidden_effect = { country_event = { id = wg_boss.157 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.146
+	title = wg_boss.143.name
+	desc = wg_boss.146.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.146.a
+		hidden_effect = { country_event = { id = wg_boss.147 }}
+	}
+	option = {
+		name = wg_boss.146.b
+		hidden_effect = { country_event = { id = wg_boss.147 }}
+	}
+}
+
+country_event = {
+	id = wg_boss.147
+	title = wg_boss.143.name
+	desc = wg_boss.147.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.147.a
+		response_text = wg_boss.147.a.response
+		hidden_effect = { 
+			country_event = { id = wg_boss.148 days = 10 }
+			# country_event = { id = wg_boss.164 days = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.148
+	title = wg_invincible
+	desc = wg_boss.148.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg461
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+
+	option = {
+		name = wg_boss.148.a
+		hidden_effect = { country_event = { id = wg_boss.144 }}
+	}
+}
+
+# 结局1 变附属国
+country_event = {
+	id = wg_boss.155
+	title = wg_boss.143.name
+	desc = wg_boss.155.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = UNDERSTOOD
+		add_relic = r_wg_psionic_gem
+		end_event_chain = wg_psi_chain
+		hidden_effect = {
+			event_target:wg_psi_country = {
+				set_subject_of = {
+					who = root
+					subject_type = vassal
+				}
+			}
+		}
+	}
+}
+
+# 结局2 合并 
+country_event = {
+	id = wg_boss.156
+	title = wg_boss.143.name
+	desc = wg_boss.156.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = UNDERSTOOD
+		add_relic = r_wg_psionic_gem
+		end_event_chain = wg_psi_chain
+		hidden_effect = {
+			event_target:wg_psi_country = {
+				every_owned_starbase = { set_owner = ROOT }
+				every_owned_leader = { set_owner = ROOT }
+				every_owned_fleet = { set_owner = ROOT }
+				every_owned_planet = { set_owner = ROOT }
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+# 开战
+country_event = {
+	id = wg_boss.157
+	title = wg_boss.143.name
+	desc = wg_boss.157.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	immediate = {
+		set_country_flag = wg_holy_war2
+		country_event = { id = wg_boss.161 days = 10 }
+		event_target:wg_psi_country = {
+			set_country_flag = wg_holy_war
+			# 加强
+			add_modifier = { modifier = wg_psi_country_cheat }
+			give_technology = { tech = tech_shields_5 }
+			give_technology = { tech = tech_ship_armor_5 }
+			give_technology = { tech = tech_corvettes }
+			give_technology = { tech = tech_destroyers }
+			give_technology = { tech = tech_cruisers }
+			give_technology = { tech = tech_battleships }
+			give_technology = { tech = tech_strike_craft_3 }
+			give_technology = { tech = tech_thrusters_4 }
+			give_technology = { tech = tech_mass_drivers_5 }
+			give_technology = { tech = tech_missiles_5 }
+			give_technology = { tech = tech_lasers_5 }
+			give_technology = { tech = tech_pd_tracking_3 }
+			give_technology = { tech = tech_wsg_P381 }
+			give_technology = { tech = tech_wsg_P127 }
+			give_technology = { tech = tech_wsg_P330 }
+			give_technology = { tech = tech_wsg_B25 }
+			give_technology = { tech = tech_uav }
+			give_technology = { tech = tech_uav2 }
+			give_technology = { tech = tech_uav3 }
+			give_technology = { tech = tech_uav4 }
+			give_technology = { tech = tech_wsg_ia }
+			give_technology = { tech = tech_wsg_ia2 }
+			give_technology = { tech = tech_wsg_PD }
+			give_technology = { tech = tech_wsg_YL }
+			give_technology = { tech = tech_wsg_fire_control }
+			give_technology = { tech = tech_wsg_damage_control }
+			give_technology = { tech = tech_wsg_md }
+			give_technology = { tech = tech_wsg_battleship_hull_3 }
+			give_technology = { tech = tech_wsg_aura }
+			give_technology = { tech = tech_wsg_kodiak }
+			give_technology = { tech = tech_galodam }
+			give_technology = { tech = tech_starbase_5 }
+			give_technology = { tech = tech_sensors_3 }
+			give_technology = { tech = tech_interstellar_fleet_traditions }
+			every_owned_starbase = {
+				set_starbase_size = starbase_citadel
+				set_starbase_building = { slot = 1 building = target_uplink_computer }
+				set_starbase_building = { slot = 2 building = defense_grid }
+				set_starbase_building = { slot = 3 building = fleet_academy }
+				set_starbase_building = { slot = 4 building = command_center }
+				set_starbase_module = { slot = 1 module = shipyard }
+				set_starbase_module = { slot = 2 module = shipyard }
+				set_starbase_module = { slot = 3 module = shipyard }
+				set_starbase_module = { slot = 4 module = shipyard }
+				set_starbase_module = { slot = 5 module = gun_battery }
+				set_starbase_module = { slot = 6 module = gun_battery }
+			}
+		}
+	}
+
+	option = {
+		name = wg_boss.157.a
+		custom_tooltip = wg_boss.157.a.tooltip
+		event_target:wg_psi_country = { declare_war = {
+			target = ROOT
+			attacker_war_goal = wg_holy_war
+		}}
+	}
+}
+
+# 结局3 战败
+country_event = {
+	id = wg_boss.158
+	title = wg_boss.143.name
+	desc = wg_boss.158.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	immediate = {
+		remove_country_flag = wg_holy_war2
+	}
+
+	after = {
+		hidden_effect = {
+			event_target:wg_psi_country = {
+				remove_country_flag = wg_holy_war
+				every_owned_planet = {
+					set_owner = ROOT
+				}
+				destroy_country = yes
+			}
+			country_event = { id = wg_boss.159 days = 10 }
+		}
+	}
+
+	option = {
+		name = wg_boss.158.a
+	}
+}
+
+country_event = {
+	id = wg_boss.159
+	title = wg_boss.159.name
+	desc = wg_boss.159.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+
+	option = {
+		name = wg_boss.159.a
+		add_relic = r_wg_psionic_gem
+		end_event_chain = wg_psi_chain
+	}
+}
+
+country_event = {
+	id = wg_boss.160
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = wg_holy_war
+	}
+
+	immediate = {
+		random_country = {
+			limit = { has_country_flag = wg_psi_event_country }
+			country_event = { id = wg_boss.158 }
+		}
+	}
+}
+
+# 隔5年召唤一次舰队
+country_event = {
+	id = wg_boss.161
+	title = wg_boss.143.name
+	desc = wg_boss.161.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = wg_boss.161.a
+		hidden_effect = { country_event = { id = wg_boss.162 }}
+	}
+
+}
+
+country_event = {
+	id = wg_boss.162
+	title = wg_boss.162.name
+	desc = wg_boss.162.desc
+	is_triggered_only = yes
+	picture = GFX_evt_psionics
+
+	trigger = {
+		exists = event_target:wg_psi_country
+		has_country_flag = wg_holy_war2
+		event_target:wg_psi_country = { has_country_flag = wg_holy_war }
+	}
+
+	immediate = {
+		event_target:wg_psi_country = { 
+			add_resource = {
+				energy = 50000
+				minerals = 50000
+				food = 50000
+				alloys = 50000
+				consumer_goods = 50000
+			}
+			change_variable = { which = summon_times value = 1 }
+			if = {
+				limit = { check_variable = { which = summon_times value >= 4 }}
+				ROOT = { country_event = { id = wg_boss.163 days = 1800 }}
+			} else = {
+				ROOT = { country_event = { id = wg_boss.162 days = 1800 }}
+			}
+			capital_scope = {
+				create_fleet = {
+					name = "NAME_WG_boss_psi_fleet_1"
+					settings = {
+						spawn_debris = no
+					}	
+					effect = {
+						set_owner = event_target:wg_psi_country
+						create_ship = {
+							name = random
+							design = "NAME_WG_PSI_JUGGERNAUT"
+						}
+						while = {
+							count = 10
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_BIG_GUNSHIP"
+							}
+						}
+						while = {
+							count = 15
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_GUNSHIP"
+							}
+						}
+						owner = { create_leader = {
+							name = random
+							class = admiral
+							species = event_target:wg_psi_species
+							gender = female
+							skill = 1
+							immortal = yes
+							event_leader = yes
+						}}
+						assign_leader = last_created_leader
+						set_location = prev
+						set_fleet_stance = passive
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+					}
+				}
+				create_fleet = {
+					name = "NAME_WG_boss_psi_fleet_2"
+					settings = {
+						spawn_debris = no
+					}	
+					effect = {
+						set_owner = event_target:wg_psi_country
+						while = {
+							count = 15
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_BIG_GUNSHIP"
+							}
+						}
+						owner = { create_leader = {
+							name = random
+							class = admiral
+							species = event_target:wg_psi_species
+							gender = female
+							skill = 1
+							immortal = yes
+							event_leader = yes
+						}}
+						assign_leader = last_created_leader
+						set_location = prev
+						set_fleet_stance = passive
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+					}
+				}
+				create_fleet = {
+					name = "NAME_WG_boss_psi_fleet_3"
+					settings = {
+						spawn_debris = no
+					}	
+					effect = {
+						set_owner = event_target:wg_psi_country
+						while = {
+							count = 32
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_GUNSHIP"
+							}
+						}
+						owner = { create_leader = {
+							name = random
+							class = admiral
+							species = event_target:wg_psi_species
+							gender = female
+							skill = 1
+							immortal = yes
+							event_leader = yes
+						}}
+						assign_leader = last_created_leader
+						set_location = prev
+						set_fleet_stance = passive
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = wg_boss.162.a
+	}
+}
+
+country_event = {
+	id = wg_boss.163
+	title = wg_boss.163.name
+	desc = wg_boss.163.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+
+	immediate = {
+		event_target:wg_psi_country = { 
+			every_owned_planet = {
+				destroy_colony = yes
+				change_pc = pc_eye_shrouded
+			}
+			every_owned_fleet = {
+				destroy_fleet = this
+			}
+			destroy_country = yes
+		}
+	}
+
+	option = {
+		name = wg_boss.163.a
+		end_event_chain = wg_psi_chain
+	}
+	option = {
+		name = wg_boss.163.b
+		end_event_chain = wg_psi_chain
+	}
+}
+
+# 送科技（附属国）
+country_event = {
+	id = wg_boss.164
+	title = wg_boss.143.name
+	desc = wg_boss.164.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = event_target:wg_psi_country
+		planet_background = event_target:wg_psi_country
+		graphical_culture = event_target:wg_psi_country
+		city_level = event_target:wg_psi_country
+		room = event_target:wg_psi_country.ruler
+	}
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_wsg_P127
+		add_tech_progress = { tech = tech_wsg_P127 progress = 0.1 }
+		add_research_option = tech_wsg_P330
+		add_tech_progress = { tech = tech_wsg_P330 progress = 0.1 }
+		if = {
+			limit = { NOT = { has_technology = tech_wsg_P381 }}
+			add_research_option = tech_wsg_P381
+			add_tech_progress = { tech = tech_wsg_P381 progress = 0.1 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.165
+	title = wg_boss.143.name
+	desc = wg_boss.165.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = TRANSMISSION
+	picture_event_data = {
+		portrait = wsg380
+		planet_background = ROOT
+		graphical_culture = ROOT
+		city_level = ROOT
+		room = ROOT.ruler
+	}
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_wsg_P127
+		add_tech_progress = { tech = tech_wsg_P127 progress = 0.1 }
+		add_research_option = tech_wsg_P330
+		add_tech_progress = { tech = tech_wsg_P330 progress = 0.1 }
+		if = {
+			limit = { NOT = { has_technology = tech_wsg_P381 }}
+			add_research_option = tech_wsg_P381
+			add_tech_progress = { tech = tech_wsg_P381 progress = 0.1 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.149
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+			name = "NAME_psi_warshipgirls"
+			class = "Warship_Girls"
+			portrait = "Warship_girls"
+			traits = {
+				trait = wsg_trait_warshipgirls2
+				trait = wsg_trait_mass_assembly
+				trait = wsg_trait_extreme_efficient
+				trait = trait_psionic
+				trait = wsg_trait_mind_control
+			}
+			immortal = yes
+			effect = { 
+				save_global_event_target_as = wg_psi_species
+			}
+		}
+		create_country = {
+			name = "NAME_psi_country"
+			name_list = "WSG"
+			type = default
+			species = event_target:wg_psi_species
+			authority = auth_warshipgirls
+			ignore_initial_colony_error = yes
+			ethos = {
+				ethic = ethic_militarist
+				ethic = ethic_fanatic_spiritualist
+			}
+			civics = {
+				civic = civic_wgella
+				civic = civic_wgvictoria
+			}
+			flag = {
+				icon= {
+					category="warshipgirls"
+					file="wg_flags_11.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "rounded_middle.dds"
+				}
+				colors={
+					"purple"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			origin = origin_wg_psi_country
+			effect = {
+				set_country_flag = wg_psi_country
+				save_global_event_target_as = wg_psi_country
+				add_resource = {
+					minerals = 5000
+					energy = 5000
+					food = 5000
+					alloys = 5000
+					consumer_goods = 5000
+					volatile_motes = 114514
+					rare_crystals = 1919810
+					exotic_gases = 893893
+					influence = 100
+				}
+				add_modifier = {
+					modifier = wg_ai_base
+				}
+				# set_policy = {
+				# 	policy = border_policy
+				# 	option = border_policy_open
+				# 	cooldown = yes
+				# }
+				create_leader = {
+					class = ruler
+					species = event_target:wg_psi_species
+					gender = female
+					name = "NAME_psi_country_leader"
+					skill = 10
+					immortal = yes
+					event_leader = yes
+					traits = {
+						trait = leader_trait_ruler_warshipgirls2
+						trait = leader_trait_ruler_chosen
+						trait = leader_trait_ruler_psionic
+					}
+					ruler_title = PRESCRIPTED_ruler_title_wg1
+					ruler_title_female = PRESCRIPTED_ruler_title_wg1
+					effect = {
+						change_leader_portrait = wsg380
+						event_target:wg_psi_country = { 
+							set_leader = PREV
+						}
+					}
+				}
+				create_leader = {
+					class = governor
+					species = event_target:wg_psi_species
+					gender = female
+					skill = 5
+					immortal = yes
+				}
+				while = {
+					count = 3
+					create_leader = {
+						name = random
+						class = scientist
+						species = event_target:wg_psi_species
+						gender = female
+						skill = 5
+						immortal = yes
+					}
+				}
+			}
+		}
+		event_target:wg_psi_1_system = {
+			starbase = { fleet = { delete_fleet = this }}
+			create_starbase = {
+				size = starbase_outpost
+				effect = {
+					set_owner = event_target:wg_psi_country
+				}
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_1 }
+				planet_event = { id = wg_boss.150 }
+				create_fleet = {
+					name = "NAME_WG_psi_country_fleet"
+					settings = {
+						spawn_debris = no
+					}	
+					effect = {
+						set_owner = event_target:wg_psi_country
+						while = {
+							count = 5
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_BIG_GUNSHIP"
+							}
+						}
+						while = {
+							count = 20
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_GUNSHIP"
+							}
+						}
+						owner = { create_leader = {
+							name = "NAME_WG_psi_country_admiral"
+							class = admiral
+							species = event_target:wg_psi_species
+							gender = female
+							traits = {
+								trait = leader_trait_admiral_warshipgirls2
+								trait = leader_trait_admiral_psionic
+								trait = leader_trait_admiral_wsg_careful
+							}
+							skill = 5
+							immortal = yes
+							event_leader = yes
+							effect = {
+								change_leader_portrait = wsg367
+							}
+						}}
+						assign_leader = last_created_leader
+						set_location = prevprev
+						set_fleet_stance = passive
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc }
+					}
+				}
+				#science
+				create_fleet = {
+					effect = {
+						set_owner = event_target:wg_psi_country
+						set_location = PREVPREV
+						create_ship = {
+							name = random
+							random_existing_design = science
+						}
+						set_fleet_stance = evasive
+						owner = {
+							create_leader = {
+								name = random
+								class = scientist
+								species = event_target:wg_psi_species
+								gender = female
+								skill = 5
+								immortal = yes
+								sub_type = survey
+							}
+						}
+						assign_leader = last_created_leader
+					}
+				}
+				#constructor
+				create_fleet = {
+					effect = {
+						set_owner = event_target:wg_psi_country
+						create_ship = {
+							name = random
+							random_existing_design = constructor
+						}
+						set_fleet_stance = evasive
+						set_location = prevprev
+					}
+				}
+			}
+		}
+		event_target:wg_psi_country = {
+			random_country = {
+				limit = { has_country_flag = wg_psi_event_country }
+				establish_communications_no_message = PREV
+				add_opinion_modifier = {
+					who = PREV
+					modifier = opinion_help_reform_country
+				}
+				PREV = { 
+					while = {
+						count = 5
+						add_opinion_modifier = {
+							who = PREV
+							modifier = opinion_wg_save_our_species
+						}
+					}
+					copy_techs_from = {
+						target = PREV
+					}
+				}
+			}
+			country_event = { id = wg_boss.154 days = 1 }
+		}
+	}
+}
+
+# 第一个星球变回来
+planet_event = {
+	id = wg_boss.150
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		change_pc = pc_relic
+		reset_planet = yes
+		prevent_anomaly = yes
+		clear_deposits = yes
+		add_deposit = d_relic_dense_ruins
+		add_deposit = d_central_spire
+		add_deposit = d_industrial_sector
+		add_deposit = d_immense_solar_array
+		add_deposit = d_ancient_reactor_pits
+		add_deposit = d_abandoned_mining_tunnels
+		add_deposit = d_relic_metal_boneyard
+		set_owner = event_target:wg_psi_country
+		set_capital = yes
+		event_target:wg_psi_country = { random_owned_leader = {
+			limit = { leader_class = governor }
+			ROOT = { sector = {
+				assign_leader = PREVPREV
+			}}
+		}}
+		while = { count = 8
+			add_district = district_city 
+			add_district = district_mining
+			add_district = district_generator
+		}
+		add_building = building_system_capital
+		add_building = building_wsg_bathhouse
+		add_building = building_wsg_luxury_residence
+		add_building = building_wsg_fortress
+		add_building = building_wsg_research3
+		add_building = building_wsg_research3
+		add_building = building_crystal_mines
+		add_building = building_gas_extractors
+		add_building = building_mote_harvesters
+		add_building = building_warshipgirl_senergy_assembly_plantF
+		add_building = building_wsg_senergy3
+		add_building = building_wsg_pantsu2
+		add_building = building_wg_psi_temple
+		while = { count = 80
+			create_pop = {
+				species = event_target:wg_psi_species
+			}
+		}
+		event_target:wg_psi_2_system = {
+			starbase = { fleet = { delete_fleet = this }}
+			create_starbase = {
+				size = starbase_outpost
+				effect = {
+					set_owner = event_target:wg_psi_country
+				}
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_2 }
+				planet_event = { id = wg_boss.151 }
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_3 }
+				planet_event = { id = wg_boss.152 }
+			}
+		}
+		event_target:wg_psi_3_system = {
+			starbase = { fleet = { delete_fleet = this }}
+			create_starbase = {
+				size = starbase_outpost
+				effect = {
+					set_owner = event_target:wg_psi_country
+				}
+			}
+			random_system_planet = {
+				limit = { has_planet_flag = wg_shrouded_planet_4 }
+				planet_event = { id = wg_boss.153 }
+			}
+		}
+	}
+}
+
+# 第二个星球变回来
+planet_event = {
+	id = wg_boss.151
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		change_pc = pc_ocean
+		reset_planet = yes
+		prevent_anomaly = yes
+		clear_deposits = yes
+		reroll_deposits = yes
+		add_deposit = d_crystal_forest 
+		set_owner = event_target:wg_psi_country
+		while = { count = 14
+			add_district = district_city 
+		}
+		while = { count = 5
+			add_district = district_mining
+			add_district = district_generator
+			add_district = district_farming
+		}
+		add_building = building_system_capital
+		add_building = building_wsg_bathhouse
+		add_building = building_wsg_luxury_residence
+		add_building = building_wsg_fortress
+		add_building = building_factory_3
+		add_building = building_factory_3
+		add_building = building_factory_3
+		add_building = building_crystal_mines
+		add_building = building_crystal_mines
+		add_building = building_warshipgirl_senergy_assembly_plantF
+		add_building = building_wsg_pantsu2
+		add_building = building_wsg_senergy3
+		add_building = building_wg_psi_temple
+		while = { count = 40
+			create_pop = {
+				species = event_target:wg_psi_species
+			}
+		}
+	}
+}
+
+# 第三个星球变回来
+planet_event = {
+	id = wg_boss.152
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		change_pc = pc_ocean
+		reset_planet = yes
+		prevent_anomaly = yes
+		clear_deposits = yes
+		reroll_deposits = yes
+		add_deposit = d_underwater_vent 
+		add_deposit = d_fuming_bog  
+		set_owner = event_target:wg_psi_country
+		while = { count = 14
+			add_district = district_city 
+		}
+		while = { count = 5
+			add_district = district_mining
+			add_district = district_generator
+			add_district = district_farming
+		}
+		add_building = building_system_capital
+		add_building = building_wsg_bathhouse
+		add_building = building_wsg_luxury_residence
+		add_building = building_wsg_fortress
+		add_building = building_foundry_3
+		add_building = building_foundry_3
+		add_building = building_foundry_3
+		add_building = building_gas_extractors
+		add_building = building_gas_extractors
+		add_building = building_warshipgirl_senergy_assembly_plantF
+		add_building = building_wsg_pantsu2
+		add_building = building_wsg_senergy3
+		add_building = building_wg_psi_temple
+		while = { count = 40
+			create_pop = {
+				species = event_target:wg_psi_species
+			}
+		}
+	}
+}
+
+# 第四个星球变回来
+planet_event = {
+	id = wg_boss.153
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		solar_system = {
+			starbase = { fleet = { delete_fleet = this }}
+			create_starbase = {
+				size = starbase_outpost
+				effect = {
+					set_owner = event_target:wg_psi_country
+				}
+			}
+		}
+		change_pc = pc_gaia
+		reset_planet = yes
+		prevent_anomaly = yes
+		clear_deposits = yes
+		while = { count = 3
+			add_deposit = d_black_soil 
+			add_deposit = d_buzzing_plains 
+			add_deposit = d_mineral_striations 
+			add_deposit = d_natural_farmland 
+		}
+		add_deposit = d_fuming_bog
+		add_deposit = d_rich_mountain 
+		add_deposit = d_submerged_ore_veins 
+		add_deposit = d_dust_desert 
+		set_owner = event_target:wg_psi_country
+		event_target:wg_psi_country = { random_owned_leader = {
+			limit = { leader_class = governor }
+			ROOT = { sector = {
+				assign_leader = PREVPREV
+			}}
+		}}
+		while = { count = 4
+			add_district = district_farming
+		}
+		while = { count = 8
+			add_district = district_city 
+			add_district = district_mining
+			add_district = district_farming
+		}
+		add_building = building_system_capital
+		add_building = building_wsg_bathhouse
+		add_building = building_wsg_luxury_residence
+		add_building = building_wsg_fortress
+		add_building = building_food_processing_center
+		add_building = building_wsg_research3
+		add_building = building_wsg_research3 
+		add_building = building_mote_harvesters
+		add_building = building_mote_harvesters
+		add_building = building_gas_extractors
+		add_building = building_gas_extractors
+		add_building = building_warshipgirl_senergy_assembly_plantF
+		add_building = building_wg_psi_temple
+		while = { count = 40
+			create_pop = {
+				species = event_target:wg_psi_species
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.154
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = wg_psi_country
+	}
+
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				has_deposit_for = shipclass_mining_station
+				has_mining_station = no
+			}
+			create_mining_station = {
+				owner = ROOT
+			}
+		}
+		every_planet_within_border = {
+			limit = {
+				has_deposit_for = shipclass_research_station
+				has_research_station = no
+			}
+			create_research_station = {
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.167
+	title = wg_boss.167.name
+	desc = wg_boss.167.desc
+	picture = GFX_evt_fleet_from_surface
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "wg_boss.167.a"
+		hidden_effect = {
+			random_list = { 
+				1 = { # 买彩票吧
+					create_fleet = {
+						name = "NAME_WG_corrupted_DREADNOUGHT"
+						settings = {
+							spawn_debris = no
+							is_boss = yes
+						}				
+						effect = {					
+							set_owner = root
+							create_ship = {
+								name = "NAME_WSG_PSI_DREADNOUGHT"
+								design = "NAME_wsg_psi_dreadnought"
+							}
+							set_location = root.capital_scope
+						}
+					}
+				}
+				20 = {#欧洲人必须死
+					create_fleet = {
+						name = "NAME_WG_psi_fleet_1"
+						effect = {
+							set_owner = root
+							create_ship = {
+								name = random
+								design = "NAME_WG_PSI_JUGGERNAUT"
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_BIG_GUNSHIP"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_GUNSHIP"
+								}
+							}
+							set_location = root.capital_scope					
+						}	
+					}		
+				}
+				40 = {
+					create_fleet = {
+						name = "NAME_WG_psi_fleet_2"
+						effect = {
+							set_owner = root
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_BIG_GUNSHIP"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_GUNSHIP"
+								}
+							}
+							set_location = root.capital_scope						
+						}	
+					}		
+				}
+				40 = {#非洲泪
+					create_fleet = {
+						name = "NAME_WG_psi_fleet_3"
+						effect = {
+							set_owner = root
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_BIG_GUNSHIP"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_WG_PSI_GUNSHIP"
+								}
+							}
+							set_location = root.capital_scope				
+						}	
+					}		
+				}				
+			}
+		}	
+	}	
+}
+
+# 旧档补充触发
+country_event = {
+	id = wg_boss.166
+	hide_window = yes
+	mean_time_to_happen = {
+		years = 1
+	}
+	trigger = {
+		end_game_years_passed <= 0
+		is_multiplayer = no
+		OR = {
+			has_technology = tech_psionic_theory
+			has_technology = tech_wsg_P381
+		}
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_global_flag = triggered_psionic_wsgs_event }
+	}
+
+	immediate = {
+		set_global_flag = triggered_psionic_wsgs_event
+		country_event = { id = wg_boss.114 }
+	}
+}
 ###########################################
 event = { #生成星系
 	id = wg_boss.1000
@@ -3928,6 +6792,17 @@ event = { #生成星系
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
+		if = {
+			limit = { any_country = {
+				has_country_flag = custom_start_parit
+			}}
+			random_country = {
+				limit = {
+					has_country_flag = custom_start_parit
+				}
+				set_global_flag = wg_Parit_origin
+			}
+		}
 		if = {
 			limit = { any_country = {
 				has_wg_special_authority = yes
@@ -3941,9 +6816,16 @@ event = { #生成星系
 				country_event = { id =  wg_boss.1 } #boss
 				country_event = { id = wg_khan.2 } #大可汗
 				random_list = {
-					50 = { country_event = { id =  wg_parit.1 }} #帕里特
-					50 = {
-						modifier = { factor = 0 has_global_flag = wg_cheat_all_bosses }
+					60 = { 
+						modifier = { factor = 0 has_global_flag = wg_Parit_origin }
+						country_event = { id =  wg_parit.1 }
+					}
+					40 = {
+						modifier = { 
+							factor = 0 
+							has_global_flag = wg_cheat_all_bosses 
+							NOT = { has_global_flag = wg_Parit_origin }
+						}
 					}
 				}
 			}
@@ -3959,6 +6841,219 @@ event = { #生成星系
 					is_ai = no
 				}
 				country_event = { id = wsg.4 } #sol3
+			}
+		}
+	}
+}
+
+# 检查所有boss星系是否正确生成
+country_event = {
+	id = wg_boss.1001
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = { #星极
+			limit = { 
+				has_global_flag = wg_think_tank_created 
+				NOT = { any_system = { has_star_flag = wg_boss_think_tank_system_home }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 10
+					max_distance = 20
+					initializer = wg_boss_think_tank_system
+				}
+			}
+		}
+		if = { # 无人机之主
+			limit = {
+				has_global_flag = wg_boss_uav_created
+				NOT = { any_system = { has_star_flag = wg_boss_uav_system_home }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 10
+					max_distance = 20
+					initializer = wg_boss_uav_system
+				}
+			}
+		}
+		if = { # 雪风
+			limit = {
+				has_global_flag = wg_boss_RBQ_created
+				NOR = { 
+					any_system = { has_star_flag = wg_boss_water_star_system_home }
+					any_system = { has_star_flag = wg_boss_ring_water_system_home }
+					any_system = { has_star_flag = wg_boss_water_system_home }
+				}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				random_list = { 
+					6 = {
+						modifier = {
+							factor = 0
+							any_system = { has_star_flag = wg_boss_water_system_home }
+						}
+						spawn_system = {
+							hyperlane = yes
+							is_discovered = no
+							min_distance = 10
+							max_distance = 20
+							initializer = wg_boss_water_system
+						}
+					}
+					3 = {
+						modifier = {
+							factor = 0
+							any_system = { has_star_flag = wg_boss_ring_water_system_home }
+						}
+						spawn_system = {
+							hyperlane = yes
+							is_discovered = no
+							min_distance = 10
+							max_distance = 20
+							initializer = wg_ring_water_world_system
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							any_system = { has_star_flag = wg_boss_water_star_system_home }
+						}
+						spawn_system = {
+							hyperlane = yes
+							is_discovered = no
+							min_distance = 10
+							max_distance = 20
+							initializer = wg_boss_water_star_system
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							OR = { 
+								any_system = { has_star_flag = wg_boss_water_star_system_home }
+								any_system = { has_star_flag = wg_boss_ring_water_system_home }
+								any_system = { has_star_flag = wg_boss_water_system_home }
+							}
+						}
+					}
+				}
+			}
+		}
+		if = { #gars
+			limit = {
+				has_global_flag = wg_boss_machine_created
+				NOT = { any_system = { has_star_flag = wg_machine_system }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 10
+					max_distance = 20
+					initializer = wg_machine_system
+				}
+			}
+		}
+		if = { #屑日葵
+			limit = {
+				has_global_flag = wg_boss_sunflower_created
+				NOT = { any_system = { has_star_flag = wg_boss_sunflower_system_home }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 5
+					max_distance = 20
+					initializer = wg_boss_sunflower_system
+				}
+			}
+		}
+		if = { #云
+			limit = {
+				has_global_flag = wg_noob_blue_created
+				NOT = { any_system = { has_star_flag = wg_blue_cloud_system_home }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 10
+					max_distance = 20
+					initializer = wg_blue_cloud_system
+				}
+			}
+		}
+		if = { # 喵
+			limit = {
+				has_global_flag = wg_one_cat_created
+				NOT = { any_system = { has_star_flag = wg_one_cat_system_flag }}
+			}
+			random_system = {
+				limit = { 
+					NOT = { closest_system = {
+						exists = space_owner
+						min_steps = 0
+						max_steps = 1
+					}}
+				}
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 8
+					max_distance = 16
+					initializer = wg_one_cat_system
+				}
 			}
 		}
 	}

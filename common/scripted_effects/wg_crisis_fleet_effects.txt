@@ -553,3 +553,37 @@ create_uf_flagship = {
         }
     }
 }
+
+###
+create_uf_glory = {					
+    create_fleet = {
+        name = "NAME_uf_glory_Fleet"
+		settings = {
+			spawn_debris = no
+			is_boss = yes
+		}
+        effect = {
+            set_owner = event_target:wg_crisis_country
+            create_ship = {
+                name = random
+                design = "NAME_uf_glory"
+                upgradable = no
+            }
+            set_location = {
+                target = PREV
+                distance = 100
+                angle = random
+            }
+			set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+			assign_leader = last_created_leader
+        }
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = yes
+        }
+    }					
+}
+

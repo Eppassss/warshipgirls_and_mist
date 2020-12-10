@@ -87,7 +87,7 @@ d_port_system = {
 			}
 	}
 	planet = {
-		class = pc_barren_cold
+	    class = pc_frozen
 		orbit_distance = 40
 		size = { min = 20 max = 25 }
 		change_orbit = @base_moon_distance

@@ -627,6 +627,7 @@ wg_readjust_crisis = {
 		NOR = { 
 			has_global_flag = wg_crisis_triggered 
 			has_global_flag = wg_invasion_happened
+			has_global_flag = activated_uf_hidden_diff
 		}
 		OR = {
 			has_global_flag = wg_khan_main_fleet_defeated

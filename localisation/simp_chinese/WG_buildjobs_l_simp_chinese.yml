@@ -146,12 +146,26 @@
  mod_job_wsg_moyu_per_pop:0 "每$VALUE$个人口§G+1§!个$job_wsg_moyu$职业"
  mod_job_wsg_moyu_per_pop_short:0 "每$VALUE$个人口§G+1§!个$job_wsg_moyu$职业"  
  
+ building_sunflower_temple:0 "向日葵神殿"
+ building_sunflower_temple_desc:0 "在过去，我们的每天会献祭数名被选中的向日葵来保持对神明的联系。现在有了这么一座巨大且庄严的神殿，我们的祭司终于可以在里面举行盛大的向日葵仪式，更为高效和正式的取悦神明以换取祝福。" 
+ job_wsg_sunflower_priest:0 "向日葵主教"
+ job_wsg_sunflower_priest_effect_desc:0 "£job_wsg_sunflower_priest£ $job_wsg_sunflower_priest_plural$ 消耗 £consumer_goods£ §Y$consumer_goods$§! 生产 £unity£ §Y$unity$§!和 £society£ §Y社会学研究§!"
+ mod_job_wsg_sunflower_priest_add:0 "向日葵主教职业"
+ job_wsg_sunflower_priest_plural:0 "向日葵主教职业"
+ job_wsg_sunflower_priest_desc:0 "只有从事过数十年向日葵献祭仪式的自身教徒才有资格成为主教，主持仪式。" 
+ 
  building_warshipgirl_assembly_plant:0 "港区一级建造器"
  building_warshipgirl_assembly_plant_desc:0 "在夕张博士的改造下，港区建造器能继续使用了。"
  building_warshipgirl_assembly_plantU:0 "港区二级建造器"
  building_warshipgirl_assembly_plantU_desc:0 "改进型的港区建造器，拥有更高效率。"
  building_warshipgirl_assembly_plantF:0 "港区三级建造器"
  building_warshipgirl_assembly_plantF_desc:0 "在NEO材料的帮助下，建造机将以难以想象的效率制造人口。"
+
+ building_warshipgirl_senergy_assembly_plantU:0 "building_warshipgirl_assembly_plantU"
+ building_warshipgirl_senergy_assembly_plantU_desc:0 "building_warshipgirl_assembly_plantU_desc"
+ building_warshipgirl_senergy_assembly_plantF:0 "$building_warshipgirl_assembly_plantF$"
+ building_warshipgirl_senergy_assembly_plantF_desc:0 "在严谨的工序下，即使是危险的深海能源核心也能大幅提升建造机的效率"
+ 
  building_wsg_yamato_monument:0 "大和纪念碑"
  building_wsg_yamato_monument_desc:0 "虽然大和隶属于深海，但她的光荣事迹和英勇的故事依然在舰娘社会中被广为流传。"
  building_wsg_autochthon_monument:0 "古神纪念碑"
@@ -198,6 +212,9 @@
  building_mining_zoo_desc:0 "可爱的外星萌宠会自动跳进坑洞来帮忙采矿，同时他们也可以作为猛兽为我们的星球防御做出贡献。"
  tech_wg_mining_zoo:0 "外星萌宠采矿站"
  tech_wg_mining_zoo_desc:0 "可爱的外星萌宠会自动跳进坑洞来帮忙采矿，同时他们也可以作为猛兽为我们的星球防御做出贡献。" 
+ building_wg_psi_temple:0 "古神灵庙"
+ building_wg_psi_temple_desc:0 "由一堆灵石用灵能力量塑造而成的奇特建筑，供信仰古神的舰娘在内祭拜。"
+ wg_psi_temple_desc:0 "每名舰娘在进入灵庙前需要过一次san check1/100"
  #############################深海建筑
  building_sh_assembly_plant:0 "深海制造器"
  building_sh_assembly_plant_desc:0 "深海天才博士发明的制造器，能高速生产深海舰娘。" 
@@ -258,6 +275,16 @@
  mod_job_sh_senergy_add:0 "深海能源核心生产者职业"
  job_sh_senergy_plural:0 "深海能源核心生产者职业"
  job_sh_senergy_desc:0 "即使再多的防护也难以保护员工的身体免受高强度射线的影响。" 
+
+ building_wsg_senergy_1:0 "深海能源核心工厂"
+ building_wsg_senergy_1_desc:0 "逆向破解了深海能源制备方法后建成的巨大工厂。\n虽然制备过程会产生巨大的辐射，但通过使用更厚重的保护使得辐射不会对周围造成影响。"
+ building_wsg_senergy2:0 "高级深海能源核心工厂"
+ building_wsg_senergy2_desc:0 "使用反重力技术将整座工厂搬到空中的同时，使用了更先进更轻但有同样保护效果的建材升级了整座工厂，进一步降低对环境的影响的同时能容纳更多工人。"
+ building_wsg_senergy3:0 "先进深海能源核心工厂"
+ building_wsg_senergy3_desc:0 "在第二代深海能源工厂的防护基础上重新布置整个工厂的空间和生产线，最优化了生产的效率和工人们的生产空间。"
+ job_wsg_senergy_effect_desc:0 "£job_sh_senergy£ $job_sh_senergy_plural$ 将 £energy£ §Y$energy$§! 和 £sr_pantsu£ §Y胖次§! 转化为 £sr_se£ §YAbyssal Energy Cores§!"
+ job_wsg_senergy:0 "深海能源核心生产者"
+ job_wsg_senergy_desc:0 "这些生产工人穿着最厚重的防御设备以进行危险的作业。他们即使在宇宙空间也能生存一段时间。" 
  
  job_sh_clerk_effect_desc:0 "£job_sh_clerk£ $job_sh_clerk_plural$ 生产少量的 £energy£ §Y$energy$§!"
  job_sh_clerk:0 "深海辅助者"
@@ -293,7 +320,7 @@
  building_wsg_victoria_barracks_desc:0 "教官胜利号的终极理想。结合了全球防御计划，这所军营能够以模拟战斗的方式训练地面部队，同时因为模拟战斗本身十分精彩，它也将在所在星球上培养尚武传统。。"
 
  building_wsg_elves_dormitory:0 "建造妖精宿舍"
- building_wsg_elves_dormitory_desc:0 "严格按照甲方要求设计并建造的建筑，在完工后零时决定将其作为港区妖精和制图狗的宿舍，我们依然能记得这一决定颁布后众人感激涕零的眼神。"
+ building_wsg_elves_dormitory_desc:0 "严格按照甲方要求设计并建造的建筑，在完工后临时决定将其作为港区妖精和制图狗的宿舍，我们依然能记得这一决定颁布后众人感激涕零的眼神。"
 
  job_wsg_blueprinting_dog_effect_desc:0 "£job_wsg_blueprinting_dog $job_wsg_blueprinting_dog$生产 £engineering §Y工程学研究§!，且加快§Y星球建造速度§!和§Y星球决议颁布速度§!。"
  job_wsg_blueprinting_dog:0 "画图狗"
@@ -328,3 +355,9 @@
  job_wsg_historical_researcher_desc:0 "跟随加纳里亚斯研习历史的科研人员。正所谓“以史为镜，可以知兴替”，只有懂得吸取过去的教训才能将国家建设得更好。"
  mod_job_wsg_historical_researcher_add:0 "$job_wsg_historical_researcher$职业"
  mod_planets_society_research_produces_mult:0 "每月社会学研究"
+ 
+ job_wsg_shop_pantsu_collector:0 "胖次收集者"
+ mod_job_wsg_shop_pantsu_collector_add:0 "胖次收集者职业"
+ job_wsg_shop_pantsu_collector_plural:0 "胖次收集者职业"
+ job_wsg_shop_pantsu_collector_desc:0 "众所周知，战利品商店的资源储存的方式极为绿皮，大量的胖次被随意的丢在地上，仅仅需要简单的收集就可以大赚一笔。"
+ job_wsg_shop_pantsu_collector_effect_desc:0 "从虚空中获得£sr_pantsu£ §Y胖次§!"

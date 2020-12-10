@@ -13,6 +13,14 @@ country_event ={
 				set_country_flag = f_wsg_country
 			}
 		}
+		every_country = {
+			limit = {
+				has_wg_special_authority = yes
+				is_ai = no
+			} # 防机械叛乱
+			set_country_flag = no_machine_uprising
+			set_country_flag = synth_detector
+		}
 		# ??mod??flag
 		set_global_flag = has_wsg_mod
 	}
@@ -57,6 +65,8 @@ country_event = {
 			modifier = wg_ai_base
 			days = -1
 		}
+		set_country_flag = no_machine_uprising
+		set_country_flag = synth_detector
 	}
 }
 
@@ -132,7 +142,47 @@ country_event = {
 		}		
 	}
 }
-
+country_event = {
+	id = wsg.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_civic = civic_sunflower
+	}
+	immediate = {	
+		random_owned_planet = {
+			limit = {
+				is_capital = yes
+			}
+			set_planet_flag = sunflower_lv1
+			set_planet_flag = sunflower_lv2
+			add_building = building_sunflower_temple
+			create_species = {
+				name = "NAME_xie_sunflower"
+				class = PLANT
+				portrait = wsg9993
+				traits = {
+					trait = trait_wg_sunflower
+				}
+				homeworld = this
+				effect = {
+					save_global_event_target_as = wsg_sunflowe_species
+				}				
+			}
+			while = {
+				count = 3
+				#limit = { free_housing > 0 }
+				create_pop = {
+					species = event_target:wsg_sunflowe_species
+				}				
+			}
+			add_modifier = {
+				modifier = planet_wg_sunflower2
+				days = -1
+			}
+		}
+	}
+}
 country_event = {
 	id = wsg.4
 	hide_window = yes
@@ -240,10 +290,19 @@ country_event = {
 	show_sound = event_the_great_awakening
 	
 	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = wg_psi_country }
+	}
 
 	immediate = {
 		every_owned_pop = {
-			limit = { has_trait = wsg_trait_warshipgirls }
+			limit = { 
+				has_trait = wsg_trait_warshipgirls 
+				NOR = {
+					has_trait = wsg_trait_warshipgirls1
+					has_trait = wsg_trait_warshipgirls2
+				}
+			}
 			modify_species = {
 				species = prev
 				remove_trait = wsg_trait_warshipgirls
@@ -346,6 +405,7 @@ country_event = {
 		from = {
 			species ={ has_trait = wsg_trait_warshipgirls1}
 		}
+		NOT = { has_ascension_perk = wsg_project_s }
 	}
 
 	immediate = {
@@ -373,6 +433,7 @@ country_event = {
 			has_country_flag = wsg_project_r
 			from = { has_ruler_trait = leader_trait_ruler_warshipgirls }
 		}
+		NOT = { has_ascension_perk = wsg_project_s }
 	}
 
 	immediate = {
@@ -500,7 +561,13 @@ country_event = {
 
 	immediate = {
 		every_owned_pop = {
-			limit = { has_trait = wsg_trait_warshipgirls }
+			limit = { 
+				has_trait = wsg_trait_warshipgirls 
+				NOR = {
+					has_trait = wsg_trait_warshipgirls1
+					has_trait = wsg_trait_warshipgirls2
+				}
+			}
 			modify_species = {
 				species = prev
 				remove_trait = wsg_trait_warshipgirls
@@ -527,10 +594,18 @@ country_event = {
 	show_sound = event_the_great_awakening
 	
 	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = wg_psi_country }
+	}
 
 	immediate = {
 		every_owned_pop = {
-			limit = { has_trait = wsg_trait_warshipgirls1 }
+			limit = { 
+				has_trait = wsg_trait_warshipgirls1 
+				NOT = {
+					has_trait = wsg_trait_warshipgirls2
+				}
+			}
 			modify_species = {
 				species = prev
 				add_trait = wsg_trait_mist
@@ -543,7 +618,6 @@ country_event = {
 	option = {
 		name = "wsg.2001.a"
 		hidden_effect = {
-			capital_scope = { planet_event = { id = wsg.3049 }}
 			every_owned_leader = {
 				limit = {
 					OR = {
@@ -726,6 +800,199 @@ country_event = {
 				governor = { add_trait = leader_trait_governor_mist }
 				scientist = { add_trait = leader_trait_scientist_mist }
 				ruler = { add_trait = leader_trait_ruler_mist }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wsg.2012
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { 
+			exists = FROM
+			is_ship_size = wsg_colonizer
+		} 
+	}
+
+	immediate = {
+		remove_modifier = wsg_colony_development
+		add_modifier = {
+			modifier = wsg_colony_development
+			days = 1080
+		}
+		add_deposit = d_bomb_crater
+	}
+}
+
+# 第二路线飞升
+country_event = {
+	id = wsg.2101
+	title = "wsg.2101.name"
+	desc = "wsg.2101.desc"
+	picture = GFX_evt_wsg_no_video
+	show_sound = event_the_great_awakening
+	
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = wg_psi_country }
+	}
+
+	immediate = {
+		every_owned_pop = {
+			limit = { 
+				has_trait = wsg_trait_warshipgirls1 
+				NOR = {
+					has_trait = wsg_trait_warshipgirls
+					has_trait = wsg_trait_warshipgirls2
+				}
+			}
+			modify_species = {
+				species = prev
+				remove_trait = wsg_trait_warshipgirls1
+				add_trait = wsg_trait_warshipgirls2
+			}
+			species = { save_event_target_as = wsg_species }
+		}
+		change_dominant_species = { species = event_target:wsg_species change_all = yes }
+	}
+	
+	option = {
+		name = "wsg.2101.a"
+		hidden_effect = {
+			every_owned_leader = {
+				limit = {
+					OR = {
+						is_same_species = event_target:wsg_species
+						is_wg_leader = yes
+					}
+					NOR = {
+						has_trait =	leader_trait_admiral_warshipgirls2
+						has_trait =	leader_trait_governor_Ella
+						has_trait =	leader_trait_general_warshipgirls2
+						has_trait =	leader_trait_governor_warshipgirls2
+						has_trait =	leader_trait_scientist_warshipgirls2
+						has_trait =	leader_trait_ruler_warshipgirls2
+					}
+					has_sh_traits = no
+				}
+				remove_ruler_trait = leader_trait_ruler_warshipgirls
+				add_ruler_trait = leader_trait_ruler_warshipgirls2
+				switch = {
+					trigger = leader_class
+					admiral = {
+						remove_trait = leader_trait_admiral_warshipgirls
+						add_trait = leader_trait_admiral_warshipgirls2
+					}
+					general = {
+						remove_trait = leader_trait_general_warshipgirls
+						add_trait = leader_trait_general_warshipgirls2
+					}
+					governor = {
+						remove_trait = leader_trait_governor_warshipgirls
+						add_trait = leader_trait_governor_warshipgirls2
+					}
+					scientist = {
+						remove_trait = leader_trait_scientist_warshipgirls
+						add_trait = leader_trait_scientist_warshipgirls2
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = set_lex_as_ruler }
+				ruler = {
+					set_age = 17
+					change_leader_portrait = wsg29_3
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
+						is_same_species = event_target:wsg_species
+						has_leader_flag = wsg_event_leader
+					}
+					NOR = {
+						has_trait = leader_trait_admiral_warshipgirls2
+						has_trait = leader_trait_general_warshipgirls2
+						has_trait = leader_trait_governor_warshipgirls2
+						has_trait = leader_trait_scientist_warshipgirls2
+						has_trait = leader_trait_ruler_warshipgirls2
+					}
+				}
+				add_ruler_trait = leader_trait_ruler_warshipgirls2
+				switch = {
+					trigger = leader_class
+					admiral = {
+						remove_trait = leader_trait_admiral_warshipgirls
+						add_trait = leader_trait_admiral_warshipgirls2
+					}
+					general = {
+						remove_trait = leader_trait_general_warshipgirls
+						add_trait = leader_trait_general_warshipgirls2
+					}
+					governor = {
+						remove_trait = leader_trait_governor_warshipgirls
+						add_trait = leader_trait_governor_warshipgirls2
+					}
+					scientist = {
+						remove_trait = leader_trait_scientist_warshipgirls
+						add_trait = leader_trait_scientist_warshipgirls2
+					}
+				}
+			}
+			# country_event={ id = wsg.2002}
+		}
+	}
+}
+
+country_event = {
+	id = wsg.2110
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = wsg_trait_warshipgirls2 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			add_ruler_trait = leader_trait_ruler_warshipgirls2
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_warshipgirls2 }
+				general = { add_trait = leader_trait_general_warshipgirls2 }
+				governor = { add_trait = leader_trait_governor_warshipgirls2 }
+				scientist = { add_trait = leader_trait_scientist_warshipgirls2 }
+			}
+		}
+	}
+}
+country_event = {
+	id = wsg.2111
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		AND = {
+			has_country_flag = wsg_warshipgirls2
+			from = { has_ruler_trait = leader_trait_ruler_warshipgirls2 }
+		}
+	}
+
+	immediate = {
+		from = { 
+			add_ruler_trait = leader_trait_ruler_warshipgirls2
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_warshipgirls2 }
+				general = { add_trait = leader_trait_general_warshipgirls2 }
+				governor = { add_trait = leader_trait_governor_warshipgirls2 }
+				scientist = { add_trait = leader_trait_scientist_warshipgirls2 }
+				ruler = { add_trait = leader_trait_ruler_warshipgirls2 }
 			}
 		}
 	}

@@ -5,7 +5,6 @@ wsg_trait_ring={
 	icon="gfx/interface/icons/traits/ring.dds"
 	modifier={
 	}
-	opposites = {}
 }
 wsg_trait_warshipgirls={
 	cost=2
@@ -20,10 +19,9 @@ wsg_trait_warshipgirls={
 		pop_environment_tolerance = 0.4
 		pop_growth_speed=-0.2
 		pop_assembly_speed = 0.2
-		pop_demotion_time_mult = -1
+		pop_demotion_time_mult = -0.5
 		planet_jobs_engineering_research_produces_mult = 0.15
 	}
-	opposites = {}
 }
 
 wsg_trait_warshipgirls1={
@@ -41,10 +39,9 @@ wsg_trait_warshipgirls1={
 	modifier={
 		pop_environment_tolerance = 0.4
 		pop_assembly_speed = 0.2
-		pop_demotion_time_mult = -1
+		pop_demotion_time_mult = -0.5
 		planet_jobs_engineering_research_produces_mult = 0.20
 	}
-	opposites = {}
 }
 
 trait_intelligent_galo ={
@@ -58,13 +55,12 @@ trait_intelligent_galo ={
 	modifier={
 		pop_environment_tolerance = 0.5
 		pop_growth_speed = 0.10
-		pop_demotion_time_mult = -1
+		pop_demotion_time_mult = -0.5
 		planet_jobs_energy_produces_mult = 0.05
 		planet_jobs_minerals_produces_mult = 0.15
 		planet_jobs_food_produces_mult = 0.15
 		planet_livestock_food_produces_add = 4
 	}
-	opposites = { }
 }
 trait_wg_sunflower ={
 	cost = 2
@@ -82,7 +78,6 @@ trait_wg_sunflower ={
 		planet_livestock_food_produces_add = 2
 		planet_livestock_energy_produces_add = 5
 	}
-	opposites = { }
 }
 wsg_trait_GALO={
 	cost=1
@@ -105,7 +100,6 @@ wsg_trait_mind_control={
 		country_leader_pool_size = 1
 		planet_jobs_unity_produces_mult = 0.1
 	}
-	opposites = {}
 }
 wsg_trait_Vodka={
 	cost=1
@@ -117,7 +111,6 @@ wsg_trait_Vodka={
 		country_war_exhaustion_mult = -0.1
 		army_damage_mult = 0.3	
 	}
-	opposites = {}
 }
 wsg_trait_flowermaid={
 	cost=1
@@ -128,7 +121,6 @@ wsg_trait_flowermaid={
 		pop_amenities_usage_mult = -0.1
 		pop_happiness = 0.1
 	}
-	opposites = {}
 }
 
 wsg_trait_Epolicy={
@@ -141,7 +133,6 @@ wsg_trait_Epolicy={
 		edicts_cost_mult = -0.10
 		planet_decision_enact_speed_mult = 0.05
 	}
-	opposites = {}
 }
 wsg_trait_alloys = {
 	cost = 1
@@ -153,6 +144,7 @@ wsg_trait_alloys = {
 		pop_category_rulers_alloys_produces_add = 0.1
 		pop_category_specialists_alloys_produces_add = 0.1
 		pop_category_workers_alloys_produces_add = 0.1
+		pop_category_slave_alloys_produces_add = 0.1
 	}	
 	slave_cost = {
 		energy = 100
@@ -167,7 +159,6 @@ wsg_trait_satellite={
 		pop_growth_speed = 0.20
 		planet_jobs_worker_produces_mult = 0.05
 	}
-	opposites = {}
 }
 wsg_trait_overtime={
 	cost=2
@@ -177,7 +168,7 @@ wsg_trait_overtime={
 	modifier={
 		planet_jobs_produces_mult = 0.05
 	}
-	opposites = {}
+	opposites = { "wsg_trait_extreme_efficient" }
 }
 
 wsg_trait_agrarian = {
@@ -229,7 +220,6 @@ wsg_trait_tasty_food={
 		planet_pops_food_upkeep_mult = -0.10
 		pop_amenities_usage_no_happiness_mult = -0.1
 	}
-	opposites = {}
 }
 wsg_trait_Nelson={
 	cost=2
@@ -242,7 +232,6 @@ wsg_trait_Nelson={
 		ship_anomaly_generation_chance_mult = 0.10
 		ship_anomaly_research_speed_mult = 0.10
 	}
-	opposites = {}
 }
 wsg_trait_Dbed={
 	cost=2
@@ -253,12 +242,11 @@ wsg_trait_Dbed={
 		ships_upkeep_mult = -0.1
 		country_naval_cap_mult = 0.20
 	}
-	opposites = {}
 }
 wsg_trait_knowledgeable={
 	cost=3
 	allowed_archetypes={WARSHIPGIRL}
-	opposites = { "wsg_trait_0v0" "wsg_trait_alpha" }
+	opposites = { "wsg_trait_0v0" "wsg_trait_alpha" "wsg_trait_knowledgeable2" }
 	sorting_priority = 30
 	icon="gfx/interface/icons/traits/knowledgeable.dds"
 	modifier={
@@ -268,7 +256,6 @@ wsg_trait_knowledgeable={
 		species_leader_exp_gain = 0.25
 		num_tech_alternatives_add = 1
 	}
-	opposites = {}
 }
 
 wsg_trait_coffee={
@@ -302,7 +289,6 @@ wsg_trait_chair={
 	modifier={
 		pop_housing_usage_mult = 0.1
 	}
-	opposites = {}
 }
 
 
@@ -314,7 +300,6 @@ wsg_trait_diving={
 	modifier={
 		army_health = -0.1
 	}
-	opposites = {}
 }
 
 wsg_trait_surrender={
@@ -338,7 +323,6 @@ wsg_trait_game={
 		planet_jobs_produces_mult = -0.05
 		pop_resettlement_cost_mult = 0.2
 	}
-	opposites = {}
 }
 
 wsg_trait_block={
@@ -349,7 +333,6 @@ wsg_trait_block={
 	modifier={
         pop_growth_speed = -0.20
 	}
-	opposites = {}
 }
 
 wsg_trait_missile={
@@ -361,7 +344,6 @@ wsg_trait_missile={
 		pop_housing_usage_mult = 0.1
 		pop_amenities_usage_no_happiness_mult = 0.1
 	}
-	opposites = {}
 }
 wsg_trait_gugu={
 	cost=-3
@@ -371,7 +353,6 @@ wsg_trait_gugu={
 	modifier={
 		planet_jobs_produces_mult = -0.1
 	}
-	opposites = {}
 }
 wsg_trait_mist={
 	cost=0
@@ -387,7 +368,6 @@ wsg_trait_mist={
 		pop_environment_tolerance = 2.0
 		planet_pops_organics_food_upkeep_mult = -0.5
 	}
-	opposites = {}
 }
 
 wsg_trait_neo = {
@@ -395,7 +375,6 @@ wsg_trait_neo = {
 	initial = no
 	randomized = no
 	#advanced_trait = yes
-	opposites = {}
 	icon="gfx/interface/icons/traits/neo.dds"
 	allowed_archetypes = { WARSHIPGIRL }
 	prerequisites = { tech_wsg_genetic_resequencing }
@@ -410,7 +389,6 @@ wsg_trait_np = {
 	initial = no
 	randomized = no
 	#advanced_trait = yes
-	opposites = {}
 	icon="gfx/interface/icons/traits/np.dds"
 	allowed_archetypes = { WARSHIPGIRL }
 	prerequisites = { tech_wsg_genetic_resequencing }
@@ -426,7 +404,6 @@ wsg_trait_muno = {
 	initial = no
 	randomized = no
 	#advanced_trait = yes
-	opposites = { }
 	icon="gfx/interface/icons/traits/muno.dds"
 	allowed_archetypes = { WARSHIPGIRL }
 	prerequisites = { tech_wsg_genetic_resequencing }
@@ -464,6 +441,7 @@ wsg_trait_consumer_goods = {
 		pop_category_rulers_consumer_goods_produces_add = 0.2
 		pop_category_specialists_consumer_goods_produces_add = 0.2
 		pop_category_workers_consumer_goods_produces_add = 0.2
+		pop_category_slave_consumer_goods_produces_add = 0.2
 		
 	}
 
@@ -493,7 +471,6 @@ wsg_trait_125={
 		starbase_shipyard_build_cost_mult = 0.05
 		starbase_shipyard_build_speed_mult = 0.20
 	}
-	opposites = {}
 }
 wsg_trait_615={
 	cost=0
@@ -505,5 +482,110 @@ wsg_trait_615={
 		starbase_shipyard_build_cost_mult = -0.05
 		starbase_shipyard_build_speed_mult = -0.20
 	}
-	opposites = {}
+}
+
+wsg_trait_warshipgirls2={
+	cost=0
+	
+	improves_leaders = yes
+	initial = no
+	randomized = no
+	modification = no
+	advanced_trait = yes
+	allowed_archetypes={WARSHIPGIRL}
+	sorting_priority = 30
+	immortal_leaders = yes
+	icon="gfx/interface/icons/traits/wgtraits3.dds"
+	custom_tooltip = TRAIT_WSG_2_EFFECT
+	modifier={
+		pop_environment_tolerance = 2.0
+		pop_demotion_time_mult = -1.0
+		pop_assembly_speed = 0.15
+		planet_jobs_produces_mult = 0.2
+		pop_category_rulers_sr_se_produces_add = -0.02
+		pop_category_specialists_sr_se_produces_add = -0.02
+		pop_category_workers_sr_se_produces_add = -0.02
+		pop_category_slave_sr_se_produces_add = -0.02
+	}
+}
+
+wsg_trait_mass_assembly = {
+	cost = 4
+	initial = no
+	randomized = no
+	#advanced_trait = yes
+	icon="gfx/interface/icons/traits/wg_assembly2.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	prerequisites = { "tech_wsg_senergy_implantation" }
+	custom_tooltip = TRAIT_WSG_ASSEMBLY_EFFECT
+	modifier = {
+		pop_assembly_speed = 0.4
+		pop_category_rulers_sr_se_produces_add = -0.02
+		pop_category_specialists_sr_se_produces_add = -0.02
+		pop_category_workers_sr_se_produces_add = -0.02
+		pop_category_slave_sr_se_produces_add = -0.02
+	}
+}
+
+wsg_trait_extreme_efficient = {
+	cost = 4
+	initial = no
+	randomized = no
+	#advanced_trait = yes
+	opposites = { "wsg_trait_overtime"  }
+	icon = "gfx/interface/icons/traits/wg_extreme_efficient.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	custom_tooltip = TRAIT_WSG_EXEFFICIENT_EFFECT
+	prerequisites = { "tech_wsg_senergy_implantation" }
+	modifier = {
+		planet_jobs_produces_mult = 0.20
+		pop_category_rulers_sr_se_produces_add = -0.03
+		pop_category_specialists_sr_se_produces_add = -0.03
+		pop_category_workers_sr_se_produces_add = -0.03
+		pop_category_slave_sr_se_produces_add = -0.03
+	}
+}
+
+wsg_trait_galatic_engineer = {
+	cost = 4
+	initial = no
+	randomized = no
+	#advanced_trait = yes
+	icon = "gfx/interface/icons/traits/wg_galatic_engineer.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	prerequisites = { "tech_wsg_senergy_implantation" }
+	custom_tooltip = TRAIT_WSG_ENGINEER_EFFECT
+	modifier = {
+		terraform_speed_mult = 0.5
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+		planet_building_build_speed_mult = 0.5
+		pop_category_rulers_sr_se_produces_add = -0.03
+		pop_category_specialists_sr_se_produces_add = -0.03
+		pop_category_workers_sr_se_produces_add = -0.03
+		pop_category_slave_sr_se_produces_add = -0.03
+	}
+}
+
+wsg_trait_knowledgeable2 = {
+	cost = 4
+	initial = no
+	randomized = no
+	#advanced_trait = yes
+	opposites = { "wsg_trait_knowledgeable" }
+	icon = "gfx/interface/icons/traits/knowledgeable2.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	prerequisites = { "tech_wsg_senergy_implantation" }
+	custom_tooltip = TRAIT_WSG_KNOWLEDGEABLE_EFFECT
+	modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.4
+		planet_jobs_physics_research_produces_mult = 0.4
+		planet_jobs_society_research_produces_mult = 0.4
+		species_leader_exp_gain = 0.5
+		num_tech_alternatives_add = 2
+		pop_category_rulers_sr_se_produces_add = -0.03
+		pop_category_specialists_sr_se_produces_add = -0.03
+		pop_category_workers_sr_se_produces_add = -0.03
+		pop_category_slave_sr_se_produces_add = -0.03
+	}
 }

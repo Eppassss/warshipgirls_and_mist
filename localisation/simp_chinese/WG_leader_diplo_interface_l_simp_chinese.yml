@@ -12,3 +12,7 @@
  already_has_wsg_gray_diplo:0 "已开启与灰风的对话窗口"
  already_has_wsg_shimakaze_diplo:0 "已开启与岛风的对话窗口"
  already_has_wsg_bubbles_diplo:0 "已开启与泡泡的对话窗口"
+ portrait_locked:0 "剧情锁定"
+ wsglady_cloth_01_unlock_tooltip:0 "通过4级好感度事件第二路线解锁"
+ wsglady_cloth_02_unlock_tooltip:0 "通过3级好感度“情人节”事件解锁"
+ change_cloth:0 "更换服装"

@@ -72,7 +72,7 @@ create_wg_Khan_fleet_1 = {
 		BB1_Min = 1 BB1_Num = 1
 		BB1E_Min = 1 BB1E_Num = 1 GRAPHICS1E = "reptilian_01"
 		BB2_Num = 3
-		BB3_Min = 2 BB3_Num = 4 GRAPHICS3 = "avian_01"
+		BB3_Min = 1 BB3_Num = 3 GRAPHICS3 = "avian_01"
 		DD_Min = 5 DD_Num = 2 GRAPHICS_DD = "arthropoid_01"
 		CA_Min = 2 CA_Num = 1 GRAPHICS_DD2 = "reptilian_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
@@ -98,7 +98,7 @@ create_wg_Khan_fleet_2 = {
 		Champion_Min = 5 Champion_Num = 1
 		CaraDD_Min = 4 CaraDD_Num = 4
 		Haters_CL_Min = 8 Haters_CL_Num = 5
-		Haters_VE_Min = 10 Haters_VE_Num = 10
+		Haters_VE_Min = 5 Haters_VE_Num = 5
 	}
 }
 
@@ -164,8 +164,8 @@ create_wg_Khan_fleet_6 = {
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 15 Outrider_Num = 5
-		Champion_Min = 15 Champion_Num = 5
+		Outrider_Min = 10 Outrider_Num = 5
+		Champion_Min = 10 Champion_Num = 5
 		CaraDD_Min = 8 CaraDD_Num = 10
 		Haters_CL_Min = 6 Haters_CL_Num = 10
 		Haters_VE_Min = 2 Haters_VE_Num = 8
@@ -184,7 +184,7 @@ create_wg_Khan_fleet_7 = {
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 10 Outrider_Num = 5
+		Outrider_Min = 5 Outrider_Num = 5
 		Champion_Min = 10 Champion_Num = 5
 		CaraDD_Min = 2 CaraDD_Num = 2
 		Haters_CL_Min = 5 Haters_CL_Num = 5
@@ -203,7 +203,7 @@ create_wg_Khan_fleet_8 = {
 		CA_Min = 1 CA_Num = 1 GRAPHICS_CA = "fungoid_01"
 		DD2_Min = 8 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 
-		Outrider_Min = 20 Outrider_Num = 10
+		Outrider_Min = 15 Outrider_Num = 5
 		Champion_Min = 10 Champion_Num = 5
 		CaraDD_Min = 5 CaraDD_Num = 1
 		Haters_CL_Min = 5 Haters_CL_Num = 5
@@ -299,7 +299,7 @@ create_wg_Khan_fleet_14 = {
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
 		Outrider_Min = 10 Outrider_Num = 5
-		Champion_Min = 20 Champion_Num = 5
+		Champion_Min = 15 Champion_Num = 5
 		CaraDD_Min = 2 CaraDD_Num = 2
 		Haters_CL_Min = 5 Haters_CL_Num = 5
 		Haters_VE_Min = 5 Haters_VE_Num = 5
@@ -317,7 +317,7 @@ create_wg_Khan_fleet_15 = {
 		CA_Min = 3 CA_Num = 3 GRAPHICS_CA = "humanoid_01"
 		DD2_Min = 2 DD2_Num = 2 GRAPHICS_DD2 = "molluscoid_01"
 		CA2_Min = 1 CA2_Num = 1 GRAPHICS_CA2 = "plantoid_01"
-		Outrider_Min = 40 Outrider_Num = 10
+		Outrider_Min = 30 Outrider_Num = 5
 	}
 }
 
@@ -329,7 +329,7 @@ create_wg_Khan_fleet_random_1 = {
 			create_WG_Khan_CA = { CA_Min=5 CA_Num=10 GRAPHICS="reptilian_01" DIFF_MULT = 1 }
 			create_WG_Khan_CA = { CA_Min=5 CA_Num=5 GRAPHICS="plantoid_01" DIFF_MULT = 1 }
 			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="arthropoid_01" DIFF_MULT = 1 }
-			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=5 DD_Num=5 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
 			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=30 CaraDD_Num=30 DIFF_MULT = 1 }
 			set_fleet_flag = khan_fleet
 			set_location = event_target:khan_star_destroyer_fleet
@@ -356,7 +356,7 @@ create_wg_Khan_fleet_random_2 = {
 			create_WG_Khan_BB1 = { BB1_Min=2 BB1_Num=1 GRAPHICS="humanoid_01" DIFF_MULT = 1 }
 			create_WG_Khan_BB3 = { BB3_Min=2 BB3_Num=1 GRAPHICS="arthropoid_01" DIFF_MULT = 1 }
 			create_WG_Khan_DD = { DD_Min=5 DD_Num=10 GRAPHICS="mammalian_01" DIFF_MULT = 1 }
-			create_WG_Khan_DD = { DD_Min=15 DD_Num=10 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
+			create_WG_Khan_DD = { DD_Min=10 DD_Num=10 GRAPHICS="molluscoid_01" DIFF_MULT = 1 }
 			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=30 CaraDD_Num=30 DIFF_MULT = 1 }
 			create_WG_Khan_Haters_Cruiser = { Haters_CL_Min=3 Haters_CL_Num=7 DIFF_MULT = 1 }
 			create_WG_Khan_Haters_Corvette = { Haters_VE_Min=8 Haters_VE_Min=12 DIFF_MULT = 1 }
@@ -438,7 +438,7 @@ create_wg_Khan_fleet_random_5 = {
 			create_WG_Khan_DD = { DD_Min=10 DD_Num=20 GRAPHICS="reptilian_01" DIFF_MULT = 1 }
 			create_WG_Khan_Outrider = { Outrider_Min=10 Outrider_Num=20 DIFF_MULT = 1 }
 			create_WG_Khan_Haters_Corvette = { Haters_VE_Min=10 Haters_VE_Min=40 DIFF_MULT = 1 }
-			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=10 CaraDD_Num=40 DIFF_MULT = 1 }
+			create_WG_Khan_Cara_Destroyer = { CaraDD_Min=10 CaraDD_Num=30 DIFF_MULT = 1 }
 			set_fleet_flag = khan_fleet
 			set_location = event_target:khan_star_destroyer_fleet
             set_fleet_stance = aggressive

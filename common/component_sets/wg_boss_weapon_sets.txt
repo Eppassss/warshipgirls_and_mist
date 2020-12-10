@@ -166,3 +166,88 @@ component_set = {
 	icon = "GFX_wsg_weapen_H_CAT"
 	icon_frame = 1	
 }
+#灰风
+component_set = {
+	key = "wg_gray_t"
+	
+	icon = "GFX_wg_gray_t"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_l"
+	
+	icon = "GFX_wg_gray_l"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_g"
+	
+	icon = "GFX_wg_gray_g"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_h"
+	
+	icon = "GFX_wg_gray_h"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_p"
+	
+	icon = "GFX_wg_gray_p"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_ia"
+	
+	icon = "GFX_wg_gray_ia"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_jump"
+	
+	icon = "GFX_wg_gray_jump"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_thruster"
+	
+	icon = "GFX_wg_gray_thruster"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_reactor"
+	
+	icon = "GFX_wg_gray_reactor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "wg_gray_sensor"
+	
+	icon = "GFX_wg_gray_sensor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "PSI_weapon_127"
+	
+	icon = "GFX_psi_weapon_127"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "PSI_weapon_330"
+	
+	icon = "GFX_psi_weapon_330"
+	icon_frame = 1	
+}
+

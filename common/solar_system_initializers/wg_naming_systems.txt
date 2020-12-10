@@ -20,7 +20,7 @@ wg_naming_ship_system = {
 			create_fleet = {
 				name = "WSG_PLAYER_DEFAULT_NICKNAME"
 				effect = {
-					set_owner = event_target:global_event_country
+					set_owner = event_target:wsg_lady_country
 					create_ship = {
 						name = "NAMING_SHIP"
 						design = "NAME_wg_naming_ship"
@@ -29,6 +29,7 @@ wg_naming_ship_system = {
 					set_fleet_flag = wsg_player_default_nickname
 					set_location = prev
 					save_global_event_target_as = wsg_player_default_nickname
+					save_global_event_target_as = wsg_player_nickname
 				}
 				settings = {
 					can_upgrade = no 

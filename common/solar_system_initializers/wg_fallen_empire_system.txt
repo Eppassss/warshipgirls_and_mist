@@ -47,19 +47,50 @@ wg_fallen_empire_capital_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
+			
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
 			while = {
 				count = 8
 				add_district = district_rw_sh_city
 			}
 
 			while = {
-				count = 90
+				count = 50
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 90
+				count = 50
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -132,18 +163,48 @@ wg_fallen_empire_capital_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
 			while = {
 				count = 8
 				add_district = district_rw_sh_city
 			}
 			while = {
-				count = 60
+				count = 40
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 60
+				count = 40
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -202,18 +263,48 @@ wg_fallen_empire_capital_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
 			while = {
 				count = 8
 				add_district = district_rw_sh_city
 			}
 			while = {
-				count = 60
+				count = 30
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 60
+				count = 30
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -282,18 +373,48 @@ wg_fallen_empire_capital_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
 			while = {
 				count = 8
 				add_district = district_rw_sh_city
 			}
 			while = {
-				count = 60
+				count = 30
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 60
+				count = 30
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -415,18 +536,38 @@ wg_fallen_empire_colony_1_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
-			while = {
-				count = 25
-				add_district = district_city
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
 			}
 			while = {
-				count = 50
+				count = 25
+				add_district = district_sh_city
+			}
+			while = {
+				count = 20
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 50
+				count = 20
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -530,18 +671,38 @@ wg_fallen_empire_colony_2_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
-			while = {
-				count = 20
-				add_district = district_city
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
 			}
 			while = {
-				count = 40
+				count = 20
+				add_district = district_sh_city
+			}
+			while = {
+				count = 15
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 40
+				count = 15
 				create_pop = {
 					species = event_target:fe_species_sh
 				}
@@ -644,18 +805,34 @@ wg_fallen_empire_colony_3_system = {
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
 			add_building = building_wg_fe_foundry
-			while = {
-				count = 20
-				add_district = district_city
+			
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
+			}
+			create_army = {
+				name = "sentinel_army"
+				owner = event_target:wg_fallen_empire
+				type = "Khan_galodam"
 			}
 			while = {
-				count = 40
+				count = 20
+				add_district = district_sh_city
+			}
+			while = {
+				count = 15
 				create_pop = {
 					species = event_target:fe_species_wsg
 				}
 			}
 			while = {
-				count = 40
+				count = 15
 				create_pop = {
 					species = event_target:fe_species_sh
 				}

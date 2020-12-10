@@ -1,5 +1,4 @@
 ﻿l_simp_chinese:
- HIVE_MIND_NO_FACTIONS:0 "§R这种物种不会产生派系。§!"
 ###############################
  wsg_hidden_capital:0 "舰娘隐藏首都"
  wsg_hidden_capital_DESC:0 "现在我们的高级行政人员可以在这个隐藏的小行星基地里发号施令且不受上游一号的威胁。"
@@ -27,9 +26,9 @@
  sm_wsgshipyard:0 "轨道船坞连模块"
  sm_wsgshipyard_desc:0 "一个用于与轨道站连接的装置，一旦建成便可动用轨道站上的船坞进行生产。"
  
- requires_only_one_in_system:0 "一个星系只能建造一个巨型轨道站"
- requires_colonizeable_planet:0 "必须是已经殖民的星球"
- requires_maximum_eight:0 "最多拥有8个巨型轨道站"
+ requires_only_one_in_system:0 "$TRIGGER_FAIL$一个星系只能建造一个巨型轨道站"
+ requires_colonizeable_planet:0 "$TRIGGER_FAIL$必须是已经殖民的星球"
+ requires_maximum_eight:0 "$TRIGGER_FAIL$最多拥有8个巨型轨道站"
  ############
  wg_space_mine_0:0 "星系水雷布置器基址"
  wg_space_mine_0_DESC:0 "巨大的星系水雷布置器基址，一旦彻底完成，它能确保5年内没有任何飞船可以穿过这个星系。"
@@ -37,8 +36,8 @@
  wg_space_mine_1_DESC:0 "大量且无法察觉的水雷已经布置在这个星系的每一个角落，每个月水雷布置器就会对过期的水雷进行一次补充。任何试图穿越的飞船都会被摧毁，无论它们是有意还是无意的。"
  wg_space_mine_0_MEGASTRUCTURE_DETAILS:0 "一个能创造无法逾越的星际长城的设施，一旦完成没有任何飞船可以穿越这个星系。"
  
- requires_only_one_in_system:0 "一个星系只能建造一个巨型轨道站"
- requires_colonizeable_planet:0 "必须是已经殖民的星球"
+ requires_only_one_in_system:0 "$TRIGGER_FAIL$一个星系只能建造一个巨型轨道站"
+ requires_colonizeable_planet:0 "$TRIGGER_FAIL$必须是已经殖民的星球"
  ############
  scout_UAV:0 "攻击无人机"
  scout_UAV_section:0 "轻型侦察无人机"
@@ -147,5 +146,21 @@
  trade_conversion_scarce_resource_name:0 "$trade_policy_scarce_resource$"
  trade_policy_scarce_resource_desc:0 "稀有资源往往不易储存和远距离运输，但随着科技的进步，即使是最低级的运输船也可以安全的运载这些稀有的资源。\n\n§E所获得的每个£trade_value£ §Y贸易值§!会贡献£exotic_gases£ §Y0.02§! £volatile_motes£ §Y0.02§! £rare_crystals£ §Y0.02§!\n§H该政策可以和原版贸易政策叠加§!" 
  
+ wg_psi_dyson_sphere:0 "灵能戴森球"
+ wg_psi_dyson_sphere_DESC:0 "构造奇特的灵能戴森球，其原理未知，恒星的部分能量似乎会被其输送到虚境的并被转化为矿物并返回物质世界。"
+ wg_psi_dyson_sphere_MEGASTRUCTURE_DETAILS:0 "构造奇特的灵能戴森球，其原理未知，恒星的部分能量似乎会被其输送到虚境的并被转化为矿物并返回物质世界。"
+ WG_PSIONIC_WORMHOLE:0 "灵能虫洞"
+ wg_psionic_wormhole:0 "灵能虫洞"
+ WG_PSIONIC_WORMHOLE_DESC:0 "通往虚境的深渊"
+ wg_psionic_wormhole_DESC:0 "通往虚境的深渊"
+ Need_to_research_psionic_wormhole:0 "需要研究打开灵能虫洞"
+ BYPASS_DESC_INACTIVE_WG_PSIONIC_WORMHOLE_BYPASS:0 "虫洞未被激活"
+ ###
+ wsg_colony_development:0 "导弹殖民"
+ wsg_colony_development_desc:0 "一枚从天而降的载人导弹袭击并殖民了这颗星球，需要时间来恢复。"
+ wsg_colonizer:0 "导弹殖民船"
+ 
+ tech_colonization_wsg:0 "导弹殖民"
+ tech_colonization_wsg_desc:0 "将殖民者和必要的物资塞入特制的导弹中来实现快速星际航行与星球殖民，唯一的缺点是会造成新殖民地需要花费三年时间来清理导弹殖民造成的生态灾难"
  
  

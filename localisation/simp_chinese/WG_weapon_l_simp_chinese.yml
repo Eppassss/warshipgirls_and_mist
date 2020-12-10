@@ -155,9 +155,9 @@
  sh.3027.desc:0 "[From.From.GetName]已经将[From.GetName]转化为了黑洞，整个星系的大型天体也一同被毁灭了，只有较小的陨石得以幸存。\n\n所谓的无敌舰队，所谓的巨型建筑，甚至巨大的星球，如今连残骸都没有留下。\n\n现在，孤独的巨神兵[From.From.GetName]和[From.GetName]黑洞构成了一副无比壮美的画卷，令人陶醉。" 
  sh.3027.a:0 "震撼" 
  
- only_star:0 "必须是恒星" 
- is_black_hole:0 "已经是黑洞" 
- requires_out_border:0 "必须是敌对或者无主权的星系" 
+ only_star:0 "$TRIGGER_FAIL$必须是恒星" 
+ is_black_hole:0 "$TRIGGER_FAIL$已经是黑洞" 
+ requires_out_border:0 "$TRIGGER_FAIL$必须是敌对或者无主权的星系" 
  opinion_destroyed_a_system:0 "摧毁了一个星系" 
  opinion_destroyed_my_system:0 "摧毁了我们的星系" 
  
@@ -319,6 +319,8 @@
  SH_BATTLESHIP_MID_L2:0 "堡垒舰身"
  SH_BATTLESHIP_MID_L4:0 "重炮舰身"
  WSG_BATTLESHIP_MID_L4:0 "重炮舰身"
+ SH_BATTLESHIP_STERN_L2M1:0 "重炮舰尾"
+ WSG_BATTLESHIP_STERN_L2M1:0 "重炮舰尾"
  WSG_TITAN_MID_9L:0 "重炮舰身"
  SH_TITAN_MID_9L:0 "重炮舰身"
  SH_CORE_JUGGERNAUT_SECTION:0 "巨炮主宰"
@@ -330,4 +332,16 @@
  UF_CV_BEHAVIOR_DESC:0 "§H航母战术：§!飞船会试图保持交战距离（§Y400§!），并在交战后尝试后撤。"
  WG_CARRIER_BEHAVIOR_DESC:0 "§H航母战术：§!舰船会停留在超远距（§Y200§!），并使用长程武器打击目标。"
  WG_CV_BEHAVIOR_DESC:0 "§H航母战术：§!飞船会试图保持交战距离（§Y300§!），并在交战后尝试掉头后撤。\n§Y请不要在装备有基轴武器的飞船上使用§!"
-
+################
+ wg_gray_h:0 "纳米舰载机中队"
+ wg_gray_l:0 "纳米重型主炮"
+ wg_gray_p:0 "纳米点防阵列"
+ wg_gray_t:0 "纳米主炮"
+ wg_gray_g:0 "灰风能量鱼雷"
+ wg_gray_jump:0 "纳米跃迁引擎"
+ wg_gray_ia:0 "纳米IA装甲"
+ wg_gray_computer:0 "灰风作战计算机"
+ wg_gray_sensor:0 "纳米探测器"
+ wg_gray_thruster:0 "纳米推进器"
+ wg_gray_reactor:0 "纳米反应堆"
+ 

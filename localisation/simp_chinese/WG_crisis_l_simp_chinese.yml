@@ -466,3 +466,6 @@
  OVOOVOOVO:0 "§BOVO OVO OVO OVO OVO OVO§!"
  enable_wg_cheat_all_bosses:0 "生成所有舰Rmod中的利维坦"
  only_available_game_start:0 "仅开局有效（大概）"
+ activate_uf_hidden_diff:0 "§R启动炼狱难度§!"
+ uf_hidden_diff_tooltip:0 "启动后将锁定难度并无法再次调整！"
+ unlock_all_character_clothes:0 "解锁所有换装"

@@ -386,6 +386,14 @@ decision_port_project = {
 		hidden_effect = {		
 			clear_deposits = yes
 			change_pc = pc_wsg_port
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
 			set_planet_entity = {
 				entity = "wsg_port_planet"
 			}
@@ -432,6 +440,14 @@ decision_port_project_relic = {
 		hidden_effect = {
 			clear_deposits = yes
 			change_pc = pc_wsg_port
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
+			add_district = district_arcology_wsg_housing
 			set_planet_entity = {
 				entity = "wsg_port_planet"
 			}
@@ -574,6 +590,10 @@ decision_wsg_rw_project = {
 		custom_tooltip = decision_wsg_rw_effects
 		hidden_effect = {		
 			change_pc = pc_ringworld_habitable_wsg
+			add_district = district_rw_wsg_city
+			add_district = district_rw_wsg_city
+			add_district = district_rw_wsg_city
+			add_district = district_rw_wsg_city
 			set_planet_entity = {
 				entity = "ringworld_habitable_wsg"
 				graphical_culture = owner
@@ -633,6 +653,185 @@ decision_water_project_1 = {
 		modifier = {
 			factor = 0
 			free_housing < 1
+		}
+	}
+}
+
+	
+############
+decision_wg_sunflower = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_wg_sunflower
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 5
+		}
+	}
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes 
+			has_authority="auth_warshipgirls"
+			has_civic = civic_sunflower
+		}		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_sunflower_pop_requirements
+			NOT = { has_planet_flag = sunflower_lv10 }
+		}
+		custom_tooltip = {
+			fail_text = decision_sunflower_temple_requirements
+			has_building = building_sunflower_temple
+		}
+		custom_tooltip = {
+			fail_text = decision_last_sunflower_pop
+			count_owned_pops = {
+				limit = { has_trait = trait_wg_sunflower }
+				count > 1
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_wg_sunflower_effects_short
+		hidden_effect = {
+			random_list = { 
+				60 = {
+				}
+				10 = {
+					owner = {
+						country_event = { id = wsg.3212 }
+					}
+				}
+				10 = {
+					owner = {
+						country_event = { id = wsg.3213 }
+					}
+				}
+				10 = {
+					owner = {
+						country_event = { id = wsg.3214 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = {
+							has_country_flag = super_sunflower_buff
+						}
+					}
+					owner = {
+						country_event = { id = wsg.3215 }
+					}
+					add_modifier = {
+						modifier = "planet_wg_sunflower_buff" 	
+						days = 720
+					}
+				}
+				5 = {
+					planet_event = { id = wsg.3216 }
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					has_trait = trait_wg_sunflower					
+				}
+				kill_pop = yes
+			}
+			if = {
+				limit = { 
+					NOT = {
+						has_planet_flag = sunflower_lv1
+						has_planet_flag = sunflower_lv2
+						has_planet_flag = sunflower_lv3
+						has_planet_flag = sunflower_lv4
+						has_planet_flag = sunflower_lv5
+						has_planet_flag = sunflower_lv6
+						has_planet_flag = sunflower_lv7
+						has_planet_flag = sunflower_lv8
+						has_planet_flag = sunflower_lv9
+						has_planet_flag = sunflower_lv10
+					}
+				}
+				add_modifier = { modifier = "planet_wg_sunflower" days = -1 }
+				set_planet_flag = sunflower_lv1
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower
+				}
+				remove_modifier = planet_wg_sunflower
+				add_modifier = { modifier = "planet_wg_sunflower2" days = -1 }
+				set_planet_flag = sunflower_lv2
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower2
+				}
+				remove_modifier = planet_wg_sunflower2
+				add_modifier = { modifier = "planet_wg_sunflower3" days = -1 }
+				set_planet_flag = sunflower_lv3
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower3
+				}
+				remove_modifier = planet_wg_sunflower3
+				add_modifier = { modifier = "planet_wg_sunflower4" days = -1 }
+				set_planet_flag = sunflower_lv4
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower4
+				}
+				remove_modifier = planet_wg_sunflower4
+				add_modifier = { modifier = "planet_wg_sunflower5" days = -1 }
+				set_planet_flag = sunflower_lv5
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower5
+				}
+				remove_modifier = planet_wg_sunflower5
+				add_modifier = { modifier = "planet_wg_sunflower6" days = -1 }
+				set_planet_flag = sunflower_lv6
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower6
+				}
+				remove_modifier = planet_wg_sunflower6
+				add_modifier = { modifier = "planet_wg_sunflower7" days = -1 }
+				set_planet_flag = sunflower_lv7
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower7
+				}
+				remove_modifier = planet_wg_sunflower7
+				add_modifier = { modifier = "planet_wg_sunflower8" days = -1 }
+				set_planet_flag = sunflower_lv8
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower8
+				}
+				remove_modifier = planet_wg_sunflower8
+				add_modifier = { modifier = "planet_wg_sunflower9" days = -1 }
+				set_planet_flag = sunflower_lv9
+			}
+			else_if = {
+				limit = { 
+					has_modifier = planet_wg_sunflower9
+				}
+				remove_modifier = planet_wg_sunflower9
+				add_modifier = { modifier = "planet_wg_sunflower10" days = -1 }
+				set_planet_flag = sunflower_lv10
+			}
 		}
 	}
 }

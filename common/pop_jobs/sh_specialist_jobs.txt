@@ -103,7 +103,7 @@ sh_foundry_shpc = {
 	resources = {
 		category = planet_metallurgists
 		produces = {
-			alloys = 3
+			alloys = 4
 			consumer_goods = 1
 		}
 		upkeep = {

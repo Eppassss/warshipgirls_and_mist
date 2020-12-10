@@ -4,7 +4,7 @@ ship_design = {
 	is_event_design = yes
 
 	section = {
-		template = "uf_buffer_key"
+		template = "buffer_section_entity"
 		slot = "mid"
 	
 
@@ -67,7 +67,7 @@ ship_design = {
 	is_event_design = yes
 
 	section = {
-		template = "uf_buffer_key"
+		template = "buffer_section_entity"
 		slot = "mid"
 	
 
@@ -130,7 +130,7 @@ ship_design = {
 	is_event_design = yes
 
 	section = {
-		template = "uf_buffer_key"
+		template = "buffer_section_entity"
 		slot = "mid"
 	
 

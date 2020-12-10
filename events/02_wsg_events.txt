@@ -2353,6 +2353,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_country_flag = triggered_lady_contingency_event
 		random_planet_within_border = {
 			limit = {
 				OR = {
@@ -2749,6 +2750,7 @@ event = {
 				}
 				is_ai = no
 			}
+			set_country_flag = triggered_lady_contingency_event
 			country_event = { id = wsg.3066 days = 9000 random = 4500 }
 		}
 	}
@@ -2788,10 +2790,10 @@ country_event = {
 		fromfrom = { 
 			has_fleet_flag = lady_fleet	
 		}
-		NOT = { has_country_flag = gain_lady_Contingency }
 	}
 	immediate = {	
-		From = {
+		random_country = { #防止被其他国家干掉大小姐后触发的国家不出大小姐事件
+			limit = { has_country_flag = triggered_lady_contingency_event }
 			country_event = { id = wsg.3079 days = 5 }
 		}
 	}	
@@ -3965,4 +3967,88 @@ planet_event = {
 		name = wsg.3211.a
 	}
 }
+#向日葵
+country_event = {
+	id = wsg.3212
+	title = "wsg.3212.name"
+	desc = "wsg.3212.desc"
+	picture = GFX_evt_galactic_market
+	show_sound = event_alien_nature
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "wsg.3212.a"
+		owner = {
+			add_resource = { energy = 300 }
+		}	
+	}
+}
 
+country_event = {
+	id = wsg.3213
+	title = "wsg.3213.name"
+	desc = "wsg.3213.desc"
+	picture = GFX_evt_galactic_market
+	show_sound = event_alien_nature
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "wsg.3213.a"
+		owner = {
+			add_resource = { food = 300 }
+		}	
+	}
+}
+
+country_event = {
+	id = wsg.3214
+	title = "wsg.3214.name"
+	desc = "wsg.3214.desc"
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_alien_nature
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "wsg.3214.a"
+		owner = {
+			add_resource = { minerals = 300 }
+		}	
+	}
+}
+
+country_event = {
+	id = wsg.3215
+	title = "wsg.3215.name"
+	desc = "wsg.3215.desc"
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_alien_nature
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = super_sunflower_buff }
+	}
+	immediate = {
+		set_timed_country_flag = { flag = super_sunflower_buff days = 720 }
+	}
+	option = {
+		name = "wsg.3215.a"
+	}
+}
+
+planet_event = {
+	id = wsg.3216
+	title = "wsg.3216.name"
+	desc = "wsg.3216.desc"
+	picture = GFX_evt_wg_sunflower_surrender
+	show_sound = event_alien_nature
+	is_triggered_only = yes	
+	option = {
+		name = "wsg.3216.a"
+		create_pop = {
+			species = event_target:wsg_sunflowe_species
+		}
+	}
+}

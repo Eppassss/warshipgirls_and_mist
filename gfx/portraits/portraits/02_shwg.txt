@@ -100,6 +100,36 @@ shenhai = {
 		game_setup = { 
 			add = {
 				portraits = {
+					sh01
+					sh02
+					sh03
+					sh04
+					sh05
+					sh06
+					sh07
+					sh08
+					sh09
+					sh10
+					sh11
+					sh12
+					sh13
+					sh14
+					sh15
+					sh16
+					sh17
+					sh18
+					sh19
+					sh20
+					sh21
+					sh22
+					sh23
+					sh24
+					sh25
+					sh26
+					sh27
+					sh28
+					sh29
+					sh30
 					sh31
 					sh32
 					sh33
@@ -147,7 +177,6 @@ shenhai = {
 					sh87
 				}
 			}
-
 		}
 		#species scope
 		species = { #generic portrait for a species

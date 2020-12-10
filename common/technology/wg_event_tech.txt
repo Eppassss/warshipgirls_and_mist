@@ -126,3 +126,63 @@ tech_wsg_CAT = {
 	weight = 0
 	is_reverse_engineerable = no
 }
+
+tech_parit_battlecrusier = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	icon = tech_parit_battlecrusier
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_zero_point_power" "tech_thrusters_4" "tech_sh_computer" }
+	weight = 30
+	is_reverse_engineerable = no
+	is_rare = yes
+	is_dangerous = yes
+			
+
+	potential = {
+		has_country_flag = custom_start_parit
+		has_country_flag = parit_databank_discovered	
+		has_authority = auth_shenhai
+	}	
+}
+
+tech_parit_dreadnought = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	icon = tech_parit_dreadnought
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_sh_senergy_reactor" "tech_sh_computer" "tech_titans" "tech_sh_propulsion" }
+	weight = 30
+	is_reverse_engineerable = no
+	is_rare = yes
+	is_dangerous = yes
+			
+
+	potential = {
+		has_country_flag = custom_start_parit
+		has_country_flag = parit_databank_discovered	
+		has_authority = auth_shenhai
+	}	
+}
+
+tech_parit_carrier = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	icon = tech_parit_carrier
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_zero_point_power" "tech_thrusters_4" "STRIKE_CRAFT_HANGAR_2" }
+	weight = 60
+	is_reverse_engineerable = no
+	is_rare = yes
+
+	potential = {
+		has_country_flag = custom_start_parit
+		has_authority = auth_shenhai
+	}	
+}

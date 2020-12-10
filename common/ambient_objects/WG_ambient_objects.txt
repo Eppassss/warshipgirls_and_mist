@@ -39,3 +39,18 @@ ambient_object = {
 	show_name = yes
 	description = "wg_fairy_dragon_object_desc"
 }
+
+ambient_object = {
+	name = "wg_psi_dreadnought_object"
+	entity = "wsg_psi_dreadnought_entity"
+	selectable = yes
+	show_name = yes
+	description = "wg_psi_dreadnought_object_desc"
+}
+
+ambient_object = {
+	name = "wg_psi_object"
+	entity = "space_cloud_entity"
+	selectable = yes
+	show_name = yes
+}

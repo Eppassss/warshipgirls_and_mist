@@ -112,3 +112,36 @@ origin_wg_fe_child = {
 		base = 0
 	}
 }
+
+origin_parit = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_parit.dds"
+	picture = GFX_origins_wg_parit
+
+	starting_colony = pc_desert
+	initializers = { Parit_origin_system }
+
+	possible = {
+		authority = { value = auth_shenhai }
+		civics = {
+			NOT = {
+				value = civic_CM
+			}
+		}		
+	}
+
+
+	description = "origin_tooltip_parit_effects"
+
+	flags = { custom_start_parit }
+
+	traits = {
+		trait = sh_trait_pairt
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 0
+	}
+}

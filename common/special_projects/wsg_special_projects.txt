@@ -351,3 +351,319 @@ special_project = {
 	on_fail = {
 	}
 }
+
+special_project = {
+	key = "WG_PARIT_PROJECT"
+	days_to_research = 150
+	tech_department = society_technology
+	picture = GFX_evt_alien_nature
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		owner = {
+			random_list = {
+				50 = { country_event = { id = wg_parit.24 }}
+				40 = { country_event = { id = wg_parit.25 }}
+				10 = { country_event = { id = wg_parit.26 }}
+			}
+		}
+	}
+}
+
+
+special_project = {
+	key = "WG_PARIT_PROJECT2"
+	cost = 10000
+	tech_department = engineering_technology
+	picture = GFX_evt_ancient_databank
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.30 }
+		}
+	}
+}
+
+special_project = {
+	key = "WG_PARIT_PROJECT3"
+	cost = 2000
+	days_to_research = 720
+	tech_department = engineering_technology
+	picture = GFX_evt_wg_parit2
+	
+	event_scope = planet_event
+	
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.37 }
+		}	
+	}
+	
+	on_fail = {
+	}
+}
+
+
+#恩多迪亚号
+special_project = {
+	key = "WG_PARIT_HOME"
+	event_chain = "parit_chain"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	picture = GFX_evt_space_debris
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.39 }
+		}
+	}
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "WG_PARIT_HOME2"
+	event_chain = "parit_chain"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	picture = GFX_evt_space_debris
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+	
+	on_success = {
+		owner = {
+			random_list = {
+				40 = { country_event = { id = wg_parit.40 }}
+				40 = { country_event = { id = wg_parit.41 }}
+				20 = { country_event = { id = wg_parit.42 }}
+			}
+		}
+	}
+	
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "WG_PARIT_HOME3"
+	event_chain = "parit_chain"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	picture = GFX_evt_cold_barren
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.43 }
+		}
+	}
+	
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "WG_PARIT_HOME4"
+	event_chain = "parit_chain"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	picture = GFX_evt_gas_giant
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.44 }
+		}
+	}
+	
+	on_fail = {
+	}
+}
+
+
+#修复恩多迪亚号
+special_project = {
+	key = "WG_PARIT_EXECTOR"
+	cost = 0
+	days_to_research = 720
+	tech_department = physics_technology
+	picture = GFX_evt_wsg_executor
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 5
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = wg_parit.59 }
+		}
+	}
+	on_fail = {
+	}
+}
+
+# 分析灵能信号
+special_project = {
+	key = "ANALISE_WG_PHIONIC_SIGNAL"
+	cost = 10000
+	tech_department = society_technology
+	event_scope = planet_event
+	picture = GFX_evt_surreal_visions
+
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.115 }
+		}
+	}
+}
+
+special_project = {
+	key = "RESEARCH_PSIONIC_WORMHOLE"
+	cost = 0
+	days_to_research = 90
+	tech_department = physics_technology
+	event_scope = ship_event
+	picture = GFX_evt_wormhole
+
+	requirements = {
+		shipclass_science_ship = 1
+	}
+
+	on_success = {
+		owner = { 
+			abort_special_project = {
+				type = RESEARCH_PSIONIC_WORMHOLE_FROM_HOME
+			}
+			country_event = { id = wg_boss.126 }
+		}
+	}
+}
+
+special_project = {
+	key = "RESEARCH_PSIONIC_WORMHOLE_FROM_HOME"
+	cost = 0
+	days_to_research = 1080
+	tech_department = physics_technology
+	event_scope = planet_event
+	picture = GFX_evt_wormhole
+
+	same_option_group_as = { RESEARCH_PSIONIC_WORMHOLE }
+
+	on_success = {
+		owner = { 
+			abort_special_project = {
+				type = RESEARCH_PSIONIC_WORMHOLE
+			}
+			country_event = { id = wg_boss.126 }
+		}
+	}
+}
+
+special_project = {
+	key = "ONBOARD_PSI_DREADOUGHT"
+	cost = 0
+	days_to_research = 30
+	event_scope = ship_event
+	picture = GFX_evt_wormhole
+
+	requirements = {
+		shipclass_transport = 2
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = wg_boss.130 }
+		}
+	}
+}
+
+special_project = {
+	key = "RESEARCH_WG_SHROUDED_PLANET"
+	cost = 5000
+	event_chain = wg_psi_chain
+	tech_department = physics_technology
+	event_scope = ship_event
+	picture = GFX_evt_shrouded
+
+	requirements = {
+		shipclass_science_ship = 1
+	}
+
+	on_success = {
+		ship_event = { id = wg_boss.138 }
+	}
+}
+
+special_project = {
+	key = "INSTALL_SPACETIME_ANCHOR"
+	event_chain = wg_psi_chain
+	cost = 0
+	days_to_research = 180
+	event_scope = ship_event
+	picture = GFX_evt_shrouded
+
+	requirements = {
+		shipclass_constructor = 1
+	}
+
+	on_success = {
+		ship_event = { id = wg_boss.139 }
+	}
+}
+
+special_project = {
+	key = "ACTIVATE_PSYCHIC_ENTITY_HYPERSIPHON"
+	cost = 0
+	days_to_research = 120
+	event_chain = wg_psi_chain
+	event_scope = planet_event
+	picture = GFX_evt_wsg_psi_anchor
+
+	on_success = {
+		owner = { 
+			country_event = { id = wg_boss.142 }
+		}
+	}
+}

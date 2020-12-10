@@ -87,7 +87,7 @@ guiTypes = {
 			name = "wg_update_content" 
 			quadTextureSprite = "GFX_wg_update_content" 
 			position = { x = 100 y = 550 } 
-			web_link = "https://steamuserimages-a.akamaihd.net/ugc/1479949766318203938/29625F59CE5218155756AC6ECACF0CDC13C51203/"
+			web_link = "https://www.zjsnrwiki.com/wiki/%E6%B8%B8%E6%88%8Fmod/%E7%BE%A4%E6%98%9F"
 		}
 
 		buttonType = {

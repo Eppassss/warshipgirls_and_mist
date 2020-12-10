@@ -3,6 +3,51 @@ spriteTypes = {
 		name = "GFX_ship_part_weapon_ovo"
 		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_ovo.dds"
 	}
+	spriteType = {
+		name = "GFX_wg_gray_h"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_h.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_l"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_l.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_t"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_t.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_g"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_g.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_p"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_p.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_ia"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_ia.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_thruster"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_thruster.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_sensor"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_sensor.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_reactor"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_reactor.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_jump"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_jump.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_gray_computer"
+		texturefile = "gfx/interface/icons/ship_parts/wg_gray_computer.dds"
+	}
+
 
 	spriteType = {
 		name = "GFX_wg_boss_weapen_ion"
@@ -406,6 +451,10 @@ spriteTypes = {
 		name = "GFX_UF_weapen_T"
 		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_T.dds"
 	}
+	spriteType = {
+		name = "GFX_UF_weapen_T2"
+		texturefile = "gfx/interface/icons/ship_parts/UF_weapen_T2.dds"
+	}
 
 	spriteType = {
 		name = "GFX_UF_weapen_S"
@@ -666,5 +715,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ship_part_Khan_weather_control_device"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_Khan_weather_control_device.dds"
+	}
+	spriteType = {
+		name = "GFX_psi_weapon_127"
+		texturefile = "gfx/interface/icons/ship_parts/psi_weapon_127.dds"
+	}
+	spriteType = {
+		name = "GFX_psi_weapon_330"
+		texturefile = "gfx/interface/icons/ship_parts/psi_weapon_330.dds"
 	}
 } 

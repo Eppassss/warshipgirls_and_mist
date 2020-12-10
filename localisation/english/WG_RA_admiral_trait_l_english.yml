@@ -78,7 +78,7 @@
  raa_skill.2051.a:0 "It's terrible!"
  raa_skill.150.name:0 "fishing"
  raa_skill.150.desc:0 "Admiral Sukhbaatar collected the debris in the battlefield and make some ships to her own fleet after the victory of the recent battle!"
- raa_skill.150.a:0 "Clear. I don't need to be notified anymore."
+ raa_skill.150.a:0 "Understood. Don't show me Rank Point notices again."
  raa_skill.9999.name:0 "Invincible skill description"
  raa_skill.9999.desc:0 "The Admiral you have just recruited has a skill relative to §Yinvulnerability§!. \nPlease note that §Rall this type of skill has no effect on your §BCombat UAVs and Corvettes§!§R!\n\nThis note will not show again."
  raa_skill.9999.a:0 "I understood."

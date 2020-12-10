@@ -120,6 +120,8 @@ uf_special_buff = {
 	damage_vs_country_type_sofe_sentinel_active_mult = 20
 }
 
+
+
 uf_buff_after_portal_destoryed = {
 	ship_fire_rate_mult = 0.25
 	ship_speed_mult = 0.30
@@ -160,6 +162,23 @@ uf_space_mine_debuff = {
 	ship_shield_mult = -1.24
 }
 
+uf_cunning_debuff_own = {
+	ship_hull_mult = -0.60
+	ship_weapon_damage = -0.50
+	ship_weapon_range_mult = -0.40
+}
+uf_cunning_debuff_2_own = {
+	ship_weapon_damage = -0.3
+	ship_weapon_range_mult = -0.3
+}
+uf_cunning_debuff_3_own = {
+	ship_weapon_range_mult = -20.0
+}
+
+uf_kind_buff = {
+	ship_shield_penetration_mult = -0.10
+	ship_armor_penetration_mult = -0.10
+}
 ###########################################################
 #1 隼鹰
 Junyo_buff_to_drones = {

@@ -1180,6 +1180,119 @@ fleet_event = {
 	}
 }
 
+# 特殊事件
+# 全体领袖好感度+1
+country_event = {
+	id = wg_aft.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}
+	}
+
+	immediate = {
+		if = { # buff加成的额外好感度
+			limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+			every_owned_leader = {
+				limit = { 
+					is_wg_leader = yes
+					NOR = {
+						has_leader_flag = wsg_lady_leader
+						has_leader_flag = affection_max
+					}
+				}
+				change_variable = { which = affection value = 1 }
+			}
+			if = {
+				limit = { has_country_flag = gain_wsg_lady }
+				change_variable = { which = lady_affection value = 1 }
+			}
+			if = {
+				limit = { has_country_flag = get_wsg_shimakaze }
+				change_variable = { which = shimakaze_affection value = 1 }
+			}
+			if = {
+				limit = { is_vaild_gray_owner = yes }
+				change_variable = { which = gray_affection value = 1 }
+			}
+			if = {
+				limit = { has_country_flag = has_afk_Sharan }
+				change_variable = { which = Sharan_affection value = 1 }
+			}
+			if = {
+				limit = { has_country_flag = has_kc_yuudaichi }
+				change_variable = { which = yuudaichi_affection value = 1 }
+			}
+			if = {
+				limit = { has_country_flag = has_kc_Pellaeon }
+				change_variable = { which = Pellaeon_affection value = 1 }
+			}
+		}
+		every_owned_leader = {
+			limit = { 
+				is_wg_leader = yes
+				NOR = {
+					has_leader_flag = wsg_lady_leader
+					has_leader_flag = affection_max
+				}
+			}
+			change_variable = { which = affection value = 1 }
+			switch = {
+				trigger = leader_class
+				governor = {
+					reset_normal_leader_affection_level = { LEADER_CLASS = governor }
+				}
+				scientist = {
+					reset_normal_leader_affection_level = { LEADER_CLASS = scientist }
+				}
+				admiral = {
+					reset_normal_leader_affection_level = { LEADER_CLASS = admiral }
+				}
+				general = {
+					reset_normal_leader_affection_level = { LEADER_CLASS = general }
+				}
+				ruler = {
+					reset_ruler_affection_level = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = gain_wsg_lady }
+			change_variable = { which = lady_affection value = 1 }
+			reset_lady_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = get_wsg_shimakaze }
+			change_variable = { which = shimakaze_affection value = 1 }
+			reset_shimakaze_affection_level = yes
+		}
+		if = {
+			limit = { is_vaild_gray_owner = yes }
+			change_variable = { which = gray_affection value = 1 }
+			reset_gray_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = has_afk_Sharan }
+			change_variable = { which = Sharan_affection value = 1 }
+			reset_Sharan_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = has_kc_yuudaichi }
+			change_variable = { which = yuudaichi_affection value = 1 }
+			reset_yuudaichi_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = has_kc_Pellaeon }
+			change_variable = { which = Pellaeon_affection value = 1 }
+			reset_Pellaeon_affection_level = yes
+		}
+	}
+}
+
 # 战争胜利后统治者，海军提督+3好感，陆军将领+2好感，特殊领袖+3好感
 country_event = {
 	id = wg_aft.12

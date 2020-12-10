@@ -1,10 +1,10 @@
 weapon_component_template = {
 	key = "WG_CARRIER_RADAR"
 	size = point_defence
-	entity = "turret_point_defence_entity"
+	#entity = "turret_point_defence_entity"
 	type = instant
 	icon = "GFX_UF_UAV"
-    	icon_frame = 1
+    icon_frame = 1
 	hidden = no 
    
     	damage = { min = 0 max = 0 }

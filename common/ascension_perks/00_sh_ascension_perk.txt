@@ -193,6 +193,7 @@ ap_shenhai_silent = {
 			has_ascension_perk = ap_shenhai_silent
 			has_ascension_perk = ap_shenhai_icebreaking
 			has_country_flag = origin_wg_fe_child_flag
+			has_country_flag = custom_start_parit
 		}
 		is_mechanical_empire = no
 	}

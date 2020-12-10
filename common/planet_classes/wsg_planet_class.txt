@@ -1,7 +1,7 @@
 pc_wsg_port = {
 	entity = "wsg_port_planet"
 	entity_scale = @planet_standard_scale
-	icon_frame = 25
+	icon_frame = 92
 	picture = pc_wsg_port
 	tile_set = pc_port
 	
@@ -79,7 +79,7 @@ pc_ringworld_habitable_wsg = {
 pc_swim = {
 	entity = "wg_swim_planet"
 	entity_scale = @planet_standard_scale
-	icon_frame = 6
+	icon_frame = 94
 	picture = pc_wg_swim
 	tile_set = pc_wg_swim
 	

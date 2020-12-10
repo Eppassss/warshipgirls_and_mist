@@ -1,15 +1,15 @@
 gray_admiral = {
 	cost = 0
 	modification = no
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	icon = "gfx/interface/icons/traits/wg_gray.dds"
 	modifier = {
-		ship_shield_mult = 0.8
-		ship_weapon_damage = 0.8
-		ship_fire_rate_mult = 0.8
-		ship_hull_mult = 0.8
-		ship_speed_mult = 0.5
-		ship_hull_regen_add_static = 4
-		ship_armor_regen_add_static = 6
+		ship_weapon_damage = 0.5
+		ship_fire_rate_mult = 0.5
+		ship_speed_mult = 0.3
+		ship_shield_mult = 0.5
+		ship_hull_mult = 1.0
+		ship_hull_regen_add_static = 10
+		ship_armor_regen_add_static = 10
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }

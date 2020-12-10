@@ -786,7 +786,7 @@ country_event = {
             resource_stockpile_compare = { resource = exotic_gases value >= 200 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_30
-				check_variable = { which = "rankpts" value > 30 }
+				check_variable = { which = "rankpts" value >= 30 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -820,7 +820,7 @@ country_event = {
             resource_stockpile_compare = { resource = rare_crystals value >= 500 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_60
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -854,7 +854,7 @@ country_event = {
             resource_stockpile_compare = { resource = rare_crystals value >= 500 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_60
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -889,7 +889,7 @@ country_event = {
             resource_stockpile_compare = { resource = alloys value >= 5000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				check_variable = { which = "rankpts" value >= 150 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -923,7 +923,7 @@ country_event = {
             resource_stockpile_compare = { resource = sr_alpha value >= 500 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_90
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -957,7 +957,7 @@ country_event = {
             resource_stockpile_compare = { resource = sr_alpha value >= 500 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_120
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -980,7 +980,7 @@ country_event = {
         trigger = { NOT = { has_technology = tech_wg_doom }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
 				owner = {
 					NOR = {
 						has_ethic = ethic_militarist
@@ -1023,7 +1023,7 @@ country_event = {
             resource_stockpile_compare = { resource = sr_alpha value >= 1000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				check_variable = { which = "rankpts" value >= 150 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1056,7 +1056,7 @@ country_event = {
             resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_210
-				check_variable = { which = "rankpts" value > 210 }
+				check_variable = { which = "rankpts" value >= 210 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1089,7 +1089,7 @@ country_event = {
             resource_stockpile_compare = { resource = sr_alpha value >= 3000 }
             custom_tooltip = {
 				fail_text = too_low_rank_fail_230
-				check_variable = { which = "rankpts" value > 230 }
+				check_variable = { which = "rankpts" value >= 230 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1123,7 +1123,7 @@ country_event = {
 			resource_stockpile_compare = { resource = sr_se value >= 2000 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_120
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1156,7 +1156,7 @@ country_event = {
 			resource_stockpile_compare = { resource = sr_se value >= 2000 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				check_variable = { which = "rankpts" value >= 150 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1190,7 +1190,7 @@ country_event = {
 			resource_stockpile_compare = { resource = sr_se value >= 2000 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_150
-				check_variable = { which = "rankpts" value > 150 }
+				check_variable = { which = "rankpts" value >= 150 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1223,7 +1223,7 @@ country_event = {
 			resource_stockpile_compare = { resource = sr_se value >= 2500 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_180
-				check_variable = { which = "rankpts" value > 180 }
+				check_variable = { which = "rankpts" value >= 180 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -1247,7 +1247,7 @@ country_event = {
 			resource_stockpile_compare = { resource = energy value >= 500 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_10
-				check_variable = { which = "rankpts" value > 10 }
+				check_variable = { which = "rankpts" value >= 10 }
             }
 		}
         custom_tooltip = "pantsu_shop_science_ship_desc"
@@ -1287,7 +1287,7 @@ country_event = {
 			resource_stockpile_compare = { resource = sr_pantsu value >= 1500 }
 			custom_tooltip = {
 				fail_text = too_low_rank_fail_90
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
             }
             custom_tooltip = {
                 NOT = { has_modifier = wg_modifier_weapon_payment }
@@ -2890,7 +2890,7 @@ country_event = {
         }
         # 限制条件
         allow = {
-            resource_stockpile_compare = { resource = energy value > 6480 }
+            resource_stockpile_compare = { resource = energy value > 2500 }
             resource_stockpile_compare = { resource = rare_crystals value > 648 }
             resource_stockpile_compare = { resource = sr_se value > 648 }
             resource_stockpile_compare = { resource = sr_pantsu value > 648 }
@@ -2901,7 +2901,7 @@ country_event = {
         }
         #消耗资源
         add_resource = {
-            energy = -6480
+            energy = -2500
             rare_crystals = -648
             sr_se = -648
             sr_pantsu = -648
@@ -2955,7 +2955,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_primary_industry }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 40 }
+				check_variable = { which = "rankpts" value >= 40 }
 				fail_text = too_low_rank_fail_40
 			}
 			custom_tooltip = {
@@ -2975,7 +2975,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_secondary_industry }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -2995,7 +2995,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_tertiary_industry }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3015,7 +3015,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_planetary_construction }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3035,7 +3035,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_decision }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3055,7 +3055,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_megastructure_construction }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
 				fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3075,7 +3075,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_megastructure_pruduction }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
 				fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3135,7 +3135,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_diplomacy_hostile }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 30 }
+				check_variable = { which = "rankpts" value >= 30 }
 				fail_text = too_low_rank_fail_30
 			}
 			custom_tooltip = {
@@ -3155,7 +3155,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_diplomacy_weight }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3175,7 +3175,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_diplomacy_envoy }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
 				fail_text = too_low_rank_fail_90
 			}
 			custom_tooltip = {
@@ -3195,7 +3195,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_diplomacy_trade }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
                 fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3272,7 +3272,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_station_gatherers }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3292,7 +3292,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_survey }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3312,7 +3312,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_ship_repair }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3332,7 +3332,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_ship_speed }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3352,7 +3352,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_combat_elite_pilot }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 30 }
+				check_variable = { which = "rankpts" value >= 30 }
                 fail_text = too_low_rank_fail_30
 			}
 			custom_tooltip = {
@@ -3374,7 +3374,7 @@ country_event = {
         trigger = { NOT = { has_technology = tech_wg_spaceport_module_assembly }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
                 fail_text = too_low_rank_fail_60
 			}
             resource_stockpile_compare = { resource = energy value >= 5000 }
@@ -3392,7 +3392,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_combat_hull_algorithm }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
                 fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3412,7 +3412,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_combat_shipcraft }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
                 fail_text = too_low_rank_fail_90
 			}
 			custom_tooltip = {
@@ -3432,7 +3432,7 @@ country_event = {
         trigger = { NOT = { has_modifier = wg_modifier_combat_fleet_control2 }}
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 210 }
+				check_variable = { which = "rankpts" value >= 210 }
                 fail_text = too_low_rank_fail_210
             }
             # custom_tooltip = {
@@ -3458,7 +3458,7 @@ country_event = {
         }
 		allow = {
             custom_tooltip = {
-                check_variable = { which = "rankpts" value > rankpts_require }
+                check_variable = { which = "rankpts" value >= rankpts_require }
                 fail_text = rankpts_not_reach_requirment
             }
             resource_stockpile_compare = { resource = energy value >= 3000 }
@@ -3545,7 +3545,7 @@ country_event = {
         }
         allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 40 }
+				check_variable = { which = "rankpts" value >= 40 }
 				fail_text = too_low_rank_fail_40
 			}
 			custom_tooltip = {
@@ -3569,7 +3569,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3593,7 +3593,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3617,7 +3617,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3641,7 +3641,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3665,7 +3665,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
 				fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3689,7 +3689,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
 				fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3714,7 +3714,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 30 }
+				check_variable = { which = "rankpts" value >= 30 }
 				fail_text = too_low_rank_fail_30
 			}
 			custom_tooltip = {
@@ -3738,7 +3738,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
 				fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3762,7 +3762,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
 				fail_text = too_low_rank_fail_90
 			}
 			custom_tooltip = {
@@ -3786,7 +3786,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 120 }
+				check_variable = { which = "rankpts" value >= 120 }
                 fail_text = too_low_rank_fail_120
 			}
 			custom_tooltip = {
@@ -3811,7 +3811,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3835,7 +3835,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3859,7 +3859,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3883,7 +3883,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 20 }
+				check_variable = { which = "rankpts" value >= 20 }
                 fail_text = too_low_rank_fail_20
 			}
 			custom_tooltip = {
@@ -3907,7 +3907,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 30 }
+				check_variable = { which = "rankpts" value >= 30 }
                 fail_text = too_low_rank_fail_30
 			}
 			custom_tooltip = {
@@ -3931,7 +3931,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 60 }
+				check_variable = { which = "rankpts" value >= 60 }
                 fail_text = too_low_rank_fail_60
 			}
 			custom_tooltip = {
@@ -3955,7 +3955,7 @@ country_event = {
         }
 		allow = {
 			custom_tooltip = {
-				check_variable = { which = "rankpts" value > 90 }
+				check_variable = { which = "rankpts" value >= 90 }
                 fail_text = too_low_rank_fail_90
 			}
 			custom_tooltip = {
@@ -4882,8 +4882,7 @@ country_event = {
 	}
 }
 
-# 询问该国家愿不愿意接受胖次商店入境
-# 觉得不需要这个事件直接删掉就好
+
 country_event = {
     id = wsgranking.2002
     title = wsgranking.2002.name
@@ -4897,53 +4896,8 @@ country_event = {
         set_country_flag = asked_for_immigration
     }
 
-    option = { #接受
+    option = { 
         name = wsgranking.2002.a
-        country_event = { id = wsgranking.2003 }
-        ai_chance = {
-            factor = 999
-        }
-        hidden_effect = { remove_global_flag = pantsu_shop_disabled }
-    }
-    option = { #拒绝
-        name = wsgranking.202.b
-        hidden_effect = {
-            if = {
-                limit = {
-                    any_country = {
-                        has_communications = event_target:pantsu_shop_country
-                        OR = {
-                            has_authority = auth_warshipgirls
-                            has_authority = auth_shenhai
-                        }
-                        NOR = { 
-                            is_hostile = event_target:pantsu_shop_country
-                            has_country_flag = asked_for_immigration
-                        }
-                    }
-                }
-                random_country = {
-                    limit = { #搜索最近的可重建星系
-                        OR = {
-                            has_authority = auth_warshipgirls
-                            has_authority = auth_shenhai
-                        }
-                        NOR = { 
-                            is_hostile = event_target:pantsu_shop_country
-                            has_country_flag = asked_for_immigration
-                        }
-                    }
-                    country_event = { id = wsgranking.2002 } # days should be 60
-                }
-            }
-            else = { # 没有找到备选国家，直接跑路
-                every_country = {
-                    limit = { is_country_type = default }
-                    country_event = { id = wsgranking.2004 } # 通知胖次商店被毁，并且胖次商店跑路了
-                    remove_country_flag = asked_for_immigration
-                }
-            }
-        }
     }
 }
 
@@ -6316,7 +6270,7 @@ country_event = {
             resource_stockpile_compare = { resource = energy value >= 20000 }
             custom_tooltip = {
                 fail_text = too_low_rank_fail_250
-                check_variable = { which = "rankpts" value > 250 }
+                check_variable = { which = "rankpts" value >= 250 }
             }
         }
         add_resource = {
@@ -6348,7 +6302,7 @@ country_event = {
             resource_stockpile_compare = { resource = alloys value >= 30000 }
             custom_tooltip = {
                 fail_text = too_low_rank_fail_250
-                check_variable = { which = "rankpts" value > 250 }
+                check_variable = { which = "rankpts" value >= 250 }
             }
         }
         add_resource = {
@@ -6379,7 +6333,7 @@ country_event = {
             resource_stockpile_compare = { resource = energy value >= 20000 }
             custom_tooltip = {
                 fail_text = too_low_rank_fail_250
-                check_variable = { which = "rankpts" value > 250 }
+                check_variable = { which = "rankpts" value >= 250 }
             }
         }
         add_resource = {
@@ -6412,7 +6366,7 @@ country_event = {
             resource_stockpile_compare = { resource = alloys value >= 10000 }
             custom_tooltip = {
                 fail_text = too_low_rank_fail_250
-                check_variable = { which = "rankpts" value > 250 }
+                check_variable = { which = "rankpts" value >= 250 }
             }
         }
         add_resource = {
@@ -6446,7 +6400,7 @@ country_event = {
             #resource_stockpile_compare = { resource = alloys value >= 10000 }
             custom_tooltip = {
                 fail_text = too_low_rank_fail_250
-                check_variable = { which = "rankpts" value > 250 }
+                check_variable = { which = "rankpts" value >= 250 }
             }
         }
         add_resource = {

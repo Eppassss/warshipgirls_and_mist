@@ -410,7 +410,7 @@ get_array = {
 
 # 将数组内指定索引（值为一个变量）的值复制到指定的变量中
 # copy the value in an array at the given index (referred to an variable) to the specific variable
-# input: ARRAY 数组名, VAR(variable name) # 变量名(输入)
+# input: ARRAY 数组名, VARIABLE(variable name) # 变量名(输入)
 # output: OUT(variable name) # 变量名(输出)
 get_array_variable = {
 	if = {
@@ -585,4 +585,61 @@ remove_array_variables = {
 	set_variable = { which = $ARRAY$_AT_DIGIT value = 0 }
 	set_variable = { which = $ARRAY$_TEMP_INT value = 0 }
 	set_variable = { which = $ARRAY$_TEMP value = 0 }
+}
+
+# 从数列中寻找与指定变量相等的项
+# input: ARRAY 数组名, VALUE 需要对比的值
+# output: OUT(variable name)# 变量名(输出)
+find_array_variable = {
+	set_variable = { which = INDEX value = 0 }
+	while = {
+		limit = {
+			check_variable = { which = INDEX value < $ARRAY$ }
+			has_country_flag = FOUND_REQUIRE_ARRAY_INDEX
+		}
+		if = {
+			limit = { check_variable = { which = INDEX value = 0 }}
+			get_array = { ARRAY = $ARRAY$ INDEX = 0 OUT = TEMP_compare_value }
+		} else = {
+			get_digits = { ARRAY = INDEX VARIABLE = INDEX }
+			if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 1 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 1 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 2 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 2 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 3 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 3 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 4 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 4 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 5 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 5 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 6 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 6 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 7 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 7 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 8 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 8 }
+			} else_if = {
+				limit = { check_variable = { which = INDEX_DIGIT_1 value = 9 }}
+				get_array_variable_S2 = { ARRAY = $ARRAY$ OUT = TEMP_compare_value VARIABLE = INDEX INDEX = 9 }
+			}
+		}
+		remove_array_variables = { ARRAY = INDEX }
+		if = {
+			limit = { check_variable = { which = TEMP_compare_value value = $VALUE$ }}
+			set_country_flag = FOUND_REQUIRE_ARRAY_INDEX
+		} else = {
+			change_variable = { which = INDEX value = 1 }
+		}
+	}
+	set_variable = { which = $OUT$ value = INDEX }
+	set_variable = { which = INDEX value = 0 }
+	remove_country_flag = FOUND_REQUIRE_ARRAY_INDEX
 }

@@ -677,23 +677,12 @@ country_event = {
 			capital_scope = {
 				closest_system = {
 					min_steps = 2
-					limit = {
-						has_access_fleet = root.owner
-						has_owner = no
-						NOT = {
-							any_ship_in_system = {
-								owner = { 
-									is_hostile = root.owner
-								}	
-							}
-						}
-					}
 				}
 				spawn_system = {
 					min_distance = 10
 					max_distance = 30
-					min_jumps = 4
-					max_jumps = 8
+					min_jumps = 2
+					max_jumps = 4
 					initializer = wg_fe_gift_system
 				}
 			}

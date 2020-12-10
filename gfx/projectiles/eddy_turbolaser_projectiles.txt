@@ -119,7 +119,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_small_turbolaser_l_y"
 	color = { 1.0 	1.0 	1.0 	1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	
@@ -140,7 +140,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_medium_turbolaser_l_y"
 	color = { 1.0 	1.0 	1.0 	1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	
@@ -158,7 +158,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_heavy_turbo_l_y"
 	color = { 1.0 	1.0 	1.0		1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	
@@ -215,7 +215,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_small_turbolaser_l_r"
 	color = { 1.0 	1.0 	1.0 	1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	
@@ -236,7 +236,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_medium_turbolaser_l_r"
 	color = { 1.0 	1.0 	1.0 	1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	
@@ -254,7 +254,7 @@ projectile_gfx_ballistic = {
 	#common for all types of projectiles
 	name = "wsg_heavy_turbo_l_r"
 	color = { 1.0 	1.0 	1.0		1.0 }
-	hit_entity = "particle_lance_hit_entity"
+	hit_entity = "wg_turbo_y_hit_entity"
 	shield_hit_entity = "particle_lance_shield_hit_entity"
 	muzzle_flash_entity = "particle_lance_muzzle_entity"
 	

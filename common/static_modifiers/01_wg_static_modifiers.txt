@@ -219,8 +219,8 @@ sh_modifier_building = {
 }
 
 sh_modifier_repair = {
-	ship_hull_regen_add_static = 0.5
-	ship_armor_regen_add_static = 0.5
+	ship_hull_regen_add_perc = 0.5
+	ship_armor_regen_add_perc = 0.5
 }
 
 sh_modifier_eye = {
@@ -411,6 +411,52 @@ planet_Parit = {
 	planet_orbital_bombardment_damage = -1.0
 }
 
+planet_Parit2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds"
+	icon_frame = 1
+	planet_max_districts_add = 2
+	planet_max_buildings_add = 4
+	planet_amenities_add = 5
+	
+}
+planet_Parit3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.20
+	planet_jobs_engineering_research_produces_mult = 0.20
+	planet_jobs_physics_research_produces_mult = 0.20
+	
+}
+planet_Parit4 = {
+	icon = "gfx/interface/icons/planet_modifiers/wg_parit.dds"
+	icon_frame = 3
+	planet_amenities_add = -5
+	trade_value_mult = -0.30
+	pop_resettlement_cost_mult = 0.30
+}
+
+parit_executor = {
+    country_energy_produces_mult = -0.20
+}
+
+parit_fleet = {
+    ships_upkeep_mult = -0.5
+	ship_weapon_range_mult = -0.5
+	ship_weapon_damage = -0.3
+	ship_hull_mult = -0.50
+	ship_armor_mult = -0.3
+	ship_shield_mult = -0.20
+	ship_speed_mult = -0.3
+}
+parit_fleet2 = {
+    ships_upkeep_mult = -0.5
+	ship_weapon_range_mult = -0.5
+	ship_weapon_damage = -0.7
+	ship_hull_mult = -0.70
+	ship_armor_mult = -0.3
+	ship_shield_mult = -0.20
+	ship_speed_mult = -0.3
+}
 planet_badseal = {
 	icon = "gfx/interface/icons/planet_modifiers/P_badseal.dds"
 	icon_frame = 3
@@ -426,11 +472,11 @@ wg_badseal2 = {
 }
 
 uf_hidden_buff = {
-	ship_hull_mult = 15.00
+	ship_hull_mult = 20.00
 	ship_armor_mult = 20.00
 	ship_shield_mult = 20.00
-	ship_weapon_damage = 25.00
-	ship_fire_rate_mult = 25.00
+	ship_weapon_damage = 30.00
+	ship_fire_rate_mult = 30.00
 	ship_weapon_range_mult = 2.50
 	force_disparity_fire_rate_mult = 10.0
 	ship_speed_mult = 2.0
@@ -441,6 +487,7 @@ uf_hidden_buff = {
 	ship_armor_regen_add_perc = 50
 	ship_shield_penetration_mult = 2.0
 	ship_armor_penetration_mult = 2.0
+	damage_vs_country_type_afk_crisis_country_mult = 20.0
 }
 
 nie_admiral_buff = {
@@ -461,6 +508,10 @@ bubbles_recovery_cd = {
 kill_bubbles = {
 	pop_happiness = -0.2
 	pop_government_ethic_attraction = -0.3
+}
+
+wg_bubbles_baby = {
+	shipsize_space_amoeba_hull_add = 1000000
 }
 
 bubbles_missing = {
@@ -549,3 +600,124 @@ wg_swim_planet_colony_other_planets = {
 	planet_amenities_mult = 0.15
 	planet_stability_add = 5
 }
+###
+planet_wg_sunflower = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_food_produces_mult = 0.02
+	planet_jobs_energy_produces_mult = 0.02
+	planet_jobs_unity_produces_mult = 0.02
+}
+planet_wg_sunflower2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_food_produces_mult = 0.04
+	planet_jobs_energy_produces_mult = 0.04
+	planet_jobs_unity_produces_mult = 0.04
+}
+planet_wg_sunflower3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_food_produces_mult = 0.06
+	planet_jobs_energy_produces_mult = 0.06
+	planet_jobs_unity_produces_mult = 0.06
+}
+planet_wg_sunflower4 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_food_produces_mult = 0.08
+	planet_jobs_energy_produces_mult = 0.08
+	planet_jobs_unity_produces_mult = 0.08
+	planet_stability_add = 2
+}
+planet_wg_sunflower5 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_alloys_produces_mult = 0.05
+	planet_jobs_consumer_goods_produces_mult = 0.05
+	planet_jobs_food_produces_mult = 0.10
+	planet_jobs_energy_produces_mult = 0.10
+	planet_jobs_unity_produces_mult = 0.10
+	planet_stability_add = 2
+}
+planet_wg_sunflower6 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_alloys_produces_mult = 0.06
+	planet_jobs_consumer_goods_produces_mult = 0.06
+	planet_jobs_food_produces_mult = 0.12
+	planet_jobs_energy_produces_mult = 0.12
+	planet_jobs_unity_produces_mult = 0.12
+	planet_stability_add = 2
+}
+planet_wg_sunflower7 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_alloys_produces_mult = 0.07
+	planet_jobs_consumer_goods_produces_mult = 0.07
+	planet_jobs_food_produces_mult = 0.14
+	planet_jobs_energy_produces_mult = 0.14
+	planet_jobs_unity_produces_mult = 0.14
+	planet_stability_add = 4
+}
+planet_wg_sunflower8 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_alloys_produces_mult = 0.08
+	planet_jobs_consumer_goods_produces_mult = 0.08
+	planet_jobs_food_produces_mult = 0.16
+	planet_jobs_energy_produces_mult = 0.16
+	planet_jobs_unity_produces_mult = 0.16
+	planet_stability_add = 4
+}
+
+planet_wg_sunflower9 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_alloys_produces_mult = 0.09
+	planet_jobs_consumer_goods_produces_mult = 0.09
+	planet_jobs_food_produces_mult = 0.18
+	planet_jobs_energy_produces_mult = 0.18
+	planet_jobs_unity_produces_mult = 0.18
+	planet_stability_add = 4
+}
+
+planet_wg_sunflower10 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.10
+	planet_jobs_engineering_research_produces_mult = 0.10
+	planet_jobs_physics_research_produces_mult = 0.10
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_consumer_goods_produces_mult = 0.10
+	planet_jobs_food_produces_mult = 0.20
+	planet_jobs_energy_produces_mult = 0.20
+	planet_jobs_unity_produces_mult = 0.20
+	planet_stability_add = 6
+}
+
+planet_wg_sunflower_buff = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_sunflower.dds"
+	icon_frame = 1
+	planet_jobs_produces_mult = 0.10
+}
+
+wsg_colony_development = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wg_colony_development.dds"
+	icon_frame = 2
+	planet_colony_development_speed_mult = 3.0
+	planet_building_build_speed_mult = -0.1
+	planet_jobs_produces_mult = -0.10
+	pop_environment_tolerance = -0.3
+}
+
+

@@ -132,7 +132,7 @@ ship_section_template = {
 	entity = "battleship_mid_L2M2_entity"
 	icon = "GFX_ship_part_core_mid"
 
-	prerequisites = { "tech_wsg_damage_control" }
+	prerequisites = { "tech_UNITEDFLEET" }
 
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -161,6 +161,43 @@ ship_section_template = {
 		category = ship_sections
 		cost = {
 			alloys = 120
+		}
+	}
+}
+
+ship_section_template = {
+	key = "WSG_BATTLESHIP_STERN_L2M1"
+	ship_size = battleship
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "battleship_stern_M2_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	aux_utility_slots = 2
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
 		}
 	}
 }

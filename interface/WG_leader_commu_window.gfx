@@ -178,6 +178,19 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
 		noOfFrames = 3
 	}
+	# 换装左右选择键
+	spriteType = {
+		name = "GFX_wg_cloth_button_prev"
+		texturefile = "gfx/interface/wg_leader_diplo/prev_pink.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_wg_cloth_button_next"
+		texturefile = "gfx/interface/wg_leader_diplo/next_pink.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 3
+	}
 	# 文字显示框
 	spriteType = {
 		name = "GFX_wg_message_bg_gray"
@@ -229,6 +242,22 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_wg_lady_portrait_broken"
 		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_portrait_broken.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_lady_01_portrait"
+		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_01_portrait.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_lady_02_portrait"
+		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_02_portrait.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_lady_01_portrait_locked"
+		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_01_portrait_locked.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_lady_02_portrait_locked"
+		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_02_portrait_locked.dds"
 	}
 
 	# 灰风立绘

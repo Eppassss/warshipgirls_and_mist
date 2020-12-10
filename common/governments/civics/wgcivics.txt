@@ -72,6 +72,31 @@ civic_wgelves={
 }
 
 
+#献祭向日葵
+civic_sunflower ={
+	icon="gfx/interface/icons/governments/civics/wg_sunflower.dds"
+	potential={authority={value=auth_warshipgirls}}
+	modification = no
+	random_weight={
+		base=0
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	description = "civic_tooltip_sunflower_effects"
+}
+
 ###################
 #fallen empire
 
@@ -88,6 +113,7 @@ civic_wg_fe={
 		armies_upkeep_mult= -0.2
 		country_war_exhaustion_mult = 0.2
 		pop_growth_speed_reduction = 0.5
+		planet_max_buildings_add = 16
 	}
 	random_weight = {
 		base = 999999
@@ -108,6 +134,7 @@ civic_wg_awakened_fe = {
 		country_command_limit_add = 200
 		country_naval_cap_add = 9999
 		country_resource_max_add = 1000000
+		planet_max_buildings_add = 16
 	}
 
 	random_weight = {
@@ -140,6 +167,7 @@ civic_wg_awakened_fe_advance = {
 		ship_starting_experience_add = 10000
 		country_naval_cap_add = 9999
 		country_resource_max_add = 1000000
+		planet_max_buildings_add = 16
 	}
 
 	random_weight = {

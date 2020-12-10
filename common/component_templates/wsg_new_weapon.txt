@@ -3,7 +3,7 @@ weapon_component_template = {
 	size = small
 	icon = "GFX_ship_part_wsg_autocannon_57"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
+	#entity = "small_laser_gun_entity"
 	type = instant
 
 	damage = { min = 4 max = 7 }
@@ -60,7 +60,7 @@ weapon_component_template = {
 	size = medium
 	icon = "GFX_ship_part_wsg_autocannon_127"
 	icon_frame = 1
-	entity = "medium_laser_gun_entity"
+	#entity = "medium_laser_gun_entity"
 	type = instant
 
 	damage = { min = 40 max = 50 }
@@ -116,7 +116,7 @@ weapon_component_template = {
 	size = large
 	icon = "GFX_ship_part_wsg_autocannon_152"
 	icon_frame = 1
-	entity = "large_laser_gun_entity"
+	#entity = "large_laser_gun_entity"
 	type = instant
 
 	damage = { min = 90 max = 120 }
@@ -174,7 +174,7 @@ weapon_component_template = {
 	size = large
 	icon = "GFX_ship_part_wsg_203plasma"
 	icon_frame = 1
-	entity = "large_laser_gun_entity"
+	#entity = "large_laser_gun_entity"
 	type = instant
 
 	damage = { min = 320 max = 450 }
@@ -234,7 +234,7 @@ weapon_component_template = {
 	size = large
 	icon = "GFX_ship_part_wsg_356laser"
 	icon_frame = 1
-	entity = "large_laser_gun_entity"
+	#entity = "large_laser_gun_entity"
 	type = instant
 
 	damage = { min = 850 max = 1200 }
@@ -811,7 +811,7 @@ weapon_component_template = {
 	size = medium
 	icon = "GFX_ship_part_wsg_127pd"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
+	#entity = "small_laser_gun_entity"
 	type = point_defence
 
 	damage = { min = 45 max = 65 }
@@ -850,7 +850,7 @@ weapon_component_template = {
 	size = small
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
-	entity = "small_laser_gun_entity"
+	#entity = "small_laser_gun_entity"
 	#type = point_defence
 
 	damage = { min = 15 max = 20 }
@@ -889,7 +889,7 @@ weapon_component_template = {
 	size = medium
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
-	entity = "medium_kinetic_gun_entity"
+	#entity = "medium_kinetic_gun_entity"
 	#type = point_defence
 
 	damage = { min = 30 max = 40 }
@@ -926,7 +926,7 @@ weapon_component_template = {
 	size = large
 	icon = "GFX_ship_part_sh_ac"
 	icon_frame = 1
-	entity = "large_kinetic_gun_entity"
+	#entity = "large_kinetic_gun_entity"
 	#type = point_defence
 
 	damage = { min = 80 max = 120 }
@@ -961,7 +961,7 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "sh_torpedo"
 	size = torpedo
-	entity = "turret_torpedo_entity"
+	#entity = "turret_torpedo_entity"
 	
 	icon = "GFX_ship_part_sh_ht"
 	icon_frame = 1
@@ -1188,7 +1188,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { cruiser battleship titan }
+	size_restriction = { cruiser battleship titan parit_carrier parit_battlecrusier }
 	component_set = "combat_computers"
 	ship_behavior = "WGcarrier2"
 	prerequisites = { "tech_wg_carrier_computer" }

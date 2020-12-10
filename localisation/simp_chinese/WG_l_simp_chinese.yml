@@ -11,12 +11,20 @@
  Warship_Girls_insult_plural_03:0 "平胸女人"
  Warship_Girls_insult_04:0 "女海盗"
  Warship_Girls_insult_plural_04:0 "女海盗"
+ Warship_Girls_insult_05:0 "憨批舰娘"
+ Warship_Girls_insult_plural_05:0 "憨批舰娘"
+ Warship_Girls_insult_06:0 "憨憨舰娘"
+ Warship_Girls_insult_plural_06:0 "憨憨舰娘"
+ Warship_Girls_insult_07:0 "狡猾人"
+ Warship_Girls_insult_plural_07:0 "狡猾人"
  Warship_Girls_compliment_01:0 "世界的本质"
  Warship_Girls_compliment_plural_01:0 "世界的本质"
  Warship_Girls_compliment_02:0 "巨乳女人"
  Warship_Girls_compliment_plural_02:0 "巨乳女人"
  Warship_Girls_compliment_03:0 "高贵的舰娘"
  Warship_Girls_compliment_plural_03:0 "高贵的舰娘"
+ Warship_Girls_compliment_04:0 "善良人"
+ Warship_Girls_compliment_plural_04:0 "善良人"
  Warship_Girls_sound_01:0 "鸣笛"
 
 
@@ -73,6 +81,8 @@
  ShenHai_insult_plural_02:0 "深海舰女人"
  ShenHai_insult_03:0 "深海走狗"
  ShenHai_insult_plural_03:0 "深海走狗"
+ ShenHai_insult_04:0 "憨批深海"
+ ShenHai_insult_plural_04:0 "憨批深海"
  ShenHai_compliment_01:0 "劳模"
  ShenHai_compliment_plural_01:0 "劳模"
  ShenHai_compliment_02:0 "深海舰娘"
@@ -119,6 +129,12 @@
  opinion_sh_to_wsg_diplomacy:0 "外交优先？我怀疑你在骗我"
  
  ###############
+ r_wg_god:0 "一键削舰娘"
+ r_wg_god_desc:0 "章海豹本纪\n\n海豹者，铸模者也，姓章。年未知，乳极大。其中之人海豹，画手尚不可考。海豹为舰帅，巨人心，隆其V，世称其军联合。\n豹于群聊，更新不及，衰。联动，又摸鱼，群员怒之。豹曰：“联合舰队之强悍，不足为俱。深海善战，故削之，舰娘好逸，故削之，湮灭孤立，然马勺好之，亦削之！”众勃然怒，忌豹削妻，亦不可言。然豹又曰：“彼之EDDY善良否?”气更甚。\n曾有UP作赋，以邪之道破联合之军，海豹视之，故削之。今反抗疲弱，联合日强，盖章海豹所为，邪道UP亦有责。\n虽章独行，然入联合者不胜数，答曰：豹之姿，吾好之！VV瘠薄，不可聚民意，得民心。章之豪，比得梅，胜秘书，步摇三晃，广为传知。章之军，出镜门破要塞，穿防御碎舰队，锐不可当。以威迫之，以色诱之，盖联合愈强，而反抗日菜矣。"
+ relic_r_wg_god:0 "§R联合马上来你家§!"
+ requires_uf_invasion_happened:0 "联合已经来了，还点个屁啊"
+
+ UnitedFleet_1:0 "联合舰队"
  policy_wsg_soldier_policy:0 "WG调度员调整"
  policy_wsg_soldier_policy_desc:0 "通过调整调度员的工作重心来决定她们要注重哪一方面的调度工作。"
  wg_soldier_balance:0 "均衡管理"

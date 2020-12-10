@@ -12,7 +12,7 @@ wg_khan_outer_gate = {
 	potential = {
 		always = no
 	}
-	bypass_type = wg_khan_outer_gate	
+	bypass_type = wg_khan_outer_gate
 }
 
 wg_khan_garbage_shipyard_1 = {

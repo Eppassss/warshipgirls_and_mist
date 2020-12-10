@@ -27,6 +27,57 @@ weapon_component_template = {
 	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 3
+	size_restriction = {
+		corvette
+		wg_corvette
+		destroyer
+		wsg_psi_dreadnought
+		wg_psi_big_gunship
+		wg_psi_juggernaut
+		wg_psi_gunship
+		wg_destroyer
+		parit_battlecrusier
+		cruiser
+		wsg_lady_warship_imdesignable
+		wsg_lady_warship
+		wsg_lady_juggernaut
+		wsg_armed_science_ship
+		wg_cruiser
+		wsg_dreadnought
+		wsg_dreadnought_dark
+		wg_carrier
+		wg_fe_ark
+		wg_battleship
+		StrikeCruiser
+		Battlecruiser
+		escortcarrier
+		explorationship
+		Dreadnought
+		Carrier
+		Flagship
+		wg_battlecrusier
+		battleship
+		wg_titan
+		wg_dreadnought
+		titan
+		juggernaut
+		scout_UAV
+		wg_think_tank
+		military_station_large
+		military_station_medium
+		military_station_small
+		Lustgodship
+		future_battleship
+		future_titan
+		SWGS_EclipseII
+		SWGS_Empire_II
+		SWGS_Xyston
+		SWGS_Pelleaon
+		SWGS_Imperious
+		giga_planet_behemoth
+		giga_systemcraft
+	}
+
 	resources = {
 		category = ship_components
 		cost = {
@@ -81,4 +132,55 @@ weapon_component_template = {
 			alloys = 0.5
 		}
 	}
+	size_restriction = {
+		corvette
+		wg_corvette
+		destroyer
+		wsg_psi_dreadnought
+		wg_psi_big_gunship
+		wg_psi_juggernaut
+		wg_psi_gunship
+		wg_destroyer
+		parit_battlecrusier
+		cruiser
+		wsg_lady_warship_imdesignable
+		wsg_lady_warship
+		wsg_lady_juggernaut
+		wsg_armed_science_ship
+		wg_cruiser
+		wsg_dreadnought
+		wsg_dreadnought_dark
+		wg_carrier
+		wg_fe_ark
+		wg_battleship
+		StrikeCruiser
+		Battlecruiser
+		escortcarrier
+		explorationship
+		Dreadnought
+		Carrier
+		Flagship
+		wg_battlecrusier
+		battleship
+		wg_titan
+		wg_dreadnought
+		titan
+		juggernaut
+		scout_UAV
+		wg_think_tank
+		military_station_large
+		military_station_medium
+		military_station_small
+		Lustgodship
+		future_battleship
+		future_titan
+		SWGS_EclipseII
+		SWGS_Empire_II
+		SWGS_Xyston
+		SWGS_Pelleaon
+		SWGS_Imperious
+		giga_planet_behemoth
+		giga_systemcraft
+	}
+
 }

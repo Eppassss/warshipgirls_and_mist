@@ -11,11 +11,15 @@ scout_UAV = {
 		ship_evasion_add = 50
 		ship_upkeep_mult = -0.8
 		ship_piracy_suppression_add = 3
-		ship_weapon_range_mult = -0.15
-		ship_weapon_damage = -0.20
+		ship_weapon_range_mult = -0.10
+		ship_weapon_damage = -0.15
+	}
+	ship_modifier = {
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 1
 	}
 	max_hitpoints = 35
-	size_multiplier = 0.25
+	size_multiplier = 0.5
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
@@ -43,7 +47,7 @@ scout_UAV = {
 	resources = {
 		category = ships
 		cost = {
-			alloys = -15
+			alloys = -20
 		}		
 		upkeep = {
 			energy = 0.02

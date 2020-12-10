@@ -7,6 +7,15 @@ country_event = {
 
 	immediate = {
 		if = {
+			limit = { has_global_flag = activated_uf_hidden_diff }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+			remove_global_flag = wg_crisis_normal
+			remove_global_flag = wg_crisis_hard
+			remove_global_flag = wg_crisis_disabled
+			set_global_flag = wg_crisis_insane
+		}
+		else_if = {
 			limit = { has_global_flag = wg_crisis_disabled }
 			remove_global_flag = wg_crisis_very_easy
 			remove_global_flag = wg_crisis_easy
@@ -48,10 +57,7 @@ country_event = {
 	show_sound = event_alien_signal
 
 	option = {
-		name = wg_crisis.2.a
-		hidden_effect = {
-			country_event = { id = wg_crisis.23332 days = 5 }
-		}		
+		name = wg_crisis.2.a		
 	}
 }
 country_event = {
@@ -202,6 +208,14 @@ country_event = {
 	}
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = activated_uf_hidden_diff }
+			remove_global_flag = wg_crisis_very_easy
+			remove_global_flag = wg_crisis_easy
+			remove_global_flag = wg_crisis_normal
+			remove_global_flag = wg_crisis_hard
+			set_global_flag = wg_crisis_insane
+		}
 		endgame_telemetry = united_fleet
 		set_global_flag = wg_invasion_happened
 		initialize_crisis_system_select = yes
@@ -251,6 +265,13 @@ country_event = {
                         }
                     }
 					effect = {
+						if = {
+							limit = { has_global_flag = activated_uf_hidden_diff }
+							add_modifier = {
+								modifier = uf_hidden_buff
+								days = -1
+							}
+						}
 						set_country_flag = wg_crisis_country
 						save_global_event_target_as = wg_crisis_country
 						set_graphical_culture = wsg_01
@@ -552,6 +573,17 @@ country_event = {
 						create_wg_crisis_raider_admiral = yes
 						create_wg_crisis_raider_fleet = yes
 					}
+				}
+				if = {
+					# 天灾刷联合荣耀
+					limit = {
+						has_global_flag = wg_crisis_insane
+					}
+					create_wg_crisis_legendary_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_uf_glory = yes	
+					}}	
 				}
 			}
 			if = {
@@ -1595,6 +1627,17 @@ country_event = {
 					count = 10
 					create_wg_crisis_fleet_and_admiral = yes
 				}
+				if = {
+					# 天灾刷联合荣耀
+					limit = {
+						has_global_flag = wg_crisis_insane
+					}
+					create_wg_crisis_legendary_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_uf_glory = yes	
+					}}	
+				}
 			}
 			if = {
 				limit = { exists = starbase }
@@ -1691,6 +1734,17 @@ country_event = {
 				while = {
 					count = 10
 					create_wg_crisis_fleet_and_admiral = yes
+				}
+				if = {
+					# 天灾刷联合荣耀
+					limit = {
+						has_global_flag = wg_crisis_insane
+					}
+					create_wg_crisis_legendary_admiral = yes
+					PREV = { random_system_planet = {
+						limit = { is_primary_star = yes }
+						create_uf_glory = yes	
+					}}	
 				}
 			}
 			if = {
@@ -5056,6 +5110,7 @@ country_event = {
 
 	trigger = {
 		NOR = {
+			has_global_flag = activated_uf_hidden_diff
 			has_global_flag = wg_crisis_very_easy
 			has_global_flag = wg_crisis_easy
 			has_global_flag = wg_crisis_normal
@@ -5358,6 +5413,7 @@ country_event = {
 	}
 }
 
+# AABBABAB
 country_event = {
 	id = wg_crisis.10010
 	title = "???"
@@ -5378,7 +5434,21 @@ country_event = {
 		country_event = { id = wg_boss.1 }
 	}
 	option = {
-		name = "§BOVOOVOOVO"
+		name = "activate_uf_hidden_diff"
+		trigger = { NOT = { has_global_flag = activated_uf_hidden_diff }}
+		set_global_flag = activated_uf_hidden_diff
+		set_global_flag = wg_crisis_insane
+		country_event = { id = wg_crisis.1 }
+		custom_tooltip = "uf_hidden_diff_tooltip"
+	}
+	option = {
+		name = "unlock_all_character_clothes"
+		trigger = { NOT = { has_global_flag = wg_cheat_all_clothes }}
+		set_global_flag = wg_cheat_all_clothes
+		country_event = { id = wg_crisis.10010 }
+	}
+	option = {
+		name = "OVOOVOOVO"
 	}
 
 }

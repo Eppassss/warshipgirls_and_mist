@@ -60,9 +60,13 @@
  district_arcology_wsg_military_plural:0 "港区调度区划"
  district_arcology_wsg_military_desc:0 "这个区划掌管整个国家的舰队调度和行政管理。" 
  ################
+ district_hab_pantsu:0 "胖次收集站区划"
+ district_hab_pantsu_plural:0 "胖次收集站区划"
+ district_hab_pantsu_desc:0 "众所周知，战利品商店的资源储存的方式极为绿皮，大量的胖次被随意的丢在地上，仅仅需要简单的收集就可以大赚一笔。"
+ 
  decision_wsg_rw_project:0 "港区星环企划"
  decision_wsg_rw_project_desc:0 "我们计划将这伟大的环形世界进行港区化改造。" 
- decision_wsg_rw_project_requirements:0 "§Y需要将全部区划建造为城市区段!" 
+ decision_wsg_rw_project_requirements:0 "$TRIGGER_FAIL$需要将全部区划建造为城市区段!" 
  decision_wsg_rw_effects:0 "将环形世界改造为港区环世界"
  
  pc_ringworld_habitable_wsg:0 "港区环世界"
@@ -103,11 +107,12 @@
  
  decision_water_project_1:0 "温泉活动"
  decision_water_project_1_desc:0 "开启一个温泉星球活动，吸引全国游客前往。"  
- swim_project_requirements:0 "已经有一个温泉星球展开了活动"
+ swim_project_requirements:0 "$TRIGGER_FAIL$已经有一个温泉星球展开了活动"
  tech_wg_waterB2:0 "全水星球宜居化"
  tech_wg_waterB2_desc:0 "俗话说得好，水能载舟亦可赛艇。我们只需要使用一些魔法（一般科幻作品会在这里填个名词）的手段来进行星球改造即可。"
  water_edicts:0 "§H允许改造全水星球为：§!温泉星球 \n§H解锁温泉星球法令：§!温泉活动 "
  water_edicts_desc:0 "温泉星球是一种理想的旅游星球，可以为全国带来收益。"
+ 
 ###############
  d_AP:0 "深海小型补给站"
  d_AP_desc:0 "这座补给站已经被我们控制，里面的补给舰将日夜不停的生产胖次。"
@@ -132,10 +137,23 @@
  ################
  pc_shenhai:0 "深海星球"
  pc_shenhai_desc:0 "整个星球的海洋都被转换为了深海休眠液在容纳更多的人口的同时大幅度降低了维护费用。"
+ 
+ district_sh_foundry_shpc:0 "深海星球复合工厂区划"
+ district_sh_foundry_shpc_desc:0 "得益于深海星球的特殊地貌，同时生产消费品和合金成为了可能。" 
+ district_sh_foundry_shpc_plural:0 "深海星球复合工厂区划"
+ district_sh_city:0 "深海星球城市区划"
+ district_sh_city_desc:0 "不仅是陆地部分，水下也有大量的居住设施，可以提供大量的住房。" 
+ district_sh_city_plural:0 "深海星球城市区划"
+ district_sh_mining_uncapped:0 "深海星球采矿区划"
+ district_sh_mining_uncapped_desc:0 "深海星球可以更容易的让我们对星球深层矿脉进行发掘。" 
+ district_sh_mining_uncapped_plural:0 "深海星球采矿区划"
+ district_sh_generator_uncapped:0 "深海星球发电区划"
+ district_sh_generator_uncapped_desc:0 "深海星球可以更好的利用地热能和太阳能发电。" 
+ district_sh_generator_uncapped_plural:0 "深海星球发电区划"
  ################
  decision_shenhai_rw_project:0 "深海环形世界企划"
  decision_shenhai_rw_project_desc:0 "我们计划将这伟大的环形世界进行工业化改造。" 
- decision_sh_rw_project_requirements:0 "§Y需要将全部区划建造为城市区段!" 
+ decision_sh_rw_project_requirements:0 "$TRIGGER_FAIL$ 需要将全部区划建造为城市区段" 
  decision_sh_rw_effects:0 "将环形世界改造为深海环形世界"
  
  pc_ringworld_habitable_sh:0 "深海环形世界"
@@ -154,9 +172,7 @@
  district_rw_sh_soldier_plural:0 "深海调度环"
  district_rw_sh_soldier_desc:0 "这个区划掌管整个国家的舰队调度和行政管理。" 
  
- district_sh_foundry_shpc:0 "深海星球复合工厂区划"
- district_sh_foundry_shpc_desc:0 "得益于深海星球的特殊地貌，同时生产消费品和合金成为了可能。" 
- district_sh_foundry_shpc_plural:0 "深海星球复合工厂区划"
+
 ##################################殖民地类型
  col_wsg_port_ciry:0 "港区城市星球"
  col_wsg_port_ciry_desc:0 "以居住为主要目的港区星球" 

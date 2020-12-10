@@ -145,10 +145,11 @@ leader_trait_scientist_wsg_shipyard = {
 	leader_trait = { governor }
 	leader_class = { governor }
 	leader_potential_add = {
-		from = { has_authority = "auth_warshipgirls" } 
+		always = no
+		# from = { has_authority = "auth_warshipgirls" } 
 	}
 	initial = no
-	randomized = yes	
+	randomized = no	
 	opposites = { "leader_trait_retired_fleet_officer" }		
 }
 #wsg governor

@@ -46,8 +46,9 @@ ap_project_r = {
 	
 	potential = {
 		has_authority="auth_warshipgirls"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_project_r
+			has_country_flag = wg_psi_country
 		}
 		is_mechanical_empire = no
 	}
@@ -201,8 +202,9 @@ ap_mist = {
 	
 	potential = {
 		has_authority="auth_warshipgirls"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_mist
+			has_country_flag = wg_psi_country
 		}
 		is_mechanical_empire = no
 	}

@@ -1,0 +1,34 @@
+wg_psi_dyson_sphere = {
+	entity = "wg_psi_dyson_sphere_phase_05_entity"
+	construction_entity = "wg_psi_dyson_sphere_phase_05_entity"
+	portrait = "GFX_wsg_psi_dyson_sphere_background"
+	resources = {
+		produces = {
+			energy = 2000
+			minerals = 1000
+		}
+	}
+	
+	potential = {
+		always = no
+	}
+
+	show_prereqs = yes
+
+	on_build_complete = {
+	}
+}
+wg_psionic_wormhole = {
+	entity = "wg_psi_storm_1_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_wsg_psi_wormhole_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	potential = {
+		always = no
+	}
+	bypass_type = wg_psionic_wormhole_bypass
+}
+

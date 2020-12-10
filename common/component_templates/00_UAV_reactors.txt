@@ -39,7 +39,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	upgrades_to = "UAV_FUSION_REACTOR"
 	
 	ai_weight = {
@@ -66,7 +66,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	upgrades_to = "UAV_COLD_FUSION_REACTOR"
 	
 	ai_weight = {
@@ -93,7 +93,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	upgrades_to = "UAV_ANTIMATTER_REACTOR"
 	
 	ai_weight = {
@@ -120,7 +120,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	upgrades_to = "UAV_ZERO_POINT_REACTOR"
 	
 	ai_weight = {
@@ -147,7 +147,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	upgrades_to = "UAV_DARK_MATTER_REACTOR"
 	
 	ai_weight = {
@@ -174,7 +174,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	
 	ai_weight = {
 		weight = 6
@@ -201,7 +201,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_wsg_alpha_uav" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	
 	ai_weight = {
 		weight = 6
@@ -228,7 +228,7 @@ utility_component_template = {
 	
 	prerequisites = { "tech_sh_senergy_uav" }
 	component_set = "power_core"
-	size_restriction = { scout_UAV }
+	size_restriction = { scout_UAV wsg_colonizer }
 	
 	ai_weight = {
 		weight = 6

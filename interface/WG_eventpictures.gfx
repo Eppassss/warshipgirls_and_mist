@@ -6,6 +6,24 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
+		name = "GFX_evt_wg_sunflower_surrender"
+		texturefile = "gfx/event_pictures/wg_sunflower_surrender.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_parit"
+		texturefile = "gfx/event_pictures/wg_parit.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_parit2"
+		texturefile = "gfx/event_pictures/wg_parit2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
 		name = "GFX_evt_wg_one_cat"
 		texturefile = "gfx/event_pictures/wg_one_cat.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -380,6 +398,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_evt_wsg_dreadnought"
 		texturefile = "gfx/event_pictures/wsg_dreadnought.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wsg_psi_dreadnought"
+		texturefile = "gfx/event_pictures/wsg_psi_dreadnought.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wsg_psi_anchor"
+		texturefile = "gfx/event_pictures/wsg_psi_anchor.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}

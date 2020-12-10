@@ -3426,9 +3426,8 @@ country_event = {
                 }}
             }
             change_variable = { which = "SR_num" value = -1 }
-            break = yes
         }
-        if = {
+        else_if = {
             limit = { 
                 FROM = { OR = {
                     has_leader_flag = lexington
@@ -3438,7 +3437,6 @@ country_event = {
                 }}
             }
             change_variable = { which = "SSR_num" value = -1 }
-            break = yes
         }
     }
 }

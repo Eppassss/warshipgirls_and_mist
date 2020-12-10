@@ -1,5 +1,6 @@
 wg_lady_portrait_1 = {
 	potential = {
+		check_variable = { which = wsg_lady_cloth value = 0 }
 		check_variable = { which = lady_affection_level value <= 1 }
 		wsg_lady_available = yes
 	}
@@ -8,6 +9,7 @@ wg_lady_portrait_1 = {
 }
 wg_lady_portrait_2 = {
 	potential = {
+		check_variable = { which = wsg_lady_cloth value = 0 }
 		check_variable = { which = lady_affection_level value > 1 }
 		check_variable = { which = lady_affection_level value <= 3 }
 		wsg_lady_available = yes
@@ -17,6 +19,7 @@ wg_lady_portrait_2 = {
 }
 wg_lady_portrait_3 = {
 	potential = {
+		check_variable = { which = wsg_lady_cloth value = 0 }
 		check_variable = { which = lady_affection_level value >= 4 }
 		wsg_lady_available = yes
 	}
@@ -25,10 +28,87 @@ wg_lady_portrait_3 = {
 }
 wg_lady_portrait_broken = {
 	potential = {
+		check_variable = { which = wsg_lady_cloth value = 0 }
 		has_modifier = wsg_lady_recover_cd
 	}
 	allow = { hidden_trigger = { always = yes }}
 	effect = {}
+}
+wg_lady_01_portrait = {
+	potential = {
+		check_variable = { which = wsg_lady_cloth value = 1 }
+		OR = {
+			has_country_flag = wsg_lady_cloth_01_unlock
+			has_global_flag = wg_cheat_all_clothes
+		}
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_01_portrait_locked = {
+	potential = {
+		check_variable = { which = wsg_lady_cloth value = 1 }
+		NOR = {
+			has_country_flag = wsg_lady_cloth_01_unlock
+			has_global_flag = wg_cheat_all_clothes
+		}
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {
+		custom_tooltip = "wsglady_cloth_01_unlock_tooltip"
+	}
+}
+wg_lady_02_portrait = {
+	potential = {
+		check_variable = { which = wsg_lady_cloth value = 2 }
+		OR = {
+			has_country_flag = wsg_lady_cloth_02_unlock
+			has_global_flag = wg_cheat_all_clothes
+		}
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {}
+}
+wg_lady_02_portrait_locked = {
+	potential = {
+		check_variable = { which = wsg_lady_cloth value = 2 }
+		NOR = {
+			has_country_flag = wsg_lady_cloth_02_unlock
+			has_global_flag = wg_cheat_all_clothes
+		}
+	}
+	allow = { hidden_trigger = { always = yes }}
+	effect = {
+		custom_tooltip = "wsglady_cloth_02_unlock_tooltip"
+	}
+}
+wg_cloth_button_prev = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			change_variable = { which = wsg_lady_cloth value = -1 }
+			if = {
+				limit = { check_variable = { which = wsg_lady_cloth value < 0 }}
+				set_variable = { which = wsg_lady_cloth value = 1 }
+			}
+		}
+		custom_tooltip = change_cloth
+	}
+}
+wg_cloth_button_next = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			change_variable = { which = wsg_lady_cloth value = 1 }
+			if = {
+				limit = { check_variable = { which = wsg_lady_cloth value > 2 }}
+				set_variable = { which = wsg_lady_cloth value = 0 }
+			}
+		}
+		custom_tooltip = change_cloth
+	}
 }
 wg_lady_diplo_button_1_effect = {
 	potential = { always = yes }

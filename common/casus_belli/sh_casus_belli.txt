@@ -39,3 +39,14 @@ sh_rivalry2 = {
 		}		
 	}
 }
+
+wg_holy_war = {
+	show_in_diplomacy = no
+	show_notification = yes
+	potential = {
+		is_country_type = default
+	}
+	is_valid = {
+		has_country_flag = wg_holy_war		
+	}
+} 

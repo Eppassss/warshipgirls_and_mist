@@ -923,7 +923,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 		every_owned_leader = {
 			limit = { has_leader_flag = wsg_lady_leader }
 			kill_leader = { show_notification = no }
@@ -980,7 +980,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -998,78 +998,91 @@ country_event = {
 
 country_event = {
 	id = wg_lady.35
+	title = wsg_lady_name
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.35.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.35.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.35.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.35.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.35.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.35.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.35.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.35.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.35.desc.c
+	}
+
 	is_triggered_only = yes
-	hide_window = yes
+	diplomatic = yes
+	diplomatic_title = wsg_lady_name
+	force_open = yes
+
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_leader_commu_option_red
 
 	immediate = {
 		subtract_variable = { which = lady_affection value = @lady_affection_reduce }
 		reset_lady_affection_level = yes
-		if = {
-			limit = { check_variable = { which = lady_affection_level value >= 3 }}
-			country_event = { id = wg_lady.10135 }
-			break = yes
-		}
-		if = {
-			limit = { check_variable = { which = lady_affection_level value < 3 }}
-			country_event = { id = wg_lady.10035 }
-			break = yes
-		}
-	}
-}
-
-country_event = {
-	id = wg_lady.10035
-	title = wsg_lady_name
-	desc = wg_lady.35.desc.a
-	desc = wg_lady.35.desc.b
-	desc = wg_lady.35.desc.c
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection1
-		planet_background = root
-		graphical_culture = root
-		city_level = root
-		room = root
-	}
-
-	immediate = {
-		get_player_nickname = yes
-		
-	}
-
-	option = {
-		name = wg_lady.35.a
-		custom_tooltip = wg_lady.35.a.tooltip
-	}
-
-}
-country_event = {
-	id = wg_lady.10135
-	title = wsg_lady_name
-	desc = wg_lady.35.desc.a
-	desc = wg_lady.35.desc.b
-	desc = wg_lady.35.desc.c
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection2
-		planet_background = root
-		graphical_culture = root
-		city_level = root
-		room = root
-	}
-
-	immediate = {
-		get_player_nickname = yes
 		
 	}
 
@@ -2095,10 +2108,82 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.24.desc.a
-	desc = wg_lady.24.desc.b
-	desc = wg_lady.24.desc.c
-	desc = wg_lady.24.desc.d
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.24.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.24.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.24.desc.c
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.24.desc.d
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.24.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.24.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.24.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.24.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.24.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.24.desc.c
+	}
 
 	is_triggered_only = yes
 	diplomatic = yes
@@ -2187,22 +2272,8 @@ country_event = {
 		}
 		quit_lady_commu_effects = yes
 	}
-	option = { # 调戏选项1
-		name = wg_lady.24.d
-		trigger = { has_country_flag = wsg_lady_talking1 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 1 }}
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项2
-		name = wg_lady.24.e
-		trigger = { has_country_flag = wsg_lady_talking2 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 2 }}
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项3
-		name = wg_lady.24.f
-		trigger = { has_country_flag = wsg_lady_talking3 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 3 }}
+	option = { # 调戏选项
+		name = ask_wsg_lady
 		talk_to_lady_option_effects = yes
 	}
 	
@@ -2221,10 +2292,82 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.25.desc.a 
-	desc = wg_lady.25.desc.b 
-	desc = wg_lady.25.desc.c 
-	desc = wg_lady.25.desc.d 
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.25.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.25.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.25.desc.c
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.25.desc.d
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.25.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.25.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.25.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.25.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.25.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.25.desc.c
+	}
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -2305,22 +2448,8 @@ country_event = {
 		quit_lady_commu_effects = yes
 	}
 
-	option = { # 调戏选项1（总督形态）
-		name = wg_lady.25.c
-		trigger = { has_country_flag = wsg_lady_talking1 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 11 }}
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项2（总督形态）
-		name = wg_lady.25.d
-		trigger = { has_country_flag = wsg_lady_talking2 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 12 }}
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项3（总督形态）
-		name = wg_lady.25.e
-		trigger = { has_country_flag = wsg_lady_talking3 }
-		hidden_effect = { set_variable = { which = talk_to_wsg_lady_option value = 13 }}
+	option = { # 调戏选项
+		name = ask_wsg_lady
 		talk_to_lady_option_effects = yes
 	}
 
@@ -2342,10 +2471,82 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.26.desc.a 
-	desc = wg_lady.26.desc.b 
-	desc = wg_lady.26.desc.c 
-	desc = wg_lady.26.desc.d 
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.26.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.26.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.26.desc.c
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.26.desc.d
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.26.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.26.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.26.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.26.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.26.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.26.desc.c
+	}
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -2439,22 +2640,8 @@ country_event = {
 		quit_lady_commu_effects = yes
 	}
 
-	option = { # 调戏选项1（战舰形态）
-		name = wg_lady.26.c
-		trigger = { has_country_flag = wsg_lady_talking1 }
-		set_variable = { which = talk_to_wsg_lady_option value = 21 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项2（战舰形态）
-		name = wg_lady.26.d
-		trigger = { has_country_flag = wsg_lady_talking2 }
-		set_variable = { which = talk_to_wsg_lady_option value = 22 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项3（战舰形态）
-		name = wg_lady.26.e
-		trigger = { has_country_flag = wsg_lady_talking3 }
-		set_variable = { which = talk_to_wsg_lady_option value = 22 }
+	option = { # 调戏选项
+		name = ask_wsg_lady
 		talk_to_lady_option_effects = yes
 	}
 
@@ -2476,10 +2663,82 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.27.desc.a 
-	desc = wg_lady.27.desc.b 
-	desc = wg_lady.27.desc.c 
-	desc = wg_lady.27.desc.d 
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.27.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.27.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.27.desc.c
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.27.desc.d
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.27.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.27.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.27.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.27.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.27.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.27.desc.c
+	}
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -2573,22 +2832,8 @@ country_event = {
 		quit_lady_commu_effects = yes
 	}
 
-	option = { # 调戏选项1（陆军形态）
-		name = wg_lady.27.c
-		trigger = { has_country_flag = wsg_lady_talking1 }
-		set_variable = { which = talk_to_wsg_lady_option value = 31 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项2（陆军形态）
-		name = wg_lady.27.d
-		trigger = { has_country_flag = wsg_lady_talking2 }
-		set_variable = { which = talk_to_wsg_lady_option value = 32 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项3（陆军形态）
-		name = wg_lady.27.e
-		trigger = { has_country_flag = wsg_lady_talking3 }
-		set_variable = { which = talk_to_wsg_lady_option value = 33 }
+	option = { # 调戏选项
+		name = ask_wsg_lady
 		talk_to_lady_option_effects = yes
 	}
 
@@ -2609,9 +2854,78 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.28.desc.a 
-	desc = wg_lady.28.desc.b 
-	desc = wg_lady.28.desc.c 
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.28.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.28.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.28.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.28.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.28.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.28.desc.c
+	} 
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.28.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.28.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.28.desc.c
+	} 
 	desc = { 
 		trigger = { 
 			has_special_project = OLFACTORY_PROJECT
@@ -2717,22 +3031,8 @@ country_event = {
 		quit_lady_commu_effects = yes
 	}
 
-	option = { # 调戏选项1（科研船形态）
-		name = wg_lady.28.d
-		trigger = { has_country_flag = wsg_lady_talking1 }
-		set_variable = { which = talk_to_wsg_lady_option value = 41 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项2（科研船形态）
-		name = wg_lady.28.e
-		trigger = { has_country_flag = wsg_lady_talking2 }
-		set_variable = { which = talk_to_wsg_lady_option value = 42 }
-		talk_to_lady_option_effects = yes
-	}
-	option = { # 调戏选项3（科研船形态）
-		name = wg_lady.28.f
-		trigger = { has_country_flag = wsg_lady_talking3 }
-		set_variable = { which = talk_to_wsg_lady_option value = 43 }
+	option = { # 调戏选项
+		name = ask_wsg_lady
 		talk_to_lady_option_effects = yes
 	}
 
@@ -2753,9 +3053,78 @@ country_event = {
 		exclusive_trigger = { has_country_flag = talked_to_wsg_lady }
 		text = wsg_lady_reply
 	}
-	desc = wg_lady.29.desc.a 
-	desc = wg_lady.29.desc.b 
-	desc = wg_lady.29.desc.c 
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.29.desc.a
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.29.desc.b
+	}
+	desc = {
+		trigger = { check_variable = { which = wsg_lady_cloth value = 0 }}
+		text = wg_lady.29.desc.c
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.29.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.29.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 1 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_01_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth01.29.desc.c
+	} 
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.29.desc.a
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.29.desc.b
+	}
+	desc = {
+		trigger = { 
+			check_variable = { which = wsg_lady_cloth value = 2 }
+			OR = {
+				has_country_flag = wsg_lady_cloth_02_unlock
+				has_global_flag = wg_cheat_all_clothes
+			}
+		}
+		text = wg_lady_cloth02.29.desc.c
+	} 
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -2780,7 +3149,6 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
 		set_country_flag = talking_to_wsg_lady
 		remove_country_flag = wsg_lady_changed
 	}
@@ -2844,25 +3212,11 @@ country_event = {
 			set_location = event_target:placing_planet
 		}
 		set_country_flag = has_nickname
-		if = {
-			limit = { check_variable = { which = lady_affection_level value >= 5 }}
-			country_event = { id = wg_lady.10263 }
-			break = yes
-		}
-		if = {
-			limit = { check_variable = { which = lady_affection_level value >= 3 }}
-			country_event = { id = wg_lady.10163 }
-			break = yes
-		}
-		if = {
-			limit = { check_variable = { which = lady_affection_level value < 3 }}
-			country_event = { id = wg_lady.10063 }
-			break = yes
-		}
+		country_event = { id = wg_lady.10063 }
 	}
 }
 
-# 好感度1-2，补充事件：让大小姐改变称呼
+# 补充事件：让大小姐改变称呼
 country_event = {
 	id = wg_lady.10062
 	title = wsg_lady_name
@@ -2872,88 +3226,8 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = wsg_lady_name
 	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection1
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
-
-	option = {
-		name = wg_lady.62.a
-		hidden_effect = { 
-			every_owned_fleet = {
-				limit = { has_fleet_flag = lady_naming_fleet }
-				delete_fleet = this
-			}
-			event_target:wsg_lady_country = {
-				every_owned_fleet = {
-					limit = { has_fleet_flag = lady_naming_fleet }
-					delete_fleet = this
-				}
-			}
-			country_event = { id = wg_lady.60 days = 1 }
-		}
-		custom_tooltip = wg_lady.62.a.tooltip
-	}
-}
-# 好感度3-4，补充事件：让大小姐改变称呼
-country_event = {
-	id = wg_lady.10162
-	title = wsg_lady_name
-	desc = wg_lady.62.desc
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection2
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
-
-	option = {
-		name = wg_lady.62.a
-		hidden_effect = { 
-			every_owned_fleet = {
-				limit = { has_fleet_flag = lady_naming_fleet }
-				delete_fleet = this
-			}
-			event_target:wsg_lady_country = {
-				every_owned_fleet = {
-					limit = { has_fleet_flag = lady_naming_fleet }
-					delete_fleet = this
-				}
-			}
-			country_event = { id = wg_lady.60 days = 1 }
-		}
-		custom_tooltip = wg_lady.62.a.tooltip
-	}
-}
-# 好感度5，补充事件：让大小姐改变称呼
-country_event = {
-	id = wg_lady.10262
-	title = wsg_lady_name
-	desc = wg_lady.62.desc
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection3
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_leader_commu_option_red
 
 	option = {
 		name = wg_lady.62.a
@@ -2974,7 +3248,7 @@ country_event = {
 	}
 }
 
-# 好感度1-2，确认事件：大小姐对您的昵称
+# 确认事件：大小姐对您的昵称
 country_event = {
 	id = wg_lady.10063
 	title = wsg_lady_name
@@ -2983,19 +3257,12 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection1 
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_leader_commu_option_red
 
 	immediate = {
 		# 玩家昵称调用代码
-		get_player_nickname = yes
+		
 	}
 
 	after = {
@@ -3003,7 +3270,7 @@ country_event = {
 			abort_special_project = {
 				type = COMFIRM_WG_LADY_NAMING_PROJECT
 			}
-			# 使用完get_player_nickname = yes 一定一定要执行以下代码！！
+			# 使用完 一定一定要执行以下代码！！
 			#clear_global_event_target = wsg_player_nickname 
 		}
 	}
@@ -3031,121 +3298,6 @@ country_event = {
 		custom_tooltip = wg_lady.62.a.tooltip
 	}
 }
-# 好感度3-4，确认事件：大小姐对您的昵称
-country_event = {
-	id = wg_lady.10163
-	title = wsg_lady_name
-	desc = wg_lady.63.desc
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection2
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
-
-	immediate = {
-		# 玩家昵称调用代码
-		get_player_nickname = yes
-	}
-
-	after = {
-		hidden_effect = { 
-			abort_special_project = {
-				type = COMFIRM_WG_LADY_NAMING_PROJECT
-			}
-			# 使用完get_player_nickname = yes 一定一定要执行以下代码！！
-			#clear_global_event_target = wsg_player_nickname 
-		}
-	}
-
-	option = {
-		name = wg_lady.63.a
-		response_text = wg_lady.63.a.response
-	}
-
-	option = {
-		name = wg_lady.63.b
-		hidden_effect = { 
-			every_owned_fleet = {
-				limit = { has_fleet_flag = lady_naming_fleet }
-				delete_fleet = this
-			}
-			event_target:wsg_lady_country = {
-				every_owned_fleet = {
-					limit = { has_fleet_flag = lady_naming_fleet }
-					delete_fleet = this
-				}
-			}
-			country_event = { id = wg_lady.60 days = 1}
-		}
-		custom_tooltip = wg_lady.62.a.tooltip
-	}
-}
-# 好感度5，确认事件：大小姐对您的昵称
-country_event = {
-	id = wg_lady.10263
-	title = wsg_lady_name
-	desc = wg_lady.63.desc
-
-	is_triggered_only = yes
-	diplomatic = yes
-	diplomatic_title = wsg_lady_name
-	force_open = yes
-
-	picture_event_data = {
-		portrait = wsglady_affection3
-		planet_background = event_target:wg_fallen_empire
-		graphical_culture = event_target:wg_fallen_empire
-		city_level = event_target:wg_fallen_empire
-		room = event_target:wg_fallen_empire.ruler
-	}
-
-	immediate = {
-		# 玩家昵称调用代码
-		get_player_nickname = yes
-	}
-
-	after = {
-		hidden_effect = { 
-			abort_special_project = {
-				type = COMFIRM_WG_LADY_NAMING_PROJECT
-			}
-			# 使用完get_player_nickname = yes 一定一定要执行以下代码！！
-			#clear_global_event_target = wsg_player_nickname 
-		}
-	}
-
-	option = {
-		name = wg_lady.63.a
-		response_text = wg_lady.63.a.response
-	}
-
-	option = {
-		name = wg_lady.63.b
-		hidden_effect = { 
-			every_owned_fleet = {
-				limit = { has_fleet_flag = lady_naming_fleet }
-				delete_fleet = this
-			}
-			event_target:wsg_lady_country = {
-				every_owned_fleet = {
-					limit = { has_fleet_flag = lady_naming_fleet }
-					delete_fleet = this
-				}
-			}
-			country_event = { id = wg_lady.60 days = 1}
-		}
-		custom_tooltip = wg_lady.62.a.tooltip
-	}
-}
-
 
 # 外部通讯触发器
 country_event = {
@@ -3154,6 +3306,35 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		if = {
+			limit = { has_country_flag = has_nickname }
+			event_target:wsg_lady_country = {
+				random_owned_fleet = {
+					limit = { has_fleet_flag = lady_naming_fleet }
+					save_global_event_target_as = wsg_player_nickname
+				}
+			}
+			if = { #找不到储存命名的船，调用预设名字的船作为昵称
+				limit = { NOT = { exists = event_target:wsg_player_nickname }}
+				random_system = {
+					limit = { has_star_flag = wg_naming_ship_system }
+					random_fleet_in_system = {
+						limit = { has_fleet_flag = wsg_player_default_nickname }
+						save_global_event_target_as = wsg_player_nickname
+					}
+				}
+			}
+		}
+		else_if = { #该国家并没有设定大小姐用的昵称，调用预设名字作为昵称
+			limit = { NOT = { has_country_flag = has_nickname }}
+			random_system = {
+				limit = { has_star_flag = wg_naming_ship_system }
+				random_fleet_in_system = {
+					limit = { has_fleet_flag = wsg_player_default_nickname }
+					save_global_event_target_as = wsg_player_nickname
+				}
+			}
+		}
 		if = {
 			limit = { OR = {
 				has_country_flag = ban_commu_with_wsg_lady
@@ -3315,7 +3496,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -3408,7 +3589,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 	after = {
 		# hidden_effect = { clear_global_event_target = wsg_player_nickname }
@@ -3651,7 +3832,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 	after = {
 		# clear_global_event_target = wsg_player_nickname
@@ -3743,7 +3924,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -3804,7 +3985,6 @@ event = {
 	id = wg_lady.122
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	trigger = {
 		exists = event_target:wsg_lady_own_country
@@ -3812,12 +3992,15 @@ event = {
 			has_country_flag = gain_wsg_lady
 			has_country_flag = unlock_lady_affection_event_3_2
 		}
+		NOT = { has_global_flag = triggered_wsg_lady_valentinesDay_event }
 	}
 
 	immediate = {
 		event_target:wsg_lady_own_country = {
 			country_event = { id = wg_lady.123 days = 30 }
 			remove_country_flag = unlock_lady_affection_event_3_2
+			set_global_flag = triggered_wsg_lady_valentinesDay_event
+			set_country_flag = wsg_lady_cloth_02_unlock
 		}
 	}
 }
@@ -3894,7 +4077,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_1
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -3942,7 +4125,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_1
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -3974,7 +4157,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_1
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -3999,7 +4182,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_2
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4039,7 +4222,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_1
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4062,6 +4245,7 @@ country_event = {
 			reset_lady_affection_level = yes
 			remove_country_flag = present_choco
 			remove_country_flag = present_bear
+			country_event = { id = wg_lady.901 days = 1 }
 		}
 		custom_tooltip = wg_lady_affection_up
 		response_text = wg_lady.131.a.response
@@ -4079,7 +4263,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_2
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4105,7 +4289,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_2
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4119,6 +4303,7 @@ country_event = {
 			reset_lady_affection_level = yes
 			remove_country_flag = present_choco
 			remove_country_flag = present_bear
+			country_event = { id = wg_lady.901 days = 1 }
 		}
 		custom_tooltip = wg_lady_affection_up_less
 		default_hide_option = yes
@@ -4135,7 +4320,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_1
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4182,6 +4367,7 @@ country_event = {
 			set_country_flag = can_marry_wsg_lady
 			change_variable = { which = lady_affection value = 20 }
 			reset_lady_affection_level = yes
+			country_event = { id = wg_lady.901 days = 1 }
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
 		default_hide_option = yes
@@ -4198,7 +4384,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_2
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4206,7 +4392,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -4235,7 +4421,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady02_2
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4265,6 +4451,7 @@ country_event = {
 		hidden_effect = {
 			change_variable = { which = lady_affection value = 5 }
 			reset_lady_affection_level = yes
+			country_event = { id = wg_lady.901 days = 1 }
 		}
 		custom_tooltip = wg_lady_affection_up
 		response_text = wg_lady.131.a.response
@@ -4285,21 +4472,25 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
-		exists = event_target:wsg_lady_own_country
 		OR = {
 			mid_game_years_passed >= 0
 			years_passed >= 50
 		}
-		event_target:wsg_lady_own_country = {
-			has_country_flag = gain_wsg_lady
-			is_at_war = no
-			check_variable = { which = lady_affection_level value >= 4 }
-			NOR = { 
-				has_civic = civic_CM
-				has_ascension_perk = ap_shenhai_silent
-				has_civic = civic_fanatic_purifiers
-				has_country_flag = triggered_lady_affection_event_4_1
-				has_country_flag = married_wsg_lady
+		OR = {
+			AND = {
+				exists = event_target:wsg_lady_own_country
+				event_target:wsg_lady_own_country = {
+					has_country_flag = gain_wsg_lady
+					is_at_war = no
+					check_variable = { which = lady_affection_level value >= 4 }
+					NOR = { 
+						has_civic = civic_CM
+						has_ascension_perk = ap_shenhai_silent
+						has_civic = civic_fanatic_purifiers
+						has_country_flag = triggered_lady_affection_event_4_1
+						has_country_flag = married_wsg_lady
+					}
+				}
 			}
 		}
 	}
@@ -4307,10 +4498,6 @@ event = {
 	immediate = {
 		random_list = {
 			1 = {
-				modifier = {
-					add = 5
-					has_country_flag = lady_affection_max
-				}
 				event_target:wsg_lady_own_country = {
 					set_country_flag = triggered_lady_affection_event_4_1
 					country_event = { id = wg_lady.140 random = 359 }
@@ -4319,19 +4506,35 @@ event = {
 			9 = {
 				modifier = {
 					add = -6
-					has_country_flag = given_dark_matter_tech
+					event_target:wsg_lady_own_country = {
+						has_country_flag = given_dark_matter_tech
+					}
 				}
 				modifier = {
 					add = -1
 					mid_game_years_passed >= 20
 				}
 				modifier = {
-					add = -1
+					add = -2
 					years_passed >= 70
+				}
+				modifier = {
+					add = -2
+					years_passed >= 85
+				}
+				modifier = {
+					add = -2
+					years_passed >= 100
 				}
 				modifier = {
 					factor = 0
 					end_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 0
+					event_target:wsg_lady_own_country = {
+						has_country_flag = lady_affection_max
+					}
 				}
 			}
 		}
@@ -4378,7 +4581,7 @@ country_event = {
 		room = root
 	}
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 	after = {
 		# clear_global_event_target = wsg_player_nickname
@@ -4579,7 +4782,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -4604,7 +4807,7 @@ country_event = {
 	picture = GFX_evt_wsg_no_video
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -4626,6 +4829,7 @@ country_event = {
 	option = {
 		name = wg_lady.149.a
 		hidden_effect = { 
+			set_country_flag = wsg_lady_cloth_01_unlock
 			country_event = { id = wg_lady.150 }
 		}
 		default_hide_option = yes
@@ -4642,7 +4846,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady01
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4650,7 +4854,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -4672,7 +4876,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady01
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4680,7 +4884,7 @@ country_event = {
 	}
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 	option = {
 		name = wg_lady.151.a
@@ -4707,7 +4911,7 @@ country_event = {
 	force_open = yes
 
 	picture_event_data = {
-		portrait = wsglady_affection2
+		portrait = wsglady01
 		planet_background = root
 		graphical_culture = root
 		city_level = root
@@ -4768,6 +4972,7 @@ country_event = {
 			set_country_flag = can_marry_wsg_lady
 			change_variable = { which = lady_affection value = 20 }
 			reset_lady_affection_level = yes
+			country_event = { id = wg_lady.900 days = 1 }
 		}
 		custom_tooltip = can_marry_and_affection_up_greatly
 		default_hide_option = yes
@@ -4782,7 +4987,7 @@ country_event = {
 	picture = GFX_evt_wsg_no_video
 
 	immediate = {
-		get_player_nickname = yes
+		
 	}
 
 	option = {
@@ -4832,11 +5037,54 @@ country_event = {
 					}
 				}
 			}
+			country_event = { id = wg_lady.900 days = 1 }
 		}
 	}
 }
 
+# 换装解锁提示1
+country_event = {
+	id = wg_lady.900
+	title = wg_lady.900.name
+	desc = wg_lady.900.desc
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
 
+	option = {
+		name = wg_lady.900.a
+		set_variable = { which = wsg_lady_cloth value = 1 }
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			change_leader_portrait = wsglady01
+		}
+		hidden_effect = { country_event = { id = wg_lady.998 }}
+	}
+	option = {
+		name = wg_lady.900.b
+	}
+}
+
+# 换装解锁提示2
+country_event = {
+	id = wg_lady.901
+	title = wg_lady.900.name
+	desc = wg_lady.900.desc
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	option = {
+		name = wg_lady.900.a
+		set_variable = { which = wsg_lady_cloth value = 2 }
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			change_leader_portrait = wsglady02
+		}
+		hidden_effect = { country_event = { id = wg_lady.998 }}
+	}
+	option = {
+		name = wg_lady.900.b
+	}
+}
 # 数通讯次数
 country_event = {
 	id = wg_lady.1000
@@ -5369,5 +5617,49 @@ country_event = {
 
 	option = {
 		name = OK
+	}
+}
+######肃正来了
+country_event = {
+	id = wg_lady.10002
+	title = wsg_lady_name
+	desc = wg_lady.10002.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+	diplomatic_title = wsg_lady_name
+	force_open = yes
+
+	picture_event_data = {
+		portrait = wsglady_affection1
+		room = ethic_ai_room
+	}
+	trigger = {
+		has_country_flag = gain_wsg_lady
+		has_global_flag = ai_invasion_ongoing
+		NOT = { has_global_flag = ai_invasion_defeated }
+		NOT = { has_country_flag = lady_vs_ai_modifier }
+	}	
+
+	option = {
+		name = wg_lady.10002.a
+		set_country_flag = lady_vs_ai_modifier
+		add_modifier = { modifier = lady_vs_ai days = -1 }
+	}
+}
+
+# test, changing lady clothes
+country_event = {
+	id = wg_lady.12450
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_country_flag = wsg_lady_cloth_01_unlock
+		set_variable = { which = wsg_lady_cloth value = 1 }
+		random_owned_leader = {
+			limit = { has_leader_flag = wsg_lady_leader }
+			change_leader_portrait = wsglady01
+		}
 	}
 }

@@ -11,6 +11,21 @@ leader_trait_general_warshipgirls = {
 	randomized = no
 }
 
+leader_trait_general_warshipgirls2 = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/wgtraits3.dds"
+	modifier = {
+		army_health = 0.3
+		army_damage_mult = 0.3
+		army_morale = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
 leader_trait_general_mist = {
 	cost = 0
 	modification = no
@@ -160,9 +175,9 @@ leader_trait_general_affection_lv5 = {
 	modification = no
 	icon = "gfx/interface/icons/traits/affection5.dds"
 	modifier = {
-		army_morale = 0.4
-		army_health = 0.4
-		army_damage_mult = 0.4
+		army_morale = 0.5
+		army_health = 0.5
+		army_damage_mult = 0.5
 		army_disengage_chance_mult = 0.2
 	}
 	leader_trait = { general }

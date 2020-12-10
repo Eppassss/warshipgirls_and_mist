@@ -41,7 +41,15 @@
  uf_navigator:0 "联合导航者" 
  UF_AURA_7:0 "联合规律书写者"
  UF_AURA_8:0 "联合违规制裁者"
+ UF_AURA_9:0 "联合综合压制立场"
+ UF_AURA_10:0 "联合辅助瞄准系统" 
  PLANET_KILLER_SK_UF:0 "联合撼日者"
+ UF_weapen_T3:0 "联合ET型533火炮" 
+ UF_weapen_T4:0 "联合耀斑" 
+ UF_weapen_X5:0 "联合EX型406火炮" 
+ UF_weapen_L3:0 "联合EL型203火炮" 
+ UF_weapen_S3:0 "联合ES型127质子剑" 
+ UF_weapen_S4:0 "联合ES型152火炮" 
  
  PLANET_KILLER_SK_UF:0 "联合撼日者" 
  PLANET_KILLER_SK_UF_DESC:0 "联合导航者上的恒星毁灭武器，可以在数天之内将恒星系转化为黑洞。"
@@ -49,7 +57,7 @@
  PLANET_KILLER_SK_UF_ACTION_DESC:0 "联合导航者上的恒星毁灭武器，可以在数天之内将恒星系转化为黑洞。"
  MESSAGE_DESC_FOR_PLANET_KILLER_SK_UF:0 "被转化为黑洞，执行者是"
  FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_SK_UF:0 "准备终结恒星 $PLANET|Y$" 
-
+ uf_glory:0 "联合荣耀" 
  wg_battlecrusier:0 "联合战列巡洋舰" 
  wg_corvette:0 "联合护卫舰" 
  wg_dreadnought:0 "联合无畏舰" 
@@ -60,13 +68,13 @@
  wg_dimensional_small_portal_plural: "侧窗" 
  
  leader_trait_admiral_united_fleet:0 "联合舰队司令"
- leader_trait_admiral_united_fleet_desc:0 "联合舰队司令通过层层筛选，指挥能力远远超越一般种族。"
+ leader_trait_admiral_united_fleet_desc:0 "联合舰队的普通司令。"
  
  leader_trait_admiral_united_fleet2:0 "联合舰队高级司令"
- leader_trait_admiral_united_fleet2_desc:0 "当联合舰队司令消灭了30支舰队后，她们就会被授予高级司令的军衔。"
+ leader_trait_admiral_united_fleet2_desc:0 "更高一级的联合舰队司令，拥有更急丰富的作战经验。"
  
  leader_trait_admiral_united_fleet3:0 "联合舰队传奇司令"
- leader_trait_admiral_united_fleet3_desc:0 "联合舰队中最受人尊敬的传奇将领，被她们摧毁的文明已经不计其数。"
+ leader_trait_admiral_united_fleet3_desc:0 "联合舰队中受人尊敬的传奇将领，被她们摧毁的文明已经不计其数。"
  
  leader_trait_admiral_united_fleet4:0 "联合舰队奇迹"
  leader_trait_admiral_united_fleet4_desc:0 "她们的出现，至少让我们知道了有些事情并不是不可能，并不是所有的尽头都是死路，只要我们不停下来，前面就一定会有路的。"
@@ -84,7 +92,7 @@
  leader_trait_admiral_uf_n3:0 "大舰巨炮主义"
  leader_trait_admiral_uf_n3_desc:0 "这位联合领袖是一个狂热的大舰巨炮主义者，没有什么东西能抵挡住她舰队的一轮齐射。但过于巨大的破坏力也导致了她的舰船结构变得不稳定。"
  leader_trait_admiral_uf_n4:0 "穿梭轰炸"
- leader_trait_admiral_uf_n4_desc:0 "这位联合领袖优秀的指挥能力让她的无人机航母能够在短时间内派出更多护卫舰以争夺制空权。"
+ leader_trait_admiral_uf_n4_desc:0 "这位联合领袖优秀的指挥能力让她的航母能够在短时间内派出更多护卫舰以争夺制空权。"
  
  r_uf:0 "£sr_huaji£联合舰队炼狱难度£sr_huaji£"
  r_uf_desc:0 "在天灾难度的联合舰队出现后，按下此遗臻，联合舰队炼狱难度将解锁。" 

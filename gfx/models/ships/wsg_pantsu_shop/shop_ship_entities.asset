@@ -53,6 +53,7 @@ entity = {
 	attach = { "root" = "caravaneer_cargoship_01_forcefield_entity" }
 	attach = { "root" = "caravaneer_cargoship_01_forcefield_2_entity" }
 	attach = { "root" = "caravaneer_cargoship_01_lights_entity" }
+	attach = { "root" = "WTFQG_5_entity" }	
 }
 
 
@@ -98,6 +99,7 @@ entity = {
 		}
 	}
 	attach = { "root" = "caravaneer_destroyer_01_lights_entity" }
+	attach = { "root" = "WTFQG_4_entity" }	
 }
 
 ######################           CRUISER             ########################
@@ -146,6 +148,7 @@ entity = {
 		}
 	}
 	attach = { "root" = "caravaneer_cruiser_01_lights_entity" }
+	attach = { "root" = "WTFQG_6_entity" }	
 
 }
 
@@ -160,4 +163,5 @@ entity = {
 	}
 
 	attach = { "root" = "ion_cannon_core_entity" }
+	attach = { "root" = "WTFQG_6_entity" }	
 }

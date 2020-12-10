@@ -74,6 +74,7 @@ ship_event = {
 							distance = 5
 							angle = random
 						}
+						add_many_hp = { DAYS = 5 }
 						set_fleet_stance = passive
 						set_fleet_flag = lost_amoeba_fleet@root.owner
 						save_event_target_as = lost_amoeba_fleet
@@ -351,6 +352,7 @@ country_event = { #Upgrade if Amoeba survives 100 years
 				any_owned_fleet = { #Since each empire can have one, we don't want a GET
 					has_fleet_flag = lost_amoeba_adult_fleet@root
 				}
+				NOT = { has_country_flag = bubbles_governor_active }
 			}
 			random_owned_fleet = {
 				limit = { has_fleet_flag = lost_amoeba_adult_fleet@root }

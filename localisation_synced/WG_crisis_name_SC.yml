@@ -14,6 +14,7 @@
  NAME_Main_Fleet:"联合主力舰队"
  NAME_flagship_Fleet:"联合旗舰舰队"
  NAME_auxiliary_guard_fleet:"联合辅助守卫舰队"
+ NAME_uf_glory_Fleet:"联合荣耀"
  NAME_WG_CARRIER:"航母X"
  NAME_WG_EG_DREADNOUGHT:"无畏W"
  NAME_WG_EG_TITAN:"泰坦Y"
@@ -28,7 +29,7 @@
  NAME_uf_Juggernaut:"主宰Z" 
  NAME_UF_Flagship:"审判者"
  NAME_UF_mirrored_fleet:"联合镜像舰队"
-
+ NAME_uf_glory:"至高荣光"
 
  ##########################################################
  NAME_Resistance_Fleet:"反抗军舰队"

@@ -399,6 +399,7 @@ country_event = {
         text = wg_khan.6.desc_03
         trigger = {
 			NOT = { has_country_flag = subject_to_Khan }
+			NOT = { has_country_flag = custom_start_parit }
 			has_authority = auth_shenhai
 		}
 	}
@@ -418,7 +419,15 @@ country_event = {
 			has_authority = auth_shenhai
 		}
     }
-	
+	desc = {
+        # 帕里特
+        text = wg_khan.6.desc_06
+        trigger = {
+			NOT = { has_country_flag = subject_to_Khan }
+			has_country_flag = custom_start_parit
+			has_authority = auth_shenhai
+		}
+	}
 	diplomatic = yes
 	force_open = yes
 
@@ -532,6 +541,7 @@ country_event = {
         response_text = wg_khan.6.i.response
         trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { has_country_flag = subject_to_Khan }
 		}
     }
@@ -543,6 +553,7 @@ country_event = {
         response_text = wg_khan.6.j.response
         trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { has_country_flag = subject_to_Khan }
 		}
     }
@@ -553,6 +564,7 @@ country_event = {
         response_text = wg_khan.6.k.response
         trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { has_country_flag = subject_to_Khan }
 		}
     }
@@ -562,6 +574,7 @@ country_event = {
         response_text = wg_khan.6.l.response
         trigger = {
 			has_authority = auth_shenhai
+			NOT = { has_country_flag = custom_start_parit }
 			NOT = { has_country_flag = subject_to_Khan }
 		}
 		default_hide_option = yes
@@ -687,6 +700,51 @@ country_event = {
 		response_text = wg_khan.6.s.g.response
 		trigger = {
 			has_country_flag = subject_to_Khan
+		}
+		default_hide_option = yes
+	}
+	option = {
+        # 帕里特
+        name = wg_khan.6.n
+        is_dialog_only = yes
+        response_text = wg_khan.6.n.response
+        trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+
+    option = {
+        # 帕里特
+        name = wg_khan.6.o
+        is_dialog_only = yes
+        response_text = wg_khan.6.o.response
+        trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 帕里特
+        name = wg_khan.6.p
+        is_dialog_only = yes
+        response_text = wg_khan.6.p.response
+        trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { has_country_flag = subject_to_Khan }
+		}
+    }
+	option = {
+        # 帕里特
+        name = wg_khan.6.q
+        response_text = wg_khan.6.q.response
+        trigger = {
+			has_authority = auth_shenhai
+			has_country_flag = custom_start_parit
+			NOT = { has_country_flag = subject_to_Khan }
 		}
 		default_hide_option = yes
 	}

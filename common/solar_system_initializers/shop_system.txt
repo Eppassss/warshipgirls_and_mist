@@ -238,6 +238,30 @@ shop_system = {
 				}
 			}
 			create_ambient_object = {
+				type = wg_advertisement_1_object
+				location = this
+				entity_offset_height = { min = 2 max = 5 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 95
+					angle = 0
+				}
+			}
+			create_ambient_object = {
+				type = wg_advertisement_2_object
+				location = this
+				entity_offset_height = { min = 2 max = 5 }
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 95
+					angle = 180
+				}
+			}
+			create_ambient_object = {
 				type = caravaneer_billboard_1
 				scale = 4
 				location = this
@@ -385,7 +409,7 @@ shop_system = {
 				}
 				set_planet_flag = advanced_habitat
 				set_planet_flag = advanced_habitat_2
-				set_planet_flag = energy_habitat
+				set_planet_flag = pantsu_habitat
 				#add_deposit = d_arcane_replicator
 				add_deposit = d_smuggling_bay
 				add_deposit = d_hacking_device
