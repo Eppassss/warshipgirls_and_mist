@@ -6,7 +6,6 @@ tags={
 	"Species"
 }
 picture="thumbnail.png"
-version="4.3.6"
-supported_version="2.7.*"
-path="D:/johnson/documents/Paradox Interactive/Stellaris/mod/warshipgirls_and_mist"
+version="4.8.03"
+supported_version="2.8.*"
 remote_file_id="1747099270"
