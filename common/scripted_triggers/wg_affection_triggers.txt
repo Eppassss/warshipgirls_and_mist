@@ -1,0 +1,248 @@
+is_special_affection_leader = {
+	OR = {
+		has_leader_flag = wsg_special_affection_leader 
+		has_leader_flag = wsg_lady_leader
+		has_leader_flag = 灰风领袖
+		has_leader_flag = Sharan_leader # 屑狐狸
+		has_leader_flag = bubbles_leader
+	}
+}
+
+is_wg_leader = {
+	is_special_affection_leader = no
+	# 不能是缄默深海
+	owner = {
+		NOR = {
+			has_ascension_perk = ap_shenhai_silent
+			has_civic = civic_CM
+		}
+	}
+	OR = { 
+		species = { 
+			has_wg_traits = yes
+		}
+		has_leader_flag = wsg_event_leader
+		has_leader_flag = overtime_yamato #劳模
+		has_trait = leader_trait_admiral_Rodney #老罗
+		has_trait = leader_trait_governor_Ella #艾拉
+		has_trait = leader_trait_governor_santee #桑提
+		has_trait = leader_trait_general_washington_axe #花生
+		has_trait = leader_trait_ruler_lexington #太太
+		has_trait = leader_trait_scientist_astesia #星极
+		has_leader_flag = Canarias #三小姐
+		has_leader_flag = NieAdmiral #乜提
+	}
+}
+
+is_wg_or_special_affection_admiral = {
+	OR = { 
+		AND = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = affection_max }
+		}
+		AND = {
+			has_leader_flag = wsg_shimakaze_leader
+			NOT = { owner = { has_country_flag = shimakaze_affection_max }}
+		}
+		AND = {
+			has_leader_flag = 灰风领袖
+			owner = { 
+				is_vaild_gray_owner = yes
+				NOT = { has_country_flag = gray_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = Sharan_leader
+			owner = { 
+				has_country_flag = has_afk_Sharan
+				NOT = { has_country_flag = Sharan_affection_max }
+			}
+		}
+	}
+}
+
+# scope: leader
+is_wg_leader_with_affection_not_full = {
+	OR = {
+		AND = {
+			is_wg_leader = yes
+			NOT = { has_leader_flag = affection_max }
+		}
+		AND = {
+			has_leader_flag = wsg_shimakaze_leader
+			owner = { 
+				has_country_flag = get_wsg_shimakaze 
+				NOT = { has_country_flag = shimakaze_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = wsg_lady_leader
+			owner = { 
+				has_country_flag = gain_wsg_lady 
+				NOT = { has_country_flag = lady_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = 灰风领袖
+			owner = { 
+				is_vaild_gray_owner = yes
+				NOT = { has_country_flag = gray_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = Sharan_leader
+			owner = { 
+				has_country_flag = has_afk_Sharan
+				NOT = { has_country_flag = Sharan_affection_max }
+			}
+		}
+		AND = {
+			has_leader_flag = bubbles_leader
+			owner = { 
+				has_country_flag = modified_bubbles
+				NOT = { has_country_flag = bubbles_affection_max }
+			}
+		}
+	}
+}
+
+# scope: country
+check_affection_event_active_diplo = {
+	has_active_event = {
+		wg_aft.2005
+		wg_aft.2006
+		wg_aft.2007
+		wg_aft.2008
+		wg_aft.2009
+		wg_aft.2010
+	}
+}
+
+has_multiple_affection_traits = {
+	OR = {
+		calc_true_if = { amount = 2 
+			# 总督
+			has_trait = leader_trait_governor_affection_lv1
+			has_trait = leader_trait_governor_affection_lv2
+			has_trait = leader_trait_governor_affection_lv3
+			has_trait = leader_trait_governor_affection_lv4
+			has_trait = leader_trait_governor_affection_lv4_max
+			has_trait = leader_trait_governor_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 科学家
+			has_trait = leader_trait_scientist_affection_lv1
+			has_trait = leader_trait_scientist_affection_lv2
+			has_trait = leader_trait_scientist_affection_lv3
+			has_trait = leader_trait_scientist_affection_lv4
+			has_trait = leader_trait_scientist_affection_lv4_max
+			has_trait = leader_trait_scientist_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 海军上将
+			has_trait = leader_trait_admiral_affection_lv1
+			has_trait = leader_trait_admiral_affection_lv2
+			has_trait = leader_trait_admiral_affection_lv3
+			has_trait = leader_trait_admiral_affection_lv4
+			has_trait = leader_trait_admiral_affection_lv4_max
+			has_trait = leader_trait_admiral_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 陆军将领
+			has_trait = leader_trait_general_affection_lv1
+			has_trait = leader_trait_general_affection_lv2
+			has_trait = leader_trait_general_affection_lv3
+			has_trait = leader_trait_general_affection_lv4
+			has_trait = leader_trait_general_affection_lv4_max
+			has_trait = leader_trait_general_affection_lv5
+		}
+		calc_true_if = { amount = 2 
+			# 统治者
+			has_ruler_trait = leader_trait_ruler_affection_lv1
+			has_ruler_trait = leader_trait_ruler_affection_lv2
+			has_ruler_trait = leader_trait_ruler_affection_lv3
+			has_ruler_trait = leader_trait_ruler_affection_lv4
+			has_ruler_trait = leader_trait_ruler_affection_lv4_max
+			has_ruler_trait = leader_trait_ruler_affection_lv5
+		}
+	}
+}
+
+# 检查某特殊领袖是否有重复的好感度技能
+# 输入：LEADER_CLASS；领袖类别，同一领袖名定义拥有多个领袖类别
+# 有效值：governor, scientist，admiral，general
+# LEADER；自定义领袖名字。
+# 脚本条件因为BUG必须要加NOT 反转结果！！！
+has_multiple_special_leader_affection_traits = {
+	calc_true_if = { amount = 2 
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv1
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv2
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv3
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv4
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv4_max
+		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv5
+	}
+}
+
+has_married_selected_leader = {
+	OR = {
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 1 }
+			ruler = { has_leader_flag = married }
+		}
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 2 }
+			has_country_flag = married_wsg_lady
+		}
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 3 }
+			has_country_flag = married_wsg_shimakaze
+		}
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 4 }
+			has_country_flag = married_gray
+		}
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 5 }
+			has_country_flag = married_bubbles
+		}
+		AND = {
+			check_variable = { which = selected_check_affection_leader value = 6 }
+			has_country_flag = married_swgs_Sharan
+		}
+	}
+}
+
+# scope: leader
+has_affection_trait = {
+	OR = {
+		# 总督
+		has_trait = leader_trait_governor_affection_lv1
+		has_trait = leader_trait_governor_affection_lv2
+		has_trait = leader_trait_governor_affection_lv3
+		has_trait = leader_trait_governor_affection_lv4
+		has_trait = leader_trait_governor_affection_lv4_max
+		has_trait = leader_trait_governor_affection_lv5
+		# 科学家
+		has_trait = leader_trait_scientist_affection_lv1
+		has_trait = leader_trait_scientist_affection_lv2
+		has_trait = leader_trait_scientist_affection_lv3
+		has_trait = leader_trait_scientist_affection_lv4
+		has_trait = leader_trait_scientist_affection_lv4_max
+		has_trait = leader_trait_scientist_affection_lv5
+		# 海军上将
+		has_trait = leader_trait_admiral_affection_lv1
+		has_trait = leader_trait_admiral_affection_lv2
+		has_trait = leader_trait_admiral_affection_lv3
+		has_trait = leader_trait_admiral_affection_lv4
+		has_trait = leader_trait_admiral_affection_lv4_max
+		has_trait = leader_trait_admiral_affection_lv5
+		# 陆军将领
+		has_trait = leader_trait_general_affection_lv1
+		has_trait = leader_trait_general_affection_lv2
+		has_trait = leader_trait_general_affection_lv3
+		has_trait = leader_trait_general_affection_lv4
+		has_trait = leader_trait_general_affection_lv4_max
+		has_trait = leader_trait_general_affection_lv5
+	}
+}

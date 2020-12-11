@@ -16,24 +16,27 @@ event = {
 			country_event = { id = wg_aft.200 }
 		}
 		every_country = {
-			limit = {
-				has_wg_special_authority = yes
-				NOR = {
-					has_ascension_perk = ap_shenhai_silent
-					has_civic = civic_CM
-				}
-				is_ai = no
+			limit = { is_ai = no }
+			if = {
+				limit = { has_wg_special_authority = yes }
+				country_event = { id = wg_aft.15 days = 12 } # 移除3级好感领袖的原版负面特性
+				# country_event = { id = wg_aft.33 days = 13 }
+				country_event = { id = wg_aft.35 days = 14 } # 辅助研究
+				country_event = { id = wg_aft.2 days = 11 } # 每月为领袖增加好感
+				
 			}
-			country_event = { id = wg_aft.2 days = 11 } # 每月为领袖增加好感
-			country_event = { id = wg_aft.15 days = 12 } # 移除3级好感领袖的原版负面特性
-			# country_event = { id = wg_aft.33 days = 13 }
-			country_event = { id = wg_aft.35 days = 14 } # 辅助研究
 			country_event = { id = wg_aft.100 days = 20 } #检查好感度数值和等级
 		}
 		every_country = {
 			limit = {
 				any_owned_leader = { has_affection_trait = yes }
-				has_wg_special_authority = no
+				OR = {
+					has_wg_special_authority = no
+					OR = {
+						has_civic = civic_CM
+						has_ascension_perk = ap_shenhai_silent
+					}
+				}
 			}
 			country_event = { id = wg_aft.101 days = 21 }
 		}
@@ -3835,31 +3838,25 @@ country_event = {
 			limit = { has_country_flag = gain_wsg_lady }
 			set_variable = { which = lady_affection value = 0 }
 			set_variable = { which = lady_affection_level value = 0 }
-		}
-		if = {
-			limit = { is_vaild_gray_owner = yes }
-			set_variable = { which = gray_affection value = 0 }
-			set_variable = { which = gray_affection_level value = 0 }
+			reset_lady_affection_level = yes
 		}
 		if = {
 			limit = { has_country_flag = has_afk_Sharan }
 			set_variable = { which = Sharan_affection value = 0 }
 			set_variable = { which = Sharan_affection_level value = 0 }
+			reset_Sharan_affection_level = yes
 		}
 		if = {
 			limit = { has_country_flag = has_kc_yuudaichi }
 			set_variable = { which = yuudaichi_affection value = 0 }
 			set_variable = { which = yuudaichi_affection_level value = 0 }
+			reset_yuudaichi_affection_level = yes
 		}
 		if = {
 			limit = { has_country_flag = has_afk_Pellaeon }
 			set_variable = { which = Pellaeon_affection value = 0 }
 			set_variable = { which = Pellaeon_affection_level value = 0 }
-		}
-		if = {
-			limit = { has_country_flag = modified_bubbles }
-			set_variable = { which = bubbles_affection value = 0 }
-			set_variable = { which = bubbles_affection_level value = 0 }
+			reset_Pellaeon_affection_level = yes
 		}
 	}
 }
