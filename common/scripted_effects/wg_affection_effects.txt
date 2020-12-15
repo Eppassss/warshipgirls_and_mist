@@ -207,26 +207,26 @@ add_special_leader_affection = {
 	}
 	else_if = {
 		limit = { PREV = { check_variable = { which = $LEADER$_affection value = @$LEADER$_affection_to_lv2 }}}
-		remove_$LEADER$_$LEADER_CLASS$_affection_trait = yes
+		remove_special_leader_affection_trait = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ }
 		add_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv2
 		PREV = { set_variable = { which = $LEADER$_affection_level value = 2 }}
 	}
 	else_if = {
 		limit = { PREV = { check_variable = { which = $LEADER$_affection value = @$LEADER$_affection_to_lv3 }}}
-		remove_$LEADER$_$LEADER_CLASS$_affection_trait = yes
+		remove_special_leader_affection_trait = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ }
 		add_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv3
 		PREV = { set_variable = { which = $LEADER$_affection_level value = 3 }}
 	}
 	else_if = {
 		limit = { PREV = { check_variable = { which = $LEADER$_affection value = @$LEADER$_affection_to_lv4 }}}
-		remove_$LEADER$_$LEADER_CLASS$_affection_trait = yes
+		remove_special_leader_affection_trait = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ }
 		add_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv4
 		PREV = { set_variable = { which = $LEADER$_affection_level value = 4 }}
 	}
 	else_if = {
 		limit = { PREV = { check_variable = { which = $LEADER$_affection value = @$LEADER$_affection_to_lv5 }}}
 		PREV = { set_country_flag = $LEADER$_affection_max }
-		remove_$LEADER$_$LEADER_CLASS$_affection_trait = yes
+		remove_special_leader_affection_trait = { LEADER = $LEADER$ LEADER_CLASS = $LEADER_CLASS$ }
 		if = {
 			limit = { PREV = { has_country_flag = $MARRIED_FLAG$ }}
 			add_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv5
@@ -596,7 +596,7 @@ add_ruler_affection = {
 add_lady_affection = {
 	switch = {
 		trigger = has_country_flag
-		lady_governor_active = { 
+		wsg_lady_governor_active = { 
 			if = {
 				limit = { exists = event_target:lady_governor }
 				event_target:lady_governor = {
@@ -609,7 +609,7 @@ add_lady_affection = {
 				}
 			}
 		}
-		lady_warship_active = {
+		wsg_lady_warship_active = {
 			if = {
 				limit = { has_country_flag = lady_juggernaut }
 				if = {
@@ -1006,7 +1006,7 @@ reset_ruler_affection_level = {
 reset_lady_affection_level = {
 	switch = {
 		trigger = has_country_flag
-		lady_governor_active = { 
+		wsg_lady_governor_active = { 
 			if = {
 				limit = { exists = event_target:lady_governor }
 				event_target:lady_governor = {
@@ -1023,7 +1023,7 @@ reset_lady_affection_level = {
 				}
 			}
 		}
-		lady_warship_active = {
+		wsg_lady_warship_active = {
 			if = {
 				limit = { has_country_flag = lady_juggernaut }
 				remove_lady_fleet_affection_modifier = yes
@@ -1039,8 +1039,8 @@ reset_lady_affection_level = {
 					}
 				}
 			} else = {
-			random_owned_leader = {
-				limit = { has_leader_flag = wsg_lady_admiral }
+				random_owned_leader = {
+					limit = { has_leader_flag = wsg_lady_admiral }
 					remove_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral }
 					add_special_leader_affection_trait = { LEADER = lady LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_lady }
 					set_lady_portrait = yes

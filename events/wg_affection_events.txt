@@ -184,6 +184,10 @@ country_event = {
 										check_variable = { which = "months_no_affection" value >= 13 }
 										add = -10
 									}
+									modifier = {
+										owner = { has_country_flag = cheat_grow_affection }
+										factor = 0
+									}
 									change_variable = { which = "months_no_affection" value = 1 }
 								}
 							}
@@ -579,6 +583,10 @@ ship_event = {
 					check_variable = { which = "planets_no_affection" value >= 12 }
 					factor = 0
 				}
+				modifier = {
+					owner = { has_country_flag = cheat_grow_affection }
+					factor = 0
+				}
 				change_variable = { which = "planets_no_affection" value = 1 }
 			}
 		}}
@@ -820,6 +828,30 @@ country_event = {
 		FROMFROM = {
 			if = {
 				limit = { 
+					has_fleet_flag = lady_fleet2
+					NOR = { 
+						has_fleet_flag = counting_affection
+						owner = { has_country_flag = lady_affection_max }
+					}
+				}
+				set_fleet_flag = counting_affection
+				set_variable = { which = "days_combat_no_affection" value = 0 }
+				fleet_event = { id = wg_aft.1003 }
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_fleet_flag = lost_amoeba_fleet@owner
+						has_fleet_flag = lost_amoeba_adult_fleet@owner
+						has_fleet_flag = lost_amoeba_centenarian_fleet@owner
+					}
+				}
+				set_fleet_flag = counting_affection
+				set_variable = { which = "days_combat_no_affection" value = 0 }
+				fleet_event = { id = wg_aft.201 }
+			}
+			else_if = {
+				limit = { 
 					leader = { 
 						leader_class = admiral
 						is_wg_leader_with_affection_not_full = yes
@@ -830,7 +862,10 @@ country_event = {
 				leader = { set_variable = { which = "days_combat_no_affection" value = 0 }}
 				fleet_event = { id = wg_aft.10 }
 			}
-			else_if = {
+		}
+
+		FROMFROMFROM = {
+			if = {
 				limit = { 
 					has_fleet_flag = lady_fleet2
 					NOR = { 
@@ -854,10 +889,7 @@ country_event = {
 				set_variable = { which = "days_combat_no_affection" value = 0 }
 				fleet_event = { id = wg_aft.201 }
 			}
-		}
-
-		FROMFROMFROM = {
-			if = {
+			else_if = {
 				limit = { 
 					leader = { 
 						leader_class = admiral
@@ -868,30 +900,6 @@ country_event = {
 				set_fleet_flag = counting_affection
 				set_variable = { which = "days_combat_no_affection" value = 0 }
 				fleet_event = { id = wg_aft.10 }
-			}
-			else_if = {
-				limit = { 
-					has_fleet_flag = lady_fleet2
-					NOR = { 
-						has_fleet_flag = counting_affection
-						owner = { has_country_flag = lady_affection_max }
-					}
-				}
-				set_fleet_flag = counting_affection
-				set_variable = { which = "days_combat_no_affection" value = 0 }
-				fleet_event = { id = wg_aft.1003 }
-			}
-			else_if = {
-				limit = { 
-					OR = {
-						has_fleet_flag = lost_amoeba_fleet@owner
-						has_fleet_flag = lost_amoeba_adult_fleet@owner
-						has_fleet_flag = lost_amoeba_centenarian_fleet@owner
-					}
-				}
-				set_fleet_flag = counting_affection
-				set_variable = { which = "days_combat_no_affection" value = 0 }
-				fleet_event = { id = wg_aft.201 }
 			}
 		}
 	}
@@ -1042,6 +1050,56 @@ fleet_event = {
 			limit = { is_in_combat = no }
 			if = {
 				limit = { 
+					OR = {
+						has_fleet_flag = lady_fleet2
+						has_fleet_flag = lady_armed_science
+					}
+					owner = { 
+						wsg_lady_available = yes
+						NOT = { has_country_flag = lady_affection_max }
+					}
+					has_fleet_flag = counting_affection
+				}
+				remove_fleet_flag = counting_affection
+				owner = {
+					set_variable = { which = "days_combat_no_affection_lady" value = 0 }
+					random_list = {
+						1 = {
+							modifier = {
+								check_variable = { which = "battles_won_no_affection_lady" value >= 2 }
+								add = 2
+							}
+							modifier = {
+								check_variable = { which = "battles_won_no_affection_lady" value >= 3 }
+								add = 3
+							}
+							modifier = { # buff加成的额外几率
+								has_modifier = wg_modifier_canteen_affectionUp1
+								factor = 2
+							}
+							set_variable = { which = "battles_won_no_affection_lady" value = 0 }
+							add_lady_affection = yes
+							if = { # buff加成的额外好感度
+								limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+								add_lady_affection = yes
+							}
+						}
+						4 = {
+							modifier = {
+								check_variable = { which = "battles_won_no_affection_lady" value >= 1 }
+								add = -1
+							}
+							modifier = {
+								check_variable = { which = "battles_won_no_affection_lady" value >= 4 }
+								factor = 0
+							}
+							change_variable = { which = "battles_won_no_affection_lady" value = 1 }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { 
 					exists = leader
 					leader = { 
 						NOT = { has_leader_flag = wsg_lady_leader }
@@ -1123,56 +1181,6 @@ fleet_event = {
 								factor = 0
 							}
 							change_variable = { which = "battles_won_no_affection" value = 1 }
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 
-					OR = {
-						has_fleet_flag = lady_fleet2
-						has_fleet_flag = lady_armed_science
-					}
-					owner = { 
-						wsg_lady_available = yes
-						NOT = { has_country_flag = lady_affection_max }
-					}
-					has_fleet_flag = counting_affection
-				}
-				remove_fleet_flag = counting_affection
-				owner = {
-					set_variable = { which = "days_combat_no_affection_lady" value = 0 }
-					random_list = {
-						1 = {
-							modifier = {
-								check_variable = { which = "battles_won_no_affection_lady" value >= 2 }
-								add = 2
-							}
-							modifier = {
-								check_variable = { which = "battles_won_no_affection_lady" value >= 3 }
-								add = 3
-							}
-							modifier = { # buff加成的额外几率
-								has_modifier = wg_modifier_canteen_affectionUp1
-								factor = 2
-							}
-							set_variable = { which = "battles_won_no_affection_lady" value = 0 }
-							add_lady_affection = yes
-							if = { # buff加成的额外好感度
-								limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
-								add_lady_affection = yes
-							}
-						}
-						4 = {
-							modifier = {
-								check_variable = { which = "battles_won_no_affection_lady" value >= 1 }
-								add = -1
-							}
-							modifier = {
-								check_variable = { which = "battles_won_no_affection_lady" value >= 4 }
-								factor = 0
-							}
-							change_variable = { which = "battles_won_no_affection_lady" value = 1 }
 						}
 					}
 				}
@@ -3234,6 +3242,7 @@ country_event = {
 	}
 }
 
+# 普通领袖复活事件
 country_event = {
 	id = wg_aft.22
 	title = wg_aft.22.name
@@ -3249,6 +3258,7 @@ country_event = {
 	}
 }
 
+# 劳模复活事件
 country_event = {
 	id = wg_aft.23
 	title = wg_aft.23.name
@@ -3265,6 +3275,7 @@ country_event = {
 	}
 }
 
+# 劳模复活事件
 country_event = {
 	id = wg_aft.24
 	title = wg_aft.24.name
@@ -3281,6 +3292,7 @@ country_event = {
 	}
 }
 
+# 艾拉复活事件
 country_event = {
 	id = wg_aft.25
 	title = wg_aft.25.name
@@ -3298,6 +3310,7 @@ country_event = {
 	}
 }
 
+# 桑提复活事件
 country_event = {
 	id = wg_aft.26
 	title = wg_aft.26.name
@@ -3314,6 +3327,7 @@ country_event = {
 	}
 }
 
+# 花生复活事件
 country_event = {
 	id = wg_aft.27
 	title = wg_aft.27.name
@@ -3330,6 +3344,7 @@ country_event = {
 	}
 }
 
+# 太太复活事件
 country_event = {
 	id = wg_aft.28
 	title = wg_aft.28.name
@@ -3366,6 +3381,7 @@ country_event = {
 	}
 }
 
+# 乜提督复活事件
 country_event = {
 	id = wg_aft.1020
 	title = wg_aft.1020.name
@@ -3382,7 +3398,7 @@ country_event = {
 	}
 }
 
-# 非统治者复活事件
+# 非统治者复活事件（隐藏）
 country_event = {
 	id = wg_aft.29
 	hide_window = yes
@@ -3416,6 +3432,7 @@ country_event = {
 	}
 }
 
+# 非统治者复活事件
 fleet_event = {
 	id = wg_aft.33
 	hide_window = yes
@@ -3446,6 +3463,7 @@ fleet_event = {
 	}
 }
 
+# 无法复活提醒事件
 country_event = {
 	id = wg_aft.30
 	title = wg_aft.22.name

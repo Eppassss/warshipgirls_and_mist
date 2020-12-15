@@ -183,7 +183,7 @@
  decision_water_project_1_desc:0 "Launch the Hot Spring Festival on this planet and attract tourists from all over our empire."
  swim_project_requirements:0 "$TRIGGER_FAIL$There has already been a planet that is currently holding a Hot Spring Festival."
  tech_wg_waterB2:0 "Hot Spring World Project"
- tech_wg_waterB2_desc:0 "Just as the old says, A coin has two sides.We need to use some magical(many Science Fiction will write a fucking cool word here） way to reform the plant."
+ tech_wg_waterB2_desc:0 "Let's get things exciting! We just need some magical methods (many SF novels will place another cool word here instead) to terraform this planet into a Hot Spring World."
  water_edicts:0 "Allows terraforming an Aqua World to Hot Spring World.\n§HUnlocks Hot Spring World Edict: §!Hot Spring Festival"
  water_edicts_desc:0 "The Hot Spring World is an ideal resort world that can bring profits to our entire empire."
  district_hab_pantsu:0 "Pantsu Collection District"

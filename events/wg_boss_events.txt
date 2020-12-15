@@ -5550,6 +5550,7 @@ country_event = {
 	option = {
 		name = wg_boss.144.c
 		custom_tooltip = wg_boss.144.c.tooltip
+		response_text = wg_boss.144.c.response
 		hidden_effect = { 
 			country_event = { id = wg_boss.155 days = 10 }
 			# country_event = { id = wg_boss.164 days = 3 }
@@ -5558,6 +5559,7 @@ country_event = {
 	option = {
 		name = wg_boss.144.d
 		custom_tooltip = wg_boss.144.d.tooltip
+		response_text = wg_boss.144.d.response
 		hidden_effect = { 
 			country_event = { id = wg_boss.156 days = 10 }
 			# country_event = { id = wg_boss.165 days = 3 }

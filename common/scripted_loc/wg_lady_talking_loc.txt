@@ -104,21 +104,21 @@ defined_text = {
 			has_country_flag = wsg_lady_armed_science_active 
 			check_variable = { which = wsg_lady_talking value = 1 }
 		}
-		localization_key = wg_lady.28.c
+		localization_key = wg_lady.28.d
 	}
 	text = {
 		trigger = {
 			has_country_flag = wsg_lady_armed_science_active 
 			check_variable = { which = wsg_lady_talking value = 2 }
 		}
-		localization_key = wg_lady.28.d
+		localization_key = wg_lady.28.e
 	}
 	text = {
 		trigger = {
 			has_country_flag = wsg_lady_armed_science_active 
 			check_variable = { which = wsg_lady_talking value = 3 }
 		}
-		localization_key = wg_lady.28.e
+		localization_key = wg_lady.28.f
 	}
 	text = {
 		trigger = {

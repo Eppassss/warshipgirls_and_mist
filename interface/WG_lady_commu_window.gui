@@ -78,7 +78,7 @@ guiTypes = {
 		#########################################
 		#               立绘                    #
 		#########################################
-		@portrait_x = 35
+		@portrait_x = 0
 		@portrait_y = 0
 		effectButtonType = {
 			name = "wg_lady_portrait_1"

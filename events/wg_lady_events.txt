@@ -5016,13 +5016,13 @@ country_event = {
 				set_variable = { which = lady_affection_level value = 5 }
 				switch = {
 					trigger = has_country_flag
-					lady_governor_active = { 
+					wsg_lady_governor_active = { 
 						event_target:lady_governor = {
 							remove_special_leader_affection_trait = { LEADER_CLASS = governor LEADER = lady }
 							add_trait = leader_trait_governor_lady_affection_lv5
 						}
 					}
-					lady_warship_active = {
+					wsg_lady_warship_active = {
 						random_owned_leader = {
 							limit = { has_leader_flag = wsg_lady_admiral }
 							remove_special_leader_affection_trait = { LEADER_CLASS = scientist LEADER = lady }

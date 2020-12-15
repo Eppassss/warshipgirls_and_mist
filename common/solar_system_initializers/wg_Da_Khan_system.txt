@@ -56,21 +56,22 @@ wg_Da_Khan_system = {
 						add_modifier = { modifier = khan_hard_buff }
 					}
 					if = {
-						limit = { years_passed >= 50 }
-						if = {
-							limit = {
-								years_passed <= 55 
-								has_global_flag = wg_crisis_insane
-							}
-							set_timed_global_flag = { flag = spawn_khan_boss years = 25 }
-						} else = {
-							set_global_flag = spawn_khan_home
-							add_modifier = { modifier = khan_buff_after_50_years }
-							if = {
-								limit = { has_global_flag = wg_crisis_insane }
-								add_modifier = { modifier = khan_insane_buff }
-							}
+						limit = {
+							years_passed <= 55 
+							has_global_flag = wg_crisis_insane
 						}
+						set_timed_global_flag = { flag = spawn_khan_boss years = 25 }
+					} else_if = {
+						limit = { always=yes }
+						set_global_flag = spawn_khan_home
+						if = {
+							limit = { has_global_flag = wg_crisis_insane }
+							add_modifier = { modifier = khan_insane_buff }
+						}
+					}
+					if = {
+						limit = { years_passed >= 50 }
+						add_modifier = { modifier = khan_buff_after_50_years }
 					}
 					if = {
 						limit = { years_passed >= 100 }

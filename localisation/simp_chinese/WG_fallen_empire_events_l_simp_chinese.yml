@@ -181,13 +181,13 @@ wg_fe.131.name:0 "舰队交付"
 wg_fe.131.desc:0 "[wg_fallen_empire.GetName]承诺给予我们的战舰已经抵达首都[root.capital_scope.GetName]。"
 
 ##################
-wg_fe.129.tooltip.1:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£energy£ $energy$§G[this.energy_out]§!\n£minerals£ $minerals$§G[this.minerals_out]§!"
-wg_fe.129.tooltip.2:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£alloys£ $alloys$§G[this.alloys_out]§!"
-wg_fe.129.tooltip.3:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£sr_pantsu£ $sr_pantsu$§G[this.sr_pantsu_out]§!"
-wg_fe.129.tooltip.4:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£volatile_motes£ $volatile_motes$§G[this.volatile_motes_out]§!\n£rare_crystals£ $rare_crystals$§G[this.rare_crystals_out]§!\n£exotic_gases£ $exotic_gases$§G[this.exotic_gases_out]§!"
-wg_fe.129.tooltip.5:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£sr_living_metal£ $sr_living_metal$§G[this.sr_living_metal_out]§!\n£sr_dark_matter£ $sr_dark_matter$§G[this.sr_dark_matter_out]§!\n£sr_zro£ $sr_zro$§G[this.sr_zro_out]§!"
-wg_fe.129.tooltip.6:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£sr_se£ $sr_se$§G[this.sr_se_out]§!"
-wg_fe.129.tooltip.10:0 "£consumer_goods£ $consumer_goods$§Y[this.consumer_goods_cost]§!\n£nanites£ $nanites$§G[this.nanites_out]§!"
+wg_fe.129.tooltip.1:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£energy£ $energy$§G[this.energy_out]§!\n£minerals£ $minerals$§G[this.minerals_out]§!"
+wg_fe.129.tooltip.2:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£alloys£ $alloys$§G[this.alloys_out]§!"
+wg_fe.129.tooltip.3:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£sr_pantsu£ $sr_pantsu$§G[this.sr_pantsu_out]§!"
+wg_fe.129.tooltip.4:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£volatile_motes£ $volatile_motes$§G[this.volatile_motes_out]§!\n£rare_crystals£ $rare_crystals$§G[this.rare_crystals_out]§!\n£exotic_gases£ $exotic_gases$§G[this.exotic_gases_out]§!"
+wg_fe.129.tooltip.5:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£sr_living_metal£ $sr_living_metal$§G[this.sr_living_metal_out]§!\n£sr_dark_matter£ $sr_dark_matter$§G[this.sr_dark_matter_out]§!\n£sr_zro£ $sr_zro$§G[this.sr_zro_out]§!"
+wg_fe.129.tooltip.6:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£sr_se£ $sr_se$§G[this.sr_se_out]§!"
+wg_fe.129.tooltip.10:0 "£consumer_goods£ $consumer_goods$§Y-[this.consumer_goods_cost]§!\n£nanites£ $nanites$§G[this.nanites_out]§!"
 not_enough_consumer_goods:0 "§H$consumer_goods$§!§Y库存§!§R必须是大于§!§Y[this.consumer_goods_cost]§!"
 
 

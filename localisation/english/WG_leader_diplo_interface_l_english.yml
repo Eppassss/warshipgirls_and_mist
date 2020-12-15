@@ -11,6 +11,6 @@
  already_has_wsg_shimakaze_diplo:0 "You have already opened a conversation window with Shimakaze."
  already_has_wsg_bubbles_diplo:0 "You have already opened a conversation window with Bubbles."
  portrait_locked:0 "Locked"
- wsglady_cloth_01_unlock_tooltip:0 "通过4级好感度事件第二路线解锁"
- wsglady_cloth_02_unlock_tooltip:0 "通过3级好感度“情人节”事件解锁"
+ wsglady_cloth_01_unlock_tooltip:0 "Unlock after finishing \"Lady Contingency's Festival\" event."
+ wsglady_cloth_02_unlock_tooltip:0 "Unlock after finishing \"Lady Contingency's Valentine\" event."
  change_cloth:0 "Change Costume"

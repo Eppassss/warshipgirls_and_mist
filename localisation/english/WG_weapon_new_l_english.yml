@@ -101,6 +101,6 @@
  tech_wg_carrier_computer_desc: "This computer allows the ship to withdraw after the engagement, which is suitable for carriers.\n§YThis tactic is not for warships with spinal mount weapons.§!"
  WG_COMPUTER_CARRIER: "0v Combat Computer Type 1 (Carrier)"
  WG_COMPUTER_CARRIER_DESC: "This computer allows the ship to withdraw after the engagement, which is suitable for carriers.\n§YThis tactic is not for warships with spinal mount weapons.§!"
- pantsu_shop_science_ship:0 "Polania"
+ pantsu_shop_science_ship:0 "Armed Science Ship"
  pantsu_shop_science_ship2:0 "Noviciate-class Science Ship"
  pantsu_shop_science_ship_desc:0 "An advanced science ship with §Yhigher scanning and anomaly researching speed§!. The light armament ensures its self-protection capability."
