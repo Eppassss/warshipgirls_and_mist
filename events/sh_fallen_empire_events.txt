@@ -933,6 +933,7 @@ country_event = {
 		country_event = { id = sh_fe.19 days = 90 random = 360 }#送资源
 		country_event = { id = sh_fe.20 days = 360 random = 720 }#送建筑
 		country_event = { id = sh_fe.21 days = 180 random = 720 }#送向日葵
+		country_event = { id = sh_fe.27 days = 1800 random = 720 }#送向日葵
 		# random_country = {
 		# 	limit = {
 		# 		is_sh_fallen_empire = yes
@@ -1349,7 +1350,6 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	force_open = yes
-	fire_only_once = yes
 
 	picture_event_data = {
 		portrait = event_target:sh_fallen_empire
@@ -1366,6 +1366,53 @@ country_event = {
 				alloys = 1000
 				minerals = 2000
 				energy = 2000
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sh_fe.27
+	title = "TRANSMISSION"
+	desc = "sh_fe.27.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:sh_fallen_empire
+		planet_background = event_target:sh_fallen_empire
+		graphical_culture = event_target:sh_fallen_empire
+		city_level = event_target:sh_fallen_empire
+		room = event_target:sh_fallen_empire.ruler
+	}
+
+	option = {
+		name = "sh_fe.19.a"
+		hidden_effect = {
+			capital_scope = {
+				create_fleet = {
+					name = "NAME_SH_FE_WATCHKEEPER"
+					effect = {
+						set_owner = root
+						create_ship = {
+							name = random
+							design = "NAME_SH_FE_WATCHKEEPER2"
+							upgradable = no
+						}
+						set_location = prev
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
+					}
+					settings = { 
+						can_upgrade = no
+						uses_naval_capacity = yes
+						spawn_debris = no
+						is_boss = yes
+					}
+				}
 			}
 		}
 	}

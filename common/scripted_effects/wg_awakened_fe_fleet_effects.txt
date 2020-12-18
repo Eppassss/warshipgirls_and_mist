@@ -62,6 +62,11 @@ create_wg_awakened_fe_fleet = {
 			name = "NAME_WG_FE_CAPITAL_FLEET"
 			effect = {
                 set_owner = event_target:wg_awakened_fleet_country_targer
+				create_ship = {
+					name = random
+					design = "NAME_SH_FE_WATCHKEEPER2"
+					upgradable = no
+				}
                 while = {
                     count = 5
                     create_ship = {
@@ -170,6 +175,16 @@ create_wg_back_fe_fleet = {
 			name = "NAME_WG_FE_CAPITAL_FLEET"
 			effect = {
                 set_owner = event_target:wg_awakened_fleet_country_targer
+				create_ship = {
+					name = random
+					design = "NAME_SH_FE_WATCHKEEPER2"
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "NAME_SH_FE_WATCHKEEPER2"
+					upgradable = no
+				}
                 while = {
                     count = 10
                     create_ship = {

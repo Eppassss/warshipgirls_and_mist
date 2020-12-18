@@ -1156,7 +1156,6 @@ country_event = {
 		every_planet = {
 			limit = { 
 				has_modifier = planet_Khan_occupied 
-				owner = { is_ai = yes }
 			}
 			remove_modifier = planet_Khan_occupied
 			set_controller = owner

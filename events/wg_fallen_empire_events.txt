@@ -1589,9 +1589,36 @@ country_event = {
 	immediate = {
 		capital_scope = {
 			create_fleet = {
+				name = "NAME_WG_FE_WATCHKEEPER"
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = random
+						design = "NAME_WG_FE_WATCHKEEPER"
+						upgradable = no
+					}
+					set_location = prev
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+					add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
+				}
+				settings = { 
+					can_upgrade = no
+					uses_naval_capacity = yes
+					spawn_debris = no
+					is_boss = yes
+				}
+			}
+			create_fleet = {
 				name = "NAME_WG_FE_COLONY_FLEET"
 				effect = {
 					set_owner = root
+					create_ship = {
+						name = random
+						design = "NAME_WG_FE_WATCHKEEPER2"
+						upgradable = no
+					}
 					while = {
 						count = 3
 						create_ship = {

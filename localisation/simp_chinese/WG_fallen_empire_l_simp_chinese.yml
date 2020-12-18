@@ -67,6 +67,8 @@
  wg_fe_ark_factory:0 "方舟工厂\n§W§Y该生产模块:\n§H 生产§G巨量的§!£energy £minerals £food £alloys £consumer_goods £sr_se £sr_pantsu §!"
  wg_fe_ark:0 "永恒方舟"
  SHIP_AURA_FE:0 "微型水雷布置装置"
+ wg_fe_watchkeeper:0 "守望者"
+ wg_fe_watchkeeper2:0 "守望者"
 ###############################################################
  wg_fe.2.desc:0 "嗨，各位[root.GetSpeciesNamePlural]，很高兴见到你们，虽然我们已经记不清你们是我们遇到过的第几个舰娘文明了。\n\n我们是§Y[wg_fallen_empire.GetName]§!，现在是这个银河系的住民。\n\n我们和你们一样都是§Y舰娘§!，所以就来问候一声了。"
  wg_fe.2.a:0 "很高兴能认识你们，[wg_fallen_empire.GetName]。"

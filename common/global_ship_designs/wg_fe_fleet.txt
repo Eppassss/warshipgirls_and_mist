@@ -523,3 +523,856 @@ ship_design = {
 	required_component="COLOSSUS_SHIP_THRUSTER_SH"
 	
 }
+
+#########今世
+ship_design = {
+	name = "NAME_WG_FE_WATCHKEEPER"
+	ship_size = wg_fe_watchkeeper
+	section = {
+		template = "wg_fe_watchkeeper_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "sh_weapen_H"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "sh_weapen_H"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "sh_weapen_EH"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "sh_weapen_EH"	
+		}			
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}	
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHELL_sh"
+		}		
+	}
+	required_component= "SH_JUMP_DRIVE"
+	required_component= "SENSOR_SH"
+	required_component= "COMBAT_COMPUTER_ARTILLERY_SH"
+	required_component = "STARBASE_sh_senergy_REACTOR"
+	required_component= "DESTROYER_SHIP_THRUSTER_SH"
+	required_component= "SHIP_AURA_UF"
+	required_component= "SHIP_AURA_FE"
+	required_component = "SHIP_AURA_RANGE"
+	
+	# For special buildable
+	is_special_buildable = yes
+	allow_buildable_trigger = is_wg_fallen_empire
+}
+
+#########来生
+ship_design = {
+	name = "NAME_SH_FE_WATCHKEEPER"
+	ship_size = wg_fe_watchkeeper
+	section = {
+		template = "sh_fe_watchkeeper_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_03"
+			template = "sh_weapen_XAC"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "sh_torpedo"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "sh_torpedo"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "sh_weapen_H"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "sh_weapen_H"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "sh_weapen_EH"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "sh_weapen_EH"	
+		}			
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}	
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHELL_sh"
+		}		
+	}
+	required_component= "SH_JUMP_DRIVE"
+	required_component= "SENSOR_SH"
+	required_component= "COMBAT_COMPUTER_ARTILLERY_SH"
+	required_component = "STARBASE_sh_senergy_REACTOR"
+	required_component= "DESTROYER_SHIP_THRUSTER_SH"
+	required_component= "SHIP_AURA_UF"
+	required_component= "SHIP_AURA_FE"
+	required_component = "SHIP_AURA_RANGE"
+	
+	# For special buildable
+	is_special_buildable = yes
+	allow_buildable_trigger = is_wg_fallen_empire
+}
+
+#########今世
+ship_design = {
+	name = "NAME_WG_FE_WATCHKEEPER2"
+	ship_size = wg_fe_watchkeeper2
+	section = {
+		template = "wg_fe_watchkeeper_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "sh_weapen_H"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "sh_weapen_H"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "sh_weapen_EH"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "sh_weapen_EH"	
+		}			
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}	
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHELL_sh"
+		}		
+	}
+	required_component= "SH_JUMP_DRIVE"
+	required_component= "SENSOR_SH"
+	required_component= "COMBAT_COMPUTER_ARTILLERY_SH"
+	required_component = "STARBASE_sh_senergy_REACTOR"
+	required_component= "DESTROYER_SHIP_THRUSTER_SH"
+	required_component= "SHIP_AURA_UF"
+	required_component= "SHIP_AURA_FE"
+	required_component = "SHIP_AURA_RANGE"
+	
+	# For special buildable
+	is_special_buildable = yes
+	allow_buildable_trigger = is_wg_fallen_empire
+}
+
+#########来生
+ship_design = {
+	name = "NAME_SH_FE_WATCHKEEPER2"
+	ship_size = wg_fe_watchkeeper2
+	section = {
+		template = "sh_fe_watchkeeper_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITANIC_01"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "TITANIC_02"
+			template = "sh_weapen_T2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "sh_weapen_X2"
+		}
+		component = {
+			slot = "EXTRA_LARGE_03"
+			template = "sh_weapen_XAC"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "sh_torpedo"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "sh_torpedo"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "sh_weapen_H"	
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "sh_weapen_H"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "sh_weapen_EH"	
+		}	
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "sh_weapen_EH"	
+		}			
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "sh_weapen_L2"
+		}		
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "sh_weapen_L2"
+		}	
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "sh_weapen_L2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}		
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_sh_weapen_SML_mkii"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_sh_ship_part_sh_ia"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "FIRE_CONTROL_RADAR_sh"
+		}	
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHELL_sh"
+		}		
+	}
+	required_component= "SH_JUMP_DRIVE"
+	required_component= "SENSOR_SH"
+	required_component= "COMBAT_COMPUTER_ARTILLERY_SH"
+	required_component = "STARBASE_sh_senergy_REACTOR"
+	required_component= "DESTROYER_SHIP_THRUSTER_SH"
+	required_component= "SHIP_AURA_UF"
+	required_component= "SHIP_AURA_FE"
+	required_component = "SHIP_AURA_RANGE"
+	
+	# For special buildable
+	is_special_buildable = yes
+	allow_buildable_trigger = is_wg_fallen_empire
+}
+

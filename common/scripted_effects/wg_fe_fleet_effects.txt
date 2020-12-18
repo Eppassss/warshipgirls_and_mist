@@ -19,6 +19,16 @@ create_wg_fe_fleet = {
 			name = "NAME_WG_FE_CAPITAL_FLEET"
 			effect = {
                 set_owner = event_target:wg_fallen_empire
+				create_ship = {
+					name = random
+					design = "NAME_WG_FE_WATCHKEEPER2"
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "NAME_WG_FE_WATCHKEEPER2"
+					upgradable = no
+				}
                 while = {
                     count = 8
                     create_ship = {

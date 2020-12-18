@@ -68,3 +68,7 @@
  NAME_SH_FE_COLOSSUS: "Colossus Phi"
  NAME_SH_FE_CAPITAL_FLEET: "Unspeakable Fleet"
  NAME_SH_FE_COLONY_FLEET: "Unnamable Fleet"
+ NAME_WG_FE_WATCHKEEPER:"Surbiton" 
+ NAME_WG_FE_WATCHKEEPER2:"Kingston"
+ NAME_SH_FE_WATCHKEEPER:"afterdeath"
+ NAME_SH_FE_WATCHKEEPER2:"Afterlife"
