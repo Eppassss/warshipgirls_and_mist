@@ -103,6 +103,13 @@ is_wg_leader_with_affection_not_full = {
 				NOT = { has_country_flag = bubbles_affection_max }
 			}
 		}
+		AND = {
+			has_leader_flag = wg_dragon_leader
+			owner = { 
+				has_country_flag = wg_dragon_owner
+				NOT = { has_country_flag = wg_dragon_affection_max }
+			}
+		}
 	}
 }
 

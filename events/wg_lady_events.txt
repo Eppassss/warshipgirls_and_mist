@@ -1186,53 +1186,6 @@ country_event = {
 	}
 }
 
-# 地面进攻战斗失败（含大小姐）
-country_event = {
-	id = wg_lady.40
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		NOR = { 
-			has_country_flag = talking_to_wsg_lady
-			has_country_flag = wsg_lady_changing
-			has_modifier = wsg_lady_recover_cd
-		}
-		has_country_flag = wsg_lady_army_active
-		NOT = { any_owned_army = { is_lady_army = yes }}
-	}
-
-	immediate = {
-		remove_country_flag = wsg_lady_army_active
-		add_modifier = { modifier = wsg_lady_recover_cd days = 180 }
-		country_event = { id = wg_lady.39 }
-		country_event = { id = wg_lady.35 days = 180 }
-	}
-}
-
-# 地面进攻战斗失败（含大小姐）
-# 触发
-country_event = {
-	id = wg_lady.41
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_country_flag = gain_wsg_lady
-		NOR = { 
-			has_country_flag = talking_to_wsg_lady
-			has_country_flag = wsg_lady_changing
-		}
-		NOT = { has_modifier = wsg_lady_recover_cd }
-		has_country_flag = wsg_lady_army_active
-	}
-
-	immediate = {
-		country_event = { id = wg_lady.42 days = 3 }
-	}
-
-}
-
 # 解散大小姐陆军
 country_event = {
 	id = wg_lady.42

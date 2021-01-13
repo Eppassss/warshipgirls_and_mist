@@ -520,10 +520,6 @@ wsg_trait_mass_assembly = {
 	custom_tooltip = TRAIT_WSG_ASSEMBLY_EFFECT
 	modifier = {
 		pop_assembly_speed = 0.4
-		pop_category_rulers_sr_se_produces_add = -0.02
-		pop_category_specialists_sr_se_produces_add = -0.02
-		pop_category_workers_sr_se_produces_add = -0.02
-		pop_category_slave_sr_se_produces_add = -0.02
 	}
 }
 

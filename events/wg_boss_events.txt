@@ -4106,7 +4106,7 @@ country_event = {
 		# 		1 = {}
 		# 	}
 		# } else = {
-			country_event = { id = wg_boss.114 days = 60 random = 360 }
+		country_event = { id = wg_boss.114 days = 60 random = 360 }
 		# }
 		
 	}
@@ -6761,32 +6761,6 @@ country_event = {
 	}	
 }
 
-# 旧档补充触发
-country_event = {
-	id = wg_boss.166
-	hide_window = yes
-	mean_time_to_happen = {
-		years = 1
-	}
-	trigger = {
-		end_game_years_passed <= 0
-		is_multiplayer = no
-		OR = {
-			has_technology = tech_psionic_theory
-			has_technology = tech_wsg_P381
-		}
-		OR = {
-			has_authority = auth_shenhai
-			has_authority = auth_warshipgirls
-		}
-		NOT = { has_global_flag = triggered_psionic_wsgs_event }
-	}
-
-	immediate = {
-		set_global_flag = triggered_psionic_wsgs_event
-		country_event = { id = wg_boss.114 }
-	}
-}
 ###########################################
 event = { #生成星系
 	id = wg_boss.1000

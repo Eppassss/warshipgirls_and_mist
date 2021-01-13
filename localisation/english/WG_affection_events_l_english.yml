@@ -2,7 +2,7 @@
  wg_aft.18.name:0 "Wedding Ceremony"
  make_ring:0 "Make an Engagement Ring."
  starshipgirls_ring_tooltip:0 "§YPut these materials together and crumple them into a sphere with the Force... Done! £sr_huaji£§!"
- wg_aft.18.desc:0 "Please select a leader for the Wedding Ceremony.\n\n§YThe selected leader will gain a strong positive trait and unlock §HLv.Max§! affection level.§!\n§HSpecial leaders' (e.g. Gray, Lady Contingency, and Shimakaze) Wedding Ceremony option lies in their §YContact§! §Hinterface.§!"
+ wg_aft.18.desc:0 "Please select a leader for the Wedding Ceremony.\n\n§HNote:\nThe selected leader will gain a strong positive trait and unlock §YLv.Max§! affection level.\n\nSpecial leaders' §Y(e.g. Gray, Lady Contingency, and Shimakaze)§! Wedding Ceremony option lies in their diplomacy interfaces through §YContacts§! menu."
  wg_aft.18.leader1:0 "[leader_tobe_view_1.GetName]"
  wg_aft.18.leader2:0 "[leader_tobe_view_2.GetName]"
  wg_aft.18.leader3:0 "[leader_tobe_view_3.GetName]"

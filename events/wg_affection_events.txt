@@ -1500,6 +1500,8 @@ country_event = {
 					planet = { is_same_value = event_target:victory_planet }
 					leader = { 
 						OR = {
+							has_leader_flag = yuudaichi_leader
+							has_leader_flag = Pellaeon_leader
 							has_leader_flag = wsg_shimakaze_leader
 							is_wg_leader = yes 
 						}
@@ -1510,10 +1512,14 @@ country_event = {
 				limit = {
 					exists = planet
 					planet = { is_same_value = event_target:victory_planet }
-					leader = { 
-						OR = {
-							has_leader_flag = wsg_shimakaze_leader
-							is_wg_leader = yes 
+					OR = {
+						leader = { 
+							OR = {
+								has_leader_flag = wsg_shimakaze_leader
+								has_leader_flag = yuudaichi_leader
+								has_leader_flag = Pellaeon_leader
+								is_wg_leader = yes 
+							}
 						}
 					}
 				}

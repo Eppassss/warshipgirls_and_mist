@@ -274,7 +274,7 @@ wsg_chemist = {
 }
 
 wsg_translucer = {
-category = specialist
+	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_wsg_crystal_plant
 	clothes_texture_index = 3
@@ -703,50 +703,50 @@ wg_tourism = {
 
 wsg_senergy = {
 	category = specialist
-		condition_string = SPECIALIST_JOB_TRIGGER
-		building_icon = building_sh_senergy
-		clothes_texture_index = 3
-		
-		possible_pre_triggers = {
-			has_owner = yes
-			#is_enslaved = no
-			is_being_purged = no
-			is_being_assimilated = no
-		}
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_sh_senergy
+	clothes_texture_index = 3
 	
-		possible = {
-			specialist_job_check_trigger = yes
-			OR = {
-				has_job = wsg_senergy
-				z_pop_job_trigger = yes
-			}
-		}
-		
-		resources = {
-			category = planet_translucers
-			produces = {
-				sr_se = 0.75
-			}
-			upkeep = {
-				energy = 10
-				sr_pantsu = 1
-			}
-		}	
-		resources = {
-			category = planet_translucers
-			potential = {
-				owner = { has_technology = tech_wsg_senergy2 }
-			}
-			produces = {
-				sr_se = 0.25
-			}
-			upkeep = {
-				energy = -2
-			}
-		}
-		
-		weight = {
-			weight = 15		
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		specialist_job_check_trigger = yes
+		OR = {
+			has_job = wsg_senergy
+			z_pop_job_trigger = yes
 		}
 	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_se = 0.75
+		}
+		upkeep = {
+			energy = 10
+			sr_pantsu = 1
+		}
+	}	
+	resources = {
+		category = planet_translucers
+		potential = {
+			owner = { has_technology = tech_wsg_senergy2 }
+		}
+		produces = {
+			sr_se = 0.25
+		}
+		upkeep = {
+			energy = -2
+		}
+	}
+	
+	weight = {
+		weight = 15		
+	}
+	
 }

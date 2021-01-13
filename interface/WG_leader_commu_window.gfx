@@ -259,6 +259,10 @@ spriteTypes = {
 		name = "GFX_wg_lady_02_portrait_locked"
 		texturefile = "gfx/interface/wg_leader_diplo/wg_lady_02_portrait_locked.dds"
 	}
+	spriteType = {
+		name = "GFX_wg_portrait_locked"
+		texturefile = "gfx/interface/wg_leader_diplo/lock.dds"
+	}
 
 	# 灰风立绘
 	spriteType = {

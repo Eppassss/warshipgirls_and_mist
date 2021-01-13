@@ -203,8 +203,6 @@
  tech_wsg_senergy2_desc:0 "现有的深海能源制备方式过于缓慢且费时费力，无法满足所有舰娘对深海能源日益增长的需求，我们需要对工序进行一次革命。"
  tech_wsg_senergy_implantation:0 "深海能源植入"
  tech_wsg_senergy_implantation_desc:0 "自从第一批舰装使用者在对抗深海时意外发现植入深海能源能激发身体的各项潜能后，这种方法便因为副作用巨大被列为禁忌。\n如今建立在对深海能源充足的认知下，这一禁忌将被解除，以解放战舰少女所有的潜力。"
- tech_warshipgirl_senergy_assembly_plantF:0 "深海能源辅助式港区建造机"
- tech_warshipgirl_senergy_assembly_plantF_desc:0 "只要遵循严格的工序，新的深海能源核心便能够无害地供应新一代建造机所需的庞大的能源消耗，并大大简化舰娘们深海能源的植入手术。"
 
 ########################深海
  tech_sh_assembly:0 "深海工业" 

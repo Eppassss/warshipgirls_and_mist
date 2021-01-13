@@ -667,6 +667,7 @@ portraits = {
 	wsglady02 =	{texturefile = "gfx/models/portraits/wsglady02.dds"  }
 	wsglady02_1 =	{texturefile = "gfx/models/portraits/wsglady02_1.dds"  }
 	wsglady02_2 =	{texturefile = "gfx/models/portraits/wsglady02_2.dds"  }
+	wg_dragon =	{texturefile = "gfx/models/portraits/wg_dragon.dds"  }
 }	
 	
 portrait_groups = {

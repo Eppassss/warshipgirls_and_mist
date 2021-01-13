@@ -65,7 +65,7 @@ country_event = {
 	}
 
 	picture_event_data = {
-		portrait = event_target:wg_fallen_empire
+		portrait = wsg1
 		planet_background = event_target:wg_fallen_empire
 		graphical_culture = event_target:wg_fallen_empire
 		city_level = event_target:wg_fallen_empire

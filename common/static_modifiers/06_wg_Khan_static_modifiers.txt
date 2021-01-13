@@ -134,11 +134,11 @@ khan_lighting_storm_debuff = {
 	ship_hull_damage_mult = -0.10
 }
 khan_buff_after_50_years = {
-	ship_hull_mult = 1.0
-	ship_shield_mult = 1.0
-	ship_armor_mult = 1.0
-	ship_fire_rate_mult = 1.00
-	ship_weapon_damage = 0.50
+	ship_hull_mult = 0.3
+	ship_shield_mult = 0.3
+	ship_armor_mult = 0.3
+	ship_fire_rate_mult = 0.3
+	ship_weapon_damage = 0.3
 }
 khan_buff_after_100_years = {
 	ship_hull_mult = 2.5
@@ -153,6 +153,11 @@ khan_buff_after_150_years = {
 	ship_armor_mult = 5.0
 	ship_fire_rate_mult = 3.00
 	ship_weapon_damage = 3.00
+}
+khan_buff = {
+	ship_speed_mult = -0.3
+	ship_fire_rate_mult = -0.20
+	ship_weapon_damage = -0.20
 }
 khan_hard_buff = {
 	ship_hull_mult = 0.1

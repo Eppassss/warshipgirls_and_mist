@@ -92,11 +92,6 @@ create_wsg_lady_governor = {
 
 create_wsg_lady_warship = {
 	if = {
-		limit = { has_country_flag = lady_warship_T_slot }
-		remove_country_flag = lady_warship_T_slot
-		set_country_flag = lady_juggernaut
-	}
-	if = {
 		limit = { has_country_flag = wsg_lady_armed_science_active }
 		if = {
 			limit = { exists = event_target:lady_science_ship }

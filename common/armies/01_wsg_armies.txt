@@ -314,8 +314,8 @@ ovo_army = {
 
 galo_army = {
 	defensive = yes
-	damage = 2
-	health = 1.5
+	damage = 1.7
+	health = 1.4
 	has_morale = no
 	morale_damage = 1.0
 	collateral_damage = 3.00
@@ -337,11 +337,11 @@ galo_army = {
 
 Khan_galodam = {
 	defensive = yes
-	damage = 5
+	damage = 3
 	has_morale = no
-	morale_damage = 5.0
+	morale_damage = 3
 	collateral_damage = 4.5
-	health = 9
+	health = 7
 	time = 600
 	icon_frame = 8
 	has_species = no
@@ -357,6 +357,28 @@ Khan_galodam = {
 			food = 5
 		}
 	}
+	potential = {
+		always = no
+	}
+}
+
+khan_ovo_boss_army = {
+	defensive = yes
+	damage = 12.5
+	health = 17.5
+	has_morale = no
+	morale_damage = 5
+	time = 5
+	icon_frame = 8
+	has_species = no
+
+	resources = {
+		category = armies
+		upkeep = {
+			energy = 1
+		}
+	}
+
 	potential = {
 		always = no
 	}

@@ -186,3 +186,57 @@ country_event = {
 		}
 	}
 }
+
+# Guardians of the Galaxy
+country_event = {
+	id = fallen_empires_awakening.4
+	title = OK
+	desc = OK
+
+	hide_window = yes
+
+	trigger = {
+		has_global_flag = galactic_crisis_happened
+		NOT = { has_global_flag = sleepers_awake_rival_waking } # Not if WiH happened
+		has_country_flag = guardians_of_the_galaxy
+		NOT = { has_global_flag = guardians_of_the_galaxy_happened }
+		NOT = { has_country_flag = timed_guardians_of_the_galaxy }
+		NOR = {
+			has_authority = auth_wg_fe
+			has_authority = auth_sh_fe
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 0.01
+			NOT = { has_country_flag = timed_guardians_of_the_galaxy_2 }
+		}
+	}
+
+	immediate = {
+		set_global_flag = guardians_of_the_galaxy_happened
+		country_event = { id = fallen_empires_awakening.3 }
+
+		every_country = {
+			limit = {
+				is_country_type = default
+			}
+			random_list = {
+				33 = { add_opinion_modifier = { who = root modifier = opinion_crisis_fighter } }
+				33 = { add_opinion_modifier = { who = root modifier = opinion_crisis_fighter_small } }
+				33 = { }
+			}
+		}
+
+		# Notify
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = { id = fallen_empires_awakening.5 }
+		}
+		observer_event = { id = observer.74 }
+	}
+}

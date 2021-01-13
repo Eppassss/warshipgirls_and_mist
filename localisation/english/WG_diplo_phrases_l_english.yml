@@ -76,7 +76,7 @@
  03_SH_SPE_WAR_GREETING:0 "A video game has a game rule to obey, but the reality doesn't have."
  04_SH_SPE_WAR_GREETING:0 "Give up, and we might consider to spare you."
  01_WG_FE_PATRONIZING_SH_SPE:0 "You are one of the most excellent Abyssal shipgirls we encountered."
- 02_WG_FE_PATRONIZING_SH_SPE:0 "Sorry, we don't know the history of your ancients. They had already gone when we came to this galaxy."
+ 02_WG_FE_PATRONIZING_SH_SPE:0 "Sorry, we don't know the history of your ancestors. They had already gone when we came to this galaxy."
  03_WG_FE_PATRONIZING_SH_SPE:0 "[From.GetSpeciesNamePlural], my dear children, is there anything I can help with?"
  04_WG_FE_PATRONIZING_SH_SPE:0 "I'm glad to see [From.GetSpeciesNamePlural] have walked out of their cradle."
  05_WG_FE_PATRONIZING_SH_SPE:0 "[From.GetSpeciesNamePlural], my children, you must grow up faster, because the danger can come at any time."

@@ -765,10 +765,19 @@ wg_wedding = {
 	length = 0
 
 	potential = {
-		any_owned_leader = {
-			is_wg_leader = yes
-			NOT = { has_leader_flag = married }
-			check_variable = { which = affection_level value = 4 }
+		OR = {
+			AND = {
+				has_wg_special_authority = no
+				OR = {
+					has_country_flag = wg_dragon_owner
+					has_country_flag = modified_bubbles
+				}
+			}
+			any_owned_leader = {
+				is_wg_leader = yes
+				NOT = { has_leader_flag = married }
+				check_variable = { which = affection_level value = 4 }
+			}
 		}
 		NOT = {
 			has_active_event = {

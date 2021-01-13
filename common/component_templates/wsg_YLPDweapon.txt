@@ -21,6 +21,7 @@ weapon_component_template = {
 	projectile_gfx = "white_laser_pd"
 	tags = { weapon_type_point_defense weapon_type_energy }
 	ai_tags = { weapon_role_point_defense }
+	upgrades_to = "wsg_weapon_S_40" 
 	resources = {
 		category = ship_components
 		cost = {

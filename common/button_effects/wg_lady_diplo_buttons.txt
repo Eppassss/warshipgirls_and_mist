@@ -37,49 +37,43 @@ wg_lady_portrait_broken = {
 wg_lady_01_portrait = {
 	potential = {
 		check_variable = { which = wsg_lady_cloth value = 1 }
-		OR = {
-			has_country_flag = wsg_lady_cloth_01_unlock
-			has_global_flag = wg_cheat_all_clothes
-		}
-	}
-	allow = { hidden_trigger = { always = yes }}
-	effect = {}
-}
-wg_lady_01_portrait_locked = {
-	potential = {
-		check_variable = { which = wsg_lady_cloth value = 1 }
-		NOR = {
-			has_country_flag = wsg_lady_cloth_01_unlock
-			has_global_flag = wg_cheat_all_clothes
-		}
 	}
 	allow = { hidden_trigger = { always = yes }}
 	effect = {
-		custom_tooltip = "wsglady_cloth_01_unlock_tooltip"
+		if = {
+			limit = { NOT = { has_country_flag = wsg_lady_cloth_01_unlock }}
+			custom_tooltip = "wsglady_cloth_01_unlock_tooltip"
+		}
 	}
 }
 wg_lady_02_portrait = {
 	potential = {
 		check_variable = { which = wsg_lady_cloth value = 2 }
-		OR = {
-			has_country_flag = wsg_lady_cloth_02_unlock
-			has_global_flag = wg_cheat_all_clothes
-		}
 	}
 	allow = { hidden_trigger = { always = yes }}
-	effect = {}
+	effect = {
+		if = {
+			limit = { NOT = { has_country_flag = wsg_lady_cloth_02_unlock }}
+			custom_tooltip = "wsglady_cloth_02_unlock_tooltip"
+		}
+	}
 }
-wg_lady_02_portrait_locked = {
+wg_lady_portrait_locked = {
 	potential = {
-		check_variable = { which = wsg_lady_cloth value = 2 }
-		NOR = {
-			has_country_flag = wsg_lady_cloth_02_unlock
-			has_global_flag = wg_cheat_all_clothes
+		OR = {
+			NOT = { has_global_flag = wg_cheat_all_clothes }
+			AND = {
+				check_variable = { which = wsg_lady_cloth value = 1 }
+				NOT = { has_country_flag = wsg_lady_cloth_01_unlock }
+			}
+			AND = {
+				check_variable = { which = wsg_lady_cloth value = 2 }
+				NOT = { has_country_flag = wsg_lady_cloth_02_unlock }
+			}
 		}
 	}
 	allow = { hidden_trigger = { always = yes }}
 	effect = {
-		custom_tooltip = "wsglady_cloth_02_unlock_tooltip"
 	}
 }
 wg_cloth_button_prev = {

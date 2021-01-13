@@ -78,7 +78,7 @@ guiTypes = {
 		#########################################
 		#               立绘                    #
 		#########################################
-		@portrait_x = 0
+		@portrait_x = 35
 		@portrait_y = 0
 		effectButtonType = {
 			name = "wg_lady_portrait_1"
@@ -121,17 +121,6 @@ guiTypes = {
 			effect = "wg_lady_01_portrait"
 		}
 		effectButtonType = {
-			name = "wg_lady_01_portrait_locked"
-			quadTextureSprite = "GFX_wg_lady_01_portrait_locked"
-			text = "portrait_locked"
-			text_color_code = "R"
-			font = "malgun_goth_24"
-			pdx_tooltip = "wsglady_cloth_01_unlock_tooltip"
-			orientation = "UPPER_LEFT"
-			position = { x= @portrait_x y = @portrait_y }
-			effect = "wg_lady_01_portrait_locked"
-		}
-		effectButtonType = {
 			name = "wg_lady_02_portrait"
 			quadTextureSprite = "GFX_wg_lady_02_portrait"
 			orientation = "UPPER_LEFT"
@@ -140,15 +129,16 @@ guiTypes = {
 			effect = "wg_lady_02_portrait"
 		}
 		effectButtonType = {
-			name = "wg_lady_02_portrait_locked"
-			quadTextureSprite = "GFX_wg_lady_02_portrait_locked"
+			name = "wg_portrait_locked"
+			quadTextureSprite = "GFX_wg_portrait_locked"
 			text = "portrait_locked"
+			alwaysTransparent = yes
 			text_color_code = "R"
 			font = "malgun_goth_24"
 			pdx_tooltip = "wsglady_cloth_02_unlock_tooltip"
 			orientation = "UPPER_LEFT"
-			position = { x= @portrait_x y = @portrait_y }
-			effect = "wg_lady_02_portrait_locked"
+			position = { x= 200 y = 300 }
+			effect = "wg_lady_portrait_locked"
 		}
 		effectButtonType = {
 			name = "wg_cloth_button_prev"

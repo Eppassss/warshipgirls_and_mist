@@ -81,6 +81,7 @@ country_event = {
 						limit = { has_global_flag = wg_crisis_insane }
 						add_modifier = { modifier = khan_insane_buff }
 					}
+					add_modifier = { modifier = khan_buff }
 					every_country = {
 						limit = { 
 							OR = {
@@ -100,10 +101,10 @@ country_event = {
 					}
 					switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
 						trigger = has_global_flag
-						wg_crisis_very_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.6 }}
-						wg_crisis_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.8 }}
-						wg_crisis_normal = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.0 }}
-						wg_crisis_hard = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.3 }}
+						wg_crisis_very_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.3 }}
+						wg_crisis_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.5 }}
+						wg_crisis_normal = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.75 }}
+						wg_crisis_hard = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.0 }}
 						wg_crisis_insane = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.5 }}
 						default = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 1.0 }}
 					}
@@ -1900,14 +1901,7 @@ planet_event = {
 		create_army = {
 			name = "NAME_OVO_BOSS_ARMY_KHAN"
 			owner = event_target:WG_Khan_country
-			type = "ovo_boss_army"
-		}
-		while = { count = 2
-			create_army = {
-				name = "NAME_GALODAM_ARMY"
-				owner = event_target:WG_Khan_country
-				type = "Khan_galodam"
-			}
+			type = "khan_ovo_boss_army"
 		}
 		if = {
 			limit = {
