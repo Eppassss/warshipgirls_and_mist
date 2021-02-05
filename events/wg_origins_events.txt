@@ -639,7 +639,8 @@ country_event = {
 					count = 15
 					create_ship = {
 						name = random
-						design = "NAME_WG_LARGE_UAV"
+						design = "NAME_Fallen_uav_1"
+						graphical_culture = "fallen_empire_03"
 					}
 				}
 				set_location = from.capital_scope

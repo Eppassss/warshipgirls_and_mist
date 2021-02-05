@@ -53,3 +53,6 @@
  edict_wg_struggle_edicts_desc:0 "为应对联合舰队的入侵，我们的资源必须向军工业倾斜。"
  edict_wg_merge_ra_fleets:0 "合并反抗军舰队"
  edict_wg_merge_ra_fleets_desc:0 "能让你合并在战斗后残余的从反抗军购买回来的舰队。"
+
+ edict_wg_cross_assemble:0 "深海/舰娘交叉组装"
+ edict_wg_cross_assemble_desc:0 "由于深海与舰娘的相似性，我们实际上都能以现有手段组装对方的舰装，但这需要让组装厂腾出一点空间设立新的组装线，这会无可避免地减慢一些组装速度。"

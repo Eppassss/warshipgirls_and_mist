@@ -116,6 +116,9 @@
  leader_title_checking_affection_7:0 "夕立"
  leader_affection_details_7:0 "§H夕立§!的好感度级别为§H[This.yuudaichi_affection_level]§!，好感度为§H[This.yuudaichi_affection]§!，距离下一级好感度还需要§H[This.yuudaichi_affection_to_level_up]§!点好感。"
 
+ leader_title_checking_affection_8:0 "尼菲安娜"
+ leader_affection_details_8:0 "§H尼菲安娜§!的好感度级别为§H[This.wg_dragon_affection_level]§!，好感度为§H[This.wg_dragon_affection]§!，距离下一级好感度还需要§H[This.wg_dragon_affection_to_level_up]§!点好感。"
+
  wg_aft.2007.name:0 "查看[This.GetLeaderTitle_CheckingAffection]好感度"
  wg_aft.2007.desc.a:0 "[This.GetAffectionDetails]"
  wg_aft.2007.desc.b:0 "£sr_ring£ [This.GetAffectionDetails]"

@@ -45,7 +45,10 @@
  NAME_WG_FE_COLOSSUS:"美梦" 
  NAME_WG_FE_WATCHKEEPER:"今生" 
  NAME_WG_FE_WATCHKEEPER2:"今世"
- 
+ NAME_Fallen_uav_1:"危险作业" 
+ NAME_Fallen_uav_2:"凯瑟琳"
+ NAME_Fallen_uav_3:"巴风特"
+ NAME_Fallen_uav_4:"蜂群α"
  ##深海妈
  #这些名字都是我拍脑袋想出来的，别猜含义了
  NAME_SH_FE_species_SH:"深海沉默者"

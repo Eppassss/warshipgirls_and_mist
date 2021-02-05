@@ -424,6 +424,58 @@ country_event = {
 	}
 }
 
+# 以太龙升级加好感
+country_event = {
+	id = wg_aft.10005
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = wg_dragon_owner
+		FROM = { 
+			has_leader_flag = wg_dragon_leader
+		}
+	}
+
+	immediate = {
+		change_variable = { which = wg_dragon_level value = 1 }
+		change_variable = { which = wg_dragon_affection value = 2 }
+		if = { # buff加成的额外好感度
+			limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+			change_variable = { which = wg_dragon_affection value = 2 }
+		}
+		random_list = {
+			40 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = wg_dragon_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = wg_dragon_affection value = 1 }
+				}
+			}
+			60 = {}
+		}
+		random_list = {
+			20 = { 
+				modifier = { # buff加成的额外几率
+					ROOT = { has_modifier = wg_modifier_canteen_affectionUp1 }
+					factor = 2
+				}
+				change_variable = { which = wg_dragon_affection value = 1 }
+				if = { # buff加成的额外好感度
+					limit = { owner = { has_modifier = wg_modifier_canteen_affectionUp2 }}
+					change_variable = { which = wg_dragon_affection value = 1 }
+				}
+			}
+			80 = {}
+		}
+		reset_wg_dragon_affection = yes
+	}
+}
+
 # 缄默移除好感
 country_event = {
 	id = wg_aft.4
@@ -942,8 +994,10 @@ fleet_event = {
 					switch = {
 						trigger = has_leader_flag
 						wsg_shimakaze_leader = {
-							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+							add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_shimakaze }
 						}
+						wg_dragon_admiral = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = admiral MARRIED_FLAG = married_wg_dragon }}
+						wg_dragon_warship = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }}
 						灰风领袖 = {
 							add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 						}
@@ -965,8 +1019,10 @@ fleet_event = {
 						switch = {
 							trigger = has_leader_flag
 							wsg_shimakaze_leader = {
-								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
+								add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = admiral MARRIED_FLAG = married_wsg_shimakaze }
 							}
+							wg_dragon_admiral = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = admiral MARRIED_FLAG = married_wg_dragon }}
+							wg_dragon_warship = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }}
 							灰风领袖 = {
 								add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 							}
@@ -1130,6 +1186,8 @@ fleet_event = {
 								wsg_shimakaze_leader = {
 									add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
 								}
+								wg_dragon_admiral = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = admiral MARRIED_FLAG = married_wg_dragon }}
+								wg_dragon_warship = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }}
 								灰风领袖 = {
 									add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 								}
@@ -1153,6 +1211,8 @@ fleet_event = {
 									wsg_shimakaze_leader = {
 										add_special_leader_affection = { LEADER = shimakaze LEADER_CLASS = general MARRIED_FLAG = married_wsg_shimakaze }
 									}
+									wg_dragon_admiral = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = admiral MARRIED_FLAG = married_wg_dragon }}
+									wg_dragon_warship = { add_special_leader_affection = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }}
 									灰风领袖 = {
 										add_special_leader_affection = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 									}
@@ -1242,6 +1302,10 @@ country_event = {
 				limit = { has_country_flag = has_kc_Pellaeon }
 				change_variable = { which = Pellaeon_affection value = 1 }
 			}
+			if = {
+				limit = { has_country_flag = wg_dragon_owner }
+				change_variable = { which = wg_dragon_affection value = 1 }
+			}
 		}
 		every_owned_leader = {
 			limit = { 
@@ -1300,6 +1364,11 @@ country_event = {
 			limit = { has_country_flag = has_kc_Pellaeon }
 			change_variable = { which = Pellaeon_affection value = 1 }
 			reset_Pellaeon_affection_level = yes
+		}
+		if = {
+			limit = { has_country_flag = wg_dragon_owner }
+			change_variable = { which = wg_dragon_affection value = 1 }
+			reset_wg_dragon_affection_level = yes
 		}
 	}
 }
@@ -1378,6 +1447,10 @@ country_event = {
 					limit = { has_country_flag = has_kc_Pellaeon }
 					change_variable = { which = Pellaeon_affection value = 3 }
 				}
+				if = {
+					limit = { has_country_flag = wg_dragon_owner }
+					change_variable = { which = wg_dragon_affection value = 3 }
+				}
 			}
 			every_owned_leader = {
 				limit = { 
@@ -1433,6 +1506,11 @@ country_event = {
 				limit = { has_country_flag = has_kc_Pellaeon }
 				change_variable = { which = Pellaeon_affection value = 3 }
 				reset_Pellaeon_affection_level = yes
+			}
+			if = {
+				limit = { has_country_flag = wg_dragon_owner }
+				change_variable = { which = wg_dragon_affection value = 3 }
+				reset_wg_dragon_affection_level = yes
 			}
 		}
 	}
@@ -1493,6 +1571,20 @@ country_event = {
 			}
 			reset_gray_affection_level = yes
 		}
+		if = {
+			limit = { #以太龙
+				any_owned_army = {
+					exists = planet
+					planet = { is_same_value = event_target:victory_planet }
+					is_wg_dragon_army = yes
+				}
+			}
+			add_wg_dragon_army_affection = yes
+			if = { # buff加成的额外好感度
+				limit = { has_modifier = wg_modifier_canteen_affectionUp2 }
+				add_wg_dragon_army_affection = yes
+			}
+		}
 		if = { # 其他陆军陆军
 			limit = {
 				any_owned_army = {
@@ -1500,8 +1592,6 @@ country_event = {
 					planet = { is_same_value = event_target:victory_planet }
 					leader = { 
 						OR = {
-							has_leader_flag = yuudaichi_leader
-							has_leader_flag = Pellaeon_leader
 							has_leader_flag = wsg_shimakaze_leader
 							is_wg_leader = yes 
 						}
@@ -1512,14 +1602,10 @@ country_event = {
 				limit = {
 					exists = planet
 					planet = { is_same_value = event_target:victory_planet }
-					OR = {
-						leader = { 
-							OR = {
-								has_leader_flag = wsg_shimakaze_leader
-								has_leader_flag = yuudaichi_leader
-								has_leader_flag = Pellaeon_leader
-								is_wg_leader = yes 
-							}
+					leader = { 
+						OR = {
+							has_leader_flag = wsg_shimakaze_leader
+							is_wg_leader = yes 
 						}
 					}
 				}
@@ -1820,6 +1906,27 @@ country_event = {
 	option = {
 		name = make_ring
 		trigger = {
+			has_wg_special_authority = no
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 648 }
+			resource_stockpile_compare = { resource = minerals value >= 648 }
+			resource_stockpile_compare = { resource = alloys value >= 648 }
+			resource_stockpile_compare = { resource = consumer_goods value >= 648 }
+		}
+		add_resource = {
+			energy = -648
+			minerals = -648
+			alloys = -648
+			consumer_goods = -648
+		}
+		change_variable = { which = wsg_rings value = 1 }
+		is_dialog_only = yes
+		response_text = wg_aft.18.desc
+	}
+	option = {
+		name = make_ring
+		trigger = {
 			has_authority = auth_starshipgirls # 星战舰娘直接造戒指
 		}
 		allow = {
@@ -2090,7 +2197,7 @@ country_event = {
 	diplomatic = yes
 	show_sound = event_wg_wedding
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	immediate = {
 		set_country_flag = married_gray
@@ -2647,6 +2754,7 @@ country_event = {
 	option = { #查看泡泡的好感度
 		name = wg_aft.2005.j
 		trigger = {
+			has_country_flag = modified_bubbles
 			bubbles_available = yes
 		}
 		hidden_effect = {
@@ -2674,6 +2782,17 @@ country_event = {
 		hidden_effect = {
 			calculate_special_leader_affection_to_level_up = { LEADER = yuudaichi }
 			set_variable = { which = selected_check_affection_leader value = 7 }
+			country_event = { id = wg_aft.2007 }
+		}
+	}
+	option = { #查看以太龙的好感度
+		name = wg_aft.2005.m
+		trigger = {
+			has_country_flag = wg_dragon_owner
+		}
+		hidden_effect = {
+			calculate_special_leader_affection_to_level_up = { LEADER = wg_dragon }
+			set_variable = { which = selected_check_affection_leader value = 8 }
 			country_event = { id = wg_aft.2007 }
 		}
 	}
@@ -3815,6 +3934,10 @@ country_event = {
 				change_leader_portrait = GrayTempest
 				check_and_remove_normal_leader_affection_traits = yes
 			}
+		}
+		if = {
+			limit = { has_country_flag = wg_dragon_owner }
+			reset_wg_dragon_affection_level = yes
 		}
 		if = {
 			limit = { has_country_flag = has_afk_Sharan }

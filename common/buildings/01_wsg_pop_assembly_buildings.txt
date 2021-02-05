@@ -14,11 +14,12 @@ building_warshipgirl_assembly_plant = {
 		owner = { 
 			is_regular_empire = yes
 			has_authority = auth_warshipgirls	
+			NOT = { has_ascension_perk = ap_project_s }
 		}
 	}
 	
 	convert_to = {
-		
+		building_warshipgirl_senergy_assembly_plant
 	}
 	
 	destroy_trigger = {
@@ -27,7 +28,6 @@ building_warshipgirl_assembly_plant = {
 			owner = {
 				OR = {
 					is_regular_empire = no 
-					has_policy_flag = robots_outlawed
 				}
 			}
 			has_modifier = slave_colony
@@ -41,6 +41,9 @@ building_warshipgirl_assembly_plant = {
 					}
 					is_planet_class = pc_habitat
 				}
+			}
+			owner = {
+				has_ascension_perk = ap_project_s
 			}
 		}
 	}
@@ -73,6 +76,87 @@ building_warshipgirl_assembly_plant = {
 	}
 }
 
+building_warshipgirl_senergy_assembly_plant = {
+	base_buildtime = 240
+	base_cap_amount = 1
+
+	category = pop_assembly
+	icon = building_warshipgirl_assembly_plant
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			has_ascension_perk = ap_project_s
+		}
+	}
+	
+	convert_to = {
+		
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					is_regular_empire = no 
+				}
+			}
+			has_modifier = slave_colony
+			AND = {
+				owner = { is_ai = yes }
+				free_jobs = 0
+				OR = {
+					num_buildings = {
+						type = any
+						value = 16
+					}
+					is_planet_class = pc_habitat
+				}
+			}
+		}
+	}
+	
+	planet_modifier = {
+		planet_pop_assembly_add = 3
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			minerals = 5
+			energy = 5
+		}
+		upkeep = {
+			trigger = {
+				owner = { species = { has_trait = wsg_trait_mass_assembly }}
+			}
+			sr_se = 1.5
+		}
+	}	
+
+	prerequisites = {
+		"tech_warshipgirl_assembly_plant"
+	}
+	
+	upgrades = {
+		building_warshipgirl_senergy_assembly_plantU
+	}
+		
+	ai_weight = {
+		weight = 100
+	}
+}
+
 building_warshipgirl_assembly_plantU = {
 	base_buildtime = 480
 	can_build = no
@@ -94,7 +178,7 @@ building_warshipgirl_assembly_plantU = {
 	}
 		
 	convert_to = {
-		
+		building_warshipgirl_senergy_assembly_plantU
 	}
 	
 	destroy_trigger = {
@@ -103,7 +187,6 @@ building_warshipgirl_assembly_plantU = {
 			owner = {
 				OR = {
 					is_regular_empire = no 
-					has_policy_flag = robots_outlawed
 				}
 			}
 			has_modifier = slave_colony
@@ -118,6 +201,7 @@ building_warshipgirl_assembly_plantU = {
 					is_planet_class = pc_habitat
 				}
 			}
+			owner = { has_ascension_perk = ap_project_s }
 		}
 	}
 	
@@ -149,6 +233,83 @@ building_warshipgirl_assembly_plantU = {
 	}
 }
 
+building_warshipgirl_senergy_assembly_plantU = {
+	base_buildtime = 480
+	can_build = no
+
+	category = pop_assembly
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+		}
+	}
+	allow = {
+		num_pops >= 15
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					is_regular_empire = no 
+				}
+			}
+			has_modifier = slave_colony
+			AND = {
+				owner = { is_ai = yes }
+				free_jobs = 0
+				OR = {
+					num_buildings = {
+						type = any
+						value = 16
+					}
+					is_planet_class = pc_habitat
+				}
+			}
+		}
+	}
+	
+	planet_modifier = {
+		planet_pop_assembly_add = 5
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			sr_pantsu = 50
+		}
+		upkeep = {
+			minerals = 10
+			energy = 10
+			sr_pantsu = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = { species = { has_trait = wsg_trait_mass_assembly }}
+			}
+			sr_se = 1.5
+		}
+	}	
+	upgrades = {
+		building_warshipgirl_senergy_assembly_plantF
+	}	
+	prerequisites = {
+		"tech_warshipgirl_assembly_plantU"
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
 building_warshipgirl_assembly_plantF = {
 	base_buildtime = 640
 	can_build = no
@@ -170,7 +331,7 @@ building_warshipgirl_assembly_plantF = {
 	}
 		
 	convert_to = {
-		
+		building_warshipgirl_senergy_assembly_plantF
 	}
 	
 	destroy_trigger = {
@@ -179,7 +340,6 @@ building_warshipgirl_assembly_plantF = {
 			owner = {
 				OR = {
 					is_regular_empire = no 
-					has_policy_flag = robots_outlawed
 				}
 			}
 			has_modifier = slave_colony
@@ -194,6 +354,7 @@ building_warshipgirl_assembly_plantF = {
 					is_planet_class = pc_habitat
 				}
 			}
+			owner = { has_ascension_perk = ap_project_s }
 		}
 	}
 	
@@ -217,176 +378,6 @@ building_warshipgirl_assembly_plantF = {
 	
 	prerequisites = {
 		"tech_warshipgirl_assembly_plantF"
-	}
-	
-	ai_weight = {
-		weight = 100
-	}
-}
-
-building_warshipgirl_senergy_assembly_plantU = {
-	base_buildtime = 480
-	can_build = no
-
-	category = pop_assembly
-	
-	potential = {
-		exists = owner
-		OR = {
-			owner = { is_ai = no }
-		}
-		owner = { 
-			is_regular_empire = yes
-			has_authority = auth_warshipgirls	
-		}
-	}
-	allow = {
-		num_pops >= 15
-	}
-		
-	convert_to = {
-		
-	}
-	
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					is_regular_empire = no 
-					has_policy_flag = robots_outlawed
-				}
-			}
-			has_modifier = slave_colony
-			AND = {
-				owner = { is_ai = yes }
-				free_jobs = 0
-				OR = {
-					num_buildings = {
-						type = any
-						value = 16
-					}
-					is_planet_class = pc_habitat
-				}
-			}
-		}
-	}
-	
-	planet_modifier = {
-		planet_pop_assembly_add = 5
-	}
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 500
-			sr_pantsu = 50
-		}
-		upkeep = {
-			minerals = 10
-			energy = 10
-			sr_pantsu = 1
-		}
-	}	
-	upgrades = {
-		building_warshipgirl_senergy_assembly_plantF
-	}	
-	prerequisites = {
-		"tech_warshipgirl_assembly_plantU"
-	}
-	
-	ai_weight = {
-		weight = 100
-	}
-}
-
-building_warshipgirl_senergy_assembly_plantU = {
-	base_buildtime = 480
-	can_build = no
-
-	category = pop_assembly
-	
-	potential = {
-		exists = owner
-		OR = {
-			owner = { is_ai = no }
-		}
-		owner = { 
-			is_regular_empire = yes
-			has_authority = auth_warshipgirls	
-		}
-	}
-	allow = {
-		num_pops >= 15
-	}
-	
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					is_regular_empire = no 
-				}
-			}
-			has_modifier = slave_colony
-			AND = {
-				owner = { is_ai = yes }
-				free_jobs = 0
-				OR = {
-					num_buildings = {
-						type = any
-						value = 16
-					}
-					is_planet_class = pc_habitat
-				}
-			}
-		}
-	}
-	
-	planet_modifier = {
-		planet_pop_assembly_add = 5
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_country_flag = project_s_finish }
-		}
-		modifier = {
-			country_base_sr_se_upkeep_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				species = {
-					has_trait = wsg_trait_mass_assembly
-				}
-			}
-		}
-		modifier = {
-			country_base_sr_se_upkeep_add = 4
-		}
-	}
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 500
-			sr_pantsu = 50
-		}
-		upkeep = {
-			minerals = 10
-			energy = 10
-			sr_pantsu = 1
-		}
-	}	
-	upgrades = {
-		building_warshipgirl_senergy_assembly_plantF
-	}	
-	prerequisites = {
-		"tech_warshipgirl_assembly_plantU"
 	}
 	
 	ai_weight = {
@@ -440,20 +431,6 @@ building_warshipgirl_senergy_assembly_plantF = {
 	planet_modifier = {
 		planet_pop_assembly_add = 7
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				species = {
-					has_trait = wsg_trait_mass_assembly
-				}
-			}
-		}
-		modifier = {
-			country_base_sr_se_upkeep_add = 4
-		}
-	}
 	
 	resources = {
 		category = planet_buildings
@@ -466,6 +443,12 @@ building_warshipgirl_senergy_assembly_plantF = {
 			energy = 15
 			sr_se = 1
 			sr_pantsu = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = { species = { has_trait = wsg_trait_mass_assembly }}
+			}
+			sr_se = 1.5
 		}
 	}	
 	

@@ -1,5 +1,6 @@
 wg_shimakaze_portrait_1 = {
 	potential = { 
+		check_variable = { which = wsg_shimakaze_cloth value = 0 }
 		OR = {
 			has_country_flag = get_wsg_shimakaze
 			is_same_value = event_target:wsg_shimakaze_own_country
@@ -12,6 +13,7 @@ wg_shimakaze_portrait_1 = {
 
 wg_shimakaze_portrait_1_broken = {
 	potential = { 
+		check_variable = { which = wsg_shimakaze_cloth value = 0 }
 		OR = {
 			has_country_flag = get_wsg_shimakaze
 			is_same_value = event_target:wsg_shimakaze_own_country
@@ -22,11 +24,69 @@ wg_shimakaze_portrait_1_broken = {
 	effect = { } #no need
 }
 
+wg_shimakaze_portrait = {
+	potential = { 
+		check_variable = { which = wsg_shimakaze_cloth value = 1 }
+		OR = {
+			has_country_flag = get_wsg_shimakaze
+			is_same_value = event_target:wsg_shimakaze_own_country
+		}
+		NOT = { has_country_flag = wsg_shimakaze_hurt }
+	}
+	allow = { always = yes }
+	effect = { } #no need
+}
+
+wg_shimakaze_portrait_broken = {
+	potential = { 
+		check_variable = { which = wsg_shimakaze_cloth value = 1 }
+		OR = {
+			has_country_flag = get_wsg_shimakaze
+			is_same_value = event_target:wsg_shimakaze_own_country
+		}
+		has_country_flag = wsg_shimakaze_hurt 
+	}
+	allow = { always = yes }
+	effect = { } #no need
+}
+
+wg_shimakaze_cloth_button_prev = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			change_variable = { which = wsg_shimakaze_cloth value = -1 }
+			if = {
+				limit = { check_variable = { which = wsg_shimakaze_cloth value < 0 }}
+				set_variable = { which = wsg_shimakaze_cloth value = 1 }
+			}
+		}
+		custom_tooltip = change_cloth
+	}
+}
+wg_shimakaze_cloth_button_next = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			change_variable = { which = wsg_shimakaze_cloth value = 1 }
+			if = {
+				limit = { check_variable = { which = wsg_shimakaze_cloth value > 1 }}
+				set_variable = { which = wsg_shimakaze_cloth value = 0 }
+			}
+		}
+		custom_tooltip = change_cloth
+	}
+}
+
 wg_shimakaze_link_button_effect = {
-	potential = { OR = {
-		has_country_flag = get_wsg_shimakaze
-		is_same_value = event_target:wsg_shimakaze_own_country
-	}}
+	potential = { 
+		OR = {
+			has_country_flag = get_wsg_shimakaze
+			is_same_value = event_target:wsg_shimakaze_own_country
+		}
+		check_variable = { which = link_button_current_page value = 0 }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = already_has_wsg_shimakaze_diplo

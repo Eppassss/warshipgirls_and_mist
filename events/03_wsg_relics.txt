@@ -245,8 +245,6 @@ country_event = {
 	}
 }
 
-
-
 # Stage 1 - 深海舰队残骸
 fleet_event = {
 	id = wsgancrel.32
@@ -424,18 +422,17 @@ country_event = {
 	}
 }
 #####先驱者
-event = {
-	id = wsgancrel.100
-	hide_window = yes
-	
+
+ship_event = {
+	id = wsgancrel.101
+	title = "wsgancrel.101.name"
+	desc = "wsgancrel.101.desc"
+	picture = GFX_evt_galactic_senate
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	trigger = {
-		NOT = { has_global_flag = triggered_wg_precursors }
-		mid_game_years_passed >= 2
-		any_country = {
-			is_ai = no
+		owner = { 
+			is_ai = no 
 			OR = {
 				has_authority = auth_warshipgirls
 				has_authority = auth_shenhai
@@ -444,31 +441,7 @@ event = {
 	}
 
 	immediate = {
-		random_country = {
-			limit = {		
-				is_ai = no
-				OR = {
-					has_authority = auth_warshipgirls
-					has_authority = auth_shenhai
-				}		
-			}
-			country_event = { id = wsgancrel.101 random = 360  }	
-		}	
-	}
-}
-
-country_event = {
-	id = wsgancrel.101
-	title = "wsgancrel.101.name"
-	desc = "wsgancrel.101.desc"
-	picture = GFX_evt_galactic_senate
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	immediate = {
-		set_global_flag = triggered_wg_precursors
-		random_planet_within_border = {
+		owner = { random_planet_within_border = {
 			limit = {
 				OR = {
 					is_planet_class = pc_molten
@@ -479,19 +452,34 @@ country_event = {
 				NOT = { exists = archaeological_site }
 			}
 			save_event_target_as = first_precursors_planet
-		}
+		}}
 	}
 	
 	option = {
 		name = "wsgancrel.101.a"
-		set_country_flag = owner_site_wg_precursors
-		begin_event_chain = {
-			event_chain = "wg_precursors"
-			target = this.owner
+		owner = {
+			hidden_effect = { set_country_flag = owner_site_wg_precursors }
+			if = {
+				limit = { NOT = { has_event_chain = wg_precursors }}
+				begin_event_chain = {
+					event_chain = "wg_precursors"
+					target = this
+				}
+			}
 		}
 		event_target:first_precursors_planet = {
 			create_archaeological_site = site_first_precursors
+			solar_system = { ROOT = {
+				create_point_of_interest = {
+					id = wg_precursors_poi.1
+					name = first_precursor_poi
+					desc = first_precursor_poi_desc
+					event_chain = wg_precursors
+					location = PREV
+				}
+			}}
 		}		
+
 	}
 }
 # Stage 1 - 军事联盟
@@ -543,23 +531,44 @@ fleet_event = {
 		small_artifact_reward = yes
 		owner = {
 			add_resource = { influence = 50 }
-		}
-		hidden_effect = {
-			owner = {
-				country_event = { id = wsgancrel.104 }
-			}	
-		}		
+			add_event_chain_counter = {
+				event_chain = wg_precursors
+				counter = wg_precursors_clues
+				amount = 1
+			}
+			remove_point_of_interest = wg_precursors_poi.1
+			hidden_effect = { 
+				if = {
+					limit = { has_completed_event_chain_counter = {
+						event_chain = wg_precursors
+						counter = wg_precursors_clues
+					}}
+					country_event = { id = wsgancrel.115 }
+				}
+			}
+		}	
 	}
 }
 
-country_event = {
+ship_event = {
 	id = wsgancrel.104
-	hide_window = yes
-	
+	title = "wsgancrel.104.name"
+	desc = "wsgancrel.104.desc"
+	picture = GFX_evt_burning_settlement
 	is_triggered_only = yes
 
+	trigger = {
+		owner = { 
+			is_ai = no 
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+
 	immediate = {
-		random_planet_within_border = {
+		owner = { random_planet_within_border = {
 			limit = {
 				OR = {
 					is_planet_class = pc_molten
@@ -569,10 +578,34 @@ country_event = {
 				NOT = { exists = archaeological_site }
 			}
 			save_event_target_as = second_precursors_planet
+		}}
+			
+	}
+
+	option = {
+		name = OK
+		owner = {
+			hidden_effect = { set_country_flag = owner_site_wg_precursors }
+			if = {
+				limit = { NOT = { has_event_chain = wg_precursors }}
+				begin_event_chain = {
+					event_chain = "wg_precursors"
+					target = this
+				}
+			}
 		}
 		event_target:second_precursors_planet = {
 			create_archaeological_site = site_second_precursors
-		}	
+			solar_system = { ROOT = {
+				create_point_of_interest = {
+					id = wg_precursors_poi.2
+					name = second_precursor_poi
+					desc = second_precursor_poi_desc
+					event_chain = wg_precursors
+					location = PREV
+				}
+			}}
+		}
 	}
 }
 
@@ -625,94 +658,125 @@ fleet_event = {
 		small_artifact_reward = yes
 		owner = {
 			add_resource = { influence = 50 }
-		}
-		hidden_effect = {
-			owner = {
-				country_event = { id = wsgancrel.107 days = 5 }
-			}	
+			add_event_chain_counter = {
+				event_chain = wg_precursors
+				counter = wg_precursors_clues
+				amount = 1
+			}
+			remove_point_of_interest = wg_precursors_poi.2
+			hidden_effect = { 
+				if = {
+					limit = { has_completed_event_chain_counter = {
+						event_chain = wg_precursors
+						counter = wg_precursors_clues
+					}}
+					country_event = { id = wsgancrel.115 }
+				}
+			}
 		}		
 	}
 }
 
 
-country_event = {
+ship_event = {
 	id = wsgancrel.107
 	title = wsgancrel.107.name
 	desc = wsgancrel.107.desc
-	picture = GFX_evt_space_debris
+	picture = GFX_evt_ancient_records
 	show_sound = event_ship_bridge
 	location = from
 
 	is_triggered_only = yes
 
-	immediate = {
-		if = {
-			limit = { exists = capital_scope }
-			capital_scope = { solar_system = { save_event_target_as = spawn_precursors_system_source }}
-		} else_if = {
-			limit = { 
-				OR = {
-					has_origin = origin_ev_meg_homeless_ship_strat
-					is_country_type = default_ev 
-				}
+	trigger = {
+		owner = { 
+			is_ai = no 
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
 			}
-			random_owned_fleet = {
-				limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
-				solar_system = { save_event_target_as = spawn_precursors_system_source }
-			}
-		} else = {
-			random_owned_fleet = { solar_system = {
-				save_event_target_as = spawn_precursors_system_source
-			}}
 		}
-		if = { #检查是否有邻近星系
-			limit = { event_target:spawn_precursors_system_source = {
-				any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
-			}}
-			every_system_within_border = {
-				limit = {
-					distance = {
-						source = event_target:spawn_precursors_system_source
-						use_bypasses = no
-						min_jumps = 1
-						max_jumps = 5
+	}
+
+	immediate = {
+		owner = {
+			if = {
+				limit = { exists = capital_scope }
+				capital_scope = { solar_system = { save_event_target_as = spawn_precursors_system_source }}
+			} else_if = {
+				limit = { 
+					OR = {
+						has_origin = origin_ev_meg_homeless_ship_strat
+						is_country_type = default_ev 
 					}
-					NOT = { has_star_flag = sealed_system }
 				}
-				set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }
-			}
-			random_system = {
-				limit = { has_star_flag = can_spawn_precursors_system }
-				spawn_system = {
-					min_distance = 10
-					max_distance = 30
-					hyperlane = yes
-					is_discovered = no
-					initializer = wg_relic_system
+				random_owned_fleet = {
+					limit = { any_owned_ship = { is_any_type_homeless_ship = yes }}
+					solar_system = { save_event_target_as = spawn_precursors_system_source }
 				}
-				remove_star_flag = can_spawn_precursors_system
+			} else = {
+				random_owned_fleet = { solar_system = {
+					save_event_target_as = spawn_precursors_system_source
+				}}
 			}
-			random_system = {
-				limit = { has_star_flag = can_spawn_precursors_system }
-				set_star_flag = fifth_precursors_system
-				remove_star_flag = can_spawn_precursors_system
-			}
-		} else = {
-			event_target:spawn_precursors_system_source = {
-				spawn_system = {
-					min_distance = 10
-					max_distance = 30
-					hyperlane = yes
-					is_discovered = no
-					initializer = wg_relic_system
+			if = { #检查是否有邻近星系
+				limit = { event_target:spawn_precursors_system_source = {
+					any_neighbor_system = { ignore_hyperlanes = yes has_hyperlane_to = PREV }
+				}}
+				every_system_within_border = {
+					limit = {
+						distance = {
+							source = event_target:spawn_precursors_system_source
+							use_bypasses = no
+							min_jumps = 1
+							max_jumps = 5
+						}
+						NOT = { has_star_flag = sealed_system }
+					}
+					set_timed_star_flag = { flag = can_spawn_precursors_system days = 1 }
 				}
-				set_star_flag = fifth_precursors_system
+				random_system = {
+					limit = { has_star_flag = can_spawn_precursors_system }
+					set_star_flag = fifth_precursors_system
+					remove_star_flag = can_spawn_precursors_system
+				}
+			} else = {
+				event_target:spawn_precursors_system_source = {
+					spawn_system = {
+						min_distance = 10
+						max_distance = 30
+						hyperlane = yes
+						is_discovered = no
+						initializer = wg_relic_system
+					}
+					set_star_flag = fifth_precursors_system
+				}
 			}
 		}
 	}
 
 	option = {
 		name = wsgancrel.107.a
+		random_system = {
+			limit = { has_star_flag = can_spawn_precursors_system }
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				hyperlane = yes
+				is_discovered = no
+				initializer = wg_relic_system
+			}
+			remove_star_flag = can_spawn_precursors_system
+		}
+		last_created_system = { ROOT = {
+			create_point_of_interest = {
+				id = wg_precursors_poi.3
+				name = third_precursor_poi
+				desc = third_precursor_poi_desc
+				event_chain = wg_precursors
+				location = PREV
+			}
+		}}
 	}
 }
 
@@ -791,34 +855,65 @@ fleet_event = {
 		small_artifact_reward = yes
 		owner = {
 			add_resource = { influence = 50 }
-		}
-		hidden_effect = {
-			owner = {
-				country_event = { id = wsgancrel.111 }
-			}	
-		}		
+			add_event_chain_counter = {
+				event_chain = wg_precursors
+				counter = wg_precursors_clues
+				amount = 1
+			}
+			remove_point_of_interest = wg_precursors_poi.3
+			hidden_effect = { 
+				if = {
+					limit = { has_completed_event_chain_counter = {
+						event_chain = wg_precursors
+						counter = wg_precursors_clues
+					}}
+					country_event = { id = wsgancrel.115 }
+				}
+			}
+		}	
 	}
 }
-country_event = {
+ship_event = {
 	id = wsgancrel.111
-	hide_window = yes
-	
+	title = "wsgancrel.111.name"
+	desc = "wsgancrel.111.desc"
+	picture = GFX_evt_ancient_records
 	is_triggered_only = yes
 
+	trigger = {
+		owner = { 
+			is_ai = no 
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}
+		}
+	}
+
 	immediate = {
-		random_planet_within_border = {
+		owner = { random_planet_within_border = {
 			limit = {
-				OR = {
-					is_planet_class = pc_frozen
-				}
+				is_planet_class = pc_frozen
 				NOT = { exists = archaeological_site }
-				
 			}
 			save_event_target_as = fourth_precursors_planet
-		}
+		}}
+	}
+
+	option = {
+		name = OK
 		event_target:fourth_precursors_planet = {
 			create_archaeological_site = site_fourth_precursors
-		}	
+			solar_system = { ROOT.owner = {
+				create_point_of_interest = {
+					id = wg_precursors_poi.4
+					name = fourth_precursor_poi
+					desc = fourth_precursor_poi_desc
+					event_chain = wg_precursors
+					location = PREV
+				}
+			}}
+		}
 	}
 }
 # Stage 1 - 深海仓库
@@ -904,11 +999,23 @@ fleet_event = {
 				days = -1
 			}
 		}
-		hidden_effect = {
-			owner = {
-				country_event = { id = wsgancrel.115 days = 5 }
-			}	
-		}		
+		owner = {
+			add_event_chain_counter = {
+				event_chain = wg_precursors
+				counter = wg_precursors_clues
+				amount = 1
+			}
+			remove_point_of_interest = wg_precursors_poi.4
+			hidden_effect = { 
+				if = {
+					limit = { has_completed_event_chain_counter = {
+						event_chain = wg_precursors
+						counter = wg_precursors_clues
+					}}
+					country_event = { id = wsgancrel.115 }
+				}
+			}
+		}
 	}
 }
 
@@ -939,6 +1046,15 @@ country_event = {
 				}
 			}
 		}
+		last_created_system = { ROOT = {
+			create_point_of_interest = {
+				id = wg_precursors_poi.5
+				name = fifth_precursor_poi
+				desc = fifth_precursor_poi_desc
+				event_chain = wg_precursors
+				location = PREV
+			}
+		}}
 	}
 }
 country_event = {
@@ -1048,24 +1164,23 @@ country_event = {
 	desc = "wsgancrel.119.desc"
 	picture = GFX_evt_wsg_war
 	is_triggered_only = yes
+
+	after = {
+		remove_point_of_interest = wg_precursors_poi.5
+		end_event_chain = "wg_precursors"
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 15
+			min = 10000
+			max = 99999
+		}
+	}
 	
 	option = {
 		name = "wsgancrel.119.a"
-		owner={
-			end_event_chain = "wg_precursors"
-		}
-		owner = {
-			add_resource = { unity = 10000 }
-		}		
 	}
 	option = {
 		name = "wsgancrel.119.b"
-		owner={
-			end_event_chain = "wg_precursors"
-		}
-		owner = {
-			add_resource = { unity = 10000 }
-		}		
 	}
 }
 ######
@@ -1375,6 +1490,47 @@ country_event = {
 			}
 			remove_modifier = "planet_clovertheater"
 		}	
+	}
+}
+country_event = {
+	id = wsgancrel.132
+	title = wsgancrel.132.name
+	desc = wsgancrel.132.desc
+	picture = GFX_evt_archaeological_dig
+	location = event_target:wg_precursors_anomaly_planet
+
+	mean_time_to_happen = {
+		years = 4
+		modifier = {
+			factor = 0.25
+			mid_game_years_passed >= 0
+		}
+	}
+
+	trigger = {
+		years_passed >= 25
+		check_variable = { which = spawned_wg_precursors_anomalies value < 4 }
+		OR = {
+			has_authority = auth_shenhai
+			has_authority = auth_warshipgirls
+		}
+	}
+
+	immediate = {
+		change_variable = { which = spawned_wg_precursors_anomalies value = 1 }
+		random_planet_within_border = {
+			limit = { uninhabitable_regular_planet = yes }
+			save_event_target_as = wg_precursors_anomaly_planet
+		}
+	}
+
+	option = {
+		name = OK
+		event_target:wg_precursors_anomaly_planet = {
+			add_anomaly = {
+				category = wg_precursors_category
+			}
+		}
 	}
 }
 

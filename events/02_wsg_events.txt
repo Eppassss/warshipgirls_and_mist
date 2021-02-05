@@ -341,14 +341,195 @@ country_event = {
 		}
 	}
 }
+
+# 善良大小姐拯救VV大行动
+country_event = {
+	id = wsg.30156
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = VV_fourth_chance
+		has_country_flag = gain_wsg_lady
+		check_variable = { which = lady_affection_level value >= 2 }
+		NOT = { has_country_flag = triggered_wg_lady_save_VV_event } 
+	}
+
+	immediate = {
+		set_country_flag = triggered_wg_lady_save_VV_event
+		country_event = { id = wsg.30157 random = 359 }
+	}
+}
+
+country_event = {
+	id = wsg.30157
+	title = "wsg.30157.name"
+	desc = "wsg.30157.desc"
+	picture = GFX_evt_wg_lady_nanite_bots
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.30157.a
+		country_event = { id = wsg.30158 }
+	}
+}
+country_event = {
+	id = wsg.30158
+	title = "wsg.30158.name"
+	desc = "wsg.30158.desc"
+	is_triggered_only = yes
+
+	diplomatic = yes
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_lady_commu_option
+
+	option = {
+		name = wsg.30158.a
+		country_event = { id = wsg.30159 }
+	}
+	option = {
+		name = wsg.30158.b
+		country_event = { id = wsg.30160 }
+	}
+}
+
+country_event = {
+	id = wsg.30159
+	title = "wsg.30158.name"
+	desc = "wsg.30159.desc"
+	is_triggered_only = yes
+
+	diplomatic = yes
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_lady_commu_option
+
+	option = {
+		name = wsg.30159.a
+		country_event = { id = wsg.30161 random = 10 }
+	}
+}
+
+country_event = {
+	id = wsg.30160
+	title = "wsg.30158.name"
+	desc = "wsg.30160.desc"
+	is_triggered_only = yes
+
+	diplomatic = yes
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_lady_commu_option
+
+	option = {
+		name = wsg.30160.a
+		country_event = { id = wsg.30161 random = 10 }
+	}
+}
+
+country_event = {
+	id = wsg.30161
+	title = "wsg.30161.name"
+	desc = "wsg.30161.desc"
+	picture = GFX_evt_wg_lady_nanite_bots
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.30161.a
+		country_event = { id = wsg.30162 }
+	}
+}
+country_event = {
+	id = wsg.30162
+	title = "wsg.30162.name"
+	desc = "wsg.30162.desc"
+	picture = GFX_evt_wg_lady_nanite_bots
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.30162.a
+		country_event = { id = wsg.30163 }
+	}
+}
+country_event = {
+	id = wsg.30163
+	title = "wsg.30163.name"
+	desc = "wsg.30163.desc"
+	is_triggered_only = yes
+
+	diplomatic = yes
+	picture_event_data = {
+		portrait = ai_crisis_1
+	}
+
+	option = {
+		name = wsg.30163.a
+		country_event = { id = wsg.30164 }
+	}
+}
+country_event = {
+	id = wsg.30164
+	title = "wsg.30164.name"
+	desc = "wsg.30164.desc"
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.30164.a
+		add_resource = { nanites = 2000 }
+		country_event = { id = wsg.30165 days = 1 }
+	}
+}
+
+country_event = {
+	id = wsg.30165
+	title = "wsg.30158.name"
+	desc = "wsg.30165.desc"
+	is_triggered_only = yes
+
+	diplomatic = yes
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_lady_commu_option
+
+	option = {
+		name = wsg.30165.a
+		hidden_effect = {
+			add_lady_affection = yes
+		}
+		custom_tooltip = wg_lady_affection_up_less
+	}
+}
 ################
 country_event = {
 	id = wsg.3015
 	title = "wsg.3015.name"
 	desc = "wsg.3015.desc"
 	picture = GFX_evt_alpha
-	
 	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				last_increased_tech = tech_wsg_203
+				has_technology = tech_wsg_381
+				has_technology = tech_dark_matter_power_core
+			}
+			AND = {
+				last_increased_tech = tech_wsg_381
+				has_technology = tech_wsg_203
+				has_technology = tech_dark_matter_power_core
+			}
+			AND = {
+				last_increased_tech = tech_dark_matter_power_core
+				has_technology = tech_wsg_203
+				has_technology = tech_wsg_381
+			}
+		}
+		NOT = { has_country_flag = triggered_dark_alpha_events }
+		has_ascension_perk = ap_mist
+	}
+
+	immediate = {
+		set_country_flag = triggered_dark_alpha_events
+	}
 
 	option = {
 		name = "wsg.3015.a"
@@ -359,7 +540,10 @@ country_event = {
 	option = {
 		name = "wsg.3015.b"
 		hidden_effect = {
-			country_event = { id = wsg.3016 days = 5 }
+			set_country_flag = building_dark_alpha_experiment_unlock
+		}
+		begin_event_chain = {
+			event_chain = wsg_dark_alpha_chain
 		}
 	}
 }
@@ -368,15 +552,7 @@ country_event = {
 	title = "wsg.3016.name"
 	desc = "wsg.3016.desc"
 	picture = GFX_evt_alpha2
-	is_triggered_only = yes
-
-	immediate = {
-		random_owned_planet = {
-			limit = {
-				is_capital = yes
-			}
-		}
-	}	
+	is_triggered_only = yes	
 
 	after = {
 		capital_scope = { add_planet_devastation = 20 }
@@ -389,6 +565,54 @@ country_event = {
 	option = {
 		name = "wsg.3016.b"	
 		add_research_option = "tech_alpha_weapon"		
+	}
+}
+planet_event = {
+	id = wsg.3017
+	title = "wsg.3016.name"
+	desc = "wsg.3017.desc"
+	picture = GFX_evt_alpha2
+	is_triggered_only = yes	
+
+	after = {
+		add_planet_devastation = 20
+		remove_building = building_wsg_dark_alpha_experiment_field
+		add_building = building_wsg_dark_alpha_experiment_field_ruin
+		owner = { 
+			add_research_option = "tech_alpha_weapon" 
+			end_event_chain = wsg_dark_alpha_chain
+		}
+	}
+
+	option = {
+		name = "wsg.3016.a"
+	}
+	option = {
+		name = "wsg.3016.b"		
+	}
+}
+
+planet_event = {
+	id = wsg.3018
+	title = "wsg.3018.name"
+	desc = "wsg.3018.desc"
+	picture = GFX_evt_alpha
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = trigger_d_alpha_project }
+	}
+
+	immediate = {
+		owner = { set_country_flag = trigger_d_alpha_project }
+	}
+
+	option = {
+		name = OK
+		owner = { enable_special_project = {
+			name = WG_DARK_ALPHA_EXPERIMENT
+			location = PREV
+		}}
 	}
 }
 #港区星球通知
@@ -823,24 +1047,27 @@ country_event = {
 
 	option = {
 		name = "wsg.3031.a"
-		custom_tooltip = wsg.3031.a.response
+		custom_tooltip = wsg.3031.a.tooltip
 		owner = {
-			add_resource = { unity = 100}
+			add_resource = { unity = 100 }
 		}
+		play_sound = happy_rome
 	}
 	option = {
 		name = "wsg.3031.b"
-		custom_tooltip = wsg.3031.a.response
+		custom_tooltip = wsg.3031.b.tooltip
 		owner = {
 			add_resource = { influence = 50 }
 		}	
+		play_sound = sad_rome
 	}
 	option = {
 		name = "wsg.3031.c"
-		custom_tooltip = wsg.3031.a.response
+		custom_tooltip = wsg.3031.c.tooltip
 		owner = {
 			add_resource = { energy = 500 }
 		}	
+		play_sound = angry_rome
 	}
 }
 
@@ -1079,6 +1306,32 @@ country_event = {
 			event_chain = "ovo_chain"
 			target = this.owner
 		}
+	}
+}
+
+planet_event = {
+	id = wsg.30370
+	hide_window = yes
+	is_triggered_only = yes
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		is_ai = no
+		has_ground_combat = no
+		is_capital = no
+	}
+
+	trigger = {
+		has_planet_flag = ovo_planet
+		num_pops > 0
+		owner = { has_country_flag = wg_ascension_path_project_s }
+	}
+
+	immediate = {
+		remove_deposit = d_neo2
+		add_deposit = d_senergy
 	}
 }
 
@@ -2751,7 +3004,7 @@ event = {
 				is_ai = no
 			}
 			set_country_flag = triggered_lady_contingency_event
-			country_event = { id = wsg.3066 days = 9000 random = 4500 }
+			country_event = { id = wsg.3066 days = 7200 random = 5400 }
 		}
 	}
 }
@@ -2926,34 +3179,104 @@ country_event = {
 	}
 }
 
-# country_event = {
-# 	id = wsg.3082
-# 	is_triggered_only = yes
-# 	hide_window = yes
+#深海能源巨构通知
+country_event = {
+	id = wsg.3083
+	title = wsg.3083.name
+	desc = wsg.3083.desc
+	picture = GFX_evt_senergy_research
+	show_sound = event_cityscape
+	location = FROM
 
-# 	trigger = {
-# 		OR = {
-# 			has_country_flag = gain_lady_Contingency
-# 			is_same_value = event_target:lady_Contingency_owner
-# 		}
-# 		NOR = { 
-# 			any_owned_fleet = {
-# 				OR = {
-# 					has_fleet_flag = lady_fleet	
-# 					is_same_value = event_target:lady_contingency_fleet
-# 				}
-# 				exists = this
-# 			}
-# 			has_country_flag = modifing_wsg_lady
-# 			has_country_flag = gain_wsg_lady
-# 			exists = event_target:wsg_lady_own_country
-# 		}
-# 	}
+	is_triggered_only = yes
 
-# 	immediate = {
-# 		country_event = { id = wsg.3082 days = 1800 } # for test, should be 1800
-# 	}
-# }
+	trigger = {
+		FROM = { is_megastructure_type = shenhai_energy_core_1 }
+	}
+
+	option = {
+		name = OK
+	}
+}
+#深海能源巨构通知
+country_event = {
+	id = wsg.3084
+	title = wsg.3084.name
+	desc = wsg.3084.desc
+	picture = GFX_evt_senergy_research
+	show_sound = event_cityscape
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_megastructure_type = shenhai_energy_core_2 }
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+#深海能源巨构通知
+country_event = {
+	id = wsg.3085
+	title = wsg.3085.name
+	desc = wsg.3085.desc
+	picture = GFX_evt_senergy_research
+	show_sound = event_cityscape
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_megastructure_type = shenhai_energy_core_3 }
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+#深海能源巨构通知
+country_event = {
+	id = wsg.3086
+	title = wsg.3086.name
+	desc = wsg.3086.desc
+	picture = GFX_evt_senergy_research
+	show_sound = event_cityscape
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_megastructure_type = shenhai_energy_core_4 }
+	}
+
+	immediate = {
+		FROMFROM = {
+			every_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_molten
+						is_planet_class = pc_frozen
+						is_planet_class = pc_barren
+						is_planet_class = pc_barren_cold
+					}
+				}
+				change_pc = pc_toxic
+			}
+			every_system_planet = {
+				limit = {
+					has_modifier = terraforming_candidate
+				}
+				remove_modifier = terraforming_candidate
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
 
 ship_event = {
 	id = wsg.3100

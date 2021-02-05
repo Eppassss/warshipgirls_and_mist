@@ -8,6 +8,27 @@ wg_bubbles_link_button_effect = {
 	potential = { 
 		has_country_flag = modified_bubbles
 		bubbles_available = yes 
+		check_variable = { which = link_button_current_page value = 0 }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = already_has_wsg_bubbles_diplo
+			NAND = {
+				has_country_flag = engaged_with_bubbles
+				has_active_event = { wg_bubbles.6 }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = { country_event = { id = wg_bubbles.6 }}
+	}
+}
+
+wg_bubbles_link_button_pg2_effect = {
+	potential = { 
+		has_country_flag = modified_bubbles
+		bubbles_available = yes 
+		check_variable = { which = link_button_current_page value = 1 }
 	}
 	allow = {
 		custom_tooltip = {

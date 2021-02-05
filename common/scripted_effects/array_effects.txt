@@ -14,7 +14,7 @@
 ####################################################################################
 # add_array = { ARRAY, VALUE }
 # 
-# 在数组最后添加一个变量
+# 在数组最后添加一个变量，数值可以为另外一个变量名
 # add a number to the end of an array
 # input: ARRAY, VALUE # 数组名及要添加的数值
 # 数组最大索引为9999
@@ -35,19 +35,19 @@
 ####################################################################################
 # set_array = { ARRAY, VALUE, INDEX }
 # 
-# 更改数组内指定索引的数值
+# 更改数组内指定索引储存的数值
 # set the value in an array at the given index
 # input: ARRAY, VALUE, INDEX # 数组名，数值，索引
 ####################################################################################
 # set_array_variable = { ARRAY, VALUE, VARIABLE }
 # 
-# 根据某一个变量的值，更改数组内指定索引的数值
+# 根据输入变量的值，更改数组内[输入变量对应的索引]里储存的数值
 # set the value in an array at the given index, which the index is a variable in game
 # input: ARRAY, VALUE, VARIABLE # 数组名，数值，变量名
 ####################################################################################
 # get_digits = { ARRAY, VARIABLE }
 # 
-# 将变量值转换成一个数列 （个位数，10位数，百位数，千位数），用于读取
+# 将变量值转换成一个数列 （个位数，10位数，百位数，千位数），用于函数读取变量值
 # convert variable value into readable digits in form of arrays
 # INPUT: VARIABLE # 需要转换的变量
 # OUTPUT: ARRAY, can be same as VARIABLE # 转换成的数列名，可与VARIABLE 重复
@@ -62,7 +62,7 @@
 ####################################################################################
 # get_array_variable = { ARRAY, VARIABLE, OUT }
 # 
-# 将数组内指定索引（数值为一个变量）的值复制到指定的变量中
+# 将数组内指定索引（数值为一个变量）储存的值复制到指定的变量中
 # copy the value in an array at the given index (referred to an variable) to the specific variable
 # input: ARRAY 数组名, VARIABLE(variable name) # 变量名(输入)
 # output: OUT(variable name) # 变量名(输出)
@@ -395,17 +395,19 @@ set_array_variable = {
 			add_array_set_digit_2 = { ARRAY = $ARRAY$ VALUE = $VALUE$ INDEX = 9 }
 		}
 	}
+	remove_array_variables = { ARRAY = $ARRAY$ }
 }
 
 # convert variable value into readable digits in form of arrays
+# will generate a country flag named $ARRAY$_negative if the input value is negative
 # INPUT: VARIABLE
 # OUTPUT: ARRAY
 get_digits = {
 	set_variable = { which = $ARRAY$_TEMP value = $VARIABLE$ }
 	if = {
 		limit = { check_variable = { which = $ARRAY$_TEMP value < 0 }}
-		multiply_variable = { which = $ARRAY$_TEMP value = -1 }
 		set_country_flag = $ARRAY$_negative
+		multiply_variable = { which = $ARRAY$_TEMP value = -1 }
 	}
 	set_variable = { which = $ARRAY$_DIGITS value = 1 }
 	while = { # push the number to decimals until first digit is at the single digit (123 -> 1.23)
@@ -667,8 +669,10 @@ remove_array_variables = {
 
 # 从数列中寻找与指定变量相等的项
 # input: ARRAY 数组名, VALUE 需要对比的值
-# output: OUT(variable name)# 变量名(输出)
+# output: OUT(variable name)# 变量名(输出) 
+# 输出值：找到的索引
 find_array_variable = {
+	remove_country_flag = ARRAY_INDEX_NOT_FOUND
 	set_variable = { which = INDEX value = 0 }
 	while = {
 		limit = {
@@ -717,7 +721,13 @@ find_array_variable = {
 			change_variable = { which = INDEX value = 1 }
 		}
 	}
-	set_variable = { which = $OUT$ value = INDEX }
+	if = {
+		limit = { check_variable = { which = INDEX value > $ARRAY$ }}
+		set_country_flag = ARRAY_INDEX_NOT_FOUND
+		set_variable = { which = $OUT$ value = 0 }
+	} else = {
+		set_variable = { which = $OUT$ value = INDEX }
+	}
 	set_variable = { which = INDEX value = 0 }
 	remove_country_flag = FOUND_REQUIRE_ARRAY_INDEX
 }

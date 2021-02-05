@@ -246,3 +246,31 @@ soundeffect = {
 	max_audible = 1
 	max_audible_behaviour = fail
 }
+
+soundeffect = {
+	name = happy_rome
+	sounds = {
+		sound = happy_rome
+	}
+	volume = 5
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+soundeffect = {
+	name = angry_rome
+	sounds = {
+		sound = angry_rome
+	}
+	volume = 5
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+soundeffect = {
+	name = sad_rome
+	sounds = {
+		sound = sad_rome
+	}
+	volume = 5
+	max_audible = 1
+	max_audible_behaviour = fail
+}

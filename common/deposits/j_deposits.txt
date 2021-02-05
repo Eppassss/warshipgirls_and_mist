@@ -309,6 +309,23 @@ d_neo2 = {
 	}
 }
 
+d_senergy = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	icon = d_sr_se
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			sr_se = 5
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
 r_clovertheater_world_tree = {
 	is_for_colonizeable = yes
 	icon = d_clovertheater_world_tree

@@ -1,0 +1,84 @@
+###
+utility_component_template = {
+	key = "SMALL_wsg_ship_part_wsg_s_ia"
+	size = small
+	icon = "GFX_ship_part_wsg_S_IA"
+	icon_frame = 1
+	power = -45
+	modifier = {
+		ship_armor_add = 125
+		ship_hull_add = 150
+		ship_shield_add = 100
+		ship_shield_regen_add_static = 5
+	}
+	
+	prerequisites = { "tech_wsg_s_ia" }
+	component_set = "wsg_ship_part_wsg_s_ia"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 1.5
+			alloys = 15
+		}		
+		upkeep = {
+			energy = 1
+			alloys = 0.6
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_wsg_ship_part_wsg_s_ia"
+	size = medium
+	icon = "GFX_ship_part_wsg_S_IA"
+	icon_frame = 1
+	power = -100
+	modifier = {
+		ship_armor_add = 550
+		ship_hull_add = 650
+		ship_shield_add = 450
+		ship_shield_regen_add_static = 8
+	}
+	
+	prerequisites = { "tech_wsg_s_ia" }
+	component_set = "wsg_ship_part_wsg_s_ia"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 5
+			alloys = 35
+		}		
+		upkeep = {
+			energy = 1.8
+			alloys = 1
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_wsg_ship_part_wsg_s_ia"
+	size = large
+	icon = "GFX_ship_part_wsg_S_IA"
+	icon_frame = 1
+	power = -180
+	modifier = {
+		ship_armor_add = 1250
+		ship_hull_add = 1300
+		ship_shield_add = 1000
+		ship_shield_regen_add_static = 35
+	}
+	
+	prerequisites = { "tech_wsg_s_ia" }
+	component_set = "wsg_ship_part_wsg_s_ia"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 8
+			alloys = 80
+		}		
+		upkeep = {
+			energy = 3
+			alloys = 1.8
+		}
+	}
+}

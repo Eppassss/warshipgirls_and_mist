@@ -84,6 +84,22 @@ country_event = {
 			country_event = { id = wg_boss.19 }#无人机之主
 			country_event = { id = wsgranking.1919 }#胖次商店
 		}
+
+		# 龙星系
+		if = {
+			limit = { any_system = { NOT = { has_star_flag = guardians_dragon_system }}}
+			random_system = {
+				limit = { has_star_flag = can_spawn_boss_system }
+				remove_star_flag = can_spawn_boss_system
+				spawn_system = {
+					hyperlane = yes
+					is_discovered = no
+					min_distance = 10
+					max_distance = 20
+					initializer = guardians_init_dragon
+				}
+			}
+		}
 		random_list = { 
 			6 = {
 				random_country = {
@@ -3428,97 +3444,113 @@ event = {
 	}
 
 	immediate = {
-		random_planet = {
-			save_event_target_as = fairy_dragon_target
-			create_country = {
-				name = "NAME_fairy_dragon"
-				type = guardian_wg_fd
-				flag = {
-					icon = {
-						category = "domination"
-						file = "domination_24.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors={
-						"blue"
-						"blue"
-						"null"
-						"null"
-					}
-				}
-				effect = {
-					establish_communications_no_message = root.owner
-				}	
-			}
-			last_created_country = {
-				set_country_flag = fairy_dragon_country
-				save_global_event_target_as = fairy_dragon_country
-				create_fleet = {
-					name = "NAME_fairy_dragon2"
-					settings = {
-						spawn_debris = no
-						is_boss = yes
+		random = {
+			chance = 50
+			random_planet = {
+				limit = { solar_system = {
+					NOT = { exists = space_owner }
+				}}
+				save_event_target_as = fairy_dragon_target
+				create_country = {
+					name = "NAME_fairy_dragon"
+					type = guardian_wg_fd
+					flag = {
+						icon = {
+							category = "domination"
+							file = "domination_24.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"blue"
+							"blue"
+							"null"
+							"null"
+						}
 					}
 					effect = {
-						set_owner = event_target:fairy_dragon_country
-						create_ship = {
-							name = "NAME_fairy_dragon3"
-							design = "NAME_WG_Fairy_dragon"
-							effect = {
-								set_ship_flag = fairy_dragon_ship
-								set_disable_at_health = 0.05
-								save_global_event_target_as = fairy_dragon_ship_target
-							}
+						establish_communications_no_message = root.owner
+					}	
+				}
+				last_created_country = {
+					set_country_flag = fairy_dragon_country
+					save_global_event_target_as = fairy_dragon_country
+					create_fleet = {
+						name = "NAME_fairy_dragon2"
+						settings = {
+							spawn_debris = no
+							is_boss = yes
 						}
-						while = {
-							count = 25
+						effect = {
+							set_owner = event_target:fairy_dragon_country
+							create_ship = {
+								name = "NAME_fairy_dragon3"
+								design = "NAME_WG_Fairy_dragon"
+								effect = {
+									set_ship_flag = fairy_dragon_ship
+									set_disable_at_health = 0.05
+									save_global_event_target_as = fairy_dragon_ship_target
+								}
+							}
 							create_ship = {
 								name = random
-								design = "NAME_WG_Dragon_corvette"
+								design = "NAME_WG_Fairy_dragon_dreadnought"
+								graphical_culture = "wsg_01"
 							}
-						}
-						save_global_event_target_as = fairy_dragon_fleet
-						set_fleet_flag = fairy_dragon_fleet
-						set_location = event_target:fairy_dragon_target
-						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self
-						set_aggro_range = 20
-						queue_actions = {
-							repeat = {
-								find_random_system = {
-									trigger = {
-										id = fairy_dragon.1.trigger.1
-										NOR = {
-											event_target:fairy_dragon_fleet = {
-												distance = { # 最小走动范围为10 星系外
-													source = PREV
-													min_jumps = 10
-													type = hyperlane
-													use_bypasses = no
+							create_ship = {
+								name = random
+								design = "NAME_WG_Fairy_dragon_dreadnought"
+								graphical_culture = "wsg_01"
+							}
+							while = {
+								count = 25
+								create_ship = {
+									name = random
+									design = "NAME_WG_Dragon_corvette"
+								}
+							}
+							save_global_event_target_as = fairy_dragon_fleet
+							set_fleet_flag = fairy_dragon_fleet
+							set_location = event_target:fairy_dragon_target
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 20
+							queue_actions = {
+								repeat = {
+									find_random_system = {
+										trigger = {
+											id = fairy_dragon.1.trigger.1
+											NOR = {
+												event_target:fairy_dragon_fleet = {
+													distance = { # 最小走动范围为10 星系外
+														source = PREV
+														min_jumps = 10
+														type = hyperlane
+														use_bypasses = no
+													}
 												}
+												has_star_flag = fairy_dragon_visited
 											}
-											has_star_flag = fairy_dragon_visited
 										}
-									}
-									found_system = {
-										move_to = this
-										effect = {
-											id = fairy_dragon.1.effect.1
-											set_timed_star_flag = { flag = fairy_dragon_visited days = 7200 }
-										}
-										find_closest_planet = {
-											trigger = {
-												id = fairy_dragon.1.trigger.2
-												is_star = yes
+										found_system = {
+											move_to = this
+											effect = {
+												id = fairy_dragon.1.effect.1
+												set_timed_star_flag = { flag = fairy_dragon_visited days = 7200 }
 											}
-											found_planet = {
-												move_to = this
-												#orbit_planet = this
-												wait = {
-													duration = 10
+											find_closest_planet = {
+												trigger = {
+													id = fairy_dragon.1.trigger.2
+													is_star = yes
+												}
+												found_planet = {
+													move_to = this
+													#orbit_planet = this
+													wait = {
+														duration = 10
+													}
 												}
 											}
 										}

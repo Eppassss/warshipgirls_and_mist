@@ -1,0 +1,211 @@
+weapon_component_template = {
+	key = "wsg_weapon_X_S_380"
+	size = extra_large
+	
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_wsg_weapon_X_S_380"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 1650 max = 2700 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 70
+	range = 175.0
+	accuracy = 0.90
+	shield_damage = 1.25
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.15
+	power = -450
+	
+	prerequisites = { "tech_wsg_weapon_S_380" }
+	upgrades_to = "wsg_weapon_X_ES_406"
+	component_set = "wsg_weapon_X_S_380"
+	projectile_gfx = "sh_lance_x"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 10
+			alloys = 180
+		}		
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_neo value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_X_S_305"
+	size = extra_large
+	
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_wsg_weapon_X_S_305"
+	icon_frame = 1
+	
+	firing_arc = 40.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 2550 max = 4000 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 300
+	range = 175.0
+	accuracy = 0.90
+	shield_penetration = 0.65
+	armor_penetration = 0.65
+	tracking = 0.15
+	power = -381
+	
+	prerequisites = { "tech_wsg_weapon_S_305" }
+	component_set = "wsg_weapon_X_S_305"
+	projectile_gfx = "sh_lance_x"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 8
+			alloys = 180
+		}		
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_neo value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_X_ES_406"
+	size = extra_large
+	
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_wsg_weapon_X_ES_406"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 2750 max = 4825 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 70
+	range = 185.0
+	accuracy = 0.90
+	shield_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.15
+	power = -600
+	
+	prerequisites = { "tech_wsg_weapon_ES_406" }
+	component_set = "wsg_weapon_X_ES_406"
+	projectile_gfx = "sh_lance_x"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 15
+			sr_dark_matter = 8
+			alloys = 180
+		}		
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_neo value <= 0 }
+		}
+	}
+}
+
+# 胖次武器特供
+weapon_component_template = {
+	key = "wsg_weapon_X_S450"
+	size = extra_large
+	
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_wsg_weapon_X_S450"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 30.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	damage = { min = 4500 max = 8888 }
+	windup = { min = 40 max = 55 }
+	total_fire_time = 155
+	range = 180.0
+	accuracy = 0.90
+	shield_damage = 2.5
+	armor_damage = 2.5
+	hull_damage = 1.6	
+	tracking = 0.15
+	power = -600
+	
+	prerequisites = { "tech_wsg_weapon_X_S450" }
+	component_set = "wsg_weapon_X_S450"
+	projectile_gfx = "sh_lance_x"
+	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			sr_se = 15
+			sr_dark_matter = 8
+			alloys = 180
+		}		
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_neo value <= 0 }
+		}
+	}
+}
+

@@ -5453,14 +5453,65 @@ country_event = {
 
 }
 
-planet_event = {
+country_event = {
 	id = wg_crisis.12450
+	desc = "wg_crisis.12450.desc"
 	is_triggered_only = yes
-	title = OK
-	desc = OK
-	trigger = {
-		is_ringworld_wg = yes
+	diplomatic = yes
+	custom_gui = wg_lady_commu_window
+	custom_gui_option = wg_lady_commu_option
+
+	immediate = {
+		set_country_flag = gain_wsg_lady
+		remove_country_flag = start_wsg_lady_events
+		# remove_country_flag = modifing_wsg_lady
+		if = {
+			limit = { NOT = { any_country = { has_country_flag = wsg_lady_country }}}
+			create_species = {
+				name = LADY_SPECIES
+				plural = LADY_SPECIES
+				class = ART
+				portrait = art13
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = wsg_lady_species
+				}
+			}
+			create_country = {
+				name = "NAME_lady_Contingency_fleet"
+				species = event_target:wsg_lady_species
+				type = wsg_lady
+				flag = {
+					icon= {
+						category = "special"
+						file = "ai_01.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "circle.dds"
+					}
+					colors={
+						"black"
+						"red"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_global_event_target_as = wsg_lady_country
+					set_country_flag = wsg_lady_country
+				}
+			}
+		}
+		event_target:wsg_lady_country = {
+			establish_communications_no_message = root
+		}
+		save_global_event_target_as = wsg_lady_own_country
+		country_event = { id = wg_lady.10023 days = 3601 }
+		set_variable = { which = lady_affection value = 1 }
+		set_variable = { which = lady_affection_level value = 1 }
 	}
+	
 	option = {
 		name = OK
 	}

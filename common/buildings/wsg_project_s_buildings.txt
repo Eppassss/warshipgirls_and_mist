@@ -1,0 +1,976 @@
+#反重力电梯
+building_wsg_elevator = {
+	base_buildtime = 480	
+	base_cap_amount = 1
+
+	category = trade
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		buildings_simple_allow = yes
+		has_major_upgraded_capital = yes
+	}
+
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_regular_empire = no }
+	}
+	
+	planet_modifier = {
+		job_clerk_add = 5
+		planet_buildings_upkeep_mult = -0.05
+		planet_districts_upkeep_mult = -0.05
+		trade_value_mult = 0.20
+		pop_resettlement_cost_mult = -0.25
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			sr_pantsu = 20
+		}
+		upkeep = {
+			energy = 10
+			sr_pantsu = 1
+		}
+	}
+	
+	prerequisites = {
+		"tech_building_wsg_elevator"
+	}
+	
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					NOT = { has_building = building_commercial_megaplex }
+					NOT = { has_building = building_commercial_zone }
+					NOT = { has_district = district_hab_commercial }
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		energy = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#消费品工厂
+building_sep_factory = {
+	base_buildtime = 720
+
+	category = manufacturing
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		building_relaxed_basic_income_check = yes
+	}
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+
+			AND = {
+				exists = owner
+				owner = {
+					is_ai = yes
+					is_gestalt = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
+			}
+		}
+	}
+	planet_modifier = {
+		job_sep_artisan_add = 8
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1200
+			sr_se = 50
+		}
+		upkeep = {
+			energy = 10
+			sr_se = 1
+		}
+	}
+
+	prerequisites = {
+		tech_building_sep_factory
+	}
+
+
+	triggered_desc = {
+		text = job_sep_artisan_effect_desc
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 25
+			NOR = {
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_3
+				has_building = building_sep_factory
+			}
+		}
+	}
+
+	ai_resource_production = {
+		consumer_goods = 10
+		trigger = {
+			always = yes
+		}
+	}
+}
+#合金厂1
+building_sep_foundry = {
+	base_buildtime = 480
+	category = manufacturing	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	
+	planet_modifier = {
+		job_sep_foundry_add = 8
+	}
+
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_se = 80
+		}	
+		upkeep = {
+			energy = 15
+			sr_se = 2
+		}
+	}	
+	
+	prerequisites = {
+		"tech_building_sep_foundry"
+	}
+	upgrades = {
+		building_sep_foundry2
+	}
+	
+	triggered_desc = {
+		text = job_sep_foundry_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		alloys = 25
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_sep_foundry2 = {
+	base_buildtime = 480
+	category = manufacturing
+	can_build = no
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		buildings_simple_allow = yes
+		has_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		job_sep_foundry_add = 12
+	}
+
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+			sr_se = 100
+		}	
+		upkeep = {
+			energy = 20
+			sr_se = 3
+		}
+	}	
+	
+	prerequisites = {
+		"tech_building_sep_foundry2"
+	}
+	
+	triggered_desc = {
+		text = job_sep_foundry_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		alloys = 50
+		trigger = {
+			always = yes
+		}
+	}
+}
+#一级科研
+building_sep_research = {
+	base_buildtime = 360
+	category = research
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+		}
+	}
+	planet_modifier = {
+		job_researcher_add = 3
+		job_wsg_researcher_add = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 350
+			sr_pantsu = 30
+			sr_se = 10
+		}	
+		upkeep = {
+			energy = 5
+			sr_pantsu = 1
+		}
+	}
+	prerequisites = {
+		"tech_building_sep_research"
+	}	
+			
+	upgrades = {
+		"building_sep_research2"
+	}	
+	
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 0
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 50
+				}
+			}
+		}
+	}
+}
+
+building_sep_research2 = {
+	base_buildtime = 360
+	category = research
+	can_build = no
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+	allow = {
+		num_pops >= 20
+	}
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+		}
+	}
+	planet_modifier = {
+		job_researcher_add = 5
+		job_wsg_researcher_add = 1
+		planet_jobs_physics_research_produces_mult = 0.01
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+			sr_pantsu = 50
+			sr_se = 20
+		}	
+		upkeep = {
+			energy = 9
+			sr_pantsu = 1
+			sr_se = 1
+		}
+	}
+	prerequisites = {
+		"tech_building_sep_research2"
+	}	
+			
+	upgrades = {
+		"building_sep_research3"
+	}	
+	
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 0
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 50
+				}
+			}
+		}
+	}
+}
+
+building_sep_research3 = {
+	base_buildtime = 360
+	category = research
+	can_build = no
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls	
+			
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+	allow = {
+		has_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+		}
+	}
+	planet_modifier = {
+		job_researcher_add = 8
+		job_wsg_researcher_add = 2
+		planet_jobs_physics_research_produces_mult = 0.01
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+			sr_pantsu = 50
+			sr_se = 50
+		}	
+		upkeep = {
+			energy = 15
+			sr_pantsu = 2
+			sr_se = 1
+		}
+	}
+	prerequisites = {
+		"tech_building_sep_research3"
+	}	
+			
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 0
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value > 50
+				}
+			}
+		}
+	}
+}
+
+building_wsg_senergy_1 = {
+	base_buildtime = 800
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	planet_modifier = {
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	upgrades = {
+		building_wsg_senergy_2
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		modifier = {
+			job_wsg_senergy_add = 2
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 600
+			minerals = 300
+		}		
+		upkeep = {
+			energy = 12
+		}
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	prerequisites = {
+		"tech_wsg_senergy"
+	}
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy_2 = {
+	base_buildtime = 600
+	can_build = no
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+			has_ascension_perk = ap_project_s
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	upgrades = {
+		building_wsg_senergy_3
+	}
+	planet_modifier = {
+		
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		modifier = {
+			job_wsg_senergy_add = 4
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 400
+		}
+		upkeep = {
+			sr_pantsu = 2
+			energy = 20
+		}		
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy_3 = {
+	base_buildtime = 600
+	can_build = no
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+			has_ascension_perk = ap_project_s
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	planet_modifier = {
+		
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner				
+		}
+		modifier = {
+			job_wsg_senergy_add = 7
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 400
+		}
+		upkeep = {
+			sr_pantsu = 3
+			energy = 25
+		}		
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy_manufacture }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_wsg_senergy_distributor = {
+	base_buildtime = 1500
+	base_cap_amount = 1	
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	category = unity
+
+	
+	potential = {
+		exists = planet
+		custom_tooltip = {
+			text = EMPIRE_ALPHA_BUILDING
+			owner = { 
+				has_authority = auth_warshipgirls	
+				has_ascension_perk = ap_project_s
+				NOR = {
+					custom_tooltip_fail = {
+						text = alpha_building_built
+						has_country_flag = built_one_distributor 
+					}
+					custom_tooltip_fail = {
+						text = alpha_building_queuing
+						has_country_flag = built_one_distributor_queuing
+					}
+					has_modifier = slave_colony
+				}
+			}	
+		}
+	}
+
+	prerequisites = {
+		"tech_building_wsg_distributor"
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+	allow = {
+		has_major_upgraded_capital = yes
+		owner = { species = {
+			calc_true_if = {
+				amount = 2
+				has_trait = wsg_trait_extreme_efficient
+				has_trait = wsg_trait_galatic_engineer
+				has_trait = wsg_trait_knowledgeable2
+			}
+		}}
+	}
+	planet_modifier = {
+		pop_happiness = 0.2
+	}
+	country_modifier = {
+		custom_tooltip = "building_wsg_senergy_distributor_tooltip"
+		pop_category_slave_sr_se_upkeep_add = -0.02
+		pop_category_rulers_sr_se_upkeep_add = -0.02
+		pop_category_specialists_sr_se_upkeep_add = -0.02
+		pop_category_workers_sr_se_upkeep_add = -0.02
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 100
+			minerals = 2000
+			alloys = 1000
+			sr_se = 150
+		}
+		upkeep = {
+			sr_se = 5
+			energy = 20
+		}
+	}	
+	on_built = {
+		owner = { set_country_flag = built_one_distributor }
+	}
+	on_destroy = {
+		owner = { remove_country_flag = built_one_distributor }
+	}
+	on_queued = {
+		owner = { set_country_flag = built_one_distributor_queuing }
+	}
+	on_unqueued = {
+		owner = { remove_country_flag = built_one_distributor_queuing }
+	}	
+	ai_weight = {
+		weight = 75000
+		modifier = {
+			factor = 0
+			OR = {
+				is_planet_class = pc_habitat
+				buildings_stop_pop = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			count_pops = { limit = { is_sapient = yes } count > 75 }
+		}
+	}
+}

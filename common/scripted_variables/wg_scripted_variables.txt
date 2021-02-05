@@ -55,31 +55,37 @@
 @bubbles_affection_to_lv4 = 105
 @bubbles_affection_to_lv5 = 160
 @bubbles_affection_reduce = 40
+#龙
+@wg_dragon_affection_to_lv2 = 20
+@wg_dragon_affection_to_lv3 = 45
+@wg_dragon_affection_to_lv4 = 75
+@wg_dragon_affection_to_lv5 = 120
+@wg_dragon_affection_reduce = 15
 #总督
-@governor_affection_to_lv2 = 35
-@governor_affection_to_lv3 = 70
-@governor_affection_to_lv4 = 105
-@governor_affection_to_lv5 = 140
+@governor_affection_to_lv2 = 32
+@governor_affection_to_lv3 = 65
+@governor_affection_to_lv4 = 100
+@governor_affection_to_lv5 = 130
 #科学家
 @scientist_affection_to_lv2 = 55
 @scientist_affection_to_lv3 = 110
 @scientist_affection_to_lv4 = 165
 @scientist_affection_to_lv5 = 220
 #海军上将
-@admiral_affection_to_lv2 = 25
-@admiral_affection_to_lv3 = 50
-@admiral_affection_to_lv4 = 75
-@admiral_affection_to_lv5 = 100
+@admiral_affection_to_lv2 = 20
+@admiral_affection_to_lv3 = 40
+@admiral_affection_to_lv4 = 60
+@admiral_affection_to_lv5 = 80
 #陆军将军
 @general_affection_to_lv2 = 15
 @general_affection_to_lv3 = 30
 @general_affection_to_lv4 = 45
 @general_affection_to_lv5 = 60
 #统治者
-@ruler_affection_to_lv2 = 30
-@ruler_affection_to_lv3 = 60
-@ruler_affection_to_lv4 = 95
-@ruler_affection_to_lv5 = 130
+@ruler_affection_to_lv2 = 25
+@ruler_affection_to_lv3 = 50
+@ruler_affection_to_lv4 = 85
+@ruler_affection_to_lv5 = 120
 
 ######################################
 #反抗军舰队持有上限

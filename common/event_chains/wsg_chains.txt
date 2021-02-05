@@ -5,6 +5,11 @@ ovo_chain = {
 wg_precursors = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_wg_precursors
+	counter = {
+		wg_precursors_clues = {
+			max = 4
+		}
+	}
 }
 lex_sol_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
@@ -33,4 +38,17 @@ wg_psi_chain = {
 			max = 4
 		}
 	}
+}
+
+wsg_project_s = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wsg_project_s
+	counter = {
+		sr_se_cost_counter = { }
+	}
+}
+
+wsg_dark_alpha_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_alpha
 }

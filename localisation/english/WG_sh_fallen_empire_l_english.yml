@@ -65,7 +65,7 @@
  sh_fe.17.desc:0 "Unbelievable... You have chosen this way like us.\n\nMillions of years ago, we chose the silence, defeating all the rivals...\n\nOur followers... you must have an objective, too... We can offer you some help..."
  sh_fe.17.a:0 "Thank you."
  sh_fe.17.b:0 "....Thank you...."
- sh_fe.18.desc:0 "these technologies... may help you..."
+ sh_fe.18.desc:0 "These technologies... may help you..."
  sh_fe.18.a:0 "Thank you."
  sh_modifier_fe_research:0 "Abyssal Research Database"
  sh_fe.19.desc:0 "Some resources..."
@@ -81,3 +81,4 @@
  sh_fe.25.a:0 "Understood."
  sh_fe.26.desc:0 "....."
  sh_fe.26.a:0 "OK"
+ sh_fe.27.desc:0 "沉默...需要力量......这艘§Y主宰§!作为礼物赠与你们..."

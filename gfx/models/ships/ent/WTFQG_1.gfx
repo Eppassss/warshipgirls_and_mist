@@ -123,3 +123,48 @@ objectTypes = {
 		}
 	}
 }
+
+objectTypes = {
+	pdxmesh = {
+		name = "WTFQGXF_4_mesh"
+		file = "gfx/models/ships/ent/WTFQG_2.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCylinderShape1"
+			index = 0
+			texture_diffuse = "WTFQGXF10.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "WTFQGXF_5_mesh"
+		file = "gfx/models/ships/ent/WTFQG_2.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCylinderShape1"
+			index = 0
+			texture_diffuse = "WTFQGXF11.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "WTFQGXF_6_mesh"
+		file = "gfx/models/ships/ent/WTFQG_2.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCylinderShape1"
+			index = 0
+			texture_diffuse = "WTFQGXF12.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+}

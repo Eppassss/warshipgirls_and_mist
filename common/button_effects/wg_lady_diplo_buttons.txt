@@ -60,15 +60,18 @@ wg_lady_02_portrait = {
 }
 wg_lady_portrait_locked = {
 	potential = {
-		OR = {
-			NOT = { has_global_flag = wg_cheat_all_clothes }
-			AND = {
-				check_variable = { which = wsg_lady_cloth value = 1 }
-				NOT = { has_country_flag = wsg_lady_cloth_01_unlock }
-			}
-			AND = {
-				check_variable = { which = wsg_lady_cloth value = 2 }
-				NOT = { has_country_flag = wsg_lady_cloth_02_unlock }
+		NOR = { 
+			has_global_flag = wg_cheat_all_clothes #作弊解锁
+			check_variable = { which = wsg_lady_cloth value = 0 } #默认服装
+			OR = {
+				AND = {
+					check_variable = { which = wsg_lady_cloth value = 1 }
+					has_country_flag = wsg_lady_cloth_01_unlock
+				}
+				AND = {
+					check_variable = { which = wsg_lady_cloth value = 2 }
+					has_country_flag = wsg_lady_cloth_02_unlock
+				}
 			}
 		}
 	}
@@ -76,7 +79,7 @@ wg_lady_portrait_locked = {
 	effect = {
 	}
 }
-wg_cloth_button_prev = {
+wg_lady_cloth_button_prev = {
 	potential = { always = yes }
 	allow = { always = yes }
 	effect = {
@@ -90,7 +93,7 @@ wg_cloth_button_prev = {
 		custom_tooltip = change_cloth
 	}
 }
-wg_cloth_button_next = {
+wg_lady_cloth_button_next = {
 	potential = { always = yes }
 	allow = { always = yes }
 	effect = {
@@ -403,6 +406,7 @@ wg_lady_link_button_effect = {
 			has_country_flag = modifing_wsg_lady
 			has_country_flag = wsg_lady_changing
 		}
+		check_variable = { which = link_button_current_page value = 0 }
 	}
 	allow = {
 		custom_tooltip = {

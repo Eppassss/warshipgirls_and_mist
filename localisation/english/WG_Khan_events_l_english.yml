@@ -210,7 +210,7 @@
  leader_trait_khan_iron_curtain_active:0 "§RInvulnerability§!"
  leader_trait_khan_iron_curtain_active_desc: "Warning, iron curtain activated."
  leader_trait_khan_weather_control_device:0 "Lightning Storms (Cooling Down)"
- leader_trait_khan_weather_control_device_desc:0 "The Weather Control can create a storm zone in space environment and stun enemy targets."
+ leader_trait_khan_weather_control_device_desc:0 "The Weather Control can create a storm zone in the space environment and stun enemy targets."
  leader_trait_khan_weather_control_device_active:0 "§RLightning Storms§!"
  leader_trait_khan_weather_control_device_active_desc:0 "Warning, lighting storm created!"
  leader_trait_khan_psychic_dominator:0 "Psychic Domination (Cooling Down)"

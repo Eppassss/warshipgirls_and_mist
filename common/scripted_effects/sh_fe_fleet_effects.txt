@@ -50,7 +50,16 @@ create_sh_fe_fleet = {
                         graphical_culture = "fallen_empire_04"
                         upgradable = no
                     }
-                }					
+                }
+				while = {
+                     count = 15
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_4"
+                         graphical_culture = "fallen_empire_04"
+                         upgradable = no
+                     }
+                }
                 set_location = {
                     target = PREV
                     distance = 5
@@ -159,7 +168,16 @@ create_sh_fe_fleet2 = {
                     graphical_culture = "fallen_empire_04"
                     upgradable = no
                 }
-            }					
+            }
+			while = {
+                     count = 5
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_4"
+                         graphical_culture = "fallen_empire_04"
+                         upgradable = no
+                     }
+                }
             set_location = {
                 target = PREV
                 distance = 80
@@ -375,7 +393,16 @@ create_sh_attack_fe_fleet = {
                         graphical_culture = "fallen_empire_04"
                         upgradable = no
                     }
-                }					
+                }
+				while = {
+                     count = 15
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_4"
+                         graphical_culture = "fallen_empire_04"
+                         upgradable = no
+                     }
+                }
                 set_location = {
                     target = event_target:sh_fe_capital_location
                     distance = 5
@@ -429,7 +456,16 @@ create_sh_attack_fe_fleet2 = {
                         graphical_culture = "fallen_empire_04"
                         upgradable = no
                     }
-                }					
+                }
+				while = {
+                     count = 5
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_4"
+                         graphical_culture = "fallen_empire_04"
+                         upgradable = no
+                     }
+                }
                 set_location = {
                     target = event_target:sh_fe_capital_location
                     distance = 5

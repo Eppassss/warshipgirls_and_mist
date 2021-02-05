@@ -1,0 +1,30 @@
+wg_dragon_portrait = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = { } #no need
+}
+
+wg_dragon_link_button_effect = {
+	potential = { 
+		has_country_flag = wg_dragon_owner
+		check_variable = { which = link_button_current_page value = 1 }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = already_has_wg_dragon_diplo
+			NAND = {
+				has_country_flag = talking_to_wg_dragon
+				has_active_event = { 
+					wg_dragon.2
+					wg_dragon.3
+					wg_dragon.4
+					wg_dragon.5
+					wg_dragon.6 
+				}
+			}
+		}
+	}
+	effect = {
+		hidden_effect = { country_event = { id = wg_dragon.99 }}
+	}
+}

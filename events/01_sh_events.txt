@@ -1710,42 +1710,29 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		owner = {
-			save_event_target_as = sh_buffer_owner
-		}
 	}
 		
 	option = {
 		name = "sh.3028.a"
-		random_owned_planet = {
-				limit = {
-					is_capital = yes
-			}
-			save_event_target_as = sh_capital2
-		}
 		create_fleet = {
 			name = "NAME_UF_BUFFER_FLEET"
 			effect = {
-				set_owner = event_target:sh_buffer_owner
-				create_ship = {
-					name = random
-					design = "NAME_uf_buffer2"
-					graphical_culture = "npf_01"
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "NAME_uf_buffer2"
-					graphical_culture = "npf_02"
-					upgradable = no
+				set_owner = root
+				while = {
+					count = 1
+					create_ship = {
+						name = random
+						design = "NAME_uf_buffer2"
+						graphical_culture = "npf_01"
+						upgradable = no
+					}
 				}
 				set_location = {
-					target = event_target:sh_capital2
+					target = root.capital_scope
 					distance = 0
 					angle = random
 				}
 			}
-			break = yes
 		}
 	}
 	option = {

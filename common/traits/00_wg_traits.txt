@@ -509,6 +509,21 @@ wsg_trait_warshipgirls2={
 	}
 }
 
+
+wsg_trait_senergy_producer = {
+	cost = 2
+	initial = no
+	randomized = no
+	#advanced_trait = yes
+	icon = "gfx/interface/icons/traits/wsg_trait_senergy_producer.dds"
+	allowed_archetypes = { WARSHIPGIRL }
+	prerequisites = { "tech_wsg_genetic_resequencing_s" }
+	custom_tooltip = TRAIT_WSG_SENERGY_PRODUCER_EFFECT
+	modifier = {
+		
+	}
+}
+
 wsg_trait_mass_assembly = {
 	cost = 4
 	initial = no
@@ -516,7 +531,7 @@ wsg_trait_mass_assembly = {
 	#advanced_trait = yes
 	icon="gfx/interface/icons/traits/wg_assembly2.dds"
 	allowed_archetypes = { WARSHIPGIRL }
-	prerequisites = { "tech_wsg_senergy_implantation" }
+	prerequisites = { "tech_wsg_genetic_resequencing_s" }
 	custom_tooltip = TRAIT_WSG_ASSEMBLY_EFFECT
 	modifier = {
 		pop_assembly_speed = 0.4
@@ -532,9 +547,9 @@ wsg_trait_extreme_efficient = {
 	icon = "gfx/interface/icons/traits/wg_extreme_efficient.dds"
 	allowed_archetypes = { WARSHIPGIRL }
 	custom_tooltip = TRAIT_WSG_EXEFFICIENT_EFFECT
-	prerequisites = { "tech_wsg_senergy_implantation" }
+	prerequisites = { "tech_wsg_genetic_resequencing_s" }
 	modifier = {
-		planet_jobs_produces_mult = 0.20
+		planet_jobs_produces_mult = 0.30
 		pop_category_rulers_sr_se_produces_add = -0.03
 		pop_category_specialists_sr_se_produces_add = -0.03
 		pop_category_workers_sr_se_produces_add = -0.03
@@ -549,17 +564,13 @@ wsg_trait_galatic_engineer = {
 	#advanced_trait = yes
 	icon = "gfx/interface/icons/traits/wg_galatic_engineer.dds"
 	allowed_archetypes = { WARSHIPGIRL }
-	prerequisites = { "tech_wsg_senergy_implantation" }
+	prerequisites = { "tech_wsg_genetic_resequencing_s" }
 	custom_tooltip = TRAIT_WSG_ENGINEER_EFFECT
 	modifier = {
-		terraform_speed_mult = 0.5
-		megastructure_build_speed_mult = 0.5
-		country_megastructure_build_cap_add = 1
-		planet_building_build_speed_mult = 0.5
 		pop_category_rulers_sr_se_produces_add = -0.03
 		pop_category_specialists_sr_se_produces_add = -0.03
 		pop_category_workers_sr_se_produces_add = -0.03
-		pop_category_slave_sr_se_produces_add = -0.03
+		pop_category_slave_sr_se_produces_add = -0.03		
 	}
 }
 
@@ -571,7 +582,7 @@ wsg_trait_knowledgeable2 = {
 	opposites = { "wsg_trait_knowledgeable" }
 	icon = "gfx/interface/icons/traits/knowledgeable2.dds"
 	allowed_archetypes = { WARSHIPGIRL }
-	prerequisites = { "tech_wsg_senergy_implantation" }
+	prerequisites = { "tech_wsg_genetic_resequencing_s" }
 	custom_tooltip = TRAIT_WSG_KNOWLEDGEABLE_EFFECT
 	modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.4
@@ -585,3 +596,4 @@ wsg_trait_knowledgeable2 = {
 		pop_category_slave_sr_se_produces_add = -0.03
 	}
 }
+

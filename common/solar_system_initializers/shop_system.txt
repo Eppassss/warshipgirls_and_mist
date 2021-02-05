@@ -17,7 +17,63 @@ shop_system = {
 
 	init_effect = {
 		save_global_event_target_as = pantsu_shop_system
-		
+		random_system_planet = {
+			limit = {
+				is_star = yes
+			}
+			clear_deposits = yes
+			create_country = {
+				name = "NAME_WG_LOGO_TITAN"
+				type = pantsu_shop_logo_titan
+				flag = {
+					icon = {
+						category = "wg_event_flags"
+						file = "wge_flags_01.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors={
+						"blue"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					establish_communications_no_message = root.owner
+					set_country_flag = pantsu_shop_logo_titan_flag
+				}				
+			}
+			last_created_country = {
+				save_global_event_target_as = pantsu_shop_logo_titan_country			
+				create_fleet = {
+					name = "NAME_WG_SHOP_LOGO_TITAN"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:pantsu_shop_logo_titan_country
+						create_ship = {
+							graphical_culture = "mammalian_01"
+							design = "NAME_WG_LOGO_TITAN_2"
+						}
+						set_event_locked = yes
+						set_fleet_flag = logo_titan_fleet
+						set_location = {
+							target = prevprev
+							distance = 130
+							angle = random
+						}
+						set_fleet_stance = passive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 100
+				 	}
+				}
+			}
+		}		
 	}
 	
 	planet = {

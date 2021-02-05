@@ -720,4 +720,69 @@ wsg_colony_development = {
 	pop_environment_tolerance = -0.3
 }
 
+wg_dragon_recover_cd = {
+	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
+}
 
+wsg_trait_galatic_engineer_buff = {
+	icon = "gfx/interface/icons/traits/wg_galatic_engineer.dds"
+	custom_tooltip = TRAIT_WSG_ENGINEER_EFFECT
+	pop_category_rulers_sr_se_produces_add = -0.06
+	pop_category_specialists_sr_se_produces_add = -0.06
+	pop_category_workers_sr_se_produces_add = -0.06
+	pop_category_slave_sr_se_produces_add = -0.06
+	terraform_speed_mult = 0.5
+	megastructure_build_speed_mult = 0.5
+	country_megastructure_build_cap_add = 2
+	planet_building_build_speed_mult = 0.5
+	
+	# 一产
+	planet_district_city_build_speed_mult = 0.5
+	planet_district_generator_build_speed_mult = 0.5
+	planet_district_farming_build_speed_mult = 0.5
+	planet_district_mining_build_speed_mult = 0.5
+	# 一产（无限制）
+	planet_district_generator_uncapped_build_speed_mult = 0.5
+	planet_district_farming_uncapped_build_speed_mult = 0.5
+	planet_district_mining_uncapped_build_speed_mult = 0.5
+	# mod 一产
+	planet_district_sh_city_build_speed_mult = 0.5
+	planet_district_sh_generator_uncapped_build_speed_mult = 0.5
+	planet_district_sh_mining_uncapped_build_speed_mult = 0.5
+	planet_district_water_housing_build_speed_mult = 0.5
+	planet_district_water_generator_build_speed_mult = 0.5
+	# 二产
+	planet_district_arcology_housing_build_speed_mult = 0.5
+	planet_district_arcology_arms_industry_build_speed_mult = 0.5
+	planet_district_arcology_civilian_industry_build_speed_mult = 0.5
+	planet_district_arcology_leisure_build_speed_mult = 0.5
+	# 环
+	planet_district_rw_city_build_speed_mult = 0.5
+	planet_district_rw_generator_build_speed_mult = 0.5
+	planet_district_rw_commercial_build_speed_mult = 0.5
+	planet_district_rw_science_build_speed_mult = 0.5
+	planet_district_rw_farming_build_speed_mult = 0.5
+	# 轨道
+	planet_district_hab_housing_build_speed_mult = 0.5
+	planet_district_hab_energy_build_speed_mult = 0.5
+	planet_district_hab_science_build_speed_mult = 0.5
+	planet_district_hab_commercial_build_speed_mult = 0.5
+	planet_district_hab_mining_build_speed_mult = 0.5
+	planet_district_hab_cultural_build_speed_mult = 0.5
+	# mod二产
+	planet_district_arcology_wsg_housing_build_speed_mult = 0.5
+	planet_district_arcology_wsg_neo_build_speed_mult = 0.5
+	planet_district_arcology_wsg_science_build_speed_mult = 0.5
+	planet_district_arcology_wsg_military_build_speed_mult = 0.5
+	planet_district_hab_pantsu_build_speed_mult = 0.5
+	# 环 
+	planet_district_rw_wsg_city_build_speed_mult = 0.5
+	planet_district_rw_wsg_alloys_build_speed_mult = 0.5
+	planet_district_rw_wsg_science_build_speed_mult = 0.5
+	planet_district_rw_wsg_soldier_build_speed_mult = 0.5
+	planet_district_rw_sh_city_build_speed_mult = 0.5
+	planet_district_rw_sh_alloys_build_speed_mult = 0.5
+	planet_district_rw_sh_goods_build_speed_mult = 0.5
+	planet_district_rw_sh_soldier_build_speed_mult = 0.5
+	planet_district_sh_foundry_shpc_build_speed_mult = 0.5
+}

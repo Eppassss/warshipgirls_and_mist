@@ -4,6 +4,7 @@ wg_psi_planet_category = {
 	max_once = yes
 	picture = GFX_evt_shrouded
 	level = 8
+	should_ai_use = no
 
 	null_spawn_chance = 0
 
@@ -74,4 +75,63 @@ wg_psi_planet_category = {
 	}
 
 	on_success = wg_boss.137
+}
+
+wg_precursors_category = {
+	desc = wg_precursors_category_desc
+	picture = GFX_evt_archaeological_dig
+	level = 8
+	should_ai_use = no
+	spawn_chance = {
+		modifier = {
+			add = 10
+			FROM.owner = { OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			}}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				uninhabitable_regular_planet = no
+				solar_system = { OR = {
+					has_star_flag = wg_relic_system 
+					has_star_flag = shenhai_precursor_system 
+				}}
+				FROM.owner = { OR = {
+					is_ai = yes
+					check_variable = { which = spawned_wg_precursors_anomalies value >= 4 }
+					NOR = {
+						has_authority = auth_warshipgirls
+						has_authority = auth_shenhai
+					}
+				}}
+			}
+		}
+	}
+
+	on_spawn = {
+		FROM.owner = { 
+			change_variable = { which = spawned_wg_precursors_anomalies value = 1 }
+		}
+	}
+
+	on_success = {
+		1 = {
+			max_once = yes
+			anomaly_event = wsgancrel.101
+		}
+		1 = {
+			max_once = yes
+			anomaly_event = wsgancrel.104
+		}
+		1 = {
+			max_once = yes
+			anomaly_event = wsgancrel.107
+		}
+		1 = {
+			max_once = yes
+			anomaly_event = wsgancrel.111
+		}
+	}
 }

@@ -23,6 +23,7 @@ country_event ={
 		}
 		# ??mod??flag
 		set_global_flag = has_wsg_mod
+		set_global_flag = wg_mod_5_0_updated
 	}
 }
 
@@ -405,7 +406,7 @@ country_event = {
 		from = {
 			species ={ has_trait = wsg_trait_warshipgirls1}
 		}
-		NOT = { has_ascension_perk = wsg_project_s }
+		NOT = { has_ascension_perk = ap_project_s }
 	}
 
 	immediate = {
@@ -433,7 +434,7 @@ country_event = {
 			has_country_flag = wsg_project_r
 			from = { has_ruler_trait = leader_trait_ruler_warshipgirls }
 		}
-		NOT = { has_ascension_perk = wsg_project_s }
+		NOT = { has_ascension_perk = ap_project_s }
 	}
 
 	immediate = {
@@ -467,8 +468,16 @@ country_event ={
 	immediate = { set_country_flag = researched_antimatter_power }
 	option = {
 		name = "wsg.1100.a"
+		custom_tooltip = wsg.1100.a.tooltip
 		hidden_effect = {
 			country_event = { id = wsg.1101 days = 10 }
+		}
+	}
+	option = {
+		name = "wsg.1100.b"
+		custom_tooltip = wsg.1100.b.tooltip
+		hidden_effect = {
+			country_event = { id = wsg.1104 days = 90 random = 90 }
 		}
 	}
 }
@@ -490,7 +499,7 @@ country_event = {
 	option = {
 		name = "wsg.1101.b"
 		hidden_effect = {
-			country_event = { id = wsg.1102 days = 10 }
+			country_event = { id = wsg.1104 days = 10 }
 		}
 	}
 }
@@ -513,6 +522,12 @@ country_event = {
 		name = "wsg.1102.b"
 		hidden_effect = {
 			country_event = { id = wsg.1103 days = 10 }
+			set_country_flag = wg_ascension_path_project_s
+			random_owned_planet = {
+				limit = { has_planet_flag = ovo_planet }
+				remove_deposit = d_neo2
+				add_deposit = d_senergy
+			}
 		}
 	}
 }
@@ -528,7 +543,11 @@ country_event = {
 	
 	option = {
 		name = "wsg.1103.a"
-			add_research_option = "tech_building_wsg_neo"
+		add_research_option = "tech_building_wsg_neo"
+		add_tech_progress = {
+			tech = tech_building_wsg_neo
+			progress = 0.1
+		}
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1
@@ -538,7 +557,11 @@ country_event = {
 	}
 	option = {
 		name = "wsg.1103.b"
-			add_research_option = "tech_building_wsg_neo"
+		add_research_option = "tech_building_wsg_neo"
+		add_tech_progress = {
+			tech = tech_building_wsg_neo
+			progress = 0.1
+		}
 		hidden_effect = {
 			country_event = { 
 				id = wsg_shimakaze.1
@@ -546,6 +569,42 @@ country_event = {
 			}
 		}
 	}
+}
+
+country_event = {
+	id = wsg.1104
+	title = "wsg.1104.name"
+	desc = "wsg.1104.desc"
+	picture = GFX_evt_senergy_research
+	is_triggered_only = yes
+
+	option = {
+		name = wsg.1104.a
+		capital_scope = { enable_special_project = {
+			name = REVERSE_ENGINEERING_SERENGY_CORE
+			location = THIS
+		}}
+	}
+}
+
+country_event = {
+	id = wsg.1105
+	title = "wsg.1105.name"
+	desc = "wsg.1105.desc"
+	picture = GFX_evt_senergy_research
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_wsg_senergy
+		hidden_effect = {
+			country_event = { 
+				id = wsg_shimakaze.1
+				days = 720
+			}
+		}
+	}
+
 }
 
 
@@ -827,12 +886,160 @@ planet_event = {
 	}
 }
 
+country_event = {
+	id = wsg.2100
+	title = "wsg.2100.name"
+	desc = "wsg.2100.desc"
+	picture = GFX_evt_wsg_project_s
+	show_sound = event_the_great_awakening
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = wg_psi_country }
+	}
+
+	option = {
+		name = "wsg.2100.a"
+		begin_event_chain = {
+			event_chain = wsg_project_s
+			target = this
+		}
+		capital_scope = { enable_special_project = {
+			name = "SPECIAL_PROJECT_WSG_PROJECT_S"
+			location = THIS
+		}}
+	}
+}
+
+# 开始改造
+country_event = {
+	id = wsg.2102
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = start_project_s
+		country_event = { id = wsg.2103 days = 30 }
+	}
+}
+
+# 扣除核心
+country_event = {
+	id = wsg.2103
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = start_project_s
+		has_special_project = SPECIAL_PROJECT_WSG_PROJECT_S
+	}
+
+	immediate = {
+		if = {
+			limit = { check_variable = { which = project_s_sr_se_cost value > 100 }}
+			divide_variable = { which = project_s_sr_se_cost value = 100 }
+			while = { count = project_s_sr_se_cost
+				add_event_chain_counter = {
+					event_chain = wsg_project_s
+					counter = sr_se_cost_counter
+					amount = -100
+				}
+			}
+			multiply_variable = { which = project_s_sr_se_cost value = 100 }
+		}
+		while = { count = project_s_sr_se_cost
+			add_event_chain_counter = {
+				event_chain = wsg_project_s
+				counter = sr_se_cost_counter
+				amount = -1
+			}
+		}
+		set_variable = { which = num_sr_se_pop_cost value = 0 }
+		every_owned_pop = {
+			ROOT = { change_variable = { which = num_sr_se_pop_cost value = 1 }}
+		}
+		divide_variable = { which = num_sr_se_pop_cost value = 250 }
+		set_variable = { which = project_s_sr_se_cost value = 6 }
+		if = {
+			limit = { check_variable = { which = num_sr_se_pop_cost value > 8 }}
+			set_variable = { which = project_s_sr_se_cost value = num_sr_se_pop_cost }
+		}
+		if = {
+			limit = { check_variable = { which = project_s_sr_se_cost value > 100 }}
+			divide_variable = { which = project_s_sr_se_cost value = 100 }
+			while = { count = project_s_sr_se_cost
+				add_event_chain_counter = {
+					event_chain = wsg_project_s
+					counter = sr_se_cost_counter
+					amount = 100
+				}
+			}
+			multiply_variable = { which = project_s_sr_se_cost value = 100 }
+		}
+		while = { count = project_s_sr_se_cost
+			add_event_chain_counter = {
+				event_chain = wsg_project_s
+				counter = sr_se_cost_counter
+				amount = 1
+			}
+		}
+		get_digits = { VARIABLE = project_s_sr_se_cost ARRAY = project_s_sr_se_cost }
+		if = {
+			limit = {
+				NOT = { resource_stockpile_compare_with_variable = { RESOURCE = sr_se ARRAY = project_s_sr_se_cost }}
+			}
+			remove_array_variables = { ARRAY = project_s_sr_se_cost }
+			multiply_variable = { which = project_s_sr_se_cost value = -1 }
+			add_resource_with_variable = { WHICH = project_s_sr_se_cost RESOURCE = sr_se }
+			country_event = { id = wsg.2103 days = 30 }
+		} else_if = { 
+			limit = { always = yes }
+			country_event = { id = wsg.2104 }
+		}
+		remove_array_variables = { ARRAY = project_s_sr_se_cost }
+		remove_country_flag = project_s_sr_se_cost_negative
+	}
+}
+
+# 核心不足
+country_event = {
+	id = wsg.2104
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_flag = start_project_s
+		abort_special_project = {
+			type = "SPECIAL_PROJECT_WSG_PROJECT_S"
+		}
+		country_event = { id = wsg.2105 days = 1 }
+	}
+}
+
+country_event = {
+	id = wsg.2105
+	title = "wsg.2105.name"
+	desc = "wsg.2105.desc"
+	picture = GFX_evt_wsg_no_video
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = { enable_special_project = {
+			name = "SPECIAL_PROJECT_WSG_PROJECT_S"
+			location = THIS
+		}}
+	}
+
+	option = {
+		name = OK
+	}
+}
+
 # 第二路线飞升
 country_event = {
 	id = wsg.2101
 	title = "wsg.2101.name"
 	desc = "wsg.2101.desc"
-	picture = GFX_evt_wsg_no_video
+	picture = GFX_evt_wsg_project_s
 	show_sound = event_the_great_awakening
 	
 	is_triggered_only = yes
@@ -841,6 +1048,8 @@ country_event = {
 	}
 
 	immediate = {
+		remove_country_flag = start_project_s
+		set_country_flag = project_s_finish
 		every_owned_pop = {
 			limit = { 
 				has_trait = wsg_trait_warshipgirls1 
@@ -861,6 +1070,7 @@ country_event = {
 	
 	option = {
 		name = "wsg.2101.a"
+		end_event_chain = wsg_project_s
 		hidden_effect = {
 			every_owned_leader = {
 				limit = {
@@ -978,7 +1188,7 @@ country_event = {
 
 	trigger = {
 		AND = {
-			has_country_flag = wsg_warshipgirls2
+			has_country_flag = project_s_finish
 			from = { has_ruler_trait = leader_trait_ruler_warshipgirls2 }
 		}
 	}
@@ -996,4 +1206,44 @@ country_event = {
 			}
 		}
 	}
+}
+
+country_event = {
+	id = wsg.2112
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = wg_ascension_path_project_s
+		random_owned_planet = {
+			limit = { has_planet_flag = ovo_planet }
+			remove_deposit = d_neo2
+			add_deposit = d_senergy
+		}
+	}
+}
+
+# 版本更新警告
+country_event = {
+	id = wsg.9999
+	title = wsg.9999.name
+	desc = wsg.9999.desc
+	diplomatic = yes
+	custom_gui = "wg_intro_window"
+	custom_gui_option = "wg_intro_window_option"
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = wg_mod_5_0_updated }
+	}
+
+	immediate = {
+		set_global_flag = wg_mod_5_0_updated
+	}
+
+	option = {
+		name = OK
+	}
+
 }

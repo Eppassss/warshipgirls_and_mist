@@ -427,7 +427,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_ship_part_pk_WATERB"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_pk_WATERB.dds"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_pk_waterB.dds"
 	}
 
 ##################
@@ -723,5 +723,91 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_psi_weapon_330"
 		texturefile = "gfx/interface/icons/ship_parts/psi_weapon_330.dds"
+	}
+
+############
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_computer"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_computer.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_jump_drive"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_jump_drive.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_REACTOR"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_reactor.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_sensors"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_sensors.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_thruster"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_thruster.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_S_IA"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_S-IA.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_L_ES_300"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_L_E-S300.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_L_S300"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_L_S-300.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_S_40"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_S-40.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_S_301"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_S-301.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_S_A2"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_S-A2.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_T_ES_460"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_T_ES-460.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_T_S_460"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_T_S-460.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_X_ES_406"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_X_ES-406.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_X_S_380"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_X_S-380.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_X_S450"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_X_S-450.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_SML_S6"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_SML_S6.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_senergy_fire_control"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_senergy_fire_control.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_X_S_305"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_X_S-305.dds"
+	}
+	spriteType = {
+		name = "GFX_wsg_weapon_T_S510"
+		texturefile = "gfx/interface/icons/ship_parts/wsg_weapon_T_S-510.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_wsg_na_sensor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_na_sensor.dds"
 	}
 } 

@@ -1,0 +1,76 @@
+namespace = leviathans
+
+planet_event = {
+	id = leviathans.662
+	hide_window = yes
+
+	mean_time_to_happen = {
+		years = 5
+	}
+
+	trigger = {
+		has_planet_flag = hoard_planet
+		#has_deposit = d_guardian_dragon_hoard
+		NOT = {
+			has_planet_flag = deegged_egg
+		}
+		has_mining_station = yes
+		exists = controller
+		controller = {
+			is_country_type = default
+		}
+	}
+
+	immediate = {
+		set_planet_flag = deegged_egg
+		controller = {
+			country_event = { id = leviathans.663 }
+		}
+	}
+}
+
+# Dragon Hoard event - Egg
+country_event = {
+	id = leviathans.663
+	title = "leviathans.661.name"
+	desc = "leviathans.661.desc"
+	picture = GFX_evt_archaeological_dig
+	location = root
+	show_sound = event_mystic_reveal
+	trackable = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = leviathans.661.a
+		custom_tooltip = leviathans.661.a.tooltip
+		capital_scope = {
+			enable_special_project = {
+				name = "DRAGON_INCUBATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+
+	option = {
+		name = leviathans.661.c
+		custom_tooltip = leviathans.661.c.tooltip
+		allow = {
+			has_technology = tech_gene_tailoring
+		}
+		capital_scope = {
+			enable_special_project = {
+				name = "WG_DRAGON_INCUBATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+
+	option = {
+		name = leviathans.661.b
+		custom_tooltip = leviathans.661.b.tooltip
+		add_resource = { influence = 300 }
+	}
+}

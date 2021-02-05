@@ -96,11 +96,15 @@ can_species_be_assembled = {
 		}
 		#_wsg	ս����Ů����
 		AND = {
-			OR={
+			OR = {
 				has_trait = wsg_trait_warshipgirls
 				has_trait = wsg_trait_warshipgirls1
+				has_trait = wsg_trait_warshipgirls2
 			}
-			root.owner = { has_authority = auth_warshipgirls }
+			root.owner = { OR = { 
+				has_authority = auth_warshipgirls
+				has_edict = wg_cross_assemble
+			}}
 		}
 		#_wsg	�����
 		AND = {
@@ -110,7 +114,10 @@ can_species_be_assembled = {
 				has_trait = sh_trait_shenhai2
 				has_trait = sh_trait_shenhai3
 			}
-			root.owner = { has_authority = auth_shenhai }
+			root.owner = { OR = { 
+				has_authority = auth_shenhai 
+				has_edict = wg_cross_assemble
+			}}
 		}
 		#_swg	�ǽ���������
 		AND = {
@@ -445,6 +452,7 @@ pop_generates_crime = {
 				#_wsg
 				has_trait = wsg_trait_warshipgirls
 				has_trait = wsg_trait_warshipgirls1
+				has_trait = wsg_trait_warshipgirls2
 				has_trait = sh_trait_shenhai
 				has_trait = sh_trait_shenhai1
 				has_trait = sh_trait_shenhai2

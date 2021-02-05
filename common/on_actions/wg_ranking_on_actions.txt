@@ -8,6 +8,7 @@ on_custom_diplomacy = {
 	events = {
 		wsgranking.1001
         wsgranking.1002
+		wsgranking.2100
 	}
 }
 

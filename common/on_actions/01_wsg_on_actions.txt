@@ -26,7 +26,6 @@ on_game_start_country = {
 		wsg.3111
 		wg_origin.3
 		sh_fe.4
-		wg_boss.91
 		wg_parit.19
 	}
 }
@@ -40,6 +39,7 @@ on_game_start = {
 		wg_boss.1000
 		wg_crisis.10004
 		wg_kuat.1
+		wg_boss.91
 	}
 }
 
@@ -106,6 +106,7 @@ on_yearly_pulse_country = {
 		wsgancrel.705
 		wg_parit.50
 		wg_lady.10002
+		wsg.30156
 	}
 }
 
@@ -146,6 +147,7 @@ on_tech_increased = {
 		wg_parit.35
 		wg_parit.57
 		wg_boss.113
+		wsg.3015
 	}
 }
 
@@ -244,6 +246,8 @@ on_fleet_destroyed_victim = {
 		wg_khan.24
 		wg_boss.105
 		wg_boss.109
+		wg_dragon.8
+		wg_dragon.9
 	}
 }
 
@@ -277,6 +281,14 @@ on_building_replaced = {
 	}
 }
 
+# A planet has been colonized.
+# Scope = Planet
+on_colonized = {
+	events = {
+		wsg.30370
+	}
+}
+
 on_colony_1_year_old = {
 	events = {
 		wsg.3037
@@ -295,6 +307,7 @@ on_entering_battle = {
 		wg_khan.210
 		wg_khan.300
 		wg_crisis.20000
+		wg_dragon.16
 	}
 }
 
@@ -320,6 +333,10 @@ on_custom_diplomacy = {
 		wsg_shimakaze.3
 		wsg_shimakaze.5
 		wg_khan.6
+		wg_dragon.2
+		wg_dragon.3
+		wg_dragon.4
+		wg_dragon.5
 	}
 }
 
@@ -380,7 +397,8 @@ on_bi_yearly_pulse_country = {
 on_fleet_disbanded = {
 	events = {
 		wg_crisis.71
-		wg_lady.41
+		wg_lady.42
+		wg_dragon.14
 	}
 }
 
@@ -411,6 +429,7 @@ on_planet_attackers_win = {
 		wg_parit.6
 		wg_aft.13
 		wg_khan.104
+		wg_dragon.10
 	}
 }
 
@@ -433,6 +452,7 @@ on_planet_attackers_lose = {
 		wsg.30390
 		wg_lady.38
 		wg_khan.110
+		wg_dragon.11
 	}
 }
 
@@ -627,14 +647,28 @@ on_planet_conquer = {
 	}
 }
 
-# A Megastructure has been upgraded
+# A Megastructure has been built
 # Root = Country
 # From = Megastructure
 # FromFrom = System
+# FromFromFrom = Fleet
 on_megastructure_built = {
 	events = {
 		wsg.3025
 		wsg.3028
+		wsg.3083
+	}
+}
+
+# A Megastructure has been upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+on_megastructure_upgraded = {
+	events = {
+		wsg.3084
+		wsg.3085
+		wsg.3086
 	}
 }
 

@@ -253,7 +253,7 @@ tech_building_wsg_research2 = {
 	category = { computing }
 	tier = 3
 	cost = @tier3cost3
-	prerequisites = { "tech_wsg_reform" }
+	prerequisites = { "tech_wsg_reform" "tech_antimatter_power" }
 	weight = @tier2weight2
 
 	weight_modifier = {
@@ -277,6 +277,7 @@ tech_building_wsg_research2 = {
 	}
 	potential = {
 		has_authority = auth_warshipgirls
+		NOT = { has_country_flag = wg_ascension_path_project_s }
 	}	
 }
 
@@ -2496,7 +2497,7 @@ tech_wsg_battleship_hull_3 = {
 	icon = tech_wsg_battleship_hull_3
 	is_rare = yes
 	category = { voidcraft }
-	prerequisites = { "tech_battleship_hull_2" "tech_building_wsg_alpha" }
+	prerequisites = { "tech_battleship_hull_2" }
 	weight = @tier5weight1
 	
 	prereqfor_desc = {
@@ -2549,6 +2550,10 @@ tech_wsg_battleship_hull_3 = {
 	}
 	potential = {
 		has_authority = auth_warshipgirls	
+		OR = {
+			has_ascension_perk = ap_mist
+			has_ascension_perk = ap_project_s
+		}
 	}		
 }
 ########
@@ -2774,7 +2779,6 @@ tech_wsg_hc = {
 	area = engineering
 	tier = 4
 	category = { voidcraft }
-	prerequisites = { "tech_building_wsg_alpha" }
 	weight = @tier3weight3
 	is_rare = yes 
 	prereqfor_desc = {
@@ -2813,6 +2817,11 @@ tech_wsg_hc = {
 	}
 	potential = {
 		has_authority = auth_warshipgirls
+		has_ascension_perk = ap_wsg_station
+		OR = {
+			has_ascension_perk = ap_mist
+			has_ascension_perk = ap_project_s
+		}
 	}
 }
 tech_wsg_mine = {
@@ -3359,4 +3368,58 @@ tech_wsg_P330 = {
 			has_authority = auth_sh_fe
 		}
 	}
+}
+
+tech_wsg_nanana_sensor = {
+	area = physics
+	cost = @tier3cost1
+	tier = 3
+	category = { particles }
+	ai_update_type = military
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	potential = {
+		OR = {
+			has_authority = auth_warshipgirls
+			has_authority = auth_shenhai
+		}
+	}	
 }

@@ -55,7 +55,25 @@ create_wg_fe_fleet = {
                         graphical_culture = "fallen_empire_03"
                         upgradable = no
                     }
-                }					
+                }
+				while = {
+                     count = 10
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_3"
+                         graphical_culture = "fallen_empire_03"
+                         upgradable = no
+                     }
+                }
+		     	while = {
+                    count = 20
+                     create_ship = {
+                         name = random
+                         design = "NAME_Fallen_uav_2"
+                         graphical_culture = "fallen_empire_03"
+                         upgradable = no
+                     }
+                }
                 set_location = {
                     target = PREV
                     distance = 5
@@ -164,7 +182,25 @@ create_wg_fe_fleet2 = {
                     graphical_culture = "fallen_empire_03"
                     upgradable = no
                 }
-            }					
+            }
+			while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = "NAME_Fallen_uav_3"
+                    graphical_culture = "fallen_empire_03"
+                    upgradable = no
+                }
+            }
+			while = {
+                count = 20
+                create_ship = {
+                    name = random
+                    design = "NAME_Fallen_uav_2"
+                    graphical_culture = "fallen_empire_03"
+                    upgradable = no
+                }
+            }
             set_location = {
                 target = PREV
                 distance = 80

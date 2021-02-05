@@ -805,6 +805,40 @@ country_event = {
 
     option = { 
         custom_gui = "enclave_caravaneer_option"
+        custom_tooltip = "tech_wsg_nanana_sensor_desc"
+        name = tech_wsg_nanana_sensor
+        trigger = {
+            OR = {
+                has_authority = auth_warshipgirls
+                has_authority = auth_shenhai
+            }
+            NOR = {
+                has_tech_option = tech_wsg_nanana_sensor
+                has_technology = tech_wsg_nanana_sensor
+            }
+        }
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 200 }
+            custom_tooltip = {
+				fail_text = too_low_rank_fail_30
+				check_variable = { which = "rankpts" value >= 30 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+        }
+        add_resource = {
+            sr_pantsu = -200
+        }
+        add_research_option = tech_wsg_nanana_sensor
+        add_tech_progress = { tech = tech_wsg_nanana_sensor progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
+    }
+
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
         custom_tooltip = "tech_wsg_pd127_desc"
         name = tech_wsg_pd127
         trigger = {
@@ -877,7 +911,10 @@ country_event = {
         custom_tooltip = "tech_living_metal_bulge_desc"
         trigger = {
             has_authority = auth_warshipgirls
-			has_technology = tech_wsg_ia
+            OR = {
+                has_technology = tech_wsg_ia
+                has_technology = tech_wsg_s_ia
+            }
             has_technology = tech_mine_living_metal
             NOR = {
                 has_tech_option = tech_living_metal_bulge
@@ -1300,6 +1337,77 @@ country_event = {
 		}
 		add_research_option = tech_wg_carrier_computer
 		add_tech_progress = { tech = tech_wg_carrier_computer progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
+    }
+    
+    # 二飞舰娘武器
+    # X槽S450
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_wsg_weapon_X_S450
+        custom_tooltip = "tech_wsg_weapon_X_S450_desc"
+		trigger = {
+            has_authority = auth_warshipgirls
+			has_technology = tech_wsg_weapon_S_300
+			NOR = { 
+                has_tech_option = tech_wsg_weapon_X_S450
+                has_technology = tech_wsg_weapon_X_S450
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 2500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2000 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_180
+				check_variable = { which = "rankpts" value >= 180 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -2500
+			sr_se = -2000
+		}
+		add_research_option = tech_wsg_weapon_X_S450
+		add_tech_progress = { tech = tech_wsg_weapon_X_S450 progress = 0.1 }
+        add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
+        remove_country_flag = engaged_with_pantsu_shop
+    }
+    
+    # T槽S508
+    option = {
+		custom_gui = "enclave_caravaneer_option"
+		name = tech_wsg_weapon_T_S508
+        custom_tooltip = "tech_wsg_weapon_T_S508_desc"
+		trigger = {
+            has_authority = auth_warshipgirls
+			has_technology = tech_wsg_weapon_T_S508
+			NOR = { 
+                has_tech_option = tech_wsg_weapon_T_S508
+                has_technology = tech_wsg_weapon_T_S508
+            }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = sr_pantsu value >= 3500 }
+			resource_stockpile_compare = { resource = sr_se value >= 2500 }
+			custom_tooltip = {
+				fail_text = too_low_rank_fail_250
+				check_variable = { which = "rankpts" value >= 250 }
+            }
+            custom_tooltip = {
+                NOT = { has_modifier = wg_modifier_weapon_payment }
+                fail_text = tech_cooldown_desc
+            }
+		}
+		add_resource = {
+			sr_pantsu = -3500
+			sr_se = -2500
+		}
+		add_research_option = tech_wsg_weapon_T_S508
+		add_tech_progress = { tech = tech_wsg_weapon_T_S508 progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
         remove_country_flag = engaged_with_pantsu_shop
 	}
@@ -2862,22 +2970,38 @@ country_event = {
         allow = {
             resource_stockpile_compare = { resource = energy value >= 2500 }
             resource_stockpile_compare = { resource = rare_crystals value >= 648 }
-            resource_stockpile_compare = { resource = sr_alpha value >= 648 }
             resource_stockpile_compare = { resource = sr_pantsu value >= 648 }
+			OR = {
+				AND = { 
+					resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+					has_technology = tech_building_wsg_alpha
+				}
+				AND = {
+					resource_stockpile_compare = { resource = sr_se value >= 648 }
+					has_technology = tech_wsg_senergy
+				}
+			}
+				
         }
         hidden_effect = { 
             change_variable = { which = "wsg_rings" value = 1 }
-            event_target:pantsu_shop_country = { 
-                change_variable = { which = rings_stock value = -1 }
-            }
         }
-        #消耗资源
-        add_resource = {
-            energy = -2500
-            rare_crystals = -648
-            sr_alpha = -648
-            sr_pantsu = -648
-        }
+		if = {
+			limit = { has_technology = tech_wsg_senergy }
+			add_resource = {
+				energy = -2500
+				rare_crystals = -648
+				sr_se = -648
+				sr_pantsu = -648
+			}
+		} else = {
+			add_resource = {
+				energy = -2500
+				rare_crystals = -648
+				sr_alpha = -648
+				sr_pantsu = -648
+			}
+		}
         remove_country_flag = engaged_with_pantsu_shop
     }
 
@@ -6054,6 +6178,260 @@ country_event = {
 		}
     }
 }
+#################################卖LOGO泰坦
+# 打开商店的主界面
+country_event = {
+	id = wsgranking.2100
+	title = pantsu_shop_name
+    custom_gui = "enclave_caravaneer_window"
+    trigger = {
+        OR = {
+            has_authority = auth_shenhai
+            has_authority = auth_warshipgirls
+        }
+        exists = event_target:pantsu_shop_country
+		has_communications = event_target:pantsu_shop_country
+        event_target:pantsu_shop_country = {
+            NOT = { is_hostile = root }
+        }
+        OR = { 
+            #防止视窗多开
+            NOT = { has_country_flag = engaged_with_pantsu_shop2 }
+		}
+        from = { OR = {
+            is_country_type = pantsu_shop_logo_titan
+            is_same_value = root # returned from menu
+        }}
+        is_ai = no
+        NOT = { has_global_flag = pantsu_shop_disabled }
+    }
+
+	desc = { text = pantsu_shop_logotitan }
+
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = Ella_room
+    }
+    
+    immediate = {
+        set_country_flag = engaged_with_pantsu_shop2
+    }
+
+    # 瞎扯淡
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2100.a
+        response_text = wsgranking.2100.a.response
+        is_dialog_only = yes
+    }
+
+    # 我买了
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2100.b
+		allow = {
+            resource_stockpile_compare = { resource = energy value >= 10000 }
+            resource_stockpile_compare = { resource = sr_pantsu value >= 3000 }
+        }
+		add_resource = {
+            sr_pantsu = -3000
+            energy = -10000
+        }
+		change_variable = { which = rankpts value = 5 }
+        hidden_effect = {
+			country_event = { id = wsgranking.2101 }
+        }
+    }
+
+    # 返回主选单
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = pantsu_shop_return_to_main
+        hidden_effect = { country_event = { id = wsgranking.1001 }}
+    }
+
+    # 退出
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2100.c
+        default_hide_option = yes
+        remove_country_flag = engaged_with_pantsu_shop2
+    }
+}
+
+country_event = {
+	id = wsgranking.2101
+	title = pantsu_shop_name
+    custom_gui = "enclave_caravaneer_window"
+	desc = { text = pantsu_shop_logotitan2 }
+
+    diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = Ella_room
+    }
+	immediate = {
+        random_country = {
+			limit = { is_country_type = pantsu_shop_logo_titan }
+				random_owned_fleet = {
+					limit = { 
+						has_fleet_flag = logo_titan_fleet 
+				}
+				delete_fleet = this
+			}
+			destroy_country = yes
+		}	
+    }
+
+    # 巨企logo
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.a
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_2"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_2"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+    # 红星
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.b
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_1"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_1"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+	#滑稽
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.c
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_3"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_3"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+	#大主教
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.d
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_4"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_4"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+	#非洲星
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.e
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_5"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_5"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+	#KDC
+    option = { 
+        custom_gui = "enclave_caravaneer_option"
+        name = wsgranking.2101.f
+		hidden_effect = {
+            create_fleet = {
+			    name = "NAME_WG_LOGO_TITAN_6"
+			    effect = {
+				    set_owner = root
+				    create_ship = {
+					    name = random
+					    design = "NAME_WG_LOGO_TITAN_6"
+						graphical_culture = "mammalian_01"
+					    upgradable = no
+				    }
+				    set_location = {
+					    target = event_target:capital
+					    distance = 30
+					    angle = random
+				    }
+			    }
+			}
+		}
+    }
+}
+
 ###################################################
 
 #科技触发上限增长

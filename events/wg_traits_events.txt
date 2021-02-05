@@ -96,7 +96,14 @@ event = {
 					modifier = wg_modifier_Epolicy
 					days = -1
 				}
-			}		
+			}	
+			if = {
+				limit = {
+					has_trait = wsg_trait_galatic_engineer
+					NOT = { has_modifier = wsg_trait_galatic_engineer_buff }
+				}
+				add_modifier = { modifier = wsg_trait_galatic_engineer_buff days = -1 }
+			}	
 		}
 	}
 }
@@ -170,6 +177,13 @@ event = {
 					has_modifier = wg_modifier_alpha
 				}
 				remove_modifier = wg_modifier_alpha
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = wsg_trait_galatic_engineer }
+					has_modifier = wsg_trait_galatic_engineer_buff
+				}
+				remove_modifier = wsg_trait_galatic_engineer_buff
 			}
 		}
 	}
@@ -291,6 +305,13 @@ country_event = {
 				days = -1
 			}
 		}
+		if = {
+			limit = {
+				has_trait = wsg_trait_galatic_engineer
+				NOT = { has_modifier = wsg_trait_galatic_engineer_buff }
+			}
+			add_modifier = { modifier = wsg_trait_galatic_engineer_buff days = -1 }
+		}	
 	}
 }
 
@@ -370,6 +391,13 @@ country_event = {
 				has_modifier = wg_modifier_alpha
 			}
 			remove_modifier = wg_modifier_alpha
+		}
+		if = {
+			limit = {
+				NOT = { has_trait = wsg_trait_galatic_engineer }
+				has_modifier = wsg_trait_galatic_engineer_buff
+			}
+			remove_modifier = wsg_trait_galatic_engineer_buff
 		}
 	}
 }

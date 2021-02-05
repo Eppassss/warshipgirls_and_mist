@@ -163,34 +163,34 @@ bubbles_available = {
 resource_stockpile_compare_with_variable = {
 	if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 1 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 1 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 1 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 2 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 2 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 2 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 3 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 3 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 3 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 4 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 4 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 4 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 5 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 5 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 5 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 6 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 6 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 6 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 7 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 7 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 7 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 8 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 8 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 8 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 9 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 9 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 9 }
 	} else_if = {
 		limit = { check_variable = { which = $ARRAY$_DIGIT_1 value = 0 }}
-		resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = 0 }
+		resource_stockpile_compare_with_variable_S2 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = 0 }
 	}
 }
 
@@ -200,38 +200,35 @@ resource_stockpile_compare_with_variable_S2 = {
 		resource_stockpile_compare_with_variable_final = { RESOURCE = $RESOURCE$ VALUE = $VALUE$ }
 	} else = {
 		if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 0 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
-		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 1 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$1 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$1 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 2 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$2 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$2 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 3 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$3 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$3 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 4 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$4 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$4 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 5 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$5 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$5 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 6 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$6 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$6 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 7 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$7 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$7 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 8 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$8 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$8 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 9 }}
-			resource_stockpile_compare_with_variable_S3 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$9 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$9 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_2 value = 0 }}
-			resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
+			resource_stockpile_compare_with_variable_S3 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
 		}
 	}
 }
@@ -242,51 +239,45 @@ resource_stockpile_compare_with_variable_S3 = {
 		resource_stockpile_compare_with_variable_final = { RESOURCE = $RESOURCE$ VALUE = $VALUE$ }
 	} else = {
 		if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 0 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
-		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 1 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$1 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$1 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 2 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$2 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$2 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 3 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$3 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$3 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 4 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$4 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$4 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 5 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$5 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$5 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 6 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$6 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$6 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 7 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$7 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$7 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 8 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$8 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$8 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 9 }}
-			resource_stockpile_compare_with_variable_S4 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$9 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$9 }
 		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_3 value = 0 }}
-			resource_stockpile_compare_with_variable_S2 = { RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
+			resource_stockpile_compare_with_variable_S4 = { ARRAY = $ARRAY$ RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
 		}
 	}
 }
 
 resource_stockpile_compare_with_variable_S4 = {
 	if = {
-		limit = { check_variable = { which = $ARRAY$_DIGITS value = 2 }}
+		limit = { check_variable = { which = $ARRAY$_DIGITS value = 3 }}
 		resource_stockpile_compare_with_variable_final = { RESOURCE = $RESOURCE$ VALUE = $VALUE$ }
 	} else = {
 		if = {
-			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 0 }}
-			resource_stockpile_compare_with_variable_final = { RESOURCE = $RESOURCE$ VALUE = $VALUE$0 }
-		} else_if = {
 			limit = { check_variable = { which = $ARRAY$_DIGIT_4 value = 1 }}
 			resource_stockpile_compare_with_variable_final = { RESOURCE = $RESOURCE$ VALUE = $VALUE$1 }
 		} else_if = {

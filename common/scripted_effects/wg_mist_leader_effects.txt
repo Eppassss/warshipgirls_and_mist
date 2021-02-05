@@ -18,7 +18,7 @@ create_wsg_shimakaze_governor = {
 			trait = leader_trait_governor_mist
 		}
 		effect = {
-			change_leader_portrait = wsg267_1
+			change_shimakaze_portrait = yes
 			set_leader_flag = wsg_shimakaze_leader
 			set_leader_flag = wsg_shimakaze_governor
 			set_leader_flag = has_gained_level_trait
@@ -54,7 +54,7 @@ create_wsg_shimakaze_scientist = {
 			trait = leader_trait_scientist_mist
 		}
 		effect = {
-			change_leader_portrait = wsg267_1
+			change_shimakaze_portrait = yes
 			set_leader_flag = wsg_shimakaze_leader
 			set_leader_flag = wsg_shimakaze_scientist
 			set_leader_flag = has_gained_level_trait
@@ -90,7 +90,7 @@ create_wsg_shimakaze_admiral = {
 			trait = leader_trait_admiral_mist
 		}
 		effect = {
-			change_leader_portrait = wsg267_1
+			change_shimakaze_portrait = yes
 			set_leader_flag = wsg_shimakaze_leader
 			set_leader_flag = wsg_shimakaze_admiral
 			set_leader_flag = has_gained_level_trait
@@ -126,7 +126,7 @@ create_wsg_shimakaze_general = {
 			trait = leader_trait_general_mist
 		}
 		effect = {
-			change_leader_portrait = wsg267_1
+			change_shimakaze_portrait = yes
 			set_leader_flag = wsg_shimakaze_leader
 			set_leader_flag = wsg_shimakaze_general
 			set_leader_flag = has_gained_level_trait
@@ -181,6 +181,17 @@ level_up_shimakaze = {
 	} else_if = {
 		limit = { owner = { check_variable = { which = shimakaze_level value = 10 }}}
 		set_skill = 10
+	}
+}
+
+# scope = leader
+change_shimakaze_portrait = {
+	if = {
+		limit = { owner = { check_variable = { which = wsg_shimakaze_cloth value = 0 }}}
+		change_leader_portrait = wsg267_1
+	} else_if = {
+		limit = { always = yes }
+		change_leader_portrait = wsg267
 	}
 }
 

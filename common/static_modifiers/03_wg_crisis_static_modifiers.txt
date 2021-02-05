@@ -63,6 +63,10 @@ reduce_fleet_maintenance_95pc = {
 	ships_upkeep_mult = -0.95
 }
 
+remove_fleet_maintenance = {
+	ships_upkeep_mult = -1.0
+}
+
 uf_very_easy_debuff = {
 	ship_hull_mult = -0.20
 	ship_armor_mult = -0.20

@@ -37,6 +37,24 @@
  ap_mist:0 "苍青幻影"
  ap_mist_desc:0 "运用港区最新研制的真空零点能反应堆，在近乎无限的庞大的能量驱动下，将空间撕裂，创造出一条通道。使用NEO物质将通道稳定后，我们终于可以派遣少量人员前往另一个世界了。"
  mist_tooltip:0 "向另一个世界的我们献上祝福！"
+
+ ap_project_s:0 "Project-S"
+ ap_project_s_desc:0 "将深海能源植入到舰装的技术取得了重大突破之后，我们现在可以尝试大规模应用这项科技，将舰娘种族的潜力完全解放。这项史无前例的改造工程将是舰娘历史上的里程碑。"
+ wsg.2100.name:0 "Project-S"
+ wsg.2100.desc:0 "项目的所有准备工作已经全部准备就绪了。在您的指令下，全体舰娘将会在这个历史性的时刻完成蜕变，拥抱由深海能源开创的新时代。"
+ SPECIAL_PROJECT_WSG_PROJECT_S:0 "Project-S"
+ SPECIAL_PROJECT_WSG_PROJECT_S_DESC:0 "我们将会开始对每一名舰娘植入深海能源核心。这个计划毫无疑问会消耗大量深海能源核心且会花费极其漫长的时间，但我们相信比起充满可能性的未来，当下付出的这一切都将会是值得的。"
+ wsg_project_s_title:0 "Project-S"
+ wsg_project_s_desc:0 "§R请仔细阅读以下事项；\n1. Project-S特殊项目执行后每月将会消耗相当于§R【£pops£ 帝国人口总数除以250】§H£sr_se£ §Y$sr_se$§!（最少每月6个），直至项目结束。\n2. 上述£sr_se£ §Y$sr_se$§!的消耗数值不会显示在资源栏的月结算中！\n3. 如果在执行此特殊项目的途中缺少 £sr_se£ §Y$sr_se$§H（系统无法扣除足够资源）§!，§R此特殊项目将会无条件重置！§!"
+ sr_se_cost_counter:0 "当前每月消耗§H£sr_se£ §Y$sr_se$§H"
+ 
+ wsg.2100.a:0 "让计划开始吧"
+ wsg.2101.name:0 "Project-S完成"
+ wsg.2101.desc:0 "在经历了如此多的艰辛之后，我们终于来到了今天，毫无疑问这是属于我们自己的进化。所有舰娘在植入深海能源之后均表示能力获得了质的飞越，而且没有报告显示出现了任何的不良症状或后遗症。\n属于我们的新的时代，从今天开始了！"
+ wsg.2101.a:0 "我们的历史将会在今天翻开新的一页"
+ wsg.2105.name:0 "深海能源核心不足"
+ wsg.2105.desc:0 "我们的深海能源核心库存已见底，不足以继续执行计划！项目被迫中止！"
+
  wsg.2000.name:0 "苍青幻影"
  wsg.2000.desc:0 "提督，我们已将通道稳定，先遣人员已成功通过通道并与对方取得了联系。接到信号连接请求。"
  wsg.2000.a:0 "接入信号"
@@ -46,10 +64,16 @@
  wsg.2002.name:0 "苍青幻影"
  wsg.2002.desc:0 "经过夕张对苍青世界科研成果分析得知，NEO物质在融入舰装和舰娘本体后，能极大的提升能力。在武器制造时加入阿尔法结晶，能大幅度的提升武器的性能。"
  wsg.2002.a:0 "干得不错！"
+
  requires_technology_tech_wsg_pantsu:0 "$TRIGGER_FAIL$需要£society£§Y$tech_wsg_pantsu$§!科技。"
  requires_tech_building_wsg_neo:0 "$TRIGGER_FAIL$需要£engineering£§Y$tech_building_wsg_neo$§!科技。"
+ requires_tech_building_wsg_neo:0 "$TRIGGER_FAIL$需要£engineering£§Y$tech_wsg_senergy_implantation$§!科技。"
  requires_tech_synthetic_workers:0 "$TRIGGER_FAIL$需要£engineering£§Y$tech_synthetic_workers$§!科技。"
+ requires_tech_wsg_senergy_implantation:0 "$TRIGGER_FAIL$需要£society£§Y$tech_wsg_senergy_implantation$§!科技。"
  requires_ascension_ap_project_r:0 "$TRIGGER_FAIL$需要§Y$ap_project_r$§!超凡飞升。"
+
+ requires_not_ap_mist:1 "$TRIGGER_FAIL$不能拥有§Y$ap_mist$§!飞升天赋。"
+ requires_not_ap_project_s:1 "$TRIGGER_FAIL$不能拥有§Y$ap_project_s$§!飞升天赋。"
  ##########################
  ap_shenhai_space:0 "征服星辰" 
  ap_shenhai_space_desc:0 "银河系虽大，但资源是有限的。为建设我们的永恒帝国，对外必须不间断的扩张，对内必须不择手段的改革以适应庞大领土所带来的的问题。" 

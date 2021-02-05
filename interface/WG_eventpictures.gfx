@@ -731,4 +731,22 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes	
 	}
+	spriteType = {
+		name = "GFX_evt_wsg_project_s"
+		texturefile = "gfx/event_pictures/project_s.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_senergy_research"
+		texturefile = "gfx/event_pictures/senergy_research.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_wg_lady_nanite_bots"
+		texturefile = "gfx/event_pictures/wg_lady_nanite_bots.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
 }

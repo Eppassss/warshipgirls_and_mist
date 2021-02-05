@@ -404,10 +404,12 @@
  #########################
  wg_fairy_dragon:0 "茵蒂拉姆"
  wg_dragon_corvette:0 "龙仆"
+ wg_fairy_dragon_dreadnought:0 "龙卫"
  POINT_weapon_fairy_dragon:0 "龙针"
  SMALL_weapon_fairy_dragon:0 "龙枪"
  MEDIUM_weapon_fairy_dragon:0 "龙炮"
  LARGE_weapon_fairy_dragon:0 "龙怒"
+ LARGE_weapon_fairy_dragon2:0 "龙怒"
  wg_fairy_dragon_object:0 "茵蒂拉姆"
  wg_fairy_dragon_object_desc:0 "这艘飞船内部已经被洗劫一空，没有任何探索价值"
  

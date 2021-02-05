@@ -1,72 +1,3 @@
-#好感度
-#大小姐
-@lady_affection_to_lv2 = 20
-@lady_affection_to_lv3 = 55
-@lady_affection_to_lv4 = 105
-@lady_affection_to_lv5 = 175
-@lady_affection_reduce = 40
-#岛风
-@shimakaze_affection_to_lv2 = 30
-@shimakaze_affection_to_lv3 = 65
-@shimakaze_affection_to_lv4 = 110
-@shimakaze_affection_to_lv5 = 180
-@shimakaze_affection_reduce = 40
-#灰风
-@gray_affection_to_lv2 = 25
-@gray_affection_to_lv3 = 55
-@gray_affection_to_lv4 = 90
-@gray_affection_to_lv5 = 150
-@gray_affection_reduce = 30
-#涩狐狸#sSWGS#
-@Sharan_affection_to_lv2 = 30
-@Sharan_affection_to_lv3 = 65
-@Sharan_affection_to_lv4 = 110
-@Sharan_affection_to_lv5 = 180
-@Sharan_affection_reduce = 40
-#夕立#sSWGS#
-@yuudaichi_affection_to_lv2 = 25
-@yuudaichi_affection_to_lv3 = 45
-@yuudaichi_affection_to_lv4 = 100
-@yuudaichi_affection_to_lv5 = 150
-@yuudaichi_affection_reduce = 40
-#佩雷恩#sSWGS#
-@Pellaeon_affection_to_lv2 = 25
-@Pellaeon_affection_to_lv3 = 45
-@Pellaeon_affection_to_lv4 = 100
-@Pellaeon_affection_to_lv5 = 150
-@Pellaeon_affection_reduce = 40
-#泡泡
-@bubbles_affection_to_lv2 = 30
-@bubbles_affection_to_lv3 = 65
-@bubbles_affection_to_lv4 = 105
-@bubbles_affection_to_lv5 = 160
-@bubbles_affection_reduce = 40
-#总督
-@governor_affection_to_lv2 = 35
-@governor_affection_to_lv3 = 70
-@governor_affection_to_lv4 = 105
-@governor_affection_to_lv5 = 140
-#科学家
-@scientist_affection_to_lv2 = 55
-@scientist_affection_to_lv3 = 110
-@scientist_affection_to_lv4 = 165
-@scientist_affection_to_lv5 = 220
-#海军上将
-@admiral_affection_to_lv2 = 25
-@admiral_affection_to_lv3 = 50
-@admiral_affection_to_lv4 = 75
-@admiral_affection_to_lv5 = 100
-#陆军将军
-@general_affection_to_lv2 = 15
-@general_affection_to_lv3 = 30
-@general_affection_to_lv4 = 45
-@general_affection_to_lv5 = 60
-#统治者
-@ruler_affection_to_lv2 = 30
-@ruler_affection_to_lv3 = 60
-@ruler_affection_to_lv4 = 95
-@ruler_affection_to_lv5 = 130
-
 ###################################################
 # 添加自定义特殊好感特质领袖的注意事项：
 ###################################################
@@ -87,7 +18,7 @@
 
 # 5. 在wg_affection_event 中增加好感的事件填写自定义领袖增加好感
 # 总督为wg_aft.2；科学家为wg_aft.2,6,7,8,35,99
-# 提督为wg_aft.10，11；陆军上将为wg_aft.13；通用：wg_aft.12
+# 提督为wg_aft.10，11；陆军上将为wg_aft.13；通用：wg_aft.12,99
 # 其他见事件顶部注释
 
 # 6. 条件（scripted_triggers）：
@@ -1380,6 +1311,135 @@ reset_gray_affection_level = {
 		}
 	}
 	reset_special_leader_affection_level = { LEADER = gray MARRIED_FLAG = married_gray }
+}
+#####################################################################
+#  以太龙好感度
+#####################################################################
+reset_wg_dragon_affection_level = {
+	if = {
+		limit = { check_variable = { which = wg_dragon_active_type value = 1 }}
+		if = {
+			limit = { exists = event_target:wg_dragon_admiral }
+			event_target:wg_dragon_admiral = {
+				remove_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = governor } 
+				add_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = governor MARRIED_FLAG = married_wg_dragon }
+			}
+		} else = {
+			random_owned_leader = {
+				limit = { has_leader_flag = wg_dragon_admiral }
+				remove_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = governor } 
+				add_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = governor MARRIED_FLAG = married_wg_dragon }
+			}
+		}
+	} else_if = {
+		limit = { check_variable = { which = wg_dragon_active_type value = 2 }}
+		if = {
+			limit = { exists = event_target:wg_dragon_warship }
+			event_target:wg_dragon_warship = {
+				remove_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = warship } 
+				add_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }
+			}
+		} else = {
+			random_owned_leader = {
+				limit = { has_leader_flag = wg_dragon_warship }
+				remove_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = warship } 
+				add_special_leader_affection_trait = { LEADER = wg_dragon LEADER_CLASS = warship MARRIED_FLAG = married_wg_dragon }
+			}
+		}
+	}
+	
+	if = {
+		limit = { check_variable = { which = wg_dragon_affection value >= @wg_dragon_affection_to_lv5 }}
+		if = {
+			limit = { has_country_flag = married_wg_dragon }
+			if = {
+				limit = { 
+					NOT = { check_variable = { which = wg_dragon_affection_level value = 5 }}
+					check_variable = { which = wg_dragon_active_type value = 3 }
+				}
+				country_event = { id = wg_dragon.15 }
+			}
+			set_variable = { which = wg_dragon_affection_level value = 5 }
+		}
+		else = { 
+			set_variable = { which = wg_dragon_affection_level value = 4 }
+			set_country_flag = wg_dragon_affection_max
+		}
+	} else = { 
+		remove_country_flag = wg_dragon_affection_max 
+		if = {
+			limit = { check_variable = { which = wg_dragon_affection value >= @wg_dragon_affection_to_lv4 }}
+			set_variable = { which = wg_dragon_affection_level value = 4 }
+		}
+		else_if = {
+			limit = { check_variable = { which = wg_dragon_affection value >= @wg_dragon_affection_to_lv3 }}
+			if = {
+				limit = { 
+					NOT = { check_variable = { which = wg_dragon_affection_level value = 3 }}
+					check_variable = { which = wg_dragon_active_type value = 3 }
+				}
+				country_event = { id = wg_dragon.15 }
+			}
+			set_variable = { which = wg_dragon_affection_level value = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { which = wg_dragon_affection value >= @wg_dragon_affection_to_lv2 }}
+			set_variable = { which = wg_dragon_affection_level value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = wg_dragon_affection value < @wg_dragon_affection_to_lv2 }}
+			if = {
+				limit = { 
+					NOT = { check_variable = { which = wg_dragon_affection_level value = 1 }}
+					check_variable = { which = wg_dragon_active_type value = 3 }
+				}
+				country_event = { id = wg_dragon.15 }
+			}
+			set_variable = { which = wg_dragon_affection_level value = 1 }
+			if = {
+				limit = { check_variable = { which = wg_dragon_affection value < 1 }}
+				set_variable = { which = wg_dragon_affection value = 1 }
+			}
+		}
+	}
+}
+
+# 增加好感度（陆军状态下用）
+# scope: country
+add_wg_dragon_army_affection = {
+	change_variable = { which = wg_dragon_affection value = 1 }
+	if = {
+		limit = { 
+			OR = { 
+				has_country_flag = wg_dragon_affection_max
+				check_variable = { which = wg_dragon_affection_level value >= 5 }
+			}
+		}
+		country_event = { id = wg_dragon.15 days = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { which = wg_dragon_affection value = @wg_dragon_affection_to_lv2 }}
+		set_variable = { which = wg_dragon_affection_level value = 2 }
+		country_event = { id = wg_dragon.15 days = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { which = wg_dragon_affection value = @wg_dragon_affection_to_lv3 }}
+		set_variable = { which = wg_dragon_affection_level value = 3 }
+		country_event = { id = wg_dragon.15 days = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { which = wg_dragon_affection value = @wg_dragon_affection_to_lv4 }}
+		set_variable = { which = wg_dragon_affection_level value = 4 }
+		country_event = { id = wg_dragon.15 days = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { which = wg_dragon_affection value = @wg_dragon_affection_to_lv5 }}
+		set_country_flag = wg_dragon_affection_max
+		if = {
+			limit = { has_country_flag = married_wsg_lady }
+			country_event = { id = wg_dragon.15 days = 1 }
+		}
+	}
 }
 
 #####################################################################

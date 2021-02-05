@@ -152,3 +152,101 @@ ship_section_template = {
 		}
 	}
 }
+
+ship_section_template = {
+	key = "fallen_UAV_section"
+	ship_size = fallen_UAV
+	fits_on_slot = mid
+	entity = "escort_strikecrafte_frame_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	small_utility_slots = 3
+	aux_utility_slots = 1
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_small_turret"
+		
+		locatorname = "light_locator_01"
+	}		
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_small_turret"
+		
+		locatorname = "light_locator_02"
+	}		
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "invisible_small_turret"
+		
+		locatorname = "light_locator_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "invisible_small_turret"
+		
+		locatorname = "light_locator_04"
+	}
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 5
+		}
+	}
+}
+
+ship_section_template = {
+	key = "fallen_UAV_2_section"
+	ship_size = fallen_UAV
+	fits_on_slot = mid
+	entity = "escort_strikecrafte_frame_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	small_utility_slots = 2
+	aux_utility_slots = 1
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "wg_invisible_large_turret"
+		
+		locatorname = "light_locator_01"
+	}		
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_point_defence_turret"
+		
+		locatorname = "light_locator_02"
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 5
+		}
+	}
+}
+
+ship_section_template = {
+	key = "fallen_UAV_3_section"
+	ship_size = fallen_UAV
+	fits_on_slot = mid
+	entity = "escort_strikecrafte_frame_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	small_utility_slots = 2
+	aux_utility_slots = 1
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "wg_invisible_large_turret"
+		
+		locatorname = "light_locator_01"
+	}		
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 5
+		}
+	}
+}

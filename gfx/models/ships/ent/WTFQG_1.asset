@@ -87,7 +87,7 @@ entity = {
 entity = {
 	name = "WTFQGXF_entity"
 	pdxmesh = "WTFQGXF_1_mesh"
-	scale = 0.21
+	scale = 0.6
 }
 
 entity = {
@@ -100,7 +100,7 @@ entity = {
 entity = {
 	name = "WTFQGXF2_entity"
 	pdxmesh = "WTFQGXF_2_mesh"
-	scale = 0.21
+	scale = 0.7
 }
 
 entity = {
@@ -116,6 +116,44 @@ entity = {
 	scale = 0.8
 }
 
+entity = {
+	name = "WTFQGXF_4_entity"
+	
+	locator = { name = "root"	position = { 0 0 -32 } rotation = { 180 90 0 } }
+	attach = { root = "WTFQGXF4_entity" }	
+}
+
+entity = {
+	name = "WTFQGXF4_entity"
+	pdxmesh = "WTFQGXF_4_mesh"
+	scale = 0.8
+}
+
+entity = {
+	name = "WTFQGXF_5_entity"
+	
+	locator = { name = "root"	position = { 0 0 -34 } rotation = { 180 90 0 } }
+	attach = { root = "WTFQGXF5_entity" }	
+}
+
+entity = {
+	name = "WTFQGXF5_entity"
+	pdxmesh = "WTFQGXF_5_mesh"
+	scale = 0.8
+}
+
+entity = {
+	name = "WTFQGXF_6_entity"
+	
+	locator = { name = "root"	position = { 0 0 -32 } rotation = { 180 90 0 } }
+	attach = { root = "WTFQGXF6_entity" }	
+}
+
+entity = {
+	name = "WTFQGXF6_entity"
+	pdxmesh = "WTFQGXF_6_mesh"
+	scale = 0.8
+}
 #######
 animation = {
 	name = "WTFQG_1_idle_animation"

@@ -6,6 +6,7 @@
 # 5 = 泡泡
 # 6 = 莎兰（屑狐狸）
 # 7 = 夕立
+# 8 = 尼菲安娜（以太龙宝）
 
 
 defined_text = {
@@ -38,6 +39,10 @@ defined_text = {
 		trigger = { check_variable = { which = selected_check_affection_leader value = 7 }}
 		localization_key = leader_affection_details_7
 	}
+	text = {
+		trigger = { check_variable = { which = selected_check_affection_leader value = 8 }}
+		localization_key = leader_affection_details_8
+	}
 }
 
 defined_text = {
@@ -69,5 +74,9 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { which = selected_check_affection_leader value = 7 }}
 		localization_key = leader_title_checking_affection_7
+	}
+	text = {
+		trigger = { check_variable = { which = selected_check_affection_leader value = 8 }}
+		localization_key = leader_title_checking_affection_8
 	}
 }

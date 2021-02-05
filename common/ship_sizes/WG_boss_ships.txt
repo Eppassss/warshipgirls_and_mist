@@ -306,6 +306,33 @@ wg_fairy_dragon = {
 	required_component_set = "sensor_components"
 	required_component_set = "ship_aura_components"
 }
+
+wg_fairy_dragon_dreadnought = {
+	formation_priority = @titan_formation_priority
+	max_speed = 20
+	acceleration = 0.2
+	rotation_speed = 0.2
+	collision_radius = @battleship_collision_radius
+	max_hitpoints = 100000
+	modifier = {
+		ship_armor_add = 100000
+		ship_shield_add = 100000
+		ships_upkeep_mult = -1.0
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_static = 1	
+	}
+	size_multiplier = 24
+	fleet_slot_size = 16
+	section_slots = { "bow" = { locator = "part1" } "stern" = { locator = "part2" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon_frame = 6
+	entity = "UF_wsg_01_Dreadnought_entity"
+
+	class = shipclass_military
+	is_designable = no
+}
 #护龙使者
 wg_dragon_corvette = {
 	formation_priority = @corvette_formation_priority

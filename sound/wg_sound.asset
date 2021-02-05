@@ -122,3 +122,17 @@ sound = {
 	name = "event_shimakaze_recovered"
 	file = "event/wg_shimakaze_recovered.wav"
 }
+
+sound = {
+	name = "happy_rome"
+	file = "event/happy_rome.wav"
+}
+sound = {
+	name = "angry_rome"
+	file = "event/happy_rome.wav"
+}
+sound = {
+	name = "sad_rome"
+	file = "event/sad_rome.wav"
+}
+

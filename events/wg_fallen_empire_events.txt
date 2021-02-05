@@ -1596,16 +1596,17 @@ country_event = {
 						name = random
 						design = "NAME_WG_FE_WATCHKEEPER"
 						upgradable = no
+						effect = { add_modifier = { modifier = remove_fleet_maintenance days = -1}}
 					}
 					set_location = prev
 					set_fleet_stance = aggressive
 					set_aggro_range_measure_from = self
 					set_aggro_range = 500
-					add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1 }
+					add_modifier = { modifier = remove_fleet_maintenance days = -1 }
 				}
 				settings = { 
 					can_upgrade = no
-					uses_naval_capacity = yes
+					can_disband = no
 					spawn_debris = no
 					is_boss = yes
 				}
@@ -1626,6 +1627,7 @@ country_event = {
 							design = "NAME_WG_FE_TITAN"
 							graphical_culture = "fallen_empire_03"
 							upgradable = no
+							effect = { add_modifier = { modifier = remove_fleet_maintenance days = -1}}
 						}
 					}
 					while = {
@@ -1635,6 +1637,7 @@ country_event = {
 							design = "NAME_WG_FE_BATTLE_CRUISE"
 							graphical_culture = "fallen_empire_03"
 							upgradable = no
+							effect = { add_modifier = { modifier = remove_fleet_maintenance days = -1}}
 						}
 					}
 					while = {
@@ -1644,16 +1647,18 @@ country_event = {
 							design = "NAME_WG_FE_ESCORTE"
 							graphical_culture = "fallen_empire_03"
 							upgradable = no
+							effect = { add_modifier = { modifier = remove_fleet_maintenance days = -1}}
 						}
 					}
 					set_location = prev
 					set_fleet_stance = aggressive
 					set_aggro_range_measure_from = self
 					set_aggro_range = 500
-					add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+					add_modifier = { modifier = remove_fleet_maintenance days = -1
 				}
 				settings = { 
-					can_upgrade = no 
+					can_upgrade = no
+					can_disband = no 
 					uses_naval_capacity = yes
 					spawn_debris = no
 				}
@@ -1718,7 +1723,7 @@ event = { #每年用伪随机概率判定堕落妈触发事件
 					set_variable = { which = years_not_trigger_fe_event value = 0 }
 					country_event = { id = wg_fe.100 random = 359 }
 				}
-				19 = {
+				14 = {
 					modifier = {
 						add = -2
 						check_variable = { which = years_not_trigger_fe_event value >= 1 }
@@ -1870,11 +1875,11 @@ country_event = {
 									is_same_value = event_target:lady_contingency_owner
 									exists = event_target:lady_contingency_fleet
 								}
-							}
+							}	
 						}
 						modifier = {
-							factor = 3
-							mid_game_years_passed > 0
+							factor = 1919810
+							years_passed >= 40
 						}
 						country_event = { id = wg_lady.1 }
 					}
@@ -3081,7 +3086,10 @@ country_event = {
 		}
 	}
 	option = {
-		trigger = { has_country_flag = exchange_result8 }
+		trigger = { 
+			has_country_flag = exchange_result8 
+			has_technology = tech_wsg_senergy_manufacture
+		}
 		allow = { 
 			resource_stockpile_compare = { resource = consumer_goods value > 2500 }
 		}
@@ -3090,7 +3098,7 @@ country_event = {
 			consumer_goods = -2500
 		}
 		response_text = wg_fe.129.response4
-		locked_random_list = {
+		random_list = {
 			1 = { add_random_research_option = {
 				add_progress = 0.5
 				area = physics
@@ -3131,6 +3139,25 @@ country_event = {
 				}
 			}}
 		}
+	}
+	# 没有量产科技优先显示这个选项买科技
+	option = {
+		trigger = { 
+			has_country_flag = exchange_result8 
+			NOT = { has_technology = tech_wsg_senergy_manufacture }
+		}
+		allow = { 
+			resource_stockpile_compare = { resource = consumer_goods value > 2500 }
+		}
+		name = wg_fe.129.h
+		add_resource = {
+			consumer_goods = -2500
+		}
+		add_tech_progress = {
+			tech = tech_wsg_senergy_manufacture
+			progress = 0.1
+		}
+		add_research_option = tech_wsg_senergy_manufacture
 	}
 	option = {
 		trigger = { has_country_flag = exchange_result9 }
@@ -3193,7 +3220,7 @@ country_event = {
 									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
-										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										add_modifier = { modifier = remove_fleet_maintenance days = -1}
 										if = { # 早战debuff
 											limit = { years_passed < 45 }
 											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3202,6 +3229,7 @@ country_event = {
 								}
 							}
 							set_location = prev
+							add_modifier = { modifier = remove_fleet_maintenance days = -1 }
 						}
 						settings = { 
 							can_upgrade = no 
@@ -3221,7 +3249,7 @@ country_event = {
 									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
-										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										add_modifier = { modifier = remove_fleet_maintenance days = -1}
 										if = { # 早战debuff
 											limit = { years_passed < 45 }
 											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3230,6 +3258,7 @@ country_event = {
 								}
 							}
 							set_location = prev
+							add_modifier = { modifier = remove_fleet_maintenance days = -1 }
 						}
 						settings = { 
 							can_upgrade = no 
@@ -3249,7 +3278,7 @@ country_event = {
 									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
-										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										add_modifier = { modifier = remove_fleet_maintenance days = -1}
 										if = { # 早战debuff
 											limit = { years_passed < 45 }
 											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3264,7 +3293,7 @@ country_event = {
 									graphical_culture = "fallen_empire_03"
 									upgradable = no
 									effect = {
-										add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+										add_modifier = { modifier = remove_fleet_maintenance days = -1}
 										if = { # 早战debuff
 											limit = { years_passed < 45 }
 											add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3347,7 +3376,7 @@ country_event = {
 								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
-									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									add_modifier = { modifier = remove_fleet_maintenance days = -1}
 									if = { # 早战debuff
 											limit = { years_passed < 45 }
 										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3362,7 +3391,7 @@ country_event = {
 								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
-									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									add_modifier = { modifier = remove_fleet_maintenance days = -1}
 									if = { # 早战debuff
 											limit = { years_passed < 45 }
 										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3374,7 +3403,7 @@ country_event = {
 						set_fleet_stance = aggressive
 						set_aggro_range_measure_from = self
 						set_aggro_range = 500
-						add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+						add_modifier = { modifier = remove_fleet_maintenance days = -1}
 					}
 					settings = { 
 						can_upgrade = no 
@@ -3395,7 +3424,7 @@ country_event = {
 								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
-									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									add_modifier = { modifier = remove_fleet_maintenance days = -1}
 									if = { # 早战debuff
 											limit = { years_passed < 45 }
 										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3410,7 +3439,7 @@ country_event = {
 								graphical_culture = "fallen_empire_03"
 								upgradable = no
 								effect = {
-									add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+									add_modifier = { modifier = remove_fleet_maintenance days = -1}
 									if = { # 早战debuff
 											limit = { years_passed < 45 }
 										add_modifier = { modifier = gifted_fleet_early_debuff days = 7200 }
@@ -3422,7 +3451,7 @@ country_event = {
 						set_fleet_stance = aggressive
 						set_aggro_range_measure_from = self
 						set_aggro_range = 500
-						add_modifier = { modifier = reduce_fleet_maintenance_95pc days = -1}
+						add_modifier = { modifier = remove_fleet_maintenance days = -1}
 					}
 					settings = { 
 						can_upgrade = no 

@@ -291,7 +291,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	trigger = {
 		bubbles_available = yes
@@ -398,7 +398,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 	
 	option = {
 		name = wg_bubbles.7.a
@@ -801,7 +801,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	option = {
 		name = wg_bubbles.15.a
@@ -821,7 +821,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	option = {
 		name = wg_bubbles.16.a
@@ -836,7 +836,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	option = {
 		name = wg_bubbles.17.a
@@ -881,7 +881,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	trigger = {
 		FROMFROM = {
@@ -911,7 +911,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	option = {
 		name = wg_bubbles.21.a
@@ -929,7 +929,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_bubbles_commu_window
-	custom_gui_option = wg_leader_commu_option_green
+	custom_gui_option = wg_bubbles_commu_option
 
 	trigger = {
 		FROM = { has_leader_flag = bubbles_governor }

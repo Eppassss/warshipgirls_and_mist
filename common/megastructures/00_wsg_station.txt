@@ -421,3 +421,196 @@ wsg_hidden_capital = {
 		}
 	}
 }
+
+shenhai_energy_core_1 = {
+	entity = "mammalian_01_construction_platform_entity"
+	construction_entity = "mammalian_01_construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 720
+		
+	resources = {
+		category = megastructures
+		cost = { alloys = 5000 influence = 50 }
+		upkeep = { 
+			energy = 5
+		}
+	}
+	prerequisites = { "tech_wsg_senergy2" }
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_only_one_shenhai_energy_core"
+			from = { NOT = { has_country_flag = built_shenhai_energy_core } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_habitable_planets"
+			NOT = {
+				any_system_planet = {
+					AND = {
+						colonizeable_planet = yes
+					}
+				}
+			}
+		}
+	}	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizeable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+		} # use these for all non-star megastructures
+	}
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = { 
+			if = {
+				limit = { NOT = { has_country_flag = built_shenhai_energy_core }}
+				set_country_flag = built_shenhai_energy_core
+				change_variable = { which = rankpts value = 5 }
+			}
+			set_country_flag = has_built_or_repaired_megastructure	
+			#country_event = { id = wsg.3032 }回头写			
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+		}
+	}
+}
+
+shenhai_energy_core_2 = {
+	entity = "shenhai_energy_stage_2_section_entity"
+	construction_entity = "shenhai_energy_stage_2_section_entity"
+	portrait = "GFX_wg_energy_core"
+	place_entity_on_planet_plane = no
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1080
+		
+	resources = {
+		category = megastructures
+		cost = { alloys = 5000 sr_pantsu = 100 }
+		upkeep = { 
+			energy = 300
+			sr_pantsu = 40
+		}
+		produces = {
+			sr_se = 50
+		}
+	}
+	upgrade_from = {
+		shenhai_energy_core_1
+	}
+	
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = { 
+			#country_event = { id = wsg.3032 }回头写			
+		}
+	}
+}
+
+shenhai_energy_core_3 = {
+	entity = "shenhai_energy_stage_2_section_entity"
+	construction_entity = "shenhai_energy_stage_2_section_entity"
+	portrait = "GFX_wg_energy_core"
+	place_entity_on_planet_plane = no
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1080
+		
+	resources = {
+		category = megastructures
+		cost = { alloys = 5000 sr_pantsu = 100 }
+		upkeep = { 
+			energy = 900
+			sr_pantsu = 120
+		}
+		produces = {
+			sr_se = 150
+		}
+	}
+	upgrade_from = {
+		shenhai_energy_core_2
+	}
+	
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = { 
+			#country_event = { id = wsg.3032 }回头写			
+		}
+	}
+}
+shenhai_energy_core_4 = {
+	entity = "shenhai_energy_stage_3_section_entity"
+	construction_entity = "shenhai_energy_stage_3_section_entity"
+	portrait = "GFX_wg_energy_core"
+	place_entity_on_planet_plane = no
+	construction_blocks_others = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1080
+		
+	resources = {
+		category = megastructures
+		cost = { alloys = 5000 sr_pantsu = 100 }
+		upkeep = { 
+			energy = 1500
+			sr_pantsu = 200
+		}
+		produces = {
+			sr_se = 250
+		}
+	}
+	upgrade_from = {
+		shenhai_energy_core_3
+	}
+	
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = { 
+			#country_event = { id = wsg.3032 }回头写			
+		}
+	}
+}

@@ -271,9 +271,12 @@
  job_sh_senergy_plural:0 "深海能源核心生产者职业"
  job_sh_senergy_desc:0 "即使再多的防护也难以保护员工的身体免受高强度射线的影响。" 
 
+
  job_wsg_senergy_effect_desc:0 "£job_sh_senergy£ $job_sh_senergy_plural$ 将 £energy£ §Y$energy$§! 和 £sr_pantsu£ §Y胖次§! 转化为 £sr_se£ §Y$sr_se$§!"
  job_wsg_senergy:0 "深海能源核心生产者"
- job_wsg_senergy_desc:0 "这些生产工人穿着最厚重的防御设备以进行危险的作业。他们即使在宇宙空间也能生存一段时间。" 
+ mod_job_wsg_senergy_add:0 "深海能源核心生产者职业"
+ job_wsg_senergy_plural:0 "深海能源核心生产者职业"
+ job_wsg_senergy_desc:0 "这些生产工人穿着最厚重的防御设备以进行危险的作业。她们即使在宇宙空间也能生存一段时间。" 
  
  job_sh_clerk_effect_desc:0 "£job_sh_clerk£ $job_sh_clerk_plural$ 生产少量的 £energy£ §Y$energy$§!"
  job_sh_clerk:0 "深海辅助者"

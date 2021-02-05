@@ -4,6 +4,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/planetview/wsg_yamato.dds"
 	}
 	spriteType = {
+		name = "GFX_wg_energy_core"
+		textureFile = "gfx/interface/planetview/wg_energy_core.dds"
+	}
+	spriteType = {
 		name = "GFX_wsg_station_background"
 		textureFile = "gfx/interface/planetview/wsg_station.dds"
 	}

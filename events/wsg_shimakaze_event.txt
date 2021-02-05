@@ -72,7 +72,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	option = {
 		name = wsg_shimakaze.2.a
@@ -89,7 +89,7 @@ country_event = {
 	diplomatic = yes
 	
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	trigger = {
 		from = { OR = {
 			is_country_type = wsg_shimakaze 
@@ -115,6 +115,10 @@ country_event = {
 	after = {
 		hidden_effect = { 
 			remove_country_flag = wsg_shimakaze_engaged 
+			random_owned_leader = {
+				limit = { has_leader_flag = wsg_shimakaze_leader } 
+				change_shimakaze_portrait = yes
+			}
 		}
 	}
 
@@ -256,7 +260,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	show_sound = event_shimakaze_contact_hurt
 
 	trigger = {
@@ -279,6 +283,10 @@ country_event = {
 	after = {
 		hidden_effect = { 
 			remove_country_flag = wsg_shimakaze_engaged 
+			random_owned_leader = {
+				limit = { has_leader_flag = wsg_shimakaze_leader } 
+				change_shimakaze_portrait = yes
+			}
 		}
 	}
 
@@ -298,7 +306,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
@@ -327,7 +335,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
@@ -353,7 +361,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -380,7 +388,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
 	}
@@ -410,7 +418,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -437,7 +445,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -464,7 +472,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -491,7 +499,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -518,7 +526,7 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_engaged
@@ -545,7 +553,7 @@ country_event = {
 	show_sound = event_shimakaze_governor
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -570,7 +578,7 @@ country_event = {
 	show_sound = event_shimakaze_scientist
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -595,7 +603,7 @@ country_event = {
 	show_sound = event_shimakaze_admiral
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -620,7 +628,7 @@ country_event = {
 	show_sound = event_shimakaze_general
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = wsg_shimakaze_change #标识是更改领袖时的kill
@@ -664,7 +672,7 @@ country_event = {
 	fire_only_once = yes
 	show_sound = event_shimakaze_affection_max
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		set_country_flag = can_marry_wsg_shimakaze
@@ -688,7 +696,7 @@ country_event = {
 	diplomatic = yes
 	show_sound = event_shimakaze_marry
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		play_sound = event_wg_wedding
@@ -753,7 +761,7 @@ country_event = {
 	show_sound = event_shimakaze_affection_level_2
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	option = {
 		name = wsg_shimakaze.30201.a
@@ -814,7 +822,7 @@ country_event = {
 	fire_only_once = yes
 	show_sound = event_shimakaze_affection_level_3
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 	diplomatic = yes
 
 	option = {
@@ -874,7 +882,7 @@ country_event = {
 	diplomatic = yes
 	show_sound = event_shimakaze_affection_level_4
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	option = {
 		name = wsg_shimakaze_talk_exit
@@ -952,7 +960,7 @@ country_event = {
 	show_sound = event_shimakaze_hurt
 	diplomatic = yes
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		subtract_variable = {
@@ -984,7 +992,7 @@ country_event = {
 	diplomatic = yes
 	show_sound = event_shimakaze_recovered
 	custom_gui = wg_shimakaze_commu_window
-	custom_gui_option = wg_leader_commu_option_pink
+	custom_gui_option = wg_shimakaze_commu_option
 
 	immediate = {
 		remove_country_flag = wsg_shimakaze_hurt

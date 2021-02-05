@@ -99,6 +99,20 @@ country_event = {
 							set_hostile = no
 						}
 					}
+					event_target:wg_fallen_empire = {
+						set_faction_hostility = {
+							target = PREV
+							set_neutral = yes
+							set_hostile = no
+						}
+					}
+					event_target:sh_fallen_empire = {
+						set_faction_hostility = {
+							target = PREV
+							set_neutral = yes
+							set_hostile = no
+						}
+					}
 					switch = { # 创建舰队，DIFF_MULT为难度系数，此系数直接影响刷出的船的数量
 						trigger = has_global_flag
 						wg_crisis_very_easy = { create_wg_Khan_first_wave_fleets = { DIFF_MULT = 0.3 }}
@@ -2125,6 +2139,7 @@ planet_event = {
 							NOR = {
 								has_trait = wsg_trait_warshipgirls
 								has_trait = wsg_trait_warshipgirls1
+								has_trait = wsg_trait_warshipgirls2
 								has_trait = wsg_trait_mist
 								has_trait = sh_trait_shenhai
 								has_trait = sh_trait_shenhai1
@@ -2140,6 +2155,7 @@ planet_event = {
 						species = { NOR = {
 							has_trait = wsg_trait_warshipgirls
 							has_trait = wsg_trait_warshipgirls1
+							has_trait = wsg_trait_warshipgirls2
 							has_trait = wsg_trait_mist
 							has_trait = sh_trait_shenhai
 							has_trait = sh_trait_shenhai1
@@ -2158,6 +2174,7 @@ planet_event = {
 									species = { NOR = {
 										has_trait = wsg_trait_warshipgirls
 										has_trait = wsg_trait_warshipgirls1
+										has_trait = wsg_trait_warshipgirls2
 										has_trait = wsg_trait_mist
 										has_trait = sh_trait_shenhai
 										has_trait = sh_trait_shenhai1

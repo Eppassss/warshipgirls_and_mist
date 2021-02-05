@@ -120,9 +120,15 @@ ap_port_project = {
 	}
 	
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_tech_building_wsg_neo"
-			has_technology = tech_building_wsg_neo
+	    OR = { 
+			custom_tooltip = {
+				fail_text = "requires_tech_wsg_senergy_implantation"
+				has_technology = tech_wsg_senergy_implantation
+			}
+			custom_tooltip = {
+				fail_text = "requires_tech_building_wsg_neo"
+				has_technology = tech_building_wsg_neo
+			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
@@ -198,12 +204,83 @@ ap_mist = {
 			fail_text = "requires_not_ap_the_flesh_is_weak"
 			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
 		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_project_s"
+			NOT = { has_ascension_perk = ap_mist }
+		}
 	}
 	
 	potential = {
 		has_authority="auth_warshipgirls"
 		NOR = {
 			has_ascension_perk = ap_mist
+			has_country_flag = wg_psi_country
+		}
+		is_mechanical_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+ap_project_s = {
+	on_enabled = {
+		hidden_effect = {
+			country_event = { id = wsg.2100 }
+		}	
+		add_research_option = tech_wsg_genetic_resequencing_s
+	}
+	modifier = {
+		WARSHIPGIRL_species_trait_points_add = 10
+	}		
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_gene_tailoring"
+			has_technology = tech_gene_tailoring
+		}	
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}		
+		custom_tooltip = {
+			fail_text = "requires_ascension_ap_project_r"
+			has_ascension_perk = ap_project_r 
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_zero_point_power"
+			has_technology = tech_zero_point_power
+		}
+		custom_tooltip = {
+			fail_text = "requires_tech_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}		
+		custom_tooltip = {
+			fail_text = "requires_tech_wsg_senergy_implantation"
+			has_technology = tech_wsg_senergy_implantation
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_mist"
+			NOT = { has_ascension_perk = ap_mist }
+		}
+	}
+	
+	potential = {
+		has_authority="auth_warshipgirls"
+		NOR = {
+			has_ascension_perk = ap_project_s
 			has_country_flag = wg_psi_country
 		}
 		is_mechanical_empire = no
@@ -235,50 +312,6 @@ ap_wsg_universal_transactions = {
 	
 	ai_weight = {
 		factor = 10
-	}
-}
-
-ap_dark_alpha = {
-	on_enabled = {
-		custom_tooltip = "dark_alpha"
-		hidden_effect = {
-			country_event = { id = wsg.3015 }
-		}	
-	}
-	potential = {
-		has_authority="auth_warshipgirls"
-		is_regular_empire = yes
-		NOT = { has_valid_civic = civic_agrarian_idyll }
-		NOT = {
-			has_ascension_perk = ap_dark_alpha
-		}
-	}
-	
-	possible = {
-		custom_tooltip = {
-			fail_text = "requires_tech_building_wsg_alpha"
-			has_technology = tech_building_wsg_alpha
-		}
-		custom_tooltip = {
-			fail_text = "requires_tech_dark_matter_power_core"
-			has_technology = tech_dark_matter_power_core
-		}
-		custom_tooltip = {
-			fail_text = "requires_ascension_perks_3"
-			num_ascension_perks > 2
-		}		
-	}
-	
-	ai_weight = {
-		factor = 10
-		modifier = {
-			factor = 2
-			has_ethic = ethic_pacifist
-		}
-		modifier = {
-			factor = 3
-			has_ethic = ethic_fanatic_pacifist
-		}
 	}
 }
 

@@ -69,6 +69,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/ascension_perks/ap_shenhai_space.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_ap_project_s"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_project_s.dds"
+		alwaystransparent = yes
+	}
 }
 
 

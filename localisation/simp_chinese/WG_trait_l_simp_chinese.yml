@@ -113,7 +113,7 @@
  leader_trait_ruler_mist:0 "苍青少女"
  leader_trait_ruler_mist_desc:0 "新的舰装给整个国度带来了新的活力"
 
- wsg_trait_warshipgirls2:0 "战舰少女SEP"
+ wsg_trait_warshipgirls2:0 "战舰少女S"
  wsg_trait_warshipgirls2_desc:0 "通过安全的工序植入深海能源核心后，属于我们的——战舰少女所有的潜能将被解放。"
  leader_trait_ruler_warshipgirls2:0 "$wsg_trait_warshipgirls2$"
  leader_trait_ruler_warshipgirls2_desc:0 "深海能源核心的技术发展将引领整个国家迈向新的方向"
@@ -125,22 +125,26 @@
  leader_trait_scientist_warshipgirls2_desc:0 "深海能源核心的植入解放了舰娘大脑的潜力，对舰装的融合度远超以往所能。配合新一代的科研型舰装，舰娘整体的科研实力将踏上一个新的层次。"
  leader_trait_admiral_warshipgirls2:0 "$wsg_trait_warshipgirls2$"
  leader_trait_admiral_warshipgirls2_desc:0 "植入深海能源核心后，舰娘的脑潜力得到解放，并且能像操控自己的身体部位一样操控舰装，获得超越一般计算机的数据处理能力。现在一名舰娘操控以往设计需要数十名船员的战舰已经不成问题。"
- TRAIT_WSG_2_EFFECT:0 "$MOD_POP_ENVIRONMENT_TOLERANCE$：§G+200%§!\n$mod_planet_jobs_produces_mult$：§G+15%§!\n$MOD_POP_ASSEMBLY_SPEED$：§G+25%§!\n每个舰娘人口每月消耗0.2 £sr_se£ §Y$sr_se$§!"
-
+ TRAIT_WSG_2_EFFECT:0 "$MOD_POP_ENVIRONMENT_TOLERANCE$：§G+200%§!\n$mod_planet_jobs_produces_mult$：§G+15%§!\n$MOD_POP_ASSEMBLY_SPEED$：§G+30§!"
 
  wsg_trait_mass_assembly:0 "极效组装"
  wsg_trait_mass_assembly_desc:0 "生产舰娘们的舰装是一件非常复杂的工艺，但在深海能源核心强大的动力与天然的有机结合下，以往很多生产上的条件与限制都不再是问题。"
- TRAIT_WSG_ASSEMBLY_EFFECT:0 "$MOD_POP_ASSEMBLY_SPEED$：§G+40%§!\n每个舰娘人口每月消耗0.3 £sr_se£ §Y$sr_se$§!"
+ TRAIT_WSG_ASSEMBLY_EFFECT:0 "$MOD_POP_ASSEMBLY_SPEED$：§G+40%§!\n每座舰娘组装厂每月额外消耗1.5 £sr_se£ §Y$sr_se$§!"
  wsg_trait_extreme_efficient:0 "高效生产"
  wsg_trait_extreme_efficient_desc:0 "深海能源核心供给舰装的动力是以往任何一项科技所无可比拟的，也因此生产效率能获得几何级的提升。"
- TRAIT_WSG_EXEFFICIENT_EFFECT:0 "$mod_planet_jobs_produces_mult$：§G+25%§!\n每个舰娘人口每月消耗0.3 £sr_se£ §Y$sr_se$§!"
+ TRAIT_WSG_EXEFFICIENT_EFFECT:0 "$mod_planet_jobs_produces_mult$：§G+25%§!\n每个舰娘人口每月消耗0.03 £sr_se£ §Y$sr_se$§!"
  wsg_trait_galatic_engineer:0 "银河铸造师"
  wsg_trait_galatic_engineer_desc:0 "建造任何东西都需要有强大的动力和科技作支撑，而深海能源核心让舰娘们即使不佩戴任何外部动力装置也能在太空行走自如，从根源上克服了在最恶劣的环境下的施工障碍。"
- TRAIT_WSG_ENGINEER_EFFECT:0 "$MOD_COUNTRY_TERRAFORM_SPEED_MULT$：§G+50%§!\n$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$：§G+50%§!\n$MOD_COUNTRY_MEGASTRUCTURE_BUILD_CAP_ADD$：§G+1§!\n$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$：§G+50%§!\n每个舰娘人口每月消耗0.3 £sr_se£ §Y$sr_se$§!"
+ TRAIT_WSG_ENGINEER_EFFECT:0 "$MOD_COUNTRY_TERRAFORM_SPEED_MULT$：§G+50%§!\n$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$：§G+50%§!\n$MOD_COUNTRY_MEGASTRUCTURE_BUILD_CAP_ADD$：§G+2§!\n$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$：§G+50%§!\n每个舰娘人口每月消耗0.03 £sr_se£ §Y$sr_se$§!\n所有原版及舰R mod 一产，二产区划建造速度：§G+50%§!"
+ wsg_trait_galatic_engineer_buff:0 "$wsg_trait_galatic_engineer$"
  wsg_trait_knowledgeable2:0 "博学"
  wsg_trait_knowledgeable2_desc:0 "深海能源核心能时刻保持舰娘们的大脑100%部位全天候工作并开发大脑所有的潜力。学习并掌握一门学问对舰娘来说已经不再是一件困难的事情。"
- TRAIT_WSG_KNOWLEDGEABLE_EFFECT:0 "$mod_planet_jobs_engineering_research_produces_mult$：§G+40%§!\n$mod_planet_jobs_physics_research_produces_mult$：§G+40%§!\n$mod_planet_jobs_society_research_produces_mult$：§G+40%§!\n领袖经验获取速度：§G+50%§!\n$MOD_COUNTRY_NUM_TECH_ALTERNATIVES_ADD$：§G+1§!\n每个舰娘人口每月消耗0.3 £sr_se£ §Y$sr_se$§!"
+ TRAIT_WSG_KNOWLEDGEABLE_EFFECT:0 "$mod_planet_jobs_engineering_research_produces_mult$：§G+40%§!\n$mod_planet_jobs_physics_research_produces_mult$：§G+40%§!\n$mod_planet_jobs_society_research_produces_mult$：§G+40%§!\n领袖经验获取速度：§G+50%§!\n$MOD_COUNTRY_NUM_TECH_ALTERNATIVES_ADD$：§G+1§!\n每个舰娘人口每月消耗0.03 £sr_se£ §Y$sr_se$§!"
  WSGR:0 "战舰少女"
+ wsg_trait_senergy_producer:0 "深海能源核心制造者"
+ wsg_trait_senergy_producer_desc:0 "这些舰娘的舰装经过专门的定制，能最大程度的辅助深海能源核心的制造。"
+ TRAIT_WSG_SENERGY_PRODUCER_EFFECT:0 "所有来自岗位的£sr_se£ §Y$sr_se$§!的产能提高的§G0.5§!"
+ 
  leader_trait_admiral_Rodney:0 "舰队司令罗德尼"
  leader_trait_admiral_Rodney_desc:0 "罗德尼司令对于如何使舰队资源高效分配和舰船火炮精准度提升有着超出常人的理解。" 
  leader_trait_admiral_Rodney2:0 "纳尔逊的信"
@@ -309,3 +313,4 @@
  
  
  mod_planet_pops_food_upkeep_mult:0 "人口食物维护费"
+ mod_country_base_sr_se_upkeep_add:0 "每月 £sr_se£ $sr_se$"

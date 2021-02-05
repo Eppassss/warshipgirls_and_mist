@@ -11,6 +11,7 @@ wg_gray_link_button_effect = {
 			is_same_value = event_target:gray_owner
 		}
 		NOT = { has_country_flag = ban_commu_with_gray }
+		check_variable = { which = link_button_current_page value = 0 }
 	}
 	allow = {
 		custom_tooltip = {
@@ -25,5 +26,19 @@ wg_gray_link_button_effect = {
 	}
 	effect = {
 		hidden_effect = { country_event = { id = wg_aft.30001 }}
+	}
+}
+
+wg_link_button_next_page_effect = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			change_variable = { which = link_button_current_page value = 1 }
+			if = {
+				limit = { check_variable = { which = link_button_current_page value > 1 }}
+				set_variable = { which = link_button_current_page value = 0 }
+			}
+		}
 	}
 }

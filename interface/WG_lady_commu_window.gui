@@ -2,14 +2,14 @@ guiTypes = {
 	### ENCLAVE CARAVANEER EVENT OPTION ###
 
 	containerWindowType = {
-		name = "wg_leader_commu_option_red"
+		name = "wg_lady_commu_option"
 		position = { x=0 y=0 }
 		size = { width = 571 height = 58 }
 		moveable = no
 		
 		buttonType = {
 			name = "option_button"
-			quadTextureSprite = "GFX_wg_button_571_46_red" 
+			quadTextureSprite = "GFX_wg_lady_button_571_46" 
 			position = { x=0 y=0 }
 			font = "malgun_goth_24"
 			text = "OPTION_TEXT"
@@ -33,13 +33,13 @@ guiTypes = {
 		
 		iconType = {
 			name = "background"
-			spriteType = "GFX_wg_leader_diplo_bg_red" 
+			spriteType = "GFX_wg_lady_diplo_bg" 
 			position = { x = 0 y = 0 }
 		}
 			
 		buttonType = {
 			name = "close"
-			quadTextureSprite = "GFX_wg_button_close_red"
+			quadTextureSprite = "GFX_wg_lady_button_close"
 			position = { x= -70 y = 10 }
 			Orientation = "UPPER_RIGHT"
 			shortcut = "ESCAPE"
@@ -50,7 +50,7 @@ guiTypes = {
 			name = "alien_message_background"
 			size = { x = 661 y = 324 }
 			position = { x = 650 y = 10 }
-			quadTextureSprite = "GFX_wg_message_bg_red"
+			quadTextureSprite = "GFX_wg_lady_message_bg"
 			alwaysTransparent = yes
 		}
 		
@@ -66,8 +66,8 @@ guiTypes = {
 
 		buttonType = {
 			name = "confirm_button"
-			quadTextureSprite = "GFX_wg_button_287_48_red"
-			position = { x = 1100 y = 650 }
+			quadTextureSprite = "GFX_wg_lady_button_287_48"
+			position = { x = 1100 y = 680 }
 			Orientation = "UPPER_LEFT"
 			font = "malgun_goth_24"
 			text = "MESSAGE_OK"
@@ -142,17 +142,17 @@ guiTypes = {
 		}
 		effectButtonType = {
 			name = "wg_cloth_button_prev"
-			quadTextureSprite = "GFX_wg_cloth_button_prev"
+			quadTextureSprite = "GFX_wg_lady_cloth_button_prev"
 			orientation = "UPPER_LEFT"
 			position = { x= 120 y = 700 }
-			effect = "wg_cloth_button_prev"
+			effect = "wg_lady_cloth_button_prev"
 		}
 		effectButtonType = {
 			name = "wg_cloth_button_next"
-			quadTextureSprite = "GFX_wg_cloth_button_next"
+			quadTextureSprite = "GFX_wg_lady_cloth_button_next"
 			orientation = "UPPER_LEFT"
 			position = { x= 530 y = 700 }
-			effect = "wg_cloth_button_next"
+			effect = "wg_lady_cloth_button_next"
 		}
 
 		@wg_leader_diplo_button_x_1 = 640
@@ -215,15 +215,29 @@ guiTypes = {
 			name = "wg_shimakaze_link_button"
 			spriteType = "GFX_wg_shimakaze_link_button"
 			orientation = "UPPER_LEFT"
-			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_3 }
+			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_2 }
 			effect = "wg_shimakaze_link_button_effect"
 		}
 		effectButtonType = {
 			name = "wg_bubbles_link_button"
 			spriteType = "GFX_wg_bubbles_link_button"
 			orientation = "UPPER_LEFT"
-			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_4 }
+			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_3 }
 			effect = "wg_bubbles_link_button_effect"
+		}
+		effectButtonType = {
+			name = "wg_link_button_next_page"
+			spriteType = "GFX_wg_lady_link_button_next_page"
+			orientation = "UPPER_LEFT"
+			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_4 }
+			effect = "wg_link_button_next_page_effect"
+		}
+		effectButtonType = {
+			name = "wg_dragon_link_button"
+			spriteType = "GFX_wg_dragon_link_button"
+			orientation = "UPPER_LEFT"
+			position = { x= @wg_leader_commu_button_x y = @wg_leader_commu_button_y_1 }
+			effect = "wg_dragon_link_button_effect"
 		}
 		### EVENT DIPLO ###
 		

@@ -628,7 +628,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 	
@@ -718,7 +718,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 
@@ -813,7 +813,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 
@@ -914,7 +914,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 
@@ -1089,7 +1089,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 
@@ -1135,7 +1135,7 @@ country_event = {
 
 	diplomatic = yes
 	custom_gui = wg_gray_commu_window
-	custom_gui_option = wg_leader_commu_option_gray
+	custom_gui_option = wg_gray_commu_option
 
 	is_triggered_only = yes
 
