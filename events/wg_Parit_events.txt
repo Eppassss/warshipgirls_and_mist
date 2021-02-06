@@ -1697,6 +1697,7 @@ country_event = {
 				limit = {
 					has_completed_event_chain_counter = {
 						event_chain = "parit_chain" 
+						counter = wg_parit_home_porject_counter
 					}
 					NOT = { has_country_flag = parit_home_project_finished }
 				}

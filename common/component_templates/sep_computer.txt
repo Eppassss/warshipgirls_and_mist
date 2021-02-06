@@ -104,7 +104,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { destroyer cruiser battleship titan wsg_lady_warship juggernaut parit_battlecrusier parit_dreadnought parit_dreadnought parit_carrier }
+	size_restriction = { destroyer cruiser battleship titan wsg_lady_warship juggernaut parit_battlecrusier parit_dreadnought parit_dreadnought parit_carrier dreadnought_carrier }
 	component_set = "combat_computers"
 	ship_behavior = "SHartillery"
 	prerequisites = { "tech_wsg_senergy_computer" }
@@ -133,7 +133,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { battleship juggernaut titan parit_battlecrusier parit_dreadnought }
+	size_restriction = { battleship juggernaut titan parit_battlecrusier parit_dreadnought dreadnought_carrier }
 	component_set = "combat_computers"
 	ship_behavior = "WGcarrier"
 	prerequisites = { "tech_wsg_senergy_computer" }

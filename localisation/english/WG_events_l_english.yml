@@ -714,7 +714,7 @@
  wg_precursors_poi.4:0 "$fourth_precursor_poi$"
  wg_precursors_poi.5:0 "$fifth_precursor_poi$"
  wsg.9999.name:0 "Update Warning"
- wsg.9999.desc:0 "Your installed mod(Warship Girls and Mist species Mod) has released a major update since Febrary 5. If this warning notice poped out, this means you have update the mod but is playing a save game start with expired mod version.\n\n §RContinue playing with this expired save game can cause several unpredicted bugs. Please start a new save game to avoid this.§!\n\n We apalogise for any unconvinance this may cause, and hope you have a good game."
+ wsg.9999.desc:0 "Your installed mod(Warship Girls and Mist species Mod) has released a major update since February 5. If this warning notice poped out, this means you have update the mod but is playing a save game start with expired mod version.\n\n §RContinue playing with this expired save game can cause several unpredicted bugs. Please start a new save game to avoid this.§!\n\n We apalogise for any unconvinance this may cause, and hope you have a good game."
  wsg.3031.a.tooltip:0 "艾拉将成为总督（§Y播放精罗狂喜曲§!）"
  wsg.3031.b.tooltip:0 "艾拉将成为总督（§Y播放精罗烤肉曲§!）"
  wsg.3031.c.tooltip:0 "艾拉将成为总督（§Y播放精罗震怒曲§!）"

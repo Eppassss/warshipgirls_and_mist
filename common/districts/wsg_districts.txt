@@ -137,7 +137,10 @@ district_arcology_wsg_neo = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				}}
 			}
 			minerals = 1000
 			sr_se = 120
@@ -145,7 +148,10 @@ district_arcology_wsg_neo = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 1000
 			sr_neo = 75
@@ -153,14 +159,20 @@ district_arcology_wsg_neo = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			sr_se = 2
 		}	
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			sr_neo = 0.5
 		}
@@ -183,7 +195,10 @@ district_arcology_wsg_neo = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		modifier = {
 			job_wsg_foundry_add = 10
@@ -192,7 +207,10 @@ district_arcology_wsg_neo = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		modifier = {
 			job_sep_foundry_add = 9
@@ -203,7 +221,10 @@ district_arcology_wsg_neo = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_foundry_effect_desc
 	}
@@ -211,14 +232,20 @@ district_arcology_wsg_neo = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		text = job_sep_foundry_effect_desc
 	}		
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		text = job_sep_artisan_effect_desc
 	}	
@@ -265,7 +292,10 @@ district_arcology_wsg_science = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			minerals = 1000
 			sr_se = 120
@@ -273,7 +303,10 @@ district_arcology_wsg_science = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 1000
 			sr_neo = 75
@@ -281,14 +314,20 @@ district_arcology_wsg_science = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			sr_se = 2
 		}	
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			sr_neo = 0.5
 		}
@@ -379,7 +418,10 @@ district_arcology_wsg_military = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			minerals = 1000
 			sr_se = 120
@@ -387,7 +429,10 @@ district_arcology_wsg_military = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 1000
 			sr_neo = 75
@@ -395,14 +440,20 @@ district_arcology_wsg_military = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			sr_se = 2
 		}	
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			sr_neo = 0.5
 		}
@@ -533,7 +584,10 @@ district_rw_wsg_alloys = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			minerals = 3000
 			sr_se = 300
@@ -541,7 +595,10 @@ district_rw_wsg_alloys = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 3000
 			sr_neo = 250
@@ -549,7 +606,10 @@ district_rw_wsg_alloys = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			energy = 30
 			sr_pantsu = 4
@@ -558,7 +618,10 @@ district_rw_wsg_alloys = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			upkeep = {
 				energy = 30
@@ -574,7 +637,10 @@ district_rw_wsg_alloys = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		modifier = {
 			job_wsg_foundry_add = 30
@@ -583,7 +649,10 @@ district_rw_wsg_alloys = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		modifier = {
 			job_sep_foundry_add = 27
@@ -593,7 +662,10 @@ district_rw_wsg_alloys = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_foundry_effect_desc
 	}
@@ -601,14 +673,20 @@ district_rw_wsg_alloys = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		text = job_sep_foundry_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		text = job_sep_artisan_effect_desc
 	}
@@ -675,7 +753,10 @@ district_rw_wsg_science = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			minerals = 3000
 			sr_se = 300
@@ -683,7 +764,10 @@ district_rw_wsg_science = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 3000
 			sr_neo = 250
@@ -691,7 +775,10 @@ district_rw_wsg_science = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			energy = 30
 			sr_pantsu = 4
@@ -700,7 +787,10 @@ district_rw_wsg_science = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			upkeep = {
 				energy = 30
@@ -784,7 +874,10 @@ district_rw_wsg_soldier = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			minerals = 3000
 			sr_se = 300
@@ -792,7 +885,10 @@ district_rw_wsg_soldier = {
 		cost = {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			minerals = 3000
 			sr_neo = 250
@@ -800,14 +896,20 @@ district_rw_wsg_soldier = {
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { has_country_flag = wg_ascension_path_project_s }
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 			}
 			energy = 35
 		}	
 		upkeep= {
 			trigger = { 
 				exists = owner
-				owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 			}
 			upkeep = {
 				energy = 35
@@ -822,35 +924,50 @@ district_rw_wsg_soldier = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = neo_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_alpha_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_gas_refiner_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_chemist_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		text = job_wsg_translucer_effect_desc
 	}
@@ -858,7 +975,10 @@ district_rw_wsg_soldier = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }
 		}
 		text = job_wsg_senergy_effect_desc
 	}
@@ -867,7 +987,10 @@ district_rw_wsg_soldier = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { NOT = { has_country_flag = wg_ascension_path_project_s }}
+			owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				} }}
 		}
 		modifier = {
 			planet_housing_add = 30
@@ -882,7 +1005,10 @@ district_rw_wsg_soldier = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_country_flag = wg_ascension_path_project_s }
+			owner = { OR = {
+				has_technology = tech_wsg_senergy
+				has_country_flag = wg_ascension_path_project_s
+			} }
 		}
 		modifier = {
 			planet_housing_add = 30

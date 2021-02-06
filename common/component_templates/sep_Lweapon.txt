@@ -15,9 +15,8 @@ weapon_component_template = {
 	total_fire_time = 40
 	range = 135.0
 	accuracy = 0.9
-	shield_damage = 2.5
-	armor_damage = 1.5
-	hull_damage = 1.8
+	shield_penetration = 0.65
+	armor_penetration = 0.65
 	tracking = 0.20
 	power = -130
 	
@@ -37,56 +36,6 @@ weapon_component_template = {
 		upkeep = {
 			energy = 1.0
 		}
-	}
-	size_restriction = {
-		corvette
-		wg_corvette
-		destroyer
-		wsg_psi_dreadnought
-		wg_psi_big_gunship
-		wg_psi_juggernaut
-		wg_psi_gunship
-		wg_destroyer
-		parit_battlecrusier
-		cruiser
-		wsg_lady_warship_imdesignable
-		wsg_lady_warship
-		wsg_lady_juggernaut
-		wsg_armed_science_ship
-		wg_cruiser
-		wsg_dreadnought
-		wsg_dreadnought_dark
-		wg_carrier
-		wg_fe_ark
-		wg_battleship
-		StrikeCruiser
-		Battlecruiser
-		escortcarrier
-		explorationship
-		Dreadnought
-		Carrier
-		Flagship
-		wg_battlecrusier
-		battleship
-		wg_titan
-		wg_dreadnought
-		titan
-		juggernaut
-		scout_UAV
-		wg_think_tank
-		military_station_large
-		military_station_medium
-		military_station_small
-		Lustgodship
-		future_battleship
-		future_titan
-		SWGS_EclipseII
-		SWGS_Empire_II
-		SWGS_Xyston
-		SWGS_Pelleaon
-		SWGS_Imperious
-		giga_planet_behemoth
-		giga_systemcraft
 	}
 
 
@@ -116,9 +65,9 @@ weapon_component_template = {
 	total_fire_time = 45
 	range = 140.0
 	accuracy = 0.90
-	shield_damage = 2.5
-	armor_damage = 2.5
-	hull_damage = 2.0
+	shield_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
 	tracking = 0.25
 	power = -250
 	
@@ -137,59 +86,9 @@ weapon_component_template = {
 		}		
 		upkeep = {
 			energy = 1.5
+			alloys = 0.4
 		}
 	}
-	size_restriction = {
-		corvette
-		wg_corvette
-		destroyer
-		wsg_psi_dreadnought
-		wg_psi_big_gunship
-		wg_psi_juggernaut
-		wg_psi_gunship
-		wg_destroyer
-		parit_battlecrusier
-		cruiser
-		wsg_lady_warship_imdesignable
-		wsg_lady_warship
-		wsg_lady_juggernaut
-		wsg_armed_science_ship
-		wg_cruiser
-		wsg_dreadnought
-		wsg_dreadnought_dark
-		wg_carrier
-		wg_fe_ark
-		wg_battleship
-		StrikeCruiser
-		Battlecruiser
-		escortcarrier
-		explorationship
-		Dreadnought
-		Carrier
-		Flagship
-		wg_battlecrusier
-		battleship
-		wg_titan
-		wg_dreadnought
-		titan
-		juggernaut
-		scout_UAV
-		wg_think_tank
-		military_station_large
-		military_station_medium
-		military_station_small
-		Lustgodship
-		future_battleship
-		future_titan
-		SWGS_EclipseII
-		SWGS_Empire_II
-		SWGS_Xyston
-		SWGS_Pelleaon
-		SWGS_Imperious
-		giga_planet_behemoth
-		giga_systemcraft
-	}
-
 	ai_weight = {
 		weight = 1
 		modifier = {

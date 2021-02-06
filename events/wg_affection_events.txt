@@ -472,7 +472,7 @@ country_event = {
 			}
 			80 = {}
 		}
-		reset_wg_dragon_affection = yes
+		reset_wg_dragon_affection_level = yes
 	}
 }
 

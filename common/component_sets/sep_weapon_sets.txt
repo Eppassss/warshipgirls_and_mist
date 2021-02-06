@@ -1,4 +1,12 @@
 component_set = {
+	key = "ship_drone_hanger"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_wg_dc_drone"
+	icon_frame = 1	
+}
+
+component_set = {
 	key = "wsg_weapon_L_S_300"
 	icon = "GFX_wsg_weapon_L_S300"
 	icon_frame = 1	

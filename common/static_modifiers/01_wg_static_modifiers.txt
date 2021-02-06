@@ -75,6 +75,10 @@ wsg_modifier_warshipgirls = {
 wg_modifier_alpha = {
     num_tech_alternatives_add = 1
 }
+
+wg_modifier_knowledgeable2 = {
+	num_tech_alternatives_add = 2
+}
 ######################################
 planet_lp = {
 	icon = "gfx/interface/icons/planet_modifiers/lp_resources.dds"

@@ -236,6 +236,7 @@ col_sh_srse = {
 		owner = {
 			OR = {
 				has_technology = tech_sh_senergy
+				has_technology = tech_wsg_senergy
 			}		
 		}
 		NOR = {

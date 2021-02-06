@@ -70,6 +70,7 @@
  requires_tech_building_wsg_neo:0 "$TRIGGER_FAIL$需要£engineering£§Y$tech_wsg_senergy_implantation$§!科技。"
  requires_tech_synthetic_workers:0 "$TRIGGER_FAIL$需要£engineering£§Y$tech_synthetic_workers$§!科技。"
  requires_tech_wsg_senergy_implantation:0 "$TRIGGER_FAIL$需要£society£§Y$tech_wsg_senergy_implantation$§!科技。"
+ requires_tech_wsg_senergy:0 "$TRIGGER_FAIL$需要£society£§Y$tech_wsg_senergy$§!科技。"
  requires_ascension_ap_project_r:0 "$TRIGGER_FAIL$需要§Y$ap_project_r$§!超凡飞升。"
 
  requires_not_ap_mist:1 "$TRIGGER_FAIL$不能拥有§Y$ap_mist$§!飞升天赋。"

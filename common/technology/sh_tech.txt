@@ -129,7 +129,7 @@ tech_space_mining_sh = {
 	tier = 3
 	category = { industry }	
 	prerequisites = { "tech_sh_experiment" }
-	weight = @tier1we2ght1
+	weight = @tier1weight1
 
 	modifier = {
 		station_gatherers_produces_mult = 1.00

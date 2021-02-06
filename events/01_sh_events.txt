@@ -69,12 +69,12 @@ country_event = {
 	}
 	immediate = {
 		country_event = { id = sh.5 days = 60  }
-		if = {
-			limit = {
-				has_modifier = planet_Parit5
-			}
-			remove_modifier = planet_Parit5
-		}
+		# if = {
+		# 	limit = {
+		# 		has_modifier = planet_Parit5
+		# 	}
+		# 	remove_modifier = planet_Parit5
+		# }
 	}
 }
 country_event = {
@@ -1170,7 +1170,7 @@ planet_event = {
 					}
 				}
 				add_opinion_modifier = {
-					modifier = opinion_cm_a_primitive_world_phile
+					modifier = opinion_cm_a_primitive_world
 					who = from.owner
 				}
 			}

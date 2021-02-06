@@ -569,9 +569,17 @@ decision_wsg_rw_project = {
 			is_regular_empire = yes 
 			has_ascension_perk = ap_port_project
 			has_technology = tech_wsg_pantsu
-			has_technology = tech_building_wsg_foundry
-			has_technology = tech_building_wsg_alpha
-			has_technology = tech_neo_exchange
+			OR = {
+				AND = {
+					has_technology = tech_building_wsg_foundry
+					has_technology = tech_building_wsg_alpha
+					has_technology = tech_neo_exchange
+				}
+				AND = {
+					has_technology = tech_building_sep_foundry
+					has_technology = tech_wsg_senergy
+				}
+			}
 		}
 	}
 	

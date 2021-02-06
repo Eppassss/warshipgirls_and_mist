@@ -104,6 +104,13 @@ event = {
 				}
 				add_modifier = { modifier = wsg_trait_galatic_engineer_buff days = -1 }
 			}	
+			if = {
+				limit = {
+					has_trait = wsg_trait_knowledgeable2
+					NOT = { has_modifier = wg_modifier_knowledgeable2 }
+				}
+				add_modifier = { modifier = wg_modifier_knowledgeable2 days = -1 }
+			}
 		}
 	}
 }
@@ -173,7 +180,7 @@ event = {
 			}	
 			if = {
 				limit = {
-					NOT = { has_trait = wg_modifier_alpha }
+					NOT = { has_trait = wsg_trait_alpha }
 					has_modifier = wg_modifier_alpha
 				}
 				remove_modifier = wg_modifier_alpha
@@ -184,6 +191,13 @@ event = {
 					has_modifier = wsg_trait_galatic_engineer_buff
 				}
 				remove_modifier = wsg_trait_galatic_engineer_buff
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = wsg_trait_knowledgeable2 }
+					has_modifier = wg_modifier_knowledgeable2
+				}
+				remove_modifier = wg_modifier_knowledgeable2
 			}
 		}
 	}
@@ -297,7 +311,7 @@ country_event = {
 		}	
 		if = {
 			limit = {
-				has_trait = wg_modifier_alpha
+				has_trait = wsg_trait_alpha
 				NOT = { has_modifier = wg_modifier_alpha }
 			}
 			add_modifier = {
@@ -312,6 +326,13 @@ country_event = {
 			}
 			add_modifier = { modifier = wsg_trait_galatic_engineer_buff days = -1 }
 		}	
+		if = {
+			limit = {
+				has_trait = wsg_trait_knowledgeable2
+				NOT = { has_modifier = wg_modifier_knowledgeable2 }
+			}
+			add_modifier = { modifier = wg_modifier_knowledgeable2 days = -1 }
+		}
 	}
 }
 
@@ -387,7 +408,7 @@ country_event = {
 		}		
 		if = {
 			limit = {
-				NOT = { has_trait = wg_modifier_alpha }
+				NOT = { has_trait = wsg_trait_alpha }
 				has_modifier = wg_modifier_alpha
 			}
 			remove_modifier = wg_modifier_alpha
@@ -398,6 +419,13 @@ country_event = {
 				has_modifier = wsg_trait_galatic_engineer_buff
 			}
 			remove_modifier = wsg_trait_galatic_engineer_buff
+		}
+		if = {
+			limit = {
+				NOT = { has_trait = wsg_trait_knowledgeable2 }
+				has_modifier = wg_modifier_knowledgeable2
+			}
+			remove_modifier = wg_modifier_knowledgeable2
 		}
 	}
 }

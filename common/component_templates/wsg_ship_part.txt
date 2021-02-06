@@ -309,7 +309,7 @@ utility_component_template = {
 	class_restriction = { shipclass_military }
 	prerequisites = { "tech_wsg_fire_control" }
 	component_set = "FIRE_CONTROL_RADAR_wsg"
-	
+	upgrades_to = "wsg_senergy_FIRE_CONTROL"
 	ai_weight = {
 		weight = 15
 		modifier = {

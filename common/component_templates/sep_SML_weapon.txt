@@ -24,7 +24,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_S_6" }
 	component_set = "wsg_weapon_SML_S6"
-	projectile_gfx = "wsg_small_turbolaser_l_g"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 3
@@ -67,7 +67,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_S_6" }
 	component_set = "wsg_weapon_SML_S6"
-	projectile_gfx = "wsg_small_turbolaser_l_g"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 3
@@ -111,7 +111,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_S_6" }
 	component_set = "wsg_weapon_SML_S6"
-	projectile_gfx = "wsg_medium_turbolaser_l_b"
+	projectile_gfx = "wsg_medium_turbolaser_l_y"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 3

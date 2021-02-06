@@ -589,7 +589,6 @@ wsg_trait_knowledgeable2 = {
 		planet_jobs_physics_research_produces_mult = 0.4
 		planet_jobs_society_research_produces_mult = 0.4
 		species_leader_exp_gain = 0.5
-		num_tech_alternatives_add = 2
 		pop_category_rulers_sr_se_produces_add = -0.03
 		pop_category_specialists_sr_se_produces_add = -0.03
 		pop_category_workers_sr_se_produces_add = -0.03

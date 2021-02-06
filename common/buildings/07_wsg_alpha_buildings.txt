@@ -59,6 +59,7 @@ building_wsg_alpha_center = {
 			sr_alpha = 100
 			sr_neo = 300
 		}
+
 		upkeep = {
 			energy = 50
 			sr_alpha = 20
@@ -162,11 +163,49 @@ building_wsg_norston_tower = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			sr_neo = 50
 			alloys = 2000
+		}
+		cost = {
+			trigger = { 
+				exists = owner
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				}}
+			}
+			sr_se = 50
+		}
+		cost = {
+			trigger = { 
+				exists = owner
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				}}
+			}
+			sr_neo = 50
 		}
 		upkeep = {
 			energy = 20
+		}
+		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				}}
+			}
+			sr_se = 30
+		}
+		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { NOT = { OR = {
+					has_technology = tech_wsg_senergy
+					has_country_flag = wg_ascension_path_project_s
+				}}}
+			}
 			sr_neo = 20
 		}
 	}	

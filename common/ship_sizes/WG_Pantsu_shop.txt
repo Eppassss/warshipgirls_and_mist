@@ -213,6 +213,7 @@ logo_titan = {
 	base_buildtime = @titan_build_time
 	can_have_federation_design = no
 	enable_default_design = no
+	is_designable = no
 
 	default_behavior = artillery
 	entity = "mammalian_01_wg_titan_entity"

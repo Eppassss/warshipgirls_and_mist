@@ -201,7 +201,7 @@
  col_shenhai:0 "深海复合星球"
  col_shenhai_desc:0 "以生产合金与消费品为主要目的深海星球"
  col_sh_srse:0 "深海能源核心星球"
- col_sh_srse_desc:0 "以生产深能源核心为主要目的星球"
+ col_sh_srse_desc:0 "以生产深海能源核心为主要目的星球"
 
  col_sh_ring_ciry:0 "居住型深海环型世界"
  col_sh_ring_ciry_desc:0 "以居住为主要目的的深海环形世界"
@@ -219,8 +219,8 @@
  col_wg_soldier_custom:0 "$district_arcology_wsg_military$建造速度§G+25%§! \n每个调度员产出的行政能力提升§G2§! \n轨道轰炸伤害§G-20%§! \n星球防御部队伤害§G+20%§!"
  col_sh_soldier_custom:0 "$district_rw_sh_soldier$建造速度§G+25%§! \n每个调度员产出的行政能力提升§G2§! \n轨道轰炸伤害§G-20%§! \n星球防御部队伤害§G+20%§!"
  
- mod_planet_district_rw_wsg_city_build_speed_mult:0 "$planet_district_rw_wsg_city$建造速度"
- mod_planet_district_rw_wsg_alloys_build_speed_mult:0 "$planet_district_rw_wsg_alloys$建造速度"
+ mod_planet_district_rw_wsg_city_build_speed_mult:0 "$district_rw_wsg_city$建造速度"
+ mod_planet_district_rw_wsg_alloys_build_speed_mult:0 "$district_rw_wsg_alloys$建造速度"
  mod_planet_district_rw_wsg_science_build_speed_mult:0 "$district_rw_wsg_science$建造速度"
  mod_planet_district_rw_wsg_soldier_build_speed_mult:0 "$district_rw_wsg_soldier$建造速度"
  

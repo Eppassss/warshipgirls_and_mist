@@ -529,7 +529,7 @@ country_event = {
 	option = {
 		name = wg_dragon.7.a
 		hidden_effect = {
-			deduct_variable = { which = wg_dragon_affection value = @wg_dragon_affection_reduce }
+			subtract_variable = { which = wg_dragon_affection value = @wg_dragon_affection_reduce }
 			reset_wg_dragon_affection_level = yes
 		}
 	}

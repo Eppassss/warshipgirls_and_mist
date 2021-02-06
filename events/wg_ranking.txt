@@ -1380,14 +1380,14 @@ country_event = {
     # T槽S508
     option = {
 		custom_gui = "enclave_caravaneer_option"
-		name = tech_wsg_weapon_T_S508
-        custom_tooltip = "tech_wsg_weapon_T_S508_desc"
+		name = tech_wsg_weapon_T_S510
+        custom_tooltip = "tech_wsg_weapon_T_S510_desc"
 		trigger = {
             has_authority = auth_warshipgirls
-			has_technology = tech_wsg_weapon_T_S508
+			has_technology = tech_wsg_weapon_T_S510
 			NOR = { 
-                has_tech_option = tech_wsg_weapon_T_S508
-                has_technology = tech_wsg_weapon_T_S508
+                has_tech_option = tech_wsg_weapon_T_S510
+                has_technology = tech_wsg_weapon_T_S510
             }
 		}
 		allow = {
@@ -1406,8 +1406,8 @@ country_event = {
 			sr_pantsu = -3500
 			sr_se = -2500
 		}
-		add_research_option = tech_wsg_weapon_T_S508
-		add_tech_progress = { tech = tech_wsg_weapon_T_S508 progress = 0.1 }
+		add_research_option = tech_wsg_weapon_T_S510
+		add_tech_progress = { tech = tech_wsg_weapon_T_S510 progress = 0.1 }
         add_modifier = { modifier = wg_modifier_weapon_payment days = 360 }
         remove_country_flag = engaged_with_pantsu_shop
 	}

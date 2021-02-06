@@ -321,7 +321,7 @@ tech_space_science_wsg = {
 	tier = 3
 	category = { computing }
 	prerequisites = { "tech_wsg_reform" }
-	weight = @tier1we2ght1
+	weight = @tier1weight1
 
 	modifier = {
 		station_researchers_produces_mult = 1.5
@@ -967,7 +967,6 @@ tech_alpha_weapon = {
 	}
 	potential = {
 		has_authority = auth_warshipgirls
-		has_ascension_perk = ap_dark_alpha
 	}
 }
 
@@ -1556,7 +1555,7 @@ tech_wsg_weapon_ovo = {
 	cost = @tier3cost1
 	tier = 3
 	category = { particles }
-	prerequisites = { "" }
+	prerequisites = {  }
 	weight = 0
 	is_rare = yes
 	is_reverse_engineerable = no
@@ -2252,7 +2251,6 @@ tech_wsg_BTD = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 3
-	icon = wsg_weapen_BTD
 	ai_update_type = military
 	category = { voidcraft }	
 	prerequisites = { "tech_cruisers" }

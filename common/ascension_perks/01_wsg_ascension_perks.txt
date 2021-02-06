@@ -95,7 +95,7 @@ ap_dumplings = {
 		country_naval_cap_add = 120
 		country_command_limit_add = 50
 	}
-	
+
 	potential = {
 	    has_authority="auth_warshipgirls"
 		NOT = {
@@ -103,7 +103,7 @@ ap_dumplings = {
 		}
 		is_mechanical_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -122,8 +122,8 @@ ap_port_project = {
 	possible = {
 	    OR = { 
 			custom_tooltip = {
-				fail_text = "requires_tech_wsg_senergy_implantation"
-				has_technology = tech_wsg_senergy_implantation
+				fail_text = "requires_tech_wsg_senergy"
+				has_technology = tech_wsg_senergy
 			}
 			custom_tooltip = {
 				fail_text = "requires_tech_building_wsg_neo"

@@ -1771,13 +1771,13 @@ planet_event = {
 
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = wg_Khan_bombardment_stage1_encountered }
+			NOT = { owner = { has_country_flag = wg_Khan_bombardment_stage1_encountered }}
 		}
 		text = "wg_khan.101.desc"
 	}
 	desc = {
 		trigger = {
-			has_country_flag = wg_Khan_bombardment_stage1_encountered
+			owner = { has_country_flag = wg_Khan_bombardment_stage1_encountered }
 		}
 		text = "wg_khan.101.desc.b"
 	}
@@ -2159,6 +2159,7 @@ planet_event = {
 							has_trait = wsg_trait_mist
 							has_trait = sh_trait_shenhai
 							has_trait = sh_trait_shenhai1
+							has_trait = sh_trait_shenhai2
 							has_trait = sh_trait_shenhai3
 							has_trait = swg_trait_starshipgirls # 星战少女特质
 							has_trait = trait_very_strong
@@ -2178,6 +2179,7 @@ planet_event = {
 										has_trait = wsg_trait_mist
 										has_trait = sh_trait_shenhai
 										has_trait = sh_trait_shenhai1
+										has_trait = sh_trait_shenhai2
 										has_trait = sh_trait_shenhai3
 										has_trait = swg_trait_starshipgirls # 星战少女特质
 										has_trait = trait_very_strong

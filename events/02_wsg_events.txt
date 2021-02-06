@@ -318,7 +318,6 @@ country_event = {
 	title = "wsg.30155.name"
 	desc = "wsg.30155.desc"
 	picture = GFX_evt_VV4
-
 	
 	is_triggered_only = yes
 	
@@ -600,7 +599,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = trigger_d_alpha_project }
+		NOT = { owner = { has_country_flag = trigger_d_alpha_project }}
 	}
 
 	immediate = {

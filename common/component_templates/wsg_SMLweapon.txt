@@ -188,7 +188,7 @@ weapon_component_template = {
 	hull_damage = 1.8
 	tracking = 0.5
 	power = -15
-	
+	upgrades_to = "SMALL_wsg_weapon_SML_S6"
 	prerequisites = { "tech_wsg_180" }
 	component_set = "wsg_weapen_SML_180"
 	projectile_gfx = "wsg_small_turbolaser_l_g"
@@ -231,7 +231,7 @@ weapon_component_template = {
 	hull_damage = 1.8
 	tracking = 0.2
 	power = -30
-	
+	upgrades_to = "MEDIUM_wsg_weapon_SML_S6"
 	prerequisites = { "tech_wsg_180" }
 	component_set = "wsg_weapen_SML_180"
 	projectile_gfx = "wsg_small_turbolaser_l_g"
@@ -275,7 +275,7 @@ weapon_component_template = {
 	hull_damage = 1.8
 	tracking = 0.1
 	power = -60
-	
+	upgrades_to = "LARGE_wsg_weapon_SML_S6"
 	prerequisites = { "tech_wsg_180" }
 	component_set = "wsg_weapen_SML_180"
 	projectile_gfx = "wsg_medium_turbolaser_l_b"

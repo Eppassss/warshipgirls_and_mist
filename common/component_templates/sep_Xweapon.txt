@@ -38,7 +38,8 @@ weapon_component_template = {
 			alloys = 180
 		}		
 		upkeep = {
-			energy = 5
+			energy = 2
+			alloys = 1
 		}
 	}
 
@@ -74,10 +75,11 @@ weapon_component_template = {
 	shield_penetration = 0.65
 	armor_penetration = 0.65
 	tracking = 0.15
-	power = -381
+	power = -280
 	
 	prerequisites = { "tech_wsg_weapon_S_305" }
 	component_set = "wsg_weapon_X_S_305"
+	size_restriction = { scout_UAV }
 	projectile_gfx = "sh_lance_x"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
@@ -85,11 +87,12 @@ weapon_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			sr_se = 8
-			alloys = 180
+			sr_se = 4
+			alloys = 120
 		}		
 		upkeep = {
-			energy = 5
+			energy = 1
+			alloys = 0.5
 		}
 	}
 
@@ -139,10 +142,11 @@ weapon_component_template = {
 		cost = {
 			sr_se = 15
 			sr_dark_matter = 8
-			alloys = 180
+			alloys = 250
 		}		
 		upkeep = {
 			energy = 4
+			alloys = 1.5
 		}
 	}
 
@@ -197,6 +201,7 @@ weapon_component_template = {
 		}		
 		upkeep = {
 			energy = 4
+			alloys = 1.5
 		}
 	}
 

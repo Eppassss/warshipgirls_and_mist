@@ -1285,7 +1285,6 @@ tech_wsg_weapon_X_S450 = {
 	is_rare = yes
 	is_reverse_engineerable = no
 	
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -1541,3 +1540,27 @@ tech_wsg_weapon_S_305 = {
 		}
 	}	
 }
+
+# tech_senergy_dreadnought = {
+# 	area = engineering
+# 	cost = @tier5cost2
+# 	tier = 5
+# 	category = { voidcraft }
+# 	is_reverse_engineerable = no
+# 	ai_update_type = military
+# 	weight = 0
+# 	is_dangerous = yes
+
+# 	gateway = senergy_tech
+	
+# 	prereqfor_desc = {
+		
+# 	}
+
+# 	potential = {
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			is_wg_fallen_empire = yes
+# 		}	
+# 	}
+# }

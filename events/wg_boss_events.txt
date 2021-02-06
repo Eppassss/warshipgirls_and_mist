@@ -348,7 +348,7 @@ ship_event = {
 					}
 					country_event = { id = wg_boss.15 days = 1080 random = 1080 }
 				}
-				else = {
+				else_if = {
 					limit = { 
 						has_country_flag = custom_start_parit
 						is_ai = no
@@ -6437,6 +6437,7 @@ planet_event = {
 		add_deposit = d_ancient_reactor_pits
 		add_deposit = d_abandoned_mining_tunnels
 		add_deposit = d_relic_metal_boneyard
+		add_deposit = d_senergy
 		set_owner = event_target:wg_psi_country
 		set_capital = yes
 		event_target:wg_psi_country = { random_owned_leader = {
@@ -6454,13 +6455,13 @@ planet_event = {
 		add_building = building_wsg_bathhouse
 		add_building = building_wsg_luxury_residence
 		add_building = building_wsg_fortress
-		add_building = building_wsg_research3
-		add_building = building_wsg_research3
+		add_building = building_sep_research3
+		add_building = building_sep_research3
 		add_building = building_crystal_mines
 		add_building = building_gas_extractors
 		add_building = building_mote_harvesters
 		add_building = building_warshipgirl_senergy_assembly_plantF
-		add_building = building_wsg_senergy3
+		add_building = building_wsg_senergy_3
 		add_building = building_wsg_pantsu2
 		add_building = building_wg_psi_temple
 		while = { count = 80
@@ -6514,6 +6515,7 @@ planet_event = {
 		clear_deposits = yes
 		reroll_deposits = yes
 		add_deposit = d_crystal_forest 
+		add_deposit = d_senergy
 		set_owner = event_target:wg_psi_country
 		while = { count = 14
 			add_district = district_city 
@@ -6527,14 +6529,14 @@ planet_event = {
 		add_building = building_wsg_bathhouse
 		add_building = building_wsg_luxury_residence
 		add_building = building_wsg_fortress
-		add_building = building_factory_3
-		add_building = building_factory_3
-		add_building = building_factory_3
+		add_building = building_sep_factory
+		add_building = building_sep_factory
+		add_building = building_sep_factory
 		add_building = building_crystal_mines
 		add_building = building_crystal_mines
 		add_building = building_warshipgirl_senergy_assembly_plantF
 		add_building = building_wsg_pantsu2
-		add_building = building_wsg_senergy3
+		add_building = building_wsg_senergy_3
 		add_building = building_wg_psi_temple
 		while = { count = 40
 			create_pop = {
@@ -6558,6 +6560,7 @@ planet_event = {
 		reroll_deposits = yes
 		add_deposit = d_underwater_vent 
 		add_deposit = d_fuming_bog  
+		add_deposit = d_senergy
 		set_owner = event_target:wg_psi_country
 		while = { count = 14
 			add_district = district_city 
@@ -6571,14 +6574,14 @@ planet_event = {
 		add_building = building_wsg_bathhouse
 		add_building = building_wsg_luxury_residence
 		add_building = building_wsg_fortress
-		add_building = building_foundry_3
-		add_building = building_foundry_3
-		add_building = building_foundry_3
+		add_building = building_sep_foundry2
+		add_building = building_sep_foundry2
+		add_building = building_sep_foundry2
 		add_building = building_gas_extractors
 		add_building = building_gas_extractors
 		add_building = building_warshipgirl_senergy_assembly_plantF
 		add_building = building_wsg_pantsu2
-		add_building = building_wsg_senergy3
+		add_building = building_wsg_senergy_3
 		add_building = building_wg_psi_temple
 		while = { count = 40
 			create_pop = {
@@ -6618,6 +6621,7 @@ planet_event = {
 		add_deposit = d_rich_mountain 
 		add_deposit = d_submerged_ore_veins 
 		add_deposit = d_dust_desert 
+		add_deposit = d_senergy
 		set_owner = event_target:wg_psi_country
 		event_target:wg_psi_country = { random_owned_leader = {
 			limit = { leader_class = governor }
@@ -6638,8 +6642,8 @@ planet_event = {
 		add_building = building_wsg_luxury_residence
 		add_building = building_wsg_fortress
 		add_building = building_food_processing_center
-		add_building = building_wsg_research3
-		add_building = building_wsg_research3 
+		add_building = building_sep_research3
+		add_building = building_sep_research3 
 		add_building = building_mote_harvesters
 		add_building = building_mote_harvesters
 		add_building = building_gas_extractors

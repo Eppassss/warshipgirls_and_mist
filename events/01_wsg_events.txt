@@ -452,8 +452,8 @@ country_event = {
 	}
 }
 
-#NEO物质获取
-country_event ={
+#选飞升路线
+country_event = {
 	id = wsg.1100
 	title = "wsg.1100.name"
 	desc = "wsg.1100.desc"
@@ -478,6 +478,12 @@ country_event ={
 		custom_tooltip = wsg.1100.b.tooltip
 		hidden_effect = {
 			country_event = { id = wsg.1104 days = 90 random = 90 }
+			set_country_flag = wg_ascension_path_project_s
+			random_owned_planet = {
+				limit = { has_planet_flag = ovo_planet }
+				remove_deposit = d_neo2
+				add_deposit = d_senergy
+			}
 		}
 	}
 }
@@ -522,12 +528,6 @@ country_event = {
 		name = "wsg.1102.b"
 		hidden_effect = {
 			country_event = { id = wsg.1103 days = 10 }
-			set_country_flag = wg_ascension_path_project_s
-			random_owned_planet = {
-				limit = { has_planet_flag = ovo_planet }
-				remove_deposit = d_neo2
-				add_deposit = d_senergy
-			}
 		}
 	}
 }
