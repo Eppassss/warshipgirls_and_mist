@@ -101,7 +101,7 @@ country_event = {
 			}
 		}
 		random_list = { 
-			6 = {
+			50 = {
 				random_country = {
 					limit = {
 						has_wg_special_authority = yes
@@ -110,9 +110,9 @@ country_event = {
 					country_event = { id = wg_boss.35 }#盖亚雪风
 				}
 				# modifier = { factor = 0 always = yes } 
-				# 删除上方井号下方必定生成
+				# 删除上方井号必定则该项不会生成（不要删这行的）
 			}
-			3 = {
+			20 = {
 			    random_country = {
 					limit = {
 						has_wg_special_authority = yes
@@ -121,18 +121,29 @@ country_event = {
 					country_event = { id = wg_boss.85 }#环雪风
 				}
 				# modifier = { factor = 0 always = yes } 
-				# 删除上方井号上方必定生成
+				# 删除上方井号必定则该项不会生成（不要删这行的）
 			}
-			1 = {
+			10 = {
 			    random_country = {
 					limit = {
 						has_wg_special_authority = yes
 						is_ai = no
 					}
-					country_event = { id = wg_boss.107 }#恒星雪峰
+					country_event = { id = wg_boss.107 }#恒星雪风
 				}
 				# modifier = { factor = 0 always = yes } 
-				# 删除上方井号上方必定生成
+				# 删除上方井号必定则该项不会生成（不要删这行的）
+			}
+			20 = {
+			    random_country = {
+					limit = {
+						has_wg_special_authority = yes
+						is_ai = no
+					}
+					country_event = { id = wg_boss.200 }#理想城雪风
+				}
+				# modifier = { factor = 0 always = yes } 
+				# 删除上方井号必定则该项不会生成（不要删这行的）
 			}
 		}
 		random_list = { 
@@ -6793,6 +6804,212 @@ country_event = {
 					}		
 				}				
 			}
+		}	
+	}	
+}
+
+###################
+###理想城雪风
+country_event = {
+	id = wg_boss.200
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = wg_boss_RBQ_created }
+	}	
+
+	immediate = {
+		set_global_flag = wg_boss_RBQ_created
+		random_system = {
+			limit = { has_star_flag = can_spawn_boss_system }
+			spawn_system = {
+				hyperlane = yes
+				is_discovered = no
+				min_distance = 10
+				max_distance = 20
+				initializer = wg_boss_water_city_system
+			}
+			remove_star_flag = can_spawn_boss_system
+		}
+		country_event = { id = wg_boss.201 days = 23400 } 
+		country_event = { id = wg_boss.203 days = 3600 }
+	}
+}
+#65年后永久全水球
+country_event = {
+	id = wg_boss.201
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = city_planet_underwater }
+	}
+
+	immediate = {
+		set_global_flag = city_planet_underwater
+		random_planet = {
+			limit = { has_planet_flag = wg_water_city }
+			change_pc = pc_wg_water
+			clear_deposits = yes
+		}
+	}
+}
+ship_event = {
+	id = wg_boss.202
+	title = "wg_boss.202.name"
+	is_triggered_only = yes
+	picture = GFX_evt_space_dragon_blue
+	
+	desc = {
+        # 50年后进入
+        text = wg_boss.202.desc_01
+        trigger = {
+			has_global_flag = city_planet_underwater
+		}
+    }
+	desc = {
+        # 50年前进入
+        text = wg_boss.202.desc_02
+        trigger = {
+			NOT = { has_global_flag = city_planet_underwater }
+		}
+    }
+
+	trigger = {
+		FROM = {
+			has_star_flag = wg_boss_water_city_system_home
+		}
+		FROMFROM = {
+			is_ai = no
+			NOT = { has_country_flag = triggered_wg_boss_RBQ_event }
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			set_country_flag = triggered_wg_boss_RBQ_event
+		}
+	}
+
+	option = {
+		name = "wg_boss.202.a"	
+		trigger = {
+			has_global_flag = city_planet_underwater
+		}
+	}
+	option = {
+		name = "wg_boss.202.b"	
+		trigger = {
+			NOT = { has_global_flag = city_planet_underwater }
+		}
+	}
+}
+
+country_event = {
+	id = wg_boss.203
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = city_planet_underwater }
+	}
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = wg_water_city }
+			change_pc = pc_wg_water
+			clear_deposits = yes
+		}
+		country_event = { id = wg_boss.204 days = 360 }
+	}
+}
+
+# 每年被水淹减少星球大小
+country_event = {
+	id = wg_boss.204
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = city_planet_underwater }
+	}
+	immediate = {	
+		random_planet = {
+			limit = { has_planet_flag = wg_water_city }
+			change_pc = pc_city
+			clear_deposits = yes
+			random_list = {
+				15 = { change_planet_size = -1 }
+				12 = { change_planet_size = -2 }
+				10 = { change_planet_size = -3 }
+			}			
+		}
+		country_event = { id = wg_boss.203 days = 1800 }
+	}
+}
+
+country_event = {
+	id = wg_boss.205
+	title = "wg_boss.205.name"
+	desc = "wg_boss.205.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	trigger = {
+		NOT = { has_global_flag = city_planet_underwater }
+	}
+	immediate = {
+		set_global_flag = city_planet_underwater
+	}
+	option = {
+		name = "wg_boss.205.a"
+		change_variable = { which = rankpts value = 6 }
+		owner = {
+			add_resource = { unity = 2000 }
+		}		
+		hidden_effect = {
+			random_planet = {
+				limit = { 
+					has_planet_flag = wg_water_city
+					is_planet_class = pc_wg_water
+				}
+				change_pc = pc_city
+				clear_deposits = yes			
+			}
+		}		
+	}	
+}
+
+country_event = {
+	id = wg_boss.206
+	title = "wg_boss.206.name"
+	desc = "wg_boss.206.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_wg_big_water_B
+	trigger = {
+		has_global_flag = city_planet_underwater
+	}
+	option = {
+		name = "wg_boss.206.a"
+		change_variable = { which = rankpts value = 6 }
+		owner = {
+			add_resource = { unity = 2000 }
+		}				
+	}	
+}
+
+country_event = {
+	id = wg_boss.207
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = { 
+			has_fleet_flag = wg_RBQ_Dragon_city_fleet	
+		}
+	}
+	immediate = {	
+		From = {
+			country_event = { id = wg_boss.205 days = 5 }
+			country_event = { id = wg_boss.206 days = 5 }
 		}	
 	}	
 }

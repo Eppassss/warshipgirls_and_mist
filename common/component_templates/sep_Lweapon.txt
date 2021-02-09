@@ -22,7 +22,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_S_300" }
 	component_set = "wsg_weapon_L_S_300"
-	projectile_gfx = "wsg_heavy_turbo_l_b"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
 	upgrades_to = "wsg_weapon_L_ES_300"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
@@ -73,7 +73,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_ES_300" }
 	component_set = "wsg_weapon_L_ES_300"
-	projectile_gfx = "wsg_heavy_turbo_l_g"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 0

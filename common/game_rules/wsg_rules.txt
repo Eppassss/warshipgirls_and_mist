@@ -108,7 +108,7 @@ can_species_be_assembled = {
 		}
 		#_wsg	�����
 		AND = {
-			OR={
+			OR = {
 				has_trait = sh_trait_shenhai
 				has_trait = sh_trait_shenhai1
 				has_trait = sh_trait_shenhai2

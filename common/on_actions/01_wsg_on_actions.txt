@@ -81,7 +81,6 @@ on_yearly_pulse = {
 		wg_traits.2
 		sh_traits.1        
 		sh_traits.2
-		wsgancrel.100
 		wg_fe.99
 		wg_khan.3
 		wg_khan.1000
@@ -97,9 +96,7 @@ on_yearly_pulse_country = {
 		wsg.30100
 		wg_fe.5
 		wsg.3106
-		wsg.3110
 		# wg_crisis.301
-		wg_crisis.97
 		sh.3016	
 		wsg_shimakaze.30100
 		wsgranking.9005
@@ -148,6 +145,8 @@ on_tech_increased = {
 		wg_parit.57
 		wg_boss.113
 		wsg.3015
+		wsg.3120
+		wsg.3122
 	}
 }
 
@@ -248,6 +247,7 @@ on_fleet_destroyed_victim = {
 		wg_boss.109
 		wg_dragon.8
 		wg_dragon.9
+		wg_boss.207
 	}
 }
 
@@ -303,10 +303,10 @@ on_entering_battle = {
 	events = {
 		mwsge_drone.1
 		mwsge_drone.11
+		mwsge_drone.31
 		wg_aft.9
 		wg_khan.210
 		wg_khan.300
-		wg_crisis.20000
 		wg_dragon.16
 	}
 }
@@ -483,6 +483,7 @@ on_entering_system = {
 		wg_parit.34
 		wg_boss.108
 		wg_boss.133
+		wg_boss.202
 	}
 }
 

@@ -443,14 +443,15 @@ ship_event = {
 	immediate = {
 		owner = { random_planet_within_border = {
 			limit = {
-				OR = {
-					is_planet_class = pc_molten
-					is_planet_class = pc_barren
-					is_planet_class = pc_barren_cold
-					is_planet_class = pc_frozen
-				}
+				is_ringworld_wg = no
+				is_star = no
+				is_colony = no
+				is_colonizable = no
+				is_capital = no
+				NOT = { is_planet_class = pc_asteroid }
 				NOT = { exists = archaeological_site }
 			}
+			change_pc = pc_barren
 			save_event_target_as = first_precursors_planet
 		}}
 	}
@@ -570,16 +571,17 @@ ship_event = {
 	immediate = {
 		owner = { random_planet_within_border = {
 			limit = {
-				OR = {
-					is_planet_class = pc_molten
-					is_planet_class = pc_barren
-					is_planet_class = pc_barren_cold
-				}
+				is_ringworld_wg = no
+				is_star = no
+				is_colony = no
+				is_colonizable = no
+				is_capital = no
+				NOT = { is_planet_class = pc_asteroid }
 				NOT = { exists = archaeological_site }
 			}
+			change_pc = pc_barren
 			save_event_target_as = second_precursors_planet
 		}}
-			
 	}
 
 	option = {
@@ -873,6 +875,7 @@ fleet_event = {
 		}	
 	}
 }
+
 ship_event = {
 	id = wsgancrel.111
 	title = "wsgancrel.111.name"
@@ -893,10 +896,16 @@ ship_event = {
 	immediate = {
 		owner = { random_planet_within_border = {
 			limit = {
-				is_planet_class = pc_frozen
+				is_ringworld_wg = no
+				is_star = no
+				is_colony = no
+				is_colonizable = no
+				is_capital = no
+				NOT = { is_planet_class = pc_asteroid }
 				NOT = { exists = archaeological_site }
 			}
-			save_event_target_as = fourth_precursors_planet
+			change_pc = pc_frozen
+			save_event_target_as = first_precursors_planet
 		}}
 	}
 
@@ -916,6 +925,7 @@ ship_event = {
 		}
 	}
 }
+
 # Stage 1 - 深海仓库
 fleet_event = {
 	id = wsgancrel.112
@@ -989,7 +999,7 @@ fleet_event = {
 	after = { 
 		from = { set_site_progress_locked = no } 
 	}
-	
+
 	option = {
 		name = wsgancrel.114.a
 		medium_artifact_reward = yes

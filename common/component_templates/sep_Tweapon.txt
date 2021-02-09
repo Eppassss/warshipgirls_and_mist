@@ -77,7 +77,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_ES_460" }
 	component_set = "wsg_weapon_T_ES_460"
-	projectile_gfx = "wsg_lance_533"
+	projectile_gfx = "uf_lance_406"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 0
@@ -129,7 +129,7 @@ weapon_component_template = {
 	
 	prerequisites = { "tech_wsg_weapon_T_S510" }
 	component_set = "wsg_weapon_T_S510"
-	projectile_gfx = "wsg_lance_533"
+	projectile_gfx = "uf_lance_406"
 	tags = { weapon_type_energy weapon_type_explosive weapon_type_wsg_pantsu }
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 0

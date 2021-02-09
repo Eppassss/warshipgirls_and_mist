@@ -113,11 +113,12 @@ site_first_precursors = {
 	stages = 2
 	weight = 0
 	allow = {
+		owner = { has_wg_special_authority = yes }
 		exists = leader
 		leader = { leader_class = scientist }
 	}
 	visible = {
-		has_country_flag = owner_site_wg_precursors
+		#has_country_flag = owner_site_wg_precursors
 		default_site_visible_trigger = yes
 	}
 	stage = {
@@ -144,12 +145,13 @@ site_second_precursors = {
 	stages = 2
 	weight = 0
 	allow = {
+		owner = { has_wg_special_authority = yes }
 		exists = leader
 		leader = { leader_class = scientist }
 	}
 	visible = {
 		default_site_visible_trigger = yes
-		has_country_flag = owner_site_wg_precursors
+		#has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 2
@@ -174,12 +176,13 @@ site_third_precursors = {
 	stages = 2
 	weight = 0
 	allow = {
+		owner = { has_wg_special_authority = yes }
 		exists = leader
 		leader = { leader_class = scientist }
 	}
 	visible = {
 		default_site_visible_trigger = yes
-		has_country_flag = owner_site_wg_precursors
+		#has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 3
@@ -209,12 +212,13 @@ site_fourth_precursors = {
 	stages = 2
 	weight = 0
 	allow = {
+		owner = { has_wg_special_authority = yes }
 		exists = leader
 		leader = { leader_class = scientist }
 	}
 	visible = {
 		default_site_visible_trigger = yes
-		has_country_flag = owner_site_wg_precursors
+		#has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 3
@@ -244,12 +248,13 @@ site_fifth_precursors = {
 	stages = 2
 	weight = 0
 	allow = {
+		owner = { has_wg_special_authority = yes }
 		exists = leader
 		leader = { leader_class = scientist }
 	}
 	visible = {
 		default_site_visible_trigger = yes
-		has_country_flag = owner_site_wg_precursors
+		#has_country_flag = owner_site_wg_precursors
 	}
 	stage = {
 		difficulty = 4

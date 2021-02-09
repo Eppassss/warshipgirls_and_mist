@@ -71,10 +71,14 @@
  tech_wsg_weapon_S_6_desc:0 "深海能源能够为舰船带来强大的动力，能够用在炮组的盈余能源也变多了，因此这一款大威力的通用炮组便营运而生。它能够将大量的能量压缩到极致并射出一道毁灭性的光束，其威力甚至能逼近早期的战舰级光矛。"
  tech_wsg_weapon_S_305:0 "S-305全自动光矛"
  tech_wsg_weapon_S_305_desc:0 "专门为无人机量身定做的一款不需要任何人操控便能自动完成瞄准射击的战舰级主炮。其内部空间以及能源系统都被压缩到了极致，以便这样的巨炮能够完美契合在脊峰无人机上并发挥其最大威力。"
+ tech_senergy_aura:0 "舰队力场"
+ tech_senergy_aura_desc:0 "通过对深海能源核心的深入研究，这些能够对整个舰队运作的大功率部件能够投入使用了。"
  tech_wsg_nanana_sensor:0 "大鸽呐呐呐声呐"
  tech_wsg_nanana_sensor_desc:0 "$WSG_NANANA_SENSOR_DESC$"
-#  tech_senergy_dreadnought:0 "武库舰"
-#  tech_senergy_dreadnought_desc:0 "即使我们有能攻破一切的矛，也需要有能舞矛的人。"
+ tech_senergy_dreadnought:0 "武库舰"
+ tech_senergy_dreadnought_desc:0 "这是属于我们这个时代的终极造物，能够匹敌整只舰队的超无畏巨舰。"
+ tech_senergy_space_compression:0 "空间压缩"
+ tech_senergy_space_compression_desc:0 "建造一艘比主宰还要巨大的产物是不现实的，而且效率低下，舰体结构也不稳定。我们需要找到一种方法将时空局部压缩，使得舰内空间能极大扩展。随着我们对深海能源的深入应用，或许我们能实现这一点，建造出属于我们的无畏舰。"
 # 舰船部件
  CORVETTE_wsg_senergy_REACTOR:0 "深海能源核心反应堆"
  DESTROYER_wsg_senergy_REACTOR:0 "$CORVETTE_wsg_senergy_REACTOR$"
@@ -104,13 +108,13 @@
  UAV_WSG_SENERGY_SHIP_THRUSTER_DESC:0 "$WSG_SENERGY_SHIP_THRUSTER_DESC$"
 
  wsg_ship_part_wsg_s_ia:0 "深海能源核心辅助式IA型装甲"
- wsg_ship_part_wsg_s_ia_desc:0 "兼顾战舰所有方面防护的全能护甲"
+ wsg_ship_part_wsg_s_ia_DESC:0 "兼顾战舰所有方面防护的全能护甲"
  SMALL_wsg_ship_part_wsg_s_ia:0 "$wsg_ship_part_wsg_s_ia$"
- SMALL_wsg_ship_part_wsg_s_ia_desc:0 "$wsg_ship_part_wsg_s_ia_desc$"
+ SMALL_wsg_ship_part_wsg_s_ia_DESC:0 "$wsg_ship_part_wsg_s_ia_DESC$"
  MEDIUM_wsg_ship_part_wsg_s_ia:0 "$wsg_ship_part_wsg_s_ia$"
- MEDIUM_wsg_ship_part_wsg_s_ia_desc:0 "$wsg_ship_part_wsg_s_ia_desc$"
+ MEDIUM_wsg_ship_part_wsg_s_ia_DESC:0 "$wsg_ship_part_wsg_s_ia_DESC$"
  LARGE_wsg_ship_part_wsg_s_ia:0 "$wsg_ship_part_wsg_s_ia$"
- LARGE_wsg_ship_part_wsg_s_ia_desc:0 "$wsg_ship_part_wsg_s_ia_desc$"
+ LARGE_wsg_ship_part_wsg_s_ia_DESC:0 "$wsg_ship_part_wsg_s_ia_DESC$"
 
  COMBAT_COMPUTER_SWARM_WSG_SENERGY:0 "S-ov式作战计算机（集群）"
  COMBAT_COMPUTER_PICKET_WSG_SENERGY:0 "S-ov式作战计算机（哨戒）"
@@ -120,6 +124,7 @@
  COMBAT_COMPUTER_PLATFORM_WSG_SENERGY:0 "S-ov式作战计算机（平台）"
  
  dreadnought_carrier:0 "武库舰"
+ dreadnought_carrier_plural:0 "武库舰"
  DREADNOUGHT_CARRIER_BOW:0 "脊峰舰首"
  DREADNOUGHT_CARRIER_MID:0 "火炮舰体"
  DREADNOUGHT_CARRIER_MID2:0 "导弹舰体"
@@ -140,7 +145,10 @@
  SHIP_AURA_SE_FIRECONTROL:0 "舰队辅助瞄准"
  SHIP_AURA_SE_NANOBOT_CLOUD:0 "高级纳米修复云" 
  SHIP_AURA_SE_UAV:0 "无人机维护站" 
+ SHIP_AURA_SE_UAV_tooltip:0 "攻击无人机释放冷却时间: §G-15日 §!£time£"
  mod_shipsize_scout_UAV_hull_add:0 "攻击无人机船体值"
+ SHIP_AURA_SE_UAV2:0 "无人机火控雷达"
+ SHIP_AURA_SE_UAV2_tooltip:0 "攻击无人机武器射速: §G+25%§!\n攻击无人机武器伤害: §G+25%§!\n攻击无人机武器射程: §G+20%§!"
 
 # 武器
  wsg_weapon_L_S_300:0 "S-300动能量主炮组"
@@ -180,4 +188,6 @@
  LARGE_wsg_weapon_SML_S6_DESC:0 "$SMALL_wsg_weapon_SML_S6_DESC$"
  wsg_weapon_SML_S6:0 "$SMALL_wsg_weapon_SML_S6$"
  wsg_weapon_SML_S6_DESC:0 "$SMALL_wsg_weapon_SML_S6_DESC$"
- 
+
+ ship_drone_hanger:0 "$SHIP_DC_DRONE$"
+ ship_drone_hanger_desc:0 "$SHIP_DC_DRONE_DESC$"

@@ -790,3 +790,9 @@ wsg_trait_galatic_engineer_buff = {
 	planet_district_rw_sh_soldier_build_speed_mult = 0.5
 	planet_district_sh_foundry_shpc_build_speed_mult = 0.5
 }
+
+ship_part_aura_se_uav2_buff = {
+	ship_fire_rate_mult = 0.25
+	ship_weapon_damage = 0.25
+	ship_weapon_range_mult = 0.2
+}

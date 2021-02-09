@@ -462,7 +462,7 @@ country_event = {
 	
 	trigger = {
 		has_authority = auth_warshipgirls
-		has_technology = tech_antimatter_power
+		last_increased_tech = tech_antimatter_power
 		NOT = { has_country_flag = researched_antimatter_power }
 	}
 	immediate = { set_country_flag = researched_antimatter_power }
@@ -505,7 +505,7 @@ country_event = {
 	option = {
 		name = "wsg.1101.b"
 		hidden_effect = {
-			country_event = { id = wsg.1104 days = 10 }
+			country_event = { id = wsg.1102 days = 10 }
 		}
 	}
 }
@@ -960,7 +960,7 @@ country_event = {
 		divide_variable = { which = num_sr_se_pop_cost value = 250 }
 		set_variable = { which = project_s_sr_se_cost value = 6 }
 		if = {
-			limit = { check_variable = { which = num_sr_se_pop_cost value > 8 }}
+			limit = { check_variable = { which = num_sr_se_pop_cost value > 6 }}
 			set_variable = { which = project_s_sr_se_cost value = num_sr_se_pop_cost }
 		}
 		if = {
@@ -982,21 +982,9 @@ country_event = {
 				amount = 1
 			}
 		}
-		get_digits = { VARIABLE = project_s_sr_se_cost ARRAY = project_s_sr_se_cost }
-		if = {
-			limit = {
-				NOT = { resource_stockpile_compare_with_variable = { RESOURCE = sr_se ARRAY = project_s_sr_se_cost }}
-			}
-			remove_array_variables = { ARRAY = project_s_sr_se_cost }
-			multiply_variable = { which = project_s_sr_se_cost value = -1 }
-			add_resource_with_variable = { WHICH = project_s_sr_se_cost RESOURCE = sr_se }
-			country_event = { id = wsg.2103 days = 30 }
-		} else_if = { 
-			limit = { always = yes }
-			country_event = { id = wsg.2104 }
-		}
-		remove_array_variables = { ARRAY = project_s_sr_se_cost }
-		remove_country_flag = project_s_sr_se_cost_negative
+		multiply_variable = { which = project_s_sr_se_cost value = -1 }
+		add_resource_with_variable = { WHICH = project_s_sr_se_cost RESOURCE = sr_se }
+		country_event = { id = wsg.2106 days = 1 }
 	}
 }
 
@@ -1031,6 +1019,26 @@ country_event = {
 
 	option = {
 		name = OK
+	}
+}
+
+# 延后检查资源是否不足
+country_event = {
+	id = wsg.2106
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		multiply_variable = { which = project_s_sr_se_cost value = -1 }
+		remove_array_variables = { ARRAY = project_s_sr_se_cost }
+		if = {
+			limit = { 
+				resource_stockpile_compare = { resource = sr_se value > 0 } 
+			}
+			country_event = { id = wsg.2103 days = 30 }
+		} else = {
+			country_event = { id = wsg.2104 }
+		}
 	}
 }
 

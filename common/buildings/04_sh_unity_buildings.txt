@@ -18,10 +18,6 @@ building_sh_nerve = {
 		NOT = { has_modifier = slave_colony }
 	}
 	
-	convert_to = {
-		
-	}
-	
 	destroy_trigger = {
 		exists = owner
 		OR = {

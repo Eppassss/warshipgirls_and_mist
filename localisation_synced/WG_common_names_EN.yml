@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_default:
  NAME_mardak_SH2F_haters_fleet: "Unknown Hostile Fleet"
  DEAD_SECOUND_FLEET: "Defunct"
  NAME_mardak_SH2F: "The Second Fleet"
@@ -75,3 +75,4 @@
  Canarias: "Canarias"
  NAME_Defensive_D_SH: "Parit Praetorian"
  NAME_Defensive_E_SH: "Parit Judge"
+ NAME_dreadnought_carrier_drones_fleet: "Drones Squadon"

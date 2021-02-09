@@ -15,7 +15,7 @@
 	}
 	possible_secondary = {
 		civics = {
-			NOR = {
+			NOT = {
 				value = civic_synthetic_evolution
 			}
 		}
