@@ -5,6 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch",
+            "program": "${workspaceFolder}/<program>",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Aktuální soubor",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "Launch via NPM",
             "request": "launch",
             "runtimeArgs": [
@@ -54,8 +70,7 @@
         {
             "request": "launch",
             "name": "Launch Program",
-            "type": 
-            "program": "${workspaceFolder}/main.ts",
+            "type": "program": "${workspaceFolder}/main.ts",
             "cwd": "${workspaceFolder}",
             "env": {
                 "DENO_DIR": "denoland.vscode-deno"
