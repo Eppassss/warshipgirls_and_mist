@@ -1,12 +1,29 @@
-{
+    // Další informace najdete tady: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Program",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}\\app.js"
-      }
-    ]
-  }
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch",
+            "program": "${workspaceFolder}/<program>",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Aktuální soubor",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Launch via NPM",
+            "request": "launch",
+        {
+            "request": "launch",
+            "name": "Launch Program",
+            "type": "program": "${workspaceFolder}/main.ts",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "DENO_DIR": "denoland.vscode-deno"
