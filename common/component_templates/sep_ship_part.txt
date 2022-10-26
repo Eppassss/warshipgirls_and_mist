@@ -687,7 +687,6 @@ utility_component_template = {
 	}
 	component_set = "ship_drone_hanger"
 	size_restriction = { dreadnought_carrier }
-	prerequisites = { "tech_senergy_dreadnought" }
 	
 
 	ai_weight = {
@@ -704,7 +703,6 @@ utility_component_template = {
 
 	size_restriction = { titan Flagship wsg_lady_warship dreadnought_carrier }
 	component_set = "ship_aura_components"
-	prerequisites = { "tech_senergy_aura" }
 	hostile_aura = {
 		name = "aura_shield_dampener"
 		radius = @shipAuraRange
@@ -748,7 +746,6 @@ utility_component_template = {
 
 	size_restriction = { titan wsg_lady_warship Flagship dreadnought_carrier }
 	component_set = "ship_aura_components"
-	prerequisites = { "tech_senergy_aura" }
 	friendly_aura = {
 		name = "aura_inspiring_presence"
 		radius = @stationLargeAuraRange
@@ -785,7 +782,6 @@ utility_component_template = {
 
 	size_restriction = { titan wsg_lady_warship Flagship dreadnought_carrier }
 	component_set = "ship_aura_components"
-	prerequisites = { "tech_senergy_aura" }
 	friendly_aura = {
 		name = "aura_inspiring_presence"
 		radius = @stationLargeAuraRange
@@ -823,7 +819,6 @@ utility_component_template = {
 	
 	size_restriction = { dreadnought_carrier }
 	component_set = "ship_aura_components"
-	prerequisites = { "tech_senergy_aura" }
 	
 	friendly_aura = {
 		name = "aura_nanobot_cloud"
@@ -866,7 +861,6 @@ utility_component_template = {
 
 	size_restriction = { dreadnought_carrier }
 	component_set = "ship_aura_components"
-	prerequisites = { "tech_senergy_aura" }
 	friendly_aura = {
 		name = "aura_inspiring_presence"
 		system_wide = yes
@@ -889,31 +883,8 @@ utility_component_template = {
 			}
 		}
 	}
-	modifier = {
-		custom_tooltip = SHIP_AURA_SE_UAV_tooltip
-	}
 	ai_weight = {
 		weight = 10
 	}
 }
 
-# 加无人机攻击
-utility_component_template = {
-	key = "SHIP_AURA_SE_UAV2"
-	size = medium
-	icon = "GFX_ship_part_aura_se_uav2"
-	icon_frame = 1
-	power = 0
-	#should_ai_use = no
-	prerequisites = { "tech_senergy_aura" }
-	modifier = {
-		custom_tooltip = SHIP_AURA_SE_UAV2_tooltip
-	}
-	size_restriction = {
-		dreadnought_carrier
-	}
-	component_set = "ship_aura_components"
-	ai_weight = {
-		weight = 1
-	}
-}

@@ -665,7 +665,6 @@ remove_array_variables = {
 	set_variable = { which = $ARRAY$_AT_DIGIT value = 0 }
 	set_variable = { which = $ARRAY$_TEMP_INT value = 0 }
 	set_variable = { which = $ARRAY$_TEMP value = 0 }
-	remove_country_flag = $ARRAY$_negative
 }
 
 # 从数列中寻找与指定变量相等的项

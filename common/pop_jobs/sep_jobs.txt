@@ -106,7 +106,9 @@ wsg_senergy = {
 		}
 		produces = {
 			trigger = {
-				species = { has_trait = wsg_trait_senergy_producer }
+				species = {
+					has_trait = wsg_trait_senergy_producer
+				}
 			}
 			sr_se = 0.5
 		}
@@ -114,16 +116,16 @@ wsg_senergy = {
 			energy = 10
 			sr_pantsu = 1
 		}
+	}	
+	resources = {
+		category = planet_translucers
+		potential = {
+			owner = { has_technology = tech_wsg_senergy2 }
+		}
 		produces = {
-			trigger = {
-				owner = { has_technology = tech_wsg_senergy2 }
-			}
 			sr_se = 0.25
 		}
 		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_wsg_senergy2 }
-			}
 			energy = -2
 		}
 	}

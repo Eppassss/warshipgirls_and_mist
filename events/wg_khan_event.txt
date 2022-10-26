@@ -20,6 +20,7 @@ country_event = {
 			create_country = {
 				name = "NAME_WG_Khan_gate_country"
 				type = "wg_Khan_country_type"
+				name_list = "SH"
 				flag = {
 					icon= {
 						category = "wg_event_flags"

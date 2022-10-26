@@ -96,6 +96,10 @@ building_warshipgirl_senergy_assembly_plant = {
 		}
 	}
 	
+	convert_to = {
+		
+	}
+	
 	destroy_trigger = {
 		exists = owner
 		OR = {

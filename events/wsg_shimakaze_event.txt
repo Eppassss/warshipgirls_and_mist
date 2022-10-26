@@ -301,7 +301,7 @@ country_event = {
 
 #大破界面返回
 country_event = {
-	id = wsg_shimakaze.4
+	id = wsg_shimakaze.5
 	desc = wsg_shimakaze.5.desc
 	is_triggered_only = yes
 	diplomatic = yes

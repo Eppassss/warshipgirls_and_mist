@@ -17,6 +17,10 @@ building_sh_assembly_plant = {
 		}
 	}
 	
+	convert_to = {
+		
+	}
+	
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -90,6 +94,9 @@ building_sh_assembly_plantU = {
 	allow = {
 		num_pops >= 10
 	}	
+	convert_to = {
+		
+	}
 	
 	destroy_trigger = {
 		exists = owner

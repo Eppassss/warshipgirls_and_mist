@@ -377,64 +377,64 @@ fleet_event = {
 }
 
 # Star Charts have been traded
-# planet_event = {
-# 	id = action.46
-# 	hide_window = yes
-# 	is_triggered_only = yes
+planet_event = {
+	id = action.46
+	hide_window = yes
+	is_triggered_only = yes
 	
-# 	trigger = {
-# 		has_owner = yes
-# 		NOT = { exists = fromfrom }
-# 		owner = {
-# 			OR = {
-# 				is_country_type = default
-# 				is_country_type = fallen_empire
-# 				is_country_type = primitive
-# 			}
-# 		}
-# 	}
+	trigger = {
+		has_owner = yes
+		NOT = { exists = fromfrom }
+		owner = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = primitive
+			}
+		}
+	}
 
-# 	immediate = {
-# 		if = {
-# 			limit = {
-# 				owner = {
-# 					NOT = { has_established_contact = from }
-# 					OR = {
-# 						has_country_flag = mwsge_deactivate
-# 						has_country_flag = abyss_found
-# 						is_ai = yes
-# 					}
-# 					NOT = { has_relation_flag = {
-# 						who = ROOT.from
-# 						flag = me_wsg_mainstory_country
-# 					}}
-# 				}
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_established_contact = from }
+					OR = {
+						has_country_flag = mwsge_deactivate
+						has_country_flag = abyss_found
+						is_ai = yes
+					}
+					NOT = { has_relation_flag = {
+						who = ROOT.from
+						flag = me_wsg_mainstory_country
+					}}
+				}
 								
-# 			}
-# 			owner = {
-# 				from = {
-# 					establish_contact = { who = prev location = prevprev }
-# 				}
-# 			}			
-# 		}
-# 		if = {
-# 			limit = {
-# 				owner = {
-# 					has_global_flag = mwsge_activate
-# 					has_relation_flag = {
-# 						who = ROOT.from
-# 						flag = me_wsg_mainstory_country
-# 					}
-# 					is_ai = no
-# 				}
-# 			}
-# 			owner = {
-# 				set_country_flag = abyss_found
-# 				country_event = { id = me_wsg.9999 }
-# 			}
-# 			from = {
-# 				save_global_event_target_as = shenhai
-# 			}
-# 		}
-# 	}
-# }
+			}
+			owner = {
+				from = {
+					establish_contact = { who = prev location = prevprev }
+				}
+			}			
+		}
+		if = {
+			limit = {
+				owner = {
+					has_global_flag = mwsge_activate
+					has_relation_flag = {
+						who = ROOT.from
+						flag = me_wsg_mainstory_country
+					}
+					is_ai = no
+				}
+			}
+			owner = {
+				set_country_flag = abyss_found
+				country_event = { id = me_wsg.9999 }
+			}
+			from = {
+				save_global_event_target_as = shenhai
+			}
+		}
+	}
+}

@@ -1059,7 +1059,8 @@ building_wsg_alpha2 = {
 building_wsg_military = {
 	base_buildtime = 500
 
-	category = government
+	#category = manufacturing
+                category = government
 	
 	potential = {
 		exists = owner
@@ -1212,5 +1213,342 @@ building_betharian_consumer = {
 	
 	ai_weight = {
 		weight = 1000000
+	}
+}
+building_wsg_senergy_1 = {
+	base_buildtime = 800
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	planet_modifier = {
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	upgrades = {
+		building_wsg_senergy2
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }					
+		}
+		modifier = {
+			job_sh_senergy_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }					
+		}
+		modifier = {
+			job_sh_senergy_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_wsg_senergy2 }					
+		}
+		modifier = {
+			job_sh_senergy_add = 3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 600
+			minerals = 300
+		}		
+	}	
+	
+	prerequisites = {
+		"tech_wsg_senergy"
+	}
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy2 = {
+	base_buildtime = 600
+	can_build = no
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	upgrades = {
+		building_wsg_senergy3
+	}
+	planet_modifier = {
+		
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }					
+		}
+		modifier = {
+			job_sh_senergy_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }					
+		}
+		modifier = {
+			job_sh_senergy_add = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_wsg_senergy2 }					
+		}
+		modifier = {
+			job_sh_senergy_add = 3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 400
+		}
+		upkeep = {
+			sr_pantsu = 2
+		}		
+	}	
+	
+	triggered_desc = {
+		text = job_sh_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy3 = {
+	base_buildtime = 600
+	can_build = no
+
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_building_slots > 0
+		}
+		owner = { 
+			is_regular_empire = yes
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	planet_modifier = {
+		
+	}	
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = sr_se
+				value > 11
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }					
+		}
+		modifier = {
+			job_sh_senergy_add = 7
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_wsg_senergy2 }					
+		}
+		modifier = {
+			job_sh_senergy_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }					
+		}
+		modifier = {
+			job_sh_senergy_add = 7
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 400
+		}
+		upkeep = {
+			sr_pantsu = 3
+		}		
+	}	
+	
+	triggered_desc = {
+		text = job_sh_senergy_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			owner = { 
+				has_monthly_income = {
+					resource = sr_neo
+					value < 5
+				}
+			}
+			buildings_build_building = yes
+		}
+		modifier = {
+			weight = 600
+			owner = {
+				has_monthly_income = {
+					resource = sr_neo
+					value < 2
+				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
+			}
+		}
+	}
+
+	ai_resource_production = {
+		sr_pantsu = 1
+		trigger = {
+			always = yes
+		}
 	}
 }

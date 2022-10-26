@@ -127,7 +127,7 @@ check_affection_event_active_diplo = {
 
 has_multiple_affection_traits = {
 	OR = {
-		calc_true_if = { amount >= 2 
+		calc_true_if = { amount = 2 
 			# 总督
 			has_trait = leader_trait_governor_affection_lv1
 			has_trait = leader_trait_governor_affection_lv2
@@ -136,7 +136,7 @@ has_multiple_affection_traits = {
 			has_trait = leader_trait_governor_affection_lv4_max
 			has_trait = leader_trait_governor_affection_lv5
 		}
-		calc_true_if = { amount >= 2 
+		calc_true_if = { amount = 2 
 			# 科学家
 			has_trait = leader_trait_scientist_affection_lv1
 			has_trait = leader_trait_scientist_affection_lv2
@@ -145,7 +145,7 @@ has_multiple_affection_traits = {
 			has_trait = leader_trait_scientist_affection_lv4_max
 			has_trait = leader_trait_scientist_affection_lv5
 		}
-		calc_true_if = { amount >= 2 
+		calc_true_if = { amount = 2 
 			# 海军上将
 			has_trait = leader_trait_admiral_affection_lv1
 			has_trait = leader_trait_admiral_affection_lv2
@@ -154,7 +154,7 @@ has_multiple_affection_traits = {
 			has_trait = leader_trait_admiral_affection_lv4_max
 			has_trait = leader_trait_admiral_affection_lv5
 		}
-		calc_true_if = { amount >= 2
+		calc_true_if = { amount = 2 
 			# 陆军将领
 			has_trait = leader_trait_general_affection_lv1
 			has_trait = leader_trait_general_affection_lv2
@@ -163,7 +163,7 @@ has_multiple_affection_traits = {
 			has_trait = leader_trait_general_affection_lv4_max
 			has_trait = leader_trait_general_affection_lv5
 		}
-		calc_true_if = { amount >= 2
+		calc_true_if = { amount = 2 
 			# 统治者
 			has_ruler_trait = leader_trait_ruler_affection_lv1
 			has_ruler_trait = leader_trait_ruler_affection_lv2
@@ -181,7 +181,7 @@ has_multiple_affection_traits = {
 # LEADER；自定义领袖名字。
 # 脚本条件因为BUG必须要加NOT 反转结果！！！
 has_multiple_special_leader_affection_traits = {
-	calc_true_if = { amount >= 2
+	calc_true_if = { amount = 2 
 		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv1
 		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv2
 		has_trait = leader_trait_$LEADER_CLASS$_$LEADER$_affection_lv3

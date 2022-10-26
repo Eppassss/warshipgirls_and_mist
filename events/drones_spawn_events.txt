@@ -8,10 +8,19 @@ country_event = {
 
 	immediate = {
 		FROMFROM = {
+			save_event_target_as = fleet_cur
 			if = {
 				limit = {
-					ROOT = { has_country_flag = shoukaku_relic_returned }
-					leader = { has_leader_flag = shoukaku }
+					ROOT = { 
+						has_country_flag = shoukaku_relic_returned
+						count_owned_ship = {
+							limit = {
+								leader = { has_leader_flag = shoukaku }
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
+					}
 				}
 				fleet_event = { id = mwsge_drone.2 days = 5 }
 			}
@@ -21,8 +30,16 @@ country_event = {
 			save_event_target_as = fleet_cur
 			if = {
 				limit = {
-					ROOT = { has_country_flag = shoukaku_relic_returned }
-					leader = { has_leader_flag = shoukaku }
+					ROOT = { 
+						has_country_flag = shoukaku_relic_returned
+						count_owned_ship = {
+							limit = {
+								leader = { has_leader_flag = shoukaku }
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
+					}
 				}
 				fleet_event = { id = mwsge_drone.2 days = 5 }
 			}
@@ -35,10 +52,6 @@ fleet_event = {
 	id = mwsge_drone.2
 	hide_window = yes
 	is_triggered_only = yes
-
-	trigger = {
-		is_in_combat = yes
-	}
 
 	immediate = {
 		if = {
@@ -119,7 +132,6 @@ fleet_event = {
 						#last_created_ship = { ship_event = { id = mwsge_drone.5 days = 90} }
 						# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
 						fleet_event = { id = mwsge_drone.4 days = 90}
-						fleet_event = { id = mwsge_drone.6 days = 1 }
 						#set_event_locked = yes
 					}
 				}
@@ -143,11 +155,17 @@ country_event = {
 
 	immediate = {
 		FROMFROM = {
+			save_event_target_as = fleet_cur
 			if = {
 				limit = {
-					count_owned_ship = {
-						limit = { is_ship_size = wg_carrier }
-						count > 0
+					ROOT = {
+						count_owned_ship = {
+							limit = {
+								is_ship_size = wg_carrier
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
 					}
 				}
 				fleet_event = { id = mwsge_drone.12 days = 2 }
@@ -158,9 +176,14 @@ country_event = {
 			save_event_target_as = fleet_cur
 			if = {
 				limit = {
-					count_owned_ship = {
-						limit = { is_ship_size = wg_carrier }
-						count > 0
+					ROOT = {
+						count_owned_ship = {
+							limit = {
+								is_ship_size = wg_carrier
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
 					}
 				}
 				fleet_event = { id = mwsge_drone.12 days = 2 }
@@ -173,10 +196,6 @@ fleet_event = {
 	id = mwsge_drone.12
 	hide_window = yes
 	is_triggered_only = yes
-
-	trigger = {
-		is_in_combat = yes
-	}
 
 	immediate = {
 		if = {
@@ -211,7 +230,7 @@ fleet_event = {
 				limit = { fleet = { NOT = { has_fleet_flag = stop_spawning_drowns }}}
 				# 阻止开幕
 			
-				every_owned_ship = {
+				OWNER = { every_owned_ship = {
 					limit = {
 						is_ship_size = wg_carrier
 						FLEET = { is_same_value = PREVPREVPREV }
@@ -229,7 +248,6 @@ fleet_event = {
 								create_uf_drones = { NAME = "Drone_Squadron_WEAKEN" NUM = 3 EZ_NUM = 1 }
 							}
 							last_created_fleet = {
-								fleet_event = { id = mwsge_drone.6 days = 1 }
 								set_fleet_flag = essex_debuff
 								add_modifier = { modifier = essex_debuff_to_drones }
 							}
@@ -315,7 +333,7 @@ fleet_event = {
 							}
 						}
 					}
-				}
+				}}
 			}
 			
 			if = {
@@ -340,10 +358,6 @@ fleet_event = {
 	id = mwsge_drone.22
 	hide_window = yes
 	is_triggered_only = yes
-
-	trigger = {
-		is_in_combat = yes
-	}
 
 	immediate = {
 		if = {
@@ -413,7 +427,6 @@ fleet_event = {
 						set_aggro_range = 500
 						# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
 						fleet_event = { id = mwsge_drone.24 days = 40 }
-						fleet_event = { id = mwsge_drone.6 days = 1 }
 						#set_event_locked = yes
 					}
 				}
@@ -498,201 +511,11 @@ fleet_event = {
 				value = -1
 			}
 		}
+		
 	}
 }
 
-country_event = {
-	id = mwsge_drone.31
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		FROMFROM = {
-			owner = { save_event_target_as = fleet_cur_owner }
-			remove_fleet_flag = SHIP_AURA_SE_UAV2
-			if = {
-				limit = {
-					count_owned_ship = {
-						limit = { has_component = SHIP_DC_DRONE }
-						count > 0
-					}
-				}
-				if = {
-					limit = { any_owned_ship = { has_component = SHIP_AURA_SE_UAV2 }}
-					set_fleet_flag = SHIP_AURA_SE_UAV2
-				}
-				every_owned_ship = {
-					limit = { has_component = SHIP_DC_DRONE }
-					ship_event = { id = mwsge_drone.32 days = 2 }
-				}
-			}
-		}
-
-		FROMFROMFROM = {
-			owner = { save_event_target_as = fleet_cur_owner }
-			remove_fleet_flag = SHIP_AURA_SE_UAV2
-			if = {
-				limit = {
-					count_owned_ship = {
-						limit = { has_component = SHIP_DC_DRONE }
-						count > 0
-					}
-				}
-				if = {
-					limit = { any_owned_ship = { has_component = SHIP_AURA_SE_UAV2 }}
-					set_fleet_flag = SHIP_AURA_SE_UAV2
-				}
-				every_owned_ship = {
-					limit = { has_component = SHIP_DC_DRONE }
-					ship_event = { id = mwsge_drone.32 days = 2 }
-				}
-			}
-		}
-	}
-}
-
-ship_event = {
-	id = mwsge_drone.32
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		is_in_combat = yes
-	}
-
-	immediate = {
-		if = {
-			limit = {
-				NOT = { has_ship_flag = spawn_drones_cooldown }
-			}
-			# 深海大凤技能
-			if = { 
-				# 限制在同一星系召唤过多无人机
-				limit = { solar_system = { check_variable = { which = "system_drones_count_player" value < 10 }}}
-				solar_system = { change_variable = { which = "system_drones_count_player" value = 1 }}
-				create_fleet = {
-					name = "NAME_dreadnought_carrier_drones_fleet"
-					effect = {
-						set_owner = ROOT.owner
-						set_fleet_flag = drones
-						set_fleet_flag = normal_drones
-						while = {
-							count = 5
-							create_ship = {
-								random_existing_design = scout_UAV
-							}
-						}
-						set_location = {
-							target = ROOT
-							distance = 1
-							angle = random
-						}
-						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self
-						set_aggro_range = 500
-						fleet_event = { id = mwsge_drone.4 days = 30 }
-						fleet_event = { id = mwsge_drone.6 days = 1 }
-					}
-					settings = { 
-						spawn_debris = no 
-						can_upgrade = no 
-						can_change_composition = no 
-						can_change_leader = no 
-					}
-				}
-				# 无人机火控部件
-				if = {
-					limit = { Fleet = { has_fleet_flag = SHIP_AURA_SE_UAV2 }}
-					last_created_fleet = {
-						add_modifier = { modifier = ship_part_aura_se_uav2_buff days = -1 }
-						set_fleet_flag = SHIP_AURA_SE_UAV2_buff
-					}
-				}
-				# 隼鹰技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = junyo_buff }}
-					last_created_fleet = {
-						add_modifier = { modifier = Junyo_buff_to_drones days = -1 }
-						set_fleet_flag = junyo_buff
-					}
-				}
-				# 重庆技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = chongqing_debuff }}
-					last_created_fleet = {
-						add_modifier = { modifier = chongqing_debuff_to_drones days = -1 }
-						set_fleet_flag = chongqing_debuff
-					}
-				}
-				# 饺子技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = essex_buff }}
-					last_created_fleet = {
-						add_modifier = { modifier = essex_buff_to_drones days = -1 }
-						set_fleet_flag = essex_buff
-					}
-				}
-				# 内华达技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = nevada_debuff }}
-					last_created_fleet = {
-						add_modifier = { modifier = nevada_debuff_to_enemy days = -1 }
-						set_fleet_flag = nevada_debuff
-					}
-				}
-				# 方舟技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = royal_ark_debuff }}
-					last_created_fleet = {
-						add_modifier = { modifier = royal_ark_debuff_to_enemy days = -1 }
-						set_fleet_flag = royal_ark_debuff
-					}
-				}
-				# 胡腾技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = hutton_buff }}
-					last_created_fleet = {
-						add_modifier = { modifier = hutton_buff_to_enemy_drones days = -1 }
-						set_fleet_flag = hutton_buff
-					}
-				}
-				# 太太技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = lexington_buff }}
-					last_created_fleet = {
-						add_modifier = { modifier = lexington_buff_to_drones days = -1 }
-						set_fleet_flag = lexington_buff
-					}
-				}
-				# 深海大凤技能
-				if = {
-					limit = { Fleet = { has_fleet_flag = taiho_sh_buff }}
-					last_created_fleet = {
-						add_modifier = { modifier = taiho_sh_buff_to_drones days = -1 }
-						set_fleet_flag = taiho_sh_buff
-					}
-				}
-				if = {
-					limit = { Fleet = { has_fleet_flag = taiho_sh_debuff }}
-					last_created_fleet = {
-						add_modifier = { modifier = taiho_sh_debuff_to_enemy_drones days = -1 }
-						set_fleet_flag = taiho_sh_debuff
-					}
-				}
-			}
-			if = {
-				limit = { has_component = SHIP_AURA_SE_UAV }
-				set_timed_ship_flag = { flag = spawn_drones_cooldown days = 29 }
-				ship_event = { id = mwsge_drone.32 days = 30 }
-			} else = {
-				set_timed_ship_flag = { flag = spawn_drones_cooldown days = 44 }
-				ship_event = { id = mwsge_drone.32 days = 45 }
-			}
-		} else = {
-			ship_event = { id = mwsge_drone.32 days = 5 }
-		}
-	}
-}					
+							
 
 # Spawn drones loop
 fleet_event = {
@@ -782,30 +605,6 @@ ship_event = {
 	immediate = {		
 		#destroy_fleet = THIS		
 		reduce_hp_percent = 100
-	}
-}
-
-# 脱离战斗后销毁
-fleet_event = {
-	id = mwsge_drone.6
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		exists = this
-	}
-
-	immediate = {		
-		if = {
-			limit = { is_in_combat = no }
-			delete_fleet = {
-				target = this
-				destroy_template = yes
-				kill_leader = no
-			}
-		} else = {
-			fleet_event = { id = mwsge_drone.6 days = 1 }
-		}
 	}
 }
 

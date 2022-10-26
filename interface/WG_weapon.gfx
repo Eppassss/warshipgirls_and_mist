@@ -810,24 +810,4 @@ spriteTypes = {
 		name = "GFX_ship_part_wsg_na_sensor"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_wsg_na_sensor.dds"
 	}
-	spriteType = {
-		name = "GFX_ship_part_wg_dc_drone"
-		texturefile = "gfx/interface/icons/ship_parts/wg_dc_drone.dds"
-	}
-	spriteType = {
-		name = "GFX_ship_part_aura_se_cloaking"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_se_cloaking.dds"
-	}
-	spriteType = {
-		name = "GFX_ship_part_aura_se_firecontrol"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_se_firecontrol.dds"
-	}
-	spriteType = {
-		name = "GFX_ship_part_aura_se_uav"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_se_uav.dds"
-	}
-	spriteType = {
-		name = "GFX_ship_part_aura_se_uav2"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_se_uav2.dds"
-	}
 } 

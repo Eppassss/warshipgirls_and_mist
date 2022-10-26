@@ -3954,62 +3954,6 @@ country_event = {
 	}
 }
 
-# 武库舰设计
-country_event = {
-	id = wsg.3120
-	title = "wsg.3120.name"
-	desc = "wsg.3120.desc"
-	is_triggered_only = yes
-	picture = GFX_evt_wsg_dreadnought
-
-	trigger = {
-		last_increased_tech = tech_senergy_space_compression
-	}
-
-	option = {
-		name = OK
-		capital_scope = { enable_special_project = {
-			name = WSG_SENERGY_DREADNOUGHT_PROJECT
-			location = THIS
-		}}
-	}
-}
-
-# 武库舰设计特殊项目完成
-country_event = {
-	id = wsg.3121
-	title = "wsg.3121.name"
-	desc = "wsg.3121.desc"
-	is_triggered_only = yes
-	picture = GFX_evt_wsg_dreadnought2
-
-	option = {
-		name = EXCELLENT
-		add_research_option = tech_senergy_dreadnought
-		add_tech_progress = {
-			tech = tech_senergy_dreadnought
-			progress = 0.1
-		}
-	}
-}
-
-# 武库舰功能提示
-country_event = {
-	id = wsg.3122
-	title = "wsg.3122.name"
-	desc = "wsg.3122.desc"
-	is_triggered_only = yes
-	picture = GFX_evt_wsg_dreadnought2
-
-	trigger = {
-		last_increased_tech = tech_senergy_dreadnought
-	}
-
-	option = {
-		name = OK
-	}
-}
-
 planet_event = {
 	id = wsg.3200
 	hide_window = yes

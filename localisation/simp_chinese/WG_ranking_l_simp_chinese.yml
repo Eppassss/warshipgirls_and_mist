@@ -197,7 +197,6 @@
  too_low_rank_fail_230:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y230§R点$rankpts$"
  too_low_rank_fail_250:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y250§R点$rankpts$"
  rankpts_not_reach_requirment:0 "§R您的军阶点数不够高。您目前有 §Y[Root.rankpts]§R 点$rankpts$，但你需要 §Y[Root.rankpts_require]§R点$rankpts$"
- missing_tech_wsg_senergy:0 "拥有$tech_wsg_senergy|Y$科技"
 
  wsgranking.2.name:0 "查看军阶数值"
  wsgranking.2.desc:0 "您目前有 §Y[Root.rankpts]§! $rankpts$ .游戏中有很多方式可以提高您的军阶点数。提高收入，建造舰队，发展国家，提升战斗力，击落利维坦，建设巨构建筑，如此种种，不一而足。"

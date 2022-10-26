@@ -1541,77 +1541,26 @@ tech_wsg_weapon_S_305 = {
 	}	
 }
 
-tech_senergy_space_compression = {
-	area = engineering
-	cost = @tier5cost2
-	tier = 5
-	category = { voidcraft }
-	is_reverse_engineerable = no
-	ai_update_type = military
-	weight = @tier5weight3
-	is_dangerous = yes
-	prerequisites = {
-		"tech_wsg_senergy_computer" "tech_wsg_senergy_jump_drive"
-		"tech_wsg_senergy_reactor" "tech_wsg_senergy_propulsion"
-		"tech_wsg_senergy_sensors" "tech_wsg_s_ia"
-		"tech_senergy_aura"
-	}
+# tech_senergy_dreadnought = {
+# 	area = engineering
+# 	cost = @tier5cost2
+# 	tier = 5
+# 	category = { voidcraft }
+# 	is_reverse_engineerable = no
+# 	ai_update_type = military
+# 	weight = 0
+# 	is_dangerous = yes
 
-	gateway = senergy_tech
+# 	gateway = senergy_tech
+	
+# 	prereqfor_desc = {
+		
+# 	}
 
-	modifier = {
-		country_resource_max_add = 40000
-	}
-
-	potential = {
-		OR = {
-			has_authority = auth_warshipgirls
-			is_wg_fallen_empire = yes
-		}	
-	}
-}
-
-tech_senergy_aura = {
-	area = engineering
-	cost = @tier5cost2
-	tier = 5
-	category = { voidcraft }
-	is_reverse_engineerable = no
-	ai_update_type = military
-	weight = @tier5weight3
-	is_dangerous = yes
-	prerequisites = {
-		"tech_titans" "tech_wsg_senergy"
-	}
-
-	gateway = senergy_tech
-
-	potential = {
-		has_ascension_perk = ap_project_s
-		OR = {
-			has_authority = auth_warshipgirls
-			is_wg_fallen_empire = yes
-		}	
-	}
-}
-
-tech_senergy_dreadnought = {
-	icon = "tech_parit_dreadnought"
-	area = engineering
-	cost = @tier5cost2
-	tier = 5
-	category = { voidcraft }
-	is_reverse_engineerable = no
-	ai_update_type = military
-	weight = 0
-	is_dangerous = yes
-
-	gateway = senergy_tech
-
-	potential = {
-		OR = {
-			has_authority = auth_warshipgirls
-			is_wg_fallen_empire = yes
-		}	
-	}
-}
+# 	potential = {
+# 		OR = {
+# 			has_authority = auth_warshipgirls
+# 			is_wg_fallen_empire = yes
+# 		}	
+# 	}
+# }

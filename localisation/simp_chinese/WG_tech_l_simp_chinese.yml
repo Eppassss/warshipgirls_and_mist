@@ -151,7 +151,7 @@
  tech_wsg_autocannon:0 "ACSP动能投射系统"
  tech_wsg_autocannon_desc:0 "ACSP是舰娘稍有的动能武器，这种速射机炮可以在极短的时间内对目标倾泻大量的火力。"
  
- tech_alpha_weapon:0 "暗物质α"
+ tech_alpha_weapon:0 "暗物质α" 
  tech_alpha_weapon_desc:0 "长春小姐的实验证明了这项新式武器的无限潜能。" 
  tech_wsg_203EX:0 "203式暗物质α武器组" 
  tech_wsg_203EX_desc:0 "虽然母港被炸了一个大坑，但因此再也没有人会质疑这种武器强大的威力。" 

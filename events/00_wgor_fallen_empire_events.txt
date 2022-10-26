@@ -73,19 +73,21 @@ country_event = {
 						}						
 					}	
 					# also contact if we border them
-					any_system_within_border = {
-						root = {
-							any_system_within_border = {
-								has_hyperlane_to = prevprev
-							}					
+					OR = {
+						any_system_within_border = {
+							root = {
+								any_system_within_border = {
+									has_hyperlane_to = prevprev
+								}					
+							}
 						}
-					}
-					any_owned_fleet = {
-						is_ship_class = shipclass_starbase
-						distance_to_empire = {
-							who = root
-							distance = 75
-						}									
+						any_owned_fleet = {
+							is_ship_class = shipclass_starbase
+							distance_to_empire = {
+								who = root
+								distance = 75
+							}									
+						}	
 					}						
 				}					
 			}

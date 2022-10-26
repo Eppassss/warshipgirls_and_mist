@@ -53,7 +53,7 @@ parit_dreadnought = {
 	acceleration = 0.2
 	rotation_speed = 0.15
 	collision_radius = @titan_collision_radius
-	max_hitpoints = 150000
+	max_hitpoints = 80000
 	modifier = {
 		ship_evasion_add = 1
 	}

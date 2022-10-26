@@ -1082,7 +1082,7 @@ country_event = {
         custom_tooltip = "tech_wsg_410_desc"
         trigger = {
             has_authority = auth_warshipgirls
-            has_technology = tech_wsg_410
+            has_technology = tech_wsg_406
             NOR = {
                 has_tech_option = tech_wsg_410
                 has_technology = tech_wsg_410
@@ -1217,7 +1217,7 @@ country_event = {
             has_authority = auth_shenhai
 			has_technology = tech_sh_Lweapon
 			has_technology = tech_sh_Gweapon
-			NOR = {
+			NOR = { 
                 has_tech_option = tech_sh_torpedo
                 has_technology = tech_sh_torpedo
             }
@@ -1377,7 +1377,7 @@ country_event = {
         remove_country_flag = engaged_with_pantsu_shop
     }
     
-    # T槽S510
+    # T槽S508
     option = {
 		custom_gui = "enclave_caravaneer_option"
 		name = tech_wsg_weapon_T_S510
@@ -1740,7 +1740,6 @@ country_event = {
         }
         remove_country_flag = engaged_with_pantsu_shop
     }
-    
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
@@ -1764,7 +1763,6 @@ country_event = {
         }
         remove_country_flag = engaged_with_pantsu_shop
     }
-
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
@@ -1788,7 +1786,6 @@ country_event = {
         }
         remove_country_flag = engaged_with_pantsu_shop
     }
-
     option = { 
         custom_gui = "enclave_caravaneer_option"
         is_dialog_only = yes
@@ -2974,18 +2971,37 @@ country_event = {
             resource_stockpile_compare = { resource = energy value >= 2500 }
             resource_stockpile_compare = { resource = rare_crystals value >= 648 }
             resource_stockpile_compare = { resource = sr_pantsu value >= 648 }
-			resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+			OR = {
+				AND = { 
+					resource_stockpile_compare = { resource = sr_alpha value >= 648 }
+					has_technology = tech_building_wsg_alpha
+				}
+				AND = {
+					resource_stockpile_compare = { resource = sr_se value >= 648 }
+					has_technology = tech_wsg_senergy
+				}
+			}
 				
         }
         hidden_effect = { 
             change_variable = { which = "wsg_rings" value = 1 }
         }
-		add_resource = {
-            energy = -2500
-            rare_crystals = -648
-            sr_alpha = -648
-            sr_pantsu = -648
-        }
+		if = {
+			limit = { has_technology = tech_wsg_senergy }
+			add_resource = {
+				energy = -2500
+				rare_crystals = -648
+				sr_se = -648
+				sr_pantsu = -648
+			}
+		} else = {
+			add_resource = {
+				energy = -2500
+				rare_crystals = -648
+				sr_alpha = -648
+				sr_pantsu = -648
+			}
+		}
         remove_country_flag = engaged_with_pantsu_shop
     }
 
@@ -2994,29 +3010,19 @@ country_event = {
         name = wsgranking.1010.a
         # 前置条件
         trigger = {
-            OR = {
-                has_authority = auth_shenhai
-                has_authority = auth_warshipgirls
-            }
+            has_authority = auth_shenhai
         }
         # 限制条件
         allow = {
-            custom_tooltip_fail = {
-                text = missing_tech_wsg_senergy
-                OR = {
-                    has_authority = auth_shenhai
-                    AND = {
-                        has_authority = auth_warshipgirls
-                        has_technology = tech_wsg_senergy
-                    }
-                }
-            }
             resource_stockpile_compare = { resource = energy value > 2500 }
             resource_stockpile_compare = { resource = rare_crystals value > 648 }
             resource_stockpile_compare = { resource = sr_se value > 648 }
             resource_stockpile_compare = { resource = sr_pantsu value > 648 }
         }
         change_variable = { which = "wsg_rings" value = 1 }
+        event_target:pantsu_shop_country = { 
+            change_variable = { which = rings_stock value = -1 }
+        }
         #消耗资源
         add_resource = {
             energy = -2500

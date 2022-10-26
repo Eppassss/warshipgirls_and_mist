@@ -32,8 +32,10 @@ event = {
 				any_owned_leader = { has_affection_trait = yes }
 				OR = {
 					has_wg_special_authority = no
-					has_civic = civic_CM
-					has_ascension_perk = ap_shenhai_silent
+					OR = {
+						has_civic = civic_CM
+						has_ascension_perk = ap_shenhai_silent
+					}
 				}
 			}
 			country_event = { id = wg_aft.101 days = 21 }
